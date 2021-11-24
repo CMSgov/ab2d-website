@@ -338,7 +338,7 @@ active-nav: accessing-claims-data-nav
                         <li>The AB2D team will work closely with the organization and its "AB2D Data Operations Specialist" to answer any questions or troubleshoot
                          any issues they have connecting to the AB2D API.</li>
                          <li>For more information and to help answer any remaining question you may have, production documentation 
-                            can be found in the <a href="https://github.com/CMSgov/ab2d-pdp-documentation" rel="noopener noreferrer" target="_blank">AB2D Githhub repository</a>. 
+                            can be found in the <a href="https://github.com/CMSgov/ab2d-pdp-documentation" rel="noopener noreferrer" target="_blank">AB2D Github repository</a>. 
                         </li>
                     </ul> 
                 </div>

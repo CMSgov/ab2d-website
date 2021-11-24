@@ -282,7 +282,7 @@ landing-page: live
                             <td>600-800</td>
                         </tr>
                         <tr>
-                            <td>PDP-10000</td>
+                            <td>PDP-1002</td>
                             <td>Z1002</td>
                             <td>600-800</td>
                         </tr>
