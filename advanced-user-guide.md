@@ -26,6 +26,8 @@ was used to implement the [HL7 FHIR standard](https://www.hl7.org/fhir/overview.
 [FHIR Bulk Data Export](https://hl7.org/fhir/uv/bulkdata/export/index.html) pattern to perform data export. Errors come
 back in the [Resource OperationOutcome](errors come back in the https://www.hl7.org/fhir/operationoutcome.html) format.
 
+This API implements two FHIR standards, R4 (v2) and STU3 (v1). The data is returned as new line delimited JSON objects of either
+the R4 or STU3 versions of the FHIR [ExplanationOfBenefit](https://www.hl7.org/fhir/r4/explanationofbenefit.html) Resource
 
 ### Sandbox
 The Sandbox/Swagger page is available [here](https://sandbox.ab2d.cms.gov/swagger-ui/index.html).
@@ -243,34 +245,33 @@ Bearer <access_token>
 The following are the list of endpoints the API supports:
 
 ### Request data
-A job will be created and a job identifier returned. You can request either by contract number:
+A job will be created and a job identifier returned for the contract associated with the credentials. 
 
 ```
-GET /api/v1/fhir/Group/{contractNumber}/$export
-```
-
-or all Part D patients registered with the sponsor:
-
-```
-GET /api/v1/fhir/Patient/$export
+GET /api/v2/fhir/Patient/$export
 ```
 
 #### Parameters
 
-The _since parameter can be used to limit data to only data that has been updated since the specified parameter.
+The `_since` parameter can be used to limit data to only data that has been updated since the specified parameter.
 The format is the [ISO 8601 DateTime standard](https://www.w3.org/TR/NOTE-datetime) e.g. YYYY-MM-DDThh:mm:ssTZD
 
 ```
-GET /api/v1/fhir/Patient/$export?_since=2020-03-16T00:00:00-05:00
+GET /api/v2/fhir/Patient/$export?_since=2020-03-16T00:00:00-05:00
 ```
 
 Dates prior to 2020-02-13 are not supported and will result in a failure response.
+
+For v2 (R4), for advanced datasets, if no `_since` date is provided, one will be added to reflect the last time
+a job was executed for that contract was successfully searched and downloaded. Because this can be unpredictable
+in a sandbox environment where many people search the same contracts, always supply a `_since` date to prevent
+any confusion.
 
 ### Status
 Once a job has been created, the user can/should request the status of the submitted job. 
 
 ```
-GET /api/v1/fhir/Job/{jobUuid}/$status
+GET /api/v2/fhir/Job/{jobUuid}/$status
 ```
 
 The job will either be in progress or completed. The application will limit the frequency in which a job status may 
@@ -282,7 +283,7 @@ data or any error messages.
 Once the search job has been completed, the contents of the of the created file(s) can be downloaded by using:
 
 ```
-GET /api/v1/fhir/Job/{jobUuid}/file/{filename}
+GET /api/v2/fhir/Job/{jobUuid}/file/{filename}
 ```
 
 The file(s) are specified as the output of the status request. Each file will only be available for 72 hours after the 
@@ -292,14 +293,14 @@ job has completed. Files are also unavailable after they have been successfully 
 A job may be cancelled at any point during its processing:
 
 ```
-DELETE /api/v1/fhir/Job/{jobUuid}/$status
+DELETE /api/v2/fhir/Job/{jobUuid}/$status
 ```
 
 ### Other
 Retrieve the capabilities of the server (required by the standard)
 
 ```
-GET /api/v1/fhir/metadata
+GET /api/v2/fhir/metadata
 ```
 
 ### Warning
