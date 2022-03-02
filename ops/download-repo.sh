@@ -24,25 +24,6 @@ if { [ -z "${AB2D_DIR_PARAM+x}" ] || [ -z "${AB2D_DIR_PARAM}" ]; }; then
   PWD=$(pwd)
   export AB2D_DIR="${PWD}/${DEFAULT_AB2D_DIR}"
 
-  echo "AB2D ref $AB2D_REPO_REF will be checked out"
-  echo "AB2D dir will be created here $DEFAULT_AB2D_DIR"
-
-  # Start fresh every deployment
-  echo "wiping ${DEFAULT_AB2D_DIR}"
-  rm -rf "${DEFAULT_AB2D_DIR}"
-
-  echo "cloning ab2d repo into ${DEFAULT_AB2D_DIR}"
-  git clone "https://github.com/CMSgov/${AB2D_REPO_NAME}.git"
-
-  cd "${DEFAULT_AB2D_DIR}" || (echo "ERROR ${DEFAULT_AB2D_DIR} not populated" && exit 1)
-
-  echo "Checking out ref"
-
-  git checkout "${AB2D_REPO_REF}"
-
-  # If checked out earlier make sure branch is up to date
-  git pull
-
   cd ..
 else
 

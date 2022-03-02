@@ -33,7 +33,7 @@ fi
 # If AB2D is already available locally then specify the absolute path with AB2D_DIR_PARAM
 
 # AB2D dir will be created in scripts/deployment
-#source "${START_DIR}/download-repo.sh" ab2d-website
+source "${START_DIR}/download-repo.sh" ab2d-website
 
 # Directory that script was loaded into
 echo "AB2D_DIR is ${AB2D_DIR}"
