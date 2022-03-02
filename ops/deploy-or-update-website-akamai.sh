@@ -32,8 +32,6 @@ fi
 # A specific branch or commit may be checked out with AB2D_REF_PARAM.
 
 AB2D_REPO_REF=$BRANCH_NAME_PARAM
-# AB2D dir will be created in scripts/deployment
-# source "${START_DIR}/ops/download-repo.sh" ab2d-website
 
 #
 # Set variables
