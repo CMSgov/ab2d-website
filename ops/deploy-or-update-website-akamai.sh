@@ -35,7 +35,7 @@ fi
 
 AB2D_REPO_REF=$BRANCH_NAME_PARAM
 # AB2D dir will be created in scripts/deployment
-source "${START_DIR}/download-repo.sh" ab2d-website
+source "${START_DIR}/ops/download-repo.sh" ab2d-website
 
 # Directory that script was loaded into
 echo "AB2D_DIR is ${AB2D_DIR}"
