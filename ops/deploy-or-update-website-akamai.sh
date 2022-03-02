@@ -29,16 +29,11 @@ if [ -z "${AKAMAI_RSYNC_DOMAIN_PARAM}" ] \
 fi
 
 # Download AB2D Repo if necessary and create an environment
-# variable (AB2D_DIR) containing the absolute path to the AB2D source.
 # A specific branch or commit may be checked out with AB2D_REF_PARAM.
-# If AB2D is already available locally then specify the absolute path with AB2D_DIR_PARAM
 
 AB2D_REPO_REF=$BRANCH_NAME_PARAM
 # AB2D dir will be created in scripts/deployment
-source "${START_DIR}/ops/download-repo.sh" ab2d-website
-
-# Directory that script was loaded into
-echo "AB2D_DIR is ${AB2D_DIR}"
+# source "${START_DIR}/ops/download-repo.sh" ab2d-website
 
 #
 # Set variables
@@ -65,10 +60,7 @@ WEBSITE_DIRECTORY="${WEBSITE_DIRECTORY_PARAM}"
 if [ "${GENERATE_WEBSITE_FROM_CODE}" = "true" ]; then
 
   # Set website directory to be generated website directory
-  WEBSITE_DIRECTORY="${AB2D_DIR}/_site"
-
-  # Change to the repo's "website" direcory
-  cd "${AB2D_DIR}"
+  WEBSITE_DIRECTORY="./_site"
 
   # Configure head for Tealium/Google Analytics
 
@@ -165,4 +157,4 @@ rsync \
   "sshacs@${AKAMAI_RSYNC_DOMAIN}:/${AKAMAI_UPLOAD_DIRECTORY}/_site/"
 
 # Delete AB2D dir so next deploy is fresh
-rm -rf "${AB2D_DIR}"
+# rm -rf "."
