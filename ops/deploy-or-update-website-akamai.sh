@@ -157,4 +157,13 @@ rsync \
   "sshacs@${AKAMAI_RSYNC_DOMAIN}:/${AKAMAI_UPLOAD_DIRECTORY}/_site/"
 
 # Delete AB2D dir so next deploy is fresh
-# rm -rf "."
+rm -rf _includes
+rm -rf 	_layouts
+rm -rf 	_site
+rm -rf 	.sass-cache
+rm -rf 	assets
+rm -rf 	data
+rm	*.yml
+rm *.html
+rm *.md
+rm Gem*
