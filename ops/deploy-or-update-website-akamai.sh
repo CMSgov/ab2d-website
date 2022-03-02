@@ -72,15 +72,15 @@ if [ "${GENERATE_WEBSITE_FROM_CODE}" = "true" ]; then
 
   if [ "${OSTYPE}" = "linux-gnu" ]; then
     if [ "${WEBSITE_DEPLOYMENT_TYPE}" = "prod" ]; then
-      sed -i 's%cms-ab2d[\/]dev%cms-ab2d/prod%g' _includes/head.html
+      sed -i 's%cms-ab2d[\/]dev%cms-ab2d/prod%g' ../_includes/head.html
     else # stage
-      sed -i 's%cms-ab2d[\/]prod%cms-ab2d/dev%g' _includes/head.html
+      sed -i 's%cms-ab2d[\/]prod%cms-ab2d/dev%g' ../_includes/head.html
     fi
   else # Mac
     if [ "${WEBSITE_DEPLOYMENT_TYPE}" = "prod" ]; then
-      sed -i "" 's%cms-ab2d[\/]dev%cms-ab2d/prod%g' _includes/head.html
+      sed -i "" 's%cms-ab2d[\/]dev%cms-ab2d/prod%g' ../_includes/head.html
     else # stage
-      sed -i "" 's%cms-ab2d[\/]prod%cms-ab2d/dev%g' _includes/head.html
+      sed -i "" 's%cms-ab2d[\/]prod%cms-ab2d/dev%g' ../_includes/head.html
     fi
   fi
 
