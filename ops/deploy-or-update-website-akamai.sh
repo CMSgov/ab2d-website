@@ -10,6 +10,7 @@ set -x #Be verbose
 #
 
 START_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
+START_DIR="$START_DIR/.."
 cd "${START_DIR}"
 
 #
