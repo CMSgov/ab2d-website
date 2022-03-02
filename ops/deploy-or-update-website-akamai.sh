@@ -32,6 +32,7 @@ fi
 # A specific branch or commit may be checked out with AB2D_REF_PARAM.
 # If AB2D is already available locally then specify the absolute path with AB2D_DIR_PARAM
 
+AB2D_REPO_REF=$BRANCH_NAME_PARAM
 # AB2D dir will be created in scripts/deployment
 source "${START_DIR}/download-repo.sh" ab2d-website
 
@@ -72,15 +73,15 @@ if [ "${GENERATE_WEBSITE_FROM_CODE}" = "true" ]; then
 
   if [ "${OSTYPE}" = "linux-gnu" ]; then
     if [ "${WEBSITE_DEPLOYMENT_TYPE}" = "prod" ]; then
-      sed -i 's%cms-ab2d[\/]dev%cms-ab2d/prod%g' ../_includes/head.html
+      sed -i 's%cms-ab2d[\/]dev%cms-ab2d/prod%g' _includes/head.html
     else # stage
-      sed -i 's%cms-ab2d[\/]prod%cms-ab2d/dev%g' ../_includes/head.html
+      sed -i 's%cms-ab2d[\/]prod%cms-ab2d/dev%g' _includes/head.html
     fi
   else # Mac
     if [ "${WEBSITE_DEPLOYMENT_TYPE}" = "prod" ]; then
-      sed -i "" 's%cms-ab2d[\/]dev%cms-ab2d/prod%g' ../_includes/head.html
+      sed -i "" 's%cms-ab2d[\/]dev%cms-ab2d/prod%g' _includes/head.html
     else # stage
-      sed -i "" 's%cms-ab2d[\/]prod%cms-ab2d/dev%g' ../_includes/head.html
+      sed -i "" 's%cms-ab2d[\/]prod%cms-ab2d/dev%g' _includes/head.html
     fi
   fi
 
