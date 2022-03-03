@@ -1,0 +1,16 @@
+pipeline {
+  agent {
+    label 'deployment'
+  }
+  stages {
+    stage('Deploy or update static website') {
+      steps {
+        script {
+	        sh '''
+	          ./ops/deploy-or-update-website-akamai.sh
+	        sh '''
+	    }
+      }
+    }
+  }
+}
