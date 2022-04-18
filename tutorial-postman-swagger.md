@@ -509,7 +509,7 @@ landing-page: live
 
                 <h5 id="Authorizeabearertoken-content">Authorize a bearer token</h5>
                 <p>First - you must access the AB2D Swagger site by going <a target="_blank"
-                        href="https://sandbox.ab2d.cms.gov/swagger-ui/index.html">here</a> Click
+                        href="https://sandbox.ab2d.cms.gov/swagger-ui/index.html">here</a>. Click
                     “authorize” in the top right corner.</p>
                 <img src="./assets/img/sandbox/swagger-1-v2.png" alt="swagger authorize">
 
@@ -536,14 +536,15 @@ landing-page: live
 
                 <h5 id="ExportaJobID-content">Export a Job ID</h5>
                 <p>
-                AB2D supports both <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and 
-                <a href="https://www.hl7.org/fhir/R4/explanationofbenefit.html">R4</a> FHIR versions of ExplanationOfBenefit 
-                objects for both the sandbox and production. In the URL, v1 indicates STU3 while v2 indicates R4. In 
-                this example, we will use v2 (R4).
-                To toggle between the two versions, select the API you wish to use in the right corner of the swagger page.
-                Detailed differences between the different versions are described in the <a href="https://github.com/CMSgov/ab2d-pdp-documentation">
-                AB2D Github repository</a>
+                AB2D supports both <a href="https://www.hl7.org/fhir/R4/explanationofbenefit.html">R4</a> and 
+                <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> versions of the FHIR standard 
+                in both sandbox and production environments. FHIR R4 is available using v2 of AB2D while FHIR STU3 can 
+                be accessed via AB2D v1 which is typically indicated in an endpoint’s URL. Users are recommended to use 
+                AB2D v2 thus we will use that version in the examples/screenshots provided below. Users can select the AB2D API version they’d like to use in the Swagger interface by navigating to the dropdown menu in the right-hand corner of the page.
+                Detailed descriptions of AB2D v1 (STU3) and AB2D v2 (R4) can be accessed in the AB2D Document Repository 
+                in <a href="https://github.com/CMSgov/ab2d-pdp-documentation">Github</a>.
                 </p>
+
                 <p>
                     Open the <strong>Export</strong> menu to view all possible endpoints:
                 </p>
