@@ -22,7 +22,6 @@
         definitionsCount += definitions.length
       })
 
-      console.log(definitionsCount)
       $('.definition-count').text(`${definitionsCount} data elements`)
     })
 })(jQuery);
