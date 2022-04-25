@@ -73,6 +73,7 @@ build/
 
 ### Jekyll ###
 _site/
+.sass-cache/
 /website/_site/
 /website/.sass-cache/
 
