@@ -1,0 +1,93 @@
+{
+  "sections": [
+    {
+      "title": "STU Beneficiary ID",
+      "definitions": [
+        {
+          "field_name": "Beneficiary ID",
+          "field_description": "The unique CCW identifier for a beneficiary. The CCW assigns a unique beneficiary identification number to each individual who receives Medicare and/or Medicaid and uses that number to identify an individual's records in all CCW data files. This number does not change during a beneficiary’s lifetime, and CCW uses each number only once. The BENE_ID is specific to the CCW and is not applicable to any other identification system or data source. Field provides a reference to the Patient endpoint FHIR Resource so that this beneficiaries patient data can be pulled down using the reference id (beneficiaryId). The value will look something like this: \"Patient/123456\".",
+          "claim_types": "Carrier,Inpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "BENE_ID",
+          "type_size": "CHAR(15)"
+        }
+      ],
+      "example": {
+        "patient": {
+          "reference": "Patient/<mark class='blue-highlight'>-199900000022040</mark>"
+        }
+      }
+    },
+    {
+      "title": "Principal Diagnosis Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div>Principal Diagnosis Code Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "PRNCPAL_DGNS_ VRSN_CD",
+          "type_size": "CHAR(1)"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div>Principal Diagnosis Code",
+          "field_description": "The diagnosis code identifying the diagnosis, condition, problem, or other reason for the admission/encounter/visit shown in the medical record to be chiefly responsible for the services provided.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "PRNCPAL_DGNS_CD",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='blue-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='blue-highlight'>I10</mark>"
+                }
+              ]
+            }
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://bluebutton.cms.gov/resources/codesystem/diagnosis-type",
+                "code": "<mark class='red-highlight'>principal</mark>",
+                "display": "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "https://bluebutton.cms.gov/resources/codesystem/diagnosis-type",
+                "code": "<mark class='red-highlight'>principal</mark>",
+                "display": "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "https://bluebutton.cms.gov/resources/codesystem/diagnosis-type",
+                "code": "<mark class='red-highlight'>principal</mark>",
+                "display": "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "https://bluebutton.cms.gov/resources/codesystem/diagnosis-type",
+                "code": "<mark class='red-highlight'>principal</mark>",
+                "display": "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

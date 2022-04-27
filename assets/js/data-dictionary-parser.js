@@ -1,6 +1,21 @@
-(function ($) {
-  "use strict";
-  fetch('assets/data/data_dictionary.json')
+const callFetch = (file) => {
+  let selectedFile = ''
+
+  switch (file) {
+    case 'r4-v2':
+      selectedFile = 'assets/data/r4-v2.json'
+      break;
+    case 'stu':
+      selectedFile = 'assets/data/stu.json'
+      break;
+    default:
+      selectedFile = 'assets/data/r4-v2.json'
+      break;
+  }
+
+  $('#data_dictionary').empty()
+
+  fetch(selectedFile)
     .then(res => res.json())
     .then(json => {
       json.sections.forEach(section => {
@@ -24,6 +39,14 @@
 
       $('.definition-count').text(`${definitionsCount} data elements`)
     })
+}
+
+(function ($) {
+  "use strict";
+  $(document).ready(function () {
+    callFetch()
+  })
+
 })(jQuery);
 
 const createSection = ($, section) => {

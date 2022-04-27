@@ -57,6 +57,20 @@ active-nav: understanding-the-data-nav
     font-weight: 600;
   }
 
+  .header-meta-data>div {
+    flex: 1;
+  }
+
+  .inputs__wrapper {
+    display: flex;
+    justify-content: end;
+  }
+
+  .inputs__wrapper label {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
   .column-headers {
     text-transform: uppercase;
     display: flex;
@@ -189,6 +203,15 @@ active-nav: understanding-the-data-nav
 </style>
 
 <script src="assets/js/data-dictionary-parser.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#versions').val('r4-v2')
+  })
+  function getVersionValue (sel) {
+    console.log(sel.value);
+    callFetch(sel.value)
+  }
+</script>
 
 <section class="bg-light-grey page-section py-5" role="main" id="Top">
   <svg class="shape-divider" preserveAspectRatio="xMidYMin slice" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -200,6 +223,17 @@ active-nav: understanding-the-data-nav
     <div class='header'>
       <div class='header-meta-data'>
         <div class='definition-count'></div>
+        <div class='inputs__wrapper'>
+          <div>
+            <form>
+              <label for="versions">Version:</label>
+              <select name="versions" id="versions" onchange="getVersionValue(this);">
+                <option value="r4-v2">R4 (v2)</option>
+                <option value="stu">STU</option>
+              </select>
+            </form>
+          </div>
+        </div>
       </div>
       <div class='column-headers'>
         <div class='field-name-desc'>field name/description</div>
