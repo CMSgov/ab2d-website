@@ -6,7 +6,7 @@ const callFetch = (file) => {
       selectedFile = 'assets/data/r4-v2.json'
       break;
     case 'stu':
-      selectedFile = 'assets/data/stu.json'
+      selectedFile = 'assets/data/stu3-v1.json'
       break;
     default:
       selectedFile = 'assets/data/r4-v2.json'
