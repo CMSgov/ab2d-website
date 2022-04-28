@@ -229,7 +229,7 @@ active-nav: understanding-the-data-nav
               <label for="versions">Version:</label>
               <select name="versions" id="versions" onchange="getVersionValue(this);">
                 <option value="r4-v2">R4 (v2)</option>
-                <option value="stu">STU</option>
+                <option value="stu">STU3</option>
               </select>
             </form>
           </div>
