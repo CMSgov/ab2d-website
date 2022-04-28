@@ -1,0 +1,4395 @@
+{
+  "sections": [
+    {
+      "title": "Claim ID",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Claim ID",
+          "field_description": "This is the unique identification number for the claim.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "CLM_ID",
+          "type_size": "CHAR(15)"
+        }
+      ],
+      "example": {
+        "identifier": [
+          {
+            "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_id</mark>",
+            "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>9991831999</mark>"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Claim Group Id",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Claim Group Id",
+          "field_description": "",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "N/A",
+          "type_size": "NUM"
+        }
+      ],
+      "example": {
+        "identifier": [
+          {
+            "system": "&quot;<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/identifier/claim-group</mark>",
+            "value": "<div class='number-marker'>1</div>&quot;<mark class='red-highlight'>9991831999</mark>"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Beneficiary Id",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Beneficiary Id",
+          "field_description": "The unique CCW identifier for a beneficiary. The CCW assigns a unique beneficiary identification number to each individual who receives Medicare and/or Medicaid and uses that number to identify an individual’s records in all CCW data files. This number does not change during a beneficiary’s lifetime, and CCW uses each number only once. The BENE_ID is specific to the CCW and is not applicable to any other identification system or data source\n\nField provides a reference to the Patient endpoint FHIR Resource so that this beneficiaries patient data can be pulled down using the reference id (beneficiaryId). The value will look something like this: \"Patient/123456\".",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "BENE_ID",
+          "type_size": "CHAR(23)"
+        }
+      ],
+      "example": {
+        "patient": {
+          "reference": "Patient/  <div class='number-marker'>1</div>&quot;<mark class='red-highlight'>-199900000022040</mark>"
+        }
+      }
+    },
+    {
+      "title": "EOB Resource ID",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> EOB Resource ID",
+          "field_description": "Each resource has an id element which contains the \"logical id\" of the resource assigned by the server responsible for storing it.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "N/A",
+          "type_size": "N/A"
+        }
+      ],
+      "example": {
+        "id": "<div class='number-marker'>1</div>&quot;<mark class='red-highlight'>1111</mark>"
+      }
+    },
+    {
+      "title": "Resource Type",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Resource Type",
+          "field_description": "A FHIR Identifier used to specify the FHIR Resource Type.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "N/A",
+          "type_size": "N/A"
+        }
+      ],
+      "example": {
+        "resourceType": "<div class='number-marker'>1</div>&quot;<mark class='red-highlight'>ExplanationOfBenefit</mark>"
+      }
+    },
+    {
+      "title": "EOB Resource Last Updated Date",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> EOB Resource Last Updated Date",
+          "field_description": "The date that this record was last updated within the database.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "N/A",
+          "type_size": "TIMESTAMP"
+        }
+      ],
+      "example": {
+        "meta": {
+          "lastUpdated": "<div class='number-marker'>1</div>&quot;<mark class='red-highlight'>2020-12-09T16:19:38.679+00:00</mark>"
+        }
+      }
+    },
+    {
+      "title": "Medicare Beneficiary Identifier (Current)",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Medicare Beneficiary Identifier (Current)",
+          "field_description": "A Medicare Beneficiary Identifier (MBI) assigned to a beneficiary.  This particular (MBI) is the most recent/current identifier assigned to the beneficiary.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "MBI_NUM",
+          "type_size": "CHAR(11)"
+        }
+      ],
+      "example": {
+        "extension": [
+          {
+            "url": "&quot;<mark class='blue-highlight'>http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier</mark>",
+            "valueIdentifier": {
+              "extension": [
+                {
+                  "url": "&quot;<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/identifier-currency</mark>",
+                  "valueCoding": {
+                    "code": "&quot;<mark class='blue-highlight'>current</mark>"
+                  }
+                }
+              ],
+              "system": "&quot;<mark class='blue-highlight'>http://hl7.org/fhir/sid/us-mbi</mark>",
+              "value": "<div class='number-marker'>1</div>&quot;<mark class='red-highlight'>3456789</mark>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Final Action",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Final Action",
+          "field_description": "Indicator to demonstrate if a claim is still 'active' or not ('cancelled'). Final action records are only indicative of the latest accepted record within a claim family that has been linked by the Medicare Advantage Organization (MAO) and may not be indicative of risk-adjustment eligibility.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "FINAL_ACTION",
+          "type_size": "CHAR(9)"
+        }
+      ],
+      "example": {
+        "status": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>active</mark>"
+      }
+    },
+    {
+      "title": "Claim Period",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Claim Query Code",
+          "field_description": "Code indicating the type of claim record being processed with respect to payment (debit/credit indicator; interim/final indicator).",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "CLAIM_QUERY_CODE",
+          "type_size": "CHAR(1)"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Claim From Date",
+          "field_description": "The first day on the billing statement covering services rendered to the beneficiary (a.k.a. 'Statement Covers From Date').",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "CLM_FROM_DT",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div>Claim Through Date",
+          "field_description": "The last day on the billing statement covering services rendered to the beneficiary (a.k.a. 'Statement Covers Thru Date').",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "CLM_THRU_DT",
+          "type_size": "DATE"
+        }
+      ],
+      "example": {
+        "billablePeriod": {
+          "extension": [
+            {
+              "url": "&quot;<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/claim_query_cd</mark>",
+              "valueCoding": {
+                "system": "&quot;<mark class='blue-highlight' >https://bluebutton.cms.gov/resources/variables/claim_query_cd</mark>",
+                "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>3</mark>",
+                "display": "Final bill"
+              }
+            }
+          ],
+          "start": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>2011-01-24</mark>",
+          "end": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>2011-01-24</mark>"
+        }
+      }
+    },
+    {
+      "title": "Claim Type Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Claim Type Code",
+          "field_description": "The type of claim that was submitted. There are different claim types for each major category of health care provider.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "NCH_CLM_TYPE_CD",
+          "type_size": "CHAR(2)"
+        }
+      ],
+      "example": {
+        "type": {
+          "coding": [
+            {
+              "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/nch_clm_type_cd</mark>",
+              "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>10</mark>",
+              "display": "Home Health Agency (HHA) claim"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Near Line Record Identification Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Near Line Record Identification Code",
+          "field_description": "A code defining the type of claim record being processed.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "NCH_NEAR_LINE_REC_IDENT_CD",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "type": {
+          "coding": [
+            {
+              "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/nch_near_line_rec_ident_cd</mark>",
+              "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>W</mark>",
+              "display": "Part B institutional claim record (outpatient [HOP], HHA)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Operating Physician NPI",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Operating Physician NPI",
+          "field_description": "On an institutional claim, the National Provider Identifier (NPI) number assigned to uniquely identify the physician with the primary responsibility for performing the surgical procedure(s).",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "OP_PHYSN_NPI",
+          "type_size": "CHAR(10)"
+        }
+      ],
+      "example": {
+        "careTeam": [
+          {
+            "sequence": 2,
+            "provider": {
+              "identifier": {
+                "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/us-npi</mark>",
+                "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>3333333333</mark>"
+              }
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>http://hl7.org/fhir/claimcareteamrole</mark>",
+                  "code": "<mark class='blue-highlight'>assist</mark>",
+                  "display": "Assisting Provider"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Organization NPI",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Organization NPI",
+          "field_description": "The National Provider Identifier (NPI) of the organization or group practice.",
+          "claim_types": "Carrier",
+          "ccw_column_name": "ORG_NPI_NUM",
+          "type_size": "CHAR(10)"
+        }
+      ],
+      "example": {
+        "organization": {
+          "identifier": {
+            "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/us-npi</mark>",
+            "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>8886688117</mark>"
+          }
+        }
+      }
+    },
+    {
+      "title": "Other Physician NPI",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Other Physician NPI",
+          "field_description": "On an institutional claim, the National Provider Identifier (NPI) number assigned to uniquely identify the other physician associated with the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "OT_PHYSN_NPI",
+          "type_size": "CHAR(10)"
+        }
+      ],
+      "example": {
+        "careTeam": [
+          {
+            "sequence": 3,
+            "provider": {
+              "identifier": {
+                "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/us-npi</mark>",
+                "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>4444</mark>"
+              }
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>http://hl7.org/fhir/claimcareteamrole</mark>",
+                  "code": "<mark class='blue-highlight'>other</mark>",
+                  "display": "Other"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Performing/Provider Physician",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Provider Type Code",
+          "field_description": "Code identifying the type of provider furnishing the service for this line item on the carrier claim.",
+          "claim_types": "Carrier",
+          "ccw_column_name": "CARR_LINE_PRVDR_TYPE_CD",
+          "type_size": "CHAR(1)"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Performing Physician NPI",
+          "field_description": "The National Provider Identifier (NPI) assigned to the performing provider.",
+          "claim_types": "Carrier",
+          "ccw_column_name": "PRF_PHYSN_NPI",
+          "type_size": "CHAR(12)"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Provider NPI",
+          "field_description": "The National Provider Identifier (NPI) assigned to the supplier of the Part B service/DMEPOS line item.",
+          "claim_types": "DME,",
+          "ccw_column_name": "PRVDR_NPI",
+          "type_size": "CHAR(12)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Provider Participating Indicator Code",
+          "field_description": "Code indicating whether or not a provider is participating (accepting assignment) for this line-item service on the non-institutional claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "PRTCPTNG_IND_CD",
+          "type_size": "CHAR(1)"
+        },
+        {
+          "field_name": "<div class='number-marker'>4</div> Provider Speciality Code",
+          "field_description": "CMS (previously called HCFA) specialty code used for pricing the line-item service on the non-institutional claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "PRVDR_SPCLTY",
+          "type_size": "CHAR(3)"
+        }
+      ],
+      "example": {
+        "careTeam": [
+          {
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/carr_line_prvdr_type_cd</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/carr_line_prvdr_type_cd</mark>",
+                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>4</mark>",
+                  "display": "Independent laboratories"
+                }
+              }
+            ],
+            "sequence": 3,
+            "provider": {
+              "identifier": {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType</mark>",
+                      "code": "<mark class='blue-highlight'>npi</mark>",
+                      "display": "National Provider Identifier"
+                    }
+                  ]
+                },
+                "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/npi</mark>",
+                "value": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>3333333333</mark>"
+              }
+            },
+            "responsible": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>true</mark>",
+            "role": {
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>http://hl7.org/fhir/claimcareteamrole</mark>",
+                  "code": "<mark class='blue-highlight'>performing</mark>",
+                  "display": "Performing provider"
+                }
+              ]
+            },
+            "qualification": {
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_spclty</mark>",
+                  "code": "<div class='number-marker'>4</div> &quot;<mark class='red-highlight'>A5</mark>",
+                  "display": "Pharmacy (DMERC)"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Rendering Physician NPI",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Rendering Physician NPI",
+          "field_description": "This variable is the National Provider Identifier (NPI) for the physician who rendered the services.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "RNDRNG_PHYSN_NPI",
+          "type_size": "CHAR(12)"
+        }
+      ],
+      "example": {
+        "careTeam": [
+          {
+            "sequence": 5,
+            "provider": {
+              "identifier": {
+                "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/us-npi</mark>",
+                "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>345345345</mark>"
+              }
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>http://hl7.org/fhir/claimcareteamrole</mark>",
+                  "code": "<mark class='blue-highlight'>primary</mark>",
+                  "display": "Primary provider"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Attending Physician NPI",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Attending Physician NPI",
+          "field_description": "On an institutional claim, the national provider identifier (NPI) is a unique number assigned to identify the physician who has overall responsibility for the beneficiary's care and treatment.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "AT_PHYSN_NPI",
+          "type_size": "CHAR(10)"
+        }
+      ],
+      "example": {
+        "careTeam": [
+          {
+            "sequence": 4,
+            "provider": {
+              "identifier": {
+                "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/us-npi</mark>",
+                "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2222222222</mark>"
+              }
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>http://hl7.org/fhir/claimcareteamrole</mark>",
+                  "code": "<mark class='blue-highlight'>primary</mark>",
+                  "display": "Primary provider"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Claim Facility Type Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Claim Facility Type Code",
+          "field_description": "The type of facility.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "CLM_FAC_TYPE_CD",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "facility": {
+          "extension": [
+            {
+              "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_fac_type_cd</mark>",
+              "valueCoding": {
+                "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_fac_type_cd</mark>",
+                "code": "<div class='number-marker'>1</div>&quot;<mark class='red-highlight'>1</mark>",
+                "display": "Hospital"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Referring Provider Id Number",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Referring Provider Id Number",
+          "field_description": "The provider identification number (PIN) of the physician/supplier (assigned by the MAC) who referred the beneficiary to the physician who ordered these services.",
+          "claim_types": "Carrier",
+          "ccw_column_name": "CARR_CLM_RFRNG_PIN_NUM",
+          "type_size": "CHAR(14)"
+        }
+      ],
+      "example": {
+        "careTeam": [
+          {
+            "sequence": 4,
+            "provider": {
+              "identifier": {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType</mark>",
+                      "code": "<mark class='blue-highlight'>npi</mark>",
+                      "display": "National Provider Identifier"
+                    }
+                  ]
+                },
+                "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>1306849450</mark>"
+              }
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimCareTeamRole</mark>",
+                  "code": "<mark class='blue-highlight'>referring</mark>",
+                  "display": "Referring"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Reason For Visit Diagnosis Code 1",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Reason For Visit Diagnosis Code 1 Version",
+          "field_description": "The code used to indicate if the reason for visit diagnosis code is ICD-9 or ICD-10.",
+          "claim_types": "Outpatient",
+          "ccw_column_name": "RSN_VISIT_VRSN_CD1",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Reason For Visit Diagnosis Code 1",
+          "field_description": "The diagnosis code used to identify the patient's reason for the Hospital Outpatient visit.",
+          "claim_types": "Outpatient",
+          "ccw_column_name": "RSN_VISIT_CD1",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 5,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>reason-for-visit</mark>",
+                    "display": "A diagnosis code used to identify the patient's reason for the visit."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Reason For Visit Diagnosis Code 2",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Reason For Visit Diagnosis Code 2 Version",
+          "field_description": "The code used to indicate if the reason for visit diagnosis code is ICD-9 or ICD-10.",
+          "claim_types": "Outpatient",
+          "ccw_column_name": "RSN_VISIT_VRSN_CD2",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Reason For Visit Diagnosis Code 2",
+          "field_description": "The diagnosis code used to identify the patient's reason for the Hospital Outpatient visit.",
+          "claim_types": "Outpatient",
+          "ccw_column_name": "RSN_VISIT_CD2",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 5,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>reason-for-visit</mark>",
+                    "display": "A diagnosis code used to identify the patient's reason for the visit."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Reason For Visit Diagnosis Code 3",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Reason For Visit Diagnosis Code 3 Version",
+          "field_description": "The code used to indicate if the reason for visit diagnosis code is ICD-9 or ICD-10.",
+          "claim_types": "Outpatient",
+          "ccw_column_name": "RSN_VISIT_VRSN_CD3",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Reason For Visit Diagnosis Code 3",
+          "field_description": "The diagnosis code used to identify the patient's reason for the Hospital Outpatient visit.",
+          "claim_types": "Outpatient",
+          "ccw_column_name": "RSN_VISIT_CD3",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 5,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>reason-for-visit</mark>",
+                    "display": "A diagnosis code used to identify the patient's reason for the visit."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Admitting Diagnosis Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Admitting Diagnosis Code Version",
+          "field_description": "Effective with Version ‘J,’ the code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,SNF",
+          "ccw_column_name": "ADMTG_DGNS_VRSN_CD",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Admitting Diagnosis Code",
+          "field_description": "A diagnosis code on the institutional claim indicating the beneficiary's initial diagnosis at admission.",
+          "claim_types": "Inpatient,SNF",
+          "ccw_column_name": "ADMTG_DGNS_CD",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 2,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http: //hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>I2699</mark>",
+                  "display": "OTHER PULMONARY EMBOLISM WITHOUT ACUTE COR PULMONALE"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>&quot;admitting</mark>",
+                    "display": "The diagnosis given as the reason why the patient was admitted to the hospital."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Principal Diagnosis Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Principal Diagnosis Code Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "PRNCPAL_DGNS_VRSN_CD",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Principal Diagnosis Code",
+          "field_description": "The diagnosis code identifying the diagnosis, condition, problem, or other reason for the admission/encounter/visit shown in the medical record to be chiefly responsible for the services provided.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "PRNCPAL_DGNS_CD",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>I2699</mark>",
+                  "display": "OTHER PULMONARY EMBOLISM WITHOUT ACUTE COR PULMONALE"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>principal</mark>",
+                    "display": "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Related Diagnosis Group Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Related Diagnosis Group Code",
+          "field_description": "The diagnostic related group to which a hospital claim belongs for prospective payment purposes.",
+          "claim_types": "Inpatient,SNF",
+          "ccw_column_name": "CLM_DRG_CD",
+          "type_size": "CHAR(4)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "packageCode": {
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_drg_cd</mark>",
+                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>206</mark>"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 1",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 1 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD1",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 1",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD1",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 1 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW1",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>I2699</mark>",
+                  "display": "OTHER PULMONARY EMBOLISM WITHOUT ACUTE COR PULMONALE"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>principal</mark>",
+                    "display": "The single medical diagnosis that is most relevant to the patient's chief complaint or need for treatment."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 2",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 2 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD2",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 2",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD2",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 2 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW2",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw2</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw2</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 3",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 3 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD3",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 3",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD3",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 3 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW3",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw3</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw3</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 4",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 4 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD4",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 4",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD4",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 4 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW4",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw4</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw4</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 5",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 5 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD5",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 5",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD5",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 5 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW5",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw5</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw5</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 6",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 6 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD6",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 6",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD6",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 6 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW6",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw6</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw6</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 7",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 7 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD7",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 7",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD7",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 7 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW7",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw7</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw7</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 8",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 8 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD8",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 8",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD8",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 8 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW8",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw8</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw8</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 9",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 9 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD9",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 9",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD9",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 9 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW9",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw9</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw9</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 10",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 10 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD10",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 10",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD10",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 10 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW10",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw10</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 11",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 11",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD11",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 11 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD11",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 11 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW11",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw11</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw11</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 12",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 12 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD12",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 12",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD12",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 12 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW12",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw12</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw12</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 13",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 13 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD13",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 13",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD13",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 13 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW13",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw13</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw13</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 14",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 14 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD14",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 14",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD14",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 14 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW14",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw14</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw14</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 15",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 15 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD15",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 15",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD15",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 15 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW15",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw15</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw15</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 16",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 16 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD16",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 16",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD16",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 16 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW16",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw16</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw16</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 17",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 17 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD17",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 17",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD17",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 17 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW17",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw17</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw17</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 18",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 18 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD18",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 18",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD18",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 18 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW18",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw18</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw18</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 19",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 19 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD19",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 19",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD19",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 19 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW19",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw19</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw19</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 20",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 20 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD20",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 20",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD20",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 20 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW20",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw20</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw20</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 21",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 21 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD21",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 21",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD21",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 21 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW21",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw21</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw21</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 22",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 22 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD22",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 22",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD22",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 22 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW22",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw22</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw22</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 23",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 23 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD23",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 23",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD23",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 23 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW23",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw23</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw23</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 24",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 24 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD24",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 24",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD24",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 24 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW24",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw24</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw24</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Diagnosis Code 25",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 25 Version",
+          "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_VRSN_CD25",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 25",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD25",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Diagnosis Code 25 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_POA_IND_SW25",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
+                  "display": "Influenza due to other identified influenza virus"
+                }
+              ]
+            },
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw25</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw25</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
+                  "display": "Diagnosis was not present at the time of admission"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis First",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis First Code Version",
+          "field_description": "The code used to indicate if the diagnosis E code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "FST_DGNS_E_VRSN_CD",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis First Code",
+          "field_description": "The code used to identify the 1st external cause of injury, poisoning, or other adverse effect. This diagnosis E code is also stored as the 1st occurrence of the diagnosis E code trailer.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "FST_DGNS_E_CD",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external-first</mark>",
+                    "display": "The code used to identify the 1st external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 1",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 1 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD1",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 1",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD1",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 1 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient,",
+          "ccw_column_name": "CLM_E_POA_IND_SW1",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 2",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 2 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD2",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 2",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD2",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 2 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW2",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw2</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw2</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 3",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 3 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD3",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 3",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD3",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 3 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW3",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw3</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw3</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 4",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 4 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD4",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 4",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD4",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 4 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW4",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw4</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw4</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 5",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 5 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD5",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 5",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD5",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 5 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW5",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw5</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw5</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 6",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 6 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD6",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 6",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD6",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 6 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW6",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw6</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw6</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 7",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 7 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD7",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 7",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD7",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 7 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW7",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw7</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw7</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 8",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 8 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD8",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 8",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD8",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 8 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW8",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw8</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw8</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 9",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 9 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD9",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 9",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD9",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 9 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW9",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw9</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw9</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 10",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 10 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD10",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 10",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD10",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 10 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW10",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw10</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 11",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 11 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD11",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 11",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD11",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 11 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW11",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw11</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw11</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "External Diagnosis 12",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> External Diagnosis Code 12 Version",
+          "field_description": "The code used to indicate if the external diagnosis code is ICD-9/ICD-10.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_VRSN_CD12",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 12",
+          "field_description": "The code used to identify the external cause of injury, poisoning, or other adverse effect.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_E_CD12",
+          "type_size": "CHAR(7)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 12 Present On Admission",
+          "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
+          "claim_types": "Inpatient",
+          "ccw_column_name": "CLM_E_POA_IND_SW12",
+          "type_size": "CHAR(1)"
+        }
+      ],
+      "example": {
+        "diagnosis": [
+          {
+            "sequence": 3,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
+                  "display": "Pleural effusion, not elsewhere classified"
+                }
+              ]
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>external</mark>",
+                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                  }
+                ]
+              }
+            ],
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw12</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw12</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
+                  "display": "Diagnosis was present at the time of admission (POA)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 1",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 1 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT1",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 1 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD1",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 1",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD1",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 2",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 2 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT2",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 2 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD2",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 2",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD2",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 3",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 3 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT3",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 3 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD3",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 3",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD3",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 4",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 4 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT4",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 4 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD4",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 4",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD4",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 5",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 5 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT5",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 5 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD5",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 5",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD5",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 6",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 6 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT6",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 6 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD6",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 6",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD6",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 7",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 7 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT7",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 7 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD7",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 7",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD7",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 8",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 8 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT8",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 8 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD8",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 8",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD8",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 9",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 9 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT9",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 9 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD9",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 9",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD9",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 10",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 10 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT10",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 10 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD10",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 10",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD10",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 11",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 11 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT11",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 11 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD11",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 11",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD11",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 12",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 12 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT12",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 12 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD12",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 12",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD12",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 13",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 13 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT13",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 13 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD13",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 13",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD13",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 14",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 14 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT14",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 14 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD14",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 14",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD14",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 15",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 15 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT15",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 15 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD15",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 15",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD15",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 16",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 16 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT16",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 16 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD16",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 16",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD16",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 17",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 17 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT17",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 17 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD17",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 17",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD17",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 18",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 18 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT18",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 18 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD18",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 18",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD18",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 19",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 19 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT19",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 19 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD19",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 19",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD19",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 20",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 20 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT20",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 20 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD20",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 20",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD20",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 21",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 21 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT21",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 21 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD21",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 21",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD21",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 22",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 22 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT22",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 22 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD22",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 22",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD22",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 23",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 23 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT23",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 23 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD23",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 23",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD23",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 24",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 24 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT24",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 24 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD24",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 24",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD24",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Procedure Code 25",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Procedure Code 25 Date",
+          "field_description": "The date on which the procedure was performed. The date associated with the procedure identified in the corresponding procedure code.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "PRCDR_DT25",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Procedure Code 25 Version",
+          "field_description": "The code used to indicate if the procedure code is ICD-9 or ICD-10.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_VRSN_CD25",
+          "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Procedure Code 25",
+          "field_description": "The code that indicates the procedure performed during the period covered by the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "ICD_PRCDR_CD25",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "procedure": [
+          {
+            "sequence": 1,
+            "date": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2016-01-16T00:00:00+00:00</mark>",
+            "procedureCodeableConcept": {
+              "coding": [
+                {
+                  "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
+                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Claim Line Number",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Claim Line Number",
+          "field_description": "This variable identifies an individual line number on a claim.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "CLM_LINE_NUM",
+          "type_size": "NUM"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "sequence": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>6</mark>"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Line Number",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Line Number",
+          "field_description": "This variable identifies an individual line number on a claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "LINE_NUM",
+          "type_size": "NUM"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "sequence": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>6</mark>"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Provider Location",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> CLIA Lab Number",
+          "field_description": "The identification number assigned to the clinical laboratory providing services for the line item on the carrier claim (non-DMERC).",
+          "claim_types": "Carrier",
+          "ccw_column_name": "CARR_LINE_CLIA_LAB_NUM",
+          "type_size": "CHAR(10)"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Line Pricing Locality Code",
+          "field_description": "Code denoting the carrier-specific locality used for pricing the service for this line item on the carrier claim (non-DMERC).",
+          "claim_types": "Carrier",
+          "ccw_column_name": "CARR_LINE_PRCNG_LCLTY_CD",
+          "type_size": "CHAR(2)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Provider State Code",
+          "field_description": "The two-digit numeric social security administration (SSA) state code where provider or facility is located.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "PRVDR_STATE_CD",
+          "type_size": "CHAR(2)"
+        },
+        {
+          "field_name": "<div class='number-marker'>4</div> Provider Zip Code",
+          "field_description": "The ZIP code of the physician/supplier who performed the Part B service for this line item on the carrier claim (non-DMERC).",
+          "claim_types": "Carrier",
+          "ccw_column_name": "PRVDR_ZIP",
+          "type_size": "CHAR(9)"
+        },
+        {
+          "field_name": "<div class='number-marker'>5</div> Place Of Service Code",
+          "field_description": "The code indicating the place of service, as defined in the Medicare Carrier Manual, for this line item on the non-institutional claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "LINE_PLACE_OF_SRVC_CD",
+          "type_size": "CHAR(2)"
+        },
+        {
+          "field_name": "<div class='number-marker'>6</div> Supplier Type Code",
+          "field_description": "The type of DMERC supplier.",
+          "claim_types": "DME",
+          "ccw_column_name": "DMERC_LINE_SUPPLR_TYPE_CD",
+          "type_size": "CHAR(1)"
+        },
+        {
+          "field_name": "<div class='number-marker'>7</div> Pricing State Code",
+          "field_description": "The 2-digit SSA state code where the durable medical equipment (DME) supplier was located; used by the Medicare Administrative Contractor (MAC) for pricing the service.",
+          "claim_types": "DME",
+          "ccw_column_name": "DMERC_LINE_PRCNG_STATE_CD",
+          "type_size": "CHAR(2)"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "locationCodeableConcept": {
+              "extension": [
+                {
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/carr_line_clia_lab_num</mark>",
+                  "valueIdentifier": {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/carr_line_clia_lab_num</mark>",
+                    "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>BB889999AA</mark>"
+                  }
+                },
+                {
+                  "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/carr_line_prcng_lclty_cd</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/carr_line_prcng_lclty_cd</mark>",
+                    "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>22</mark>",
+                    "display": "Massachusetts"
+                  }
+                },
+                {
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_state_cd</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_state_cd</mark>",
+                    "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>IL</mark>"
+                  }
+                },
+                {
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_zip</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_zip</mark>",
+                    "code": "<div class='number-marker'>4</div> &quot;<mark class='red-highlight'>555558202</mark>"
+                  }
+                },
+                {
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_supplr_type_cd</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_supplr_type_cd</mark>",
+                    "code": "<div class='number-marker'>5</div> &quot;<mark class='red-highlight'>6</mark>",
+                    "display": "Institutional providers and independent laboratories for whom the carrier's own ID number is shown."
+                  }
+                }
+              ],
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/line_place_of_srvc_cd</mark>",
+                  "code": "<div class='number-marker'>6</div> &quot;<mark class='red-highlight'>11</mark>",
+                  "display": "Office. Location, other than a hospital, skilled nursing facility (SNF), military treatment facility, community health center, State or local public health clinic, or intermediate care facility (ICF), where the health professional routinely provides health examinations, diagnosis, and treatment of illness or injury on an ambulatory basis."
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Provider State Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Provider State Code",
+          "field_description": "The two-digit numeric social security administration (SSA) state code where provider or facility is located.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "PRVDR_STATE_CD",
+          "type_size": "CHAR(2)"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "locationAddress": {
+              "state": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>FL</mark>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Revenue Center Date",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Revenue Center Date",
+          "field_description": "This is the date of service for the revenue center record.",
+          "claim_types": "Outpatient,HHA,Hospice",
+          "ccw_column_name": "REV_CNTR_DT",
+          "type_size": "DATE"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "servicedDate": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2015-06-23</mark>"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Revenue Center National Drug Code Quantity",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Revenue Center National Drug Code Quantity",
+          "field_description": "The quantity dispensed for the drug reflected on the revenue center line item.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "REV_CNTR_NDC_QTY",
+          "type_size": "NUM"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/rev_cntr_ndc_qty</mark>",
+                "valueQuantity": {
+                  "value": 666,
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/rev_cntr_ndc_qty_qlfr_cd</mark>",
+                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>DD</mark>"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Item Service",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Anesthesia Unit Count",
+          "field_description": "The base number of units assigned to the line item anesthesia procedure on the carrier claim (non-DMERC).",
+          "claim_types": "Carrier",
+          "ccw_column_name": "CARR_LINE_ANSTHSA_UNIT_CNT",
+          "type_size": "NUM(2)"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> HCPCS Code",
+          "field_description": "The Healthcare Common Procedure Coding System (HCPCS) is a collection of codes that represent procedures, supplies, products, and services which may be provided to Medicare beneficiaries and to individuals enrolled in private health insurance programs.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "HCPCS_CD",
+          "type_size": "CHAR(5)"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "service": {
+              "extension": [
+                {
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/carr_line_ansthsa_unit_cnt</mark>",
+                  "valueQuantity": {
+                    "value": "<div class='number-marker'>2</div> &quot;<mark class ='red-highlight'>5</mark>"
+                  }
+                }
+              ],
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/hcpcs</mark>",
+                  "version": "5",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class ='red-highlight'>92999</mark>"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Expense Date",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> First Expense Date",
+          "field_description": "Beginning date (1st expense) for this line-item service on the non-institutional claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "LINE_1ST_EXPNS_DT",
+          "type_size": "DATE"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Last Expense Date",
+          "field_description": "The ending date (last expense) for the line-item service on the non-institutional claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "LINE_LAST_EXPNS_DT",
+          "type_size": "DATE"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "servicedPeriod": {
+              "start": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>1999-10-27</mark>",
+              "end": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>1999-10-27</mark>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Line Item Care Team Link Ids",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Line Item Care Team Link Ids",
+          "field_description": "A link to the sequence value of the eob.careTeam item.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "N/A",
+          "type_size": "LIST of NUM"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "careTeamLinkId": [
+              "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2</mark>",
+              "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>3</mark>"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Line Item Diagnosis Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Line Item Diagnosis Code",
+          "field_description": "The code indicating the diagnosis supporting this line-item procedure/service on the non-institutional claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "LINE_ICD_DGNS_CD",
+          "type_size": "CHAR(7)"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "diagnosisLinkId": [
+              "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2</mark>"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Service Count",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Service Count",
+          "field_description": "The count of the total number of services processed for the line item on the non-institutional claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "LINE_SRVC_CNT",
+          "type_size": "NUM"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "quantity": {
+              "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>0</mark>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Line National Drug Code",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Line National Drug Code",
+          "field_description": "On the DMERC claim, the National Drug Code identifying the oral anti-cancer drugs. This line-item field was added as a placeholder on the Carrier claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "LINE_NDC_CD",
+          "type_size": "CHAR(11)"
+        },
+        {
+          "field_name": "<div class='number-marker'>1</div> Revenue Center National Drug Code",
+          "field_description": "This field may contain one of three types of identifiers: the National Drug Code (NDC), the Universal Product Code (UPC), or the number assigned by the Food and Drug Administration (FDA) to an investigational device (IDE) after the manufacturer has approval to conduct a clinical trial.",
+          "claim_types": "Outpatient",
+          "ccw_column_name": "REV_CNTR_IDE_NDC_UPC_NUM",
+          "type_size": "CHAR(24)"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "productOrService": {
+              "extension": [
+                {
+                  "url": "<mark class='blue-highlight'>&quot;http://hl7.org/fhir/sid/ndc</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>&quot;http://hl7.org/fhir/sid/ndc</mark>",
+                    "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>987654321</mark>",
+                    "display": "ACETAMINOPHEN AND CODEINE PHOSPHATE - ACETAMINOPHEN; CODEINE PHOSPHATE"
+                  }
+                },
+                {
+                  "url": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/ndc</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/hcpcs_cd</mark>",
+                    "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>987654321</mark>",
+                    "display": "ACETAMINOPHEN AND CODEINE PHOSPHATE - ACETAMINOPHEN; CODEINE PHOSPHATE"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
