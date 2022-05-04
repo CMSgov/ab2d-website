@@ -354,8 +354,8 @@ active-nav: understanding-the-data-nav
         <div class='type-size'>type (size)</div>
         <div class='example'>example</div>
         <div class='legend'>
-          <pre class='blue-highlight'>value</pre>
-          <pre class='red-highlight'>descriminator</pre>
+          <pre class='red-highlight'>value</pre>
+          <pre class='blue-highlight'>descriminator</pre>
         </div>
       </div>
     </div>

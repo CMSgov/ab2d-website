@@ -15,7 +15,7 @@
       "example": {
         "identifier": [
           {
-            "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_id</mark>",
+            "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_id</mark>",
             "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>9991831999</mark>"
           }
         ]
@@ -35,7 +35,7 @@
       "example": {
         "identifier": [
           {
-            "system": "&quot;<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/identifier/claim-group</mark>",
+            "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/identifier/claim-group</mark>",
             "value": "<div class='number-marker'>1</div>&quot;<mark class='red-highlight'>9991831999</mark>"
           }
         ]
@@ -54,7 +54,7 @@
       ],
       "example": {
         "patient": {
-          "reference": "Patient/  <div class='number-marker'>1</div>&quot;<mark class='red-highlight'>-199900000022040</mark>"
+          "reference": "Patient/  <div class='number-marker'>1</div><mark class='red-highlight'>-199900000022040</mark>"
         }
       }
     },
@@ -70,7 +70,7 @@
         }
       ],
       "example": {
-        "id": "<div class='number-marker'>1</div>&quot;<mark class='red-highlight'>1111</mark>"
+        "id": "<div class='number-marker'>1</div> <mark class='red-highlight'>1111</mark>"
       }
     },
     {
@@ -285,12 +285,19 @@
         }
       ],
       "example": {
-        "organization": {
-          "identifier": {
-            "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/us-npi</mark>",
-            "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>8886688117</mark>"
+        "careTeam": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/sid/us-npi",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/us-npi</mark>",
+                  "code": "<div class='number-marker'>1</div> &quot;8886688117</mark>"
+                }
+              }
+            ]
           }
-        }
+        ]
       }
     },
     {
@@ -580,8 +587,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>E785</mark>",
+                  "display": "HYPERLIPIDEMIA, UNSPECIFIED"
                 }
               ]
             },
@@ -626,8 +633,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J329</mark>",
+                  "display": "CHRONIC SINUSITIS, UNSPECIFIED"
                 }
               ]
             },
@@ -672,8 +679,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>J45909</mark>",
+                  "display": "UNSPECIFIED ASTHMA, UNCOMPLICATED"
                 }
               ]
             },
@@ -764,8 +771,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>I2699</mark>",
-                  "display": "OTHER PULMONARY EMBOLISM WITHOUT ACUTE COR PULMONALE"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>B9789</mark>",
+                  "display": "OTH VIRAL AGENTS AS THE CAUSE OF DISEASES CLASSD ELSWHR"
                 }
               ]
             },
@@ -843,8 +850,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>I2699</mark>",
-                  "display": "OTHER PULMONARY EMBOLISM WITHOUT ACUTE COR PULMONALE"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>B002</mark>",
+                  "display": "HERPESVIRAL GINGIVOSTOMATITIS AND PHARYNGOTONSILLITIS"
                 }
               ]
             },
@@ -906,8 +913,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>E785</mark>",
+                  "display": "HYPERLIPIDEMIA, UNSPECIFIED"
                 }
               ]
             },
@@ -1010,8 +1017,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>B349</mark>",
+                  "display": "VIRAL INFECTION, UNSPECIFIED"
                 }
               ]
             },
@@ -1062,8 +1069,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>E785</mark>",
+                  "display": "HYPERLIPIDEMIA, UNSPECIFIED"
                 }
               ]
             },
@@ -1114,8 +1121,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>M19049</mark>",
+                  "display": "PRIMARY OSTEOARTHRITIS, UNSPECIFIED HAND"
                 }
               ]
             },
@@ -1166,8 +1173,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>B9789</mark>",
+                  "display": "OTH VIRAL AGENTS AS THE CAUSE OF DISEASES CLASSD ELSWHR"
                 }
               ]
             },
@@ -1218,8 +1225,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J208</mark>",
+                  "display": "ACUTE BRONCHITIS DUE TO OTHER SPECIFIED ORGANISMS"
                 }
               ]
             },
@@ -1270,8 +1277,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>E11319</mark>",
+                  "display": "TYPE 2 DIABETES W UNSP DIABETIC RTNOP W/O MACULAR EDEMA"
                 }
               ]
             },
@@ -1322,8 +1329,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>R5081</mark>",
+                  "display": "FEVER PRESENTING WITH CONDITIONS CLASSIFIED ELSEWHERE"
                 }
               ]
             },
@@ -1374,8 +1381,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J0390</mark>",
+                  "display": "ACUTE TONSILLITIS, UNSPECIFIED"
                 }
               ]
             },
@@ -1426,8 +1433,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>C189</mark>",
+                  "display": "MALIGNANT NEOPLASM OF COLON, UNSPECIFIED"
                 }
               ]
             },
@@ -1478,8 +1485,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>N390</mark>",
+                  "display": "URINARY TRACT INFECTION, SITE NOT SPECIFIED"
                 }
               ]
             },
@@ -1530,8 +1537,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>B085</mark>",
+                  "display": "ENTEROVIRAL VESICULAR PHARYNGITIS"
                 }
               ]
             },
@@ -1582,8 +1589,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>E781</mark>",
+                  "display": "PURE HYPERGLYCERIDEMIA"
                 }
               ]
             },
@@ -1634,8 +1641,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>D649</mark>",
+                  "display": "ANEMIA, UNSPECIFIED"
                 }
               ]
             },
@@ -1686,8 +1693,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>E8881</mark>",
+                  "display": "METABOLIC SYNDROME"
                 }
               ]
             },
@@ -1738,8 +1745,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>I1310</mark>",
+                  "display": "HYP HRT & CHR KDNY DIS W/O HRT FAIL, W STG 1-4/UNSP CHR KDNY"
                 }
               ]
             },
@@ -1790,8 +1797,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>E119</mark>",
+                  "display": "TYPE 2 DIABETES MELLITUS WITHOUT COMPLICATIONS"
                 }
               ]
             },
@@ -1842,8 +1849,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>P84</mark>",
+                  "display": "OTHER PROBLEMS WITH NEWBORN"
                 }
               ]
             },
@@ -1894,8 +1901,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>I2510</mark>",
+                  "display": "ATHSCL HEART DISEASE OF NATIVE CORONARY ARTERY W/O ANG PCTRS"
                 }
               ]
             },
@@ -1946,8 +1953,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>E669</mark>",
+                  "display": "OBESITY, UNSPECIFIED"
                 }
               ]
             },
@@ -1998,8 +2005,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>Z89129</mark>",
+                  "display": "ACQUIRED ABSENCE OF UNSPECIFIED WRIST"
                 }
               ]
             },
@@ -2050,8 +2057,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>P292</mark>",
+                  "display": "NEONATAL HYPERTENSION"
                 }
               ]
             },
@@ -2102,8 +2109,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J10</mark>",
-                  "display": "Influenza due to other identified influenza virus"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>G53</mark>",
+                  "display": "CRANIAL NERVE DISORDERS IN DISEASES CLASSIFIED ELSEWHERE"
                 }
               ]
             },
@@ -2147,8 +2154,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>N3080</mark>",
+                  "display": "OTHER CYSTITIS WITHOUT HEMATURIA"
                 }
               ]
             },
@@ -2200,8 +2207,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>P229</mark>",
+                  "display": "RESPIRATORY DISTRESS OF NEWBORN, UNSPECIFIED"
                 }
               ]
             },
@@ -2263,8 +2270,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>E781</mark>",
+                  "display": "PURE HYPERGLYCERIDEMIA"
                 }
               ]
             },
@@ -2326,8 +2333,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>B085</mark>",
+                  "display": "ENTEROVIRAL VESICULAR PHARYNGITIS"
                 }
               ]
             },
@@ -2389,8 +2396,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>R0600</mark>",
+                  "display": "DYSPNEA, UNSPECIFIED"
                 }
               ]
             },
@@ -2452,8 +2459,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>M179</mark>",
+                  "display": "OSTEOARTHRITIS OF KNEE, UNSPECIFIED"
                 }
               ]
             },
@@ -2515,8 +2522,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>K621</mark>",
+                  "display": "RECTAL POLYP"
                 }
               ]
             },
@@ -2578,8 +2585,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>R062</mark>",
+                  "display": "WHEEZING"
                 }
               ]
             },
@@ -2641,8 +2648,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>R5383</mark>",
+                  "display": "OTHER FATIGUE"
                 }
               ]
             },
@@ -2704,8 +2711,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>N181</mark>",
+                  "display": "CHRONIC KIDNEY DISEASE, STAGE 1"
                 }
               ]
             },
@@ -2767,8 +2774,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>Z9049</mark>",
+                  "display": "ACQUIRED ABSENCE OF OTHER SPECIFIED PARTS OF DIGESTIVE TRACT"
                 }
               ]
             },
@@ -2830,8 +2837,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>R52</mark>",
+                  "display": "PAIN, UNSPECIFIED"
                 }
               ]
             },
@@ -2893,8 +2900,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>J90</mark>",
-                  "display": "Pleural effusion, not elsewhere classified"
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>S42009</mark>",
+                  "display": "FRACTURE OF UNSPECIFIED PART OF UNSPECIFIED CLAVICLE"
                 }
               ]
             },
@@ -3000,8 +3007,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>BW03ZZZ</mark>",
+                  "display": "PLAIN RADIOGRAPHY OF CHEST"
                 }
               ]
             }
@@ -3043,8 +3050,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A09559</mark>",
+                  "display": "ASSISTANCE WITH RESP VENTILATION, >96 HRS, CONT NEG AIR"
                 }
               ]
             }
@@ -3086,8 +3093,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>0BH13EZ</mark>",
+                  "display": "INSERTION OF ENDOTRACHEAL AIRWAY INTO TRACHEA, PERC APPROACH"
                 }
               ]
             }
@@ -3129,8 +3136,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A12012</mark>",
+                  "display": "PERFORMANCE OF CARDIAC OUTPUT, SINGLE, MANUAL"
                 }
               ]
             }
@@ -3172,8 +3179,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A0221D</mark>",
+                  "display": "ASSIST WITH CARDIAC OUTPUT USING IMPELLER PUMP, CONTINUOUS"
                 }
               ]
             }
@@ -3215,8 +3222,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A1955Z</mark>",
+                  "display": "RESPIRATORY VENTILATION, GREATER THAN 96 CONSECUTIVE HOURS"
                 }
               ]
             }
@@ -3258,8 +3265,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>0U2DXHZ</mark>",
+                  "display": "CHANGE CONTRACEP DEV IN UTERUS & CERVIX, EXTERN APPROACH"
                 }
               ]
             }
@@ -3301,8 +3308,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A02215</mark>",
+                  "display": "ASSIST W CARDIAC OUTPUT W PULS COMPRESSION, CONTINUOUS"
                 }
               ]
             }
@@ -3344,8 +3351,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A0945Z</mark>",
+                  "display": "ASSISTANCE WITH RESPIRATORY VENTILATION, 24-96 HRS"
                 }
               ]
             }
@@ -3387,8 +3394,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A05121</mark>",
+                  "display": "EXTRACORPOREAL HYPERBARIC OXYGENATION, INTERMITTENT"
                 }
               ]
             }
@@ -3430,8 +3437,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A1935Z</mark>",
+                  "display": "RESPIRATORY VENTILATION, LESS THAN 24 CONSECUTIVE HOURS"
                 }
               ]
             }
@@ -3473,8 +3480,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>0BP1XDZ</mark>",
+                  "display": "REMOVAL OF INTRALUMINAL DEVICE FROM TRACHEA, EXTERN APPROACH"
                 }
               ]
             }
@@ -3516,8 +3523,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A02110</mark>",
+                  "display": "ASSIST WITH CARDIAC OUTPUT USING BALLOON PUMP, INTERMITTENT"
                 }
               ]
             }
@@ -3559,8 +3566,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A09358</mark>",
+                  "display": "ASSISTANCE WITH RESP VENTILATION, <24 HRS, INTERMIT POS AIR"
                 }
               ]
             }
@@ -3602,8 +3609,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A1221Z</mark>",
+                  "display": "RESPIRATORY VENTILATION, SINGLE, NONMECHANICAL"
                 }
               ]
             }
@@ -3645,8 +3652,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A02116</mark>",
+                  "display": "ASSIST WITH CARDIAC OUTPUT USING OTHER PUMP, INTERMITTENT"
                 }
               ]
             }
@@ -3688,8 +3695,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A1C60Z</mark>",
+                  "display": "PERFORMANCE OF BILIARY FILTRATION, MULTIPLE"
                 }
               ]
             }
@@ -3731,8 +3738,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A09458</mark>",
+                  "display": "ASSIST WITH RESP VENTILATION, 24-96 HRS, INTERMIT POS AIR"
                 }
               ]
             }
@@ -3774,8 +3781,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A1C00Z</mark>",
+                  "display": "PERFORMANCE OF BILIARY FILTRATION, SINGLE"
                 }
               ]
             }
@@ -3817,8 +3824,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>0VB04ZX</mark>",
+                  "display": "EXCISION OF PROSTATE, PERC ENDO APPROACH, DIAGN"
                 }
               ]
             }
@@ -3860,8 +3867,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A02216</mark>",
+                  "display": "ASSISTANCE WITH CARDIAC OUTPUT USING OTHER PUMP, CONTINUOUS"
                 }
               ]
             }
@@ -3903,8 +3910,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>0VB08ZZ</mark>",
+                  "display": "EXCISION OF PROSTATE, ENDO"
                 }
               ]
             }
@@ -3946,8 +3953,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A2204Z</mark>",
+                  "display": "RESTORATION OF CARDIAC RHYTHM, SINGLE"
                 }
               ]
             }
@@ -3989,8 +3996,8 @@
               "coding": [
                 {
                   "system": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>http://hl7.org/fhir/sid/icd-10</mark>",
-                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>8E0Y0CZ</mark>",
-                  "display": "ROBOTIC ASSISTED PROCEDURE OF LOWER EXTREMITY, OPEN APPROACH"
+                  "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>5A0522C</mark>",
+                  "display": "EXTRACORPOREAL SUPERSATURATED OXYGENATION, CONTINUOUS"
                 }
               ]
             }
