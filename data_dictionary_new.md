@@ -208,7 +208,6 @@ active-nav: understanding-the-data-nav
     $('#versions').val('r4-v2')
   })
   function getVersionValue (sel) {
-    console.log(sel.value);
     callFetch(sel.value)
   }
 </script>

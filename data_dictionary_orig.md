@@ -143,8 +143,6 @@ active-nav: understanding-the-data-nav
             $("#index").removeClass("sticky");
             $("#scroll-to-top").removeClass("show");
         }
-
-
     } 
 </script>
 
