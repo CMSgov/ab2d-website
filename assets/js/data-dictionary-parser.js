@@ -14,10 +14,12 @@ const callFetch = (file) => {
   }
 
   $('#data_dictionary').empty()
+  $('.description').empty()
 
   fetch(selectedFile)
     .then(res => res.json())
     .then(json => {
+      $('.description').html(json.description)
       json.sections.forEach(section => {
         createSection($, section)
       })
@@ -101,5 +103,9 @@ const createClaimTypes = (claimTypes, definition_markup) => {
 
 const createExample = (example) => {
   const code = $('<code>').html(JSON.stringify(example, null, 2))
-  return $('<pre class="example">').append(code)
+  const legend = $("<div class='legend'><pre class= 'blue-highlight'>value</pre ><pre class='red-highlight'>descriminator</pre></div >")
+  const preExample = $('<pre class="example">')
+  preExample.append(legend)
+  preExample.append(code)
+  return preExample
 }
