@@ -920,9 +920,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw2</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw2</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -972,9 +972,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw3</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw3</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1024,9 +1024,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw4</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw4</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1076,9 +1076,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw5</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw5</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1128,9 +1128,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw6</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw6</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1180,9 +1180,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw7</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw7</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1232,9 +1232,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw8</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw8</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1284,9 +1284,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw9</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw9</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1336,9 +1336,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw10</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw10</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1388,9 +1388,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw11</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw11</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1440,9 +1440,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw12</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw12</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1492,9 +1492,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw13</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw13</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1544,9 +1544,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw14</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw14</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1596,9 +1596,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw15</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw15</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1648,9 +1648,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw16</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw16</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1700,9 +1700,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw17</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw17</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1752,9 +1752,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw18</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw18</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1804,9 +1804,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw19</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw19</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1856,9 +1856,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw20</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw20</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1908,9 +1908,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw21</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw21</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -1960,9 +1960,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw22</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw22</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -2012,9 +2012,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw23</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw23</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -2064,9 +2064,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw24</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw24</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -2116,9 +2116,9 @@
             },
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw25</mark>",
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw25</mark>",
+                  "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>N</mark>",
                   "display": "Diagnosis was not present at the time of admission"
                 }
@@ -2288,9 +2288,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw2</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw2</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2351,9 +2351,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw3</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw3</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2414,9 +2414,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw4</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw4</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2477,9 +2477,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw5</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw5</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2540,9 +2540,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw6</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw6</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2603,9 +2603,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw7</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw7</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2666,9 +2666,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw8</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw8</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2729,9 +2729,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw9</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw9</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2792,9 +2792,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw10</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw10</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2855,9 +2855,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw11</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw11</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }
@@ -2918,9 +2918,9 @@
             ],
             "extension": [
               {
-                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw12</mark>",
+                "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                 "valueCoding": {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw12</mark>",
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1</mark>",
                   "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>Y</mark>",
                   "display": "Diagnosis was present at the time of admission (POA)"
                 }

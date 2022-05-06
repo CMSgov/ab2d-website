@@ -27,7 +27,7 @@
             "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_id</mark>",
             "value": "<div class='number-marker'>1</div>&quot;<mark class='red-highlight'>-10000001619313</mark>"
           }
-          ]
+        ]
       }
     },
     {
@@ -310,6 +310,48 @@
       }
     },
     {
+      "title": "Operating Physician UPIN",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Operating Physician UPIN",
+          "field_description": "On an institutional claim, the unique physician identification number (UPIN) of the other physician associated with the institutional claim.",
+          "claim_types": "Inpatient,Outpatient,SNF",
+          "ccw_column_name": "OP_PHYSN_UPIN",
+          "type_size": "CHAR(6)"
+        }
+      ],
+      "example": {
+        "careTeam": [
+          {
+            "sequence": 3,
+            "provider": {
+              "identifier": {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "code": "<mark class='blue-highlight'>UPIN</mark>",
+                      "display": "Medicare/CMS (formerly HCFA)'s Universal Physician Identification numbers"
+                    }
+                  ]
+                },
+                "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>999539</mark>"
+              }
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimCareTeamRole",
+                  "code": "<mark class='blue-highlight'>operating</mark>",
+                  "display": "Operating"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
       "title": "Organization NPI",
       "definitions": [
         {
@@ -561,6 +603,48 @@
       }
     },
     {
+      "title": "Rendering Physician UPIN",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Rendering Physician UPIN",
+          "field_description": "This variable is the unique physician identification number (UPIN) for the physician who rendered the services on the revenue center record.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "RNDRNG_PHYSN_UPIN",
+          "type_size": "CHAR(6)"
+        }
+      ],
+      "example": {
+        "careTeam": [
+          {
+            "sequence": 2,
+            "provider": {
+              "identifier": {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "code": "<mark class='blue-highlight'>UPIN</mark>",
+                      "display": "Medicare/CMS (formerly HCFA)'s Universal Physician Identification numbers"
+                    }
+                  ]
+                },
+                "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>123539</mark>"
+              }
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimCareTeamRole",
+                  "code": "<mark class='blue-highlight'>performing</mark>",
+                  "display": "Performing provider"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
       "title": "Attending Physician NPI",
       "definitions": [
         {
@@ -606,7 +690,7 @@
       "title": "Attending Physician UPIN",
       "definitions": [
         {
-          "field_name": "Attending Physician UPIN",
+          "field_name": "<div class='number-marker'>1</div> Attending Physician UPIN",
           "field_description": "On an institutional claim, the unique physician identification number (UPIN) of the physician who would normally be expected to certify and recertify the medical necessity of the services rendered and/or who has primary responsibility for the beneficiary's medical care and treatment (attending physician).",
           "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
           "ccw_column_name": "AT_PHYSN_UPIN",
@@ -627,7 +711,8 @@
                       "display": "Medicare/CMS (formerly HCFA)'s Universal Physician Identification numbers"
                     }
                   ]
-                }
+                },
+                "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>123539</mark>"
               }
             },
             "role": {
@@ -639,7 +724,8 @@
                 }
               ]
             }
-          } ]
+          }
+        ]
       }
     },
     {
@@ -745,9 +831,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>reason-for-visit</mark>",
-                    "display": "A diagnosis code used to identify the patient's reason for the visit."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>patientreasonforvisit</mark>",
+                    "display": "Patient Reason for Visit."
                   }
                 ]
               }
@@ -791,9 +877,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>reason-for-visit</mark>",
-                    "display": "A diagnosis code used to identify the patient's reason for the visit."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>patientreasonforvisit</mark>",
+                    "display": "Patient Reason for Visit."
                   }
                 ]
               }
@@ -837,9 +923,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>reason-for-visit</mark>",
-                    "display": "A diagnosis code used to identify the patient's reason for the visit."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>patientreasonforvisit</mark>",
+                    "display": "Patient Reason for Visit."
                   }
                 ]
               }
@@ -954,11 +1040,26 @@
       "example": {
         "diagnosis": [
           {
-            "packageCode": {
+            "sequence": 5,
+            "category": {
               "coding": [
                 {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_drg_cd</mark>",
-                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>206</mark>"
+                  "system": "http://terminology.hl7.org/CodeSystem/claiminformationcategory",
+                  "code": "info",
+                  "display": "Information"
+                },
+                {
+                  "system": "https://bluebutton.cms.gov/resources/codesystem/information",
+                  "code": "https://bluebutton.cms.gov/resources/variables/clm_drg_cd",
+                  "display": "Claim Diagnosis Related Group Code (or MS-DRG Code)"
+                }
+              ]
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "https://bluebutton.cms.gov/resources/variables/clm_drg_cd",
+                  "code": "206"
                 }
               ]
             }
@@ -1067,6 +1168,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw2</mark>",
@@ -1119,6 +1231,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw3</mark>",
@@ -1171,6 +1294,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw4</mark>",
@@ -1223,6 +1357,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw5</mark>",
@@ -1275,6 +1420,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw6</mark>",
@@ -1327,6 +1483,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw7</mark>",
@@ -1379,6 +1546,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw8</mark>",
@@ -1431,6 +1609,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw9</mark>",
@@ -1483,6 +1672,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw10</mark>",
@@ -1535,6 +1735,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw11</mark>",
@@ -1587,6 +1798,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw12</mark>",
@@ -1639,6 +1861,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw13</mark>",
@@ -1691,6 +1924,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw14</mark>",
@@ -1743,6 +1987,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw15</mark>",
@@ -1795,6 +2050,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw16</mark>",
@@ -1847,6 +2113,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw17</mark>",
@@ -1899,6 +2176,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw18</mark>",
@@ -1951,6 +2239,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw19</mark>",
@@ -2003,6 +2302,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw20</mark>",
@@ -2055,6 +2365,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw21</mark>",
@@ -2107,6 +2428,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw22</mark>",
@@ -2159,6 +2491,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw23</mark>",
@@ -2211,6 +2554,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw24</mark>",
@@ -2263,6 +2617,17 @@
                 }
               ]
             },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
+                    "code": "<mark class='blue-highlight'>other</mark>",
+                    "display": "Other"
+                  }
+                ]
+              }
+            ],
             "extension": [
               {
                 "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw25</mark>",
@@ -2312,9 +2677,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external-first</mark>",
-                    "display": "The code used to identify the 1st external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2365,9 +2730,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2428,9 +2793,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2491,9 +2856,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2554,9 +2919,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2617,9 +2982,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2680,9 +3045,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2743,9 +3108,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2806,9 +3171,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2869,9 +3234,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2932,9 +3297,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -2995,9 +3360,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -3058,9 +3423,9 @@
               {
                 "coding": [
                   {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/diagnosis-type</mark>",
-                    "code": "<mark class='blue-highlight'>external</mark>",
-                    "display": "A code used to identify an external cause of injury, poisoning, or other adverse effect."
+                    "system": "<mark class='blue-highlight'>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBClaimDiagnosisType</mark>",
+                    "code": "<mark class='blue-highlight'>externalcauseofinjury</mark>",
+                    "display": "External Cause of Injury"
                   }
                 ]
               }
@@ -4196,32 +4561,32 @@
       "title": "Provider Location",
       "definitions": [
         {
-          "field_name": "<div class='number-marker'>1</div> CLIA Lab Number",
-          "field_description": "The identification number assigned to the clinical laboratory providing services for the line item on the carrier claim (non-DMERC).",
-          "claim_types": "Carrier",
-          "ccw_column_name": "CARR_LINE_CLIA_LAB_NUM",
-          "type_size": "CHAR(10)"
-        },
-        {
-          "field_name": "<div class='number-marker'>2</div> Line Pricing Locality Code",
-          "field_description": "Code denoting the carrier-specific locality used for pricing the service for this line item on the carrier claim (non-DMERC).",
-          "claim_types": "Carrier",
-          "ccw_column_name": "CARR_LINE_PRCNG_LCLTY_CD",
-          "type_size": "CHAR(2)"
-        },
-        {
-          "field_name": "<div class='number-marker'>3</div> Provider State Code",
+          "field_name": "<div class='number-marker'>1</div> Provider State Code",
           "field_description": "The two-digit numeric social security administration (SSA) state code where provider or facility is located.",
           "claim_types": "Carrier,DME",
           "ccw_column_name": "PRVDR_STATE_CD",
           "type_size": "CHAR(2)"
         },
         {
-          "field_name": "<div class='number-marker'>4</div> Provider Zip Code",
+          "field_name": "<div class='number-marker'>2</div> Provider Zip Code",
           "field_description": "The ZIP code of the physician/supplier who performed the Part B service for this line item on the carrier claim (non-DMERC).",
           "claim_types": "Carrier",
           "ccw_column_name": "PRVDR_ZIP",
           "type_size": "CHAR(9)"
+        },
+        {
+          "field_name": "<div class='number-marker'>3</div> Line Pricing Locality Code",
+          "field_description": "Code denoting the carrier-specific locality used for pricing the service for this line item on the carrier claim (non-DMERC).",
+          "claim_types": "Carrier",
+          "ccw_column_name": "CARR_LINE_PRCNG_LCLTY_CD",
+          "type_size": "CHAR(2)"
+        },
+        {
+          "field_name": "<div class='number-marker'>4</div> CLIA Lab Number",
+          "field_description": "The identification number assigned to the clinical laboratory providing services for the line item on the carrier claim (non-DMERC).",
+          "claim_types": "Carrier",
+          "ccw_column_name": "CARR_LINE_CLIA_LAB_NUM",
+          "type_size": "CHAR(10)"
         },
         {
           "field_name": "<div class='number-marker'>5</div> Place Of Service Code",
@@ -4229,16 +4594,87 @@
           "claim_types": "Carrier,DME",
           "ccw_column_name": "LINE_PLACE_OF_SRVC_CD",
           "type_size": "CHAR(2)"
-        },
+        }
+
+      ],
+      "example": {
+        "item": [
+          {
+            "locationCodeableConcept": {
+              "extension": [
+                {
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_state_cd</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_state_cd</mark>",
+                    "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>IL</mark>"
+                  }
+                },
+                {
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_zip</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_zip</mark>",
+                    "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>555558202</mark>"
+                  }
+                },
+                {
+                  "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/carr_line_prcng_lclty_cd</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/carr_line_prcng_lclty_cd</mark>",
+                    "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>22</mark>",
+                    "display": "Massachusetts"
+                  }
+                },
+                {
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/carr_line_clia_lab_num</mark>",
+                  "valueIdentifier": {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/carr_line_clia_lab_num</mark>",
+                    "value": "<div class='number-marker'>4</div> &quot;<mark class='red-highlight'>BB889999AA</mark>"
+                  }
+                }
+              ],
+              "coding": [ {
+                "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/line_place_of_srvc_cd</mark>",
+                "code": "<div class='number-marker'>5</div> &quot;<mark class='red-highlight'>12</mark>",
+                "display": "Home. Location, other than a hospital or other facility, where the patient receives care in a private residence."
+              } ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Supplier Type Code",
+      "definitions": [
         {
-          "field_name": "<div class='number-marker'>6</div> Supplier Type Code",
+          "field_name": "<div class='number-marker'>1</div> Supplier Type Code",
           "field_description": "The type of DMERC supplier.",
           "claim_types": "DME",
           "ccw_column_name": "DMERC_LINE_SUPPLR_TYPE_CD",
           "type_size": "CHAR(1)"
-        },
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_supplr_type_cd</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_supplr_type_cd</mark>",
+                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>8</mark>",
+                  "display": "Other entities for whom employer identification (EI) numbers are used in coding the ID field or proprietorship for whom EI numbers are used in coding the ID field."
+                }
+              }
+            ]
+          }
+          ]
+      }
+    },
+    {
+      "title": "Pricing State Code",
+      "definitions": [
         {
-          "field_name": "<div class='number-marker'>7</div> Pricing State Code",
+          "field_name": "<div class='number-marker'>1</div> Pricing State Code",
           "field_description": "The 2-digit SSA state code where the durable medical equipment (DME) supplier was located; used by the Medicare Administrative Contractor (MAC) for pricing the service.",
           "claim_types": "DME",
           "ccw_column_name": "DMERC_LINE_PRCNG_STATE_CD",
@@ -4248,54 +4684,15 @@
       "example": {
         "item": [
           {
-            "locationCodeableConcept": {
-              "extension": [
-                {
-                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/carr_line_clia_lab_num</mark>",
-                  "valueIdentifier": {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/carr_line_clia_lab_num</mark>",
-                    "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>BB889999AA</mark>"
-                  }
-                },
-                {
-                  "url": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/carr_line_prcng_lclty_cd</mark>",
-                  "valueCoding": {
-                    "system": "<mark class='blue-highlight'>&quot;https://bluebutton.cms.gov/resources/variables/carr_line_prcng_lclty_cd</mark>",
-                    "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>22</mark>",
-                    "display": "Massachusetts"
-                  }
-                },
-                {
-                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_state_cd</mark>",
-                  "valueCoding": {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_state_cd</mark>",
-                    "code": "<div class='number-marker'>3</div> &quot;<mark class='red-highlight'>IL</mark>"
-                  }
-                },
-                {
-                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_zip</mark>",
-                  "valueCoding": {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/prvdr_zip</mark>",
-                    "code": "<div class='number-marker'>4</div> &quot;<mark class='red-highlight'>555558202</mark>"
-                  }
-                },
-                {
-                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_supplr_type_cd</mark>",
-                  "valueCoding": {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_supplr_type_cd</mark>",
-                    "code": "<div class='number-marker'>5</div> &quot;<mark class='red-highlight'>6</mark>",
-                    "display": "Institutional providers and independent laboratories for whom the carrier's own ID number is shown."
-                  }
+            "extension": [
+              {
+                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_prcng_state_cd</mark>",
+                "valueCoding": {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_prcng_state_cd</mark>",
+                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>12</mark>"
                 }
-              ],
-              "coding": [
-                {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/line_place_of_srvc_cd</mark>",
-                  "code": "<div class='number-marker'>6</div> &quot;<mark class='red-highlight'>11</mark>",
-                  "display": "Office. Location, other than a hospital, skilled nursing facility (SNF), military treatment facility, community health center, State or local public health clinic, or intermediate care facility (ICF), where the health professional routinely provides health examinations, diagnosis, and treatment of illness or injury on an ambulatory basis."
-                }
-              ]
-            }
+              }
+            ]
           }
         ]
       }
@@ -4321,25 +4718,7 @@
         ]
       }
     },
-    {
-      "title": "Revenue Center Date",
-      "definitions": [
-        {
-          "field_name": "<div class='number-marker'>1</div> Revenue Center Date",
-          "field_description": "This is the date of service for the revenue center record.",
-          "claim_types": "Outpatient,HHA,Hospice",
-          "ccw_column_name": "REV_CNTR_DT",
-          "type_size": "DATE"
-        }
-      ],
-      "example": {
-        "item": [
-          {
-            "servicedDate": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2015-06-23</mark>"
-          }
-        ]
-      }
-    },
+
     {
       "title": "Revenue Center National Drug Code Quantity",
       "definitions": [
@@ -4354,22 +4733,36 @@
       "example": {
         "item": [
           {
-            "extension": [
-              {
-                "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/rev_cntr_ndc_qty</mark>",
-                "valueQuantity": {
-                  "value": 666,
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/rev_cntr_ndc_qty_qlfr_cd</mark>",
-                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>DD</mark>"
-                }
-              }
-            ]
+            "quantity": {
+              "value": 77
+            }
           }
         ]
       }
     },
     {
-      "title": "Item Service",
+      "title": "Service Count",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Service Count",
+          "field_description": "The count of the total number of services processed for the line item on the non-institutional claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "LINE_SRVC_CNT",
+          "type_size": "NUM"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "quantity": {
+              "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>0</mark>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "Anesthesia Unit Count",
       "definitions": [
         {
           "field_name": "<div class='number-marker'>1</div> Anesthesia Unit Count",
@@ -4377,45 +4770,30 @@
           "claim_types": "Carrier",
           "ccw_column_name": "CARR_LINE_ANSTHSA_UNIT_CNT",
           "type_size": "NUM(2)"
-        },
-        {
-          "field_name": "<div class='number-marker'>2</div> HCPCS Code",
-          "field_description": "The Healthcare Common Procedure Coding System (HCPCS) is a collection of codes that represent procedures, supplies, products, and services which may be provided to Medicare beneficiaries and to individuals enrolled in private health insurance programs.",
-          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
-          "ccw_column_name": "HCPCS_CD",
-          "type_size": "CHAR(5)"
         }
       ],
       "example": {
         "item": [
           {
-            "service": {
-              "extension": [
-                {
-                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/carr_line_ansthsa_unit_cnt</mark>",
-                  "valueQuantity": {
-                    "value": "<div class='number-marker'>2</div> &quot;<mark class ='red-highlight'>5</mark>"
-                  }
+            "extension": [
+              {
+                "url": "https://bluebutton.cms.gov/resources/variables/carr_line_ansthsa_unit_cnt",
+                "valueQuantity": {
+                  "value": 2.4
                 }
-              ],
-              "coding": [
-                {
-                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/hcpcs</mark>",
-                  "version": "5",
-                  "code": "<div class='number-marker'>2</div> &quot;<mark class ='red-highlight'>92999</mark>"
-                }
-              ]
-            }
+              }
+            ]
           }
         ]
       }
     },
+
     {
       "title": "Expense Date",
       "definitions": [
         {
           "field_name": "<div class='number-marker'>1</div> First Expense Date",
-          "field_description": "Beginning date (1st expense) for this line-item service on the non-institutional claim.",
+          "field_description": "Beginning date (1st expense) for this line-item service on the non-institutional claim. If Last Expense Date is empty, this value is in servicedDate",
           "claim_types": "Carrier,DME",
           "ccw_column_name": "LINE_1ST_EXPNS_DT",
           "type_size": "DATE"
@@ -4433,8 +4811,28 @@
           {
             "servicedPeriod": {
               "start": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>1999-10-27</mark>",
-              "end": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>1999-10-27</mark>"
-            }
+              "end": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>1999-10-28</mark>"
+            },
+            "servicedDate": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>1999-10-27</mark>"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Revenue Center Date",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Revenue Center Date",
+          "field_description": "This is the date of service for the revenue center record.",
+          "claim_types": "Outpatient,HHA,Hospice",
+          "ccw_column_name": "REV_CNTR_DT",
+          "type_size": "DATE"
+        }
+      ],
+      "example": {
+        "item": [
+          {
+            "servicedDate": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2015-06-23</mark>"
           }
         ]
       }
@@ -4475,36 +4873,16 @@
       "example": {
         "item": [
           {
-            "diagnosisLinkId": [
+            "diagnosisSequence": [
               "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>2</mark>"
             ]
           }
         ]
       }
     },
+
     {
-      "title": "Service Count",
-      "definitions": [
-        {
-          "field_name": "<div class='number-marker'>1</div> Service Count",
-          "field_description": "The count of the total number of services processed for the line item on the non-institutional claim.",
-          "claim_types": "Carrier,DME",
-          "ccw_column_name": "LINE_SRVC_CNT",
-          "type_size": "NUM"
-        }
-      ],
-      "example": {
-        "item": [
-          {
-            "quantity": {
-              "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>0</mark>"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "title": "Line National Drug Code",
+      "title": "Product or Service",
       "definitions": [
         {
           "field_name": "<div class='number-marker'>1</div> Line National Drug Code",
@@ -4519,6 +4897,13 @@
           "claim_types": "Outpatient",
           "ccw_column_name": "REV_CNTR_IDE_NDC_UPC_NUM",
           "type_size": "CHAR(24)"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> HCPCS Code",
+          "field_description": "The Healthcare Common Procedure Coding System (HCPCS) is a collection of codes that represent procedures, supplies, products, and services which may be provided to Medicare beneficiaries and to individuals enrolled in private health insurance programs.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "HCPCS_CD",
+          "type_size": "CHAR(5)"
         }
       ],
       "example": {
@@ -4541,6 +4926,32 @@
                     "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>987654321</mark>",
                     "display": "ACETAMINOPHEN AND CODEINE PHOSPHATE - ACETAMINOPHEN; CODEINE PHOSPHATE"
                   }
+                }
+              ],
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/hcpcs</mark>",
+                  "code": "<div class='number-marker'>2</div> &quot;<mark class ='red-highlight'>92999</mark>"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "title": "HCPCS Code",
+      "definitions": [
+
+      ],
+      "example": {
+        "item": [
+          {
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/codesystem/hcpcs</mark>",
+                  "code": "<div class='number-marker'>1</div> &quot;<mark class ='red-highlight'>92999</mark>"
                 }
               ]
             }
