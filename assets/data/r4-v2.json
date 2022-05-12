@@ -1,5 +1,5 @@
 {
-  "description": "<h1>This is a sample description for r4</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a lacinia velit, ut posuere erat. Fusce neque nunc, lobortis sed lectus pretium, pulvinar vehicula purus. Nunc dolor felis, dictum in dolor vitae, aliquam fermentum risus. Aenean pellentesque vulputate erat at posuere. Nam in risus egestas, vestibulum neque eget, commodo est.</p>",
+  "description": "<h1>AB2D R4 (v2) Data Dictionary</h1><p>The AB2D Data Dictionary provides a detailed break-down of the claims data provided by the AB2D API. AB2D shares data according to R4 and STU3 versions of the FHIR standard. FHIR R4 is available using v2 of AB2D while FHIR STU3 can be accessed via AB2D v1. Both are covered in the AB2D Data Dictionary.</p><p>A downloadable version of the AB2D Data Dictionary is available <a href='/assets/downloads/AB2D%20Data%20Dictionary%20Spreadsheet.xlsx'>here</a>.</p>",
   "sections": [
     {
       "title": "Claim ID",

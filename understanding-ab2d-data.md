@@ -49,10 +49,10 @@ active-nav: understanding-the-data-nav
                     <br /><br />
                     <ul class="gray-bullets">
                     <li>
-                    <a href="assets/downloads/sample-data-r4.ndjson">Parts A and Parts B Sample Export (v2 - R4)</a>
+                    <a href="assets/downloads/sample-data-r4.ndjson" download="sample-data-r4.ndjson">Parts A and Parts B Sample Export (v2 - R4)</a>
                     </li>
                     <li>
-                    <a href="assets/downloads/sample-data-stu3.ndjson">Parts A and Parts B Sample Export (v1 - STU3)</a>
+                    <a href="assets/downloads/sample-data-stu3.ndjson" download="sample-data-stu3.ndjson">Parts A and Parts B Sample Export (v1 - STU3)</a>
                     </li>
                     </ul>
                 </div>
