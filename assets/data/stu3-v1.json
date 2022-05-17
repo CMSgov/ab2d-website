@@ -28,7 +28,7 @@
           "field_name": "<div class='number-marker'>1</div> Claim Group Id",
           "field_description": "",
           "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
-          "ccw_column_name": "N/A",
+          "ccw_column_name": "CLM_GRP_ID",
           "type_size": "NUM"
         }
       ],
@@ -292,7 +292,7 @@
                 "url": "http://hl7.org/fhir/sid/us-npi",
                 "valueCoding": {
                   "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/us-npi</mark>",
-                  "code": "<div class='number-marker'>1</div> &quot;8886688117</mark>"
+                  "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>8886688117</mark>"
                 }
               }
             ]

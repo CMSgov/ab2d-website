@@ -37,7 +37,7 @@
           "field_name": "<div class='number-marker'>1</div> Claim Group Id",
           "field_description": "",
           "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
-          "ccw_column_name": "N/A",
+          "ccw_column_name": "CLM_GRP_ID",
           "type_size": "NUM"
         }
       ],
@@ -378,7 +378,7 @@
                     }
                   ]
                 },
-                "value": "<div class='number-marker'>1</div>8886688117</div>"
+                "value": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>8886688117</mark>"
               }
             },
             "role": {
