@@ -33,7 +33,7 @@ const callFetch = (file) => {
           definitionHeight += definitions[index].clientHeight
         }
         // set the example elements height to the sum of the definitions
-        $(this.children[1].children[1]).height(definitionHeight)
+        // $(this.children[1].children[1]).height(definitionHeight)
 
         // increment the definitions count for display in the header
         definitionsCount += definitions.length
@@ -103,7 +103,7 @@ const createClaimTypes = (claimTypes, definition_markup) => {
 
 const createExample = (example) => {
   const code = $('<code>').html(JSON.stringify(example, null, 2))
-  const legend = $("<div class='legend'><pre class= 'blue-highlight'>value</pre ><pre class='red-highlight'>descriminator</pre></div >")
+  const legend = $("<div class='legend'><pre class= 'red-highlight'>value</pre ><pre class='blue-highlight'>descriminator</pre></div >")
   const preExample = $('<pre class="example">')
   preExample.append(legend)
   preExample.append(code)

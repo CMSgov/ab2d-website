@@ -208,9 +208,9 @@
         "billablePeriod": {
           "extension": [
             {
-              "url": "&quot;<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/claim_query_cd</mark>",
+              "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/claim_query_cd</mark>",
               "valueCoding": {
-                "system": "&quot;<mark class='blue-highlight' >https://bluebutton.cms.gov/resources/variables/claim_query_cd</mark>",
+                "system": "<mark class='blue-highlight' >https://bluebutton.cms.gov/resources/variables/claim_query_cd</mark>",
                 "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>3</mark>",
                 "display": "Final bill"
               }

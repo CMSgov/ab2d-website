@@ -77,11 +77,10 @@ active-nav: understanding-the-data-nav
     display: flex;
     font-size: 13px;
     background-color: #F7F7F7;
-    font-weight: 900;
-    font-size: 12px;
+    font-weight: 1000;
     line-height: 15px;
     letter-spacing: 1px;
-    color: #667987;
+    color: black;
   }
 
   .column-headers>div {
@@ -312,8 +311,9 @@ active-nav: understanding-the-data-nav
   window.onscroll = function () { scrollSpy() };
   let offset = 0
   $(document).ready(() => {
-    offset = $(".column-headers").offset().top + 115
-  })
+    offset = $(".column-headers").offset().top + 115;
+    $(".column-headers").css({ 'border-bottom': "1px solid #727f8f" });
+  });
 
   function scrollSpy () {
     if (window.pageYOffset > offset) {
