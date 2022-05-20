@@ -355,7 +355,7 @@ active-nav: understanding-the-data-nav
         <div class='example'>example</div>
         <div class='legend'>
           <pre class='red-highlight'>value</pre>
-          <pre class='blue-highlight'>descriminator</pre>
+          <pre class='blue-highlight'>discriminator</pre>
         </div>
       </div>
     </div>

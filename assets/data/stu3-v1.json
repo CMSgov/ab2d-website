@@ -26,7 +26,7 @@
       "definitions": [
         {
           "field_name": "<div class='number-marker'>1</div> Claim Group Id",
-          "field_description": "",
+          "field_description": "An identifier which ties families of claims together (from resubmissions).",
           "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
           "ccw_column_name": "CLM_GRP_ID",
           "type_size": "NUM"
@@ -363,7 +363,7 @@
           "field_description": "Code indicating whether or not a provider is participating (accepting assignment) for this line-item service on the non-institutional claim.",
           "claim_types": "Carrier,DME",
           "ccw_column_name": "PRTCPTNG_IND_CD",
-          "type_size": "CHAR(1)"
+          "type_size": "BOOLEAN"
         },
         {
           "field_name": "<div class='number-marker'>4</div> Provider Speciality Code",
@@ -1352,18 +1352,18 @@
       "title": "Diagnosis Code 11",
       "definitions": [
         {
-          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 11",
-          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
-          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
-          "ccw_column_name": "ICD_DGNS_CD11",
-          "type_size": "CHAR(7)"
-        },
-        {
-          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 11 Version",
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 11 Version",
           "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
           "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
           "ccw_column_name": "ICD_DGNS_VRSN_CD11",
           "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 11",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD11",
+          "type_size": "CHAR(7)"
         },
         {
           "field_name": "<div class='number-marker'>3</div> Diagnosis Code 11 Present On Admission",
@@ -4075,24 +4075,25 @@
           "type_size": "CHAR(9)"
         },
         {
-          "field_name": "<div class='number-marker'>5</div> Place Of Service Code",
-          "field_description": "The code indicating the place of service, as defined in the Medicare Carrier Manual, for this line item on the non-institutional claim.",
-          "claim_types": "Carrier,DME",
-          "ccw_column_name": "LINE_PLACE_OF_SRVC_CD",
-          "type_size": "CHAR(2)"
-        },
-        {
-          "field_name": "<div class='number-marker'>6</div> Supplier Type Code",
+          "field_name": "<div class='number-marker'>5</div> Supplier Type Code",
           "field_description": "The type of DMERC supplier.",
           "claim_types": "DME",
           "ccw_column_name": "DMERC_LINE_SUPPLR_TYPE_CD",
           "type_size": "CHAR(1)"
         },
         {
-          "field_name": "<div class='number-marker'>7</div> Pricing State Code",
+          "field_name": "<div class='number-marker'>6</div> Pricing State Code",
           "field_description": "The 2-digit SSA state code where the durable medical equipment (DME) supplier was located; used by the Medicare Administrative Contractor (MAC) for pricing the service.",
           "claim_types": "DME",
           "ccw_column_name": "DMERC_LINE_PRCNG_STATE_CD",
+          "type_size": "CHAR(2)"
+        },
+
+        {
+          "field_name": "<div class='number-marker'>7</div> Place Of Service Code",
+          "field_description": "The code indicating the place of service, as defined in the Medicare Carrier Manual, for this line item on the non-institutional claim.",
+          "claim_types": "Carrier,DME",
+          "ccw_column_name": "LINE_PLACE_OF_SRVC_CD",
           "type_size": "CHAR(2)"
         }
       ],
@@ -4137,12 +4138,19 @@
                     "code": "<div class='number-marker'>5</div> &quot;<mark class='red-highlight'>6</mark>",
                     "display": "Institutional providers and independent laboratories for whom the carrier's own ID number is shown."
                   }
+                },
+                {
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_prcng_state_cd</mark>",
+                  "valueCoding": {
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/dmerc_line_prcng_state_cd</mark>",
+                    "code": "<div class='number-marker'>6</div> &quot;<mark class='red-highlight'>AL</mark>"
+                  }
                 }
               ],
               "coding": [
                 {
                   "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/line_place_of_srvc_cd</mark>",
-                  "code": "<div class='number-marker'>6</div> &quot;<mark class='red-highlight'>11</mark>",
+                  "code": "<div class='number-marker'>7</div> &quot;<mark class='red-highlight'>11</mark>",
                   "display": "Office. Location, other than a hospital, skilled nursing facility (SNF), military treatment facility, community health center, State or local public health clinic, or intermediate care facility (ICF), where the health professional routinely provides health examinations, diagnosis, and treatment of illness or injury on an ambulatory basis."
                 }
               ]
@@ -4365,7 +4373,7 @@
           "type_size": "CHAR(11)"
         },
         {
-          "field_name": "<div class='number-marker'>1</div> Revenue Center National Drug Code",
+          "field_name": "<div class='number-marker'>2</div> Revenue Center National Drug Code",
           "field_description": "This field may contain one of three types of identifiers: the National Drug Code (NDC), the Universal Product Code (UPC), or the number assigned by the Food and Drug Administration (FDA) to an investigational device (IDE) after the manufacturer has approval to conduct a clinical trial.",
           "claim_types": "Outpatient",
           "ccw_column_name": "REV_CNTR_IDE_NDC_UPC_NUM",

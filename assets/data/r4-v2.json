@@ -35,7 +35,7 @@
       "definitions": [
         {
           "field_name": "<div class='number-marker'>1</div> Claim Group Id",
-          "field_description": "",
+          "field_description": "An identifier which ties families of claims together (from resubmissions).",
           "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
           "ccw_column_name": "CLM_GRP_ID",
           "type_size": "NUM"
@@ -507,7 +507,7 @@
           "field_description": "Code indicating whether or not a provider is participating (accepting assignment) for this line-item service on the non-institutional claim.",
           "claim_types": "Carrier,DME",
           "ccw_column_name": "PRTCPTNG_IND_CD",
-          "type_size": "CHAR(1)"
+          "type_size": "BOOLEAN"
         },
         {
           "field_name": "<div class='number-marker'>4</div> Provider Speciality Code",
@@ -1702,18 +1702,18 @@
       "title": "Diagnosis Code 11",
       "definitions": [
         {
-          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 11",
-          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
-          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
-          "ccw_column_name": "ICD_DGNS_CD11",
-          "type_size": "CHAR(7)"
-        },
-        {
-          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 11 Version",
+          "field_name": "<div class='number-marker'>1</div> Diagnosis Code 11 Version",
           "field_description": "The code used to indicate if the diagnosis code is ICD-9/ICD-10.",
           "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
           "ccw_column_name": "ICD_DGNS_VRSN_CD11",
           "type_size": "URI"
+        },
+        {
+          "field_name": "<div class='number-marker'>2</div> Diagnosis Code 11",
+          "field_description": "The diagnosis code identifying the beneficiary's diagnosis.",
+          "claim_types": "Carrier,Inpatient,Outpatient,HHA,DME,Hospice,SNF",
+          "ccw_column_name": "ICD_DGNS_CD11",
+          "type_size": "CHAR(7)"
         },
         {
           "field_name": "<div class='number-marker'>3</div> Diagnosis Code 11 Present On Admission",
@@ -3148,7 +3148,7 @@
           "type_size": "CHAR(7)"
         },
         {
-          "field_name": "<div class='number-marker'>2</div> External Diagnosis Code 8 Present On Admission",
+          "field_name": "<div class='number-marker'>3</div> External Diagnosis Code 8 Present On Admission",
           "field_description": "The present on admission (POA) indicator code associated with the diagnosis E codes (principal and secondary).",
           "claim_types": "Inpatient",
           "ccw_column_name": "CLM_E_POA_IND_SW8",
@@ -4917,14 +4917,6 @@
                   "valueCoding": {
                     "system": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/ndc</mark>",
                     "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>987654321</mark>",
-                    "display": "ACETAMINOPHEN AND CODEINE PHOSPHATE - ACETAMINOPHEN; CODEINE PHOSPHATE"
-                  }
-                },
-                {
-                  "url": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/ndc</mark>",
-                  "valueCoding": {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/hcpcs_cd</mark>",
-                    "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>987654321</mark>",
                     "display": "ACETAMINOPHEN AND CODEINE PHOSPHATE - ACETAMINOPHEN; CODEINE PHOSPHATE"
                   }
                 }

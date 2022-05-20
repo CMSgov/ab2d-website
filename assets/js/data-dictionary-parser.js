@@ -103,7 +103,7 @@ const createClaimTypes = (claimTypes, definition_markup) => {
 
 const createExample = (example) => {
   const code = $('<code>').html(JSON.stringify(example, null, 2))
-  const legend = $("<div class='legend'><pre class= 'red-highlight'>value</pre ><pre class='blue-highlight'>descriminator</pre></div >")
+  const legend = $("<div class='legend'><pre class= 'red-highlight'>value</pre ><pre class='blue-highlight'>discriminator</pre></div >")
   const preExample = $('<pre class="example">')
   preExample.append(legend)
   preExample.append(code)
