@@ -509,9 +509,9 @@ landing-page: live
 
                 <h5 id="Authorizeabearertoken-content">Authorize a bearer token</h5>
                 <p>First - you must access the AB2D Swagger site by going <a target="_blank"
-                        href="https://sandbox.ab2d.cms.gov/swagger-ui/index.html">here</a> Click
+                        href="https://sandbox.ab2d.cms.gov/swagger-ui/index.html">here</a>. Click
                     “authorize” in the top right corner.</p>
-                <img src="./assets/img/sandbox/swagger-1.png" alt="swagger authorize">
+                <img src="./assets/img/sandbox/swagger-1-v2.png" alt="swagger authorize">
 
                 <p>
                     Use the bearer token (retrieved in the last 24 hours by you, and no other user) to authorize entry
@@ -536,23 +536,34 @@ landing-page: live
 
                 <h5 id="ExportaJobID-content">Export a Job ID</h5>
                 <p>
+                AB2D supports both <a href="https://www.hl7.org/fhir/R4/explanationofbenefit.html">R4</a> and 
+                <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> versions of the FHIR standard 
+                in both sandbox and production environments. FHIR R4 is available using v2 of AB2D while FHIR STU3 can 
+                be accessed via AB2D v1 which is typically indicated in an endpoint’s URL. Users are recommended to use 
+                AB2D v2 thus we will use that version in the examples/screenshots provided below. Users can select the AB2D API version they’d like to use in the Swagger interface by navigating to the dropdown menu in the right-hand corner of the page.
+                Detailed descriptions of AB2D v1 (STU3) and AB2D v2 (R4) can be accessed in the AB2D Document Repository 
+                in <a href="https://github.com/CMSgov/ab2d-pdp-documentation">Github</a>.
+                </p>
+
+                <p>
                     Open the <strong>Export</strong> menu to view all possible endpoints:
                 </p>
 
-                <img src="./assets/img/sandbox/swagger-5.png" alt="swagger export menu">
+                <img src="./assets/img/sandbox/swagger-5-v2.png" alt="swagger export menu">
 
-                <p>Choose <strong> /api/v1/fhir/Patient/$export</strong> to initiate a Part A & B bulk claim export job.
+                <p>Choose <strong> /api/v2/fhir/Patient/$export</strong> to initiate a Part A & B bulk claim export job.
                     Then choose to
                     <strong>Try it out</strong> in the right hand corner.
                 </p>
 
-                <img src="./assets/img/sandbox/swagger-6.png" alt="swagger export parameters">
+                <img src="./assets/img/sandbox/swagger-6-v2.png" alt="swagger export parameters">
 
-                <p>Under <strong>Prefer,</strong> add <strong> respond-async</strong> and then click the big blue bar to
-                    <strong> Execute.</strong>
+                <p>The default options are fine in this case with the exception of the _since date. A good
+                    value for this contract is <pre>2021-01-01T00:00:00.000-05:00</pre>
+                    Enter this value and click the big blue bar to <strong> Execute.</strong>
                 </p>
 
-                <img src="./assets/img/sandbox/swagger-7.png" alt="swagger execute">
+                <img src="./assets/img/sandbox/swagger-7-v2.png" alt="swagger execute">
 
                 <p>In the responses, look at the first code provided under <strong>Server response</strong>. Below that
                     are all the
@@ -560,39 +571,39 @@ landing-page: live
                     <strong>Accepted</strong>. This means
                     the job has been created.
                 </p>
-                <img src="./assets/img/sandbox/swagger-8.png" alt="swagger response">
+                <img src="./assets/img/sandbox/swagger-8-v2.png" alt="swagger response">
 
                 <p>
                     From the information provided in the response, copy the Job ID from within the status request.
                     Format:
                     <br>
-                    <em>content-location: http://sandbox.ab2d.cms.gov/api/v1/fhir/Job/<strong>{job
+                    <em>content-location: http://sandbox.ab2d.cms.gov/api/v2/fhir/Job/<strong>{job
                             id}</strong>/$status</em>
                 </p>
 
                 <p>
                     Example: <br>
                     <em>content-location:</em> <br>
-                    <em>http://sandbox.ab2d.cms.gov/api/v1/fhir/Job/afc222d1-a55b-403b-ad22-49f5aefec4b6/$status</em>
+                    <em>http://sandbox.ab2d.cms.gov/api/v2/fhir/Job/eeb77c0d-d9e2-4a7c-b6e6-c4ab8e0917ca/$status</em>
                 </p>
 
                 <h5 id="Checkthestatusofyourjob-content">Check the status of your job</h5>
 
-                <p>While these are test jobs and most will run immediately, it is good practice to understand the steps
+                <p>While these are test jobs and most will run quickly, it is good practice to understand the steps
                     associated with running a job, including checking its status.</p>
 
                 <p>Click on the <strong>Status</strong> menu to view the status endpoints:</p>
 
-                <img src="./assets/img/sandbox/swagger-9.png" alt="swagger job status">
+                <img src="./assets/img/sandbox/swagger-9-v2.png" alt="swagger job status">
 
                 <p>Copy the Job ID from the Export step. Click on the <strong>GET
-                        /api/v1/fhir/{jobUuid}/$status</strong> endpoint,
+                        /api/v2/fhir/{jobUuid}/$status</strong> endpoint,
                     click <strong>Try it out</strong> and paste the Job ID into the box provided.</p>
 
-                <img src="./assets/img/sandbox/swagger-10.png " alt="swagger endpoint status">
+                <img src="./assets/img/sandbox/swagger-10-v2.png " alt="swagger endpoint status">
 
                 <p>Click on the big blue bar labeled <strong>Execute</strong>.</p>
-                <img src="./assets/img/sandbox/swagger-11.png" alt="swagger try it out">
+                <img src="./assets/img/sandbox/swagger-11-v2.png" alt="swagger try it out">
 
                 <p>
                     In the responses, view the first value. This is the server response. There are two possible values,
@@ -600,32 +611,34 @@ landing-page: live
                     or 200. If the response is 202, this means that the job is still in progress. It will give you an
                     indication of the job progress from 1 to 100%.
                 </p>
-                <img src="./assets/img/sandbox/swagger-12.png" alt="swagger response">
+
+                <p>An example of a partially finished job (36%) would be:</p>
+
+                <img src="./assets/img/sandbox/swagger-8b-v2.png" alt="partially finished status">
+
 
                 <p>You will need to re-click on the Execute blue bar periodically until the status returns a 200. This
-                    means the job is done and the response will contain a list of files. These files can then be
-                    downloaded
-                    and contain the claim records for our sample job.</p>
+                    means the job is done and the response will contain a list of files</p>
 
-                <h5 id="DownloadyourJobID-content">Download your Job ID</h5>
+                <img src="./assets/img/sandbox/swagger-12-v2.png" alt="swagger response">
+
+                <p>These files can then be downloaded and contain the claim records for our sample job.</p>
+
+                <h5 id="DownloadyourJobID-content">Download your Job Files</h5>
 
                 <p>Click on the <strong>Download</strong> menu in swagger. Select the <strong>GET
-                        /api/v1/fhir/Job/{jobUuid}/file/{filename}</strong>
+                        /api/v2/fhir/Job/{jobUuid}/file/{filename}</strong>
                     endpoint to download a file. Click <strong>Try it out</strong>. Enter the Job ID of the job you
-                    created and the file
-                    name, then press the <strong>Execute</strong> big blue bar.</p>
+                    created and the file name returned in the status, then press the <strong>Execute</strong> big blue bar.</p>
 
-                <img src="./assets/img/sandbox/swagger-13.png" alt="swagger download">
+                <img src="./assets/img/sandbox/swagger-13-v2.png" alt="swagger download">
 
                 <p>
-                    It might take a while for the file to be downloaded depending on how big the job is. The browser may
-                    even stop responding, but it will eventually respond. The <strong>Server response</strong> value
-                    should be a
-                    <strong>200</strong>
-                    and the <strong>Response body</strong> will contain the claims data. To download the data into a
-                    file, click on
-                    the
-                    Download button in the lower right corner. This will be saved as an ndjson (new line delimited JSON,
+                    It might take a while for the file to be downloaded depending on how big the job is. 
+                    The <strong>Server response</strong> value should be a <strong>200</strong>
+                    and the <strong>Response body</strong> will contain a link to the claims data. To download the 
+                    data into a file, click on the
+                    <strong>Download file</strong> link. This will be saved as an ndjson (new line delimited JSON,
                     also known as JSON lines)
                     file in your downloads. This data format will be identical to the production data. Only the Job ID
                     from
@@ -633,8 +646,7 @@ landing-page: live
                     organizations assigned ADOS.
                 </p>
 
-                <img src="./assets/img/sandbox/swagger-14.png" alt="swagger response body">
-                <img src="./assets/img/sandbox/swagger-15.png" alt="swagger json file">
+                <img src="./assets/img/sandbox/swagger-15-v2.png" alt="swagger response body">
 
                 <h1 id="Questions-content">Questions?</h1>
                 <p>

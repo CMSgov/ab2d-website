@@ -26,6 +26,9 @@ was used to implement the [HL7 FHIR standard](https://www.hl7.org/fhir/overview.
 [FHIR Bulk Data Export](https://hl7.org/fhir/uv/bulkdata/export/index.html) pattern to perform data export. Errors come
 back in the [Resource OperationOutcome](errors come back in the https://www.hl7.org/fhir/operationoutcome.html) format.
 
+AB2D supports both R4 and STU3 versions of the FHIR standard. FHIR R4 is available using v2 of AB2D while FHIR STU3 can 
+be accessed via AB2D v1. Both API versions return new line delimited JSON (ndjson) objects of the FHIR 
+[ExplanationOfBenefit](https://www.hl7.org/fhir/r4/explanationofbenefit.html) Resource.
 
 ### Sandbox
 The Sandbox/Swagger page is available [here](https://sandbox.ab2d.cms.gov/swagger-ui/index.html).
@@ -243,34 +246,37 @@ Bearer <access_token>
 The following are the list of endpoints the API supports:
 
 ### Request data
-A job will be created and a job identifier returned. You can request either by contract number:
+A job will be created and a job identifier returned for the contract associated with the credentials. 
 
 ```
-GET /api/v1/fhir/Group/{contractNumber}/$export
-```
-
-or all Part D patients registered with the sponsor:
-
-```
-GET /api/v1/fhir/Patient/$export
+GET /api/v2/fhir/Patient/$export
 ```
 
 #### Parameters
 
-The _since parameter can be used to limit data to only data that has been updated since the specified parameter.
+The `_since` parameter can be used to limit data to only data that has been updated since the specified parameter.
 The format is the [ISO 8601 DateTime standard](https://www.w3.org/TR/NOTE-datetime) e.g. YYYY-MM-DDThh:mm:ssTZD
 
 ```
-GET /api/v1/fhir/Patient/$export?_since=2020-03-16T00:00:00-05:00
+GET /api/v2/fhir/Patient/$export?_since=2020-03-16T00:00:00-05:00
 ```
 
 Dates prior to 2020-02-13 are not supported and will result in a failure response.
+
+- AB2D v2/FHIR R4:
+  - If no `_since` parameter is provided, the value defaults to the date and time of the last successfully and fully 
+  downloaded job that was created for the contract. If this is the first job run, the `_since` date becomes the 
+  organization’s attestation date. Users can override this functionality by supplying their own `_since` date. This 
+  feature is not supported for FHIR STU3.
+  Please note- Always supply a `_since` date in the Sandbox environment when using AB2D v2 as sandbox test contracts are shared resources used by other people and will use extraneous default since dates.
+- AB2D v1/FHIR STU3:
+  - A `_since` value must be added to each call in order to use the `_since` parameter. If no `_since` value is specified, the value defaults to a contract's attestation date. It is highly recommended and considered best practice to use the `_since` parameter on v1 API calls.
 
 ### Status
 Once a job has been created, the user can/should request the status of the submitted job. 
 
 ```
-GET /api/v1/fhir/Job/{jobUuid}/$status
+GET /api/v2/fhir/Job/{jobUuid}/$status
 ```
 
 The job will either be in progress or completed. The application will limit the frequency in which a job status may 
@@ -282,24 +288,24 @@ data or any error messages.
 Once the search job has been completed, the contents of the of the created file(s) can be downloaded by using:
 
 ```
-GET /api/v1/fhir/Job/{jobUuid}/file/{filename}
+GET /api/v2/fhir/Job/{jobUuid}/file/{filename}
 ```
 
 The file(s) are specified as the output of the status request. Each file will only be available for 72 hours after the 
 job has completed. Files are also unavailable after they have been successfully downloaded. 
 
 ### Cancellation
-A job may be cancelled at any point during its processing:
+A job may be canceled at any point during its processing:
 
 ```
-DELETE /api/v1/fhir/Job/{jobUuid}/$status
+DELETE /api/v2/fhir/Job/{jobUuid}/$status
 ```
 
 ### Other
 Retrieve the capabilities of the server (required by the standard)
 
 ```
-GET /api/v1/fhir/metadata
+GET /api/v2/fhir/metadata
 ```
 
 ### Warning

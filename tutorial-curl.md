@@ -219,7 +219,7 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
    <i>Note that the $ in $export is escaped</i>
 
    ```
-   curl "https://sandbox.ab2d.cms.gov/api/v1/fhir/Patient/\$export?_outputFormat=application%2Ffhir%2Bndjson&_type=ExplanationOfBenefit" \
+   curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_outputFormat=application%2Ffhir%2Bndjson&_type=ExplanationOfBenefit" \
      -sD - \
      -H "accept: application/json" \
      -H "Accept: application/fhir+json" \
@@ -231,7 +231,7 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
 
    ```
    HTTP/1.1 {response code}
-   Content-Location: https://sandbox.ab2d.cms.gov/api/v1/fhir/Job/{job id}/$status
+   Content-Location: https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job id}/$status
    X-Content-Type-Options: nosniff
    X-XSS-Protection: 1; mode=block
    Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -248,7 +248,7 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
    HTTP/2 202 
    date: Tue, 03 Mar 2020 21:08:36 GMT
    content-length: 0
-   content-location: http://sandbox.ab2d.cms.gov/api/v1/fhir/Job/c40e30e6-0913-4803-9b05-bb0563f0cac6/$status
+   content-location: http://sandbox.ab2d.cms.gov/api/v2/fhir/Job/c40e30e6-0913-4803-9b05-bb0563f0cac6/$status
    x-content-type-options: nosniff
    x-xss-protection: 1; mode=block
    cache-control: no-cache, no-store, max-age=0, must-revalidate
@@ -318,7 +318,7 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
    Notice that the $ in $status is escaped.
 
    ```
-   curl "https://sandbox.ab2d.cms.gov/api/v1/fhir/Job/${JOB}/\$status" \
+   curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB}/\$status" \
      -sD - \
      -H "accept: application/json" \
      -H "Authorization: Bearer ${BEARER_TOKEN}"
@@ -338,7 +338,7 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
    x-frame-options: DENY
    vary: accept-encoding
 
-   {"transactionTime":"Mar 3, 2020, 10:47:24 PM","request":"http://sandbox.ab2d.cms.gov/api/v1/fhir/Patient/$export?_outputFormat=application%252Ffhir%252Bndjson&_type=ExplanationOfBenefit","requiresAccessToken":true,"output":[{"type":"ExplanationOfBenefit","url":"http://sandbox.ab2d.cms.gov/api/v1/fhir/Job/{job id}/file/{file to download}"}],"error":[]}
+   {"transactionTime":"Mar 3, 2020, 10:47:24 PM","request":"http://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_outputFormat=application%252Ffhir%252Bndjson&_type=ExplanationOfBenefit","requiresAccessToken":true,"output":[{"type":"ExplanationOfBenefit","url":"http://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job id}/file/{file to download}"}],"error":[]}
    ```
 
    If the job is still processing, it will return a 202 and a percent complete:
@@ -371,12 +371,12 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
    Date: Wed, 29 Jan 2020 16:04:47 GMT
    {
        "transactionTime":"Jan 29, 2020, 10:28:27 AM",
-       "request":"https://sandbox.ab2d.cms.gov/api/v1/fhir/Patient/$export?_outputFormat=application%252Ffhir%252Bndjson&_type=ExplanationOfBenefit",
+       "request":"https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_outputFormat=application%252Ffhir%252Bndjson&_type=ExplanationOfBenefit",
        "requiresAccessToken":true,
        "output":[
            {
                "type":"ExplanationOfBenefit",
-               "url":"https://sandbox.ab2d.cms.gov/api/v1/fhir/Job/5298026c-e503-4d93-9974-c7732f56a0f8/file/Z0000_0001.ndjson"
+               "url":"https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/5298026c-e503-4d93-9974-c7732f56a0f8/file/Z0000_0001.ndjson"
            }
        ],
        "error":[]
@@ -463,7 +463,7 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
     b. Get the Part A & B bulk claim export data by entering the following at the terminal prompt
 
        ```
-       curl "https://sandbox.ab2d.cms.gov/api/v1/fhir/Job/${JOB}/file/${FILE}" \
+       curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB}/file/${FILE}" \
          -H "Accept: application/fhir+ndjson" \
          -H "Authorization: Bearer ${BEARER_TOKEN}" \
          > ${FILE}

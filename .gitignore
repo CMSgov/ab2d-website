@@ -72,6 +72,8 @@ build/
 **/terraform/**/*.tfvars
 
 ### Jekyll ###
+_site/
+.sass-cache/
 /website/_site/
 /website/.sass-cache/
 
