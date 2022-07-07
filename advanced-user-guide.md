@@ -268,7 +268,7 @@ Dates prior to 2020-02-13 are not supported and will result in a failure respons
   downloaded job that was created for the contract. If this is the first job run, the `_since` date becomes the 
   organization’s attestation date. Users can override this functionality by supplying their own `_since` date. This 
   feature is not supported for FHIR STU3.
-  Please note- Always supply a `_since` date in the Sandbox environment when using AB2D v2 as sandbox test contracts are shared resources used by other people and will use extraneous default since dates.
+  Please note - Always supply a `_since` date in the Sandbox environment when using AB2D v2 as sandbox test contracts are shared resources used by other people and will use extraneous default since dates.
 - AB2D v1/FHIR STU3:
   - A `_since` value must be added to each call in order to use the `_since` parameter. If no `_since` value is specified, the value defaults to a contract's attestation date. It is highly recommended and considered best practice to use the `_since` parameter on v1 API calls.
 
@@ -285,14 +285,14 @@ between status checks. Once the job is complete, this request will respond with 
 data or any error messages.
 
 ### Download
-Once the search job has been completed, the contents of the of the created file(s) can be downloaded by using:
+Once the search job has been completed, the contents of the created file(s) can be downloaded by using:
 
 ```
 GET /api/v2/fhir/Job/{jobUuid}/file/{filename}
 ```
 
 The file(s) are specified as the output of the status request. Each file will only be available for 72 hours after the 
-job has completed. Files are also unavailable after they have been successfully downloaded. 
+job has completed.
 
 ### Cancellation
 A job may be canceled at any point during its processing:
@@ -358,7 +358,7 @@ $status but $ means a variable value in the bash command line.
 ### Unable to Download Bulk Data File
 - Your file name or job name are not correct. You can call the $status command again and verify that you have the file 
 name & job name correct.
-- You can only download the file once. For security purposes, once downloaded, the file no longer exists in our system.
+- You have requested to download the file more than six times.
 - The time between when the job completes and you request the file is greater than 72 hours. Files are 
 automatically deleted (or expired) after 72 hours.
 - There was an error on our server. If this continues to happen, contact technical support at [ab2d@semanticbits.com](ab2d@semanticbits.com).
