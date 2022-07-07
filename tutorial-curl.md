@@ -501,5 +501,5 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
 
     f. Repeat this process to download additional files (if any)
 
-    g. After 72 hours have passed, it can't be downloaded again using the same job. A new export job would need to be initiated.
+    g. After 72 hours have passed the file can't be downloaded again using the same job. A new export job would need to be initiated.
 
