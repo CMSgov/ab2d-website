@@ -358,7 +358,7 @@ $status but $ means a variable value in the bash command line.
 ### Unable to Download Bulk Data File
 - Your file name or job name are not correct. You can call the $status command again and verify that you have the file 
 name & job name correct.
-- You have requested to download the file an excessive number of times.
+- You have requested to download the file more than six times.
 - The time between when the job completes and you request the file is greater than 72 hours. Files are 
 automatically deleted (or expired) after 72 hours.
 - There was an error on our server. If this continues to happen, contact technical support at [ab2d@semanticbits.com](ab2d@semanticbits.com).
