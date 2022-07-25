@@ -941,3 +941,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 .gov-flag{
     width: 20px;
 }
+
+.fixed-top-gov-banner{
+    top: 20px;
+}
