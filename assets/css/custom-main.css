@@ -925,3 +925,19 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
     }
 }
 
+.gov-banner{
+
+    top: 0;
+    left: 0;
+    height: 20px;
+    background: gray;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    text-align: center;
+
+}
+
+.gov-flag{
+    width: 20px;
+}
