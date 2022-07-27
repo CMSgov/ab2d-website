@@ -762,26 +762,29 @@ abbr[title="required"] {
 .usa-banner .usa-accordion {
     font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
     font-size: 1.06rem;
-    line-height: 1.5
+    line-height: 1.5;
+    background-color: #f0f0f0;
 }
 
 .usa-banner__header, .usa-banner__content {
-    color: #1b1b1b
+    color: #1b1b1b;
 }
 
 .usa-banner__content {
+    font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+    font-size: 1.06rem;
+    line-height: 1.5;
     margin-left: auto;
     margin-right: auto;
     max-width: 64rem;
-    padding-left: 1rem;
     padding-right: 1rem;
-    background-color: transparent;
     font-size: 1rem;
     overflow: hidden;
     padding-bottom: 1rem;
     padding-left: 0.5rem;
     padding-top: 0.25rem;
-    width: 100%
+    width: 100%;
+    background-color: #F0F0F1;
 }
 
 @media all and (min-width: 64em) {
@@ -806,7 +809,11 @@ abbr[title="required"] {
 }
 
 .usa-banner__content p:first-child {
-    margin: 0
+    margin: 0;
+    line-height: 1.5;
+    font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+    text-align: left;
+    font-size: .95em;
 }
 
 .usa-banner__guidance {
@@ -1571,7 +1578,7 @@ html.usa-js-loading .usa-nav__submenu, html.usa-js-loading .usa-nav__submenu.usa
 }
 
 .usa-graphic-list .usa-media-block__body > :first-child {
-    margin-top: 0
+    margin-top: 0;
 }
 
 .usa-media-block__img {
@@ -1580,7 +1587,8 @@ html.usa-js-loading .usa-nav__submenu, html.usa-js-loading .usa-nav__submenu.usa
 }
 
 .usa-media-block__body {
-    flex: 1 1 0%
+    flex: 1 1 0%;
+    font-size: 1rem;
 }
 
 .usa-megamenu .usa-col {

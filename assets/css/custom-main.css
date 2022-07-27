@@ -205,7 +205,7 @@ img::-moz-selection {
 #mainNav {
     background-color: #212529;
     padding: 0;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 #mainNav .navbar-toggler {
     font-size: 12px;
@@ -268,7 +268,7 @@ img::-moz-selection {
     #mainNav {
         border: none;
         background-color: transparent;
-        margin-top: 25px;
+        margin-top: 30px;
     }
     .navbar-nav {
         margin-left: 50%;
@@ -570,7 +570,7 @@ header.masthead .intro-text .intro-heading {
     z-index: 1051;
     width: 1px;
     height: 75px;
-    margin-left: 35px;
+    margin-left: 30px;
     /* IE 9 */
     transform: rotate(45deg);
     background-color: #212529;
