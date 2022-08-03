@@ -3455,3 +3455,9 @@ table.layouttable, table.layouttable tr {
         padding: 0.75rem 1rem 0.25rem
     }
 }
+
+
+.usa-banner__inner {
+    align-items: center;
+    justify-content: center;
+}
