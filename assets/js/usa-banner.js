@@ -1,5 +1,5 @@
-$(() => {
-    let resize = () => {
+$(function () {
+    let resizeBanner = function () {
         let usa_banner = $('.usa-banner');
         let govBannerHeight = usa_banner.height();
         let bannerHeight = usa_banner.find('.usa-accordion').height();
@@ -17,15 +17,13 @@ $(() => {
         if ($(this).attr('aria-expanded') === 'true') {
             $('.usa-accordion__button').attr('aria-expanded', 'false');
             $('#gov-banner').hide();
-            resize();
+            resizeBanner();
         } else {
             $('.usa-accordion__button').attr('aria-expanded', 'true');
             $('#gov-banner').show();
-            resize();
+            resizeBanner();
         }
     });
-    $(window).resize(() => {
-        resize();
-    });
-    resize();
+    $(window).resize(resizeBanner);
+    resizeBanner();
 })
