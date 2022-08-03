@@ -5,7 +5,6 @@ $(() => {
         let bannerHeight = usa_banner.find('.usa-accordion').height();
         bannerHeight = govBannerHeight > bannerHeight ? govBannerHeight : bannerHeight;
         let bannerHeightCss = bannerHeight + "px";
-        console.log(bannerHeight)
         $('#mainNav').css('margin-top', (bannerHeight + 4) + "px");
         $('.masthead').css('margin-top', bannerHeightCss);
 
@@ -16,12 +15,10 @@ $(() => {
     }
     $(".usa-banner__button").on('click', function (event) {
         if ($(this).attr('aria-expanded') === 'true') {
-            console.log("clicked-off")
             $('.usa-accordion__button').attr('aria-expanded', 'false');
             $('#gov-banner').hide();
             resize();
         } else {
-            console.log("clicked-on")
             $('.usa-accordion__button').attr('aria-expanded', 'true');
             $('#gov-banner').show();
             resize();
