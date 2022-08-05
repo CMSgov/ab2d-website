@@ -5,7 +5,7 @@ $(function () {
         let bannerHeight = usa_banner.find('.usa-accordion').height();
         bannerHeight = govBannerHeight > bannerHeight ? govBannerHeight : bannerHeight;
         let bannerHeightCss = bannerHeight + "px";
-        $('#mainNav').css('margin-top', (bannerHeight + 4) + "px");
+        $('#mainNav').css('margin-top', (bannerHeight) + "px");
         $('.masthead').css('margin-top', bannerHeightCss);
 
         /* page specific. If jquery can't find elements nothing happens*/

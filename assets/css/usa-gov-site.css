@@ -3462,8 +3462,32 @@ table.layouttable, table.layouttable tr {
 
 .usa-banner__inner {
     align-items: baseline;
+    max-width: 1200px;
+}
+
+.usa-media-block__body p {
+    font-size: 16px !important;
+    font-family: "public_sans","Open Sans",helvetica,sans-serif;
 }
 
 .usa-banner__header-text {
-    font-family: "Open Sans", Helvetica, sans-serif;
+    font-family: "public_sans","Open Sans",helvetica,sans-serif;
+}
+
+#gov-banner {
+    max-width: 1200px;
+}
+
+.usa-accordion {
+    background-color: #f2f2f2;
+}
+
+.usa-banner{
+    padding-top: 0 !important;
+ }
+
+.ds-c-usa-banner__lock-image{
+    height: 1.5ex;
+    vertical-align: inherit;
+    width: calc(1.5ex * 52 / 64);
 }
