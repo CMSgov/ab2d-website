@@ -3456,10 +3456,14 @@ table.layouttable, table.layouttable tr {
     }
 }
 
-.usa-banner__button[aria-expanded="true"]:before{
+.usa-banner__button[aria-expanded="true"]:before {
     width: 0 !important;
 }
 
-.usa-banner__inner{
+.usa-banner__inner {
     align-items: baseline;
+}
+
+.usa-banner__header-text {
+    font-family: "Open Sans", Helvetica, sans-serif;
 }
