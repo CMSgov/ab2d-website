@@ -3456,10 +3456,10 @@ table.layouttable, table.layouttable tr {
     }
 }
 
-.usa-banner__inner {
-    align-items: center;
-    justify-content: center;
-}
 .usa-banner__button[aria-expanded="true"]:before{
     width: 0 !important;
+}
+
+.usa-banner__inner{
+    align-items: baseline;
 }
