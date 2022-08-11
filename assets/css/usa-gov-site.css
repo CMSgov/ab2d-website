@@ -590,6 +590,7 @@ abbr[title="required"] {
 .usa-accordion {
     margin-bottom: 0;
     margin-top: 0;
+    background-color: #f2f2f2;
     list-style-type: none;
     padding-left: 0;
     color: #1b1b1b;
@@ -738,7 +739,7 @@ abbr[title="required"] {
 
 .usa-banner {
     padding-bottom: 0.25rem;
-    padding-top: 0.25rem;
+    padding-top: 0;
     top: 0;
     left: 0;
     height: 30px;
@@ -774,7 +775,6 @@ abbr[title="required"] {
     font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
     font-size: 1.06rem;
     line-height: 1.5;
-    margin-left: auto;
     margin-right: auto;
     max-width: 64rem;
     padding-right: 1rem;
@@ -796,7 +796,7 @@ abbr[title="required"] {
 
 @media all and (min-width: 64em) {
     .usa-banner__content {
-        padding-left: 2rem;
+        padding-left: 1rem;
         padding-right: 2rem
     }
 }
@@ -841,7 +841,6 @@ abbr[title="required"] {
 .usa-banner__inner {
     padding-left: 1rem;
     padding-right: 1rem;
-    margin-left: auto;
     margin-right: auto;
     max-width: 64rem;
     display: flex;
@@ -859,7 +858,7 @@ abbr[title="required"] {
 
 @media all and (min-width: 64em) {
     .usa-banner__inner {
-        padding-left: 2rem;
+        padding-left: 1rem;
         padding-right: 2rem
     }
 }
@@ -892,6 +891,7 @@ abbr[title="required"] {
     margin-top: 0;
     font-size: 0.8rem;
     line-height: 1.1
+    font-family: "public_sans","Open Sans",helvetica,sans-serif;
 }
 
 .usa-banner__header-action {
@@ -899,7 +899,8 @@ abbr[title="required"] {
     line-height: 1.1;
     margin-bottom: 0;
     margin-top: 2px;
-    text-decoration: underline
+    text-decoration: underline;
+    text-align: left;
 }
 
 .usa-banner__header-action::after {
@@ -949,6 +950,7 @@ abbr[title="required"] {
 }
 
 .usa-banner__header-flag {
+    margin-top: 1px;
     float: left;
     margin-right: 0.5rem;
     width: 1rem
@@ -1162,7 +1164,7 @@ abbr[title="required"] {
          content: "";
          display: block;
          height: 3rem;
-         width: 3rem
+         width: 0
      }
 
     .usa-banner__button[aria-expanded="true"]:after {
@@ -2815,7 +2817,6 @@ table.layouttable, table.layouttable tr {
 }
 
 .grid-col-fill {
-    flex: 1 1 0%;
     width: auto;
     max-width: 100%;
     min-width: 1px
@@ -3456,35 +3457,14 @@ table.layouttable, table.layouttable tr {
     }
 }
 
-.usa-banner__button[aria-expanded="true"]:before {
-    width: 0 !important;
-}
-
-.usa-banner__inner {
-    align-items: baseline;
-    max-width: 1200px;
-}
-
 .usa-media-block__body p {
     font-size: 16px !important;
-    font-family: "public_sans","Open Sans",helvetica,sans-serif;
-}
-
-.usa-banner__header-text {
     font-family: "public_sans","Open Sans",helvetica,sans-serif;
 }
 
 #gov-banner {
     max-width: 1200px;
 }
-
-.usa-accordion {
-    background-color: #f2f2f2;
-}
-
-.usa-banner{
-    padding-top: 0 !important;
- }
 
 .ds-c-usa-banner__lock-image{
     height: 1.5ex;
