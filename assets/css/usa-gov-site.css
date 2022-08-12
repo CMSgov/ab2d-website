@@ -743,7 +743,7 @@ abbr[title="required"] {
     padding-top: 0;
     top: 0;
     left: 0;
-    height: 30px;
+    height: 23px;
     background: #f2f2f2;
     width: 100%;
     position: fixed;
@@ -888,8 +888,8 @@ abbr[title="required"] {
     margin-bottom: 0;
     margin-top: 0;
     font-size: 12px;
-    line-height: 1.1;
-    font-family: "public_sans","Open Sans",helvetica,sans-serif;
+    line-height: 1.2;
+    font-family: "Open Sans",helvetica,sans-serif;
 }
 
 .usa-banner__header-action {
@@ -2429,6 +2429,10 @@ table.layouttable, table.layouttable tr {
 .grid-row.grid-gap-md > * {
     padding-left: 0.5rem;
     padding-right: 0.5rem
+}
+
+.usa-banner__guidance.tablet\:grid-col-6:nth-child(2) {
+    padding-left: 14px;
 }
 
 .grid-row.grid-gap-lg {
