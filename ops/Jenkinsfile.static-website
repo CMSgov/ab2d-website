@@ -39,7 +39,7 @@ pipeline {
           script {
             sh '''
               set -e
-              aws s3 mv _site s3://website_${PARENT_ENV} --recursive
+              aws s3 mv _site s3://website-${PARENT_ENV} --recursive
               
             sh '''
         }
