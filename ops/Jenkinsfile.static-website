@@ -2,15 +2,51 @@ pipeline {
   agent {
     label 'deployment'
   }
+  environment {
+    CLOUD_TAMER = false
+
+  }
+  parameters {
+    choice(choices: ['-', 'ab2d-east-impl', 'ad2d-dev', 'ab2d-sbx-sandbox', 'ab2d-east-prod', 'ab2d-east-prod-test'], name: 'PARENT_ENV', description: "AB2D environment?")
+    string(defaultValue: 'feature/new-static-website-deployment', name: 'BRANCH_NAME', description: "AB2D-OPS Github branch?")
+  }
+  options {
+    disableConcurrentBuilds ()
+  }
   stages {
-    stage('Deploy or update static website') {
+    stage('Build static website') {
       steps {
         script {
 	        sh '''
-	          ./ops/deploy-or-update-website-akamai.sh
+            set -e
+
+            ### Setup Website config for AB2D environment
+            if [[ ${PARENT_ENV} = "ab2d-east-impl" ]]; then export AWS_ACCOUNT_NUMBER="330810004472"
+            elif [[ ${PARENT_ENV} = "ab2d-dev" ]]; then export AWS_ACCOUNT_NUMBER="349849222861"
+            elif [[ ${PARENT_ENV} = "ab2d-sbx-sandbox" ]]; then export AWS_ACCOUNT_NUMBER="777200079629"
+            elif [[ ${PARENT_ENV} = "ab2d-east-prod" ]]; then export AWS_ACCOUNT_NUMBER="595094747606"
+            elif [[ ${PARENT_ENV} = "ab2d-east-prod-test" ]]; then export AWS_ACCOUNT_NUMBER="595094747606"
+            else echo "$PARENT_ENV does not match available environments"; exit 1; fi
+
+            ./ops/deploy-or-update-website-akamai.sh --cms_env ${PARENT_ENV} \
+              --cloud_tamer ${CLOUD_TAMER}
 	        sh '''
 	    }
       }
     }
+    stage('Deploy website to s3') {
+      steps {
+          script {
+            sh '''
+              set -e
+
+              aws s3 mv /var/lib/jenkins/jenkins_agent/workspace/AB2D-Ops/Terraform/Deploy Static Website s3://website_${PARENT_ENV}
+              
+            sh '''
+        }
+        }
   }
 }
+
+
+// ./ops/deploy-or-update-website-akamai.sh
