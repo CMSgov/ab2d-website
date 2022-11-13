@@ -39,8 +39,7 @@ pipeline {
           script {
             sh '''
               set -e
-              cd /var/lib/jenkins/jenkins_agent/workspace/AB2D-Ops/Terraform/Deploy Static Website
-              aws s3 mv * s3://website_${PARENT_ENV} --recursive
+              aws s3 mv _site s3://website_${PARENT_ENV} --recursive
               
             sh '''
         }
