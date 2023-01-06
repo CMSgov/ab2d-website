@@ -50,6 +50,7 @@ active-nav: understanding-the-data-nav
     padding: 10px 20px;
     height: 60px;
     border-bottom: 1px solid #CCCCCC;
+    background-color: white;
   }
 
   .header-meta-data .definition-count {
@@ -223,6 +224,14 @@ active-nav: understanding-the-data-nav
     text-transform: none;
   }
 
+    .download a::after {
+        content: '\f090';
+        display: inline-block;
+        font-family: 'Material Icons';
+        font-size: 1em;
+        vertical-align: middle;
+    }
+
   .legend>pre {
     padding: 3px 7px;
     border: none;
@@ -245,7 +254,6 @@ active-nav: understanding-the-data-nav
     position: fixed;
     width: calc(90vw - 2px);
     z-index: 1;
-    top: 70px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -294,12 +302,12 @@ active-nav: understanding-the-data-nav
       display: flex;
     }
 
-    .sticky {
+    .`sticky` {
       top: 63px;
     }
   }
 </style>
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <script src="assets/js/data-dictionary-parser.js"></script>
 <script>
   $(document).ready(function () {
@@ -311,15 +319,15 @@ active-nav: understanding-the-data-nav
   window.onscroll = function () { scrollSpy() };
   let offset = 0
   $(document).ready(() => {
-    offset = $(".column-headers").offset().top + 115;
-    $(".column-headers").css({ 'border-bottom': "1px solid #727f8f" });
+    offset = $(".sticky-header").offset().top + 115;
+    $(".sticky-header").css({ 'border-bottom': "1px solid #727f8f" });
   });
 
   function scrollSpy () {
     if (window.pageYOffset > offset) {
-      $(".column-headers").addClass("sticky");
+      $(".sticky-header").addClass("sticky");
     } else {
-      $(".column-headers").removeClass("sticky");
+      $(".sticky-header").removeClass("sticky");
     }
   } 
 </script>
@@ -330,9 +338,9 @@ active-nav: understanding-the-data-nav
     style="enable-background:new 0 0 1034.2 43.8;" xml:space="preserve" alt="divider">
     <path fill="#f5f5f5" d="M0,21.3c0,0,209.3-48,517.1,0s517.1,0,517.1,0v22.5H0V21.3z" />
   </svg>
-  <div class='description'></div>
+  <div class='description download'></div>
   <div class='data-dictionary__wrapper'>
-    <div class='header'>
+    <div class='header sticky-header'>
       <div class='header-meta-data'>
         <div class='definition-count'></div>
         <div class='inputs__wrapper'>
