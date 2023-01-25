@@ -308,14 +308,6 @@ Retrieve the capabilities of the server (required by the standard)
 GET /api/v2/fhir/metadata
 ```
 
-### Warning
-
-As required by the FHIR Bulk Export specification, the files are provided in NDJSON format, which is essentially 
-plain-text. Depending on the number of patients in a Part D contract, these files can become rather large. 
-The API does support "Content-Encoding: gzip" when serving the files so that the downloads could complete faster and 
-use less bandwidth. Thus, it is strongly encouraged that the API client also supports compressed media 
-types and properly advertises so by specifying  "Accept-Encoding: gzip, deflate" header.
-
 ## Tutorials
 
 The purpose of these instructions is to provide a way for users to interact with the AB2D API. There are two main ways 
