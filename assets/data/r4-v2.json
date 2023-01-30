@@ -185,7 +185,7 @@
         {
           "field_name": "<div class='number-marker'>1</div> Claim Query Code",
           "field_description": "Code indicating the type of claim record being processed with respect to payment (debit/credit indicator; interim/final indicator).",
-          "claim_types": "Inpatient,Outpatient,SNF",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
           "ccw_column_name": "CLAIM_QUERY_CODE",
           "type_size": "CHAR(1)"
         },
@@ -241,6 +241,28 @@
               "display": "Home Health Agency (HHA) claim"
             }
           ]
+        }
+      }
+    },
+    {
+      "title": "Claim Sub Type",
+      "definitions": [
+        {
+          "field_name": "<div class='number-marker'>1</div> Claim Sub Type",
+          "field_description": "The sub type of claim that was submitted. The value of this field is rule-based, and is not received from CCW.",
+          "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
+          "ccw_column_name": "N/A"
+        }
+      ],
+      "example": {
+        "subType": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBInstitutionalClaimSubType",
+              "code": "<div class='number-marker'>1</div> &quot;<mark class='red-highlight'>outpatient</mark>"
+            }
+          ],
+          "text": "Outpatient"
         }
       }
     },
