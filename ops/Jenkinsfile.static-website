@@ -8,7 +8,7 @@ pipeline {
   }
   parameters {
     choice(choices: ['-', 'ab2d-east-impl', 'ab2d-dev', 'ab2d-sbx-sandbox', 'ab2d-east-prod', 'ab2d-east-prod-test'], name: 'PARENT_ENV', description: "AB2D environment?")
-    string(defaultValue: 'feature/new-static-website-deployment', name: 'BRANCH_NAME_PARAM', description: "AB2D-OPS Github branch?")
+    string(defaultValue: 'main', name: 'BRANCH_NAME_PARAM', description: "AB2D-OPS Github branch?")
   }
   options {
     disableConcurrentBuilds ()
