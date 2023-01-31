@@ -251,7 +251,8 @@
           "field_name": "<div class='number-marker'>1</div> Claim Sub Type",
           "field_description": "The sub type of claim that was submitted. The value of this field is rule-based, and is not received from CCW.",
           "claim_types": "Inpatient,Outpatient,HHA,Hospice,SNF",
-          "ccw_column_name": "N/A"
+          "ccw_column_name": "N/A",
+          "type_size": "CHAR(10)"
         }
       ],
       "example": {
