@@ -651,7 +651,7 @@ landing-page: live
                 <h1 id="Questions-content">Questions?</h1>
                 <p>
                     Having issues or concerns - please get in touch. <br>
-                    <a href="mailto:ab2d@semanticbits.com">ab2d@semanticbits.com</a> - direct email <br>
+                    <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> - direct email <br>
                     <a href="https://groups.google.com/u/1/g/cms-ab2d-api">AB2D Google Group</a> - join the conversation
                 </p>
             </div>
