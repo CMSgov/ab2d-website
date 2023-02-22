@@ -4383,7 +4383,7 @@
       "example": {
         "item": [
           {
-            "productOrService": {
+            "service": {
               "extension": [
                 {
                   "url": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/ndc</mark>",
@@ -4394,9 +4394,9 @@
                   }
                 },
                 {
-                  "url": "<mark class='blue-highlight'>http://hl7.org/fhir/sid/ndc</mark>",
+                  "url": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/rev_cntr_ide_ndc_upc_num</mark>",
                   "valueCoding": {
-                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/hcpcs_cd</mark>",
+                    "system": "<mark class='blue-highlight'>https://bluebutton.cms.gov/resources/variables/rev_cntr_ide_ndc_upc_num</mark>",
                     "code": "<div class='number-marker'>2</div> &quot;<mark class='red-highlight'>987654321</mark>",
                     "display": "ACETAMINOPHEN AND CODEINE PHOSPHATE - ACETAMINOPHEN; CODEINE PHOSPHATE"
                   }
