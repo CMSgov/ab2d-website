@@ -143,7 +143,7 @@ active-nav: support-nav
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
-            Stand-alone Medicare Part D Plan (PDP) sponsors.
+            Active stand-alone Medicare Part D Plan (PDP) sponsors.
           </div>
         </div>
       </div>
@@ -246,23 +246,6 @@ active-nav: support-nav
           </div>
         </div>
       </div>
-           
-       <div class="card">
-        <div class="card-header" id="headingNineteen" data-toggle="collapse" data-target="#collapseNineteen"
-          aria-expanded="false" aria-controls="collapseNineteen">
-          <div class="mb-0 card-header-h5">
-            What happens when a stand-alone PDP sponsor contract becomes inactive?
-          </div>
-          <i class="material-icons card-expand">expand_more</i>
-        </div>
-        <div id="collapseNineteen" class="collapse" aria-labelledby="headingNineteen">
-          <div class="card-body">
-            When a stand-alone PDP sponsor contract becomes inactive (IE the contract is consolidated, withdrawn, terminated, etc),
-            the PDP will continue to be able to use the AB2D API to access claims data for 90 days after the contract’s termination 
-            date. PDPs will not be able to access claims data via the AB2D API after the 90 day period.
-          </div>
-        </div>
-      </div>    
 
       <div class="card">
         <div class="card-header" id="headingNine" data-toggle="collapse" data-target="#collapseNine"
