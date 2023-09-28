@@ -31,7 +31,7 @@ active-nav: overview-nav
                 </p>
                 <p>
                     In response to the BBA, CMS has developed an Application Programming Interface (API) known as the AB2D API. The AB2D API securely provides 
-                    stand-alone PDP sponsors with Medicare Parts A and B claims data for their active enrollees. PDP sponsors will be able to utilize this claims data 
+                    active stand-alone PDP sponsor contracts with Medicare Parts A and B claims data for their enrollees. PDP sponsors will be able to utilize this claims data 
                     to promote the appropriate use of medications and to improve health outcomes for their beneficiaries. The bulk claims data provided by the AB2D API 
                     is formatted in <a href="https://hl7.org/fhir/uv/bulkdata/export/index.html" target="_blank">Fast Healthcare Interoperability Resources (FHIR) </a> a standard for exchanging healthcare information electronically.
                 </p>

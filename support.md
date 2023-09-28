@@ -112,7 +112,7 @@ active-nav: support-nav
           </div>
         </div>
       </div>
-
+ 
       <div class="card">
         <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
           aria-controls="collapseTwo">
@@ -143,7 +143,7 @@ active-nav: support-nav
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
-            Stand-alone Medicare Part D Plan (PDP) sponsors.
+            Active stand-alone Medicare Part D Plan (PDP) sponsors.
           </div>
         </div>
       </div>
