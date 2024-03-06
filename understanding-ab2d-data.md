@@ -94,7 +94,7 @@ active-nav: understanding-the-data-nav
                             <a href="http://json.org/" target="_blank">Intro to JSON Format </a>
                         </li>
                         <li>
-                            <a href="http://ndjson.org/" target="_blank">Newline Delimited JSON (ndjson) </a>
+                            <a href="https://github.com/ndjson/ndjson-spec" target="_blank">Newline Delimited JSON (ndjson) </a>
                         </li>
                         <li>
                             <a href="https://jsonlint.com/" target="_blank">JSON format viewer/validator </a>
