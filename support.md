@@ -322,7 +322,7 @@ active-nav: support-nav
           <div class="card-body">
             The AB2D API leverages the <a href="http://build.fhir.org/ig/HL7/VhDir/bulk-data.html" target="_blank">Bulk
               FHIR Specification </a>
-            which uses the file format: NDJSON, <a href="http://ndjson.org/" target="_blank">New Line Delimited JSON
+            which uses the file format: NDJSON, <a href="https://github.com/ndjson/ndjson-spec" target="_blank">New Line Delimited JSON
             </a>. An NDJSON file provides a single record on each line, which makes it
             easy for various tools to look at and process one record at a time before moving on to the next one.
           </div>

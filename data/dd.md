@@ -379,6 +379,6 @@ Please visit the links below for more information.
 - [Bulk FHIR specification](http://build.fhir.org/ig/HL7/VhDir/bulk-data.html)
 - [Blue Button API](https://bluebutton.cms.gov/developers/)
 - [Blue Button Implementation Guide](https://bluebutton.cms.gov/assets/ig/index.html)
-- [Intro to JSON Format](http://json.org/) and [http://ndjson.org/](http://ndjson.org)
+- [Intro to JSON Format](http://json.org/) and [NDJSON Spec](https://github.com/ndjson/ndjson-spec)
 - [JSON format viewer/validator (raw text/JSON format converter)](https://jsonlint.com/)
 - [Intro to valid FHIR formats](http://hl7.org/fhir/STU3/validation.html)
