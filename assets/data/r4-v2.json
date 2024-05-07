@@ -1087,9 +1087,9 @@
         }
       ],
       "example": {
-        "diagnosis": [
+        "supportingInfo": [
           {
-            "sequence": 5,
+            "sequence": 1,
             "category": {
               "coding": [
                 {
@@ -1099,16 +1099,17 @@
                 },
                 {
                   "system": "https://bluebutton.cms.gov/resources/codesystem/information",
-                  "code": "https://bluebutton.cms.gov/resources/variables/clm_drg_cd",
-                  "display": "Claim Diagnosis Related Group Code (or MS-DRG Code)"
+                  "code": "https://bluebutton.cms.gov/resources/variables/nch_ptnt_stus_ind_cd",
+                  "display": "NCH Patient Status Indicator Code"
                 }
               ]
             },
             "code": {
               "coding": [
                 {
-                  "system": "https://bluebutton.cms.gov/resources/variables/clm_drg_cd",
-                  "code": "206"
+                  "system": "https://bluebutton.cms.gov/resources/variables/nch_ptnt_stus_ind_cd",
+                  "code": "A",
+                  "display": "Discharged"
                 }
               ]
             }
