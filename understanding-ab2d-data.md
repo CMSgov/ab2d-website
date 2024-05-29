@@ -1,8 +1,8 @@
 ---
 layout: subpage_layout
-title:  "Understanding AB2D Data"
+title:  "Understand AB2D Data"
 date:   2019-11-02 09:21:12 -0500 
-description: Understanding AB2D Data
+description: Understand AB2D Data
 landing-page: live
 active-nav: understanding-the-data-nav
 ---
@@ -17,11 +17,21 @@ active-nav: understanding-the-data-nav
             <div class="col-lg-6">
                 <div class="step-header">Overview</div>
                 <p>
-                The AB2D API is a RESTful based web service providing Medicare Parts A and B claims data using the industry-
-                standard <a href="https://www.hl7.org/fhir/overview.html" target="_blank">HL7 Fast Healthcare Interoperability Resources (FHIR) </a> resources, specifically the 
-                <a href="https://hl7.org/fhir/uv/bulkdata/export/index.html" target="_blank">Bulk FHIR specification </a>. The AB2D API only provides data records for active enrollees and excludes
-                all claims with substance abuse codes (as required by the Confidentiality of Alcohol and Drug Abuse Patient
-                Records Regulations, 42 CFR Part 2).
+                    <strong class="ds-u-font-weight--bold">What kinds of data are available?</strong>
+                </p>
+                <p>
+                    AB2D is a RESTful (representational state transfer) API providing claims data for active Medicare enrollee groups. The <a href="https://hl7.org/fhir/uv/bulkdata/" target="_blank">Bulk FHIR specification</a> lets it handle large volumes of enrollee claims data, including:
+                </p>
+                <ul class="ds-c-list">
+                    <li>
+                        <strong class="ds-u-font-weight--bold">Medicare Part A claims data.</strong> Inpatient hospital stays, care in skilled nursing facilities, and hospice care.
+                    </li>
+                    <li>
+                        <strong class="ds-u-font-weight--bold">Medicare Part B claims data.</strong> Various doctors' services, outpatient care, medical supplies, and preventive services.
+                    </li>
+                </ul>
+                <p>
+                    These claims contain valuable information about enrollee health, which can help fill any gaps in the health records available to stand-alone Prescription Drug Plan sponsors (PDPs).
                 </p>
             </div>
             <div class="col-lg-6">
@@ -30,7 +40,6 @@ active-nav: understanding-the-data-nav
         </div>
     </div>
 </section>         
-
 <section class="bg-light-blue page-section pt-20 pb-10" role="region" aria-label="Developer Resources">        
     <svg class="shape-divider flip" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 1034.2 43.8" style="enable-background:new 0 0 1034.2 43.8;" xml:space="preserve" alt="divider">
@@ -44,21 +53,19 @@ active-nav: understanding-the-data-nav
                 </div>
                 <div class="col-lg-10">
                     <div class="header-title">Sample AB2D Files</div>
-                    The examples below were generated from synthetic claims data but are similar to the files that will be
-                    retrieved through the AB2D API for Part D Sponsors.
+                    These test data files will give you a good idea of the type of data available through AB2D.
                     <br /><br />
-                    <ul class="gray-bullets">
+                    <ul class="ds-c-list">
                     <li>
-                    <a href="assets/downloads/sample-data-r4.ndjson" download="sample-data-r4.ndjson">Parts A and Parts B Sample Export (v2 - R4)</a>
+                    <a href="assets/downloads/sample-data-r4.ndjson" download="sample-data-r4.ndjson">AB2D v2 (latest version) Parts A and Parts B Sample Export (FHIR R4)</a>
                     </li>
                     <li>
-                    <a href="assets/downloads/sample-data-stu3.ndjson" download="sample-data-stu3.ndjson">Parts A and Parts B Sample Export (v1 - STU3)</a>
+                    <a href="assets/downloads/sample-data-stu3.ndjson" download="sample-data-stu3.ndjson">AB2D v1 Parts A and Parts B Sample Export (FHIR STU3)</a>
                     </li>
                     </ul>
                 </div>
             </div>
         </div>
-        
         <div class="understanding-the-data-section">
             <div class="row">
                 <div class="col-lg-2 text-center">
@@ -66,10 +73,9 @@ active-nav: understanding-the-data-nav
                 </div>
                 <div class="col-lg-10">
                     <div class="header-title">Data Dictionary</div>
-                    AB2D API users can leverage the AB2D Data Dictionary
-                     for more information on the data elements.
+                    Learn more about AB2D data elements. 
                     <br /><br />
-                    <ul class="gray-bullets">
+                    <ul class="ds-c-list">
                         <li>
                             <a href="data_dictionary.html">
                                 View Data Dictionary
@@ -79,17 +85,16 @@ active-nav: understanding-the-data-nav
                 </div>
             </div>
         </div>
-                
         <div class="understanding-the-data-section">
             <div class="row">
                 <div class="col-lg-2 text-center">
                     <img class="mb-3" src="assets/img/creativity.svg" alt="creativity" />
                 </div>
                 <div class="col-lg-10">
-                    <div class="header-title">Additional Resources</div>
-                    Here are some helpful resources you can reference while using this site:
+                    <div class="header-title">JSON resources</div>
+                    Introductions to JSON
                     <br /><br />
-                    <ul class="gray-bullets">
+                    <ul class="ds-c-list">
                         <li>
                             <a href="http://json.org/" target="_blank">Intro to JSON Format </a>
                         </li>
