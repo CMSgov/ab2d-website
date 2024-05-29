@@ -73,11 +73,36 @@ active-nav: accessing-claims-data-nav
 </script>
 
 <section class="bg-white page-section py-5" role="main">
-    <svg preserveAspectRatio="xMidYMin slice" class="shape-divider" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 1034.2 43.8" style="enable-background:new 0 0 1034.2 43.8;" xml:space="preserve" alt="divider">
-	<path fill="#ffffff" d="M0,21.3c0,0,209.3-48,517.1,0s517.1,0,517.1,0v22.5H0V21.3z"/>
+    <svg 
+        preserveAspectRatio="xMidYMin slice" 
+        class="shape-divider" 
+        version="1.1" 
+        xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        x="0px" 
+        y="0px"
+        viewBox="0 0 1034.2 43.8" 
+        style="enable-background:new 0 0 1034.2 43.8;" 
+        xml:space="preserve" 
+        alt="divider"
+    >
+        <path fill="#ffffff" d="M0,21.3c0,0,209.3-48,517.1,0s517.1,0,517.1,0v22.5H0V21.3z"/>
     </svg>
     <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>
+                    Active, stand-alone Prescription Drug Plan Sponsors (PDPs) who want to access Medicare Part A and Part B claims data need to follow four steps:
+                </h1>
+                <ol class="ds-c-list">
+                    <li>Attest (agree) to AB2D API data protocols.</li>
+                    <li>Appoint a technical point of contact for your organization.</li>
+                    <li>Test synthetic data in the sandbox.</li>
+                    <li>Receive credentials to access production claims data.</li>
+                </ol>
+                <hr/>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-6 step-claims-menu-col" style="max-width: 250px;">
                 <div class="step-claims-menu">
@@ -96,256 +121,180 @@ active-nav: accessing-claims-data-nav
                 </div>
             </div>
             <div class="col">
-            <div id="step-1-content" class="step-content">
-                <div class="step-header">Step 1</div>
-                <div class="step-title">Attestation</div>
-                <div class="line-copy"></div>
-                <div class="header-title">Overview</div>
-                <div class="row mb-5">
-                    <div class="col-lg-6">
-                        <p>
-                            In order to access Medicare Parts A and B claims data, a Prescription Drug Plan (PDP) Sponsor must first
-                            complete the attestation process for each of
-                            their active Prescription Drug Plan (PDP) Sponsor contracts looking to connect to the AB2D API.
-                            During this process, a Prescription Drug Plan (PDP) Sponsor formally 
-                            reviews and agrees to comply with the 
-                            <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank">
-                            Claims Data Usage Protocols </a>. These protocols regulate how their organization may or may not use the Medicare claims data provided
-                            by the AB2D API, including limitations associated with the reuse and disclosure of the data.
-                        </p>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="assets/img/attestation.svg" width="424" height="315" alt="attestation" />
-                    </div>
-                </div>
-                
-                <div id="what-type-accordion" class="accordion-white-bg">
-                  <div class="card">
-                    <div class="card-header" id="headingZero" data-toggle="collapse" data-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
-                      <div class="mb-0 card-header-h5">
-                          What type of organizations can attest?
-                      </div>
-                      <i class="material-icons card-expand">expand_more</i>
-                    </div>
-                
-                    <div id="collapseZero" class="collapse" aria-labelledby="headingZero" data-parent="#accordion">
-                      <div class="card-body">
-                        Stand-alone Medicare Part D Plan (PDP) sponsors (PACE and MAPD are not eligible).
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div id="who-can-attest-accordion" class="accordion-white-bg">
-                  <div class="card">
-                    <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      <div class="mb-0 card-header-h5">
-                          Who can attest?
-                      </div>
-                      <i class="material-icons card-expand">expand_more</i>
-                    </div>
-                
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                      <div class="card-body">
-                        <ul>
-                            <li>Attestation must be performed by a Medicare Part D Plan (PDP) Sponsor CEO, CFO, or COO.</li>
-                            <li>An Attestor must hold an active CEO, CFO, or COO role within their organization.</li>
-                            <li>Part D Plan (PDP) sponsors can have multiple executives attest to each of their participating contracts. This is considered best
-                            practice and is strongly encouraged.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div id="affect-claims-data-accordion-attestation" class="accordion-white-bg">
-                  <div class="card">
-                    <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                      <div class="mb-0 card-header-h5">
-                          How does attestation affect claims data?
-                      </div>
-                      <i class="material-icons card-expand">expand_more</i>
-                    </div>
-                
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                      <div class="card-body">
-                        <ul>
-                            <li>Attested Part D Plan (PDP) sponsors are able to retrieve claims data for active plan enrollees from the date of attestation onwards.
-                            Claims data prior to the attestation date will not be provided.</li>
-                            <li>Participating Part D Plan (PDP) sponsors must have an active Attestor at all times and will not receive data during periods where the
-                            (PDP) sponsor does not have an active Attestor. Data access will be restored once another active CEO, CFO, or COO attests. We
-                            highly recommend that Part D Plan (PDP) sponsors have multiple executives attest to contracts to reduce the risk of lapses in access
-                            to data based on attestation status.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div id="initially-attest-accordion" class="accordion-white-bg">
-                  <div class="card">
-                    <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                      <div class="mb-0 card-header-h5">
-                          How to initially attest
-                      </div>
-                      <i class="material-icons card-expand">expand_more</i>
-                    </div>
-                
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                      <div class="card-body">
-                        <ol>
-                            <li>Log into <a href="https://hpms.cms.gov/app/ng/home/" target="_blank">HPMS </a></li>
-                            <li>Click on “Claims Data Attestation” (under Contract Management)</li>
-                            <li>Select the checkbox(es) next to one, multiple, or all contracts within the 'Contracts Without Attestation' window</li>
-                            <li>Click on the "Attest" button</li>
-                            <li>Review the Claims Data Usage Protocols</li>
-                            <li>Select the checkbox next to: "I hereby certify that I understand the attestation above"</li>
-                            <li>Click "Confirm"</li>
-                        </ol>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div id="affect-claims-data-accordion-additional" class="accordion-white-bg">
-                  <div class="card">
-                    <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                      <div class="mb-0 card-header-h5">
-                          How to add additional attesters
-                      </div>
-                      <i class="material-icons card-expand">expand_more</i>
-                    </div>
-                
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                      <div class="card-body">
-                        <ol>
-                            <li>Log into <a href="https://hpms.cms.gov/app/ng/home/" target="_blank">HPMS </a></li>
-                            <li>Click on "Claims Data Attestation" (under Contract Management)</li>
-                            <li>Select the checkbox(es) next to one, multiple, or all contracts within the 'Attested Contract' window</li>
-                            <li>Click on the "Re-Attest" button</li>
-                            <li>Review the Claims Data Usage Protocols</li>
-                            <li>Select the checkbox next to: "I hereby certify that I understand the attestation above"</li>
-                            <li>Click "Confirm"</li>
-                        </ol>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            
-            <div id="step-2-content" class="step-content">
-                <div class="step-header">Step 2</div>
-                <div class="step-title">Appoint an "AB2D Operations Specialist"</div>
-                <div class="line-copy"></div>
-                <div class="header-title">Overview</div>
-                
-                <div class="row">
-                    <div class="col-lg-6 mb-5">
-                        After attesting, Part D Plan (PDP) Sponsors will need to assign an "AB2D Data Operations Specialist"
-                        to act as their organization’s primary technical point of contact.
-                        
-                        <div class="header-title" style="margin-top: 30px;">The "AB2D Data Operations Specialist"</div>
-                        
-                        <div class="row">
-                            <i class="col material-icons green-check">check</i>
-                            <div class="col">Is a technical employee at the Part D Plan (PDP) sponsor that has the authority to access and view the data provided by the API.</div>
+                <div id="step-1-content" class="step-content">
+                    <div class="step-header">Step 1</div>
+                    <div class="step-title">Begin attestation</div>
+                    <div class="line-copy"></div>
+                    <div class="header-title">Agreements and authorization</div>
+                    <div class="row mb-5">
+                        <div class="col-lg-6">
+                            <p>
+                                To access production claims data, an executive from your organization (“Attestor”) first needs to agree (“attest") to our 
+                                <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank">Claims Data Usage Protocols</a>. These protocols include limitations on data use and disclosure.
+                            </p>
                         </div>
-                        <br /><br />
-                        
-                        <div class="row">
-                            <i class="col material-icons green-check">check</i>
-                            <div class="col">Will be technically savvy enough to connect to the AB2D API and retrieve claims data from our Sandbox and Production environments.</div>
+                        <div class="col-lg-6 mb-5">
+                            <img src="assets/img/attestation.svg" width="424" height="315" alt="attestation" />
                         </div>
-                        <br /><br />
-                        
-                        <div class="row">
-                            <i class="col material-icons green-check">check</i>
-                            <div class="col">Will need to provide static IP address(es) and or CIDR ranges for the network/system that is going to be accessing the AB2D API.</div> 
+                        <div class="col-lg-12">
+                            <h2>How do I attest?</h2>
+                            <ol class="ds-c-list">
+                                <li>
+                                    Log into the 
+                                    <a href='https://hpms.cms.gov/app/ng/home/' target="_blank">Health Plan Management System</a> (HPMS)
+                                </li>
+                                <li>
+                                    Select <i class="ds-u-font-style--italic">Claims Data Attestation</i> (under <i class=".ds-u-font-style--italic">Contract Management</i>)
+                                </li>
+                                <li>
+                                    Choose an option for one, multiple, or all contracts in the <i class="ds-u-font-style--italic">Contracts Without Attestation</i> window
+                                </li>
+                                <li>
+                                    Select the <i class="ds-u-font-style--italic">Attest</i> button
+                                </li>
+                                <li>
+                                    Review the <i class="ds-u-font-style--italic">Claims Data Usage Protocols</i>
+                                </li>
+                                <li>
+                                    Select <i class="ds-u-font-style--italic">I hereby certify that I understand the attestation above</i>
+                                </li>
+                                <li>
+                                    Select <i class="ds-u-font-style--italic">Confirm</i>
+                                </li>
+                            </ol>
+                            <p>
+                                An organization can have multiple Attestors. We strongly encourage that you have multiple executives attest to each of their participating contracts. This is best practice as it prevents gaps in access if one Attestor leaves the organization.
+                            </p>
+                            <p>
+                                To add multiple Attestors:
+                            </p>
+                            <p>
+                                Follow the same steps. The Attest button will now be labeled “re-attest” under step 4. 
+                            </p>
+                            <h2>What are the requirements to be an Attestor?</h2>
+                            <p>
+                                An Attestor needs to:
+                            </p>
+                            <ul class="ds-c-list">
+                                <li>
+                                    Be part of an active, stand-alone PDP organization (PACE and MAPD are ineligible).
+                                </li>
+                                <li>
+                                    Hold a current CEO, CFO, or COO role within the organization.
+                                </li>
+                                <li>
+                                    Attest to each contract that will connect to AB2D.
+                                </li>
+                            </ul>
+                            <h2>How does attestation affect your claims data?</h2>
+                            <ul class="ds-c-list">
+                                <li>
+                                    PDPs can retrieve claims data for their active plan enrollees from the date of attestation onwards. Claims data prior to their attestation date will <strong class="ds-u-font-weight--bold">not</strong> be provided.
+                                </li>
+                                <li>
+                                    PDPs must have an active Attestor at all times. Your organization will not be able to receive data during periods without an active Attestor. Access to data will only be restored once another active CEO, CFO, or COO attests. We highly recommend adding multiple Attestors to reduce the risk of lapses in your data access. 
+                                </li>
+                            </ul>
+                            <h2>When does attestation take effect?</h2>
+                            <p>
+                                Once an organization has attested, it follows the remaining steps in the onboarding process, which include appointing a technical specialist, testing synthetic data in the sandbox, and receiving credentials. Once these steps are complete, the organization will have access to claims data starting from the attestation date. Claims data previous to that date won't be available.
+                            </p>
+                            <hr/>
                         </div>
-                        
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="assets/img/data-specialist.svg" alt="data-specialist" />
-                    </div>
-                </div>
-            </div>
-            
-            <div id="step-3-content" class="step-content">
-                <div class="step-header">Step 3</div>
-                <div class="step-title">Retrieve Synthetic Claims Data</div>
-                <div class="line-copy"></div>
-                <div class="header-title">Overview</div>
-                
-                <div class="row">
-                    <div class="col-lg-6 mb-5">
-                        The Sandbox is a test environment that enables anyone to interact with the AB2D API and retrieve synthetic Medicare Parts A and B claims data.
-                        A Part D Plan (PDP) sponsor “AB2D Data Operations Specialist” will need to verify they have retrieved synthetic claims data successfully in 
-                        order to gain access to production data. 
-                        
-                        
-                        <div class="header-title" style="margin-top: 30px;">Connecting to the Sandbox</div>
-                        We are providing three different ways to retrieve synthetic claims data:
-                        <ol>
-                            <li><a href="tutorial-postman-swagger.html">Postman and Swagger User Guide</a></li>
-                            <li><a href="tutorial-curl.html">Curl User Guide</a></li>
-                            <li><a href="advanced-user-guide.html">Advanced User Guide</a></li>
-                        </ol>
-                        
-                        <div class="header-title" style="margin-top: 30px;">Verifying Synthetic Data Retrieval</div>
-                        <ul>
-                            <li>The "AB2D Data Operations Specialist" will need to record the Log ID from jobs that were
-                             executed successfully; retrieving synthetic claims data in our Sandbox environment.</li>
-                            <li>The "AB2D Data Operations Specialist" will provide the Log ID from one of these jobs to 
-                             the AB2D Team.</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="assets/img/programmer.svg" alt="programmer" />
-                    </div>
-                </div>
-            </div>
-            
-            <div id="step-4-content" class="step-content">
-                <div class="step-header">Step 4</div>
-                <div class="step-title">Accessing Claims Data in Production</div>
-                <div class="line-copy"></div>
-                <div class="header-title">Overview</div>
-                
-                <div class="row">
-                    <div class="col-lg-6 mb-5">
-                        Once a connection to the sandbox environment has been verified, the AB2D team will work directly with the Part D Plan (PDP) sponsors to 
-                        deliver production credentials. The Part D Plan (PDP) sponsor will use the production credentials to retrieve actual Medicare Parts A and B 
-                        Claims Data from our production environment.
-                        
-                        <div class="header-title" style="margin-top: 30px;">
-                            Delivering Production Credentials
+                    </div>      
+                </div> <!-- End Step 1 Content -->
+                <div id="step-2-content" class="step-content">
+                    <div class="step-header">Step 2</div>
+                    <div class="step-title">Choose an AB2D Operations Specialist</div>
+                    <div class="line-copy"></div>
+                    <div class="header-title">Your technical point of contact</div>
+                    <div class="row mb-5">
+                        <div class="col-lg-6">
+                            <p>
+                                After attesting, you will need to assign an AB2D Data Operations Specialist (ADOS). Your ADOS will serve as the primary technical point of contact of your organization. 
+                            </p>
                         </div>
-                        <ul>
-                            <li>After the "AB2D Data Operations Specialist" has provided their IP addresses and verified synthetic data retrieval, the AB2D team 
-                             will work directly with the Attestor(s) to provide their organization’s production credentials.</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 mb-5">
-                        <img src="assets/img/production.svg" alt="production" />
-                    </div>
-                </div>
-                <div class="header-title">
-                    Retrieving Actual Claims Data
-                </div>
-                <div>
-                    <ul>
-                        <li>Using the production credentials, the Part D Plan (PDP) sponsors will connect to the AB2D API in our production environment to download
-                         actual Medicare Parts A and B claims data.</li>
-                        <li>The AB2D team will work closely with the organization and its "AB2D Data Operations Specialist" to answer any questions or troubleshoot
-                         any issues they have connecting to the AB2D API.</li>
-                         <li>For more information and to help answer any remaining question you may have, production documentation 
-                            can be found in the <a href="https://github.com/CMSgov/ab2d-pdp-documentation" rel="noopener noreferrer" target="_blank">AB2D Github repository</a>. 
-                        </li>
-                    </ul> 
-                </div>
-                            
-            </div>
-            
+                        <div class="col-lg-6 mb-5">
+                            <img src="assets/img/data-specialist.svg" alt="data-specialist" />
+                        </div>
+                        <div class="col-lg-12">
+                            <h2>What qualifications does the ADOS need?</h2>
+                            <ul class="ds-c-list">
+                                <li>
+                                    Employee or vendor with authority to access and view your organization’s beneficiary data
+                                </li>
+                                <li>
+                                    Expertise to connect to and retrieve data from the sandbox and production environments
+                                </li>
+                                <li>
+                                    Ability to provide static IP address(es) and/or CIDR ranges for the network/system accessing the API
+                                </li>
+                            </ul>
+                            <hr/>
+                        </div>
+                    </div>      
+                </div> <!-- End Step 2 Content -->
+                <div id="step-3-content" class="step-content">
+                    <div class="step-header">Step 3</div>
+                    <div class="step-title">Retrieve test claims data</div>
+                    <div class="line-copy"></div>
+                    <div class="header-title">Test the API in our sandbox</div>
+                    <div class="row mb-5">
+                        <div class="col-lg-6">
+                            <p>
+                                The sandbox is a test environment that allows anyone to interact with the AB2D API and retrieve test Medicare Parts A and B claims data. The ADOS will need to verify your organization’s retrieval of test data before receiving access to the AB2D API.  
+                            </p>
+                        </div>
+                        <div class="col-lg-6 mb-5">
+                            <img src="assets/img/programmer.svg" alt="programmer" />
+                        </div>
+                        <div class="col-lg-12">
+                            <h2>Connecting to the sandbox</h2>
+                            <p>
+                                There are three ways to retrieve test data from the sandbox, depending on your preference: Postman, Swagger, and curl.
+                            </p>
+                            <ol class="ds-c-list">
+                                <li>
+                                    <a href="https://ab2d.cms.gov/tutorial-postman-swagger.html" target="_blank">Postman and Swagger User Guide</a>
+                                </li>
+                                <li>
+                                    <a href="https://ab2d.cms.gov/tutorial-curl.html" target="_blank">curl User Guide</a>
+                                </li>
+                                <li>
+                                    <a href="https://ab2d.cms.gov/advanced-user-guide.html" target="_blank">Advanced User Guide</a>
+                                </li>
+                            </ol>
+                            <h2>Verifying test data retrieval</h2>
+                            <p>
+                                The ADOS must record the Log ID from successful jobs in the sandbox and provide this ID to the AB2D team for verification. Once verified the AB2D team will provide access to the API. 
+                            </p>
+                            <hr/>
+                        </div>
+                    </div>      
+                </div> <!-- End Step 3 Content -->
+                <div id="step-4-content" class="step-content">
+                    <div class="step-header">Step 4</div>
+                    <div class="step-title">Receive production API credentials</div>
+                    <div class="line-copy"></div>
+                    <div class="header-title">Get started with production data</div>
+                    <div class="row mb-5">
+                        <div class="col-lg-6">
+                            <p>
+                                Your organization must provide the AB2D team with the public static IP address(es) of the network or system connecting to the API. These will be reviewed, approved, and allow-listed as an additional layer of security. Afterward, the AB2D team will assign and provide the Attestor production credentials, which will allow your organization to use the API to retrieve real Medicare Parts A and B claims data. 
+                            </p>
+                        </div>
+                        <div class="col-lg-6 mb-5">
+                            <img src="assets/img/production.svg" alt="production" />
+                        </div>
+                        <div class="col-lg-12">
+                            <p>
+                                Our team can work with you to troubleshoot any issues and answer questions through our <a href="https://groups.google.com/u/1/g/cms-ab2d-api" target="_blank">Google Group</a>
+                            </p>
+                            <a href="https://github.com/CMSgov/ab2d-pdp-documentation" target="_blank">Explore production documentation</a>
+                            <hr/>
+                        </div>
+                    </div>      
+                </div> <!-- End Step 4 Content -->
             </div>
         </div>
     </div>
