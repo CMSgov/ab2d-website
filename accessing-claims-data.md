@@ -255,13 +255,13 @@ active-nav: accessing-claims-data-nav
                             </p>
                             <ol class="ds-c-list">
                                 <li>
-                                    <a href="https://ab2d.cms.gov/tutorial-postman-swagger.html" target="_blank">Postman and Swagger User Guide</a>
+                                    <a href="https://ab2d.cms.gov/tutorial-postman-swagger.html">Postman and Swagger User Guide</a>
                                 </li>
                                 <li>
-                                    <a href="https://ab2d.cms.gov/tutorial-curl.html" target="_blank">curl User Guide</a>
+                                    <a href="https://ab2d.cms.gov/tutorial-curl.html">curl User Guide</a>
                                 </li>
                                 <li>
-                                    <a href="https://ab2d.cms.gov/advanced-user-guide.html" target="_blank">Advanced User Guide</a>
+                                    <a href="https://ab2d.cms.gov/advanced-user-guide.html">Advanced User Guide</a>
                                 </li>
                             </ol>
                             <h2>Verifying test data retrieval</h2>

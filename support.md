@@ -119,7 +119,7 @@ active-nav: support-nav
         </div>
         <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-            There are 4 steps organizations need to complete to get <a href="https://ab2d.cms.gov/accessing-claims-data.html" target="_blank">access to AB2D</a> data:
+            There are 4 steps organizations need to complete to get <a href="https://ab2d.cms.gov/accessing-claims-data.html">access to AB2D</a> data:
             <ol class="ds-c-list">
               <li>
                 Authorize your organization to use the API and agree to comply with proper data use (attestation) as outlined in the BBA and CMS Final Rule
