@@ -209,7 +209,7 @@ active-nav: support-nav
             <p>
               The following uses are not permitted:
             </p>
-            <ol class="ds-c-list">
+            <ul class="ds-c-list" style="list-style-type: none;">
               <li>
                 (i) To inform coverage determinations under Part D;
               </li>
@@ -222,7 +222,7 @@ active-nav: support-nav
               <li>
                 (iv) To inform marketing of benefits.
               </li>
-            </ol>
+            </ul>
           </div>
         </div>
       </div> <!-- End Card -->
