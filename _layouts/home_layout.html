@@ -22,7 +22,7 @@ layout: new
         }
 
         $.ajax({
-            url: 'https://2l5gy35bk2.execute-api.us-east-1.amazonaws.com/status/ab2d_api_gateway',  
+            url: 'https://2l5gy35bk2.execute-api.us-east-1.amazonaws.com/status/ab2d_api_gateway',
             crossDomain: true,
             success: function (res) {
                 if (res.body && res.body.includes("Up")) {
