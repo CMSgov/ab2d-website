@@ -1,13 +1,48 @@
-<div class="container">
-    <a class="navbar-brand" href="/"><img src="assets/img/logo-horiz.svg" alt="logo" /></a>
-    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fas fa-bars"></i> </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-            <li class="nav-item {% if page.active-nav == 'home-nav' %}{{ 'active' }}{% endif %}"> <a class="nav-link" href="/">Home</a> </li>
-            <li class="nav-item {% if page.active-nav == 'overview-nav' %}{{ 'active' }}{% endif %}"> <a class="nav-link" href="overview.html">Overview</a> </li>
-            <li class="nav-item {% if page.active-nav == 'accessing-claims-data-nav' %}{{ 'active' }}{% endif %}"><a class="nav-link" href="accessing-claims-data.html">Accessing Claims Data</a></li>
-            <li class="nav-item {% if page.active-nav == 'understanding-the-data-nav' %}{{ 'active' }}{% endif %}"> <a class="nav-link" href="understanding-ab2d-data.html">Understanding AB2D Data</a> </li>
-            <li class="nav-item {% if page.active-nav == 'support-nav' %}{{ 'active' }}{% endif %}"> <a class="nav-link" href="support.html">Support &amp; FAQs</a> </li>
-        </ul>
+<div class=" position-sticky top-0 bg-white shadow-1 z-top">
+  <div class="usa-overlay"></div>
+  <header class="usa-header usa-header--basic">
+    <div class="usa-nav-container">
+      <div class="usa-navbar">
+        <div class="usa-logo">
+          <em class="usa-logo__text"
+            ><a href="/" title="<Project title>"><img src="assets/img/logo-horiz-dark.svg" /></a>
+          </em
+          >
+        </div>
+        <button type="button" class="usa-menu-btn">Menu</button>
+      </div>
+      <nav aria-label="Primary navigation" class="usa-nav">
+        <button type="button" class="usa-nav__close">
+          <img src="/assets/img/usa-icons/close.svg" role="img" alt="Close" />
+        </button>
+        <ul class="usa-nav__primary usa-accordion">
+          <li class="usa-nav__primary-item">
+            <a href="javascript:void(0);" class="usa-nav-link {% if page.active-nav == 'api-documentation' %}{{ 'usa-current' }}{% endif %}"
+              ><span>API Documentation</span></a
+            >
+          </li>
+          <li class="usa-nav__primary-item">
+            <a href="javascript:void(0);" class="usa-nav-link {% if page.active-nav == 'api-data' %}{{ 'usa-current' }}{% endif %}"
+              ><span>API Data</span></a
+            >
+          </li>
+          <li class="usa-nav__primary-item">
+            <a href="javascript:void(0);" class="usa-nav-link {% if page.active-nav == 'onboarding' %}{{ 'usa-current' }}{% endif %}"
+              ><span>Onboarding</span></a
+            >
+          </li>
+          <li class="usa-nav__primary-item">
+            <a href="javascript:void(0);" class="usa-nav-link {% if page.active-nav == 'support' %}{{ 'usa-current' }}{% endif %}"
+              ><span>Support</span></a
+            >
+          </li>
+      </ul>
+      <section class="width-100">
+          <a href="javascript:void(0);" class="usa-button"
+            ><span>Sandbox</span></a
+          >
+      </section>
+      </nav>
     </div>
+  </header>
 </div>

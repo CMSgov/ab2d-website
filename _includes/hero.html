@@ -1,0 +1,29 @@
+<!-- Hero -->
+<div class="usa-section--dark bg-primary">
+    <div class="grid-container padding-top-3 padding-bottom-8">
+        <h1 class="font-body-3xl measure-1 margin-bottom-0 line-height-sans-2"><span class="text-white">{{ include.title }}</span></h1>
+        <p class="line-height-sans-4 measure-6">{{ include.paragraph }}</p>
+        <div class="grid-row grid-gap">
+            {% if include.button-url %}
+            <div class="tablet:grid-col-auto margin-top-2">
+                <a href="{{ include.button-url }}" class="usa-button usa-button--inverse usa-button--outline width-full">
+                    {{ include.button-text }}
+                    <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img">
+                        <use xlink:href="/assets/img/sprite.svg#arrow_forward"></use>
+                    </svg>
+                </a>
+            </div>
+            {% endif %}
+            {% if include.github-button-url %}
+            <div class="tablet:grid-col-auto margin-top-2">
+                <a href="{{ include.github-button-url }}" class="usa-button usa-button--inverse usa-button--outline width-full">
+                    {{ include.github-button-text }}
+                    <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img">
+                        <use xlink:href="/assets/img/sprite.svg#github"></use>
+                    </svg>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+      </div>
+</div>
