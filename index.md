@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: full-width
 title:  "AB2D API"
 active-nav: home
 ---
