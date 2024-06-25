@@ -6,38 +6,31 @@ active-nav: api-documentation
 
 # {{ page.title }}
 
-(Getting the data)
+The AB2D API is a RESTful (representational state transfer) API using [Bulk Fast Healthcare Interoperability (FHIR)](https://hl7.org/fhir/uv/bulkdata/) resources for data exports. It allows Prescription Drug Plan sponsors (PDPs) to asynchronously access and bulk search Medicare Parts A and B claims data. Check out the tutorials and references below to learn how to start using AB2D. Visit [API Data]({% link api-data.md %}) to explore the types of data available and how to apply them in context.
 
-## API instructions
+## What’s the difference between the sandbox and production environments?
+Available to everyone, the sandbox environment lets you retrieve synthetic claims data. The production environment provides access to real Medicare enrollee data. You’ll need to [complete onboarding]({% link onboarding.md %}) to get access to the production environment. There are two versions of the API: v1 ([FHIR STU3](https://api.ab2d.cms.gov/api/v1/fhir)) and v2 ([FHIR R4](https://api.ab2d.cms.gov/api/v2/fhir)). While there are minor differences in how these versions process [parameters](http://link.to.parameters.docsubpage), it is recommended to use v2.
 
-### INITIAL CONNECTION
+## JSON resources
 
-TECHNICAL info on how to connect to:
+Both versions of AB2D use the JSON (ndjson) data format for the FHIR ExplanationOfBenefit resource.
+- Intro to JSON Format
+- Newline Delimited JSON (ndjson)
+- JSON format viewer/validator
 
-- sandbox
-- production
+_Editing during technical documentation reorganization_
 
-LINKS OUT to the "onboarding" page where we explain the non-technical workflow of Attestor/ADOS etc.
+- [Accessing Production](https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Production%20Access.md)
+  - Accessing the AB2D API for the first time
 
-Will contain content from:
+_Editing during technical documentation reorganization_
 
-- Swagger User Guide<
-- Advanced User Guide<
-- Curl User Guide<
-- Accessing Production (github)<
+Content is [swagger instructions(https://ab2d.cms.gov/tutorial-postman-swagger.html)] (link on the right).
 
-## API references
+_Editing during technical documentation reorganization_
 
-### FEATURES AND FUNCTIONALITY
+Content is [updated curl instructions](https://docs.google.com/document/d/11ujIc9tV9vN7ulqavekkL16AFOPNowT2rS5UipCyw3Y/edit) (link on the right).
 
-- Resources: (Intro to JSON Format, Newline Delimited JSON (ndjson), JSON format viewer/validator)
-- Endpoints
-- Parameters
-- Troubleshooting
+_Editing during technical documentation reorganization_
 
-<hr>
-
-### Cross links
-
-- <a href="{% link onboarding.md %}" class="usa-nav-link"><span>Onboarding</span></a>
-- <a href="{% link api-data.md %}" class="usa-nav-link"><span>API Data</span></a>
+Content is [advanced user guide](https://ab2d.cms.gov/advanced-user-guide.html) (link on the right).
