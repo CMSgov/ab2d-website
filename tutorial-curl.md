@@ -221,7 +221,6 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
    ```
    curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_outputFormat=application%2Ffhir%2Bndjson&_type=ExplanationOfBenefit" \
      -sD - \
-     -H "accept: application/json" \
      -H "Accept: application/fhir+json" \
      -H "Prefer: respond-async" \
      -H "Authorization: Bearer ${BEARER_TOKEN}"
@@ -320,7 +319,7 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
    ```
    curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB}/\$status" \
      -sD - \
-     -H "accept: application/json" \
+     -H "Accept: application/json" \
      -H "Authorization: Bearer ${BEARER_TOKEN}"
    ```
    
