@@ -20,7 +20,7 @@ active-nav: understanding-the-data-nav
                     <strong class="ds-u-font-weight--bold">What kinds of data are available?</strong>
                 </p>
                 <p>
-                    AB2D is a RESTful (representational state transfer) API providing claims data for active Medicare enrollee groups. The <a href="https://hl7.org/fhir/uv/bulkdata/" target="_blank">Bulk FHIR specification</a> lets it handle large volumes of enrollee claims data, including:
+                    AB2D is a RESTful (representational state transfer) API providing claims data for active Medicare enrollee groups. The <a href="https://hl7.org/fhir/uv/bulkdata/" target="_blank">Bulk Fast Healthcare Interoperability Resources (FHIR) </a> lets it handle large volumes of enrollee claims data, including:
                 </p>
                 <ul class="ds-c-list">
                     <li>
@@ -31,7 +31,7 @@ active-nav: understanding-the-data-nav
                     </li>
                 </ul>
                 <p>
-                    These claims contain valuable information about enrollee health, which can help fill any gaps in the health records available to stand-alone Prescription Drug Plan sponsors (PDPs).
+                    These claims contain valuable information about enrollee health, which can help fill any gaps in the health records available to stand-alonePrescription Drug Plan (PDP) sponsors.
                 </p>
             </div>
             <div class="col-lg-6">
@@ -57,7 +57,7 @@ active-nav: understanding-the-data-nav
                     <br /><br />
                     <ul class="ds-c-list">
                     <li>
-                    <a href="assets/downloads/sample-data-r4.ndjson" download="sample-data-r4.ndjson">AB2D v2 (latest version) Parts A and Parts B Sample Export (FHIR R4)</a>
+                    <a href="assets/downloads/sample-data-r4.ndjson" download="sample-data-r4.ndjson">AB2D v2 (recommended version) Parts A and Parts B Sample Export (FHIR R4)</a>
                     </li>
                     <li>
                     <a href="assets/downloads/sample-data-stu3.ndjson" download="sample-data-stu3.ndjson">AB2D v1 Parts A and Parts B Sample Export (FHIR STU3)</a>

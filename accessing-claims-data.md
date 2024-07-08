@@ -92,8 +92,11 @@ active-nav: accessing-claims-data-nav
         <div class="row">
             <div class="col">
                 <h1>
-                    Active, stand-alone Prescription Drug Plan Sponsors (PDPs) who want to access Medicare Part A and Part B claims data need to follow four steps:
+                    Accessing claims data
                 </h1>
+                <p>
+                    Active, stand-alone Prescription Drug Plan (PDP) sponsors who want to access Medicare Part A and Part B claims data need to follow four steps:
+                </p>
                 <ol class="ds-c-list">
                     <li>Attest (agree) to AB2D API data protocols.</li>
                     <li>Appoint a technical point of contact for your organization.</li>
@@ -177,13 +180,13 @@ active-nav: accessing-claims-data-nav
                             </p>
                             <ul class="ds-c-list">
                                 <li>
-                                    Be part of an active, stand-alone PDP organization (PACE and MAPD are ineligible).
+                                    be part of an active, stand-alone PDP organization (PACE and MAPD are ineligible).
                                 </li>
                                 <li>
-                                    Hold a current CEO, CFO, or COO role within the organization.
+                                    hold a current CEO, CFO, or COO role within the organization.
                                 </li>
                                 <li>
-                                    Attest to each contract that will connect to AB2D.
+                                    attest to each contract that will connect to AB2D.
                                 </li>
                             </ul>
                             <h2>How does attestation affect your claims data?</h2>
@@ -221,13 +224,13 @@ active-nav: accessing-claims-data-nav
                             <h2>What qualifications does the ADOS need?</h2>
                             <ul class="ds-c-list">
                                 <li>
-                                    Employee or vendor with authority to access and view your organization’s beneficiary data
+                                    employee or vendor with authority to access and view your organization’s beneficiary data
                                 </li>
                                 <li>
-                                    Expertise to connect to and retrieve data from the sandbox and production environments
+                                    expertise to connect to and retrieve data from the sandbox and production environments
                                 </li>
                                 <li>
-                                    Ability to provide static IP address(es) and/or CIDR ranges for the network/system accessing the API
+                                    ability to provide static IP address(es) and/or CIDR ranges for the network/system accessing the API
                                 </li>
                             </ul>
                             <hr/>
