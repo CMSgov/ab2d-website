@@ -70,15 +70,16 @@ active-nav: overview-nav
     >
 	    <path fill="#ffffff" d="M0,21.3c0,0,209.3-48,517.1,0s517.1,0,517.1,0v22.5H0V21.3z"/>
     </svg>
-     <div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">What are the use cases for the AB2D API?</h2>
-                <div class="divider-small-border center my-4"></div>
+                <h3 class="section-heading text-center">What are the other CMS claims-based FHIR APIs?</h3>
+                <div class="divider-small-border center mt-4 mb-5"></div>
             </div>
+        </div>
             <div class="row align-items-center">
               <div class="col-lg-6 px-5">
-                <h3 class="section-subheading">Find MTM program enrollees</h3>
+                <h3 class="section-heading">Find MTM program enrollees</h3>
                 <h4 class="section-subheading">Identify Medication Therapy Management enrollees by using data for a more thorough search capability.</h4>
               </div>
             </div>
@@ -89,7 +90,7 @@ active-nav: overview-nav
             </div>
             <div class="row align-items-center">
               <div class="col-lg-6 px-5">
-                <h3 class="section-subheading">Boost health outcomes</h3>
+                <h3 class="section-heading">Boost health outcomes</h3>
                 <h4 class="section-subheading">Enhance MTM enrollee health and program results by improving medication use and adherence.</h4>
               </div>
             </div>
