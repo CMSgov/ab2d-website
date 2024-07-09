@@ -17,7 +17,7 @@ AB2D provides PDPs with Medicare Parts A and B claims data. This data helps PDPs
 The [final rule](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745) specifies that data may be used for:
 
 - optimizing therapeutic outcomes through improved medication use
-- improving care coordination
+- improving care coordination for people
 - other purposes [that qualify] as “fraud and abuse detection or compliance activities”
 
 The following uses are not permitted:
