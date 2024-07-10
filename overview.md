@@ -13,7 +13,6 @@ active-nav: overview-nav
         class="shape-divider" 
         version="1.1" 
         xmlns="http://www.w3.org/2000/svg" 
-
         x="0px" 
         y="0px"
         viewBox="0 0 1034.2 43.8" 
@@ -85,6 +84,7 @@ active-nav: overview-nav
           </div>
         </div>
         <div class="row">
+           <div class="col-lg-12">
                 <h4 class="section-heading">Boost health outcomes</h4>
                 <h5 class="section-subheading">Enhance MTM enrollee health and program results by improving medication use and adherence.</h5>
                 <p>Part D <a href='https://www.cms.gov/medicare/health-drug-plans/part-c-d-performance-data' target="_blank">Star Ratings</a> evaluate the quality of services received by beneficiaries in your plan. CMS offers incentives to Prescription Drug Plan (PDP) sponsors with high Star Ratings:</p>
@@ -97,6 +97,7 @@ active-nav: overview-nav
               </div>
         </div>
         <div class="row">
+           <div class="col-lg-12">
                 <h4 class="section-subheading">Prevent fraud, waste, and abuse</h4>
                 <h5 class="section-subheading">Identify suspicious activity from providers or suppliers through access to mass data.</h5>
                 <p>Find suspicious patterns from providers or suppliers to reduce fraud and financial losses. By adding AB2D’s <a href='https://www.hl7.org/fhir/overview.html' target="_blank">Bulk FHIR</a> data to your existing data streams, you can conduct trend analysis and search mass enrollee data to quickly identify: </p>
@@ -110,6 +111,7 @@ active-nav: overview-nav
              </div>
         </div>
         <div class="row">
+          <div class="col-lg-12">
                 <h4 class="section-subheading">Enhance MTM services </h4>
                 <h5 class="section-subheading">Leverage insights from enrollee medical histories for more effective services.</h5>
                 <p>Plan sponsors can use AB2D data to get a holistic overview of enrollees' health histories. This allows for more informed discussions between the MTM provider and enrollee during comprehensive or targeted medication reviews: </p>
@@ -123,6 +125,7 @@ active-nav: overview-nav
                  </ul>
               </div>
         </div>
+ </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
