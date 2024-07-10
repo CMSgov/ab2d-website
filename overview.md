@@ -81,7 +81,7 @@ active-nav: overview-nav
           <div class="col-lg-12">
                 <h4 class="section-heading">Find MTM program enrollees</h4>
                 <h5 class="section-subheading">Identify Medication Therapy Management enrollees by using data for a more thorough search capability.</h5>
-                <p>AB2D data can help you identify beneficiaries who may be eligible for your Part D <a href='https://www.cms.gov/medicare/coverage/prescription-drug-coverage-contracting/medication-therapy-management' target="_blank">Medication Therapy Management (MTM)</a> programs. You can use AB2D data to help identify enrollees who meet the MTM targeting criteria, like those with certain chronic diseases or diagnoses. </p>
+                <p style="width: fit-content">AB2D data can help you identify beneficiaries who may be eligible for your Part D <a href='https://www.cms.gov/medicare/coverage/prescription-drug-coverage-contracting/medication-therapy-management' target="_blank">Medication Therapy Management (MTM)</a> programs. You can use AB2D data to help identify enrollees who meet the MTM targeting criteria, like those with certain chronic diseases or diagnoses. </p>
           </div>
         </div>
         <div class="row">
