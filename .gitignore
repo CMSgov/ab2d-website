@@ -98,3 +98,6 @@ common/jacoco/**
 
 ### DevOps website
 Deploy/website-temp
+
+### source files for USWDS ###
+node_modules
