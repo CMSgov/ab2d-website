@@ -78,23 +78,23 @@ active-nav: overview-nav
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3 class="section-heading">Find MTM program enrollees</h3>
-                <h4 class="section-subheading">Identify Medication Therapy Management enrollees by using data for a more thorough search capability.</h4>
+            <div class="col-lg-12">
+                <h4 class="section-heading">Find MTM program enrollees</h4>
+                <h5 class="section-subheading">Identify Medication Therapy Management enrollees by using data for a more thorough search capability.</h5>
               </div>
-            </div>
-            <div class="row align-items-center">
+        </div>
+        <div class="row">
               <div class="col-lg-6 px-5">
                 <p>AB2D data can help you identify beneficiaries who may be eligible for your Part D <a href='https://www.cms.gov/medicare/coverage/prescription-drug-coverage-contracting/medication-therapy-management' target="_blank">Medication Therapy Management (MTM)</a> programs. You can use AB2D data to help identify enrollees who meet the MTM targeting criteria, like those with certain chronic diseases or diagnoses. </p>
               </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4 class="section-heading">Boost health outcomes</h4>
+                <h5 class="section-subheading">Enhance MTM enrollee health and program results by improving medication use and adherence.</h5>
             </div>
-            <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3 class="section-heading">Boost health outcomes</h3>
-                <h4 class="section-subheading">Enhance MTM enrollee health and program results by improving medication use and adherence.</h4>
-              </div>
-            </div>
-            <div class="row align-items-center">
+        </div>
+        <div class="row">
               <div class="col-lg-6 px-5">
                 <p>Part D <a href='https://www.cms.gov/medicare/health-drug-plans/part-c-d-performance-data' target="_blank">Star Ratings</a> evaluate the quality of services received by beneficiaries in your plan. CMS offers incentives to Prescription Drug Plan (PDP) sponsors with high Star Ratings:</p>
                  <ul> 
@@ -104,15 +104,15 @@ active-nav: overview-nav
                  </ul>
                 <p>Medication adherence is one of the quality measures used to rate PDPs. AB2D data can address medication adherence, as well as statin use in persons with diabetes or other medication therapy problems, by proactively identifying MTM enrollees who may benefit from targeted intervention. As a result, this may help improve their health, the effectiveness of your programs, and your Star Ratings.</p>
               </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4 class="section-subheading">Prevent fraud, waste, and abuse</h4>
+                <h5 class="section-subheading">Identify suspicious activity from providers or suppliers through access to mass data.</h5>
             </div>
-            <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3 class="section-subheading">Prevent fraud, waste, and abuse</h3>
-                <h4 class="section-subheading">Identify suspicious activity from providers or suppliers through access to mass data.</h4>
-              </div>
-            </div>
-            <div class="row align-items-center">
-              <div class="col-lg-6 px-5">
+        </div>
+        <div class="row">
+             <div class="col-lg-6 px-5">
                 <p>Find suspicious patterns from providers or suppliers to reduce fraud and financial losses. By adding AB2D’s <a href='https://www.hl7.org/fhir/overview.html' target="_blank">Bulk FHIR</a> data to your existing data streams, you can conduct trend analysis and search mass enrollee data to quickly identify: </p>
                 <ul> 
                   <li>duplicate billing</li>
@@ -121,15 +121,15 @@ active-nav: overview-nav
                   <li>outliers in cost or service frequency</li>
                  </ul>
                 <p>Due to <a href='https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare' target="_blank">final rule</a> regulations, AB2D data can be used to detect fraud, waste, and abuse from providers and suppliers only. This can’t be used to influence coverage determination for enrollees.</p>
+             </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4 class="section-subheading">Enhance MTM services </h4>
+                <h5 class="section-subheading">Leverage insights from enrollee medical histories for more effective services.</h5>
               </div>
             </div>
             <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3 class="section-subheading">Enhance MTM services </h3>
-                <h4 class="section-subheading">Leverage insights from enrollee medical histories for more effective services.</h4>
-              </div>
-            </div>
-            <div class="row align-items-center">
               <div class="col-lg-6 px-5">
                 <p>Plan sponsors can use AB2D data to get a holistic overview of enrollees' health histories. This allows for more informed discussions between the MTM provider and enrollee during comprehensive or targeted medication reviews: </p>
                 <ul> 
