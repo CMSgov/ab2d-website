@@ -78,19 +78,13 @@ active-nav: overview-nav
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
                 <h4 class="section-heading">Find MTM program enrollees</h4>
                 <h5 class="section-subheading">Identify Medication Therapy Management enrollees by using data for a more thorough search capability.</h5>
                 <p>AB2D data can help you identify beneficiaries who may be eligible for your Part D <a href='https://www.cms.gov/medicare/coverage/prescription-drug-coverage-contracting/medication-therapy-management' target="_blank">Medication Therapy Management (MTM)</a> programs. You can use AB2D data to help identify enrollees who meet the MTM targeting criteria, like those with certain chronic diseases or diagnoses. </p>
-            </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <h4 class="section-heading">Boost health outcomes</h4>
-                <h5 class="section-subheading">Enhance MTM enrollee health and program results by improving medication use and adherence.</h5>
-            </div>
         </div>
         <div class="row">
-              <div class="col-lg-12">
+                <h4 class="section-heading">Boost health outcomes</h4>
+                <h5 class="section-subheading">Enhance MTM enrollee health and program results by improving medication use and adherence.</h5>
                 <p>Part D <a href='https://www.cms.gov/medicare/health-drug-plans/part-c-d-performance-data' target="_blank">Star Ratings</a> evaluate the quality of services received by beneficiaries in your plan. CMS offers incentives to Prescription Drug Plan (PDP) sponsors with high Star Ratings:</p>
                  <ul> 
                   <li>CMS highlights contracts with an overall rating of 5 stars.</li>
@@ -101,13 +95,8 @@ active-nav: overview-nav
               </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
                 <h4 class="section-subheading">Prevent fraud, waste, and abuse</h4>
                 <h5 class="section-subheading">Identify suspicious activity from providers or suppliers through access to mass data.</h5>
-            </div>
-        </div>
-        <div class="row">
-             <div class="col-lg-12">
                 <p>Find suspicious patterns from providers or suppliers to reduce fraud and financial losses. By adding AB2D’s <a href='https://www.hl7.org/fhir/overview.html' target="_blank">Bulk FHIR</a> data to your existing data streams, you can conduct trend analysis and search mass enrollee data to quickly identify: </p>
                 <ul> 
                   <li>duplicate billing</li>
@@ -119,13 +108,8 @@ active-nav: overview-nav
              </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
                 <h4 class="section-subheading">Enhance MTM services </h4>
                 <h5 class="section-subheading">Leverage insights from enrollee medical histories for more effective services.</h5>
-              </div>
-            </div>
-            <div class="row">
-               <div class="col-lg-12">
                 <p>Plan sponsors can use AB2D data to get a holistic overview of enrollees' health histories. This allows for more informed discussions between the MTM provider and enrollee during comprehensive or targeted medication reviews: </p>
                 <ul> 
                   <li>Promote safe and effective medication use.</li>
@@ -136,28 +120,7 @@ active-nav: overview-nav
                   <li>Allocate resources efficiently to save on costs.</li>
                  </ul>
               </div>
-            </div>
-
-<section 
-    class="bg-white page-section pt-20 pb-10" 
-    role="region" 
-    aria-label="API Comparison"
->
-    <svg 
-        preserveAspectRatio="xMidYMin slice" 
-        alt="divider" 
-        class="shape-divider flip" 
-        version="1.1" 
-        xmlns="http://www.w3.org/2000/svg" 
-        xmlns:xlink="http://www.w3.org/1999/xlink" 
-        x="0px" 
-        y="0px"
-        viewBox="0 0 1034.2 43.8" 
-        style="enable-background:new 0 0 1034.2 43.8;" 
-        xml:space="preserve"
-    >
-	    <path fill="#ffffff" d="M0,21.3c0,0,209.3-48,517.1,0s517.1,0,517.1,0v22.5H0V21.3z"/>
-    </svg>
+        </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
