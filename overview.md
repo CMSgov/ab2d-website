@@ -110,7 +110,7 @@ active-nav: overview-nav
                 <p>Due to <a href='https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare' target="_blank">final rule</a> regulations, AB2D data can be used to detect fraud, waste, and abuse from providers and suppliers only. This can’t be used to influence coverage determination for enrollees.</p>
              </div>
         </div>
-        <div class="row">
+        <div class="row mb-5">
           <div class="col-lg-12">
                 <h4 class="section-subheading">Enhance MTM services </h4>
                 <h5 class="section-subheading">Leverage insights from enrollee medical histories for more effective services.</h5>
