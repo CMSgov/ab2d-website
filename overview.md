@@ -53,7 +53,7 @@ active-nav: overview-nav
 <section 
     class="bg-light-blue page-section pt-20 pb-10" 
     role="region" 
-    aria-label="API Comparison"
+    aria-label="API Use cases"
 >
     <svg 
         preserveAspectRatio="xMidYMin slice" 
@@ -84,9 +84,7 @@ active-nav: overview-nav
               </div>
         </div>
         <div class="row">
-              <div class="col-lg-12">
-                <p>AB2D data can help you identify beneficiaries who may be eligible for your Part D <a href='https://www.cms.gov/medicare/coverage/prescription-drug-coverage-contracting/medication-therapy-management' target="_blank">Medication Therapy Management (MTM)</a> programs. You can use AB2D data to help identify enrollees who meet the MTM targeting criteria, like those with certain chronic diseases or diagnoses. </p>
-              </div>
+           <p>AB2D data can help you identify beneficiaries who may be eligible for your Part D <a href='https://www.cms.gov/medicare/coverage/prescription-drug-coverage-contracting/medication-therapy-management' target="_blank">Medication Therapy Management (MTM)</a> programs. You can use AB2D data to help identify enrollees who meet the MTM targeting criteria, like those with certain chronic diseases or diagnoses. </p>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -144,7 +142,7 @@ active-nav: overview-nav
             </div>
 
 <section 
-    class="bg-light-blue page-section pt-20 pb-10" 
+    class="bg-white page-section pt-20 pb-10" 
     role="region" 
     aria-label="API Comparison"
 >
