@@ -59,7 +59,7 @@ The following command will install the `uswds-compile` and `uswds` dependencies:
 npm install
 ```
 
-The following command will compile USWDS files to the `./asssets/uswds` directory:
+The following command will compile USWDS files to the `./assets/uswds` directory:
 
 ```sh
 npx gulp compile
@@ -80,3 +80,27 @@ Per [USWDS guidance](https://designsystem.digital.gov/documentation/settings/), 
 For specific customizations that cannot be achieved at the theme level, USWDS includes a versatile set of [utility classes](https://designsystem.digital.gov/utilities/) that can be used to style elements (e.g. `border-style`, `background-color`, etc). Most designs are achievable with utility classes, and they are preferred over custom CSS rules whenever possible.
 
 If custom styles must be written, they should added to `./sass/_uswds-theme-custom-styles.scss` and leverage the [USWDS design tokens](https://designsystem.digital.gov/design-tokens/).
+
+### USWDS Icons
+
+When compiling USWDS, its hundreds of icons are copied to the `./assets/uswds/img/usa-icons` directory. These images are listed in the `.gitignore` file, so they aren't tracked by Git.
+
+Most icons are not needed, so they are not checked in. However, all icons are still packaged into the SVG sprite so that any icon can be used in an SVG element:
+
+```
+<svg class="usa-icon" aria-hidden="true" role="img">
+  <use xlink:href="/assets/uswds/img/sprite.svg#arrow_forward"></use>
+</svg>
+```
+
+If an icon needs to be referenced in the `src` attribute of `<img>` element, you will need to explicitly track it in `.gitignore` and check it into Git. For example, the mobile close button is listed as an icon to track:
+
+```sh
+!assets/uswds/img/usa-icons/close.svg
+```
+
+And it referenced directly as an `img`:
+
+```
+<img src="/assets/uswds/img/usa-icons/close.svg" role="img" alt="Close" />
+```
