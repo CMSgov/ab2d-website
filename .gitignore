@@ -101,3 +101,10 @@ Deploy/website-temp
 
 ### source files for USWDS ###
 node_modules
+
+### Only include the packaged SVG sprite
+assets/uswds/img/*
+assets/uswds/img/favicons
+assets/uswds/img/material-icons
+assets/uswds/img/material-icons-deprecated
+!assets/uswds/img/sprite.svg
