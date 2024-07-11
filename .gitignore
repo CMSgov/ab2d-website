@@ -102,7 +102,7 @@ Deploy/website-temp
 ### source files for USWDS ###
 node_modules
 
-### Only include the packaged SVG sprite
+### Unnecessary USWDS images (icons get packaged into the SVG sprite)
 assets/uswds/img/favicons
 assets/uswds/img/material-icons
 assets/uswds/img/material-icons-deprecated
