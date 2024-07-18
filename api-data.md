@@ -17,8 +17,8 @@ Claims data is automatically updated from the [Beneficiary FHIR Data (BFD)](http
 
 Download test data files for examples of AB2D API data.
 
-- [AB2D v2 (recommended) Parts A and Parts B Sample Export (FHIR R4)](https://ab2d.cms.gov/assets/downloads/sample-data-r4.ndjson)
-- [AB2D v1 Parts A and Parts B Sample Export (FHIR STU3)](https://ab2d.cms.gov/assets/downloads/sample-data-stu3.ndjson)
+- [AB2D V2 (recommended) Parts A and Parts B Sample Export (FHIR R4)](https://ab2d.cms.gov/assets/downloads/sample-data-r4.ndjson)
+- [AB2D V1 Parts A and Parts B Sample Export (FHIR STU3)](https://ab2d.cms.gov/assets/downloads/sample-data-stu3.ndjson)
 
 ## Data Dictionary
 
