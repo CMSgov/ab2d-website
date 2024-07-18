@@ -34,9 +34,9 @@ Leverage insights from enrollee medical histories for more effective services.
 ## Using the data
 AB2D is an Application Programming Interface (API) using Bulk Fast Healthcare Interoperability Resources (FHIR) in NDJSON format. It provides access to data including:
 
-- Enrollee identifiers
-- Diagnosis codes
-- Dates and times of service
+- enrollee identifiers
+- diagnosis codes
+- dates and times of service
 
 <a href="{% link api-data.md %}" class="usa-button">Learn about the data</a>
 
