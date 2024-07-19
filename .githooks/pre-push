@@ -1,0 +1,7 @@
+branch=$(git rev-parse --abbrev-ref HEAD)
+echo "Link to show github action progress: https://github.com/feralearthman/test-ab2d-website/actions"
+echo "When the workflow is complete, the test website will be deployed to:"
+echo "http://ab2d-website-test.s3-website-us-east-1.amazonaws.com/$branch"
+
+
+
