@@ -13,16 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-destination: ./_site
 title: Claims Data to Part D Sponsors API
 email: ab2d-api@googlegroups.com
 description: >- # this means to ignore newlines until "baseurl:"
-  CMS is developing a standards based API to allow standalone Medicare Part D plan (PDP) sponsors to retrieve Medicare claims data for their enrollees.
+  CMS is developing a standards based API to allow standalone Medicare Part D
+  plan (PDP) sponsors to retrieve Medicare claims data for their enrollees.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ab2d.cms.gov" # This is a kludge for HIMMS, we can fix it later as needed. the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
-#github_username:  jekyll
-cssurl: assets/css/uswds.min.css
+url: "https://ab2d.cms.gov" # the base hostname & protocol for your site, e.g. http://example.com
+
 # Build settings
 markdown: kramdown
 plugins:
