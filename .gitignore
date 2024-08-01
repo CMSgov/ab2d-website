@@ -100,16 +100,24 @@ common/jacoco/**
 Deploy/website-temp
 
 
-### source files for USWDS ###
+### Node dependencies ###
 node_modules
 
-### Unnecessary USWDS images
+### U.S. Web Design System (USWDS) ###
+#
+# 2K+ icons are compiled when Gulp tasks are run locally. But only required
+# icons are tracked and committed. While all icons are packaged into the SVG
+# sprite, icons using `img src=""` must be explicitly included.
+#
+# Ignore unnecessary icon directories
 assets/uswds/img/favicons
 assets/uswds/img/material-icons
 assets/uswds/img/material-icons-deprecated
-# all icons in usa-icons/ get packaged into the SVG sprite
 assets/uswds/img/usa-icons/*
-# explicitly list icons required in img src attributes
+assets/uswds/img/usa-icons-bg/*
+assets/uswds/img/uswds-icons/*
+#
+# Track required icons:
 !assets/uswds/img/usa-icons/close.svg
-assets/uswds/img/usa-icons-bg
-assets/uswds/img/uswds-icons
+!assets/uswds/img/usa-icons/expand_more.svg
+!assets/uswds/img/usa-icons/expand_less.svg
