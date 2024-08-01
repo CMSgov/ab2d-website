@@ -134,7 +134,7 @@ Run tests for every page in the sitemap:
 pa11y-ci --sitemap http://localhost:4000/sitemap.xml
 ```
 
-Pa11y is configured to `includeWarnings` for more robust and thorough compliance. However, some result codes are ignored for the following reasons:
+Pa11y is configured to `includeWarnings` (not just errors) for more thorough compliance. However, some result codes are ignored for the following reasons:
 
 - `color-contrast` — [Pa11y reports false positives](https://github.com/pa11y/pa11y/issues/633) when axe can't determine the contrast ratio for certain elements.
 - `WCAG2AA.Principle1.Guideline1_3.1_3_1.H48` — A `<p>` or `<div>` with more than one link is assumed to be a navigation to be marked up as a list
