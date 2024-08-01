@@ -5,7 +5,9 @@
       <div class="usa-navbar">
         <div class="usa-logo">
           <em class="usa-logo__text"
-            ><a href="/" title="<Project title>"><img src="assets/img/logo-horiz-dark.svg" alt="AB2D logo" /></a>
+            >
+            <a href="{{ '/' | relative_url }}" title="AB2D"><img src="assets/img/logo-horiz-dark.svg" alt="AB2D logo" />
+            </a>
           </em
           >
         </div>
@@ -13,7 +15,7 @@
       </div>
       <nav aria-label="Primary navigation" class="usa-nav">
         <button type="button" class="usa-nav__close">
-          <img src="/assets/uswds/img/usa-icons/close.svg" role="img" alt="Close" />
+          <img src="{{ '/assets/uswds/img/usa-icons/close.svg' | relative_url }}" role="img" alt="Close" />
         </button>
         <ul class="usa-nav__primary usa-accordion">
           <li class="usa-nav__primary-item">

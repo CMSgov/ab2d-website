@@ -9,8 +9,8 @@
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
     <!-- USWDS -->
-    <script src="assets/uswds/js/uswds-init.min.js"></script>
-    <link href="assets/uswds/css/styles.css?{{site.time | pubDate: '%s'}}" rel="stylesheet">
+    <script src="{{ '/assets/uswds/js/uswds-init.min.js' | relative_url }}"></script>
+    <link href="{{ '/assets/uswds/css/styles.css' | relative_url }}?{{site.time | pubDate: '%s'}}" rel="stylesheet">
 
     <!-- CMS Tealium/Google Analytics BEGIN -->
 
@@ -40,7 +40,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <script async src="/assets/js/autotrack.js"></script>
+    <script async src="{{ '/assets/js/autotrack.js' | relative_url }}"></script>
     <script> /**
      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
      ga('create', 'UA-133491498-1', 'auto');
