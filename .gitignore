@@ -98,3 +98,18 @@ common/jacoco/**
 
 ### DevOps website
 Deploy/website-temp
+
+
+### source files for USWDS ###
+node_modules
+
+### Unnecessary USWDS images
+assets/uswds/img/favicons
+assets/uswds/img/material-icons
+assets/uswds/img/material-icons-deprecated
+# all icons in usa-icons/ get packaged into the SVG sprite
+assets/uswds/img/usa-icons/*
+# explicitly list icons required in img src attributes
+!assets/uswds/img/usa-icons/close.svg
+assets/uswds/img/usa-icons-bg
+assets/uswds/img/uswds-icons
