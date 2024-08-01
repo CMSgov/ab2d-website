@@ -88,7 +88,7 @@ All of the `usa-icons` are packaged into a sprite, which should be preferred whe
 
 ```
 <svg class="usa-icon" role="img">
-  <use xlink:href="{{ '/assets/img/sprite.svg#arrow_forward' | relative_url }}"></use>
+  <use xlink:href="{{ '/assets/uswds/img/sprite.svg#arrow_forward' | relative_url }}"></use>
 </svg>
 ```
 
@@ -118,3 +118,26 @@ Per [USWDS guidance](https://designsystem.digital.gov/documentation/settings/), 
 For specific customizations that cannot be achieved at the theme level, USWDS includes a versatile set of [utility classes](https://designsystem.digital.gov/utilities/) that can be used to style elements (e.g. `border-style`, `background-color`, etc). Most designs are achievable with utility classes, and they are preferred over custom CSS rules whenever possible.
 
 If custom styles must be written, they should added to `_uswds-theme-custom-styles.scss`, where you can leverage [USWDS design tokens](https://designsystem.digital.gov/design-tokens/), variables, mixins, and functions.
+
+### Accessibility tests ([Pa11y](https://pa11y.org/))
+
+The `.pa11yci` config file defines [Axe](https://github.com/dequelabs/axe-core) and [HTML_CodeSniffer](https://squizlabs.github.io/HTML_CodeSniffer/) accessibilty tests for WCAG 2 Level AA conformance that should be run during local development:
+
+Install Pa11y CI:
+
+```sh
+npm install -g pa11y-ci
+```
+
+Run tests for every page in the sitemap:
+```sh
+pa11y-ci --sitemap http://localhost:4000/sitemap.xml
+```
+
+Pa11y is configured to `includeWarnings` for more robust and thorough compliance. However, some result codes are ignored for the following reasons:
+
+- `color-contrast` — [Pa11y reports false positives](https://github.com/pa11y/pa11y/issues/633) when axe can't determine the contrast ratio for certain elements.
+- `WCAG2AA.Principle1.Guideline1_3.1_3_1.H48` — A `<p>` or `<div>` with more than one link is assumed to be a navigation to be marked up as a list
+
+> [!NOTE]
+> [Pa11y](https://pa11y.org/) can be further configured to run on each build, deploy, pull request, etc. This should be added to any the CI/CD setup.
