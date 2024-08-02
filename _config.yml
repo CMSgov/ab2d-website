@@ -30,23 +30,6 @@ plugins:
 gems:
   - jekyll-redirect-from
 
-# To speed up local development, temporarily uncomment the required icons (as
-# listed in .gitignore) so each build doesn't copy 2K+ assets to _site. This
-# should not be committed, as deploys build only from committed icons.
-
-# exclude:
-#   - assets/uswds/img/favicons
-#   - assets/uswds/img/material-icons
-#   - assets/uswds/img/material-icons-deprecated
-#   - assets/uswds/img/usa-icons/*
-#   - assets/uswds/img/usa-icons-bg/*
-#   - assets/uswds/img/uswds-icons/*
-
-# include:
-#   - assets/uswds/img/usa-icons/close.svg
-#   - assets/uswds/img/usa-icons/expand_more.svg
-#   - assets/uswds/img/usa-icons/expand_less.svg
-
 webrick:
   headers:
     Cache-Control: no-cache

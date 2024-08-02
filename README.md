@@ -99,7 +99,10 @@ However, `img` tags need to point to individual icon files. These must be explic
 ```
 
 > [!TIP]
-> Although most aren't tracked, 2K+ compiled icons can slow down `jekyll build`, as it copies all assets to `_site`. To speed up local development, you can temporarily uncomment the `exclude` and `include` icons listed in `_congif.yml`, matching what's in `.gitignore`. But you don't need to commit this config, as deploys will only build from committed icons.
+> Although most aren't tracked, 2K+ compiled icons can slow down `jekyll build`, as it copies them all to `_site`. To speed up local development, edit the icons listed in `_config-local.yml` (matching what's in `.gitignore`) and add this flag to when running the jekyll server:
+> ```sh
+> --config _config.yml,_config-local.yml
+> ```
 
 ### Theming USWDS
 

@@ -1,0 +1,26 @@
+# To speed up local development, this additional config will
+# prevent Jekyll from copying icons unless specified (which
+# should match what's listed in .gitignore).
+#
+# Add this flag to `bundle exec jekyll serve`:
+# --config _config.yml,_config-local.yml
+#
+# This is only necessary if USWDS has been compiled locally. It prevents
+# each build from copying 2K+ assets to _site. Otherwise (as with CI/CD)
+# the site will build only from the committed icons.
+#
+# TODO: Confirm Jekyll 4 requirement (`include` is a Jekyll 4 config option).
+# Jekyll 3 will not copy icons with this config.
+
+exclude:
+  - assets/uswds/img/favicons
+  - assets/uswds/img/material-icons
+  - assets/uswds/img/material-icons-deprecated
+  - assets/uswds/img/usa-icons/*
+  - assets/uswds/img/usa-icons-bg/*
+  - assets/uswds/img/uswds-icons/*
+
+include:
+  - assets/uswds/img/usa-icons/close.svg
+  - assets/uswds/img/usa-icons/expand_more.svg
+  - assets/uswds/img/usa-icons/expand_less.svg
