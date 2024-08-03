@@ -7,7 +7,8 @@ in the form $setting: value,
 ----------------------------------------
 */
 
-
-// @use "uswds-core" with (
-//   $theme-font-role-body: 'serif',
-// );
+@use "uswds-core" with (
+  $theme-card-gap: 4,
+  $theme-font-role-heading: 'sans',
+  $theme-font-type-sans:   'open-sans',
+);

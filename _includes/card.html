@@ -1,0 +1,33 @@
+<li class="usa-card tablet:grid-col-6 desktop:grid-col-4">
+  <div class="usa-card__container {% if include.bg-color %}bg-{{ include.bg-color }}{% endif %}">
+
+    {% if include.title %}
+    <div class="usa-card__header">
+      {% if include.heading-level == "h6" %}
+      <h6 class="usa-card__heading text-balance">{{ include.title }}</h6>
+      {% elsif include.heading-level == "h5" %}
+      <h5 class="usa-card__heading text-balance">{{ include.title }}</h5>
+      {% elsif include.heading-level == "h4" %}
+      <h4 class="usa-card__heading text-balance">{{ include.title }}</h4>
+      {% elsif include.heading-level == "h3" %}
+      <h3 class="usa-card__heading text-balance">{{ include.title }}</h3>
+      {% else %}
+      <h2 class="usa-card__heading text-balance">{{ include.title }}</h2>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if include.body %}
+    <div class="usa-card__body text-balance">
+      <p>{{ include.body }}</p>
+    </div>
+    {% endif %}
+
+    {% if include.footer-link %}
+    <div class="usa-card__footer">
+      <a href="{% link {{include.footer-link}} %}" class="usa-button usa-button--unstyled usa-button--big text-bold text-balance">{{ include.footer-link-text }}</a>
+    </div>
+    {% endif %}
+
+  </div>
+</li>

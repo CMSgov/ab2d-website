@@ -21,3 +21,26 @@ i.e.
 */
 
 @use "uswds-core" as *;
+
+// USWDS doesn't apply styles to headings unless they're direct children of
+// .usa-prose (this defaults them to match unless utility classes override).
+h1 { @include h1; }
+h2 { @include h2; }
+h3 { @include h3; }
+h4 { @include h4; }
+h5 { @include h5; }
+h6 { @include h6; }
+
+// Utility class to prevent orphaned words in short blocks of text
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-primary-gradient {
+  // background: linear-gradient(90deg,#0071bc 0,#42b8d1 100%); // bluebutton
+  background: linear-gradient(135deg,color('primary') 33%,color('accent-cool-dark') 100%);
+  @include at-media($theme-site-margins-breakpoint) {
+    background: linear-gradient(90deg,color('primary') 33%,color('accent-cool') 99%);
+  }
+}
+

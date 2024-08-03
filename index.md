@@ -5,39 +5,77 @@ active-nav: home
 ---
 
 {% include hero.html
-    title="Improve medication therapy with Medicare claims data"
-    paragraph="Medicare Parts A and B claims data helps Prescription Drug Plan sponsors (PDPs) align medication therapy with insight into clinic visits, hospital stays, and other services. Provided by the Centers for Medicare & Medicaid Services (CMS), the AB2D API helps them understand plan enrollees better to support more effective and affordable care."
-    button-url="/get-started"
-    button-text="Getting started for developers"
-    github-button-url="https://github.com/orgs/CMSgov/repositories?q=ab2d&type=all"
-    github-button-text="Code Repo"
+  title="Improve medication therapy with Medicare claims data"
+  paragraph="AB2D is an Application Programming Interface (API) for Prescription Drug Plan sponsors (PDPs). Offered by Centers for Medicare & Medicaid Services (CMS), AB2D provides Parts A and B claims data for a holistic view into patient’s health."
+  button-url="/get-started"
+  button-text="Getting started for developers"
+  github-button-url="https://github.com/orgs/CMSgov/repositories?q=ab2d&type=all"
+  github-button-text="Code Repo"
 %}
 
-<div class="grid-container padding-y-6" markdown="block">
+<div class="grid-container padding-y-4">
+  <h2 class="">Your enrollees’ health insights in action</h2>
 
-## Prescription Drug Plan sponsors can use the AB2D API to:
+  <ul class="usa-card-group flex-justify-center">
+    {% include card.html
+      heading-level="h3"
+      title="Target MTM program enrollees"
+      body="Identify Medication Therapy Management enrollees by using data for a more thorough search capability."
+    %}
 
-### Find MTM program enrollees
-Identify Medication Therapy Management enrollees by using data for a more thorough search capability.
+    {% include card.html
+      heading-level="h3"
+      title="Boost health outcomes"
+      body="Enhance MTM enrollee health and program results by improving medication use and adherence."
+    %}
 
-### Boost health outcomes
-Enhance MTM enrollee health and program results by improving medication use and adherence.
+    {% include card.html
+      heading-level="h1"
+      title="Prevent fraud, waste, and abuse"
+      body="Identify suspicious activity from providers or suppliers through access to mass data."
+    %}
 
-### Prevent fraud, waste, and abuse
-Identify suspicious activity from providers or suppliers through access to mass data.
+    {% include card.html
+      heading-level="h3"
+      title="Enhance MTM consultations"
+      body="Leverage insights from enrollee medical histories for more effective services."
+    %}
 
-### Enhance MTM consultations
-Leverage insights from enrollee medical histories for more effective services.
+    {% include card.html
+      bg-color="gray-5"
+      footer-link="use-cases.md"
+      footer-link-text="Learn more about use cases"
+    %}
+  </ul>
+</div>
 
-<a href="{% link use-cases.md %}" class="usa-button">Learn more about use cases</a>
+<div class="grid-container">
 
-## Using the data
-AB2D is an Application Programming Interface (API) using Bulk Fast Healthcare Interoperability Resources (FHIR) in NDJSON format. It provides access to data including:
+  <div class="grid-row grid-gap-6 padding-y-4">
+    <div class="tablet:grid-col">
+      <img src="{{ '/assets/img/data-analysis.svg' | relative_url }}" />
+    </div>
+    <div class="tablet:grid-col" >
+      <h2>Using the data</h2>
+      <p>AB2D is an Application Programming Interface (API) using [Bulk Fast Healthcare Interoperability Resources (FHIR)](https://www.hl7.org/fhir/overview.html) in NDJSON format. It provides access to data including:</p>
+      <ul>
+        <li>enrollee identifiers</li>
+        <li>diagnosis codes</li>
+        <li>dates and times of service</li>
+      </ul>
+      <p><a href="{% link api-data.md %}">Learn about the data</a></p>
+    </div>
+  </div>
 
-- enrollee identifiers
-- diagnosis codes
-- dates and times of service
-
-<a href="{% link api-data.md %}" class="usa-button">Learn about the data</a>
+  <div class="grid-row grid-gap-6 padding-y-4">
+    <div class="tablet:grid-col">
+      <img src="{{ '/assets/img/pharmacist.svg' | relative_url }}" />
+    </div>
+    <div class="tablet:grid-col">
+      <h2>What are acceptable uses of the data?</h2>
+      <p>AB2D allows PDPs to improve therapeutic outcomes and care coordination, with limitations on how the data can be used to inform coverage determinations.</p>
+      <p>[CTA to About AB2D]:View permitted uses</p>
+    </div>
+  </div>
 
 </div>
