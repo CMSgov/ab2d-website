@@ -25,7 +25,12 @@
 
     {% if include.footer-link %}
     <div class="usa-card__footer">
-      <a href="{% link {{include.footer-link}} %}" class="usa-button usa-button--unstyled usa-button--big text-bold text-balance">{{ include.footer-link-text }}</a>
+      <a href="{% link {{include.footer-link}} %}" class="usa-button usa-button--unstyled usa-button--big text-bold text-balance">
+        {{ include.footer-link-text }}
+        <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img">
+          <use xlink:href="{{ '/assets/uswds/img/sprite.svg#arrow_forward' | relative_url }}"></use>
+        </svg>
+      </a>
     </div>
     {% endif %}
 
