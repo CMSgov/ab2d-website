@@ -24,16 +24,22 @@ i.e.
 
 // USWDS doesn't apply styles to some elements unless they're direct children
 // of .usa-prose (this sets defaults that utility classes can override).
-h1 { @include h1; }
-h2 { @include h2; }
-h3 { @include h3; }
-h4 { @include h4; }
-h5 { @include h5; }
-h6 { @include h6; }
-a { @include typeset-link; }
-p { @include typeset-p-base; }
-@include usa-list-styles;
-@include usa-table-styles;
+.usa-prose {
+  h1:not([class]) { @include h1; }
+  h2:not([class]) { @include h2; }
+  h3:not([class]) { @include h3; }
+  h4:not([class]) { @include h4; }
+  h5:not([class]) { @include h5; }
+  h6:not([class]) { @include h6; }
+  a:not([class]) { @include typeset-link; }
+  p:not([class]) { @include typeset-p-base; }
+  ul:not([class]),
+  ol:not([class]) {
+    @include usa-list;
+    li { @include usa-list-item; }
+  }
+}
+
 
 // Utility class to prevent orphaned words in short blocks of text
 .text-balance {

@@ -2,30 +2,31 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 {% include head.html %}
 <body id="page-top">
-    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
-    {% include banner.html %}
-    <div class="position-relative">
-        {% include nav.html %}
-        <main id="main-content">
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+  {% include banner.html %}
+  <div class="position-relative">
+    {% include nav.html %}
+    <main id="main-content">
 
-            {% if page.hero  %}
-                {%include hero.html
-                    title=page.hero-title
-                    paragraph=page.hero-paragraph
-                    button-url=page.hero-button-url
-                    button-text=page.hero-button-text
-                    button-2-url=page.hero-button-2-url
-                    button-2-text=page.hero-button-2-text
-                %}
-            {% endif %}
+      {% if page.hero  %}
+        {% include hero.html
+          title=page.hero-title
+          paragraph=page.hero-paragraph
+          button-url=page.hero-button-url
+          button-text=page.hero-button-text
+          button-2-url=page.hero-button-2-url
+          button-2-text=page.hero-button-2-text
+        %}
+      {% endif %}
 
-            <div class="grid-container padding-y-6">
-                {{ content }}
-            </div>
-        </main>
-    </div>
-    {% include footer.html %}
-    {% include identifier.html %}
-    <script src="{{ '/assets/uswds/js/uswds.min.js' | relative_url }}"></script>
+      <div class="usa-prose grid-container padding-y-6">
+        {{ content }}
+      </div>
+
+    </main>
+  </div>
+  {% include footer.html %}
+  {% include identifier.html %}
+  <script src="{{ '/assets/uswds/js/uswds.min.js' | relative_url }}"></script>
 </body>
 </html>

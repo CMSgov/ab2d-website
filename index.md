@@ -16,9 +16,9 @@ hero-button-2-text: "Code Repo"
 
 ---
 
-<h2 class="">Your enrollees’ health insights in action</h2>
+## Your enrollees’ health insights in action
 
-<ul class="usa-card-group flex-justify-center">
+<ul class="usa-card-group flex-justify-center padding-y-4">
   {% include card.html
     heading-level="h3"
     title="Target MTM program enrollees"
@@ -32,7 +32,7 @@ hero-button-2-text: "Code Repo"
   %}
 
   {% include card.html
-    heading-level="h1"
+    heading-level="h3"
     title="Prevent fraud, waste, and abuse"
     body="Identify suspicious activity from providers or suppliers through access to mass data."
   %}
@@ -49,9 +49,6 @@ hero-button-2-text: "Code Repo"
     footer-link-text="Learn more about use cases"
   %}
 </ul>
-</div>
-
-<div class="grid-container">
 
 <div class="grid-row grid-gap-6 padding-y-4">
   <div class="tablet:grid-col">
