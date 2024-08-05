@@ -7,6 +7,18 @@
     <div class="position-relative">
         {% include nav.html %}
         <main id="main-content">
+
+            {% if page.hero  %}
+                {%include hero.html
+                    title=page.hero-title
+                    paragraph=page.hero-paragraph
+                    button-url=page.hero-button-url
+                    button-text=page.hero-button-text
+                    button-2-url=page.hero-button-2-url
+                    button-2-text=page.hero-button-2-text
+                %}
+            {% endif %}
+
             <div class="grid-container padding-y-6">
                 {{ content }}
             </div>

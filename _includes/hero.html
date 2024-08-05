@@ -10,7 +10,7 @@
         <div class="grid-row grid-gap">
             {% if include.button-url %}
             <div class="tablet:grid-col-auto margin-top-2">
-                <a href="{{ include.button-url }}" class="usa-button usa-button--inverse usa-button--outline width-full">
+                <a href="{{ include.button-url |relative_url }}" class="usa-button usa-button--inverse usa-button--outline width-full">
                     {{ include.button-text }}
                     <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img">
                         <use xlink:href="{{ '/assets/uswds/img/sprite.svg#arrow_forward' | relative_url }}"></use>
@@ -18,10 +18,10 @@
                 </a>
             </div>
             {% endif %}
-            {% if include.github-button-url %}
+            {% if include.button-2-url %}
             <div class="tablet:grid-col-auto margin-top-2">
-                <a href="{{ include.github-button-url }}" class="usa-button usa-button--inverse usa-button--outline width-full">
-                    {{ include.github-button-text }}
+                <a href="{{ include.button-2-url |relative_url }}" class="usa-button usa-button--inverse usa-button--outline width-full">
+                    {{ include.button-2-text }}
                     <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img">
                         <use xlink:href="{{ '/assets/uswds/img/sprite.svg#github' | relative_url }}"></use>
                     </svg>
