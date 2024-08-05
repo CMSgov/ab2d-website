@@ -8,7 +8,10 @@
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-    <!-- USWDS -->
+    <!-- USWDS & theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <script src="{{ '/assets/uswds/js/uswds-init.min.js' | relative_url }}"></script>
     <link href="{{ '/assets/uswds/css/styles.css' | relative_url }}?{{site.time | pubDate: '%s'}}" rel="stylesheet">
 
