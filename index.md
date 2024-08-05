@@ -50,7 +50,7 @@ hero-button-2-text: "Code Repo"
   %}
 </ul>
 
-<div class="grid-row grid-gap-6 padding-y-4">
+<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4">
   <div class="tablet:grid-col">
     <img src="{{ '/assets/img/data-analysis.svg' | relative_url }}" />
   </div>
@@ -66,7 +66,7 @@ hero-button-2-text: "Code Repo"
   </div>
 </div>
 
-<div class="grid-row grid-gap-6 padding-y-4">
+<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4">
   <div class="tablet:grid-col tablet:order-2">
     <img src="{{ '/assets/img/pharmacist.svg' | relative_url }}" />
   </div>
