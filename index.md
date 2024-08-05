@@ -5,10 +5,10 @@ active-nav: home
 hero: true
 hero-title: "Improve medication therapy with Medicare claims data"
 hero-paragraph: >
-  "AB2D is an Application Programming Interface (API) for Prescription Drug
+  AB2D is an Application Programming Interface (API) for Prescription Drug
   Plan sponsors (PDPs). Offered by Centers for Medicare & Medicaid Services
   (CMS), AB2D provides Parts A and B claims data for a holistic view into
-  patient’s health."
+  patient’s health.
 hero-button-url: "/get-started"
 hero-button-text: "Getting started for developers"
 hero-button-2-url: "https://github.com/orgs/CMSgov/repositories?q=ab2d&type=all"
