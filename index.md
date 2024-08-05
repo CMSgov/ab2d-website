@@ -68,13 +68,13 @@ active-nav: home
   </div>
 
   <div class="grid-row grid-gap-6 padding-y-4">
-    <div class="tablet:grid-col">
+    <div class="tablet:grid-col tablet:order-2">
       <img src="{{ '/assets/img/pharmacist.svg' | relative_url }}" />
     </div>
-    <div class="tablet:grid-col">
+    <div class="tablet:grid-col tablet:order-1">
       <h2>What are acceptable uses of the data?</h2>
       <p>AB2D allows PDPs to improve therapeutic outcomes and care coordination, with limitations on how the data can be used to inform coverage determinations.</p>
-      <p>[CTA to About AB2D]:View permitted uses</p>
+      <p><a href="#">View permitted uses</a></p>
     </div>
   </div>
 
