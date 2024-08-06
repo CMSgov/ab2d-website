@@ -56,7 +56,7 @@ hero-button-2-text: "Code Repo"
   </div>
   <div class="tablet:grid-col" >
     <h2>Using the data</h2>
-    <p>AB2D is an Application Programming Interface (API) using [Bulk Fast Healthcare Interoperability Resources (FHIR)](https://www.hl7.org/fhir/overview.html) in NDJSON format. It provides access to data including:</p>
+    <p>AB2D is an Application Programming Interface (API) using <a href="https://www.hl7.org/fhir/overview.html">Bulk Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
     <ul>
       <li>enrollee identifiers</li>
       <li>diagnosis codes</li>
