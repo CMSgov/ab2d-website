@@ -37,7 +37,19 @@
 
     {% if include.footer-link %}
     <div class="usa-card__footer">
-      <a href="{{ include.footer-link | relative_url }}" class="usa-button {% unless include.button == true %}usa-button--unstyled usa-button--big{% endunless %} text-bold text-balance">
+      <a href="{{ include.footer-link | relative_url }}"
+        class="
+          usa-button
+          {% if include.button == true %}
+            width-full
+            usa-button--outline
+          {% else %}
+            usa-button--unstyled usa-button--big
+          {% endif %}
+          text-bold
+          text-balance
+        "
+      >
         {{ include.footer-link-text }}
         {% unless include.button == true %}
         <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img">
