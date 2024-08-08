@@ -51,9 +51,7 @@
       >
         {{ include.footer-link-text }}
         {% unless include.button == true %}
-        <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img">
-          <use xlink:href="{{ '/assets/uswds/img/sprite.svg#arrow_forward' | relative_url }}"></use>
-        </svg>
+        {% include sprite.html icon="arrow_forward" size="3" %}
         {% endunless %}
       </a>
     </div>

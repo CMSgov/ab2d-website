@@ -21,7 +21,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
     <ul class="usa-icon-list">
       <li class="usa-icon-list__item">
         <div class="usa-icon-list__icon" id="status-icon">
-          <svg class="usa-icon text-green" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#check_circle' | relative_url }}"></use></svg>
+          {% include sprite.html icon="check_circle" class="text-green" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
           Optimizing therapeutic outcomes through improved medication use
@@ -29,7 +29,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
       </li>
       <li class="usa-icon-list__item">
         <div class="usa-icon-list__icon" id="status-icon">
-          <svg class="usa-icon text-green" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#check_circle' | relative_url }}"></use></svg>
+          {% include sprite.html icon="check_circle" class="text-green" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
           Improving care coordination
@@ -37,7 +37,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
       </li>
       <li class="usa-icon-list__item">
         <div class="usa-icon-list__icon" id="status-icon">
-          <svg class="usa-icon text-green" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#check_circle' | relative_url }}"></use></svg>
+          {% include sprite.html icon="check_circle" class="text-green" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
           Other purposes [that qualify] as “fraud and abuse detection or compliance activities”
@@ -54,7 +54,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
     <ul class="usa-icon-list">
       <li class="usa-icon-list__item">
         <div class="usa-icon-list__icon" id="status-icon">
-          <svg class="usa-icon text-red" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#cancel' | relative_url }}"></use></svg>
+          {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
           "(i) To inform coverage determinations under Part D;
@@ -62,7 +62,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
       </li>
       <li class="usa-icon-list__item">
         <div class="usa-icon-list__icon" id="status-icon">
-          <svg class="usa-icon text-red" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#cancel' | relative_url }}"></use></svg>
+          {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
           (ii) To conduct retroactive reviews of medically accepted indication(s) determinations;
@@ -70,7 +70,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
       </li>
       <li class="usa-icon-list__item">
         <div class="usa-icon-list__icon" id="status-icon">
-          <svg class="usa-icon text-red" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#cancel' | relative_url }}"></use></svg>
+          {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
           (iii) To facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or
@@ -78,7 +78,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
       </li>
       <li class="usa-icon-list__item">
         <div class="usa-icon-list__icon" id="status-icon">
-          <svg class="usa-icon text-red" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#cancel' | relative_url }}"></use></svg>
+          {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
           (iv) To inform marketing of benefits"
