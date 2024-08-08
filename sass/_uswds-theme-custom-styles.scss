@@ -24,33 +24,100 @@ i.e.
 
 // USWDS doesn't apply styles to some elements unless they're direct children
 // of .usa-prose (this sets defaults that utility classes can override).
-.usa-prose {
-  h1:not([class]) { @include h1; }
-  h2:not([class]) { @include h2; }
-  h3:not([class]) { @include h3; }
-  h4:not([class]) { @include h4; }
-  h5:not([class]) { @include h5; }
-  h6:not([class]) { @include h6; }
-  a:not([class]) { @include typeset-link; }
-  p:not([class]) { @include typeset-p-base; }
+main {
+
+  p {
+    @include typeset-p-base;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @include typeset-heading-base;
+  }
+
+  $elements: h1, h2, h3, h4, h5, h6, p, ul, ol;
+  @each $element in $elements {
+    #{$element} {
+      & + {
+        @each $element in $elements {
+          #{$element} {
+            margin-top: $theme-paragraph-margin-top;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  * + {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: $theme-heading-margin-top;
+    }
+  }
+
+  h1 { @include h1; }
+  h2 { @include h2; }
+  h3 { @include h3; }
+  h4 { @include h4; }
+  h5 { @include h5; }
+  h6 { @include h6; }
+
+  a { @include typeset-link; }
+
   ul:not([class]),
   ol:not([class]) {
     @include usa-list;
     li { @include usa-list-item; }
   }
+
 }
 
-
-// Utility class to prevent orphaned words in short blocks of text
+// Prevent orphaned words in short blocks of text
 .text-balance {
   text-wrap: balance;
 }
 
+// Landing page hero background
 .bg-primary-gradient {
-  // background: linear-gradient(90deg,#0071bc 0,#42b8d1 100%); // bluebutton
   background: linear-gradient(135deg,color('primary') 33%,color('accent-cool-dark') 100%);
   @include at-media($theme-site-margins-breakpoint) {
     background: linear-gradient(90deg,color('primary') 33%,color('accent-cool') 99%);
   }
 }
 
+.usa-section--dark {
+
+  // Headings default to "accent-cool" and are not theme-able
+  // https://github.com/uswds/uswds/blob/develop/packages/usa-section/src/styles/_usa-section.scss#L22-L31
+  h1, h2, h3, h4, h5, h6 {
+    color: color($theme-text-reverse-color);
+  }
+
+  // For dark sections within a .grid-container, fake them being full-width
+  .grid-container & {
+    position: relative;
+
+    &.bg-primary {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: calc(-50vw + 50%);
+        bottom: 0;
+        left: 100%;
+        background-color: color('primary');
+      }
+      &::before {
+        right: 100%;
+        left: calc(-50vw + 50%);
+      }
+    }
+  }
+
+}
+
+// Card images default to having a background color
+//
+.usa-card__img {
+  background-color: transparent;
+}

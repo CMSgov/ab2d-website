@@ -50,7 +50,7 @@ hero-button-2-text: "Code Repo"
   %}
 </ul>
 
-<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4">
+<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4 flex-align-center">
   <div class="tablet:grid-col">
     <img src="{{ '/assets/img/data-analysis.svg' | relative_url }}" alt="data analysis illustration" />
   </div>
@@ -66,14 +66,14 @@ hero-button-2-text: "Code Repo"
   </div>
 </div>
 
-<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4">
+<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4 flex-align-center">
   <div class="tablet:grid-col tablet:order-2">
     <img src="{{ '/assets/img/pharmacist.svg' | relative_url }}" alt="pharmacist illustration" />
   </div>
   <div class="tablet:grid-col tablet:order-1">
     <h2>What are acceptable uses of the data?</h2>
     <p>AB2D allows PDPs to improve therapeutic outcomes and care coordination, with limitations on how the data can be used to inform coverage determinations.</p>
-    <p><a href="#">View permitted uses</a></p>
+    <p><a href="{% link about.md %}">View permitted uses</a></p>
   </div>
 </div>
 

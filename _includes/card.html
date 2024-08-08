@@ -17,6 +17,18 @@
     </div>
     {% endif %}
 
+    {% if include.img or include.icon %}
+    <div class="usa-card__media usa-card__media--inset">
+      <div class="usa-card__img text-center">
+        <img
+          src="{% if include.img %}{{ include.img | relative_url }}{% elsif include.icon %}{{ include.icon | relative_url }}{% endif %}"
+          alt="{{ include.img-alt }}"
+          class="{% if include.icon %}maxw-15 margin-x-auto{% endif %}"
+        />
+      </div>
+    </div>
+    {% endif %}
+
     {% if include.body %}
     <div class="usa-card__body text-balance">
       <p>{{ include.body }}</p>
@@ -25,11 +37,13 @@
 
     {% if include.footer-link %}
     <div class="usa-card__footer">
-      <a href="{% link {{include.footer-link}} %}" class="usa-button usa-button--unstyled usa-button--big text-bold text-balance">
+      <a href="{{ include.footer-link | relative_url }}" class="usa-button {% unless include.button == true %}usa-button--unstyled usa-button--big{% endunless %} text-bold text-balance">
         {{ include.footer-link-text }}
+        {% unless include.button == true %}
         <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img">
           <use xlink:href="{{ '/assets/uswds/img/sprite.svg#arrow_forward' | relative_url }}"></use>
         </svg>
+        {% endunless %}
       </a>
     </div>
     {% endif %}

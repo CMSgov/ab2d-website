@@ -1,11 +1,94 @@
 ---
 layout: default
-title:  "About"
+title:  "About AB2D"
 active-nav: about
+full-width: true
 ---
 
-# About
-Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescription Drug Plan Sponsors (PDPs) cover more than 22 million people. AB2D provides Medicare Parts A and B claims data to fill gaps in patients' health information for a holistic view that supports better care.
+# {{ page.title }}
+
+Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescription Drug Plan sponsors (PDPs) cover more than 22 million people. The AB2D API provides Medicare Parts A and B claims data to fill gaps in patients' health information for a holistic view that supports better care.
+
+<a href="{% link api-data.md %}" class="usa-button usa-button--unstyled">Explore the data {% include sprite.html icon="arrow_forward" %}</a>
+
+## What are permitted uses of the data? 
+
+<div class="grid-row grid-gap">
+  <div class="tablet:grid-col">
+    <p class="margin-bottom-2 text-bold">
+      The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a> specifies that data may be used for:
+    </p>
+    <ul class="usa-icon-list">
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon" id="status-icon">
+          <svg class="usa-icon text-green" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#check_circle' | relative_url }}"></use></svg>
+        </div>
+        <div class="usa-icon-list__content" id="status-content">
+          Optimizing therapeutic outcomes through improved medication use
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon" id="status-icon">
+          <svg class="usa-icon text-green" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#check_circle' | relative_url }}"></use></svg>
+        </div>
+        <div class="usa-icon-list__content" id="status-content">
+          Improving care coordination
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon" id="status-icon">
+          <svg class="usa-icon text-green" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#check_circle' | relative_url }}"></use></svg>
+        </div>
+        <div class="usa-icon-list__content" id="status-content">
+          Other purposes [that qualify] as “fraud and abuse detection or compliance activities”
+        </div>
+      </li>
+    </ul>
+    <p>
+      <a href="{% link use-cases.md %}" class="usa-button usa-button--unstyled">Explore use cases {% include sprite.html icon="arrow_forward" %}</a>
+    </p>
+  </div>
+
+  <div class="tablet:grid-col">
+    <p class="margin-bottom-2 text-bold">The following uses are not permitted:</p>
+    <ul class="usa-icon-list">
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon" id="status-icon">
+          <svg class="usa-icon text-red" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#cancel' | relative_url }}"></use></svg>
+        </div>
+        <div class="usa-icon-list__content" id="status-content">
+          "(i) To inform coverage determinations under Part D;
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon" id="status-icon">
+          <svg class="usa-icon text-red" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#cancel' | relative_url }}"></use></svg>
+        </div>
+        <div class="usa-icon-list__content" id="status-content">
+          (ii) To conduct retroactive reviews of medically accepted indication(s) determinations;
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon" id="status-icon">
+          <svg class="usa-icon text-red" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#cancel' | relative_url }}"></use></svg>
+        </div>
+        <div class="usa-icon-list__content" id="status-content">
+          (iii) To facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon" id="status-icon">
+          <svg class="usa-icon text-red" aria-hidden="true" role="img"><use xlink:href="{{ '/assets/uswds/img/sprite.svg#cancel' | relative_url }}"></use></svg>
+        </div>
+        <div class="usa-icon-list__content" id="status-content">
+          (iv) To inform marketing of benefits"
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="usa-section--dark bg-primary padding-y-6 margin-y-6" markdown="1">
 
 ## What requirements led to AB2D?
 The AB2D API (AB2D) supports government initiatives to improve patient health. The Centers for Medicare & Medicaid (CMS) developed AB2D to follow the [Bipartisan Budget Act of 2018 (BBA)](https://www.congress.gov/bill/115th-congress/house-bill/1892/text) and [final rule](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare). This is in accordance with requirements to share claims data with PDPs who have active contracts.
@@ -13,32 +96,41 @@ The AB2D API (AB2D) supports government initiatives to improve patient health. T
 ## How does AB2D support these requirements?
 AB2D provides PDPs with Medicare Parts A and B claims data. This data helps PDPs promote the best use of medications to improve health outcomes. AB2D utilizes the [Bulk Fast Healthcare Interoperability Resources (FHIR)](https://www.hl7.org/fhir/overview.html) standard for exchanging healthcare information electronically in order to make data sharing efficient and secure.
 
-## What use of the data is acceptable?
-The [final rule](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745) specifies that data may be used for:
-
-- Optimizing therapeutic outcomes through improved medication use
-- Improving care coordination
-- Other purposes [that qualify] as “fraud and abuse detection or compliance activities”
-
-The following uses are not permitted:
-
-> "(i) To inform coverage determinations under Part D;
->
-> (ii) To conduct retroactive reviews of medically accepted indication(s) determinations;
->
-> (iii) To facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or
->
-> (iv) To inform marketing of benefits."
+</div>
 
 ## What are the other CMS Claims-Based FHIR APIs?
-The Beneficiary Claims Data API (BCDA) helps Alternative Payment Model participants provide high quality, coordinated care by making it easier to access bulk Medicare Part A, B, and D claims.
 
-[Visit BCDA](https://bcda.cms.gov/)
+<ul class="usa-card-group flex-justify-center padding-y-4">
+  {% include card.html
+    icon="/assets/img/logo-bcda.svg"
+    img-alt="BCDA logo"
+    heading-level="h3"
+    title="Beneficiary Claims Data API"
+    body="The Beneficiary Claims Data API (BCDA) helps Alternative Payment Model participants provide high quality, coordinated care by making it easier to access bulk Medicare Part A, B, and D claims."
+    footer-link="https://bcda.cms.gov/"
+    footer-link-text="Visit BCDA"
+    button=true
+  %}
 
-The Blue Button 2.0 (BB 2.0) API enables beneficiaries to connect their Medicare claims data to applications, services, and research programs they trust.
+  {% include card.html
+    icon="/assets/img/logo-bluebutton.svg"
+    img-alt="BB 2.0 logo"
+    heading-level="h3"
+    title="Blue Button 2.0"
+    body="The Blue Button 2.0 (BB 2.0) API enables beneficiaries to connect their Medicare claims data to applications, services, and research programs they trust."
+    footer-link="https://bluebutton.cms.gov/"
+    footer-link-text="Visit BB 2.0"
+    button=true
+  %}
 
-[Visit BB 2.0](https://bluebutton.cms.gov/)
-
-The Data at the Point of Care (DPC) API enables healthcare providers with claims data to fill in gaps in patient history at the point of care and deliver high quality services to Medicare beneficiaries.
-
-[Visit DPC](https://dpc.cms.gov/)
+  {% include card.html
+    icon="/assets/img/logo-dpc.svg"
+    img-alt="DPC logo"
+    heading-level="h3"
+    title="Data at the Point of Care"
+    body="The Data at the Point of Care (DPC) API enables healthcare providers with claims data to fill in gaps in patient history at the point of care and deliver high quality services to Medicare beneficiaries."
+    footer-link="https://dpc.cms.gov/"
+    footer-link-text="Visit DPC"
+    button=true
+  %}
+</ul>
