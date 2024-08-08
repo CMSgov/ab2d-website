@@ -34,3 +34,6 @@ webrick:
   headers:
     Cache-Control: no-cache
     Pragma: no-cache
+
+exclude:
+- kitchen-sink.html # Don't build this page in production
