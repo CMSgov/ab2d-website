@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "API Documentation"
-active-nav: api-documentation
+permalink: /api-documentation
 ---
 
 # {{ page.title }}

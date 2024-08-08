@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Support"
-active-nav: support
+permalink: /support
 ---
 
 # We're here to help

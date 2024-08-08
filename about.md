@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "About AB2D"
-active-nav: about
+permalink: /about
 full-width: true
 ---
 

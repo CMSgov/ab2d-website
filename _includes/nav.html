@@ -6,7 +6,7 @@
         <div class="usa-logo">
           <em class="usa-logo__text"
             >
-            <a href="{{ '/' | relative_url }}" title="AB2D"><img src="assets/img/logo-horiz-dark.svg" alt="AB2D logo" />
+            <a href="{{ '/' | relative_url }}" title="AB2D"><img src="{{ '/assets/img/logo-horiz-dark.svg' | relative_url }}" alt="AB2D logo" />
             </a>
           </em
           >
@@ -19,22 +19,22 @@
         </button>
         <ul class="usa-nav__primary usa-accordion">
           <li class="usa-nav__primary-item">
-            <a href="{% link api-documentation.md %}" class="usa-nav-link {% if page.active-nav == 'api-documentation' %}{{ 'usa-current' }}{% endif %}"
+            <a href="{% link api-documentation.md %}" class="usa-nav-link {% if page.permalink == '/api-documentation' %}{{ 'usa-current' }}{% endif %}"
               ><span>Documentation</span></a
             >
           </li>
           <li class="usa-nav__primary-item">
-            <a href="{% link api-data.md %}" class="usa-nav-link {% if page.active-nav == 'api-data' %}{{ 'usa-current' }}{% endif %}"
+            <a href="{% link api-data.md %}" class="usa-nav-link {% if page.permalink == '/api-data' %}{{ 'usa-current' }}{% endif %}"
               ><span>API Data</span></a
             >
           </li>
           <li class="usa-nav__primary-item">
-            <a href="{% link onboarding.md %}" class="usa-nav-link {% if page.active-nav == 'onboarding' %}{{ 'usa-current' }}{% endif %}"
+            <a href="{% link onboarding.md %}" class="usa-nav-link {% if page.permalink == '/onboarding' %}{{ 'usa-current' }}{% endif %}"
               ><span>Onboarding</span></a
             >
           </li>
           <li class="usa-nav__primary-item">
-            <a href="{% link support.md %}" class="usa-nav-link {% if page.active-nav == 'support' %}{{ 'usa-current' }}{% endif %}"
+            <a href="{% link support.md %}" class="usa-nav-link {% if page.permalink == '/support' %}{{ 'usa-current' }}{% endif %}"
               ><span>Support</span></a
             >
           </li>

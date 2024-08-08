@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "API Data"
-active-nav: api-data
+permalink: /api-data
 ---
 
 # {{ page.title }}

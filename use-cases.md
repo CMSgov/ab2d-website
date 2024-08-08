@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Use Cases"
-active-nav: use-cases
+permalink: /use-cases
 ---
 
 # What are the use cases for the AB2D API?

@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Onboarding"
-active-nav: onboarding
+permalink: /onboarding
 ---
 
 # {{ page.title }}
