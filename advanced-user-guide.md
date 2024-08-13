@@ -254,12 +254,15 @@ GET /api/v2/fhir/Patient/$export
 
 #### Parameters
 
-The `_since` parameter can be used to limit data to only data that has been updated since the specified parameter.
-The format is the [ISO 8601 DateTime standard](https://www.w3.org/TR/NOTE-datetime) e.g. YYYY-MM-DDThh:mm:ssTZD
+The `_since` and `_until` parameters allow you to filter claims data by date, which reduces duplication and speeds up job times. They follow the ISO datetime format (e.g: ```yyyy-MM-dd'T'hh:mm:ss[+/-]hh:mm``` ). Time zone must be specified using + or - followed by hh:mm. These optional parameters can be used separately or together.
+
+Separately, these parameters allow you to pull data that was last updated since or until a specified date. You can use the meta/lastUpdated property of each ExplanationofBenefit (EOB) resource to find when each record was last updated. This will help you compare claims data when using the  _since and _until parameters. 
 
 ```
-GET /api/v2/fhir/Patient/$export?_since=2020-03-16T00:00:00-05:00
+GET /api/v2/fhir/Patient/$export?_since=2020-03-16T00:00:00-05:00&_until=2020-06-16T00:00:00-5:00
 ```
+
+`_since`:
 
 Dates prior to 2020-02-13 are not supported and will result in a failure response.
 
@@ -271,6 +274,17 @@ Dates prior to 2020-02-13 are not supported and will result in a failure respons
   Please note - Always supply a `_since` date in the Sandbox environment when using AB2D v2 as sandbox test contracts are shared resources used by other people and will use extraneous default since dates.
 - AB2D v1/FHIR STU3:
   - A `_since` value must be added to each call in order to use the `_since` parameter. If no `_since` value is specified, the value defaults to a contract's attestation date. It is highly recommended and considered best practice to use the `_since` parameter on v1 API calls.
+
+`_until`:
+
+- AB2D v2/FHIR R4:
+  - If no `_until` parameter is provided, the value defaults to the current date.
+  - `_until` dates in the future are invalid. The job will still run, but the `_until` date will default to the current date.
+  - If `_until` is provided, and `_since` is not, the range of dates will be from the last successfully and fully downloaded job date to the `_until` date.
+  - Providing an `_until` date that is prior to the `_since` date is invalid. This will result in an error and no data will be exported.
+
+Note: the `_until` parameter is currently only supported by the AB2D v2 API. Passing the `_until` parameter to the AB2D v1/FHIR STU3 API is invalid and not supported.
+
 
 ### Status
 Once a job has been created, the user can/should request the status of the submitted job. 
