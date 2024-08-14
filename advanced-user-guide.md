@@ -26,8 +26,8 @@ was used to implement the [HL7 FHIR standard](https://www.hl7.org/fhir/overview.
 [FHIR Bulk Data Export](https://hl7.org/fhir/uv/bulkdata/export/index.html) pattern to perform data export. Errors come
 back in the [Resource OperationOutcome](errors come back in the https://www.hl7.org/fhir/operationoutcome.html) format.
 
-AB2D supports both R4 and STU3 versions of the FHIR standard. FHIR R4 is available using v2 of AB2D while FHIR STU3 can 
-be accessed via AB2D v1. Both API versions return new line delimited JSON (ndjson) objects of the FHIR 
+AB2D supports both R4 and STU3 versions of the FHIR standard. FHIR R4 is available using V2 of AB2D while FHIR STU3 can 
+be accessed via AB2D V1. Both API versions return new line delimited JSON (ndjson) objects of the FHIR 
 [ExplanationOfBenefit](https://www.hl7.org/fhir/r4/explanationofbenefit.html) Resource.
 
 ### Sandbox
@@ -266,24 +266,22 @@ GET /api/v2/fhir/Patient/$export?_since=2020-03-16T00:00:00-05:00&_until=2020-06
 
 Dates prior to 2020-02-13 are not supported and will result in a failure response.
 
-- AB2D v2/FHIR R4:
-  - If no `_since` parameter is provided, the value defaults to the date and time of the last successfully and fully 
-  downloaded job that was created for the contract. If this is the first job run, the `_since` date becomes the 
-  organization’s attestation date. Users can override this functionality by supplying their own `_since` date. This 
-  feature is not supported for FHIR STU3.
-  Please note - Always supply a `_since` date in the Sandbox environment when using AB2D v2 as sandbox test contracts are shared resources used by other people and will use extraneous default since dates.
-- AB2D v1/FHIR STU3:
-  - A `_since` value must be added to each call in order to use the `_since` parameter. If no `_since` value is specified, the value defaults to a contract's attestation date. It is highly recommended and considered best practice to use the `_since` parameter on v1 API calls.
+- AB2D V2/FHIR R4:
+  - If no `_since` parameter is provided, the value defaults to the date and time of your organization's last successfully and fully 
+  downloaded job. If this is the first job run, it will default to your organization's attestation date or 2020-02-13, whichever is later. 
+  Note: Always use the `_since` parameter in the V2 sandbox environment. This will prevent the default value from changing for others as sample contracts are shared resources.   
+- AB2D V1/FHIR STU3:
+  - If no `_since` parameter is provided, the value defaults to your organization's attestation date. We highly recommend using the `_since` parameter on V1 API calls.
 
 `_until`:
 
-- AB2D v2/FHIR R4:
+- AB2D V2/FHIR R4:
   - If no `_until` parameter is provided, the value defaults to the current date.
   - `_until` dates in the future are invalid. The job will still run, but the `_until` date will default to the current date.
-  - If `_until` is provided, and `_since` is not, the range of dates will be from the last successfully and fully downloaded job date to the `_until` date.
+  - If `_until` is provided and `_since` is not, the range of dates will be from the last successfully and fully downloaded job date to the `_until` date.
   - Providing an `_until` date that is prior to the `_since` date is invalid. This will result in an error and no data will be exported.
 
-Note: the `_until` parameter is currently only supported by the AB2D v2 API. Passing the `_until` parameter to the AB2D v1/FHIR STU3 API is invalid and not supported.
+Note: The `_until` parameter is currently only supported by the AB2D V2 API. Passing the `_until` parameter to the AB2D V1/FHIR STU3 API is invalid and not supported.
 
 
 ### Status
