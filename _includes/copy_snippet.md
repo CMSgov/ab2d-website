@@ -1,16 +1,16 @@
 {% assign code = include.code %}
-
-<div class="highlight"><pre class="highlight"><code>{{code}}
-</code></pre></div>
-
 {% assign nanosecond = "now" | date: "%N" %}
-<input type="text" id="code{{ nanosecond }}" style="position: absolute;left: -1000px;" value="{{ code }}"/>
-<div class="button" on>
-    <p>
-        <a href="javascript:void(0)" onclick="copyText{{ nanosecond }}()" id="copybutton{{ nanosecond }}">
-          Copy to clipboard
-        </a>
-    </p>
+
+<div class="bg-base-lightest border-1px border-base-lighter">
+  <div class="grid-row">
+    <input type="text" id="code{{ nanosecond }}" value="{{ code }}" class="usa-sr-only" readonly />
+    <div class="tablet:grid-col-fill" aria-hidden="true">
+      <pre class="text-pre-wrap overflow-x-auto padding-1 margin-1"><code>{{code}}</code></pre>
+    </div>
+    <div class="tablet:grid-col-auto padding-1">
+      <a class="usa-button usa-button--outline margin-1" href="javascript:void(0)" onclick="copyText{{ nanosecond }}()" id="copybutton{{ nanosecond }}">Copy</a>
+    </div>
+  </div>
 </div>
 
 <script>
