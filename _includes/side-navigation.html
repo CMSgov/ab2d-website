@@ -1,6 +1,6 @@
 <nav aria-label="Side navigation">
   <ul class="usa-sidenav">
-    {% for item in page.side-nav %}
+    {% for item in site.data.side-nav %}
     <li class="usa-sidenav__item">
       <a href="{{ item.url | relative_url }}"
         class="{% if page.permalink == item.url %}{{ 'usa-current' }}{% endif %}"
