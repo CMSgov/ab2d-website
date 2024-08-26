@@ -1,0 +1,29 @@
+<nav aria-label="Side navigation">
+  <ul class="usa-sidenav">
+    {% for item in page.side-nav %}
+    <li class="usa-sidenav__item">
+      <a href="{{ item.url | relative_url }}"
+        class="{% if page.permalink == item.url %}{{ 'usa-current' }}{% endif %}"
+      >{{ item.name }}</a>
+      <ul class="usa-sidenav__sublist">
+        {% for child in item.children %}
+        <li class="usa-sidenav__item">
+          <a href="{{ child.url | relative_url }}"
+            class="{% if page.permalink == child.url %}{{ 'usa-current' }}{% endif %}"
+          >{{ child.name }}</a>
+          <ul class="usa-sidenav__sublist">
+            {% for grandchild in child.children %}
+            <li class="usa-sidenav__item">
+              <a href="{{ grandchild.url | relative_url }}"
+                class="{% if page.permalink == grandchild.url %}{{ 'usa-current' }}{% endif %}"
+              >{{ grandchild.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+    </ul>
+</nav>

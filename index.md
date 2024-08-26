@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: hero
 title:  "AB2D API"
 active-nav: home
 hero: true

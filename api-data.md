@@ -1,7 +1,20 @@
 ---
-layout: default
+layout: side-nav
 title:  "API Data"
 permalink: /api-data
+side-nav:
+  - name: Parent One
+    url: /about
+  - name: Parent Two
+    url: /api-data
+    children:
+      - name: Child One
+        url: /about
+        children:
+          - name: Grandchild
+            url: /about
+      - name: Child Two
+        url: /about
 ---
 
 # {{ page.title }}
