@@ -20,7 +20,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
     </p>
     <ul class="usa-icon-list">
       <li class="usa-icon-list__item">
-        <div class="usa-icon-list__icon" id="status-icon">
+        <div class="usa-icon-list__icon">
           {% include sprite.html icon="check_circle" class="text-green" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
@@ -28,7 +28,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
         </div>
       </li>
       <li class="usa-icon-list__item">
-        <div class="usa-icon-list__icon" id="status-icon">
+        <div class="usa-icon-list__icon">
           {% include sprite.html icon="check_circle" class="text-green" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
@@ -36,7 +36,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
         </div>
       </li>
       <li class="usa-icon-list__item">
-        <div class="usa-icon-list__icon" id="status-icon">
+        <div class="usa-icon-list__icon">
           {% include sprite.html icon="check_circle" class="text-green" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
@@ -53,7 +53,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
     <p class="margin-bottom-2 text-bold">The following uses are not permitted:</p>
     <ul class="usa-icon-list">
       <li class="usa-icon-list__item">
-        <div class="usa-icon-list__icon" id="status-icon">
+        <div class="usa-icon-list__icon">
           {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
@@ -61,7 +61,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
         </div>
       </li>
       <li class="usa-icon-list__item">
-        <div class="usa-icon-list__icon" id="status-icon">
+        <div class="usa-icon-list__icon">
           {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
@@ -69,7 +69,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
         </div>
       </li>
       <li class="usa-icon-list__item">
-        <div class="usa-icon-list__icon" id="status-icon">
+        <div class="usa-icon-list__icon">
           {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
@@ -77,7 +77,7 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
         </div>
       </li>
       <li class="usa-icon-list__item">
-        <div class="usa-icon-list__icon" id="status-icon">
+        <div class="usa-icon-list__icon">
           {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content" id="status-content">
