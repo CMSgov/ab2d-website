@@ -11,75 +11,25 @@
         <div class="tablet:grid-col-fill">
           <nav class="usa-footer__nav" aria-label="Footer navigation,,">
             <div class="grid-row grid-gap-4">
+              {% for column in site.data.footer-links %}
               <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                <section
-                  class="usa-footer__primary-content usa-footer__primary-content--collapsible"
-                >
-                  <h3 class="usa-footer__primary-link">Getting Started</h3>
+                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+                  <h3 class="usa-footer__primary-link">{{ column.heading }}</h3>
                   <ul class="usa-list usa-list--unstyled">
+                    {% for item in column.links %}
                     <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">API Documentation</a>
+                      <a href="{{ item.url | relative_url }}">
+                        {%- if item.icon -%}
+                          {%- include sprite.html icon=item.icon size="3" class="margin-right-05 text-middle" -%}
+                        {%- endif -%}
+                        {{- item.text -}}
+                      </a>
                     </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">User guide</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">Access test claims data</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">Access production claims data</a>
-                    </li>
+                    {% endfor %}
                   </ul>
                 </section>
               </div>
-              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                <section
-                  class="usa-footer__primary-content usa-footer__primary-content--collapsible"
-                >
-                  <h3 class="usa-footer__primary-link">Api Data</h3>
-                  <ul class="usa-list usa-list--unstyled">
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">{% include sprite.html icon="github" size="3" class="margin-right-05 text-middle" %}GitHub repo</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">Claims data details</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">Data Dictionary</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">FHIR specification</a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                <section
-                  class="usa-footer__primary-content usa-footer__primary-content--collapsible"
-                >
-                  <h3 class="usa-footer__primary-link">About</h3>
-                  <ul class="usa-list usa-list--unstyled">
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">Acceptable uses</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">Use cases</a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                <section
-                  class="usa-footer__primary-content usa-footer__primary-content--collapsible"
-                >
-                  <h3 class="usa-footer__primary-link">Support</h3>
-                  <ul class="usa-list usa-list--unstyled">
-                    <li class="usa-footer__secondary-link">
-                      <a href="javascript:void(0);">Frequently asked questions</a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
+              {% endfor %}
             </div>
           </nav>
         </div>

@@ -1,0 +1,41 @@
+- heading: Getting Started
+  links:
+    - text: API Documentation
+      url: /api-documentation
+
+    - text: User guide
+      url: /
+
+    - text: Access test claims data
+      url: /
+
+    - text: Access production claims data
+      url: /
+
+- heading: Api Data
+  links:
+    - text: GitHub repo
+      url: https://github.com/CMSgov/ab2d-website
+      icon: github
+
+    - text: Claims data details
+      url: /
+
+    - text: Data Dictionary
+      url: /
+
+    - text: FHIR specification
+      url: /
+
+- heading: About
+  links:
+    - text: Acceptable uses
+      url: /about
+
+    - text: Use cases
+      url: /use-cases
+
+- heading: Support
+  links:
+    - text: Frequently asked questions
+      url: /support
