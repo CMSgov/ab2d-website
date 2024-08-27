@@ -142,6 +142,12 @@ Pa11y is configured to `includeWarnings` (not just errors) for more thorough com
 - `color-contrast` — [Pa11y reports false positives](https://github.com/pa11y/pa11y/issues/633) when axe can't determine the contrast ratio for certain elements.
 - `WCAG2AA.Principle1.Guideline1_3.1_3_1.H48` — `<p>` or `<div>` with more than one link is assumed as navigation to be marked up as a list
 - `WCAG2AA.Principle1.Guideline1_4.1_4_3.[G…].BgImage` — text and all covered parts of background image (hero gradient) need high contrast
+- `WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Empty` — In-page Navigation JS inserts empty anchors (with IDs but without a href or link text)
+
+And some elements are hidden from testing:
+
+- `.usa-overlay` — area behind mobile nav has a fixed position which triggers a "scrolling in two dimensions" error
+- `.usa-in-page-nav__heading` — although heading structure is not logically nested, there's an [exception for fixed page sections](https://www.w3.org/WAI/tutorials/page-structure/headings/)
 
 > [!NOTE]
 > [Pa11y](https://pa11y.org/) can be further configured to run on each build, deploy, pull request, etc. This should be added to any the CI/CD setup.
