@@ -3,7 +3,9 @@
 
 <div class="bg-base-lightest border-1px border-base-lighter">
   <div class="grid-row">
-    <input type="text" id="code{{ nanosecond }}" value="{{ code }}" class="usa-sr-only" readonly />
+    <label class="usa-sr-only">Code snippet:
+      <input type="text" id="code{{ nanosecond }}" value="{{ code }}" readonly />
+    </label>
     <div class="tablet:grid-col-fill" aria-hidden="true">
       <pre class="text-pre-wrap overflow-x-auto padding-1 margin-1"><code>{{code}}</code></pre>
     </div>
