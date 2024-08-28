@@ -32,6 +32,7 @@ main {
 
   h1, h2, h3, h4, h5, h6 {
     @include typeset-heading-base;
+    text-wrap: balance;
   }
 
   $elements: h1, h2, h3, h4, h5, h6, p, ul, ol;
@@ -117,7 +118,18 @@ main {
 }
 
 // Card images default to having a background color
-//
 .usa-card__img {
   background-color: transparent;
+}
+
+// In-page Nav shows on tablet and larger by default, but we want it to show
+// on desktop and larger
+.usa-in-page-nav {
+  @include at-media("tablet") {
+    display: none;
+  }
+
+  @include at-media("desktop-lg") {
+    display: block;
+  }
 }

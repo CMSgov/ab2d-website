@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: side-nav
 title:  "API Documentation"
 permalink: /api-documentation
+in-page-nav: true
 ---
 
 # {{ page.title }}

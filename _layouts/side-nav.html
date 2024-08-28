@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<div class="grid-row grid-gap">
+<div class="grid-row grid-gap-lg desktop:grid-gap-6">
 
-  <div class="desktop:grid-col-4 display-none desktop:display-block">
+  <div class="display-none tablet:display-block tablet:grid-col-auto maxw-card-lg">
     {% include side-navigation.html %}
   </div>
 
-  <div class="desktop:grid-col-8">
+  <div class="tablet:grid-col-fill">
     {{ content }}
   </div>
 

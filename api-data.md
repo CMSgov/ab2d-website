@@ -1,5 +1,5 @@
 ---
-layout: side-nav
+layout: default
 title:  "API Data"
 permalink: /api-data
 ---
