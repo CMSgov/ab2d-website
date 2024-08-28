@@ -4,12 +4,11 @@
     <div class="usa-nav-container">
       <div class="usa-navbar">
         <div class="usa-logo">
-          <em class="usa-logo__text"
+          <em class="usa-logo__text">
+            <a href="{{ '/' | relative_url }}" title="AB2D"
+              ><img src="{{ '/assets/img/logo-horiz-dark.svg' | relative_url }}" alt="AB2D logo" /></a
             >
-            <a href="{{ '/' | relative_url }}" title="AB2D"><img src="{{ '/assets/img/logo-horiz-dark.svg' | relative_url }}" alt="AB2D logo" />
-            </a>
-          </em
-          >
+          </em>
         </div>
         <button type="button" class="usa-menu-btn">Menu</button>
       </div>
@@ -18,32 +17,21 @@
           <img src="{{ '/assets/uswds/img/usa-icons/close.svg' | relative_url }}" role="img" alt="Close" />
         </button>
         <ul class="usa-nav__primary usa-accordion">
+          {% for item in site.data.nav-primary %}
           <li class="usa-nav__primary-item">
-            <a href="{% link api-documentation.md %}" class="usa-nav-link {% if page.permalink == '/api-documentation' %}{{ 'usa-current' }}{% endif %}"
-              ><span>Documentation</span></a
+            <a
+              href="{{ item.url | relative_url }}"
+              class="usa-nav-link {% if page.permalink == item.url %}{{ 'usa-current' }}{% endif %}"
+              ><span>{{ item.text }}</span></a
             >
           </li>
-          <li class="usa-nav__primary-item">
-            <a href="{% link api-data.md %}" class="usa-nav-link {% if page.permalink == '/api-data' %}{{ 'usa-current' }}{% endif %}"
-              ><span>API Data</span></a
-            >
-          </li>
-          <li class="usa-nav__primary-item">
-            <a href="{% link onboarding.md %}" class="usa-nav-link {% if page.permalink == '/onboarding' %}{{ 'usa-current' }}{% endif %}"
-              ><span>Onboarding</span></a
-            >
-          </li>
-          <li class="usa-nav__primary-item">
-            <a href="{% link support.md %}" class="usa-nav-link {% if page.permalink == '/support' %}{{ 'usa-current' }}{% endif %}"
-              ><span>Support</span></a
-            >
-          </li>
-      </ul>
-      <section class="width-100">
+          {% endfor %}
+        </ul>
+        <section class="width-100">
           <a href="javascript:void(0);" class="usa-button"
             ><span>Try the API</span></a
           >
-      </section>
+        </section>
       </nav>
     </div>
   </header>
