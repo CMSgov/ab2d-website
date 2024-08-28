@@ -100,6 +100,6 @@ The ADOS must record the Log ID from successful jobs in the sandbox and provide 
 
 Your organization must provide the AB2D team with the public static IP address(es) of the network or system connecting to the API. These will be reviewed, approved, and allow-listed as an additional layer of security. Afterward, the AB2D team will assign and provide the Attestor production credentials, which will allow your organization to use the API to retrieve real Medicare Parts A and B claims data.
 
-If you have questions or need help, visit our [Support]({% link support.md %}) page or contact the AB2D team through our Google Group.
+If you have questions or need help, visit our [Support]({% link support.md %}) page or contact the AB2D team through our [Google Group](https://groups.google.com/forum/#!forum/ab2d-api).
 
 [Explore production documentation](https://github.com/CMSgov/ab2d-pdp-documentation).
