@@ -1,6 +1,6 @@
 - heading: Getting Started
   links:
-    - text: API Documentation
+    - text: Documentation
       url: /api-documentation
 
     - text: User guide
@@ -12,11 +12,12 @@
     - text: Access production claims data
       url: /
 
-- heading: Api Data
+- heading: AB2D Data
   links:
     - text: GitHub repo
       url: https://github.com/CMSgov/ab2d-website
       icon: github
+      external: true
 
     - text: Claims data details
       url: /
@@ -26,6 +27,7 @@
 
     - text: FHIR specification
       url: /
+      external: true
 
 - heading: About
   links:
