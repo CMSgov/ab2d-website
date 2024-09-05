@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-The AB2D API is a RESTful (representational state transfer) API using Bulk Fast Healthcare Interoperability (FHIR) resources for data exports of Medicare Parts A and B claims data. Visit [API Data]({% link api-data.md %}) to explore the types of data available and how to apply them in context.
+The AB2D API is a RESTful (representational state transfer) API using Bulk Fast Healthcare Interoperability (FHIR) resources for data exports of Medicare Parts A and B claims data. Visit [AB2D Data]({% link data.md %}) to explore the types of data available and how to apply them in context.
 
 
 ## What’s the difference between the sandbox and production environments?

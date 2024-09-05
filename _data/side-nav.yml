@@ -2,20 +2,20 @@
   url: /api-documentation
 
 - name: Parent One
-  url: /api-data
+  url: /data
 
 - name: Parent Two
-  url: /api-data
+  url: /data
   children:
 
     - name: Child One
-      url: /api-data
+      url: /data
       children:
         - name: Grandchild
-          url: /api-data
+          url: /data
 
     - name: Child Two
-      url: /api-data
+      url: /data
 
 - name: GitHub repo
   url: https://github.com/CMSgov/ab2d-website

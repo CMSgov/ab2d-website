@@ -1,7 +1,7 @@
 ---
 layout: default
-title:  "API Data"
-permalink: /api-data
+title:  "AB2D Data"
+permalink: /data
 ---
 
 # {{ page.title }}

@@ -9,7 +9,7 @@ full-width: true
 
 Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescription Drug Plan sponsors (PDPs) cover more than 22 million people. The AB2D API provides Medicare Parts A and B claims data to fill gaps in patients' health information for a holistic view that supports better care.
 
-<a href="{% link api-data.md %}" class="usa-button usa-button--unstyled">Explore the data {% include sprite.html icon="arrow_forward" %}</a>
+<a href="{% link data.md %}" class="usa-button usa-button--unstyled">Explore the data {% include sprite.html icon="arrow_forward" %}</a>
 
 ## What are permitted uses of the data? 
 

@@ -62,7 +62,7 @@ hero-button-2-text: "Code Repo"
       <li>diagnosis codes</li>
       <li>dates and times of service</li>
     </ul>
-    <p><a href="{% link api-data.md %}">Learn about the data</a></p>
+    <p><a href="{% link data.md %}">Learn about the data</a></p>
   </div>
 </div>
 
