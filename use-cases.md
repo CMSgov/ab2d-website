@@ -55,7 +55,7 @@ permalink: /use-cases
 
 <div class="grid-row grid-gap margin-y-4">
   <div class="grid-col-auto">
-    {% include sprite.html icon="insights" size=5 %}
+    {% include sprite.html icon="security" size=5 %}
   </div>
   <div class="grid-col-fill">
     <h2>Prevent fraud, waste, and abuse</h2>
