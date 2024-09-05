@@ -1,5 +1,5 @@
 ---
-layout: side-nav
+layout: api-docs
 title:  "API Documentation"
 permalink: /api-documentation
 in-page-nav: true
@@ -7,21 +7,37 @@ in-page-nav: true
 
 # {{ page.title }}
 
-The AB2D API is a RESTful (representational state transfer) API using Bulk Fast Healthcare Interoperability (FHIR) resources for data exports of Medicare Parts A and B claims data. Visit [AB2D Data]({% link data.md %}) to explore the types of data available and how to apply them in context.
-
+Learn how to access AB2D claims data. AB2D is an open source RESTful (Representational State Transfer) API. Offered by the Centers for Medicare & Medicaid Services (CMS), it uses [Bulk Fast Healthcare Interoperability (FHIR)](https://hl7.org/fhir/uv/bulkdata/) resources for data exports of Medicare Parts A and B claims data. Visit [AB2D Data]({% link data.md %}) to explore the types of data available and how to apply them in context.
 
 ## What’s the difference between the sandbox and production environments?
+{: .font-sans-lg }
 
-Available to everyone, the sandbox environment lets you retrieve synthetic claims data. The production environment provides access to real Medicare enrollee data. You’ll need to [complete onboarding]({% link onboarding.md %}) to get access to the production environment. There are two versions of the API: V1 ([FHIR STU3](https://api.ab2d.cms.gov/api/v1/fhir)) and v2 ([FHIR R4](https://api.ab2d.cms.gov/api/v2/fhir)). While there are minor differences in how these versions process [parameters](http://link.to.parameters.docsubpage), it is recommended to use V2.
+| Sandbox | Production |
+| --- | --- |
+| Available to everyone | Must complete [onboarding]({% link onboarding.md %}) to access |
+| Contains synthetic claims data | Contains real Medicare enrollee data |
+{: .usa-table .usa-table--borderless }
 
 ## Getting started
 
-Get an overview of the AB2D API, its endpoints, tutorials, and troubleshooting tips.
+Get an overview of the AB2D API, how it works, its endpoints, and troubleshooting tips.
 
-- [AB2D user guide](https://docs.google.com/document/d/118joSvh7lsresXSR8Bs2f2CIvDglbfyGBkgwef3RGzM/edit?usp=sharing)
-- [How to get a bearer token](https://docs.google.com/document/d/1tYsg4ajj093fOtadzkfcm-FXPsBv8UeNqYL3MjwmJLI/edit?usp=sharing)
-- [How to access test claims data](https://docs.google.com/document/d/19gV19BHBqGVezAcpNAm90DlVYlXKZSoW3Tvg4N9Bkq8/edit?usp=sharing)
-- [How to access production claims data](https://docs.google.com/document/d/1aerA_DVxZd3sYY0Em5MlcewNtRrhULhU1YBwbz9WcG4/edit?usp=sharing)
+<ul>
+  {% for item in site.data.api-docs-nav %}
+    {% for child in item.children %}
+    <li>
+      <a href="{{ child.url | relative_url }}">{{ child.name }}</a>
+    </li>
+    {% endfor %}
+  {% endfor %}
+</ul>
+
+## Versions
+
+We recommend using AB2D V2 which supports the Bulk Data Access Implementation Guide V2.0.0.
+
+- V2 (R4) — `api.ab2d.cms.gov/api/v2/fhir`
+- V1 (STU3) — `api.ab2d.cms.gov/api/v1/fhir`
 
 ## JSON resources
 
@@ -30,9 +46,3 @@ Both versions of AB2D use the JSON (ndjson) data format for the FHIR Explanation
 - [Intro to JSON Format](http://json.org/)
 - [Newline Delimited JSON (ndjson)](http://ndjson.org/)
 - [JSON format viewer/validator](https://jsonlint.com/)
-
-## Parameters
-
-Parameters can be used when running job requests to filter or specify the claims data returned.
-
-- [AB2D Parameters](https://docs.google.com/document/d/1TeFmFgHBEkgfPg6KeTR3jkfpWWQkfcHVduPZlxmQsQc/edit?usp=sharing)

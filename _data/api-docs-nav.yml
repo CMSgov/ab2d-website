@@ -1,20 +1,23 @@
 - name: API Documentation
   url: /api-documentation
-
-- name: Parent One
-  url: /data
-
-- name: Parent Two
-  url: /data
   children:
 
-    - name: Child One
+    - name: AB2d User Guide
+      url: /data
+
+    - name: How to Get a Bearer Token
       url: /data
       children:
-        - name: Grandchild
+        - name: Setup Instructions
           url: /data
 
-    - name: Child Two
+    - name: How to Access Test Claims Data
+      url: /data
+
+    - name: How to Access Production Claims Data
+      url: /data
+
+    - name: HTTP Query Parameters
       url: /data
 
 - name: GitHub repo
