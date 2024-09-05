@@ -6,29 +6,56 @@ permalink: /data
 
 # {{ page.title }}
 
-The AB2D API allows users to handle large volumes of enrollee data, including:
+{% include alert.html
+  variant="info"
+  text="Data is received from our upstream data source 1-2 weeks after claims are posted."
+%}
+
+Learn about claims data and how to apply it in context. The AB2D API shares large volumes of enrollee data, including:
 
 - **Medicare Part A claims data** – inpatient hospital stays, care in skilled nursing facilities, and hospice care
 - **Medicare Part B claims data** – various doctors' services, outpatient care, medical supplies, and preventive services
 
-Claims data is automatically updated from the [Beneficiary FHIR Data (BFD) Server](https://github.com/CMSgov/beneficiary-fhir-data) weekly. This provides Prescription Drug Plan sponsors (PDPs) with prompt, valuable information on patients’ health histories to help [boost health outcomes and medication adherence](http://link.to.use.cases.html). Review our [API Documentation]({% link api-documentation.md %}) for information on accessing production data and the claims data format.
+There are specific [permitted uses]({% link about.md %}) for the data. Visit [API Documentation]({% link api-documentation.md %}) for details on accessing production data and the claims data format.
 
-## Sample files
+<div class="grid-row grid-gap margin-y-6 tablet:grid-gap-0 tablet:margin-y-8 desktop:margin-y-10">
+  <div class="grid-col-2 tablet:grid-col-3 text-center">
+    <img src="{{ '/assets/img/book.svg' | relative_url }}" alt="book illustration" />
+  </div>
+  <div class="grid-col-fill tablet:grid-col-9">
+    <h2>Data Dictionary</h2>
+    <p>Get a detailed breakdown of data elements provided by AB2D.</p>
+    <ul>
+      <li><a href="{% link data-dictionary.md %}">Data Dictionary</a></li>
+    </ul>
+  </div>
+</div>
 
-Download test data files for examples of AB2D API data.
+<div class="grid-row grid-gap margin-y-6 tablet:grid-gap-0 tablet:margin-y-8 desktop:margin-y-10">
+  <div class="grid-col-2 tablet:grid-col-3 text-center">
+    <img src="{{ '/assets/img/paper.svg' | relative_url }}" alt="papers illustration" />
+  </div>
+  <div class="grid-col-fill tablet:grid-col-9">
+    <h2>Sample files</h2>
+    <p>Download sample, unformatted <a href="https://github.com/ndjson/ndjson-spec">NDJSON</a> files. Each line is a JSON object that can be read with a text editor like the <a href="https://json.org">format viewer</a>.</p>
+    <ul>
+      <li><a href="{{ '/assets/downloads/sample-data-r4.ndjson' | relative_url }}">AB2D V2 (recommended) Parts A and B Sample Export (FHIR R4) {% include sprite.html icon="file_download" %}</a></li>
+      <li><a href="{{ '/assets/downloads/sample-data-stu3.ndjson' | relative_url }}">AB2D V1 Parts A and B Sample Export (FHIR STU3) {% include sprite.html icon="file_download" %}</a></li>
+    </ul>
+  </div>
+</div>
 
-- [AB2D V2 (recommended) Parts A and Parts B Sample Export (FHIR R4)](https://ab2d.cms.gov/assets/downloads/sample-data-r4.ndjson)
-- [AB2D V1 Parts A and Parts B Sample Export (FHIR STU3)](https://ab2d.cms.gov/assets/downloads/sample-data-stu3.ndjson)
+<div class="grid-row grid-gap margin-y-6 tablet:grid-gap-0 tablet:margin-y-8 desktop:margin-y-10">
+  <div class="grid-col-2 tablet:grid-col-3 text-center">
+    <img src="{{ '/assets/img/creativity.svg' | relative_url }}" alt="creativity illustration" />
+  </div>
+  <div class="grid-col-fill tablet:grid-col-9">
+    <h2>Guides</h2>
+    <p>Learn how to use AB2D and understand enrollees’ claims data.</p>
+    <ul>
+      <li><a href="https://docs.google.com/document/d/1phzaexERBLyIO0b-Z3o2t4jkr8i7WRNapld0bI5J8Qc/edit?usp=sharing">Claims Data Details</a></li>
+      <li><a href="https://docs.google.com/document/d/1qhslAMkvw-c9BtP_kUq_-J3x1ruoCg49vESN5KYOhsc/edit?usp=sharing">How to Filter Claims Data</a></li>
+    </ul>
+  </div>
+</div>
 
-## Data Dictionary
-
-Get a detailed breakdown of data elements provided by AB2D.
-
-- [Data Dictionary](https://ab2d.cms.gov/data_dictionary.html)
-
-## Guides
-
-Follow these guides to learn how to use AB2D and enrollee claims data.
-
-- [Claims data details](https://docs.google.com/document/d/1phzaexERBLyIO0b-Z3o2t4jkr8i7WRNapld0bI5J8Qc/edit?usp=sharing)
-- [How claims are represented in the AB2D API](https://docs.google.com/document/d/1qhslAMkvw-c9BtP_kUq_-J3x1ruoCg49vESN5KYOhsc/edit?usp=sharing)
