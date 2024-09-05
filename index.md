@@ -45,7 +45,7 @@ hero-button-2-text: "Code Repo"
 
   {% include card.html
     bg-color="gray-5"
-    footer-link="use-cases.md"
+    footer-link="/use-cases"
     footer-link-text="Learn more about use cases"
   %}
 </ul>
