@@ -2,8 +2,8 @@
   url: /api-documentation
   children:
 
-    - name: AB2d User Guide
-      url: /data
+    - name: AB2D User Guide
+      url: /user-guide
 
     - name: How to Get a Bearer Token
       url: /data
