@@ -4,16 +4,17 @@ title:  "AB2D API User Guide"
 permalink: /user-guide
 in-page-nav: true
 ---
-<!--TODO add links to other subpages after those pages have been created; Import sprites -->
+<!--TODO add links to other subpages after those pages have been created; Import sprites if needed-->
 # {{ page.title }}
 
+<!--TODO fix hyperlinks in alert-->
+{% include alert.html
+  variant="info"
+  heading="AB2D recommends using V2 of the API"
+  text="Version 2 uses the Bulk Data Access Implementation Guide V2.0.0<!--https://hl7.org/fhir/uv/bulkdata/)-->. While V1 is similar to V2, it processes parameters differently. Learn more about migrating from V1 to V2.<!--https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx-->"
+%}
+
 The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan (PDP) sponsors can access data for any attributed enrollee. PDP sponsors must complete [onboarding]({% link onboarding.md %}) to access the API. During this process, your organization will agree (“attest") to AB2D protocols and retrieve test data in sandbox. Following these steps, you’ll be approved to access production claims data for active enrollees.
-
-
-<!--TODO make below section an alert-->
-## AB2D recommends using V2 of the API
-Version 2 uses the [Bulk Data Access Implementation Guide V2.0.0](https://hl7.org/fhir/uv/bulkdata/). While V1 is similar to V2, it processes parameters differently. [Learn more about migrating from V1 to V2](https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx).
-
 
 ## Sandbox vs. production environment
 
