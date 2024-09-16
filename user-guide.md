@@ -82,7 +82,7 @@ Get an overview of the endpoints you can request at the sandbox or production UR
 
 ## Glossary
 
-**Application Programming Interface (API)**
+#### Application Programming Interface (API)
 
 APIs allow software systems and applications to communicate with each other. APIs follow unique definitions and protocols. The AB2D API is publicly available.
 
@@ -106,19 +106,19 @@ You can get a bearer token by providing Okta with sandbox credentials or the pro
 ### HTTP response codes
 
 
-**200 HTTP response: request completed successfully**
+#### 200 HTTP response: request completed successfully 
 
-**202 HTTP response: request accepted but still processing**
+#### 202 HTTP response: request accepted but still processing
 
-**400 HTTP response: bad request**
+#### 400 HTTP response: bad request
 
 General response when something is wrong (e.g., missing a request parameter or body).
 
-**401 HTTP response: forbidden**
+#### 401 HTTP response: forbidden
 
 Your token is incorrect or has expired. Authentication has not been completed successfully. 
 
-**403 HTTP response: unauthorized**
+#### 403 HTTP response: unauthorized
 
 You don’t have permission to access the requested data. This can happen for a variety of reasons:
 - Your token has expired.
@@ -126,7 +126,7 @@ You don’t have permission to access the requested data. This can happen for a 
 - You’re not authorized to use the API
 - Authentication has failed
 
-**403 HTTP response: forbidden**
+#### 403 HTTP response: forbidden
 
 Authentication succeeded, but you don’t have permission to access the requested data. This can happen due to a variety of reasons:  
 - The credentials provided may have a typo or syntax error (e.g., spaces, hidden characters).
@@ -134,21 +134,21 @@ Authentication succeeded, but you don’t have permission to access the requeste
 - You’re connected to the sandbox idP (`test.idp.idm.cms.gov`) instead of the production idP (`idp.cms.gov`).
 - Authentication may have failed because of an incorrect header. The correct header is `Authorization : Basic Auth`.
 
-**404 HTTP response: page not found**
+#### 404 HTTP response: page not found
 
 Resource or page not found. You could authenticate but the API endpoint does not exist. Troubleshooting:
 - Check the URL to make sure it exists. Enter it in a browser to check which error occurred. You won’t have passed credentials or necessary parameters, so it’ll give you another error. However, it shouldn’t give you a 404.
 - If you’re using curl at the command line, you may have to escape characters. For example, `$` is used in `$Export` and `$Status`, but `$` is a variable value in the Bash command line.
 
-**405 HTTP response: method not allowed**
+#### 405 HTTP response: method not allowed
 
 You’re trying to execute a method which the endpoint does not support. For example, calling `/secure/get` as a POST method, even though the endpoint only supports GET methods.
 
-**429 HTTP response: too many requests**
+#### 429 HTTP response: too many requests
 
 You’re creating too many job requests within a short period of time. Try waiting a bit before making another request.
 
-**Unable to download bulk data file**
+#### Unable to download bulk data file
 
 - Your file name and/or job ID are incorrect. Call the `$Status` command again to verify these details.
 - You requested to download the file more than 6 times.
