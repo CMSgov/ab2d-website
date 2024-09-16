@@ -4,15 +4,13 @@ title:  "AB2D API User Guide"
 permalink: /user-guide
 in-page-nav: true
 ---
-<!--TODO add links to other subpages after those pages have been created; Import sprites if needed-->
+<!--TODO add links to other subpages after those pages have been created-->
 # {{ page.title }}
 
-<!--TODO fix hyperlinks in alert-->
-{% include alert.html
-  variant="info"
-  heading="AB2D recommends using V2 of the API"
-  text="Version 2 uses the Bulk Data Access Implementation Guide V2.0.0<!--https://hl7.org/fhir/uv/bulkdata/)-->. While V1 is similar to V2, it processes parameters differently. Learn more about migrating from V1 to V2.<!--https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx-->"
-%}
+{% capture versionAlert %}
+    Version 2 uses the <a href="https://hl7.org/fhir/uv/bulkdata/">Bulk Data Access Implementation Guide V2.0.0</a>. While V1 is similar to V2, it processes parameters differently. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn more about migrating from V1 to V2</a>.
+{% endcapture %}
+{% include alert.html variant="info" text=versionAlert classNames="measure-6" %}
 
 The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan (PDP) sponsors can access data for any attributed enrollee. PDP sponsors must complete [onboarding]({% link onboarding.md %}) to access the API. During this process, your organization will agree (“attest") to AB2D protocols and retrieve test data in sandbox. Following these steps, you’ll be approved to access production claims data for active enrollees.
 
@@ -179,9 +177,8 @@ You’re creating too many job requests within a short period of time. Try waiti
       Using the system that will access the API, open your browser and visit <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com/</a>. If you don’t have a browser query from your system’s command line:    
     </p>
         <ul>
-            <!--TODO with eng support: It's beyond my expertise to format these code snippets in font:roboto-mono without doing freaky stuff-->
-            <li>Linux/Mac: Open a terminal and run the command "curl -X GET checkip.amazonaws.com".</li>
-            <li>Windows: Open a Powershell terminal and run the command “Invoke-RestMethod -Method GET checkip.amazonaws.com”.</li>
+            <li>Linux/Mac: Open a terminal and run the command <code>curl -X GET checkip.amazonaws.com</code></li>
+            <li>Windows: Open a Powershell terminal and run the command <code>Invoke-RestMethod -Method GET checkip.amazonaws.com</code></li>
         </ul>
   </div>
 
@@ -221,9 +218,12 @@ You’re creating too many job requests within a short period of time. Try waiti
     <ol>
         <li>On the command line of the system you want to use, run 1 of the following commands:</li>
             <ul>
-            <!--TODO with eng support: It's beyond my expertise to format these code snippets in font:roboto-mono without doing freaky stuff-->
-            <li>Linux/Mac: In a terminal, run “curl -X GET https://api.ab2d.cms.gov/health --verbose”.</li>
-            <li>Windows: In a powershell terminal, run “Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health”.</li>
+            <li>
+              Linux/Mac: In a terminal, run <code>curl -X GET https://api.ab2d.cms.gov/health --verbose</code>
+            </li>
+            <li>
+              Windows: In a powershell terminal, run <code>Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
+            </li>
             </ul>
         <li>In Postman, create a new GET request against the URL <a href="https://api.ab2d.cms.gov/health">https://api.ab2d.cms.gov/health</a>. If the response has an HTTP status of 200 then your IP address can connect.</li>
         <li>Open a browser and visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html">https://api.ab2d.cms.gov/swagger-ui/index.html</a>.</li>
@@ -295,18 +295,17 @@ You’re creating too many job requests within a short period of time. Try waiti
       </li>
         <ul>
           <li>
-            <!--TODO with eng support: It's beyond my expertise to format these code snippets in font:roboto-mono without doing freaky stuff-->
-            <strong>Linux/Mac:</strong> In a terminal, run “curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status --verbose”. Make sure to fill in {jobUuid} with the ID of the running job.
+            <strong>Linux/Mac:</strong> In a terminal, run <code>curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status --verbose</code>. Make sure to fill in {jobUuid} with the ID of the running job.
           </li>
           <li>
-            <strong>Windows:</strong> In a Powershell terminal, run “Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status”. Make sure to fill in {jobUuid} with the ID of the running job.
+            <strong>Windows:</strong> In a Powershell terminal, run <code>Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</code>. Make sure to fill in {jobUuid} with the ID of the running job.
           </li>
         </ul>
       <li>
-        In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status. Note the request parameter {jobUuid} must be set in Postman.
+        In Postman, create a new DELETE request against the URL <code>https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</code>. Note the request parameter <code>{jobUuid}</code> must be set in Postman.
       </li>
       <li>
-        In a browser, visit https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE and enter your job ID.
+        In a browser, visit <code>https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</code> and enter your job ID.
       </li>
     </ul>
   </div>
@@ -390,7 +389,7 @@ You’re creating too many job requests within a short period of time. Try waiti
   </h4>
   <div id="m-a12" class="usa-accordion__content usa-prose">
     <p>
-      STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides STU3 and R4 versions for 1 resource type, ExplanationOfBenefit.
+      STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides STU3 and R4 versions for 1 resource type, <code>ExplanationOfBenefit</code>.
     </p>
   </div>
 
@@ -406,8 +405,13 @@ You’re creating too many job requests within a short period of time. Try waiti
   </h4>
   <div id="m-a13" class="usa-accordion__content usa-prose">
     <p>
-      <!--TODO with eng support: It's beyond my expertise to format these code snippets in font:roboto-mono without doing freaky stuff-->
-      Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and V2 uses R4 (https://api.ab2d.cms.gov/api/v2/fhir). Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="https://ab2d.cms.gov/data_dictionary.html">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>. 
+      Version 1 of the API uses STU3 (<code>https://api.ab2d.cms.gov/api/v1/fhir</code>).
+    </p>
+    <p>
+      And V2 uses R4 (<code>https://api.ab2d.cms.gov/api/v2/fhir</code>). 
+    </p>
+    <p>
+      Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="https://ab2d.cms.gov/data_dictionary.html">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>. 
     </p>
   </div>
 
@@ -423,10 +427,10 @@ You’re creating too many job requests within a short period of time. Try waiti
   </h4>
   <div id="m-a14" class="usa-accordion__content usa-prose">
     <p>
-     The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
+     The default value for the <code>_since</code> parameter changes between versions. The <code>_until</code> parameter is also only available with V2.
     </p>
     <p>
-      In V1, a date must be specified to use _since. If no _since value is specified, it will default to your organization's attestation date. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to your organization’s attestation date. Learn how to use parameters.
+      In V1, a date must be specified to use <code>_since</code>. If no<code>_since</code> value is specified, it will default to your organization's attestation date. In V2, if no <code>_since</code> value is specified, it will default to the date of your last successful export. If this is your first job, it will default to your organization’s attestation date. Learn how to use parameters.
     </p>
   </div>
 </div>
