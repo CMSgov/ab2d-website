@@ -183,8 +183,8 @@ You’re creating too many job requests within a short period of time. Try waiti
             <li>Linux/Mac: Open a terminal and run the command "curl -X GET checkip.amazonaws.com".</li>
             <li>Windows: Open a Powershell terminal and run the command “Invoke-RestMethod -Method GET checkip.amazonaws.com”.</li>
         </ul>
-
   </div>
+
   <h4 class="usa-accordion__heading">
     <button
       type="button"
@@ -203,6 +203,7 @@ You’re creating too many job requests within a short period of time. Try waiti
     If the system is correct, check with your IT team to make sure you have a static IP address. If your IP address isn’t static, it may have changed. You must have a static IP address to use the API. 
     </p>
   </div>
+
   <h4 class="usa-accordion__heading">
     <button
       type="button"
@@ -228,6 +229,7 @@ You’re creating too many job requests within a short period of time. Try waiti
         <li>Open a browser and visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html">https://api.ab2d.cms.gov/swagger-ui/index.html</a>.</li>
     </ol>
   </div>
+
   <h4 class="usa-accordion__heading">
     <button
       type="button"
@@ -243,6 +245,7 @@ You’re creating too many job requests within a short period of time. Try waiti
      You can provide the AB2D team with up to 8 IP addresses.
     </p>
   </div>
+
   <h4 class="usa-accordion__heading">
     <button
       type="button"
@@ -258,6 +261,173 @@ You’re creating too many job requests within a short period of time. Try waiti
       <a href="mailto:ab2d@cms.hhs.gov">Contact the AB2D team</a> to change your organization’s IP address(es).
     </p>
   </div>
-  <!--TODO with eng support: There are several more accordions in the content document, but for some reason they start bugging out when I add more than 5 accordions in a group.-->
+
+  <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a6"
+    >
+    Why is my job stuck at 0%? It’s queueing and not starting immediately. 
+    </button>
+  </h4>
+  <div id="m-a6" class="usa-accordion__content usa-prose">
+    <p>
+      You’re running too many jobs at once. If the API is busy, the job will be queued in a backlog.
+    </p>
+  </div>
+
+  <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a7"
+    >
+    How do I cancel a job that’s already started?
+    </button>
+  </h4>
+  <div id="m-a7" class="usa-accordion__content usa-prose">
+    <ul>
+      <li>
+        On the command line, run 1 of the following commands:
+      </li>
+        <ul>
+          <li>
+            <!--TODO with eng support: It's beyond my expertise to format these code snippets in font:roboto-mono without doing freaky stuff-->
+            <strong>Linux/Mac:</strong> In a terminal, run “curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status --verbose”. Make sure to fill in {jobUuid} with the ID of the running job.
+          </li>
+          <li>
+            <strong>Windows:</strong> In a Powershell terminal, run “Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status”. Make sure to fill in {jobUuid} with the ID of the running job.
+          </li>
+        </ul>
+      <li>
+        In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status. Note the request parameter {jobUuid} must be set in Postman.
+      </li>
+      <li>
+        In a browser, visit https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE and enter your job ID.
+      </li>
+    </ul>
+  </div>
+
+  <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a8"
+    >
+    What response do I get when the job is complete?
+    </button>
+  </h4>
+  <div id="m-a8" class="usa-accordion__content usa-prose">
+    <p>
+      The response will contain the list of files requested and the URLs to download them.
+    </p>
+  </div>
+
+   <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a9"
+    >
+    What happens if the job fails?
+    </button>
+  </h4>
+  <div id="m-a9" class="usa-accordion__content usa-prose">
+    <p>
+      The status API will return an error for the job. Any files created will be deleted.
+    </p>
+  </div>
+
+   <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a10"
+    >
+    Can I retrieve the results of a job that fails?
+    </button>
+  </h4>
+  <div id="m-a10" class="usa-accordion__content usa-prose">
+    <p>
+      No, you can’t download files from a failed job. You must restart the job.
+    </p>
+  </div>
+
+<h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a11"
+    >
+    I tried to download the files and got an error message.
+    </button>
+  </h4>
+  <div id="m-a11" class="usa-accordion__content usa-prose">
+    <p>
+      If you received a 403 error your bearer token may be expired or incorrect. Get another bearer token and restart the job.
+    </p>
+    <p>
+      4xx errors mean your files have been downloaded more than 6 times or are expired. Files expire and automatically delete after 72 hours. 
+    </p>
+  </div>
+
+  <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a12"
+    >
+    What is FHIR STU3 and R4?
+    </button>
+  </h4>
+  <div id="m-a12" class="usa-accordion__content usa-prose">
+    <p>
+      STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides STU3 and R4 versions for 1 resource type, ExplanationOfBenefit.
+    </p>
+  </div>
+
+ <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a13"
+    >
+    How does AB2D provide FHIR versions?
+    </button>
+  </h4>
+  <div id="m-a13" class="usa-accordion__content usa-prose">
+    <p>
+      <!--TODO with eng support: It's beyond my expertise to format these code snippets in font:roboto-mono without doing freaky stuff-->
+      Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and V2 uses R4 (https://api.ab2d.cms.gov/api/v2/fhir). Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="https://ab2d.cms.gov/data_dictionary.html">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>. 
+    </p>
+  </div>
+
+ <h4 class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="m-a14"
+    >
+    How are parameters different between V1 and V2?
+    </button>
+  </h4>
+  <div id="m-a14" class="usa-accordion__content usa-prose">
+    <p>
+     The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
+    </p>
+    <p>
+      In V1, a date must be specified to use _since. If no _since value is specified, it will default to your organization's attestation date. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to your organization’s attestation date. Learn how to use parameters.
+    </p>
+  </div>
 </div>
 
