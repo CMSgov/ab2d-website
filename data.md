@@ -26,7 +26,7 @@ There are specific [permitted uses]({% link about.md %}) for the data. Visit [AP
     <h2>Data Dictionary</h2>
     <p>Get a detailed breakdown of data elements provided by AB2D.</p>
     <ul>
-      <li><a href="{% link data-dictionary.md %}">Data Dictionary</a></li>
+      <li>Data Dictionary</li>
     </ul>
   </div>
 </div>
