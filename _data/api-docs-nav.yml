@@ -6,19 +6,19 @@
       url: /user-guide
 
     - name: How to Get a Bearer Token
-      url: /data
+      url: /how-to-get-a-bearer-token
       children:
         - name: Setup Instructions
-          url: /data
+          url: /setup-instructions
 
     - name: How to Access Test Claims Data
-      url: /data
+      url: /how-to-access-test-claims-data
 
     - name: How to Access Production Claims Data
-      url: /data
+      url: /how-to-access-production-claims-data
 
     - name: HTTP Query Parameters
-      url: /data
+      url: /http-query-parameters
 
 - name: GitHub repo
   url: https://github.com/CMSgov/ab2d-website
