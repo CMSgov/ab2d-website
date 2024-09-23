@@ -53,8 +53,8 @@ There are specific [permitted uses]({% link about.md %}) for the data. Visit [AP
     <h2>Guides</h2>
     <p>Learn how to use AB2D and understand enrollees’ claims data.</p>
     <ul>
-      <li><a href="https://docs.google.com/document/d/1phzaexERBLyIO0b-Z3o2t4jkr8i7WRNapld0bI5J8Qc/edit?usp=sharing">Claims Data Details</a></li>
-      <li><a href="https://docs.google.com/document/d/1qhslAMkvw-c9BtP_kUq_-J3x1ruoCg49vESN5KYOhsc/edit?usp=sharing">How to Filter Claims Data</a></li>
+      <li><a href="{% link claims-data-details.md %}">Claims Data Details</a></li>
+      <li><a href="{% link how-to-filter-claims-data.md %}">How to Filter Claims Data</a></li>
     </ul>
   </div>
 </div>
