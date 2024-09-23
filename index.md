@@ -3,13 +3,13 @@ layout: hero
 title:  "AB2D API"
 active-nav: home
 hero: true
-hero-title: "Improve medication therapy with Medicare claims data"
+hero-title: "Improve Medication Therapy with Medicare Claims Data"
 hero-paragraph: >
   AB2D is an Application Programming Interface (API) for Prescription Drug
-  Plan sponsors (PDPs). Offered by Centers for Medicare & Medicaid Services
+  Plan (PDP) sponsors. Offered by Centers for Medicare & Medicaid Services
   (CMS), AB2D provides Parts A and B claims data for a holistic view into
-  patient’s health.
-hero-button-url: "/get-started"
+  patients' health.
+hero-button-url: "/api-documentation"
 hero-button-text: "Getting started for developers"
 hero-button-2-url: "https://github.com/orgs/CMSgov/repositories?q=ab2d&type=all"
 hero-button-2-text: "Code Repo"
@@ -25,6 +25,12 @@ hero-button-2-text: "Code Repo"
     body="Identify Medication Therapy Management enrollees by using data for a more thorough search capability."
   %}
 
+   {% include card.html
+    heading-level="h3"
+    title="Enhance MTM consultations"
+    body="Leverage insights from enrollee medical histories for more effective services."
+  %}
+
   {% include card.html
     heading-level="h3"
     title="Boost health outcomes"
@@ -35,12 +41,6 @@ hero-button-2-text: "Code Repo"
     heading-level="h3"
     title="Prevent fraud, waste, and abuse"
     body="Identify suspicious activity from providers or suppliers through access to mass data."
-  %}
-
-  {% include card.html
-    heading-level="h3"
-    title="Enhance MTM consultations"
-    body="Leverage insights from enrollee medical histories for more effective services."
   %}
 
   {% include card.html
@@ -71,8 +71,8 @@ hero-button-2-text: "Code Repo"
     <img src="{{ '/assets/img/pharmacist.svg' | relative_url }}" alt="pharmacist illustration" />
   </div>
   <div class="tablet:grid-col tablet:order-1">
-    <h2>What are acceptable uses of the data?</h2>
-    <p>AB2D allows PDPs to improve therapeutic outcomes and care coordination, with limitations on how the data can be used to inform coverage determinations.</p>
+    <h2>What are permitted uses of the data?</h2>
+    <p>AB2D allows PDP sponsors to improve therapeutic outcomes and care coordination, with limitations on how the data can be used to inform coverage determinations.</p>
     <p><a href="{% link about.md %}">View permitted uses</a></p>
   </div>
 </div>
