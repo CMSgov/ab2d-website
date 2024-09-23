@@ -7,12 +7,12 @@ in-page-nav: true
 
 # Setup Instructions
 
-curl is one of the many tools you can use to access the AB2D sandbox and production environments. curl comes preinstalled on some operating systems. In a terminal, type “curl –version” to check if it’s installed.
+curl is one of the many tools you can use to access the AB2D [sandbox](https://docs.google.com/document/d/19gV19BHBqGVezAcpNAm90DlVYlXKZSoW3Tvg4N9Bkq8/edit?usp=sharing) and [production](https://docs.google.com/document/d/1aerA_DVxZd3sYY0Em5MlcewNtRrhULhU1YBwbz9WcG4/edit?usp=sharing) environments. curl comes preinstalled on some operating systems. In a terminal, type “curl –version” to check if it’s installed.
 
-If you don’t have it installed, use the following system-specific instructions to install jq and curl. If your operating system isn’t listed, follow the installation instructions on the curl and jq websites.
+If you don’t have it installed, use the following system-specific instructions to install jq and curl. If your operating system isn’t listed, follow the installation instructions on the [curl](https://curl.se/) and [jq](https://jqlang.github.io/jq/) websites.
 
 ## Mac 
-1. Install or update jq using HomeBrew:
+1. Install or update jq using [HomeBrew](https://brew.sh/):
 {% capture jsonSnippet %}{% raw %}
 brew install jq
 {% endraw %}{% endcapture %}
