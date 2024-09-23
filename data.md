@@ -4,17 +4,12 @@ title:  "AB2D Data"
 permalink: /data
 ---
 
-# {{ page.title }}
-
-{% include alert.html
-  variant="info"
-  text="Data is received from our upstream data source 1-2 weeks after claims are posted."
-%}
+# AB2D Data
 
 Learn about claims data and how to apply it in context. The AB2D API shares large volumes of enrollee data, including:
 
-- **Medicare Part A claims data** – inpatient hospital stays, care in skilled nursing facilities, and hospice care
-- **Medicare Part B claims data** – various doctors' services, outpatient care, medical supplies, and preventive services
+- **Medicare Part A claims data** — inpatient hospital stays, care in skilled nursing facilities, and hospice care
+- **Medicare Part B claims data** — various doctors' services, outpatient care, medical supplies, and preventive services
 
 There are specific [permitted uses]({% link about.md %}) for the data. Visit [API Documentation]({% link api-documentation.md %}) for details on accessing production data and the claims data format.
 
@@ -24,7 +19,7 @@ There are specific [permitted uses]({% link about.md %}) for the data. Visit [AP
   </div>
   <div class="grid-col-fill tablet:grid-col-9">
     <h2>Data Dictionary</h2>
-    <p>Get a detailed breakdown of data elements provided by AB2D.</p>
+    <p>Get a detailed breakdown of data elements provided by AB2D. The Data Dictionary covers both V2 (<a href="https://hl7.org/fhir/R4/">R4</a>) and V1 (<a href="https://hl7.org/fhir/STU3/">STU3</a>) of the API.</p>
     <ul>
       <li>Data Dictionary</li>
     </ul>
