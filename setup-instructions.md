@@ -7,7 +7,7 @@ in-page-nav: true
 
 # Setup Instructions
 
-curl is one of the many tools you can use to access the AB2D [sandbox](https://docs.google.com/document/d/19gV19BHBqGVezAcpNAm90DlVYlXKZSoW3Tvg4N9Bkq8/edit?usp=sharing) and [production](https://docs.google.com/document/d/1aerA_DVxZd3sYY0Em5MlcewNtRrhULhU1YBwbz9WcG4/edit?usp=sharing) environments. curl comes preinstalled on some operating systems. In a terminal, type “curl –version” to check if it’s installed.
+curl is one of the many tools you can use to access the AB2D [sandbox]({% link how-to-access-test-claims-data.md %}) and [production]({% link how-to-access-production-claims-data.md %}) environments. curl comes preinstalled on some operating systems. In a terminal, type “curl –version” to check if it’s installed.
 
 If you don’t have it installed, use the following system-specific instructions to install jq and curl. If your operating system isn’t listed, follow the installation instructions on the [curl](https://curl.se/) and [jq](https://jqlang.github.io/jq/) websites.
 
@@ -51,54 +51,54 @@ In this example, we will be using the Linux Subsystem for Windows 10.
 windows features
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
-4. Select _Turn Windows features on or off_ from the leftmost panel.
-5. Scroll down to and check _Windows Subsystem for Linux_.
-6. Select _OK_ on the _Windows Features_ window.
-7. Wait for the changes to complete.
-8. When prompted, select _Restart now_.
-9. Select _Type here to search_ again.
-10. Enter the following in the text box:
+3. Select _Turn Windows features on or off_ from the leftmost panel.
+4. Scroll down to and check _Windows Subsystem for Linux_.
+5. Select _OK_ on the _Windows Features_ window.
+6. Wait for the changes to complete.
+7. When prompted, select _Restart now_.
+8. Select _Type here to search_ again.
+9. Enter the following in the text box:
 {% capture jsonSnippet %}{% raw %}
 microsoft store
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
-12. Select _Microsoft Store_ from the leftmost panel.
-13. Select _Search_ on the Microsoft Store page.
-14. Enter the following in the text box:
+10. Select _Microsoft Store_ from the leftmost panel.
+11. Select _Search_ on the Microsoft Store page.
+12. Enter the following in the text box:
 {% capture jsonSnippet %}{% raw %}
 linux
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
-16. Select _Run Linux on Windows_.
-17. Select _Ubuntu_.
-18. Select _Get_.
-19. Select _No, thanks_ on the _Use across your devices_ dialog. The installation will begin automatically. 
-20. Once the installation is complete, select _Launch_.
-21. When prompted, choose a username and password. 
-22. If the installation is successful, you will have a prompt that looks like this:
+13. Select _Run Linux on Windows_.
+14. Select _Ubuntu_.
+15. Select _Get_.
+16. Select _No, thanks_ on the _Use across your devices_ dialog. The installation will begin automatically. 
+17. Once the installation is complete, select _Launch_.
+18. When prompted, choose a username and password. 
+19. If the installation is successful, you will have a prompt that looks like this:
 {% capture jsonSnippet %}{% raw %}
 username@machinename:~$
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
-24. You’ll be entering commands at the dollar sign prompt ($). The easiest way to do this is to copy and paste. Update the Ubuntu system by entering the command:
+20. You’ll be entering commands at the dollar sign prompt ($). The easiest way to do this is to copy and paste. Update the Ubuntu system by entering the command:
 {% capture jsonSnippet %}{% raw %}
 sudo apt-get update -y
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
-26. Install jq by entering this command at the dollar sign prompt:
+21. Install jq by entering this command at the dollar sign prompt:
 {% capture jsonSnippet %}{% raw %}
 sudo apt-get install -y jq
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
-28. When prompted, enter your password.
-29. Wait for the installation to complete.
-30. Verify that jq is installed by checking its version number:
+22. When prompted, enter your password.
+23. Wait for the installation to complete.
+24. Verify that jq is installed by checking its version number:
 {% capture jsonSnippet %}{% raw %}
 jq --version
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
-32. Close the _Ubuntu_ window.
-33. Close the _Microsoft Store_ window.
+25. Close the _Ubuntu_ window.
+26. Close the _Microsoft Store_ window.
 
 
 ### Open an Ubuntu terminal 
@@ -109,4 +109,4 @@ You can apply these instructions to other Unix-like applications as well.
 ubuntu
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
-4. Select _Ubuntu_ from the leftmost panel and a window will appear. You will be entering commands at the dollar sign prompt ($). The easiest way to do this is to use copy and paste. 
+3. Select _Ubuntu_ from the leftmost panel and a window will appear. You will be entering commands at the dollar sign prompt ($). The easiest way to do this is to use copy and paste. 
