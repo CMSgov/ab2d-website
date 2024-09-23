@@ -253,7 +253,7 @@ You’re creating too many job requests within a short period of time. Try waiti
 - Your file name and/or job ID are incorrect. Check the job status again to verify these details.
 - You requested to download the file more than 6 times.
 - You waited too long to download your completed job files. Files expire and automatically delete after 72 hours.
-- There’s a server error. If this continues to happen, contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>
+- There’s a server error. If this continues to happen, contact the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
 
 [Learn more about standard HTTP Codes.](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
