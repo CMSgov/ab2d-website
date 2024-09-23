@@ -5,7 +5,7 @@ permalink: /api-documentation
 in-page-nav: true
 ---
 
-# {{ page.title }}
+# API Documentation
 
 Learn how to access AB2D claims data. AB2D is an open source RESTful (Representational State Transfer) API. Offered by the Centers for Medicare & Medicaid Services (CMS), it uses [Bulk Fast Healthcare Interoperability (FHIR)](https://hl7.org/fhir/uv/bulkdata/) resources for data exports of Medicare Parts A and B claims data. Visit [AB2D Data]({% link data.md %}) to explore the types of data available and how to apply them in context.
 
@@ -46,17 +46,17 @@ Get an overview of the AB2D API, how it works, its endpoints, and troubleshootin
   {% endfor %}
 </ul>
 
-## Versions
+## API versions
 
-We recommend using AB2D V2 which supports the Bulk Data Access Implementation Guide V2.0.0.
+We recommend using AB2D V2 which supports the <a href="https://hl7.org/fhir/uv/bulkdata/">Bulk Data Access Implementation Guide V2.0.0</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>.
 
-- V2 (R4) — `api.ab2d.cms.gov/api/v2/fhir`
-- V1 (STU3) — `api.ab2d.cms.gov/api/v1/fhir`
+- V2 (<a href="https://hl7.org/fhir/R4/">R4</a>) — `api.ab2d.cms.gov/api/v2/fhir`
+- V1 (<a href="https://hl7.org/fhir/STU3/">STU3</a>) — `api.ab2d.cms.gov/api/v1/fhir`
 
 ## JSON resources
 
-Both versions of AB2D use the JSON (ndjson) data format for the FHIR ExplanationOfBenefit resource.
+Both versions of AB2D use the JSON (NDJSON) data format for the FHIR ExplanationOfBenefit resource.
 
 - [Intro to JSON Format](http://json.org/)
-- [Newline Delimited JSON (ndjson)](http://ndjson.org/)
+- [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec)
 - [JSON format viewer/validator](https://jsonlint.com/)
