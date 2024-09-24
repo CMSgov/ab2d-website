@@ -68,13 +68,7 @@ Install the `uswds-compile` and `uswds` dependencies:
 npm install
 ```
 
-Compile USWDS:
-
-```sh
-npx gulp compile
-```
-
-Update USWDS to copy files to the `./assets/uswds` directory:
+Compile and update USWDS to copy files to the `./assets/uswds` directory:
 
 ```sh
 npx gulp updateUswds
