@@ -14,19 +14,19 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access produc
 
 ### Attest to AB2D data protocols
 
-A current CEO, CFO, or COO  (“Attestor”) from your organization first needs to agree (“attest") to our Claims Data Usage Protocols. These protocols include <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">legal limitations on data use and disclosure</a>.
+A current CEO, CFO, or COO  (“Attestor”) from your organization first needs to agree (“attest") to our Claims Data Usage Protocols. These protocols include [legal limitations on data use and disclosure](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745).
 
-Log in to the <a href="https://hpms.cms.gov/app/ng/home/">Health Plan Management System (HPMS)</a> and select <i>Claims Data Attestation</i> (under <i>Contract Management</i>). We encourage you to have multiple Attestors. This prevents gaps in access if Attestors leave the organization. 
+Log in to the [Health Plan Management System (HPMS)](https://hpms.cms.gov/app/ng/home/) and select _Claims Data Attestation_ (under _Contract Management_). We encourage you to have multiple Attestors. This prevents gaps in access if Attestors leave the organization. 
 
 #### How do I complete attestation?
-Once you log in to the <a href="https://hpms.cms.gov/app/ng/home/">HPMS</a> and select <i>Claims Data Attestation</i> (under <i>Contract Management</i>):
-- Choose an option for a single, multiple, or all contracts in the <i>Contracts Without Attestation</i> window.
-- Select the <i>Attest</i> button.
-- Review the <i>Claims Data Usage Protocols</i>.
-- Select <i>I hereby certify that I understand the attestation above</i>.
-- Select <i>Confirm</i>.
+Once you log in to the [Health Plan Management System (HPMS)](https://hpms.cms.gov/app/ng/home/) and select _Claims Data Attestation_ (under _Contract Management_):
+1. Choose an option for a single, multiple, or all contracts in the _ontracts Without Attestation_ window.
+2. Select the _Attest_ button.
+3. Review the _Claims Data Usage Protocols_.
+4. Select _I hereby certify that I understand the attestation above_.
+5. Select _Confirm_.
 
-To add multiple Attestors, follow the same steps and select the <i>Re-attest</i> button in step 4.
+To add multiple Attestors, follow the same steps and select the _Re-attest_ button in step 4.
 
 
 #### What are the requirements to be an Attestor?
@@ -64,8 +64,7 @@ Once attestation is complete, the Attestor will receive an email with instructio
 
 #### Verify test data retrieval
 
-The ADOS will receive an email with instructions on next steps. They must send the AB2D team the job ID from a successful data export in the sandbox.  Learn <a href ="https://docs.google.com/document/d/1tYsg4ajj093fOtadzkfcm-FXPsBv8UeNqYL3MjwmJLI/edit?usp=sharing">how to get a bearer token</a> and <a href="https://docs.google.com/document/d/19gV19BHBqGVezAcpNAm90DlVYlXKZSoW3Tvg4N9Bkq8/edit?usp=sharing">access test claims data</a>.
-
+The ADOS will receive an email with instructions on next steps. They must send the AB2D team the job ID from a successful data export in the sandbox.  Learn [how to get a bearer token]({% link how-to-get-a-bearer-token.md %}) and [access test claims data]({% link how-to-access-test-claims-data.md %}).
 #### Provide your IP addresses
 
 Your organization must provide the AB2D team with the public, static IP address(es) of every network or system that will use the API. These will be reviewed, approved, and allowlisted as an additional layer of security.  
@@ -74,6 +73,6 @@ Your organization must provide the AB2D team with the public, static IP address(
 
 ### Get production credentials
 
-The Attestor will receive an email with production credentials to share with their ADOS.  Production credentials are Personally Identifiable Information (PII) that allow the ADOS to <a href="https://docs.google.com/document/d/1tYsg4ajj093fOtadzkfcm-FXPsBv8UeNqYL3MjwmJLI/edit?usp=sharing">get a bearer token</a> and <a href="https://docs.google.com/document/d/1aerA_DVxZd3sYY0Em5MlcewNtRrhULhU1YBwbz9WcG4/edit?usp=sharing">access production claims data</a>.
+The Attestor will receive an email with production credentials to share with their ADOS.  Production credentials are Personally Identifiable Information (PII) that allow the ADOS to [get a bearer token]({% link how-to-get-a-bearer-token.md %}) and [access production claims data]({% link how-to-access-production-claims-data.md %}).
 
-If you have questions or need help, visit [Support]({% link support.md %}) or contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
+If you have questions or need help, visit [Support]({% link support.md %}) or contact the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
