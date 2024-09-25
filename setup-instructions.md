@@ -5,5 +5,4 @@ permalink: /setup-instructions
 in-page-nav: true
 ---
 
-# Setup Instructions
-
+# {{ page.title }}
