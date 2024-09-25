@@ -556,11 +556,12 @@ landing-page: live
                     <strong>Try it out</strong> in the right hand corner.
                 </p>
 
-                <img src="./assets/img/sandbox/swagger-6-v2.png" alt="swagger export parameters">
+                <img src="./assets/img/sandbox/swagger_parameters_V2_TIBQ.png" alt="swagger export parameters">
 
-                <p>The default options are fine in this case with the exception of the _since date. A good
-                    value for this contract is <pre>2021-01-01T00:00:00.000-05:00</pre>
-                    Enter this value and click the big blue bar to <strong> Execute.</strong>
+                <p>The default options are fine in this case with the exception of the _since date and _until date. A good
+                    value for the _since date for this contract is <pre>2021-01-01T00:00:00.000-05:00</pre>
+                    <p>_until uses the same format is _since. A good value for the _until date is to use the current date and time, but you can enter any date as long as it is a date between _since and the current date and time.</p>
+                    <p>Enter both of these values and click the big blue bar to <strong> Execute.</strong></p>
                 </p>
 
                 <img src="./assets/img/sandbox/swagger-7-v2.png" alt="swagger execute">
