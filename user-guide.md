@@ -5,7 +5,7 @@ permalink: /user-guide
 in-page-nav: true
 ---
 <!--TODO add links to other subpages after those pages have been created, content figure out what copy requires code formatting-->
-# AB2D API User Guide
+# {{ page.title }}
 
 The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan (PDP) sponsors can access data for any attributed enrollee. PDP sponsors must complete [onboarding]({% link onboarding.md %}) to access the API. During this process, your organization will agree (“attest") to AB2D protocols and [retrieve test data]({% link how-to-access-test-claims-data.md %}) in the sandbox. Following these steps, you’ll be approved to [access production claims data]({% link how-to-access-production-claims-data.md %}) for active enrollees.
 
