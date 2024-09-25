@@ -4,7 +4,7 @@ title:  "Onboarding"
 permalink: /onboarding
 ---
 
-# Onboarding
+# {{ page.title }}
 
 Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data, but anyone can use the sandbox environment to get test claims data and try the API.
 
