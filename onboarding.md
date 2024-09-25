@@ -6,39 +6,27 @@ permalink: /onboarding
 
 # {{ page.title }}
 
-How can my organization start using the AB2D API?
+Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data, but anyone can use the sandbox environment to get test claims data and try the API.
 
-The AB2D API allows active, stand-alone Prescription Drug Plan sponsors (PDPs) to use Medicare Parts A and B data for [more effective services and better health outcomes]({% link use-cases.md %}). To receive access to production data, your organization must:
-
-1. Attest (agree) to AB2D data protocols.
-1. Appoint a technical point of contact for your organization.
-1. Test synthetic data in the sandbox.
-1. Receive credentials to access production claims data.
-
+<a href="https://docs.google.com/document/d/19gV19BHBqGVezAcpNAm90DlVYlXKZSoW3Tvg4N9Bkq8/edit?usp=sharing" class="usa-button usa-button--unstyled">Visit the sandbox {% include sprite.html icon="arrow_forward" %}</a>
 ## Step 1
 
 
-### Begin attestation
+### Attest to AB2D data protocols
 
-#### Agreements and authorization
+A current CEO, CFO, or COO  (“Attestor”) from your organization first needs to agree (“attest") to our Claims Data Usage Protocols. These protocols include [legal limitations on data use and disclosure](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745).
 
-To access production claims data, an executive from your organization (“Attestor”) first needs to agree (“attest") to our [Claims Data Usage Protocols](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745). These protocols include limitations on data use and disclosure.
+Log in to the [Health Plan Management System (HPMS)](https://hpms.cms.gov/app/ng/home/) and select _Claims Data Attestation_ (under _Contract Management_). We encourage you to have multiple Attestors. This prevents gaps in access if Attestors leave the organization. 
 
-#### How do I attest?
+#### How do I complete attestation?
+Once you log in to the [Health Plan Management System (HPMS)](https://hpms.cms.gov/app/ng/home/) and select _Claims Data Attestation_ (under _Contract Management_):
+1. Choose an option for a single, multiple, or all contracts in the _ontracts Without Attestation_ window.
+2. Select the _Attest_ button.
+3. Review the _Claims Data Usage Protocols_.
+4. Select _I hereby certify that I understand the attestation above_.
+5. Select _Confirm_.
 
-- Log in to the [Health Plan Management System (HPMS)](https://hpms.cms.gov/app/ng/home/)
-- Select Claims Data Attestation (under Contract Management)
-- Choose an option for one, multiple, or all contracts in the Contracts Without Attestation window
-- Select the Attest button
-- Review the Claims Data Usage Protocols
-- Select I hereby certify that I understand the attestation above
-- Select Confirm
-
-An organization can have multiple Attestors. We encourage that you have multiple executives attest to each of their participating contracts. This prevents gaps in access if one Attestor leaves the organization.
-
-To add multiple Attestors:
-
-Follow the same steps. The Attest button will now be labeled “re-attest” under step 4.
+To add multiple Attestors, follow the same steps and select the _Re-attest_ button in step 4.
 
 
 #### What are the requirements to be an Attestor?
@@ -51,24 +39,22 @@ An Attestor needs to:
 
 #### How does attestation affect your claims data?
 
-- PDPs can retrieve claims data for their active plan enrollees from the date of attestation onwards. Claims data prior to their attestation date will **not** be provided.
-- PDPs must have an active Attestor at all times. Your organization will not be able to receive data during periods without an active Attestor. Access to data will only be restored once another active CEO, CFO, or COO attests.
+- PDP sponsors can retrieve claims data for their active plan enrollees from the date of attestation onwards. Claims data prior to their attestation date will **not** be provided.
+- PDP sponsors must have an active Attestor at all times. Your organization will not be able to receive data during periods without an active Attestor. Access to data will only be restored once another active CEO, CFO, or COO attests.
 
 
 #### When does attestation take effect?
-Once an organization has attested, it follows the remaining steps in the onboarding process, which include appointing a technical specialist, testing synthetic data in the sandbox, and receiving credentials. Once these steps are complete, the organization will have access to claims data starting from the attestation date. Claims data previous to that date won't be available.
+Once an organization attests, it follows the remaining steps in the onboarding process. This includes choosing a technical point of contact, testing synthetic data in the sandbox, and receiving production credentials. Once these steps are complete, the organization will have access to claims data starting from the attestation date. Claims data previous to that date will not be available.
 
 ## Step 2
 
-### Choose an AB2D Operations Specialist
+### Choose an AB2D Data Operations Specialist
 
-#### Your technical point of contact
+Once attestation is complete, the Attestor will receive an email with instructions on how to assign an AB2D Data Operations Specialist (ADOS). This is a primary technical point of contact for your organization.
 
-After attesting, you will need to assign an AB2D Data Operations Specialist (ADOS). Your ADOS will serve as the primary technical point of contact of your organization.
+#### What are the requirements to be an ADOS?
 
-#### What qualifications does the ADOS need?
-
-- Employee or vendor with authority to access and view your organization’s beneficiary data
+- Employee or vendor with authority to access and view your organization’s enrollee data
 - Expertise to connect to and retrieve data from the sandbox and production environments
 - Ability to provide static IP address(es) and/or CIDR ranges for the network/system accessing the API
 
@@ -76,30 +62,17 @@ After attesting, you will need to assign an AB2D Data Operations Specialist (ADO
 
 ### Retrieve test claims data
 
-#### Test the API in our sandbox
+#### Verify test data retrieval
 
-The sandbox is a test environment that allows anyone to interact with the AB2D API and retrieve test Medicare Parts A and B claims data. The ADOS will need to verify your organization’s retrieval of test data before receiving access to the AB2D API.
+The ADOS will receive an email with instructions on next steps. They must send the AB2D team the job ID from a successful data export in the sandbox.  Learn [how to get a bearer token]({% link how-to-get-a-bearer-token.md %}) and [access test claims data]({% link how-to-access-test-claims-data.md %}).
+#### Provide your IP addresses
 
-#### Connecting to the sandbox
-
-There are three ways to retrieve test data from the sandbox, depending on your preference: Postman, Swagger, and curl.
-
-- [Postman and Swagger User Guide](https://ab2d.cms.gov/tutorial-postman-swagger.html)
-- [curl User Guide](https://ab2d.cms.gov/tutorial-curl.html)
-- [Advanced User Guide](https://ab2d.cms.gov/advanced-user-guide.html)
-
-#### Verifying test data retrieval
-
-The ADOS must record the Log ID from successful jobs in the sandbox and provide this ID to the AB2D team for verification. Once verified the AB2D team will provide access to the API.
+Your organization must provide the AB2D team with the public, static IP address(es) of every network or system that will use the API. These will be reviewed, approved, and allowlisted as an additional layer of security.  
 
 ## Step 4
 
-### Receive production API credentials
+### Get production credentials
 
-#### Get started with production data
+The Attestor will receive an email with production credentials to share with their ADOS.  Production credentials are Personally Identifiable Information (PII) that allow the ADOS to [get a bearer token]({% link how-to-get-a-bearer-token.md %}) and [access production claims data]({% link how-to-access-production-claims-data.md %}).
 
-Your organization must provide the AB2D team with the public static IP address(es) of the network or system connecting to the API. These will be reviewed, approved, and allow-listed as an additional layer of security. Afterward, the AB2D team will assign and provide the Attestor production credentials, which will allow your organization to use the API to retrieve real Medicare Parts A and B claims data.
-
-If you have questions or need help, visit our [Support]({% link support.md %}) page or contact the AB2D team through our [Google Group](https://groups.google.com/forum/#!forum/ab2d-api).
-
-[Explore production documentation](https://github.com/CMSgov/ab2d-pdp-documentation).
+If you have questions or need help, visit [Support]({% link support.md %}) or contact the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).

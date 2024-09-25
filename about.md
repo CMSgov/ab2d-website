@@ -7,7 +7,7 @@ full-width: true
 
 # {{ page.title }}
 
-Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescription Drug Plan sponsors (PDPs) cover more than 22 million people. The AB2D API provides Medicare Parts A and B claims data to fill gaps in patients' health information for a holistic view that supports better care.
+Of the 65 million enrollees covered by Medicare programs, stand-alone Prescription Drug Plan (PDP) sponsors cover more than 22 million people. The AB2D API provides Medicare Parts A and B claims data to fill gaps in patients' health information for a holistic view that supports better care.
 
 <a href="{% link data.md %}" class="usa-button usa-button--unstyled">Explore the data {% include sprite.html icon="arrow_forward" %}</a>
 
@@ -91,14 +91,14 @@ Of the 65 million beneficiaries covered by Medicare programs, stand-alone Prescr
 <div class="usa-section--dark bg-primary padding-y-6 margin-y-6" markdown="1">
 
 ## What requirements led to AB2D?
-The AB2D API (AB2D) supports government initiatives to improve patient health. The Centers for Medicare & Medicaid (CMS) developed AB2D to follow the [Bipartisan Budget Act of 2018 (BBA)](https://www.congress.gov/bill/115th-congress/house-bill/1892/text) and [final rule](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare). This is in accordance with requirements to share claims data with PDPs who have active contracts.
+AB2D supports government initiatives to improve patient health. The Centers for Medicare & Medicaid Services (CMS) developed AB2D to follow the [Bipartisan Budget Act of 2018 (BBA)](https://www.congress.gov/bill/115th-congress/house-bill/1892/text) and [final rule](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare). This is in accordance with requirements to share claims data with PDP sponsors who have active contracts.
 
 ## How does AB2D support these requirements?
-AB2D provides PDPs with Medicare Parts A and B claims data. This data helps PDPs promote the best use of medications to improve health outcomes. AB2D utilizes the [Bulk Fast Healthcare Interoperability Resources (FHIR)](https://www.hl7.org/fhir/overview.html) standard for exchanging healthcare information electronically in order to make data sharing efficient and secure.
+AB2D provides PDP sponsors with Medicare Parts A and B claims data. This data helps PDP sponsors promote the best use of medications to improve health outcomes. AB2D utilizes the [Bulk Fast Healthcare Interoperability Resources (FHIR)](https://www.hl7.org/fhir/overview.html) standard for exchanging healthcare information electronically in order to make data sharing efficient and secure.
 
 </div>
 
-## What are the other CMS Claims-Based FHIR APIs?
+## What are the other CMS claims-based FHIR APIs?
 
 <ul class="usa-card-group flex-justify-center padding-y-4">
   {% include card.html
@@ -106,7 +106,7 @@ AB2D provides PDPs with Medicare Parts A and B claims data. This data helps PDPs
     img-alt="BCDA logo"
     heading-level="h3"
     title="Beneficiary Claims Data API"
-    body="The Beneficiary Claims Data API (BCDA) helps Alternative Payment Model participants provide high quality, coordinated care by making it easier to access bulk Medicare Part A, B, and D claims."
+    body="The Beneficiary Claims Data API (BCDA) helps Alternative Payment Model participants provide high quality, coordinated care by making it easier to access bulk Medicare Parts A, B, and D claims data."
     footer-link="https://bcda.cms.gov/"
     footer-link-text="Visit BCDA"
     button=true
@@ -117,9 +117,9 @@ AB2D provides PDPs with Medicare Parts A and B claims data. This data helps PDPs
     img-alt="BB 2.0 logo"
     heading-level="h3"
     title="Blue Button 2.0"
-    body="The Blue Button 2.0 (BB 2.0) API enables beneficiaries to connect their Medicare claims data to applications, services, and research programs they trust."
+    body="The Blue Button 2.0 (BB2.0) API enables enrollees to connect their Medicare claims data to applications, services, and research programs they trust."
     footer-link="https://bluebutton.cms.gov/"
-    footer-link-text="Visit BB 2.0"
+    footer-link-text="Visit BB2.0"
     button=true
   %}
 
@@ -128,7 +128,7 @@ AB2D provides PDPs with Medicare Parts A and B claims data. This data helps PDPs
     img-alt="DPC logo"
     heading-level="h3"
     title="Data at the Point of Care"
-    body="The Data at the Point of Care (DPC) API enables healthcare providers with claims data to fill in gaps in patient history at the point of care and deliver high quality services to Medicare beneficiaries."
+    body="The Data at the Point of Care (DPC) API enables healthcare providers with claims data to fill in gaps in patient history at the point of care and deliver high quality services to Medicare enrollees."
     footer-link="https://dpc.cms.gov/"
     footer-link-text="Visit DPC"
     button=true

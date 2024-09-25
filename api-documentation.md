@@ -46,17 +46,17 @@ Get an overview of the AB2D API, how it works, its endpoints, and troubleshootin
   {% endfor %}
 </ul>
 
-## Versions
+## API versions
 
-We recommend using AB2D V2 which supports the Bulk Data Access Implementation Guide V2.0.0.
+We recommend using AB2D V2 which supports the [Bulk Data Access Implementation Guide V2.0.0](https://hl7.org/fhir/uv/bulkdata/). [Learn how to migrate from V1 to V2](https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx).
 
-- V2 (R4) — `api.ab2d.cms.gov/api/v2/fhir`
-- V1 (STU3) — `api.ab2d.cms.gov/api/v1/fhir`
+- V2 ([R4](https://hl7.org/fhir/R4/)) — `api.ab2d.cms.gov/api/v2/fhir`
+- V1 ([STU3](https://hl7.org/fhir/STU3)) — `api.ab2d.cms.gov/api/v1/fhir`
 
 ## JSON resources
 
-Both versions of AB2D use the JSON (ndjson) data format for the FHIR ExplanationOfBenefit resource.
+Both versions of AB2D use the JSON (NDJSON) data format for the FHIR ExplanationOfBenefit resource.
 
 - [Intro to JSON Format](http://json.org/)
-- [Newline Delimited JSON (ndjson)](http://ndjson.org/)
+- [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec)
 - [JSON format viewer/validator](https://jsonlint.com/)
