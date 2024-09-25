@@ -68,10 +68,10 @@ Install the `uswds-compile` and `uswds` dependencies:
 npm install
 ```
 
-Compile USWDS files to the `./assets/uswds` directory:
+Compile and update USWDS to copy files to the `./assets/uswds` directory:
 
 ```sh
-npx gulp compile
+npx gulp updateUswds
 ```
 
 Or you can run the following command (in parallel with the Jekyll server) and Gulp will watch for changes to files in the `./_uswds_sass` directory and recompile the USWDS assets:
