@@ -4,7 +4,7 @@ title:  "AB2D Use Cases"
 permalink: /use-cases
 ---
 
-# AB2D Use Cases
+# {{ page.title }}
 
 <div class="grid-row grid-gap margin-y-4">
   <div class="grid-col-auto">
