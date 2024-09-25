@@ -4,10 +4,10 @@ title:  "AB2D API User Guide"
 permalink: /user-guide
 in-page-nav: true
 ---
-<!--TODO add links to other subpages after those pages have been created-->
+<!--TODO add links to other subpages after those pages have been created, content figure out what copy requires code formatting-->
 # {{ page.title }}
 
-The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan (PDP) sponsors can access data for any attributed enrollee. PDP sponsors must complete [onboarding]({% link onboarding.md %}) to access the API. During this process, your organization will agree (“attest") to AB2D protocols and [retrieve test data in sandbox]({% link how-to-access-test-claims-data.md %}). Following these steps, you’ll be approved to [access production claims data]({% link how-to-access-production-claims-data.md %}) for active enrollees.
+The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan (PDP) sponsors can access data for any attributed enrollee. PDP sponsors must complete [onboarding]({% link onboarding.md %}) to access the API. During this process, your organization will agree (“attest") to AB2D protocols and [retrieve test data]({% link how-to-access-test-claims-data.md %}) in the sandbox. Following these steps, you’ll be approved to [access production claims data]({% link how-to-access-production-claims-data.md %}) for active enrollees.
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
@@ -18,12 +18,12 @@ The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan 
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
 
-## Sandbox vs. production environment
+## Differences between the sandbox and production environment
 
-### Accessing test data in sandbox
-Sandbox (`sandbox.ab2d.cms.gov`) is a public environment available to anyone who wants to learn how the API works. AB2D provides you with sandbox credentials for access to test data. You’ll use the sandbox identity provider (`test.idm.idp.cms.gov`) for this.
+### The sandbox environment
+The sandbox (`sandbox.ab2d.cms.gov`) is a public environment available to anyone who wants to learn how the API works. AB2D provides you with sandbox credentials for access to test data. You’ll use the sandbox identity provider (`test.idm.idp.cms.gov`) for this.
 
-### Accessing enrollee claims data in production
+### The production environment
 Production (`api.ab2d.cms.gov`) is a private environment available only to attested and onboarded PDP sponsors. During onboarding, you’ll need to provide the static IP address(es) for each system using the API. AB2D then provides you with production credentials for access to your enrollees’ data. You’ll use the production identity provider (`idp.cms.gov`) for this. 
 
 Both environments use the same endpoints with the main differences being the credentials used for your [bearer token]({% link how-to-get-a-bearer-token.md %}) and the URL. 
@@ -193,7 +193,7 @@ Get an overview of the endpoints you can request at the [sandbox]({% link how-to
   </h4>
   <div id="m-a4" class="usa-accordion__content usa-prose">
     <p>
-      Bearer tokens, also referred to as <a href="https://jwt.io/introduction/">JSON web tokens (JWT)</a>, are used during the <a href="https://oauth.net/2/">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.
+      Bearer tokens, also referred to as <a href="https://jwt.io/introduction/">JSON web tokens </a>, are used during the <a href="https://oauth.net/2/">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.
     </p>
     <p>
       You can get a bearer token by providing Okta with sandbox credentials or the production credentials received during onboarding. Bearer tokens expire after an hour, after which you must complete the process again.
@@ -250,10 +250,10 @@ You’re creating too many job requests within a short period of time. Try waiti
 
 #### Unable to download bulk data file
 
-- Your file name and/or job ID are incorrect. Call the `$Status` command again to verify these details.
+- Your file name and/or job ID are incorrect. Check the job status again to verify these details.
 - You requested to download the file more than 6 times.
 - You waited too long to download your completed job files. Files expire and automatically delete after 72 hours.
-- There’s a server error. If this continues to happen, [contact the AB2D team](mailto:ab2d@cms.hhs.gov).
+- There’s a server error. If this continues to happen, contact the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
 
 [Learn more about standard HTTP Codes.](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
@@ -313,7 +313,7 @@ You’re creating too many job requests within a short period of time. Try waiti
   </h4>
   <div id="m-a7" class="usa-accordion__content usa-prose">
     <p>
-      Use one of these methods:
+      Use 1 of these methods:
     </p>
     <ol>
         <li>On the command line of the system you want to use, run 1 of the following commands:</li>
@@ -358,7 +358,7 @@ You’re creating too many job requests within a short period of time. Try waiti
   </h4>
   <div id="m-a9" class="usa-accordion__content usa-prose">
     <p>
-      <a href="mailto:ab2d@cms.hhs.gov">Contact the AB2D team</a> to change your organization’s IP address(es).
+     Contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to change your organization’s IP address(es).
     </p>
   </div>
 
@@ -508,7 +508,7 @@ You’re creating too many job requests within a short period of time. Try waiti
       Version 1 of the API uses STU3 (<code>https://api.ab2d.cms.gov/api/v1/fhir</code>).
     </p>
     <p>
-      And V2 uses R4 (<code>https://api.ab2d.cms.gov/api/v2/fhir</code>). 
+      and V2 uses R4 (<code>https://api.ab2d.cms.gov/api/v2/fhir</code>). 
     </p>
     <p>
       Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{% link data.md %}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>. 
@@ -527,10 +527,10 @@ You’re creating too many job requests within a short period of time. Try waiti
   </h4>
   <div id="m-a18" class="usa-accordion__content usa-prose">
     <p>
-     The default value for the <code>_since</code> parameter changes between versions. The <code>_until</code> parameter is also only available with V2.
+     The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
     </p>
     <p>
-      In V1, a date must be specified to use <code>_since</code>. If no<code>_since</code> value is specified, it will default to your organization's attestation date. In V2, if no <code>_since</code> value is specified, it will default to the date of your last successful export. If this is your first job, it will default to your organization’s attestation date. <a href="{% link http-query-parameters.md %}">Learn how to use parameters</a>.
+      In V1, a date must be specified to use _since. If no _since value is specified, it will default to your organization's attestation date. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to your organization’s attestation date. <a href="{% link http-query-parameters.md %}">Learn how to use parameters</a>.
     </p>
   </div>
 </div>
