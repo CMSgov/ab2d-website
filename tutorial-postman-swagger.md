@@ -560,7 +560,7 @@ landing-page: live
 
                 <p>The default options are fine in this case with the exception of the _since date and _until date. A good
                     value for the _since date for this contract is <pre>2021-01-01T00:00:00.000-05:00</pre>
-                    <p>_until uses the same format is _since. A good value for the _until date is to use the current date and time, but you can enter any date as long as it is a date between _since and the current date and time.</p>
+                    <p>_until uses the same format as _since. A good value for the _until date is to use the current date and time, but you can enter any date as long as it is a date between _since and the current date and time.</p>
                     <p>Enter both of these values and click the big blue bar to <strong> Execute.</strong></p>
                 </p>
 
