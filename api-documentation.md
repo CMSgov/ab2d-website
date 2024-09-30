@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-Learn how to access AB2D claims data. AB2D is an open source RESTful (Representational State Transfer) API. Offered by the Centers for Medicare & Medicaid Services (CMS), it uses [Bulk Fast Healthcare Interoperability (FHIR)](https://hl7.org/fhir/uv/bulkdata/) resources for data exports of Medicare Parts A and B claims data. Visit [AB2D Data]({% link data.md %}) to explore the types of data available and how to apply them in context.
+Learn how to access AB2D claims data. AB2D is an open source RESTful (Representational State Transfer) API. Offered by the Centers for Medicare & Medicaid Services (CMS), it uses [Bulk Fast Healthcare Interoperability (FHIR)](https://hl7.org/fhir/uv/bulkdata/) resources for data exports of Medicare Parts A and B claims data. Visit [AB2D Data]({{ '/data' | relative_url }}) to explore the types of data available and how to apply them in context.
 
 ## What’s the difference between the sandbox and production environments?
 {: .font-sans-lg }
@@ -23,7 +23,7 @@ Learn how to access AB2D claims data. AB2D is an open source RESTful (Representa
   <tbody>
     <tr>
       <td>Available to everyone</td>
-      <td>Must complete <a href="{% link onboarding.md %}">onboarding</a> to access</td>
+      <td>Must complete <a href="{{ '/onboarding' | relative_url }}">onboarding</a> to access</td>
     </tr>
     <tr>
       <td>Contains synthetic claims data</td>

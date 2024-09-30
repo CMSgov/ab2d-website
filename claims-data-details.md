@@ -478,7 +478,7 @@ In the example, a single claim will be tracked through several evolutions:
     </tbody>
 </table>
 
-In the example, four exports are run using the [_since parameter]({% link http-query-parameters.md %}) to limit duplicate data. The four exports are described below.
+In the example, four exports are run using the [_since parameter]({{ '/http-query-parameters' | relative_url }}) to limit duplicate data. The four exports are described below.
 
 <table class="usa-table usa-table--stacked usa-table--borderless">
     <thead>

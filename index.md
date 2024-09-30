@@ -62,7 +62,7 @@ hero-button-2-text: "Code Repo"
       <li>diagnosis codes</li>
       <li>dates and times of service</li>
     </ul>
-    <p><a href="{% link data.md %}">Learn about the data</a></p>
+    <p><a href="{{ '/data' | relative_url }}">Learn about the data</a></p>
   </div>
 </div>
 
@@ -73,7 +73,7 @@ hero-button-2-text: "Code Repo"
   <div class="tablet:grid-col tablet:order-1">
     <h2>What are permitted uses of the data?</h2>
     <p>AB2D allows PDP sponsors to improve therapeutic outcomes and care coordination, with limitations on how the data can be used to inform coverage determinations.</p>
-    <p><a href="{% link about.md %}">View permitted uses</a></p>
+    <p><a href="{{ '/about' | relative_url }}">View permitted uses</a></p>
   </div>
 </div>
 

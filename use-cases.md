@@ -2,6 +2,7 @@
 layout: default
 title:  "AB2D Use Cases"
 permalink: /use-cases
+in-page-nav: true
 ---
 
 # {{ page.title }}
