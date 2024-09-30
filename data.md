@@ -48,8 +48,8 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
     <h2>Guides</h2>
     <p>Learn how to use AB2D and understand enrollees’ claims data.</p>
     <ul>
-      <li><a href="{% link claims-data-details.md %}">Claims Data Details</a></li>
-      <li><a href="{% link how-to-filter-claims-data.md %}">How to Filter Claims Data</a></li>
+      <li><a href="{{ '/claims-data-details' | relative_url }}">Claims Data Details</a></li>
+      <li><a href="{{ '/how-to-filter-claims-data' | relative_url }}">How to Filter Claims Data</a></li>
     </ul>
   </div>
 </div>
