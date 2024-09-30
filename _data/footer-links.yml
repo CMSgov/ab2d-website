@@ -1,16 +1,13 @@
 - heading: Getting Started
   links:
-    - text: Documentation
-      url: /api-documentation
-
     - text: User guide
-      url: /
+      url: /user-guide
 
     - text: Access test claims data
-      url: /
+      url: /how-to-access-test-claims-data
 
     - text: Access production claims data
-      url: /
+      url: /how-to-access-production-claims-data
 
 - heading: AB2D Data
   links:
@@ -20,13 +17,13 @@
       external: true
 
     - text: Claims data details
-      url: /
+      url: /claims-data-details
 
     - text: Data Dictionary
-      url: /
+      url: /data
 
     - text: FHIR specification
-      url: /
+      url: /https://hl7.org/fhir/
       external: true
 
 - heading: About
