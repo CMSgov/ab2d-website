@@ -140,4 +140,3 @@ ubuntu
         Select Ubuntu from the leftmost panel and a window will appear. You will be entering commands at the dollar sign prompt ($). The easiest way to do this is to use copy and paste.
     </li>
 </ol>
-

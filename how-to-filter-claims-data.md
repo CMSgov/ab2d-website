@@ -45,14 +45,14 @@ The following examples use the _since and _until parameters separately and toget
 
 #### curl command
 
-{% capture jsonSnippet %}{% raw %}{
-  curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00" \
+{% capture curlSnippet %}{% raw %}
+curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00" \
 -H "Accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
 -H "Authorization: Bearer ${BEARER_TOKEN}
-}{% endraw %}{% endcapture %}
-{% include copy_snippet.md code=jsonSnippet language="json" %}
+{% endraw %}{% endcapture %}
+{% include copy_snippet.md code=curlSnippet language="shell" %}
 
 ### When only the _until parameter is specified
 
@@ -66,13 +66,13 @@ The following examples use the _since and _until parameters separately and toget
 
 #### curl command
 
-{% capture jsonSnippet %}{% raw %}{
- curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
+{% capture curlSnippet %}{% raw %}
+curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
 -H "Authorization: Bearer ${BEARER_TOKEN}
-}{% endraw %}{% endcapture %}
-{% include copy_snippet.md code=jsonSnippet language="json" %}
+{% endraw %}{% endcapture %}
+{% include copy_snippet.md code=curlSnippet language="shell" %}
 
 ### When both the _since and _until parameters are specified
 
@@ -86,13 +86,13 @@ The following examples use the _since and _until parameters separately and toget
 
 #### curl command
 
-{% capture jsonSnippet %}{% raw %}{
+{% capture curlSnippet %}{% raw %}
 curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
 -H "Authorization: Bearer ${BEARER_TOKEN}
-}{% endraw %}{% endcapture %}
-{% include copy_snippet.md code=jsonSnippet language="json" %}
+{% endraw %}{% endcapture %}
+{% include copy_snippet.md code=curlSnippet language="shell" %}
 
 ## Incremental export model
 One recommended way to use AB2D is to periodically export any data that has been updated since your last job. The AB2D team encourages bi-weekly exports to stay updated on new claims.

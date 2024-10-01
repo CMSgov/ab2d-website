@@ -227,22 +227,20 @@ For more information see: <a href="http://hl7.org/fhir/R4/explanationofbenefit-d
 ### Example JSON
 
 {% capture jsonSnippet %}{% raw %}
-{
-    ...
-    "identifier": [
-        {
-        "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
-        "value": "-10000521860"
-        },
-        // Claim group will be in the list of identifiers and identified
-        // by the claim group system
-        {
-        "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
-        "value": "7653956538"
-        }
-    ],
-    ...
-}
+...
+"identifier": [
+    {
+    "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
+    "value": "-10000521860"
+    },
+    // Claim group will be in the list of identifiers and identified
+    // by the claim group system
+    {
+    "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
+    "value": "7653956538"
+    }
+],
+...
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %} 
 
@@ -263,7 +261,6 @@ For more information:
 ### Example JSON
 
 {% capture jsonSnippet %}{% raw %}
-{
 ...
 "identifier": [
     // Claim id will be in the list of identifiers and identified
@@ -278,7 +275,6 @@ For more information:
     }
 ],
 ...
-}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %} 
 
@@ -342,26 +338,24 @@ Extensions referring to identifiers will have the following structure:
 
 
 {% capture jsonSnippet %}{% raw %}
-{
-  // (1) url is always the same
-  "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
-  "valueIdentifier": {
+// (1) url is always the same
+"url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
+"valueIdentifier": {
 
-      // (4) whether the MBI is currently in use or a historical value will be found as an extension with the url
-      "extension": [
-          {
-            "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
-            "valueCoding": {
-              "code": "current"
-            }
-          }
-      ],
+    // (4) whether the MBI is currently in use or a historical value will be found as an extension with the url
+    "extension": [
+        {
+        "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
+        "valueCoding": {
+            "code": "current"
+        }
+        }
+    ],
 
-      // (2) system will always be
-      "system": “http://hl7.org/fhir/sid/us-mbi”,
-      // (3) the actual MBI value will always be found here
-      "value": "7S94E00AA00"
-  }
+    // (2) system will always be
+    "system": “http://hl7.org/fhir/sid/us-mbi”,
+    // (3) the actual MBI value will always be found here
+    "value": "7S94E00AA00"
 }
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %} 
@@ -389,52 +383,48 @@ The list of extensions provided with each MBI includes an extension containing w
 If an MBI is current then the following example is representative.
 
 {% capture jsonSnippet %}{% raw %}
-{
-    "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
-          "valueIdentifier": {
-            "extension": [
-              {
-                "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
-                "valueCoding": {
-                  // The code value for identifier-currency will be current
-                  "code": "current"
-                }
-              }
-            ],
-            "system": "http://hl7.org/fhir/sid/us-mbi",
-            "value": "7S94E00AA00"
-          }
+"extension": [
+    {
+        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
+        "valueIdentifier": {
+        "extension": [
+            {
+            "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
+            "valueCoding": {
+                // The code value for identifier-currency will be current
+                "code": "current"
+            }
+            }
+        ],
+        "system": "http://hl7.org/fhir/sid/us-mbi",
+        "value": "7S94E00AA00"
         }
-    ]
-}
+    }
+]
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
 
 Whereas if the MBI was historic then the value would be switched to historic.
 
 {% capture jsonSnippet %}{% raw %}
-{
-    "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
-          "valueIdentifier": {
-            "extension": [
-              {
-                "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
-                "valueCoding": {
-                  // The code value for identifier-currency will be historic
-                  "code": "historic"
-                }
-              }
-            ],
-            "system": "http://hl7.org/fhir/sid/us-mbi",
-            "value": "7S94E00AA00"
-          }
+"extension": [
+    {
+        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
+        "valueIdentifier": {
+        "extension": [
+            {
+            "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
+            "valueCoding": {
+                // The code value for identifier-currency will be historic
+                "code": "historic"
+            }
+            }
+        ],
+        "system": "http://hl7.org/fhir/sid/us-mbi",
+        "value": "7S94E00AA00"
         }
-    ]
-}
+    }
+]
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
 
