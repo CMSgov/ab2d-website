@@ -13,6 +13,7 @@ gem "jekyll", "~> 3.9.0"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.5", ">= 2.5.1"
 
+gem "rexml", "~> 3.3.2"
 gem "kramdown-parser-gfm"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
@@ -32,3 +33,5 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 gem 'jekyll-redirect-from', '>= 0.15.0'
 
+
+gem "webrick", "~> 1.8"
