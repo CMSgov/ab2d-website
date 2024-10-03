@@ -44,10 +44,17 @@ hero-button-2-text: "Code Repo"
   %}
 
   {% include card.html
-    bg-color="gray-5"
+    bg-color="accent-cool-lighter"
     footer-link="/use-cases"
     footer-link-text="Learn more about use cases"
   %}
+
+    {% include card.html
+    bg-color="blue-cool-10v"
+    footer-link="/mtm-white-paper"
+    footer-link-text="Read the MTM white paper"
+  %}
+
 </ul>
 
 <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4 flex-align-center">

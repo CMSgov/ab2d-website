@@ -102,7 +102,8 @@ Start an export job of FHIR ExplanationOfBenefit (EOB) resources using the follo
 > RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_type=ExplanationOfBenefit" \
   -H "Accept: application/json" \
   -H "Accept: application/fhir+json" \
-  -H "Authorization: Bearer ${bearer_token}"){% endraw %}{% endcapture %}
+  -H "Authorization: Bearer ${bearer_token}")
+{% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
 `RESP2` is set to the headers of the HTTP response (by using the -i option of curl).
