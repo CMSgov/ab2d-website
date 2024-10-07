@@ -419,6 +419,7 @@ Whereas if the MBI was historic then the value would be switched to historic.
                 {
                     "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
                     "valueCoding": {
+                        "code": "historic"
                     }
                 }
             ],
@@ -430,7 +431,7 @@ Whereas if the MBI was historic then the value would be switched to historic.
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
 
-*Note: The code value for identifier-currency will be historic "code": "historic".*
+*Note: The code value for identifier-currency will be historic.*
 
 ## Identifying updates to existing claims
 
