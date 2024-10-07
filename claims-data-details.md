@@ -220,9 +220,9 @@ Basic Facts:
 
 - Format: a positive number
 - Location: found in the list of identifiers (eob.identifier[])
-- <a href="https://bluebutton.cms.gov/resources/identifier/claim-group"> Claim Extension System</a>
+- Claim Extension System: [https://bluebutton.cms.gov/resources/identifier/claim-group](https://bluebutton.cms.gov/resources/identifier/claim-group)
 
-For more information see: <a href="http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier">FHIR Identifier Explanation</a>
+For more information see: [FHIR Identifier Explanation](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
 
 ### Example JSON
 
@@ -252,11 +252,11 @@ Basic Format:
 
 - Format: a positive number
 - Location: found in the list of identifiers (eob.identifier[])
-- <a href="https://bluebutton.cms.gov/resources/variables/clm_id">Claim Extension System</a>
+- Claim Extension System: [https://bluebutton.cms.gov/resources/variables/clm_id](https://bluebutton.cms.gov/resources/variables/clm_id)
 
 For more information: 
-- <a href="http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier">FHIR Identifier Explanation</a>
-- <a href="https://bluebutton.cms.gov/resources/variables/clm_id">Claim ID Explanation</a>
+- [FHIR Identifier Explanation](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
+- [Claim ID Explanation](https://bluebutton.cms.gov/resources/variables/clm_id)
 
 ### Example JSON
 
@@ -286,9 +286,9 @@ Basic Information on Status:
 
 - Format: string with one of two values `active` or `canceled`
 - Location: found directly on the claim
-- URI: <a href="http://hl7.org/fhir/explanationofbenefit-status">http://hl7.org/fhir/explanationofbenefit-status</a>
+- URL: [http://hl7.org/fhir/explanationofbenefit-status](http://hl7.org/fhir/explanationofbenefit-status)
 
-For more information: <a href="http://hl7.org/fhir/R4/valueset-explanationofbenefit-status.html">FHIR Specification for Claim Status</a>
+For more information: [FHIR Specification for Claim Status](http://hl7.org/fhir/R4/valueset-explanationofbenefit-status.html)
 
 ## LastUpdated
 
@@ -298,11 +298,11 @@ Basic Information on lastUpdated:
 
 - Format: ISO datetime with a timezone
 - Location: Found in claims metadata (eob.meta.lastUpdated)
-- URI: <a href="http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated">http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated</a>
+- URL: [http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated)
 
 For more information:
-- <a href="http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created">ExplanationOfBenefit.created</a>
-- <a href="http://hl7.org/fhir/R4/resource-definitions.html#Resource.meta">Common FHIR Metadata</a>
+- [ExplanationOfBenefit.created](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created)
+- [Common FHIR Metadata](http://hl7.org/fhir/R4/resource-definitions.html#Resource.meta)
 
 ## Identifying patients
 
@@ -331,11 +331,14 @@ Each claim contains patient identifiers necessary to map a claim to a specific p
 
 Extensions referring to identifiers will have the following structure:
 
-- [FHIR Identifier Extension URI](http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier)
-- [MBI Identifier System](http://hl7.org/fhir/sid/us-mbi)
-- Identifier location: extension.valueIdentifier.value
-- [Identifier Currency Code Extension URI](https://bluebutton.cms.gov/resources/codesystem/identifier-currency)
+- The FHIR Identifier Extension URL is always the same: [http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier](http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier)
+- Identifier Currency Code Extension URL: [https://bluebutton.cms.gov/resources/codesystem/identifier-currency](https://bluebutton.cms.gov/resources/codesystem/identifier-currency)
+- The URL code identifies whether the MBI is currently in use or a historical value.
+- The MBI Identifier System is always the same: `http://hl7.org/fhir/sid/us-mbi`
+- The identifier will be located at: `extension.valueIdentifier.value`
+- “Value” displays the actual MBI. 
 
+#### Example JSON
 
 {% capture jsonSnippet %}{% raw %}
 {
@@ -356,20 +359,13 @@ Extensions referring to identifiers will have the following structure:
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %} 
 
-*Notes:*
-1. *"url" is always the same.*
-2. *Whether the MBI is currently in use or a historical value will be found as an extension with the URL.*
-3. *"system" is always the same.*
-4. *The actual MBI value will always be found in "value".*
-
-
 ### Current MBI
 
 The current Medicare Beneficiary Identifier (MBI) used to identify a patient.
 
 - Format: A string following the [CMS standards](https://www.cms.gov/Medicare/New-Medicare-Card/Understanding-the-MBI.pdf)
 - Location: found in the list of extensions provided with the EOB
-- [Identifier System](http://hl7.org/fhir/sid/us-mbi)
+- Identifier System: `http://hl7.org/fhir/sid/us-mbi`
 
 ### Historic MBI
 
@@ -377,7 +373,7 @@ A Medicare Beneficiary Identifier (MBI), which in the past was used to identify 
 
 - Format: A string following the [CMS standards](https://www.cms.gov/Medicare/New-Medicare-Card/Understanding-the-MBI.pdf)
 - Location: found in the list of extensions provided with the EOB
-- [Identifier System](http://hl7.org/fhir/sid/us-mbi)
+- Identifier System: `http://hl7.org/fhir/sid/us-mbi`
 
 ### Determining current vs. historic MBI
 
