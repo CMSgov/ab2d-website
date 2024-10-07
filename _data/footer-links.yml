@@ -23,7 +23,7 @@
       url: /data
 
     - text: FHIR specification
-      url: /https://hl7.org/fhir/
+      url: https://hl7.org/fhir/
       external: true
 
 - heading: About
