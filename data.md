@@ -11,7 +11,7 @@ Learn about claims data and how to apply it in context. The AB2D API shares larg
 - **Medicare Part A claims data** — inpatient hospital stays, care in skilled nursing facilities, and hospice care
 - **Medicare Part B claims data** — various doctors' services, outpatient care, medical supplies, and preventive services
 
-There are specific [permitted uses]({% link about.md %}) for the data. Visit [API Documentation]({% link api-documentation.md %}) for details on accessing production data and the claims data format.
+There are specific [permitted uses]({{ '/about' | relative_url }}) for the data. Visit [API Documentation]({{ '/api-documentation' | relative_url }}) for details on accessing production data and the claims data format.
 
 <div class="grid-row grid-gap margin-y-6 tablet:grid-gap-0 tablet:margin-y-8 desktop:margin-y-10">
   <div class="grid-col-2 tablet:grid-col-3 text-center">
@@ -21,7 +21,7 @@ There are specific [permitted uses]({% link about.md %}) for the data. Visit [AP
     <h2>Data Dictionary</h2>
     <p>Get a detailed breakdown of data elements provided by AB2D. The Data Dictionary covers both V2 (<a href="https://hl7.org/fhir/R4/">R4</a>) and V1 (<a href="https://hl7.org/fhir/STU3/">STU3</a>) of the API.</p>
     <ul>
-      <li>Data Dictionary</li>
+      <li><a href="{{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }}">Data Dictionary</a></li>
     </ul>
   </div>
 </div>
@@ -48,8 +48,8 @@ There are specific [permitted uses]({% link about.md %}) for the data. Visit [AP
     <h2>Guides</h2>
     <p>Learn how to use AB2D and understand enrollees’ claims data.</p>
     <ul>
-      <li><a href="{% link claims-data-details.md %}">Claims Data Details</a></li>
-      <li><a href="{% link how-to-filter-claims-data.md %}">How to Filter Claims Data</a></li>
+      <li><a href="{{ '/claims-data-details' | relative_url }}">Claims Data Details</a></li>
+      <li><a href="{{ '/how-to-filter-claims-data' | relative_url }}">How to Filter Claims Data</a></li>
     </ul>
   </div>
 </div>

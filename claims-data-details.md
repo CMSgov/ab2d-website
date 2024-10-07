@@ -35,7 +35,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           </ul>
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#identifying-claims-and-claim-versions">Identifying Claims and Claim Versions</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying Claims and Claim Versions</a>
         </td>
       </tr>
       <tr>
@@ -52,7 +52,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           </ul>
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#identifying-claims-and-claim-versions">Identifying Claims and Claim Versions</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying Claims and Claim Versions</a>
         </td>
       </tr>
       <tr>
@@ -69,7 +69,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           </ul>
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#claim-status">Claim status</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim status</a>
         </td>
       </tr>
       <tr>
@@ -83,7 +83,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           eob.meta.lastUpdated
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#last-updated">Last Updated</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#lastupdated">Last Updated</a>
         </td>
       </tr>
       <tr>
@@ -97,7 +97,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           eob.extension
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#identifying-patients">Identifying Patients</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-patients">Identifying Patients</a>
         </td>
       </tr>
     </tbody>
@@ -220,31 +220,29 @@ Basic Facts:
 
 - Format: a positive number
 - Location: found in the list of identifiers (eob.identifier[])
-- <a href="https://bluebutton.cms.gov/resources/identifier/claim-group"> Claim Extension System</a>
+- Claim Extension System: [https://bluebutton.cms.gov/resources/identifier/claim-group](https://bluebutton.cms.gov/resources/identifier/claim-group)
 
-For more information see: <a href="http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier">FHIR Identifier Explanation</a>
+For more information see: [FHIR Identifier Explanation](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
 
 ### Example JSON
 
 {% capture jsonSnippet %}{% raw %}
-{
-    ...
+...
     "identifier": [
         {
-        "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
-        "value": "-10000521860"
+            "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
+            "value": "-10000521860"
         },
-        // Claim group will be in the list of identifiers and identified
-        // by the claim group system
         {
-        "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
-        "value": "7653956538"
+            "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
+            "value": "7653956538"
         }
     ],
-    ...
-}
+...
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %} 
+
+*Note: Claim group will be in the list of identifiers and identified by the claim group system.*
 
 ## Claim ID
 
@@ -254,33 +252,31 @@ Basic Format:
 
 - Format: a positive number
 - Location: found in the list of identifiers (eob.identifier[])
-- <a href="https://bluebutton.cms.gov/resources/variables/clm_id">Claim Extension System</a>
+- Claim Extension System: [https://bluebutton.cms.gov/resources/variables/clm_id](https://bluebutton.cms.gov/resources/variables/clm_id)
 
 For more information: 
-- <a href="http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier">FHIR Identifier Explanation</a>
-- <a href="https://bluebutton.cms.gov/resources/variables/clm_id">Claim ID Explanation</a>
+- [FHIR Identifier Explanation](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
+- [Claim ID Explanation](https://bluebutton.cms.gov/resources/variables/clm_id)
 
 ### Example JSON
 
 {% capture jsonSnippet %}{% raw %}
-{
 ...
-"identifier": [
-    // Claim id will be in the list of identifiers and identified
-    // by the claim id system
-    {
-        "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
-        "value": "-10000521860"
-    },
-    {
-        "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
-        "value": "7653956538"
-    }
-],
+    "identifier": [
+        {
+            "system": "https://bluebutton.cms.gov/resources/variables/clm_id",
+            "value": "-10000521860"
+        },
+        {
+            "system": "https://bluebutton.cms.gov/resources/identifier/claim-group",
+            "value": "7653956538"
+        }
+    ],
 ...
-}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %} 
+
+*Note: Claim id will be in the list of identifiers and identified by the claim ID system.*
 
 ##  Claim Status
 
@@ -290,9 +286,9 @@ Basic Information on Status:
 
 - Format: string with one of two values `active` or `canceled`
 - Location: found directly on the claim
-- URI: <a href="http://hl7.org/fhir/explanationofbenefit-status">http://hl7.org/fhir/explanationofbenefit-status</a>
+- URL: [http://hl7.org/fhir/explanationofbenefit-status](http://hl7.org/fhir/explanationofbenefit-status)
 
-For more information: <a href="http://hl7.org/fhir/R4/valueset-explanationofbenefit-status.html">FHIR Specification for Claim Status</a>
+For more information: [FHIR Specification for Claim Status](http://hl7.org/fhir/R4/valueset-explanationofbenefit-status.html)
 
 ## LastUpdated
 
@@ -302,11 +298,11 @@ Basic Information on lastUpdated:
 
 - Format: ISO datetime with a timezone
 - Location: Found in claims metadata (eob.meta.lastUpdated)
-- URI: <a href="http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated">http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated</a>
+- URL: [http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated)
 
 For more information:
-- <a href="http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created">ExplanationOfBenefit.created</a>
-- <a href="http://hl7.org/fhir/R4/resource-definitions.html#Resource.meta">Common FHIR Metadata</a>
+- [ExplanationOfBenefit.created](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created)
+- [Common FHIR Metadata](http://hl7.org/fhir/R4/resource-definitions.html#Resource.meta)
 
 ## Identifying patients
 
@@ -335,33 +331,30 @@ Each claim contains patient identifiers necessary to map a claim to a specific p
 
 Extensions referring to identifiers will have the following structure:
 
-- [FHIR Identifier Extension URI](http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier)
-- [MBI Identifier System](http://hl7.org/fhir/sid/us-mbi)
-- Identifier location: extension.valueIdentifier.value
-- [Identifier Currency Code Extension URI](https://bluebutton.cms.gov/resources/codesystem/identifier-currency)
+- The FHIR Identifier Extension URL is always the same: [http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier](http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier)
+- Identifier Currency Code Extension URL: [https://bluebutton.cms.gov/resources/codesystem/identifier-currency](https://bluebutton.cms.gov/resources/codesystem/identifier-currency)
+- The URL code identifies whether the MBI is currently in use or a historical value.
+- The MBI Identifier System is always the same: `http://hl7.org/fhir/sid/us-mbi`
+- The identifier will be located at: `extension.valueIdentifier.value`
+- “Value” displays the actual MBI. 
 
+#### Example JSON
 
 {% capture jsonSnippet %}{% raw %}
 {
-  // (1) url is always the same
-  "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
-  "valueIdentifier": {
-
-      // (4) whether the MBI is currently in use or a historical value will be found as an extension with the url
-      "extension": [
-          {
-            "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
-            "valueCoding": {
-              "code": "current"
+    "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
+    "valueIdentifier": {
+        "extension": [
+            {
+                "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
+                "valueCoding": {
+                    "code": "current"
+                }
             }
-          }
-      ],
-
-      // (2) system will always be
-      "system": “http://hl7.org/fhir/sid/us-mbi”,
-      // (3) the actual MBI value will always be found here
-      "value": "7S94E00AA00"
-  }
+        ],
+        "system": “http://hl7.org/fhir/sid/us-mbi”,
+        "value": "7S94E00AA00"
+    }
 }
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %} 
@@ -372,7 +365,7 @@ The current Medicare Beneficiary Identifier (MBI) used to identify a patient.
 
 - Format: A string following the [CMS standards](https://www.cms.gov/Medicare/New-Medicare-Card/Understanding-the-MBI.pdf)
 - Location: found in the list of extensions provided with the EOB
-- [Identifier System](http://hl7.org/fhir/sid/us-mbi)
+- Identifier System: `http://hl7.org/fhir/sid/us-mbi`
 
 ### Historic MBI
 
@@ -380,7 +373,7 @@ A Medicare Beneficiary Identifier (MBI), which in the past was used to identify 
 
 - Format: A string following the [CMS standards](https://www.cms.gov/Medicare/New-Medicare-Card/Understanding-the-MBI.pdf)
 - Location: found in the list of extensions provided with the EOB
-- [Identifier System](http://hl7.org/fhir/sid/us-mbi)
+- Identifier System: `http://hl7.org/fhir/sid/us-mbi`
 
 ### Determining current vs. historic MBI
 
@@ -389,54 +382,52 @@ The list of extensions provided with each MBI includes an extension containing w
 If an MBI is current then the following example is representative.
 
 {% capture jsonSnippet %}{% raw %}
-{
-    "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
-          "valueIdentifier": {
+"extension": [
+    {
+        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
+        "valueIdentifier": {
             "extension": [
-              {
-                "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
-                "valueCoding": {
-                  // The code value for identifier-currency will be current
-                  "code": "current"
+                {
+                    "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
+                    "valueCoding": {
+                        "code": "current"
+                    }
                 }
-              }
             ],
             "system": "http://hl7.org/fhir/sid/us-mbi",
             "value": "7S94E00AA00"
-          }
         }
-    ]
-}
+    }
+]
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
+
+*Note: The code value for identifier-currency will be current.*
 
 Whereas if the MBI was historic then the value would be switched to historic.
 
 {% capture jsonSnippet %}{% raw %}
-{
-    "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
-          "valueIdentifier": {
+"extension": [
+    {
+        "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier",
+        "valueIdentifier": {
             "extension": [
-              {
-                "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
-                "valueCoding": {
-                  // The code value for identifier-currency will be historic
-                  "code": "historic"
+                {
+                    "url": "https://bluebutton.cms.gov/resources/codesystem/identifier-currency",
+                    "valueCoding": {
+                        "code": "historic"
+                    }
                 }
-              }
             ],
             "system": "http://hl7.org/fhir/sid/us-mbi",
             "value": "7S94E00AA00"
-          }
         }
-    ]
-}
+    }
+]
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=jsonSnippet language="json" %}
+
+*Note: The code value for identifier-currency will be historic.*
 
 ## Identifying updates to existing claims
 
@@ -478,7 +469,7 @@ In the example, a single claim will be tracked through several evolutions:
     </tbody>
 </table>
 
-In the example, four exports are run using the [_since parameter]({% link http-query-parameters.md %}) to limit duplicate data. The four exports are described below.
+In the example, four exports are run using the [_since parameter]({{ '/http-query-parameters' | relative_url }}) to limit duplicate data. The four exports are described below.
 
 <table class="usa-table usa-table--stacked usa-table--borderless">
     <thead>

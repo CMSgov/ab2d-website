@@ -1,20 +1,44 @@
-- text: About HHS
-  url: https://www.hhs.gov/about/index.html
+- text: About CMS
+  url: https://www.cms.gov/about-cms
 
-- text: Accessibility statement
-  url: https://www.hhs.gov/web/section-508/hhs-digital-accessibility-statement/index.html
+- text: Medicare.gov
+  url: https://www.medicare.gov/
 
-- text: FOIA requests
-  url: https://www.hhs.gov/foia/index.html
+- text: Medicaid.gov
+  url: https://www.medicaid.gov/
 
-- text: No FEAR Act data
-  url: https://www.hhs.gov/about/agencies/asa/eeo/no-fear-act/index.html
+- text: Healthcare.gov
+  url: https://www.healthcare.gov/
 
-- text: Office of the Inspector General
+- text: Developer.cms.gov
+  url: http://Developer.cms.gov
+
+- text: CMS Design System
+  url: https://design.cms.gov/
+
+- text: U.S. Web Design System
+  url: https://designsystem.digital.gov/
+
+- text: Freedom of Information Act
+  url: https://www.cms.gov/about-cms/web-policies-important-links/foia
+
+- text: Inspector General
   url: https://oig.hhs.gov/
 
-- text: Performance reports
-  url: https://www.hhs.gov/about/budget/index.html usa-link--external
+- text: No Fear Act
+  url: https://www.cms.gov/about-cms/web-policies-important-links/no-fear-act
 
-- text: Privacy policy
-  url: https://www.hhs.gov/web/policies-and-standards/hhs-web-policies/privacy/index.html
+- text: Plain Writing
+  url: https://www.medicare.gov/about-us/plain-writing
+
+- text: CMS Privacy Policy
+  url: https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy
+
+- text: CMS/HHS Vulnerability Disclosure Policy 
+  url: https://www.cms.gov/vulnerability-disclosure-policy
+  
+- text: Accessibility Statement
+  url: https://www.cms.gov/about-cms/web-policies-important-links/accessibility-nondiscrimination-disabilities-notice
+  
+- text: Performance Reports
+  url: https://www.cms.gov/about-cms/performance-budget/current

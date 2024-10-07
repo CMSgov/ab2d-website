@@ -27,12 +27,12 @@ permalink: /support
       aria-expanded="true"
       aria-controls="m-a1"
     >
-    Who's eligible to request Medicare enrollee claims data?
+    Who's eligible to request Medicare enrollee claims data? 
     </button>
   </h4>
   <div id="m-a1" class="usa-accordion__content usa-prose">
     <p>
-      Active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are eligible to use the AB2D API.
+      Active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are eligible to use the AB2D API. This excludes PACE and MAPD.
     </p>
   </div>
     <h4 class="usa-accordion__heading">
@@ -107,7 +107,7 @@ permalink: /support
         <li>To inform marketing of benefits."</li>
     </ol>
     <p>
-    <a href="http://crosslink.to.aboutab2d">Learn more about permitted uses of the data.</a>
+    <a href="{{ '/about' | relative_url }}">Learn more about permitted uses of the data.</a>
     </p>
   </div>
   <h4 class="usa-accordion__heading">
