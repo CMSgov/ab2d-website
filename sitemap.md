@@ -15,7 +15,7 @@ permalink: /sitemap
     </li>
 {% for item in site.data.nav-primary %}
     <li>
-      <a href="{{ item.url | relative_url }}">{{ item.text }}</a>
+        <a href="{{ item.url | relative_url }}">{{ item.text }}</a>
     </li>
 {% endfor %}
 </ul>
