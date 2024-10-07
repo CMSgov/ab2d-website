@@ -44,13 +44,13 @@ hero-button-2-text: "Code Repo"
   %}
 
   {% include card.html
-    bg-color="accent-cool-lighter"
+    bg-color="base-lightest"
     footer-link="/use-cases"
     footer-link-text="Learn more about use cases"
   %}
 
     {% include card.html
-    bg-color="blue-cool-10v"
+    bg-color="base-lighter"
     footer-link="/mtm-white-paper"
     footer-link-text="Read the MTM white paper"
   %}
