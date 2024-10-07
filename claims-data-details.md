@@ -35,7 +35,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           </ul>
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#identifying-claims-and-claim-versions">Identifying Claims and Claim Versions</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying Claims and Claim Versions</a>
         </td>
       </tr>
       <tr>
@@ -52,7 +52,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           </ul>
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#identifying-claims-and-claim-versions">Identifying Claims and Claim Versions</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying Claims and Claim Versions</a>
         </td>
       </tr>
       <tr>
@@ -69,7 +69,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           </ul>
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#claim-status">Claim status</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim status</a>
         </td>
       </tr>
       <tr>
@@ -83,7 +83,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           eob.meta.lastUpdated
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#last-updated">Last Updated</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#lastupdated">Last Updated</a>
         </td>
       </tr>
       <tr>
@@ -97,7 +97,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           eob.extension
         </td>
         <td data-label="For More Details">
-          <a href="https://github.com/CMSgov/ab2d-pdp-documentation/blob/main/docs/Claims%20Representation%20Details.md#identifying-patients">Identifying Patients</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-patients">Identifying Patients</a>
         </td>
       </tr>
     </tbody>
