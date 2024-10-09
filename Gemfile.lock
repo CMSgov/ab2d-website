@@ -64,7 +64,7 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    webrick (1.8.1)
+    webrick (1.8.2)
 
 PLATFORMS
   arm64-darwin-21
@@ -79,7 +79,7 @@ DEPENDENCIES
   minima (~> 2.5, >= 2.5.1)
   rexml (~> 3.3.6)
   tzinfo-data
-  webrick (~> 1.8)
+  webrick (~> 1.8.2)
 
 BUNDLED WITH
    2.2.0
