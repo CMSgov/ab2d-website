@@ -64,4 +64,4 @@ After `Local Development Setup` is complete, you can run the project by using th
 bundle exec jekyll serve
 ```
 
-The should then be running locally on your machine at the following address: [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
+The website should then be running locally on your machine at the following address: [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
