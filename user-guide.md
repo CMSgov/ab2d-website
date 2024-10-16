@@ -7,7 +7,7 @@ in-page-nav: true
 <!--TODO add links to other subpages after those pages have been created, content figure out what copy requires code formatting-->
 # {{ page.title }}
 
-The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan (PDP) sponsors can access data for any attributed enrollee. PDP sponsors must complete [onboarding]({{ '/onboarding' | relative_url }}) to access the API. During this process, your organization will agree (“attest") to AB2D protocols and [retrieve test data]({{ '/how-to-access-test-claims-data' | relative_url }}) in the sandbox. Following these steps, you’ll be approved to [access production claims data]({{ '/how-to-access-production-claims-data' | relative_url }}) for active enrollees.
+The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan (PDP) sponsors can access data for any attributed enrollee. PDP sponsors must complete [onboarding]({{ '/onboarding' | relative_url }}) to access the API. During this process, your organization will agree (“attest") to AB2D protocols and [retrieve test data]({{ '/access-test-claims-data' | relative_url }}) in the sandbox. Following these steps, you’ll be approved to [access production claims data]({{ '/access-production-claims-data' | relative_url }}) for active enrollees.
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
@@ -21,12 +21,12 @@ The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan 
 ## Differences between the sandbox and production environment
 
 ### The sandbox environment
-The sandbox (`sandbox.ab2d.cms.gov`) is a public environment available to anyone who wants to learn how the API works. AB2D provides you with sandbox credentials for access to test data. You’ll use the sandbox identity provider (`test.idm.idp.cms.gov`) for this.
+The sandbox (sandbox.ab2d.cms.gov) is a public environment available to anyone who wants to learn how the API works. AB2D provides you with sandbox credentials for access to test data. You’ll use the sandbox identity provider (test.idm.idp.cms.gov) for this.
 
 ### The production environment
-Production (`api.ab2d.cms.gov`) is a private environment available only to attested and onboarded PDP sponsors. During onboarding, you’ll need to provide the static IP address(es) for each system using the API. AB2D then provides you with production credentials for access to your enrollees’ data. You’ll use the production identity provider (`idp.cms.gov`) for this. 
+Production (api.ab2d.cms.gov) is a private environment available only to attested and onboarded PDP sponsors. During onboarding, you’ll need to provide the static IP address(es) for each system using the API. AB2D then provides you with production credentials for access to your enrollees’ data. You’ll use the production identity provider (idp.cms.gov) for this. 
 
-Both environments use the same endpoints with the main differences being the credentials used for your [bearer token]({{ '/how-to-get-a-bearer-token' | relative_url }}) and the URL. 
+Both environments use the same endpoints with the main differences being the credentials used for your [bearer token]({{ '/get-a-bearer-token' | relative_url }}) and the environment URL. 
 
 ## Expected workflow
 Jobs are units of work that export and compile Medicare claims data. They are broken into 4 phases. These phases are standard regardless of your programming language or platform. The AB2D workflow is based on the [Bulk Data Implementation Guide](https://hl7.org/fhir/uv/bulkdata/).
@@ -50,7 +50,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
           Get a token for authentication with the AB2D API.	
         </td>
         <td data-label="Endpoint">
-          <a href="{{ '/how-to-get-a-bearer-token' | relative_url }}">Learn how to get a bearer token.</a>
+          <a href="{{ '/get-a-bearer-token' | relative_url }}">Learn how to get a bearer token.</a>
         </td>
         <td data-label="Time">
           Seconds
@@ -98,7 +98,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
           Download the files	
         </th>
         <td data-label="Goal">
-          Download the files returned from a complete job.
+          Download the files returned from a completed job.
         </td>
         <td data-label="Endpoint">
           Download endpoint
@@ -131,7 +131,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
   </table>
 
 ## Endpoints, schemas, and parameters
-Get an overview of the endpoints you can request at the [sandbox]({{ '/how-to-access-test-claims-data' | relative_url }}) or [production URL]({{ '/how-to-access-production-claims-data' | relative_url }}). You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/http-query-parameters' | relative_url }}) to filter or specify the claims data returned. 
+Get an overview of the endpoints you can request at the [sandbox]({{ '/access-test-claims-data' | relative_url }}) or [production URL]({{ '/access-production-claims-data' | relative_url }}). You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/query-parameters' | relative_url }}) to filter or specify the claims data returned. 
 
 ## Glossary
        
@@ -178,7 +178,7 @@ Get an overview of the endpoints you can request at the [sandbox]({{ '/how-to-ac
   </h4>
   <div id="m-a3" class="usa-accordion__content usa-prose">
     <p>
-    An <a href="https://www.okta.com/identity-101/why-your-company-needs-an-identity-provider/">IDP</a> is a service that stores, verifies, and manages user identities. AB2D uses a third-party IdP tool called <a href="https://support.okta.com/help/s/article/What-is-Okta?language=en_US">Okta</a>. PDP sponsors use their set of Okta credentials to get a bearer token and access the API.
+    An <a href="https://www.okta.com/identity-101/why-your-company-needs-an-identity-provider/">IdP</a> is a service that stores, verifies, and manages user identities. AB2D uses a third-party IdP tool called <a href="https://support.okta.com/help/s/article/What-is-Okta?language=en_US">Okta</a>. PDP sponsors use their set of Okta credentials to get a bearer token and access the API.
     </p>
   </div>
     <h4 class="usa-accordion__heading">
@@ -222,27 +222,27 @@ Your token is incorrect or has expired. Authentication has not been completed su
 
 You don’t have permission to access the requested data. This can happen for a variety of reasons:
 - Your token has expired.
-- You have specified a contract that is not yours
-- You’re not authorized to use the API
-- Authentication has failed
+- You have specified a contract that is not yours.
+- You’re not authorized to use the API.
+- Authentication has failed.
 
 #### 403 HTTP response: forbidden
 
 Authentication succeeded, but you don’t have permission to access the requested data. This can happen due to a variety of reasons:  
 - The credentials provided may have a typo or syntax error (e.g., spaces, hidden characters).
 - The credentials provided may have been encoded to Base64 incorrectly. 
-- You’re connected to the sandbox idP (`test.idp.idm.cms.gov`) instead of the production idP (`idp.cms.gov`).
-- Authentication may have failed because of an incorrect header. The correct header is `Authorization : Basic Auth`.
+- You’re connected to the sandbox idP (test.idp.idm.cms.gov) instead of the production idP (idp.cms.gov).
+- Authentication may have failed because of an incorrect header. "Authorization : Basic Auth" is the correct header.
 
 #### 404 HTTP response: page not found
 
 Resource or page not found. You could authenticate but the API endpoint does not exist. Troubleshooting:
 - Check the URL to make sure it exists. Enter it in a browser to check which error occurred. You won’t have passed credentials or necessary parameters, so it’ll give you another error. However, it shouldn’t give you a 404.
-- If you’re using curl at the command line, you may have to escape characters. For example, `$` is used in `$Export` and `$Status`, but `$` is a variable value in the Bash command line.
+- If you’re using curl at the command line, you may have to escape characters. For example, $ is used in $Export and $Status, but $ is a variable value in the Bash command line.
 
 #### 405 HTTP response: method not allowed
 
-You’re trying to execute a method which the endpoint does not support. For example, calling `/secure/get` as a POST method, even though the endpoint only supports GET methods.
+You’re trying to execute a method which the endpoint does not support. For example, calling "/secure/get" as a POST method, even though the endpoint only supports GET methods.
 
 #### 429 HTTP response: too many requests
 
@@ -325,8 +325,8 @@ You’re creating too many job requests within a short period of time. Try waiti
               Windows: In a powershell terminal, run <code>Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
             </li>
             </ul>
-        <li>In Postman, create a new GET request against the URL <code>https://api.ab2d.cms.gov/health</code>. If the response has an HTTP status of 200 then your IP address can connect.</li>
-        <li>Open a browser and visit <code>https://api.ab2d.cms.gov/swagger-ui/index.html</code></li>
+        <li>In Postman, create a new GET request against the URL https://api.ab2d.cms.gov/health. If the response has an HTTP status of 200 then your IP address can connect.</li>
+        <li>Open a browser and visit https://api.ab2d.cms.gov/swagger-ui/index.html.
     </ol>
   </div>
 
@@ -402,10 +402,10 @@ You’re creating too many job requests within a short period of time. Try waiti
           </li>
         </ul>
       <li>
-        In Postman, create a new DELETE request against the URL <code>https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</code>. Note the request parameter <code>{jobUuid}</code> must be set in Postman.
+        In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status. Note the request parameter {jobUuid} must be set in Postman.
       </li>
       <li>
-        In a browser, visit <code>https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</code> and enter your job ID.
+        In a browser, visit https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE and enter your job ID.
       </li>
     </ul>
   </div>
@@ -489,7 +489,7 @@ You’re creating too many job requests within a short period of time. Try waiti
   </h4>
   <div id="m-a16" class="usa-accordion__content usa-prose">
     <p>
-      STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, <code>ExplanationOfBenefit</code>.
+      STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, ExplanationOfBenefit.
     </p>
   </div>
 
@@ -505,13 +505,9 @@ You’re creating too many job requests within a short period of time. Try waiti
   </h4>
   <div id="m-a17" class="usa-accordion__content usa-prose">
     <p>
-      Version 1 of the API uses STU3 (<code>https://api.ab2d.cms.gov/api/v1/fhir</code>).
+      Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir). 
     </p>
-    <p>
-      and V2 uses R4 (<code>https://api.ab2d.cms.gov/api/v2/fhir</code>). 
-    </p>
-    <p>
-      Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>. 
+      Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>. 
     </p>
   </div>
 
@@ -530,7 +526,7 @@ You’re creating too many job requests within a short period of time. Try waiti
      The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
     </p>
     <p>
-      In V1, a date must be specified to use _since. If no _since value is specified, it will default to your organization's attestation date. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to your organization’s attestation date. <a href="{{ '/http-query-parameters' | relative_url }}">Learn how to use parameters</a>.
+      In V1, a date must be specified to use _since. If no _since value is specified, it will default to February 13, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters' | relative_url }}">Learn how to use parameters</a>.
     </p>
   </div>
 </div>
