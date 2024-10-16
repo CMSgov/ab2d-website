@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "AB2D Data"
-permalink: /data
+permalink: /ab2d-data
 ---
 
 # AB2D Data
