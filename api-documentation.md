@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-Learn how to access AB2D claims data. AB2D is an open source RESTful (Representational State Transfer) API. Offered by the Centers for Medicare & Medicaid Services (CMS), it uses [Bulk Fast Healthcare Interoperability (FHIR)](https://hl7.org/fhir/uv/bulkdata/) resources for data exports of Medicare Parts A and B claims data. Visit [AB2D Data]({{ '/data' | relative_url }}) to explore the types of data available and how to apply them in context.
+Learn how to access AB2D claims data. AB2D is an open source RESTful (Representational State Transfer) API. Offered by the Centers for Medicare & Medicaid Services (CMS), it uses [Bulk Fast Healthcare Interoperability (FHIR)](https://hl7.org/fhir/uv/bulkdata/) resources for data exports of Medicare Parts A and B claims data. Visit [AB2D Data]({{ '/ab2d-data' | relative_url }}) to explore the types of data available and how to apply them in context.
 
 ## What’s the difference between the sandbox and production environments?
 {: .font-sans-lg }
@@ -50,8 +50,8 @@ Get an overview of the AB2D API, how it works, its endpoints, and troubleshootin
 
 We recommend using AB2D V2 which supports the [Bulk Data Access Implementation Guide V2.0.0](https://hl7.org/fhir/uv/bulkdata/). [Learn how to migrate from V1 to V2](https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx).
 
-- V2 ([R4](https://hl7.org/fhir/R4/)) — `api.ab2d.cms.gov/api/v2/fhir`
-- V1 ([STU3](https://hl7.org/fhir/STU3)) — `api.ab2d.cms.gov/api/v1/fhir`
+- V2 ([R4](https://hl7.org/fhir/R4/)) — api.ab2d.cms.gov/api/v2/fhir
+- V1 ([STU3](https://hl7.org/fhir/STU3)) — api.ab2d.cms.gov/api/v1/fhir
 
 ## JSON resources
 
