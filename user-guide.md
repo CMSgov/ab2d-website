@@ -131,7 +131,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
   </table>
 
 ## Endpoints, schemas, and parameters
-Get an overview of the endpoints you can request at the [sandbox]({{ '/access-test-claims-data' | relative_url }}) or [production URL]({{ '/access-production-claims-data' | relative_url }}). You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/query-parameters' | relative_url }}) to filter or specify the claims data returned. 
+Get an overview of the endpoints you can request at the [sandbox]({{ '/access-test-claims-data' | relative_url }}) or [production URL]({{ '/access-production-claims-data' | relative_url }}). You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/query-parameters-V2' | relative_url }}) to filter or specify the claims data returned. 
 
 ## Glossary
        
@@ -526,7 +526,7 @@ You’re creating too many job requests within a short period of time. Try waiti
      The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
     </p>
     <p>
-      In V1, a date must be specified to use _since. If no _since value is specified, it will default to February 13, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters' | relative_url }}">Learn how to use parameters</a>.
+      In V1, a date must be specified to use _since. If no _since value is specified, it will default to February 13, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters-V2' | relative_url }}">Learn how to use parameters</a>.
     </p>
   </div>
 </div>
