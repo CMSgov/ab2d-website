@@ -57,7 +57,7 @@ Of the 65 million enrollees covered by Medicare programs, stand-alone Prescripti
           {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content">
-          "(i) To inform coverage determinations under Part D;
+          Inform coverage determinations under Part D;
         </div>
       </li>
       <li class="usa-icon-list__item">
@@ -65,7 +65,7 @@ Of the 65 million enrollees covered by Medicare programs, stand-alone Prescripti
           {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content">
-          (ii) To conduct retroactive reviews of medically accepted indication(s) determinations;
+          Conduct retroactive reviews of medically accepted indication(s) determinations;
         </div>
       </li>
       <li class="usa-icon-list__item">
@@ -73,7 +73,7 @@ Of the 65 million enrollees covered by Medicare programs, stand-alone Prescripti
           {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content">
-          (iii) To facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or
+          Facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or
         </div>
       </li>
       <li class="usa-icon-list__item">
@@ -81,7 +81,7 @@ Of the 65 million enrollees covered by Medicare programs, stand-alone Prescripti
           {% include sprite.html icon="cancel" class="text-red" %}
         </div>
         <div class="usa-icon-list__content">
-          (iv) To inform marketing of benefits"
+          Inform marketing of benefits
         </div>
       </li>
     </ul>
