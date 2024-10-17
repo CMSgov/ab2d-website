@@ -67,7 +67,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access produc
 </p>
 {% endraw %}{% endcapture %}
 
-{% include accordion.html heading="How do I complete attestation?" expanded=true id="a1" bordered=true accordionContent=a1Content %}
+{% include accordion.html heading="How do I complete attestation?" expanded=true id="a1" bordered=false accordionContent=a1Content %}
 
 {% include accordion.html heading="What are the requirements to be an Attestor?" expanded=false id="a2" accordionContent=a2Content %}
 
