@@ -101,10 +101,10 @@ permalink: /support
         The following uses are <strong>not</strong> permitted:
     </p>
     <ol>
-        <li>"To inform coverage determinations under Part D;</li>
-        <li>To conduct retroactive reviews of medically accepted indication(s) determinations;</li>
-        <li>To facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or</li>
-        <li>To inform marketing of benefits."</li>
+        <li>Inform coverage determinations under Part D;</li>
+        <li>Conduct retroactive reviews of medically accepted indication(s) determinations;</li>
+        <li>Facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or</li>
+        <li>Inform marketing of benefits.</li>
     </ol>
     <p>
     <a href="{{ '/about' | relative_url }}">Learn more about permitted uses of the data.</a>
