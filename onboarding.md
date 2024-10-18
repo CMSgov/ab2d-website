@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data, but anyone can use the sandbox environment to get test claims data and try the API. After attesting, visit [API Documentation]({{ '/api-documentation' | relative_url }}) for details on accessing production data and the claims data format. 
+Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data, but anyone can use the sandbox environment to try the API and get test claims data. 
 
 <a href="{{ '/access-test-claims-data' | relative_url }}" class="usa-button margin-bottom-3">Visit the sandbox</a>
 
@@ -35,7 +35,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access produc
           </p>
           <ol>
             <li>Choose a single, multiple, or all contracts in the <em>Contracts Without Attestation</em> window.</li>
-            <li>Select the <em>Attest</em> button.</li>
+            <li>Select <em>Attest</em>.</li>
             <li>Agree to the <em>Claims Data Usage Protocols</em>.</li>
           </ol>
           <p>
