@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "AB2D Data"
-permalink: /data
+permalink: /ab2d-data
 ---
 
 # AB2D Data
@@ -32,7 +32,7 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
   </div>
   <div class="grid-col-fill tablet:grid-col-9">
     <h2>Sample files</h2>
-    <p>Download sample, unformatted <a href="https://github.com/ndjson/ndjson-spec">NDJSON</a> files. Each line is a JSON object that can be read with a text editor like the <a href="https://json.org">format viewer</a>.</p>
+    <p>Download sample, unformatted <a href="https://github.com/ndjson/ndjson-spec">NDJSON</a> files. Each line is a <a href="https://www.json.org/json-en.html">JSON</a> object that can be read with a text editor like the <a href="https://json.org">format viewer</a>.</p>
     <ul>
       <li><a href="{{ '/assets/downloads/sample-data-r4.ndjson' | relative_url }}">AB2D V2 (recommended) Parts A and B Sample Export (FHIR R4) {% include sprite.html icon="file_download" %}</a></li>
       <li><a href="{{ '/assets/downloads/sample-data-stu3.ndjson' | relative_url }}">AB2D V1 Parts A and B Sample Export (FHIR STU3) {% include sprite.html icon="file_download" %}</a></li>
@@ -49,7 +49,7 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
     <p>Learn how to use AB2D and understand enrollees’ claims data.</p>
     <ul>
       <li><a href="{{ '/claims-data-details' | relative_url }}">Claims Data Details</a></li>
-      <li><a href="{{ '/how-to-filter-claims-data' | relative_url }}">How to Filter Claims Data</a></li>
+      <li><a href="{{ '/filter-claims-data-V2' | relative_url }}">How to Filter Claims Data</a></li>
     </ul>
   </div>
 </div>

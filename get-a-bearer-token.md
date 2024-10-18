@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 title:  "How to Get a Bearer Token"
-permalink: /how-to-get-a-bearer-token
+permalink: /get-a-bearer-token
 in-page-nav: true
 ---
 
@@ -28,10 +28,10 @@ Bearer tokens, also known as JSON web tokens, authorize use of the AB2D endpoint
 
 <ol>
     <li>
-        You can use a variety of tools to get a bearer token, including curl. AB2D uses Okta to authenticate your credentials, which will be a client ID and password. Your credentials will be formatted as a  Base64-encoded value (clientID:password). 
+        You can use a variety of tools to get a bearer token, including curl. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password. Your organization's credentials will be formatted as a Base64-encoded value (clientID:password). 
         <ul>
-            <li>If you’re trying to access sandbox data: Use 1 of the 4 client ID and password sets provided in the sandbox credentials section. You’ll need to use the sandbox identity provider (test.idm.idp.cms.gov).</li>
-            <li>If you’re trying to access production data: Once you complete onboarding, the AB2D team will send you a credentials file with your production client ID and password. You’ll need to use the production identity provider (idp.cms.gov). You can also create your own credential file manually.</li>
+            <li><b>If you’re trying to access sandbox data</b>: Use 1 of the 4 client ID and password sets provided in the <a href="{{ '/get-a-bearer-token' | relative_url }}#sandbox-credentials">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idm.idp.cms.gov).</li>
+            <li><b>If you’re trying to access production data</b>: Once you complete onboarding, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idp.cms.gov). You can also <a href="{{ '/get-a-bearer-token' | relative_url }}#how-to-create-a-credential-file">create your own credential file</a> manually.</li>
         </ul>
     </li>    
     <li>Once you have your client ID and password (sandbox or production environment), create a new text file using your editor of choice. </li>
@@ -46,12 +46,12 @@ Headers:
 Parameters:
         grant_type: client_credentials
         scope: clientCreds
-Authorization: Basic Auth
+Authorization: Basic {Base64-encoded string}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
     </li>
     <li>
-        The response will contain your bearer token. The token will be sent using the “Authorization” header field with “Bearer {XXX}” where {XXX} “is the value of the token:
+        The response will contain your bearer token. The token will be sent using the “Authorization” header field with “Bearer {XXX}” where {XXX} is the value of the token:
 {% capture curlSnippet %}{% raw %}
 Bearer {bearer_token}
 {% endraw %}{% endcapture %}
@@ -63,7 +63,7 @@ Bearer tokens expire 1 hour from the time they are obtained. Use the token quick
 {% include alert.html variant="info" text=tokenAlert classNames="measure-6" %}
     </li>
     <li class="padding-y-2">
-        Save this as the credential file (e.g, C:\users\abcduser\credentials_Z123456_base64.txt). Note the file’s location and name for later. It will be a parameter in other scripts.
+        Save this as the credential file (e.g., C:\users\abcduser\credentials_Z123456_base64.txt). Note the file’s location and name for later. It will be a parameter in other scripts.
     </li>
 </ol>
 
@@ -205,13 +205,18 @@ The sandbox environment is open for anyone to access. The AB2D team provides 4 s
 
 ## How to get a sandbox bearer token using curl
 
-Learn how to get a bearer token for sandbox using the [curl](https://curl.se/) command line tool specifically. You can copy and paste these commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/setup-instructions' | relative_url }}).
+Learn how to get a bearer token for the sandbox using the [curl](https://curl.se/) command line tool specifically. You can copy and paste these commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/setup-instructions' | relative_url }}).
 
-HTTP responses are saved into shell variables named RESP<n>. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering “echo ${variable name}”.
+HTTP responses are saved into shell variables named RESP<n>. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering:
+
+{% capture curlSnippet %}{% raw %}
+echo ${variable name}
+{% endraw %}{% endcapture %}
+{% include copy_snippet.md code=curlSnippet language="shell" %}
 
 ### 1.  Encode client credentials into Base64
 
-Encode the client ID and password into Base64, then set the “AUTH” shell variable. This example uses the PDP-100 contract. The credentials are used in the next step to retrieve your token.
+Encode the client ID and password into Base64, then set the AUTH shell variable. This example uses the PDP-100 contract. The credentials are used in the next step to retrieve your token.
 
 {% capture curlSnippet %}{% raw %}
 > AUTH=$(echo "0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw" | base64)
@@ -220,7 +225,7 @@ Encode the client ID and password into Base64, then set the “AUTH” shell var
 
 ### 2. Get your bearer token
 
-Enter this command to make an HTTP request and set the “RESP1” variable:
+Enter this command to make an HTTP request and set the RESP1 variable:
 
 {% capture curlSnippet %}{% raw %}
 > RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v21/token?grant_type=client_credentials&scope=clientCreds" \
@@ -230,7 +235,7 @@ Enter this command to make an HTTP request and set the “RESP1” variable:
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
-This extracts the token from the previous response and sets the “TOKEN” variable needed by all subsequent API requests. 
+This extracts the token from the previous response and sets the TOKEN variable needed by all subsequent API requests. 
 
 {% capture curlSnippet %}{% raw %}
 > TOKEN=$(echo $RESP1 | jq -r ".access_token")
@@ -298,9 +303,16 @@ New-Item -Path $AUTH_FILE -ItemType File
 ## Guides
 
 Once you get a bearer token, you can access either test or production claims data:
-- [How to Access Test Claims Data]({{ '/how-to-access-test-claims-data' | relative_url }})
-- [How to Access Production Claims Data]({{ '/how-to-access-production-claims-data' | relative_url }})
+- [How to Access Test Claims Data]({{ '/access-test-claims-data' | relative_url }})
+- [How to Access Production Claims Data]({{ '/access-production-claims-data' | relative_url }})
 
 ## Troubleshooting
 
 Visit our [troubleshooting guide]({{ '/user-guide' | relative_url }}#troubleshooting-guide-2) to explore HTTP response codes and frequently asked questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
+
+When contacting our team, please include the following information:
+- Your operating system
+- If applicable, your HTTP response code (e.g., 403, 400)
+- A description of the issue including which stage of the process you’re on
+- Any logs that may help us in resolving the issue
+

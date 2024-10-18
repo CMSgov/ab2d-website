@@ -6,12 +6,12 @@ hero: true
 hero-title: "Improve Medication Therapy with Medicare Claims Data"
 hero-paragraph: >
   AB2D is an Application Programming Interface (API) for Prescription Drug
-  Plan (PDP) sponsors. Offered by Centers for Medicare & Medicaid Services
+  Plan (PDP) sponsors. Offered by the Centers for Medicare & Medicaid Services
   (CMS), AB2D provides Parts A and B claims data for a holistic view into
   patients' health.
 hero-button-url: "/api-documentation"
 hero-button-text: "Getting started for developers"
-hero-button-2-url: "https://github.com/orgs/CMSgov/repositories?q=ab2d&type=all"
+hero-button-2-url: "https://github.com/CMSgov/ab2d"
 hero-button-2-text: "Code Repo"
 
 ---
@@ -63,13 +63,13 @@ hero-button-2-text: "Code Repo"
   </div>
   <div class="tablet:grid-col" >
     <h2>Using the data</h2>
-    <p>AB2D is an Application Programming Interface (API) using <a href="https://www.hl7.org/fhir/overview.html">Bulk Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
+    <p>AB2D is an Application Programming Interface using <a href="https://www.hl7.org/fhir/overview.html">Bulk Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
     <ul>
       <li>enrollee identifiers</li>
       <li>diagnosis codes</li>
       <li>dates and times of service</li>
     </ul>
-    <p><a href="{{ '/data' | relative_url }}">Learn about the data</a></p>
+    <p><a href="{{ '/ab2d-data' | relative_url }}">Learn about the data</a></p>
   </div>
 </div>
 
