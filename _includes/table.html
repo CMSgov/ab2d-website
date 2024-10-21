@@ -1,0 +1,15 @@
+{% capture tableComponent %}
+<table class="usa-table {% if include.borderless %}usa-table--borderless{% endif %} {% if include.striped %}usa-table--striped{% endif %}">
+    <caption class="{% if include.captionSrOnly %}usa-sr-only{% endif %}">{{include.captionContent}}</caption>
+    <thead>{{include.headContent}}</thead>
+    <tbody>{{include.bodyContent}}</tbody>
+</table>
+{% endcapture %}
+
+{% if include.scrollable %}
+<div class="usa-table-container--scrollable" tabindex="0">
+{{ tableComponent }}
+</div>
+{% else %}
+{{ tableComponent }}
+{% endif %}
