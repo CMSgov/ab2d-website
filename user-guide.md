@@ -31,6 +31,211 @@ Both environments use the same endpoints with the main differences being the cre
 ## Expected workflow
 Jobs are units of work that export and compile Medicare claims data. They are broken into 4 phases. These phases are standard regardless of your programming language or platform. The AB2D workflow is based on the [Bulk Data Implementation Guide](https://hl7.org/fhir/uv/bulkdata/).
 
+## Test Table 1 - stacked
+{% capture tableHeadContent %}
+<tr>
+  <th scope="col">Step</th>
+  <th scope="col">Goal</th>
+  <th scope="col">Endpoint</th>
+  <th scope="col">Time</th>
+  <th scope="col">Frequency</th>
+</tr>
+{% endcapture %}
+
+{% capture tableBodyContent %}
+<tr>
+    <td data-label="Step">
+      Get a bearer token
+    </td>
+    <td data-label="Goal">
+      Get a token for authentication with the AB2D API.	
+    </td>
+    <td data-label="Endpoint">
+      <a href="{{ '/how-to-get-a-bearer-token' | relative_url }}">Learn how to get a bearer token.</a>
+    </td>
+    <td data-label="Time">
+      Seconds
+    </td>
+    <td data-label="Frequency">
+      At least every hour during the job.
+    </td>
+</tr>
+<tr>
+    <td data-label="Step">
+      Start a job
+    </td>
+    <td data-label="Goal">
+      Start a job and save the unique job ID.	
+    </td>
+    <td data-label="Endpoint">
+      Export endpoint	
+    </td>
+    <td data-label="Time">
+      Seconds
+    </td>
+    <td data-label="Frequency">
+      Once a job
+    </td>
+</tr>
+<tr>
+    <td data-label="Step">
+      Check job status
+    </td>
+    <td data-label="Goal">
+      Check on the job status as you wait for it to finish.		
+    </td>
+    <td data-label="Endpoint">
+      Status endpoint
+    </td>
+    <td data-label="Time">
+      Minutes to hours depending on contract size
+    </td>
+    <td data-label="Frequency">
+      Once every few minutes
+    </td>
+</tr>
+<tr>
+    <td data-label="Step">
+      Download the files	
+    </td>
+    <td data-label="Goal">
+      Download the files returned from a complete job.
+    </td>
+    <td data-label="Endpoint">
+      Download endpoint
+    </td>
+    <td data-label="Time">
+      Minutes to hours depending on download speeds
+    </td>
+    <td data-label="Frequency">
+      Once a job
+    </td>
+</tr>
+<tr>
+    <td data-label="Step">
+      Check the health of the AB2D API
+    </td>
+    <td data-label="Goal">
+      Check the current status of the API – whether it’s up, down, or busy.
+    </td>
+    <td data-label="Endpoint">
+      Health endpoint
+    </td>
+    <td data-label="Time">
+      Seconds
+    </td>
+    <td data-label="Frequency">
+      Once a job
+    </td>
+</tr>
+{% endcapture %}
+
+{% include table.html borderless=true stacked=true captionSrOnly=true captionContent="Sandbox and Production environments comparison" headContent=tableHeadContent bodyContent=tableBodyContent %}
+
+## Test Table 2 --scrollable and stacked
+
+{% capture table2HeadContent %}
+<tr>
+  <th scope="col">Step</th>
+  <th scope="col">Goal</th>
+  <th scope="col">Endpoint</th>
+  <th scope="col">Time</th>
+  <th scope="col">Frequency</th>
+</tr>
+{% endcapture %}
+
+{% capture table2BodyContent %}
+<tr>
+    <td data-label="Step">
+      Get a bearer token
+    </td>
+    <td data-label="Goal">
+      Get a token for authentication with the AB2D API.	
+    </td>
+    <td data-label="Endpoint">
+      <a href="{{ '/how-to-get-a-bearer-token' | relative_url }}">Learn how to get a bearer token.</a>
+    </td>
+    <td data-label="Time">
+      Seconds
+    </td>
+    <td data-label="Frequency">
+      At least every hour during the job.
+    </td>
+</tr>
+<tr>
+    <td data-label="Step">
+      Start a job
+    </td>
+    <td data-label="Goal">
+      Start a job and save the unique job ID.	
+    </td>
+    <td data-label="Endpoint">
+      Export endpoint	
+    </td>
+    <td data-label="Time">
+      Seconds
+    </td>
+    <td data-label="Frequency">
+      Once a job
+    </td>
+</tr>
+<tr>
+    <td data-label="Step">
+      Check job status
+    </td>
+    <td data-label="Goal">
+      Check on the job status as you wait for it to finish.		
+    </td>
+    <td data-label="Endpoint">
+      Status endpoint
+    </td>
+    <td data-label="Time">
+      Minutes to hours depending on contract size
+    </td>
+    <td data-label="Frequency">
+      Once every few minutes
+    </td>
+</tr>
+<tr>
+    <td data-label="Step">
+      Download the files	
+    </td>
+    <td data-label="Goal">
+      Download the files returned from a complete job.
+    </td>
+    <td data-label="Endpoint">
+      Download endpoint
+    </td>
+    <td data-label="Time">
+      Minutes to hours depending on download speeds
+    </td>
+    <td data-label="Frequency">
+      Once a job
+    </td>
+</tr>
+<tr>
+    <td data-label="Step">
+      Check the health of the AB2D API
+    </td>
+    <td data-label="Goal">
+      Check the current status of the API – whether it’s up, down, or busy.
+    </td>
+    <td data-label="Endpoint">
+      Health endpoint
+    </td>
+    <td data-label="Time">
+      Seconds
+    </td>
+    <td data-label="Frequency">
+      Once a job
+    </td>
+</tr>
+{% endcapture %}
+
+{% include table.html borderless=true scrollable=true stacked=true captionSrOnly=true captionContent="Sandbox and Production environments comparison" headContent=table2HeadContent bodyContent=table2BodyContent %}
+
+## Original Table
+
   <table class="usa-table usa-table--stacked usa-table--borderless">
     <thead>
       <tr>
