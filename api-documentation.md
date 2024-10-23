@@ -12,26 +12,6 @@ Learn how to access AB2D claims data. AB2D is an open source RESTful (Representa
 ## What’s the difference between the sandbox and production environments?
 {: .font-sans-lg }
 
-{% capture tableHeadContent %}
-<tr>
-  <th scope="col">Sandbox</th>
-  <th scope="col">Production</th>
-</tr>
-{% endcapture %}
-
-{% capture tableBodyContent %}
-<tr>
-  <td>Available to everyone</td>
-  <td>Must complete <a href="{{ '/onboarding' | relative_url }}">onboarding</a> to access</td>
-</tr>
-<tr>
-  <td>Contains synthetic claims data</td>
-  <td>Contains real Medicare enrollee data</td>
-</tr>
-{% endcapture %}
-
-{% include table.html borderless=true captionSrOnly=true captionContent="Sandbox and Production environments comparison" headContent=tableHeadContent bodyContent=tableBodyContent %}
-
 <table class="usa-table usa-table--borderless">
   <caption class="usa-sr-only">Sandbox and Production environments comparison</caption>
   <thead>
