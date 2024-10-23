@@ -15,10 +15,10 @@ Learn how to access AB2D claims data. AB2D is an open source RESTful (Representa
 <table class="usa-table usa-table--borderless">
   <caption class="usa-sr-only">Sandbox and Production environments comparison</caption>
   <thead>
-  <tr>
-    <th scope="col">Sandbox</th>
-    <th scope="col">Production</th>
-  </tr>
+    <tr>
+      <th scope="col">Sandbox</th>
+      <th scope="col">Production</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
