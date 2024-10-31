@@ -326,7 +326,7 @@ You’re creating too many job requests within a short period of time. Try waiti
             </li>
             </ul>
         <li>In Postman, create a new GET request against the URL https://api.ab2d.cms.gov/health. If the response has an HTTP status of 200 then your IP address can connect.</li>
-        <li>Open a browser and visit https://api.ab2d.cms.gov/swagger-ui/index.html.
+        <li>Open a browser and visit https://api.ab2d.cms.gov/swagger-ui/index.html.</li>
     </ol>
   </div>
 
