@@ -30,7 +30,7 @@ Separately, these parameters allow you to pull data that was last updated since 
 
 Download the data dictionary 
 <!--TODO: add downloadable spreadsheet when we have it-->
-
+[Download the data dictionary]({{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }})
 ### For _since
 
 The earliest possible date is February 13, 2020 (2020-02-13T00:00:00-05:00) or your organization's attestation date, whichever is later. If no _since date is specified, it will default to the datetime of your organization’s last successful export. If this is your first job, it will default to your earliest possible date. 
