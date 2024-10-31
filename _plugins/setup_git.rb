@@ -5,3 +5,4 @@
 # This is because the .git directory is ignored by github
 # This plugin runs when jekyll is run
 %x(git config --local core.hooksPath .githooks/)
+gi

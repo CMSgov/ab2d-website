@@ -1,0 +1,52 @@
+name: deploy-branch-to-impl
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on for any branch when a pull_request is opened or reopened
+#  pull_request:
+#    types: [opened, reopened]
+  # branches: [ * ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+    ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+    AWS_REGION: ${{ vars.AWS_REGION }}
+    DEPLOYMENT_ENV: ${{ vars[format('{0}_DEPLOYMENT_ENV', inputs.environment)] }}
+
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.0" # Not needed with a .ruby-version file
+          bundler-cache: true
+
+#      - name: Jekyll Deploy Action
+#        uses: jeffreytse/jekyll-deploy-action@v0.6.0
+
+      - name: Assume role in AB2D Management account
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.MGMT_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-mgmt-github-actions
+
+      - name: "Build Site"
+        run: bundle exec jekyll serve --livereload --config _config.yml,_config-local.yml --baseurl /${{github.ref_name}}
+        env:
+          JEKYLL_ENV: test
+
+#      - name: "Debug Print"
+#        run: echo AWS_BUCKET_NAME:${{secrets.AWS_S3_BUCKET_NAME}} | sed 's/./& /g' ; echo github.ref_name:${{github.ref_name}}
+#
+      - name: "Deploy to AWS S3"
+        run: aws s3 sync ./_site/ s3://website-ab2d-east-impl/${{github.ref_name}}/
