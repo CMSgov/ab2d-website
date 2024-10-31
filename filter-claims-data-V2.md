@@ -20,7 +20,7 @@ Learn how to access [test claims data]({{ '/access-test-claims-data' | relative_
         This documentation is for AB2D version 2, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/">Bulk Data Access Implementation Guide V2.0.0</a>. The _until parameter is only available with V2. 
     </p>
     <p>    
-        For organizations using V1, visit our <a href="{{ '/how-to-filter-claims-data-V1' | relative_url }}">V1 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn more about migrating from V1 to V2</a>.
+        For organizations using V1, visit our <a href="{{ '/filter-claims-data-V1' | relative_url }}">V1 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn more about migrating from V1 to V2</a>.
     </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
