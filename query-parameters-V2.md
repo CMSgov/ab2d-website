@@ -24,7 +24,7 @@ HTTP query parameters filter or specify the claims data returned during requests
 
 ## The _since and _until parameters
 
-The _since and _until parameters let you filter claims data by date to reduce duplication and speed up job times. These parameters follow the [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-MM-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm. These optional parameters can be used separately or together.
+<p>The _since and _until parameters let you filter claims data by date to reduce duplication and speed up job times. These parameters follow the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO datetime format</a>(yyyy-MM-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm. These optional parameters can be used separately or together.</p>
 
 Separately, these parameters allow you to pull data that was last updated since or until a specified date. You can use the meta/lastUpdated property of each ExplanationofBenefit (EOB) resource to see when each record was last updated. This will help you compare claims data when using the  _since and _until parameters. 
 
