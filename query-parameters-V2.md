@@ -28,8 +28,6 @@ HTTP query parameters filter or specify the claims data returned during requests
 
 Separately, these parameters allow you to pull data that was last updated since or until a specified date. You can use the meta/lastUpdated property of each ExplanationofBenefit (EOB) resource to see when each record was last updated. This will help you compare claims data when using the  _since and _until parameters. 
 
-Download the data dictionary 
-<!--TODO: add downloadable spreadsheet when we have it-->
 [Download the data dictionary]({{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }})
 ### For _since
 
