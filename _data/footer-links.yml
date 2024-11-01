@@ -4,10 +4,10 @@
       url: /user-guide
 
     - text: Access test claims data
-      url: /how-to-access-test-claims-data
+      url: /access-test-claims-data
 
     - text: Access production claims data
-      url: /how-to-access-production-claims-data
+      url: /access-production-claims-data
 
 - heading: AB2D Data
   links:

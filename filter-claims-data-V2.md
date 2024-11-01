@@ -1,18 +1,16 @@
 ---
 layout: default
-title:  "How to Filter Claims Data"
-permalink: /how-to-filter-claims-data
+title:  "How to Filter Claims Data – V2"
+permalink: /filter-claims-data-v2
 in-page-nav: true
 ---
 
 
 # {{ page.title }}
 
-## This page hasn't been built yet. 
+[HTTP query parameters]({{ '/query-parameters-V2' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment. 
 
-[HTTP query parameters]({{ '/http-query-parameters' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment. 
-
-Learn how to access [test claims data]({{ '/how-to-access-test-claims-data' | relative_url }}) or [production claims data]({{ '/how-to-access-production-claims-data' | relative_url }}).
+Learn how to access [test claims data]({{ '/access-test-claims-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
@@ -22,14 +20,14 @@ Learn how to access [test claims data]({{ '/how-to-access-test-claims-data' | re
         This documentation is for AB2D version 2, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/">Bulk Data Access Implementation Guide V2.0.0</a>. The _until parameter is only available with V2. 
     </p>
     <p>    
-        For organizations using V1, visit our <a href="{{ '/how-to-filter-claims-data' | relative_url }}">V1 documentation</a> to learn about parameters <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">or learn more about migrating from V1 to V2</a>.
+        For organizations using V1, visit our <a href="{{ '/filter-claims-data-V1' | relative_url }}">V1 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn more about migrating from V1 to V2</a>.
     </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
 ## Example export workflow for parameters
 
-The [_since and _until parameters]({{ '/http-query-parameters' | relative_url }}#the-since-and-until-parameters) filter for claims data updated since or until a specified date. These can be used while starting a job to speed up download times and reduce duplication. Visit the User Guide to learn more about the export workflow for the AB2D API. 
+The [_since and _until parameters]({{ '/query-parameters-V2' | relative_url }}#the-since-and-until-parameters) filter for claims data last updated since or until a specified date. These can be used while starting a job to speed up download times and reduce duplication. Visit the <a href="{{ '/user-guide' | relative_url }}">User Guide</a> to learn more about the export workflow for the AB2D API. 
 
 The following examples use the _since and _until parameters separately and together. Note the ISO8601 dates include characters that can’t appear in URLs. [Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). There are unencoded and percent-encoded examples. Only the encoded versions will work, but the unencoded examples show how the URL is formed before encoding.
 
@@ -103,12 +101,12 @@ Incremental exports occur by default when you start a job, even without using pa
 
 This is a scenario demonstrating how the default capability works for _since and _until:
 
-1. You start your first job (JOB ID: ABC) 
+1. You start your first job (JOB ID: ABC). 
 2. Once the job is complete, you download the files.
 3. You wait until the next bi-weekly update (the recommended frequency to run jobs).
-4. You start a new job (JOB ID: DEF) 
+4. You start a new job (JOB ID: DEF). 
 5. You forget to download the files until after they’ve expired (72 hours).
-6. You start another job (JOB ID: GHI). The _since value will default to when you started job ABC, not job DEF. This is because no 7. files were downloaded with job DEF, so it wasn’t completed successfully.
+6. You start another job (JOB ID: GHI). The _since value will default to when you started job ABC, not job DEF. This is because no files were downloaded with job DEF, so it wasn’t completed successfully.
 7. Once the job is complete, download the files.
 8. Repeat these steps.
 

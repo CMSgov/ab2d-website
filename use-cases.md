@@ -44,7 +44,7 @@ in-page-nav: true
   <div class="grid-col-fill">
     <h2>Boost health outcomes</h2>
     <p class="usa-intro text-balance measure-4">Enhance MTM enrollee health and program results by improving medication use and adherence.</p>
-    <p>Part D <a href="https://www.cms.gov/medicare/health-drug-plans/part-c-d-performance-data">Star Ratings</a> evaluate the quality of services received by enrollees in your plan. The Centers for Medicare & Medicaid Services (CMS) offer incentives to PDP sponsors with high Star Ratings:</p>
+    <p>Part D <a href="https://www.cms.gov/medicare/health-drug-plans/part-c-d-performance-data">Star Ratings</a> evaluate the quality of services received by enrollees in your plan. The Centers for Medicare & Medicaid Services (CMS) offers incentives to PDP sponsors with high Star Ratings:</p>
     <ul>
       <li>CMS highlights contracts with an overall rating of 5 stars.</li>
       <li>Enrollees may enroll in a 5-Star PDP sponsor, MA-PD, or MA-only plan through a Special Election Period.</li>
