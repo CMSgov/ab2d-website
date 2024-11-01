@@ -6,22 +6,22 @@
       url: /user-guide
 
     - name: How to Get a Bearer Token
-      url: /how-to-get-a-bearer-token
+      url: /get-a-bearer-token
       children:
         - name: Setup Instructions
           url: /setup-instructions
 
     - name: How to Access Test Claims Data
-      url: /how-to-access-test-claims-data
+      url: /access-test-claims-data
 
     - name: How to Access Production Claims Data
-      url: /how-to-access-production-claims-data
+      url: /access-production-claims-data
 
-    - name: HTTP Query Parameters
-      url: /http-query-parameters
+    - name: HTTP Query Parameters V2
+      url: /query-parameters-v2
 
 - name: GitHub repo
-  url: https://github.com/CMSgov/ab2d-website
+  url: https://github.com/CMSgov/ab2d
   icon: github
 
 - name: Swagger

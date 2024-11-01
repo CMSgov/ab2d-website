@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-[curl](https://curl.se/) is one of the many tools you can use to access the AB2D [sandbox]({{ '/how-to-access-test-claims-data' | realtive_url }}) and [production]({{ '/how-to-access-production-claims-data' | realtive_url }}) environments. curl comes preinstalled on some operating systems. In a terminal, type “curl –version” to check if it’s installed.
+curl and jq are tools you can use to access the AB2D [sandbox]({{ '/access-test-claims-data' | realtive_url }}) and [production]({{ '/access-production-claims-data' | realtive_url }}) environments. curl comes preinstalled on some operating systems. In a terminal, type `curl –version` to check if it’s installed.
 
 If you don’t have it installed, use the following system-specific instructions to install jq and curl. If your operating system isn’t listed, follow the installation instructions on the [curl](https://curl.se/) and [jq](https://jqlang.github.io/jq/) websites.
 
@@ -61,38 +61,38 @@ jq --version
 In this example, we will be using the Linux Subsystem for Windows 10.
 
 <ol>
-    <li>Select "Type here to search" near the bottom left of your Windows desktop.</li>
+    <li>Select <em>Type here to search</em> near the bottom left of your Windows desktop.</li>
     <li>Enter the following in the text box:
 {% capture setupSnippet %}{% raw %}
 windows features
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=setupSnippet language="shell" %}
     </li>
-    <li>Select “Turn Windows features on or off” from the leftmost panel.</li>
-    <li>Scroll down to and check “Windows Subsystem for Linux.”</li>
-    <li>Select “OK” on the “Windows Features” window.</li>
+    <li>Select <em>Turn Windows features on or off</em> from the leftmost panel.</li>
+    <li>Scroll down to and check <em>Windows Subsystem for Linux</em>.</li>
+    <li>Select <em>OK</em> on the <em>Windows Features</em> window.</li>
     <li>Wait for the changes to complete.</li>
-    <li>When prompted, select “Restart now.”</li>
-    <li>Select “Type here to search” again.</li>
+    <li>When prompted, select <em>Restart now</em>.</li>
+    <li>Select <em>Type here to search</em> again.</li>
     <li>Enter the following in the text box:
 {% capture setupSnippet %}{% raw %}
 microsoft store
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=setupSnippet language="shell" %}
     </li>
-    <li>Select “Microsoft Store” from the leftmost panel.</li>
-    <li>Select “Search” on the Microsoft Store page.</li>
+    <li>Select <em>Microsoft Store</em> from the leftmost panel.</li>
+    <li>Select <em>Search</em> on the <em>Microsoft Store</em> page.</li>
     <li>Enter the following in the text box:
 {% capture setupSnippet %}{% raw %}
 linux
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=setupSnippet language="shell" %}
     </li>
-    <li>Select “Run Linux on Windows.”</li>
-    <li>Select “Ubuntu.”</li>
-    <li>Select “Get.”</li>
-    <li>Select “No, thanks” on the “Use across your devices” dialog.The installation will begin automatically.</li>
-    <li>Once the installation is complete, select “Launch.”</li>
+    <li>Select <em>Run Linux on Windows</em>.</li>
+    <li>Select <em>Ubuntu</em>.</li>
+    <li>Select <em>Get</em>.</li>
+    <li>Select <em>No, thanks</em> on the <em>Use across your devices</em> dialog. The installation will begin automatically.</li>
+    <li>Once the installation is complete, select <em>Launch</em>.</li>
     <li>When prompted, choose a username and password.</li>
     <li>If the installation is successful, you will have a prompt that looks like this:
 {% capture setupSnippet %}{% raw %}
@@ -120,8 +120,8 @@ jq --version
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=setupSnippet language="shell" %}
     </li>
-    <li>Close the Ubuntu window.</li>
-    <li>Close the Microsoft Store window.</li>
+    <li>Close the <em>Ubuntu</em> window.</li>
+    <li>Close the <em>Microsoft Store</em> window.</li>
 </ol>
 
 ### Open an Ubuntu terminal
@@ -129,7 +129,7 @@ jq --version
 You can apply these instructions to other Unix-like applications as well.
 
 <ol>
-    <li>Select Type here to search near the bottom left of your Windows desktop.</li>
+    <li>Select <em>Type here to search</em> near the bottom left of your Windows desktop.</li>
     <li>Enter the following in the text box:
 {% capture setupSnippet %}{% raw %}
 ubuntu

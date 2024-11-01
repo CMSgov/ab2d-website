@@ -23,7 +23,7 @@ permalink: /support
 
 {% capture a1AccordionContent %}
 <p>
-  Active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are eligible to use the AB2D API. This excludes PACE and MAPD.
+Active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are eligible to use the AB2D API. This excludes PACE and MAPD.
 </p>
 {% endcapture %}
 
@@ -48,7 +48,7 @@ permalink: /support
 
 {% capture a3AccordionContent %}
   <p>
-  AB2D receives data upstream from the  <a href="https://www2.ccwdata.org/web/guest/home/">Chronic Conditions Warehouse (CCW)</a>.
+    AB2D receives data upstream from the  <a href="https://www2.ccwdata.org/web/guest/home/">Chronic Conditions Warehouse (CCW)</a>.
   </p>
 {% endcapture %}
 
@@ -65,10 +65,10 @@ permalink: /support
     The following uses are <strong>not</strong> permitted:
 </p>
 <ol>
-    <li>"To inform coverage determinations under Part D;</li>
-    <li>To conduct retroactive reviews of medically accepted indication(s) determinations;</li>
-    <li>To facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or</li>
-    <li>To inform marketing of benefits."</li>
+    <li>Inform coverage determinations under Part D;</li>
+    <li>Conduct retroactive reviews of medically accepted indication(s) determinations;</li>
+    <li>Facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or</li>
+    <li>Inform marketing of benefits.</li>
 </ol>
 <p>
 <a href="{{ '/about' | relative_url }}">Learn more about permitted uses of the data.</a>
