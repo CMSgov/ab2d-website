@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: api-docs
 title:  "Claims Data Details"
 permalink: /claims-data-details
 in-page-nav: true

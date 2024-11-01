@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: api-docs
 title:  "AB2D Data"
 permalink: /ab2d-data
+in-page-nav: true
 ---
 
 # AB2D Data
