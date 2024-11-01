@@ -16,11 +16,12 @@
       icon: github
       external: true
 
+    - text: Data Dictionary
+      url: /assets/downloads/ab2d-data-dictionary.xlsx
+      icon: file_download
+
     - text: Claims data details
       url: /claims-data-details
-
-    - text: Data Dictionary
-      url: /data
 
     - text: FHIR specification
       url: https://hl7.org/fhir/
