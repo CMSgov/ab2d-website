@@ -200,6 +200,7 @@ Get an overview of the endpoints you can request at the [sandbox]({{ '/access-te
       You can get a bearer token by providing Okta with sandbox credentials or the production credentials received during onboarding. Bearer tokens expire after an hour, after which you must complete the process again.
     </p>
   </div>
+</div>
 
 ## Troubleshooting guide
 
