@@ -4,7 +4,7 @@ title:  "AB2D API User Guide"
 permalink: /user-guide
 in-page-nav: true
 ---
-<!--TODO add links to other subpages after those pages have been created, content figure out what copy requires code formatting-->
+
 # {{ page.title }}
 
 The AB2D API exports Medicare Parts A and B claims data. Prescription Drug Plan (PDP) sponsors can access data for any attributed enrollee. PDP sponsors must complete [onboarding]({{ '/onboarding' | relative_url }}) to access the API. During this process, your organization will agree (“attest") to AB2D protocols and [retrieve test data]({{ '/access-test-claims-data' | relative_url }}) in the sandbox. Following these steps, you’ll be approved to [access production claims data]({{ '/access-production-claims-data' | relative_url }}) for active enrollees.
@@ -131,10 +131,11 @@ Jobs are units of work that export and compile Medicare claims data. They are br
   </table>
 
 ## Endpoints, schemas, and parameters
+
 Get an overview of the endpoints you can request at the [sandbox]({{ '/access-test-claims-data' | relative_url }}) or [production URL]({{ '/access-production-claims-data' | relative_url }}). You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/query-parameters-V2' | relative_url }}) to filter or specify the claims data returned. 
 
-## Glossary
-       
+## Glossary 
+
 <div class="padding-top-4 usa-accordion usa-accordion--multiselectable" data-allow-multiple>
   <h4 class="usa-accordion__heading">
     <button
@@ -200,8 +201,6 @@ Get an overview of the endpoints you can request at the [sandbox]({{ '/access-te
     </p>
   </div>
 
-</div>
-
 ## Troubleshooting guide
 
 ### HTTP response codes
@@ -260,274 +259,162 @@ You’re creating too many job requests within a short period of time. Try waiti
 ## Frequently asked questions
 
 <!--TODO: add an "expand all" feature here. Can appear as a simple hyperlink -->
-         
-<div class="padding-top-4 usa-accordion usa-accordion--multiselectable" data-allow-multiple>
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a5"
-    >
-    How do I find my IP address?
-    </button>
-  </h4>
-  <div id="m-a5" class="usa-accordion__content usa-prose">
-    <p>
-      Using the system that will access the API, open your browser and visit <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com/</a>. If you don’t have a browser query from your system’s command line:    
-    </p>
+
+<div class="padding-top-4"></div>
+
+{% capture a5AccordionContent %}
+<p>
+  Using the system that will access the API, open your browser and visit <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com/</a>. If you don’t have a browser query from your system’s command line:    
+</p>
+<ul>
+    <li>Linux/Mac: Open a terminal and run the command <code>curl -X GET checkip.amazonaws.com</code></li>
+    <li>Windows: Open a Powershell terminal and run the command <code>Invoke-RestMethod -Method GET checkip.amazonaws.com</code></li>
+</ul>
+{% endcapture %}
+
+{% capture a6AccordionContent %}
+<p>
+Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during onboarding. 
+</p>
+<p>
+If the system is correct, check with your IT team to make sure you have a static IP address. If your IP address isn’t static, it may have changed. You must have a static IP address to use the API. 
+</p>
+{% endcapture %}
+
+{% capture a7AccordionContent %}
+<p>
+  Use 1 of these methods:
+</p>
+<ol>
+    <li>On the command line of the system you want to use, run 1 of the following commands:</li>
         <ul>
-            <li>Linux/Mac: Open a terminal and run the command <code>curl -X GET checkip.amazonaws.com</code></li>
-            <li>Windows: Open a Powershell terminal and run the command <code>Invoke-RestMethod -Method GET checkip.amazonaws.com</code></li>
+        <li>
+          Linux/Mac: In a terminal, run <code>curl -X GET https://api.ab2d.cms.gov/health --verbose</code>
+        </li>
+        <li>
+          Windows: In a powershell terminal, run <code>Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
+        </li>
         </ul>
-  </div>
-
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a6"
-    >
-    The IP address is incorrect, what should I do?
-    </button>
-  </h4>
-  <div id="m-a6" class="usa-accordion__content usa-prose">
-    <p>
-    Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during onboarding. 
-    </p>
-    <p>
-    If the system is correct, check with your IT team to make sure you have a static IP address. If your IP address isn’t static, it may have changed. You must have a static IP address to use the API. 
-    </p>
-  </div>
-
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a7"
-    >
-    How do I determine if my IP address can connect to AB2D? 
-    </button>
-  </h4>
-  <div id="m-a7" class="usa-accordion__content usa-prose">
-    <p>
-      Use 1 of these methods:
-    </p>
-    <ol>
-        <li>On the command line of the system you want to use, run 1 of the following commands:</li>
-            <ul>
-            <li>
-              Linux/Mac: In a terminal, run <code>curl -X GET https://api.ab2d.cms.gov/health --verbose</code>
-            </li>
-            <li>
-              Windows: In a powershell terminal, run <code>Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
-            </li>
-            </ul>
         <li>In Postman, create a new GET request against the URL https://api.ab2d.cms.gov/health. If the response has an HTTP status of 200 then your IP address can connect.</li>
-        <li>Open a browser and visit https://api.ab2d.cms.gov/swagger-ui/index.html.</li>
-    </ol>
-  </div>
+        <li>Open a browser and visit https://api.ab2d.cms.gov/swagger-ui/index.html.</li>    <li>Open a browser and visit <code>https://api.ab2d.cms.gov/swagger-ui/index.html</code></li>
+</ol>
+{% endcapture %}
 
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a8"
-    >
-    How many IP addresses can my organization add? 
-    </button>
-  </h4>
-  <div id="m-a8" class="usa-accordion__content usa-prose">
-    <p>
-     You can provide the AB2D team with up to 8 IP addresses.
-    </p>
-  </div>
+{% capture a8AccordionContent %}
+<p>
+  You can provide the AB2D team with up to 8 IP addresses.
+</p>
+{% endcapture %}
 
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a9"
-    >
-    What if I need to change or remove an IP address(es)? 
-    </button>
-  </h4>
-  <div id="m-a9" class="usa-accordion__content usa-prose">
-    <p>
-     Contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to change your organization’s IP address(es).
-    </p>
-  </div>
+{% capture a9AccordionContent %}
+<p>
+  Contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to change your organization’s IP address(es).
+</p>
+{% endcapture %}
 
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a10"
-    >
-    Why is my job stuck at 0%? It’s queueing and not starting immediately. 
-    </button>
-  </h4>
-  <div id="m-a10" class="usa-accordion__content usa-prose">
-    <p>
-      You’re running too many jobs at once. If the API is busy, the job will be queued in a backlog.
-    </p>
-  </div>
+{% capture a10AccordionContent %}
+<p>
+  You’re running too many jobs at once. If the API is busy, the job will be queued in a backlog.
+</p>
+{% endcapture %}
 
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a11"
-    >
-    How do I cancel a job that’s already started?
-    </button>
-  </h4>
-  <div id="m-a11" class="usa-accordion__content usa-prose">
+{% capture a11AccordionContent %}
+<ul>
+  <li>
+    On the command line, run 1 of the following commands:
+  </li>
     <ul>
       <li>
-        On the command line, run 1 of the following commands:
-      </li>
-        <ul>
-          <li>
-            <strong>Linux/Mac:</strong> In a terminal, run <code>curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status --verbose</code>. Make sure to fill in {jobUuid} with the ID of the running job.
-          </li>
-          <li>
-            <strong>Windows:</strong> In a Powershell terminal, run <code>Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</code>. Make sure to fill in {jobUuid} with the ID of the running job.
-          </li>
-        </ul>
-      <li>
-        In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status. Note the request parameter {jobUuid} must be set in Postman.
+        <strong>Linux/Mac:</strong> In a terminal, run <code>curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status --verbose</code>. Make sure to fill in {jobUuid} with the ID of the running job.
       </li>
       <li>
-        In a browser, visit https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE and enter your job ID.
+        <strong>Windows:</strong> In a Powershell terminal, run <code>Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</code>. Make sure to fill in {jobUuid} with the ID of the running job.
       </li>
     </ul>
-  </div>
+  <li>
+    In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status. Note the request parameter {jobUuid} must be set in Postman.
+  </li>
+  <li>
+    In a browser, visit https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE and enter your job ID.
+  </li>
+</ul>
+{% endcapture %}
 
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a12"
-    >
-    What response do I get when the job is complete?
-    </button>
-  </h4>
-  <div id="m-a12" class="usa-accordion__content usa-prose">
-    <p>
-      The response will contain the list of files requested and the URLs to download them.
-    </p>
-  </div>
+{% capture a12AccordionContent %}
+<p>
+  The response will contain the list of files requested and the URLs to download them.
+</p>
+{% endcapture %}
 
-   <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a13"
-    >
-    What happens if the job fails?
-    </button>
-  </h4>
-  <div id="m-a13" class="usa-accordion__content usa-prose">
-    <p>
-      The status API will return an error for the job. Any files created will be deleted.
-    </p>
-  </div>
+{% capture a13AccordionContent %}
+<p>
+  The status API will return an error for the job. Any files created will be deleted.
+</p>
+{% endcapture %}
 
-   <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a14"
-    >
-    Can I retrieve the results of a job that fails?
-    </button>
-  </h4>
-  <div id="m-a14" class="usa-accordion__content usa-prose">
-    <p>
-      No, you can’t download files from a failed job. You must restart the job.
-    </p>
-  </div>
+{% capture a14AccordionContent %}
+<p>
+  No, you can’t download files from a failed job. You must restart the job.
+</p>
+{% endcapture %}
 
-<h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a15"
-    >
-    I tried to download the files and got an error message.
-    </button>
-  </h4>
-  <div id="m-a15" class="usa-accordion__content usa-prose">
-    <p>
-      If you received a 403 error your bearer token may be expired or incorrect. Get another bearer token and restart the job.
-    </p>
-    <p>
-      4xx errors mean your files have been downloaded more than 6 times or are expired. Files expire and automatically delete after 72 hours. 
-    </p>
-  </div>
+{% capture a15AccordionContent %}
+<p>
+  If you received a 403 error your bearer token may be expired or incorrect. Get another bearer token and restart the job.
+</p>
+<p>
+  4xx errors mean your files have been downloaded more than 6 times or are expired. Files expire and automatically delete after 72 hours. 
+</p>
+{% endcapture %}
 
-  <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a16"
-    >
-    What is FHIR STU3 and R4?
-    </button>
-  </h4>
-  <div id="m-a16" class="usa-accordion__content usa-prose">
-    <p>
-      STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, ExplanationOfBenefit.
-    </p>
-  </div>
+{% capture a16AccordionContent %}
+<p>
+  STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, ExplanationOfBenefit.
+</p>
+{% endcapture %}
 
- <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a17"
-    >
-    How does AB2D provide FHIR versions?
-    </button>
-  </h4>
-  <div id="m-a17" class="usa-accordion__content usa-prose">
-    <p>
-      Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir). 
-    </p>
-      Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>. 
-    </p>
-  </div>
+{% capture a17AccordionContent %}
+<p>
+ Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir). 
+</p>
+<p>
+ Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>. 
+</p>
+{% endcapture %}
 
- <h4 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a18"
-    >
-    How are parameters different between V1 and V2?
-    </button>
-  </h4>
-  <div id="m-a18" class="usa-accordion__content usa-prose">
-    <p>
-     The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
-    </p>
-    <p>
-      In V1, a date must be specified to use _since. If no _since value is specified, it will default to February 13, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters-V2' | relative_url }}">Learn how to use parameters</a>.
-    </p>
-  </div>
-</div>
+{% capture a18AccordionContent %}
+<p>
+  The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
+</p>
+<p>
+  In V1, a date must be specified to use _since. If no _since value is specified, it will default to February 13, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters-V2' | relative_url }}">Learn how to use parameters</a>.
+</p>
+{% endcapture %}
 
+{% include accordion.html id="a5" heading="How do I find my IP address?" expanded=false bordered=false accordionContent=a5AccordionContent %}
+
+{% include accordion.html id="a6" heading="The IP address is incorrect, what should I do?" expanded=false bordered=false accordionContent=a6AccordionContent %}
+
+{% include accordion.html id="a7" heading="How do I determine if my IP address can connect to AB2D?" expanded=false bordered=false accordionContent=a7AccordionContent %}
+
+{% include accordion.html id="a8" heading="How many IP addresses can my organization add?" expanded=false bordered=false accordionContent=a8AccordionContent %}
+
+{% include accordion.html id="a9" heading="What if I need to change or remove an IP address(es)?" expanded=false bordered=false accordionContent=a9AccordionContent %}
+
+{% include accordion.html id="a10" heading="Why is my job stuck at 0%? It’s queueing and not starting immediately." expanded=false bordered=false accordionContent=a10AccordionContent %}
+
+{% include accordion.html id="a11" heading="How do I cancel a job that’s already started?" expanded=false bordered=false accordionContent=a11AccordionContent %}
+
+{% include accordion.html id="a12" heading="What response do I get when the job is complete?" expanded=false bordered=false accordionContent=a12AccordionContent %}
+
+{% include accordion.html id="a13" heading="What happens if the job fails?" expanded=false bordered=false accordionContent=a13AccordionContent %}
+
+{% include accordion.html id="a14" heading="Can I retrieve the results of a job that fails?" expanded=false bordered=false accordionContent=a14AccordionContent %}
+
+{% include accordion.html id="a15" heading="I tried to download the files and got an error message." expanded=false bordered=false accordionContent=a15AccordionContent %}
+
+{% include accordion.html id="a16" heading="What is FHIR STU3 and R4?" expanded=false bordered=false accordionContent=a16AccordionContent %}
+
+{% include accordion.html id="a17" heading="How does AB2D provide FHIR versions?" expanded=false bordered=false accordionContent=a17AccordionContent %}
+
+{% include accordion.html id="a18" heading="How are parameters different between V1 and V2?" expanded=false bordered=false accordionContent=a18AccordionContent %}
