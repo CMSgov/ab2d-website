@@ -17,7 +17,7 @@
       external: true
 
     - text: Data Dictionary
-      url: /assets/downloads/AB2D-Data-Dictionary.xlsx
+      url: /assets/downloads/ab2d-data-dictionary.xlsx
       icon: file_download
 
     - text: Claims data details

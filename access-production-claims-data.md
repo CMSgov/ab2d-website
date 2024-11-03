@@ -366,7 +366,7 @@ After you download your files, clean up your directory as needed. You can move t
 
 ## Incremental export model
 
-Incremental exports of data, ideally at a bi-weekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/filter-claims-data-V2' | relative_url }}) 
+Incremental exports of data, ideally at a bi-weekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/filter-claims-data-v2' | relative_url }}) 
 
 ## Troubleshooting
 
