@@ -1,4 +1,4 @@
-name: deploy-branch-to-impl
+name: deploy-test-branch
 
 # Controls when the action will run.
 on:
