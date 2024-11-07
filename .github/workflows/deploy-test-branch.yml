@@ -2,6 +2,7 @@ name: deploy-test-branch
 
 # Controls when the action will run.
 on:
+  push:
   # Triggers the workflow on for any branch when a pull_request is opened or reopened
 #  pull_request:
 #    types: [opened, reopened]
