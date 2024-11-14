@@ -31,7 +31,7 @@ active-nav: understanding-the-data-nav
                     </li>
                 </ul>
                 <p>
-                    These claims contain valuable information about enrollee health, which can help fill any gaps in the health records available to stand-alonePrescription Drug Plan (PDP) sponsors.
+                    These claims contain valuable information about enrollee health, which can help fill any gaps in the health records available to stand-alone Prescription Drug Plan (PDP) sponsors.
                 </p>
             </div>
             <div class="col-lg-6">
