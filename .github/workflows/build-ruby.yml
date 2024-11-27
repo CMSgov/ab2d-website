@@ -51,7 +51,7 @@ jobs:
       - run: ls -al ~/tmp
 
       - name: Build Ruby
-        run: ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
+        run: sudo ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
         env:
           CPPFLAGS: "-DENABLE_PATH_CHECK=0" # https://github.com/actions/virtual-environments/issues/267
           TMPDIR: = "~/tmp"
