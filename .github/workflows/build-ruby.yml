@@ -38,6 +38,7 @@ jobs:
         run: ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
         env:
           CPPFLAGS: "-DENABLE_PATH_CHECK=0" # https://github.com/actions/virtual-environments/issues/267
+          TMPDIR: = "~/tmp"
       - name: Create archive
         run: tar czf ${{ steps.ruby.outputs.archive }} -C $(dirname $PREFIX) $(basename $PREFIX)
       - name: Install Bundler if needed
