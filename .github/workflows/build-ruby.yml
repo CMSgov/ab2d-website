@@ -1,0 +1,90 @@
+name: Build Ruby for GitHub Actions
+on:
+  push:
+jobs:
+  # Build stable releases
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Set ruby
+        id: ruby
+        run: |
+          ruby=3.1.2
+          echo "ruby=$ruby" >> $GITHUB_OUTPUT
+
+      - name: Clone ruby-build
+        run: git clone https://github.com/rbenv/ruby-build.git
+
+      - name: Install ruby-build
+        run: sudo ./ruby-build/install.sh
+
+      - name: Set PREFIX
+        run: |
+          ruby="${{ steps.ruby.outputs.ruby }}"
+          if [[ $ruby == ruby-* ]]; then
+            # See https://github.com/ruby/setup-ruby/issues/98
+            arch=$(node -e 'console.log(os.arch())')
+            echo "PREFIX=$RUNNER_TOOL_CACHE/Ruby/${ruby#ruby-}/$arch" >> $GITHUB_ENV
+          else
+            echo "PREFIX=$HOME/.rubies/$ruby" >> $GITHUB_ENV
+          fi
+      - run: rm -rf $PREFIX
+
+      - name: Set RUBY_CONFIGURE_OPTS
+        run: echo 'RUBY_CONFIGURE_OPTS=--enable-shared --disable-install-doc' >> $GITHUB_ENV
+      # https://github.com/rbenv/ruby-build/discussions/1961#discussioncomment-4031745
+
+      - name: Build Ruby
+        run: ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
+        env:
+          CPPFLAGS: "-DENABLE_PATH_CHECK=0" # https://github.com/actions/virtual-environments/issues/267
+      - name: Create archive
+        run: tar czf ${{ steps.ruby.outputs.archive }} -C $(dirname $PREFIX) $(basename $PREFIX)
+      - name: Install Bundler if needed
+        run: |
+          if [ ! -e $PREFIX/bin/bundle ]; then
+            export PATH="$PREFIX/bin:$PATH"
+            gem install bundler -v '~> 1' $NO_DOCUMENT
+          fi
+
+      - run: echo "$PREFIX/bin" >> $GITHUB_PATH
+      - run: ruby --version
+      - run: ruby -ropen-uri -e 'puts URI.send(:open, %{https://rubygems.org/}) { |f| f.read(1024) }'
+      - name: Install JSON gem
+        run: gem install json -v '2.2.0' $NO_DOCUMENT
+      - run: bundle --version
+      - run: bundle install
+      - run: bundle exec rake --version
+      - run: ruby test_subprocess.rb
+
+      - name: Upload Built Ruby
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release upload "toolcache" "${{ steps.ruby.outputs.archive }}"
+
+
+
+#  createPullRequest:
+#    name: Create PR to setup-ruby
+#    needs: [build]
+#    if: startsWith(github.event.head_commit.message, 'Build ')
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Set versions
+#        id: versions
+#        env:
+#          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+#        run: |
+#          commit_message="$COMMIT_MESSAGE"
+#          if [[ "$commit_message" =~ ^Build\ * ]]; then
+#            versions=${commit_message#* }
+#            echo "versions=$versions" >> $GITHUB_OUTPUT
+#          else
+#            exit 2
+#          fi
+#      - uses: ruby/ruby-builder/.github/actions/create-pr-to-setup-ruby@master
+#        with:
+#          versions: ${{ steps.versions.outputs.versions }}
+#          title: Add ${{ steps.versions.outputs.versions }}
+#          token: ${{ secrets.CHECK_NEW_RELEASES_TOKEN }}
