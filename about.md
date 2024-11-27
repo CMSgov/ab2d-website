@@ -92,7 +92,7 @@ The AB2D API is only available to active, stand-alone Prescription Drug Plan (PD
 <div class="usa-section--dark bg-primary padding-y-6 margin-y-6" markdown="1">
 
 ## History of the AB2D API
-The Centers for Medicare & Medicaid Services (CMS) developed AB2D to follow the [Bipartisan Budget Act of 2018 (BBA)](https://www.congress.gov/bill/115th-congress/house-bill/1892/text) and [final rule](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare). This is in accordance with requirements to share claims data with PDP sponsors that have active contracts.
+The Centers for Medicare & Medicaid Services (CMS) developed AB2D to follow the [Bipartisan Budget Act of 2018 (BBA)](https://www.congress.gov/bill/115th-congress/house-bill/1892/text) and [final rule](https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745). This is in accordance with requirements to share claims data with PDP sponsors that have active contracts.
 
 AB2D provides PDP sponsors with Medicare data to promote the best use of medications and improve health outcomes. AB2D electronically exchanges healthcare information using the [Fast Healthcare Interoperability Resources (FHIR)](https://www.hl7.org/fhir/overview.html) standard for efficient and secure data sharing.
 
