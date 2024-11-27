@@ -10,13 +10,13 @@ hero-paragraph: >
   (CMS), AB2D provides Parts A and B claims data for a holistic view into
   patients' health.
 hero-button-url: "/api-documentation"
-hero-button-text: "Getting started for developers"
+hero-button-text: "Get started"
 hero-button-2-url: "https://github.com/CMSgov/ab2d"
 hero-button-2-text: "Code Repo"
 
 ---
 
-## Your enrollees’ health insights in action
+## Use cases for the AB2D API
 
 <ul class="usa-card-group flex-justify-center padding-y-4">
   {% include card.html
