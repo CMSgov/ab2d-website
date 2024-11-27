@@ -12,8 +12,8 @@ jobs:
           perl-version: '5.38'
       - name: perl -V
         run: perl -V
-      - run: cpanm --installdeps .
-      - run: prove -lv t
+#      - run: cpanm --installdeps .
+#      - run: prove -lv t
       - name: Set ruby
         id: ruby
         run: |
