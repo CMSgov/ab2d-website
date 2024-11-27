@@ -45,6 +45,12 @@ jobs:
         run: echo 'RUBY_CONFIGURE_OPTS=--enable-shared --disable-install-doc' >> $GITHUB_ENV
       # https://github.com/rbenv/ruby-build/discussions/1961#discussioncomment-4031745
 
+      - name: setup tmpdir
+        run: |
+          rm -rf ~/tmp
+          mkdir ~/tmp
+          chmod 777 ~/tmp
+
       - name: Build Ruby
         run: ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
         env:
