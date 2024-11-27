@@ -48,6 +48,7 @@ jobs:
       - run: rm -rf ~/tmp
       - run: mkdir ~/tmp
       - run: chmod -R 777 ~/tmp
+      - run: ls -al ~/tmp
 
       - name: Build Ruby
         run: ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
