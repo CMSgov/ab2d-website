@@ -10,7 +10,7 @@ jobs:
 #      - uses: shogo82148/actions-setup-perl@v1
 #        with:
 #          perl-version: '5.38'
-      - run: dnf install perl
+      - run: sudo dnf install perl
       - name: perl -V
         run: perl -V
 #      - run: cpanm --installdeps .
