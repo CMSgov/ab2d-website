@@ -45,16 +45,16 @@ jobs:
         run: echo 'RUBY_CONFIGURE_OPTS=--enable-shared --disable-install-doc' >> $GITHUB_ENV
       # https://github.com/rbenv/ruby-build/discussions/1961#discussioncomment-4031745
 
-      - run: rm -rf ~/tmp
-      - run: mkdir ~/tmp
-      - run: chmod -R 777 ~/tmp
-      - run: ls -al ~/tmp
+#      - run: rm -rf ~/tmp
+#      - run: mkdir ~/tmp
+#      - run: chmod -R 777 ~/tmp
+#      - run: ls -al ~/tmp
 
       - name: Build Ruby
         run: sudo ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
         env:
           CPPFLAGS: "-DENABLE_PATH_CHECK=0" # https://github.com/actions/virtual-environments/issues/267
-          TMPDIR: = "~/tmp"
+#          TMPDIR: = "~/tmp"
       - name: Create archive
         run: tar czf ${{ steps.ruby.outputs.archive }} -C $(dirname $PREFIX) $(basename $PREFIX)
       - name: Install Bundler if needed
