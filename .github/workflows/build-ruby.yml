@@ -46,10 +46,9 @@ jobs:
       # https://github.com/rbenv/ruby-build/discussions/1961#discussioncomment-4031745
 
       - name: setup tmpdir
-        run: |
-          rm -rf ~/tmp
-          mkdir ~/tmp
-          chmod 777 ~/tmp
+      - run: rm -rf ~/tmp
+      - run: mkdir ~/tmp
+      - run: chmod 777 ~/tmp
 
       - name: Build Ruby
         run: ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
