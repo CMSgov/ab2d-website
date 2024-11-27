@@ -6,11 +6,11 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
+      - uses: shogo82148/actions-setup-perl@v1
       - name: Setup Perl
-        uses: shogo82148/actions-setup-perl@v1
         with:
-          perl-version: '5.30'
+          perl-version: '5.38'
       - name: perl -V
         run: perl -V
       - run: cpanm --installdeps .
