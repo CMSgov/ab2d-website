@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - run rpm -E %{rhel}
+      - run: rpm -E %{rhel}
       - run: sudo dnf -y install perl
       - run: perl -V
       - name: Set ruby
