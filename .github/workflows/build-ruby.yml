@@ -6,6 +6,7 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
+      - run rpm -E %{rhel}
       - run: sudo dnf -y install perl
       - run: perl -V
       - name: Set ruby
@@ -42,7 +43,7 @@ jobs:
 #      - run: mkdir ~/tmp
 #      - run: chmod -R 777 ~/tmp
 #      - run: ls -al ~/tmp
-       - run: echo 'PREFIX='$PREFIX
+#       - run: echo 'PREFIX='$PREFIX
 
       - name: Build Ruby
         run: sudo ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
