@@ -6,28 +6,21 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-#      - uses: actions/checkout@v4
-#      - uses: shogo82148/actions-setup-perl@v1
-#        with:
-#          perl-version: '5.38'
       - run: sudo dnf -y install perl
-      - name: perl -V
-        run: perl -V
-#      - run: cpanm --installdeps .
-#      - run: prove -lv t
+      - run: perl -V
       - name: Set ruby
         id: ruby
-        run: |
+      - run: |
           ruby=3.1.2
           echo "ruby=$ruby" >> $GITHUB_OUTPUT
 
       - name: Clone ruby-build
-        run: |
+      - run: |
           rm -rf ruby-build
           git clone https://github.com/rbenv/ruby-build.git
 
       - name: Install ruby-build
-        run: sudo ./ruby-build/install.sh
+      - run: sudo ./ruby-build/install.sh
 
       - name: Set PREFIX
         run: |
@@ -49,13 +42,13 @@ jobs:
 #      - run: mkdir ~/tmp
 #      - run: chmod -R 777 ~/tmp
 #      - run: ls -al ~/tmp
-       - run: echo 'PREFIX="$PREFIX
+       - run: echo 'PREFIX='$PREFIX
 
       - name: Build Ruby
         run: sudo ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
         env:
           CPPFLAGS: "-DENABLE_PATH_CHECK=0" # https://github.com/actions/virtual-environments/issues/267
-#          TMPDIR: = "~/tmp"
+          TMPDIR: = "~/tmp"
       - name: Create archive
         run: tar czf ${{ steps.ruby.outputs.archive }} -C $(dirname $PREFIX) $(basename $PREFIX)
       - name: Install Bundler if needed
