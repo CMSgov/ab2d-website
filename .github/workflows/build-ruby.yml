@@ -9,19 +9,19 @@ jobs:
       - run: rpm -E %{rhel}
       - run: sudo dnf -y install perl
       - run: perl -V
-      - name: Set ruby
-        id: ruby
+#      - name: Set ruby
+#        id: ruby
       - run: |
           ruby=3.1.2
           echo "ruby=$ruby" >> $GITHUB_OUTPUT
 
       - name: Clone ruby-build
-      - run: |
+        run: |
           rm -rf ruby-build
           git clone https://github.com/rbenv/ruby-build.git
 
       - name: Install ruby-build
-      - run: sudo ./ruby-build/install.sh
+        run: sudo ./ruby-build/install.sh
 
       - name: Set PREFIX
         run: |
@@ -33,6 +33,7 @@ jobs:
           else
             echo "PREFIX=$HOME/.rubies/$ruby" >> $GITHUB_ENV
           fi
+
       - run: rm -rf $PREFIX
 
       - name: Set RUBY_CONFIGURE_OPTS
