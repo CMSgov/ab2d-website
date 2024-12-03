@@ -28,7 +28,8 @@ HTTP query parameters filter or specify the claims data returned during requests
 
 Separately, these parameters allow you to pull data that was last updated since or until a specified date. You can use the meta/lastUpdated property of each ExplanationofBenefit (EOB) resource to see when each record was last updated. This will help you compare claims data when using the  _since and _until parameters. 
 
-[Download the data dictionary]({{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }})
+<a href="{{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }}">Download the Data Dictionary {% include sprite.html icon="file_download" class="text-middle" %}</a>
+
 ### For _since
 
 The earliest possible date is February 13, 2020 (2020-02-13T00:00:00-05:00) or your organization's attestation date, whichever is later. If no _since date is specified, it will default to the datetime of your organization’s last successful export. If this is your first job, it will default to your earliest possible date. 
