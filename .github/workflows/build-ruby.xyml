@@ -11,44 +11,52 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: Setup rbenv
-        run: |
-          sudo dnf install rbenv
-          rbenv init
+      - name: Show Ruby Version
+        run: echo "ruby=$ruby" >> $GITHUB_OUTPUT
 
-# https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
-      - name: Install rbenv build environment
-        run: dnf install -y autoconf gcc rust patch make bzip2 openssl-devel libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel ncurses-devel
-
-# https://github.com/rbenv/ruby-build#readme
-      - name: install ruby-build as rbenv plugin
+      - name: Install Perl
         run: |
-          git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+          sudo dnf -y install perl
+          perl -V
+
+      - name: Clone ruby-build
+        run: |
+          rm -rf ruby-build
+          git clone https://github.com/rbenv/ruby-build.git
+
+      - name: Install ruby-build
+        run: sudo ./ruby-build/install.sh
 
       - name: Set PREFIX
         run: |
+          ruby="${{ steps.ruby.outputs.ruby }}"
+          if [[ $ruby == ruby-* ]]; then
+            # See https://github.com/ruby/setup-ruby/issues/98
             arch=$(node -e 'console.log(os.arch())')
-            echo arch=$arch
             echo "PREFIX=$RUNNER_TOOL_CACHE/Ruby/${ruby#ruby-}/$arch" >> $GITHUB_ENV
+          else
+            echo "PREFIX=$HOME/.rubies/$ruby" >> $GITHUB_ENV
+          fi
 
-      - name: Show PREFIX
-        run: | 
-            echo PREFIX=$PREFIX
-            rm -rf $PREFIX
+      - run: rm -rf $PREFIX
 
       - name: Set RUBY_CONFIGURE_OPTS
         run: echo 'RUBY_CONFIGURE_OPTS=--enable-shared --disable-install-doc' >> $GITHUB_ENV
       # https://github.com/rbenv/ruby-build/discussions/1961#discussioncomment-4031745
 
+#      - run: rm -rf ~/tmp
+#      - run: mkdir ~/tmp
+#      - run: chmod -R 777 ~/tmp
+#      - run: ls -al ~/tmp
+#       - run: echo 'PREFIX='$PREFIX
+
       - name: Build Ruby
-        run: sudo ruby-build --verbose $ruby $PREFIX
+        run: sudo ruby-build --verbose ${{ steps.ruby.outputs.ruby }} $PREFIX
         env:
           CPPFLAGS: "-DENABLE_PATH_CHECK=0" # https://github.com/actions/virtual-environments/issues/267
-#          TMPDIR: = $tmpdir
-
+          TMPDIR: = "~/tmp"
       - name: Create archive
         run: tar czf ${{ steps.ruby.outputs.archive }} -C $(dirname $PREFIX) $(basename $PREFIX)
-
       - name: Install Bundler if needed
         run: |
           if [ ! -e $PREFIX/bin/bundle ]; then
