@@ -16,7 +16,55 @@
         <button type="button" class="usa-nav__close">
           <img src="{{ '/assets/uswds/img/usa-icons/close.svg' | relative_url }}" role="img" alt="Close" />
         </button>
+        <!--Accordions in the header need unique aria controls to determine child pages and therefore can't be defined in yml-->
         <ul class="usa-nav__primary usa-accordion">
+          <li class="usa-nav__primary-item">
+            <a
+              href="{{ '/api-documentation' | relative_url }}"
+              class="usa-nav-link {% if page.permalink == '/api-documentation' %}{{ 'usa-current' }}{% endif %}"
+              aria-controls="basic-nav-section-one"
+              ><span>API Documentation</span></a
+            >
+              <ul id="basic-nav-section-one" class="usa-nav__submenu desktop:display-none">
+                {% for item in site.data.api-docs-nav %}
+                  {% for child in item.children %}
+                  <li class="usa-nav__submenu-item">
+                    <a
+                      href="{{ child.url | relative_url }}"
+                      class="usa-nav-link {% if page.permalink == child.url %}{{ 'usa-current' }}{% endif %}"
+                      ><span>{{ child.name }}</span></a>
+                      <ul class="usa-nav__submenu desktop:display-none">
+                        {% for grandchild in child.children %}
+                        <li class="usa-nav__submenu-item">
+                          <a href="{{ grandchild.url | relative_url }}"
+                            class="{% if page.permalink == grandchild.url %}{{ 'usa-current' }}{% endif %}"
+                          >{{ grandchild.name }}</a>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                  </li>
+                  {% endfor %}
+                {% endfor %}
+                <!--Manually linking github and swagger. May want to write a short script in the future-->
+                <li class="usa-nav__submenu-item">
+                  <a href="https://github.com/CMSgov/ab2d" class="usa-nav-link">
+                    <span>    
+                      {% include sprite.html icon="github" size="3" class="margin-right-05 text-middle" %}
+                      Github repo
+                    </span>
+                  </a>
+                </li>
+                <li class="usa-nav__submenu-item">
+                  <a href="https://sandbox.ab2d.cms.gov/swagger-ui/index.html" class="usa-nav-link">
+                    <span>    
+                      {% include sprite.html icon="code" size="3" class="margin-right-05 text-middle" %}
+                      Swagger
+                    </span>
+                  </a>
+                </li>
+              </ul>
+          </li>
+          <!--Other main nav items with no child pages can be determined by .yml files-->
           {% for item in site.data.nav-primary %}
           <li class="usa-nav__primary-item">
             <a
