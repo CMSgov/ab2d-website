@@ -11,10 +11,9 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: Setup rbenv
+      - name: Install ruby
         run: |
-          sudo dnf install rbenv
-          rbenv init
+          sudo dnf install ruby3.2
 
 # https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
       - name: Install rbenv build environment
