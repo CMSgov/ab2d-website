@@ -15,19 +15,21 @@ If you don’t have it installed, use the following system-specific instructions
 
 <ol>
     <li>
-        Install or update jq using [HomeBrew](https://brew.sh/):
+        Install or update jq using <a href="(https://brew.sh/)">Homebrew</a>:
 {% capture setupSnippet %}{% raw %}
 brew install jq        
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=setupSnippet language="shell" %}
-    </li>
-    <li>
+        <ul>
+            <li>
         If you’re on the latest version of jq, you will have a warning that looks like this:
 {% capture setupSnippet %}{% raw %}
 Warning: jq {version} is already installed and up-to-date        
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=setupSnippet language="shell" %}
-    </li>
+            </li>
+        </ul>
+    <li>
     <li>
         Verify jq is installed by checking the version number:
 {% capture setupSnippet %}{% raw %}
