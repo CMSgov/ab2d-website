@@ -26,8 +26,8 @@ jobs:
 
       - name: Debug
         run: |
+          dnf list --installed
           echo $PATH
-          whereis ruby*
 
 #      - name: Assume role in AB2D Management account
 #        uses: aws-actions/configure-aws-credentials@v3
