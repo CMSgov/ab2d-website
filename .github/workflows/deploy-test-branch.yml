@@ -50,11 +50,11 @@ jobs:
 #          which bundle
 
 
-#      - name: Assume role in AB2D Management account
-#        uses: aws-actions/configure-aws-credentials@v3
-#        with:
-#          aws-region: us-east-2
-#          role-to-assume: arn:aws:iam::${{ secrets.MGMT_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-mgmt-github-actions
+      - name: Assume role in AB2D Management account
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-region: us-east-2
+          role-to-assume: arn:aws:iam::${{ secrets.MGMT_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-mgmt-github-actions
 
       - name: "Build Site"
         run: bundle exec jekyll build --baseurl /${{github.ref_name}}
