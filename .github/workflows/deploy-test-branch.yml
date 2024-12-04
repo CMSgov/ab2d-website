@@ -25,7 +25,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Ruby
-        run: sudo dnf -y install ruby3.2
+        run: sudo dnf -y install ruby3.2 ruby3.2-devel openssl-devel amazon-rpm-config gcc-c++ @development-tools
+
+#      - name Install Jekyll and dependencies
+#        run: sudo dnf -y install ruby3.2 ruby-devel openssl-devel redhat-rpm-config gcc-c++ @development-tools
 
       - name: Debug
         run: |
