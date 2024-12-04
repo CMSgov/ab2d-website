@@ -30,7 +30,7 @@ jobs:
       - name: Add ruby env vars
         run: |
           echo 'export GEM_HOME="$HOME/gems"' >> $GITHUB_ENV
-          echo 'export PATH="$HOME/gems/bin:$PATH"' >> $GITHUB_ENV
+          echo 'export PATH="$HOME/ec2-user/bin:$HOME/gems/bin:$PATH"' >> $GITHUB_ENV
 
 #  echo "PREFIX=$RUNNER_TOOL_CACHE/Ruby/${ruby#ruby-}/$arch" >> $GITHUB_ENV
 # comment
