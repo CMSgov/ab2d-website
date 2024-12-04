@@ -22,4 +22,8 @@ in the form $setting: value,
   $theme-lead-line-height: 3,
   $theme-site-alert-max-width: "desktop-lg",
   $theme-text-measure: 5,
+  $top-palettes: (
+    'palette-top-default',
+    'palette-units-system-positive-medium',
+  )
 );
