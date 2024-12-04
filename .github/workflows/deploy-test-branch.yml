@@ -39,7 +39,7 @@ jobs:
       - name: Install Jekyll and bundler
         run: |
           sudo gem install jekyll bundler
-          bundle install
+          sudo bundle install
 
 #      - name: Debug  xxx
 #        run: |
