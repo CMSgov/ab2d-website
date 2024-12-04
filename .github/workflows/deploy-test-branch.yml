@@ -23,13 +23,17 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+
       - name: Install Ruby
         run: sudo dnf -y install ruby3.2
 
       - name: Debug
         run: |
-          dnf list --installed
+#          dnf list --installed
           echo $PATH
+          which ruby
+          which bundle
+
 
 #      - name: Assume role in AB2D Management account
 #        uses: aws-actions/configure-aws-credentials@v3
