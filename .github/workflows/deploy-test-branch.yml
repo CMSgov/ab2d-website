@@ -38,6 +38,7 @@ jobs:
 
       - name: Install Jekyll and bundler
         run: |
+          sudo chmod -R 777 /usr/share
           sudo gem install jekyll bundler
           sudo bundle install
 
