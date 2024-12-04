@@ -24,8 +24,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Check Ruby
-        run: dnf module list
+      - name: Debug
+        run: |
+          echo $PATH
+          whereis ruby >> "$GITHUB_OUTPUT"
 
 #      - name: Assume role in AB2D Management account
 #        uses: aws-actions/configure-aws-credentials@v3
