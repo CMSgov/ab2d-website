@@ -3,7 +3,7 @@ name: deploy-test-branch
 # Controls when the action will run.
 on:
   push:
-  # Triggers the workflow on for any branch when a pull_request is opened or reopened
+# Triggers the workflow on for any branch when a pull_request is opened or reopened
 #  pull_request:
 #    types: [opened, reopened]
   # branches: [ * ]
@@ -24,11 +24,19 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Install Ruby
+      - name: Install Jekyll dependencies
         run: sudo dnf -y install ruby3.2 ruby3.2-devel openssl-devel amazon-rpm-config gcc-c++ @development-tools
 
-#      - name Install Jekyll and dependencies
-#        run: sudo dnf -y install ruby3.2 ruby-devel openssl-devel redhat-rpm-config gcc-c++ @development-tools
+      - name: Add ruby env vars
+        run: |
+          echo 'export GEM_HOME="$HOME/gems"' >> $GITHUB_ENV
+          echo 'export PATH="$HOME/gems/bin:$PATH"' >> $GITHUB_ENV
+
+#  echo "PREFIX=$RUNNER_TOOL_CACHE/Ruby/${ruby#ruby-}/$arch" >> $GITHUB_ENV
+
+
+      - name: Install Jekyll
+        run: gem install jekyll bundler
 
       - name: Debug
         run: |
