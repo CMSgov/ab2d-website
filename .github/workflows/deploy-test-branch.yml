@@ -36,7 +36,9 @@ jobs:
 # comment
 
       - name: Install Jekyll and bundler
-        run: gem install jekyll bundler
+        run: |
+          gem install jekyll bundler
+          bundle install
 
 #      - name: Debug  xxx
 #        run: |
