@@ -27,7 +27,7 @@ jobs:
       - name: Debug
         run: |
           echo $PATH
-          whereis ruby >> "$GITHUB_OUTPUT"
+          whereis ruby*
 
 #      - name: Assume role in AB2D Management account
 #        uses: aws-actions/configure-aws-credentials@v3
