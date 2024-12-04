@@ -35,7 +35,7 @@ jobs:
 #  echo "PREFIX=$RUNNER_TOOL_CACHE/Ruby/${ruby#ruby-}/$arch" >> $GITHUB_ENV
 # comment
 
-      - name: Install Jekyll dependencies
+      - name: Install Jekyll and bundler
         run: gem install jekyll bundler
 
       - name: Debug
