@@ -38,12 +38,12 @@ jobs:
       - name: Install Jekyll and bundler
         run: gem install jekyll bundler
 
-      - name: Debug
-        run: |
-#          dnf list --installed
-          echo $PATH
-          which ruby
-          which bundle
+#      - name: Debug  xxx
+#        run: |
+##          dnf list --installed
+#          echo $PATH
+#          which ruby
+#          which bundle
 
 
 #      - name: Assume role in AB2D Management account
