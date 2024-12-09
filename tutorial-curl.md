@@ -459,12 +459,14 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
        FILE=Z0000_0001.ndjson
        ```
 
-    b. Get the Part A & B bulk claim export data by entering the following at the terminal prompt
+    b. Get the Part A & B bulk claim export data by entering the following at the terminal prompt. You can request compressed data files by including the optional “Accept-Encoding: gzip” header in your download requests. Requesting compressed data files can help increase your download speed. 
 
        ```
        curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB}/file/${FILE}" \
          -H "Accept: application/fhir+ndjson" \
+         -H "Accept-Encoding: gzip" \
          -H "Authorization: Bearer ${BEARER_TOKEN}" \
+       
          > ${FILE}
        ```
 
