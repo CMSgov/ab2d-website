@@ -5,12 +5,11 @@ permalink: /filter-claims-data-v2
 in-page-nav: true
 ---
 
-
 # {{ page.title }}
 
 [HTTP query parameters]({{ '/query-parameters-V2' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment. 
 
-Learn how to access [test claims data]({{ '/access-test-claims-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
+Learn how to access [test data in the sandbox]({{ '/access-test-claims-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
