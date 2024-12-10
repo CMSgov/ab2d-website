@@ -19,11 +19,13 @@ permalink: /sitemap
                 {% for child in item.children %}
                 <li>
                     <a href="{{ child.url | relative_url }}">{{ child.name }}</a>
-                    {% for grandchild in child.children %}    
-                    <li>
-                        <a href="{{ grandchild.url | relative_url }}">{{ grandchild.name }}</a>
-                    </li>
-                    {% endfor %}
+                    <ul>
+                        {% for grandchild in child.children %}    
+                        <li>
+                            <a href="{{ grandchild.url | relative_url }}">{{ grandchild.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </li>
                 {% endfor %}
             {% endfor %}
