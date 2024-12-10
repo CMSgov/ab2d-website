@@ -17,8 +17,18 @@
     - name: How to Access Production Claims Data
       url: /access-production-claims-data
 
-    - name: HTTP Query Parameters V2
+    - name: HTTP Query Parameters - V2
       url: /query-parameters-v2
+
+- name: AB2D Data
+  url: /ab2d-data
+  children:
+
+  - name: Claims Data Details
+    url: /claims-data-details
+
+  - name: How to Filter Claims Data - V2
+    url: /filter-claims-data-v2
 
 - name: GitHub repo
   url: https://github.com/CMSgov/ab2d

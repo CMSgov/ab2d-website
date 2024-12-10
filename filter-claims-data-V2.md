@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: api-docs
 title:  "How to Filter Claims Data – V2"
 permalink: /filter-claims-data-v2
 in-page-nav: true
