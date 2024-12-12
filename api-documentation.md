@@ -9,29 +9,28 @@ in-page-nav: true
 
 The AB2D API uses [Fast Healthcare Interoperability (FHIR)](https://www.hl7.org/fhir/overview.html) resources to share enrollees’ Medicare Parts A and B claims data. Only active, stand-alone Prescription Drug Plan (PDP) sponsors are eligible to use AB2D. You will need a public, static IP address and a client software, like [curl](http://ab2d.cms.gov/setup-instructions), to access the API.
 
-<div class="margin-top-4 margin-bottom-4 border-2px border-base-lighter padding-top-4 padding-left-4 padding-right-4 radius-lg">
-  <h2>Getting started</h2>
-    <ol class="usa-process-list margin-top-1">
-      <li class="usa-process-list__item">
-        <p class="usa-process-list__heading">Learn about AB2D</p>
-        <p>
-          Explore the <a href="{{ '/api-documentation#what-s-the-difference-between-the-sandbox-and-production-environments' | relative_url }}">documentation</a>, <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">Data Dictionary</a>, and <a href="{{ '/ab2d-data#sample-files' | relative_url }}">sample files</a>.
-        </p>
-      </li>
-      <li class="usa-process-list__item">
-        <p class="usa-process-list__heading">Use the sandbox</p>
-        <p>
-          Anyone can try out AB2D in the <a href="{{ '/access-test-claims-data' | relative_url }}">sandbox</a>, a test environment that allows you to practice using the API and export sample data. 
-        </p>
-      </li>
-      <li class="usa-process-list__item">
-        <p class="usa-process-list__heading">Get production access</p>
-        <p>
-          PDP sponsors must have <a href="{{ '/access-production-claims-data' | relative_url }}">production access</a> to access their enrollees’ claims data. Attestation is the first step and it only takes a few minutes to complete.
-        </p>
-      </li>
-    </ol>
-</div>
+## Getting started
+
+<ol class="usa-process-list margin-top-1">
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Learn about AB2D</p>
+    <p>
+      Explore the <a href="{{ '/api-documentation#what-s-the-difference-between-the-sandbox-and-production-environments' | relative_url }}">documentation</a>, <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">Data Dictionary</a>, and <a href="{{ '/ab2d-data#sample-files' | relative_url }}">sample files</a>.
+    </p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Use the sandbox</p>
+    <p>
+      Anyone can try out AB2D in the <a href="{{ '/access-test-claims-data' | relative_url }}">sandbox</a>, a test environment that allows you to practice using the API and export sample data. 
+    </p>
+  </li>
+  <li class="usa-process-list__item">
+    <p class="usa-process-list__heading">Get production access</p>
+    <p>
+      PDP sponsors must have <a href="{{ '/access-production-claims-data' | relative_url }}">production access</a> to access their enrollees’ claims data. Attestation is the first step and it only takes a few minutes to complete.
+    </p>
+  </li>
+</ol>
 
 ### What’s the difference between the sandbox and production environments?
 
@@ -247,15 +246,3 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
     </p>
   </div>
 </div>
-
-## Subpages
-
-<ul>
-  {% for item in site.data.api-docs-nav %}
-    {% for child in item.children %}
-    <li>
-      <a href="{{ child.url | relative_url }}">{{ child.name }}</a>
-    </li>
-    {% endfor %}
-  {% endfor %}
-</ul>
