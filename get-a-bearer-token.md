@@ -308,7 +308,7 @@ Once you get a bearer token, you can access either test or production claims dat
 
 ## Troubleshooting
 
-Visit our [troubleshooting guide]({{ '/user-guide' | relative_url }}#troubleshooting-guide-2) to explore HTTP response codes and frequently asked questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
+Visit our [troubleshooting guide]({{ '/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2) to explore HTTP response codes and frequently asked questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
 
 When contacting our team, please include the following information:
 - Your operating system

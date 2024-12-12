@@ -2,9 +2,6 @@
   url: /api-documentation
   children:
 
-    - name: AB2D User Guide
-      url: /user-guide
-
     - name: How to Get a Bearer Token
       url: /get-a-bearer-token
       children:
@@ -20,6 +17,9 @@
     - name: HTTP Query Parameters - V2
       url: /query-parameters-v2
 
+    - name: Troubleshooting Guide
+      url: /troubleshooting-guide
+      
 - name: AB2D Data
   url: /ab2d-data
   children:

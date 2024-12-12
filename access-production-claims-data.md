@@ -29,7 +29,7 @@ Accessing production claims data is almost identical to [retrieving test data in
 
 ## Instructions
 
-During onboarding, you will have sent the AB2D team your public, static IP address(es). [How to verify your system can connect to the API]({{ '/user-guide' | relative_url }}#frequently-asked-questions-2). 
+During onboarding, you will have sent the AB2D team your public, static IP address(es). [How to verify your system can connect to the API]({{ '/troubleshooting-guide' | relative_url }}#frequently-asked-questions-2). 
 
 AB2D’s production and sandbox environments use the same workflow, endpoints, parameters, and resource type. 
 
@@ -370,7 +370,7 @@ Incremental exports of data, ideally at a bi-weekly frequency, reduce data dupli
 
 ## Troubleshooting
 
-Review our [troubleshooting guide]({{ '/user-guide' | relative_url }}#troubleshooting-guide-2). If you need additional assistance, email the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
+Review our [troubleshooting guide]({{ '/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2). If you need additional assistance, email the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
 
 When contacting our team, please include the following information: 
 
