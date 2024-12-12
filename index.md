@@ -10,13 +10,13 @@ hero-paragraph: >
   (CMS), AB2D provides Parts A and B claims data for a holistic view into
   patients' health.
 hero-button-url: "/api-documentation"
-hero-button-text: "Getting started for developers"
+hero-button-text: "Get started"
 hero-button-2-url: "https://github.com/CMSgov/ab2d"
 hero-button-2-text: "Code Repo"
 
 ---
 
-## Your enrollees’ health insights in action
+## Use cases for the AB2D API
 
 <ul class="usa-card-group flex-justify-center padding-y-4">
   {% include card.html
@@ -63,7 +63,7 @@ hero-button-2-text: "Code Repo"
   </div>
   <div class="tablet:grid-col" >
     <h2>Using the data</h2>
-    <p>AB2D is an Application Programming Interface using <a href="https://www.hl7.org/fhir/overview.html">Bulk Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
+    <p>AB2D is an Application Programming Interface using <a href="https://www.hl7.org/fhir/overview.html">Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
     <ul>
       <li>enrollee identifiers</li>
       <li>diagnosis codes</li>

@@ -45,7 +45,7 @@ If it takes more than 30 hours to retrieve and download the data, the request wi
 
 ### Format
 
-The files will be in NDJSON format, where each line is a Medicare claim written in JSON. The file naming standard is to use a contract identifier and then a number indicating where it falls in the series of files (e.g., Z123456_0001.ndjson).
+The files will be in NDJSON format, where each line is a Medicare claim written in JSON. The file naming standard is to use a contract identifier and then a number indicating where it falls in the series of files (e.g., Z123456_0001.ndjson). Data files are often large, so make sure you have adequate storage and a database to process the claims received. 
 
 ## Sample client scripts
 

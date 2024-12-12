@@ -23,7 +23,7 @@ permalink: /support
 
 {% capture a1AccordionContent %}
 <p>
-Active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are eligible to use the AB2D API. This excludes PACE and MAPD.
+Only active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are eligible to use the AB2D API. This excludes PACE and MAPD. PDP sponsors, also known as Part D sponsors, are private insurers that provide prescription drug benefits to Medicare enrollees. 
 </p>
 {% endcapture %}
 
