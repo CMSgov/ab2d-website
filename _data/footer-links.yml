@@ -1,7 +1,5 @@
 - heading: Getting Started
   links:
-    - text: User guide
-      url: /user-guide
 
     - text: Access test claims data
       url: /access-test-claims-data

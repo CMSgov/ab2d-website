@@ -101,7 +101,7 @@ In this usage model, an organization only pulls the last 2 weeks of claims data 
 
 ### Example export workflow for parameters
 
-The _since parameter can be used while starting an export job. Visit the [User Guide]({{ '/user-guide' | relative_url }}) to learn more about the export workflow for the AB2D API. 
+The _since parameter can be used while starting an export job. Visit the [Troubleshooting Guide]({{ '/troubleshooting-guide' | relative_url }}) to learn more about the export workflow for the AB2D API. 
 Review both unencoded and percent-encoded examples of the _since parameter. Note that ISO8601 dates include characters that can’t appear in URLs. 
 [Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Only the encoded versions will work, but the unencoded examples will show how the URL is formed before encoding.
 

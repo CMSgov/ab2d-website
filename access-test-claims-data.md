@@ -245,7 +245,7 @@ These instructions walk you through how to authorize your bearer token, request 
 
 ## Troubleshooting
 
-Visit our [troubleshooting guide]({{ '/user-guide' | relative_url }}#troubleshooting-guide-2) for guidance on HTTP response codes and frequently asked questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
+Visit our [troubleshooting guide]({{ '/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2) for guidance on HTTP response codes and frequently asked questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
 
 When contacting our team, please include the following information:
 
