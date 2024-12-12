@@ -629,7 +629,10 @@ landing-page: live
 
                 <p>Click on the <strong>Download</strong> menu in swagger. Select the <strong>GET
                         /api/v2/fhir/Job/{jobUuid}/file/{filename}</strong>
-                    endpoint to download a file. Click <strong>Try it out</strong>. Enter the Job ID of the job you
+                    endpoint to download a file. You can request compressed data files and increase your download 
+                    speed by including the optional “Accept-Encoding: gzip” header in your command.</p>
+                    
+                <p> Click <strong>Try it out</strong>. Enter the Job ID of the job you
                     created and the file name returned in the status, then press the <strong>Execute</strong> big blue bar.</p>
 
                 <img src="./assets/img/sandbox/swagger-13-v2.png" alt="swagger download">
