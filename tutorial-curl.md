@@ -459,7 +459,7 @@ opening ubuntu or some other terminal that supports curl and jq. See [Windows 10
        FILE=Z0000_0001.ndjson
        ```
 
-    b. Download the Parts A & B bulk claims data by entering the following at the terminal prompt. You can request compressed data files and increase your download speed by including the optional “Accept-Encoding: gzip” header in your command.  
+    b. Download the Parts A & B bulk claims data by entering the following at the terminal prompt. You can request compressed data files and speed up your download times by including the optional “Accept-Encoding: gzip” header in your command.  
 
        ```
        curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB}/file/${FILE}" \
