@@ -245,7 +245,7 @@ The token is valid for 1 hour. If it expires, repeat the process for a new token
 
 ## How to create a credential file
 
-Once you finish onboarding, you can either create a Base64-encoded clientID:password manually from your production credentials or use the file the AB2D team sent for convenience. 
+Once you obtain [production access]({{ '/production-access' | relative_url }}), you can either create a Base64-encoded clientID:password manually from your production credentials or use the file the AB2D team sent for convenience. 
 
 In this example, we use “Z123456” as the contract number, “abcd” as the client ID, and “badpassword” as the password. When encoded, the example client ID and password would look like “YWJjZDpiYWRwYXNzd29yZA==.” Your credentials will likely be a little longer, but this gives you an idea of what the value looks like.
 
