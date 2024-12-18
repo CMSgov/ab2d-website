@@ -1,11 +1,13 @@
 ---
 layout: api-docs
-title:  "Troubleshooting guide"
+title:  "Troubleshooting Guide"
 permalink: /troubleshooting-guide
 in-page-nav: true
 ---
 
 # {{ page.title }}
+
+The troubleshooting guide provides technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API. For further assistance, visit [Support]({{ '/support' | realtive_url }}). 
 
 ## HTTP response codes
 
@@ -90,7 +92,7 @@ Unable to download bulk data file
 
 {% capture a6AccordionContent %}
 <p>
-Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during onboarding. 
+Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during [production access]({{ '/production-access' | realtive_url }}) . 
 </p>
 <p>
 If the system is correct, check with your IT team to make sure you have a static IP address. If your IP address isn’t static, it may have changed. You must have a static IP address to use the API. 

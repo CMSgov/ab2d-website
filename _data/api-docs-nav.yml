@@ -8,8 +8,8 @@
         - name: Setup Instructions
           url: /setup-instructions
 
-    - name: How to Access Test Claims Data
-      url: /access-test-claims-data
+    - name: How to Access Sandbox Data
+      url: /access-sandbox-data
 
     - name: How to Access Production Claims Data
       url: /access-production-claims-data
