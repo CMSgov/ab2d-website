@@ -243,7 +243,7 @@ These instructions walk you through how to authorize your bearer token, request 
 3. Enter the job ID (jobUuid) and file name from step III. 
 4. Select *Execute*. If the download is successful, you’ll receive a 200 response code and a link to download the files. 
 5. Select *Download file* (under *Response body*). The file will be in [NDJSON](https://github.com/ndjson/ndjson-spec), where each line is a [JSON](https://www.json.org/json-en.html) object. You may need a text editor like [JSON viewer](https://jsonlint.com/) to read the file. 
-6. Send the AB2D team the job ID by following the instructions in your onboarding email. Note that job IDs expire after 72 hours.
+6. If you are obtaining [production access]({{ '/production-access' | relative_url }}), send the AB2D team the job ID as instructed. Note that job IDs expire after 72 hours.
 
 ## Troubleshooting
 
