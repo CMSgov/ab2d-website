@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You can use a variety of tools to access the sandbox, including [curl]({{ '/setup-instructions' | relative_url }}). After retrieving sandbox data, follow the remaining steps to obtain [production access]({{ '/production-access' | relative_url }}).
+The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. After retrieving sandbox data, follow the remaining steps to obtain [production access]({{ '/production-access' | relative_url }}).
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
