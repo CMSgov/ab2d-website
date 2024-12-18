@@ -1,8 +1,8 @@
 - heading: Getting Started
   links:
 
-    - text: Access test claims data
-      url: /access-test-claims-data
+    - text: Access sandbox data
+      url: /access-sandbox-data
 
     - text: Access production claims data
       url: /access-production-claims-data
