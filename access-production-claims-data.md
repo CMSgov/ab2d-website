@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-The production environment offers access to enrollee claims data, which contains Protected Health Information (PHI). In order to get enrollee claims data, Prescription Drug Plan (PDP) sponsors must have completed the steps for [production access]({{ '/production-access' | relative_url }}) beforehand. 
+The production environment offers access to enrollee claims data, which contains Protected Health Information (PHI). In order to get enrollee claims data, Prescription Drug Plan (PDP) sponsors must have completed the steps for [production access]({{ '/production-access' | relative_url }}) beforehand. You will need a public, static IP address and a client software, like curl, to access the API.
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
