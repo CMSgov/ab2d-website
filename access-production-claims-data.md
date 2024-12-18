@@ -7,12 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-The production environment offers access to enrollee claims data, which contains Protected Health Information (PHI). Prescription Drug Plan (PDP) sponsors must have obtained a bearer token, retrieved test data, and sent their public, static IP address(es) to AB2D to access production data. [Learn more about onboarding]({{ '/onboarding' | relative_url }}).
-
-**Follow the same steps you did in the sandbox environment**
-
-Accessing production claims data is almost identical to [retrieving test data in the sandbox]({{ '/access-test-claims-data' | relative_url }}), with some key differences. You’ll still need a bearer token, but you’ll use the production identity provider (idp.cms.gov) and credentials issued by the AB2D team. When requesting endpoints, use the production URL (api.ab2d.cms.gov).
-
+The production environment offers access to enrollee claims data, which contains Protected Health Information (PHI). You can use a variety of tools to access production data, including [curl]({{ '/setup-instructions' | relative_url }}). In order to access enrollee data, Prescription Drug Plan (PDP) sponsors must have completed the steps for [production access]({{ '/production-access' | relative_url }}) beforehand. 
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
@@ -29,9 +24,8 @@ Accessing production claims data is almost identical to [retrieving test data in
 
 ## Instructions
 
-During onboarding, you will have sent the AB2D team your public, static IP address(es). [How to verify your system can connect to the API]({{ '/troubleshooting-guide' | relative_url }}#frequently-asked-questions-2). 
-
-AB2D’s production and sandbox environments use the same workflow, endpoints, parameters, and resource type. 
+AB2D’s production and sandbox environments use the same workflow, endpoints, parameters, and resource type. You can [follow the same steps as you did in the sandbox]({{ '/access-sandbox-data' | relative_url }}) to retrieve production data. 
+You’ll still need to [get a bearer token]({{ '/get-a-bearer-token' | relative_url }}) to call the API, but you’ll use the production identity provider (idp.cms.gov) and credentials issued by the AB2D team instead. When requesting endpoints, use the production URL (api.ab2d.cms.gov). 
 
 - Start a job: `GET /api/v2/fhir/Patient/$export`
 - Retrieve metadata: `GET /api/v2/fhir/metadata`
