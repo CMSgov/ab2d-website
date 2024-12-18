@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-Bearer tokens, also known as JSON web tokens, are required to access the sandbox and production environments. Once you have a bearer token, follow the instructions to access either [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
+Bearer tokens, also known as JSON web tokens, authorize use of the AB2D endpoints and call the API. They are required to access the sandbox and production environments. Once you have a bearer token, follow the instructions to access either [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
 
 
 {% capture versionAlertHeading %}
