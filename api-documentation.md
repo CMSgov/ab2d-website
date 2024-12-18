@@ -21,7 +21,7 @@ The AB2D API uses [Fast Healthcare Interoperability (FHIR)](https://www.hl7.org/
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Use the sandbox</p>
     <p>
-      Anyone can try out AB2D in the <a href="{{ '/access-test-claims-data' | relative_url }}">sandbox</a>, a test environment that allows you to practice using the API and export sample data. 
+      The sandbox is a test environment that allows anyone to try the API and download sample claims data. Learn <a href="{{ '/get-a-bearer-token' | relative_url }}">how to get a bearer token</a> and <a href="{{ '/access-test-claims-data' | relative_url }}">access sandbox data</a>. 
     </p>
   </li>
   <li class="usa-process-list__item">
