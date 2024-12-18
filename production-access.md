@@ -1,17 +1,13 @@
 ---
 layout: default
-title:  "Onboarding"
-permalink: /onboarding
+title:  "Production Accesss"
+permalink: /production-access
 in-page-nav: true
 ---
 
 # {{ page.title }}
 
-Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data, but anyone can use the sandbox environment to try the API and get test claims data. 
-
-<a href="{{ '/access-test-claims-data' | relative_url }}" class="usa-button margin-bottom-3">Visit the sandbox</a>
-
-## Get production access
+Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data in the production environment. Before accessing production claims data, follow the steps listed in [API Documentation]({{ '/api-documentation' | relative_url }}) to learn about the API and get started.
 
 <ol class="usa-process-list">
   <li class="usa-process-list__item">
@@ -76,7 +72,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access produc
         </h4>
         <div id="m-a4" class="usa-accordion__content usa-prose">
           <p>
-            Once an organization attests, it must follow the remaining steps in the onboarding process. This includes choosing a technical point of contact, testing synthetic data in the sandbox, and receiving production credentials. Once these steps are complete, the organization will have access to claims data starting from the attestation date. Claims data previous to that date will not be available. 
+            Once an organization attests, it must complete all the remaining steps for production access. This includes choosing a technical point of contact, testing synthetic data in the sandbox, and receiving production credentials. Once these steps are complete, the organization will have access to claims data starting from the attestation date. Claims data previous to that date will not be available. 
           </p>
         </div>
       </div>
@@ -95,11 +91,11 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access produc
     </ul>
   </li>
   <li class="usa-process-list__item">
-    <h3 class="usa-process-list__heading margin-bottom-2">Retrieve test claims data</h3>
+    <h3 class="usa-process-list__heading margin-bottom-2">Retrieve sandbox data</h3>
     <span class="usa-tag">Completed by AB2D Data Ops Specialist</span>
     <h4>Verify test data retrieval</h4>
       <p>
-        The ADOS will receive an email with instructions on next steps. They must send the AB2D team the job ID from a successful data export in the sandbox. The sandbox is a test environment that allows anyone to try the API and retrieve synthetic claims data. Learn <a href="{{ '/get-a-bearer-token' | relative_url }}">how to get a bearer token</a> and <a href="{{ '/access-test-claims-data' | relative_url }}">access test claims data</a>.
+        The ADOS will receive an email with instructions on next steps. They must send the AB2D team the job ID from a successful data export in the sandbox. The sandbox is a test environment that allows anyone to try the API and retrieve synthetic claims data. Learn <a href="{{ '/get-a-bearer-token' | relative_url }}">how to get a bearer token</a> and <a href="{{ '/access-sandbox-data' | relative_url }}">access sandbox data</a>.
       </p>
     <h4>Provide your IP addresses</h4>
       <p>
