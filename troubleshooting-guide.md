@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-The troubleshooting guide provides technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API. You can also view frequently asked questions on the [Support]({{ '/support' | realtive_url }}) page or contact the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov). 
+The troubleshooting guide provides technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API. For further assistance, visit [Support]({{ '/support' | realtive_url }}). 
 
 ## HTTP response codes
 
