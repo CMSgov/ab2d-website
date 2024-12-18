@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data in the production environment. Before accessing production claims data, follow the steps listed in [API Documentation]({{ '/api-documentation' | relative_url }}) to learn about the API and get started.
+Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data in the production environment. Before accessing production claims data, make sure you've followed the steps listed in [API Documentation]({{ '/api-documentation' | relative_url }}).
 
 <ol class="usa-process-list">
   <li class="usa-process-list__item">
