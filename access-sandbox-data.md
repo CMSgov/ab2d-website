@@ -1,15 +1,13 @@
 ---
 layout: api-docs
-title:  "How to Access Test Claims Data"
-permalink: /access-test-claims-data
+title:  "How to Access Sandbox Data"
+permalink: /access-sandbox-data
 in-page-nav: true
 ---
 
 # {{ page.title }}
 
-The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to test the API. First, you need to [get a bearer token]({{ '/get-a-bearer-token' | relative_url }}) with AB2D’s test credentials to access the sandbox. Then you can get test claims data by using a command line tool like curl or or writing your own client. 
-
-Accessing test data in the sandbox is a required step to receive production credentials. You’ll need to provide the AB2D team with the job ID from a successful run in the sandbox. [Learn more about onboarding]({{ '/onboarding' | relative_url }}).
+The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You can use a variety of tools to access the sandbox, including [curl]({{ '/setup-instructions' | relative_url }}). After retrieving sandbox data, follow the remaining steps to obtain [production access]({{ '/production-access' | relative_url }}).
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
@@ -24,12 +22,16 @@ Accessing test data in the sandbox is a required step to receive production cred
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
+## Get a bearer token 
+
+You need to get a bearer token in order to access the sandbox environment. Bearer tokens call the API and authorize use of the AB2D endpoints.  [Learn how to get a bearer token]({{ '/get-a-bearer-token' | relative_url }}). 
+
 ## API endpoints 
 
-AB2D endpoints are used to request test claims data and API information. These endpoints are the same whether you’re in the sandbox or production environment. 
+AB2D endpoints are used to request sandbox data and API information. These endpoints are the same whether you’re in the sandbox or production environment. 
 
 ### Export
-Create a job to request test claims data. You should receive a response with the job ID (jobUuid). 
+Create a job to request sandbox data. You should receive a response with the job ID (jobUuid). 
 
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/Patient/$export
@@ -206,7 +208,7 @@ The command `echo $RESP | sed 1q | jq` will extract the first JSON object and pr
 
 ## Swagger instructions 
 
-These instructions walk you through how to authorize your bearer token, request test claims data, check the job status, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html). 
+These instructions walk you through how to authorize your bearer token, request sandbox data, check the job status, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html). 
 
 ### I. Authorize your bearer token
 
