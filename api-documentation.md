@@ -27,7 +27,7 @@ The AB2D API uses [Fast Healthcare Interoperability (FHIR)](https://www.hl7.org/
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Get production access</p>
     <p>
-      PDP sponsors must have <a href="{{ '/access-production-claims-data' | relative_url }}">production access</a> to access their enrollees’ claims data. Attestation is the first step and it only takes a few minutes to complete.
+      PDP sponsors must have <a href="{{ '/production-access' | relative_url }}">production access</a> to access their enrollees’ claims data. Attestation is the first step and it only takes a few minutes to complete.
     </p>
   </li>
 </ol>
@@ -45,7 +45,7 @@ The AB2D API uses [Fast Healthcare Interoperability (FHIR)](https://www.hl7.org/
   <tbody>
     <tr>
       <td>Available to everyone</td>
-      <td>Must complete <a href="{{ '/onboarding' | relative_url }}">onboarding</a> to access</td>
+      <td>Must have completed the steps for <a href="{{ '/production-access' | relative_url }}">production access</a></td>
     </tr>
     <tr>
       <td>Contains synthetic claims data</td>
@@ -56,7 +56,7 @@ The AB2D API uses [Fast Healthcare Interoperability (FHIR)](https://www.hl7.org/
 
 ### The sandbox environment
 
-The sandbox (sandbox.ab2d.cms.gov) is a public environment available to anyone who wants to learn how the API works. AB2D provides you with sandbox credentials for access to test data. You’ll use the sandbox identity provider (test.idm.idp.cms.gov) for this.
+The sandbox (sandbox.ab2d.cms.gov) is a public environment available to anyone who wants to learn how the API works. AB2D provides you with test credentials for access to sandbox data. You’ll use the sandbox identity provider (test.idm.idp.cms.gov) for this.
 
 ### The production environment 
 
