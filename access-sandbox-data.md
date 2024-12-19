@@ -1,15 +1,13 @@
 ---
 layout: api-docs
-title:  "How to Access Test Claims Data"
-permalink: /access-test-claims-data
+title:  "How to Access Sandbox Data"
+permalink: /access-sandbox-data
 in-page-nav: true
 ---
 
 # {{ page.title }}
 
-The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to test the API. First, you need to [get a bearer token]({{ '/get-a-bearer-token' | relative_url }}) with AB2D’s test credentials to access the sandbox. Then you can get test claims data by using a command line tool like curl or or writing your own client. 
-
-Accessing test data in the sandbox is a required step to receive production credentials. You’ll need to provide the AB2D team with the job ID from a successful run in the sandbox. [Learn more about onboarding]({{ '/onboarding' | relative_url }}).
+The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need to [get a bearer token]({{ '/get-a-bearer-token' | relative_url }}) to access the sandbox. Bearer tokens call the API and authorize use of the AB2D endpoints. 
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
@@ -26,10 +24,10 @@ Accessing test data in the sandbox is a required step to receive production cred
 
 ## API endpoints 
 
-AB2D endpoints are used to request test claims data and API information. These endpoints are the same whether you’re in the sandbox or production environment. 
+AB2D endpoints are used to request sandbox data and API information. These endpoints are the same whether you’re in the sandbox or production environment. 
 
 ### Export
-Create a job to request test claims data. You should receive a response with the job ID (jobUuid). 
+Create a job to request sandbox data. You should receive a response with the job ID (jobUuid). 
 
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/Patient/$export
@@ -198,6 +196,8 @@ Download the exported data using the job ID and file name retrieved from the pre
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
+After retrieving sandbox data, follow the remaining steps to obtain [production access]({{ '/production-access' | relative_url }}).
+
 #### Managing file size
 
 The data for 100 enrollees is over 25MB. You can enter `echo ${#RESP4}` to check how many bytes a file is. This is too big for most text editors. Since the data is in NDJSON format, it consists of JSON objects separated by newlines. 
@@ -206,7 +206,7 @@ The command `echo $RESP | sed 1q | jq` will extract the first JSON object and pr
 
 ## Swagger instructions 
 
-These instructions walk you through how to authorize your bearer token, request test claims data, check the job status, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html). 
+These instructions walk you through how to authorize your [bearer token]({{ '/get-a-bearer-token' | relative_url }}), request sandbox data, check the job status, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html). 
 
 ### I. Authorize your bearer token
 
@@ -241,7 +241,7 @@ These instructions walk you through how to authorize your bearer token, request 
 3. Enter the job ID (jobUuid) and file name from step III. 
 4. Select *Execute*. If the download is successful, you’ll receive a 200 response code and a link to download the files. 
 5. Select *Download file* (under *Response body*). The file will be in [NDJSON](https://github.com/ndjson/ndjson-spec), where each line is a [JSON](https://www.json.org/json-en.html) object. You may need a text editor like [JSON viewer](https://jsonlint.com/) to read the file. 
-6. Send the AB2D team the job ID by following the instructions in your onboarding email. Note that job IDs expire after 72 hours.
+6. If you are obtaining [production access]({{ '/production-access' | relative_url }}), send the AB2D team the job ID as instructed. Note that job IDs expire after 72 hours.
 
 ## Troubleshooting
 

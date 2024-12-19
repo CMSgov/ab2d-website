@@ -9,7 +9,7 @@ in-page-nav: true
 
 [HTTP query parameters]({{ '/query-parameters-V2' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment. 
 
-Learn how to access [test data in the sandbox]({{ '/access-test-claims-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
+Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
@@ -24,7 +24,7 @@ Learn how to access [test data in the sandbox]({{ '/access-test-claims-data' | r
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
-## Example export workflow for parameters
+## The _since and _until parameters
 
 The [_since and _until parameters]({{ '/query-parameters-V2' | relative_url }}#the-since-and-until-parameters) filter for claims data last updated since or until a specified date. These can be used while starting a job to speed up download times and reduce duplication. Visit the <a href="{{ '/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a> to learn more about the export workflow for the AB2D API. 
 
