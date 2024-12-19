@@ -21,13 +21,13 @@ The AB2D API uses [Fast Healthcare Interoperability (FHIR)](https://www.hl7.org/
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Use the sandbox</p>
     <p>
-      The sandbox is a test environment that allows anyone to try the API and download sample claims data. Learn how to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-test-claims-data' | relative_url }}">access sandbox data</a>. 
+      The sandbox environment allows anyone to try the API and download test claims data. Learn how to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-test-claims-data' | relative_url }}">access the sandbox</a>.  
     </p>
   </li>
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Get production access</p>
     <p>
-      PDP sponsors must have <a href="{{ '/production-access' | relative_url }}">production access</a> to access their enrollees’ claims data. Attestation is the first step and it only takes a few minutes to complete.
+      PDP sponsors must have <a href="{{ '/production-access' | relative_url }}">production access</a> to access their enrollees’ claims data. 
     </p>
   </li>
 </ol>
