@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. After retrieving sandbox data, follow the remaining steps to obtain [production access]({{ '/production-access' | relative_url }}).
+The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need to [get a bearer token]({{ '/get-a-bearer-token' | relative_url }}) to access the sandbox. Bearer tokens call the API and authorize use of the AB2D endpoints. 
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
@@ -21,10 +21,6 @@ The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants 
     </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
-
-## Get a bearer token 
-
-You need to get a bearer token in order to access the sandbox environment. Bearer tokens call the API and authorize use of the AB2D endpoints.  [Learn how to get a bearer token]({{ '/get-a-bearer-token' | relative_url }}). 
 
 ## API endpoints 
 
@@ -200,6 +196,8 @@ Download the exported data using the job ID and file name retrieved from the pre
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
+After retrieving sandbox data, follow the remaining steps to obtain [production access]({{ '/production-access' | relative_url }}).
+
 #### Managing file size
 
 The data for 100 enrollees is over 25MB. You can enter `echo ${#RESP4}` to check how many bytes a file is. This is too big for most text editors. Since the data is in NDJSON format, it consists of JSON objects separated by newlines. 
@@ -208,7 +206,7 @@ The command `echo $RESP | sed 1q | jq` will extract the first JSON object and pr
 
 ## Swagger instructions 
 
-These instructions walk you through how to authorize your bearer token, request sandbox data, check the job status, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html). 
+These instructions walk you through how to authorize your [bearer token]({{ '/get-a-bearer-token' | relative_url }}), request sandbox data, check the job status, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html). 
 
 ### I. Authorize your bearer token
 
