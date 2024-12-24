@@ -56,12 +56,14 @@ https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/{filename}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
-Download the file using the job ID and file name. Some downloads may take longer depending on the file size. Files and job IDs are only available for 72 hours, after which they’ll expire and be removed. 
+Download the file using the job ID and file name. You can request compressed data files and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command.
 
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/Job/{jobUuid}/file/{filename}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
+
+Some downloads may take longer depending on the file size. Files and job IDs are only available for 72 hours, after which they’ll expire and be removed. 
 
 ### Cancellation
 
