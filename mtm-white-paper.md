@@ -1,6 +1,7 @@
 ---
 layout: default
-title:  "Using AB2D Medical Claims Data for Medicare Part D MTM Programs "
+title:  "Using AB2D Medical Claims Data for Medicare Part D MTM Programs"
+description:  "A whitepaper detailing using the AB2D to help PDP sponsors manage their Medicare Part D Medication Therapy Management (MTM) programs."
 permalink: /mtm-white-paper
 in-page-nav: true
 ---

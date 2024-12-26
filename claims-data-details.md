@@ -1,6 +1,7 @@
 ---
 layout: api-docs
 title:  "Claims Data Details"
+description:  "AB2D and its upstream data source generate and add fields to claims data in an effort to help make managing and providing those claims easier."
 permalink: /claims-data-details
 in-page-nav: true
 ---

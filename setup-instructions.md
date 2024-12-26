@@ -1,6 +1,7 @@
 ---
 layout: api-docs
 title:  "Setup Instructions"
+description:  "How to set up an environment to access the AB2D."
 permalink: /setup-instructions
 in-page-nav: true
 ---
