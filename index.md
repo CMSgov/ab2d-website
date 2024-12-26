@@ -73,14 +73,80 @@ hero-button-2-text: "Code Repo"
   </div>
 </div>
 
-<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4 flex-align-center">
-  <div class="tablet:grid-col tablet:order-2">
-    <img src="{{ '/assets/img/pharmacist.svg' | relative_url }}" alt="pharmacist illustration" />
+
+<div class="grid-row grid-gap margin-top-4">
+  <div class="tablet:grid-col">
+    <p class="margin-bottom-2 text-bold">
+      The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a> specifies that data may be used for:
+    </p>
+    <ul class="usa-icon-list">
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon">
+          {% include sprite.html icon="check_circle" class="text-green" %}
+        </div>
+        <div class="usa-icon-list__content">
+          Optimizing therapeutic outcomes through improved medication use
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon">
+          {% include sprite.html icon="check_circle" class="text-green" %}
+        </div>
+        <div class="usa-icon-list__content">
+          Improving care coordination
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon">
+          {% include sprite.html icon="check_circle" class="text-green" %}
+        </div>
+        <div class="usa-icon-list__content">
+          Other purposes [that qualify] as “fraud and abuse detection or compliance activities”
+        </div>
+      </li>
+    </ul>
+    <p>
+      <a href="{{ '/about' | relative_url }}" class="usa-button usa-button--unstyled"> Learn more about AB2D {% include sprite.html icon="arrow_forward" %}</a>
+    </p>
   </div>
-  <div class="tablet:grid-col tablet:order-1">
-    <h2>What are permitted uses of the data?</h2>
-    <p>AB2D allows PDP sponsors to improve therapeutic outcomes and care coordination, with limitations on how the data can be used to inform coverage determinations.</p>
-    <p><a href="{{ '/about' | relative_url }}">View permitted uses</a></p>
+
+  <div class="tablet:grid-col">
+    <p class="margin-bottom-2 text-bold">The following uses are not permitted:</p>
+    <ul class="usa-icon-list">
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon">
+          {% include sprite.html icon="cancel" class="text-red" %}
+        </div>
+        <div class="usa-icon-list__content">
+          Inform coverage determinations under Part D;
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon">
+          {% include sprite.html icon="cancel" class="text-red" %}
+        </div>
+        <div class="usa-icon-list__content">
+          Conduct retroactive reviews of medically accepted indication(s) determinations;
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon">
+          {% include sprite.html icon="cancel" class="text-red" %}
+        </div>
+        <div class="usa-icon-list__content">
+          Facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or
+        </div>
+      </li>
+      <li class="usa-icon-list__item">
+        <div class="usa-icon-list__icon">
+          {% include sprite.html icon="cancel" class="text-red" %}
+        </div>
+        <div class="usa-icon-list__content">
+          Inform marketing of benefits
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
+
 
