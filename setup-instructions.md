@@ -29,7 +29,7 @@ Warning: jq {version} is already installed and up-to-date
 {% include copy_snippet.md code=setupSnippet language="shell" %}
             </li>
         </ul>
-    <li>
+    </li>
     <li>
         Verify jq is installed by checking the version number:
 {% capture setupSnippet %}{% raw %}
