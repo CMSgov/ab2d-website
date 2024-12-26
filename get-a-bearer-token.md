@@ -12,7 +12,9 @@ Bearer tokens, also known as JSON web tokens, authorize use of the AB2D endpoint
 
 
 {% capture versionAlertHeading %}
+  <p class="usa-alert__heading text-bold">
     AB2D recommends using V2 of the API
+  </p>
 {% endcapture %}
 {% capture versionAlert %}
     <p>

@@ -13,7 +13,9 @@ in-page-nav: true
 Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
 
 {% capture versionAlertHeading %}
+  <p class="usa-alert__heading text-bold">
     AB2D recommends using V2 of the API
+  </p>
 {% endcapture %}
 {% capture versionAlert %}
     <p>

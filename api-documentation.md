@@ -183,7 +183,7 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
 ## Glossary 
 
 <div class="padding-top-4 usa-accordion usa-accordion--multiselectable" data-allow-multiple>
-  <h4 class="usa-accordion__heading">
+  <h3 class="usa-accordion__heading">
     <button
       type="button"
       class="usa-accordion__button"
@@ -192,13 +192,13 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
     >
     Application Programming Interface (API)
     </button>
-  </h4>
+  </h3>
   <div id="m-a1" class="usa-accordion__content usa-prose">
     <p>
       APIs allow software systems and applications to communicate with each other. APIs follow unique definitions and protocols. The AB2D API is publicly available.
     </p>
   </div>
-    <h4 class="usa-accordion__heading">
+    <h3 class="usa-accordion__heading">
     <button
       type="button"
       class="usa-accordion__button"
@@ -207,13 +207,13 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
     >
     Base64
     </button>
-  </h4>
+  </h3>
   <div id="m-a2" class="usa-accordion__content usa-prose">
     <p>
     A basic encoding that changes your token from a text format to a standard ASCII format that is easier for computers to interpret.
     </p>
   </div>
-    <h4 class="usa-accordion__heading">
+    <h3 class="usa-accordion__heading">
     <button
       type="button"
       class="usa-accordion__button"
@@ -222,13 +222,13 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
     >
     Identity Provider (IdP) and Okta
     </button>
-  </h4>
+  </h3>
   <div id="m-a3" class="usa-accordion__content usa-prose">
     <p>
     An <a href="https://www.okta.com/identity-101/why-your-company-needs-an-identity-provider/">IdP</a> is a service that stores, verifies, and manages user identities. AB2D uses a third-party IdP tool called <a href="https://support.okta.com/help/s/article/What-is-Okta?language=en_US">Okta</a>. PDP sponsors use their set of Okta credentials to get a bearer token and access the API.
     </p>
   </div>
-    <h4 class="usa-accordion__heading">
+    <h3 class="usa-accordion__heading">
     <button
       type="button"
       class="usa-accordion__button"
@@ -237,7 +237,7 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
     >
     Bearer token
     </button>
-  </h4>
+  </h3>
   <div id="m-a4" class="usa-accordion__content usa-prose">
     <p>
       Bearer tokens, also referred to as <a href="https://jwt.io/introduction/">JSON web tokens </a>, are used during the <a href="https://oauth.net/2/">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.

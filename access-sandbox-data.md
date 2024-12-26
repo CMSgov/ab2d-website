@@ -11,7 +11,9 @@ in-page-nav: true
 The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need a [bearer token]({{ '/get-a-bearer-token' | relative_url }}) to access the sandbox and authorize use of the AB2D endpoints. 
 
 {% capture versionAlertHeading %}
+  <p class="usa-alert__heading text-bold">
     AB2D recommends using V2 of the API
+  </p>
 {% endcapture %}
 {% capture versionAlert %}
     <p>
