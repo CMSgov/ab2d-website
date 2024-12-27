@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-Bearer tokens, also known as JSON web tokens, authorize use of the AB2D endpoints and call the API. They are required to access the sandbox and production environments. Once you have a bearer token, follow the instructions to access either [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
+Bearer tokens, also known as JSON web tokens, authorize use of the AB2D endpoints. You will need a bearer token to access the sandbox and production environments. Once you have a bearer token, follow the instructions to access either [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
 
 
 {% capture versionAlertHeading %}
@@ -27,7 +27,7 @@ Bearer tokens, also known as JSON web tokens, authorize use of the AB2D endpoint
 
 <ol>
     <li>
-        You can use a variety of tools to get a bearer token, including [curl]({{ '/setup-instructions' | relative_url }}). AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password. Your organization's credentials will be formatted as a Base64-encoded value (clientID:password). 
+        You can use a variety of tools to get a bearer token, including <a href="{{ '/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password. Your organization's credentials will be formatted as a Base64-encoded value (clientID:password). 
         <ul>
             <li><b>If you’re trying to access sandbox data</b>: Use 1 of the 4 client ID and password sets provided in the <a href="{{ '/get-a-bearer-token' | relative_url }}#sandbox-credentials">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idm.idp.cms.gov).</li>
             <li><b>If you’re trying to access production data</b>: Once you complete the steps for [production access]({{ '/production-access' | relative_url }}), the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idp.cms.gov). You can also <a href="{{ '/get-a-bearer-token' | relative_url }}#how-to-create-a-credential-file">create your own credential file</a> manually.</li>

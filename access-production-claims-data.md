@@ -117,7 +117,7 @@ This script will create a file named response.json in the directory. This will c
 
 ### IV. Download the files
 
-Once the job is complete, download the files from the same shell. You can request compressed data files and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command.
+Once the job is complete, download the files from the same shell. You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command.
 
 {% capture curlSnippet %}{% raw %}
 ./download-results.sh
@@ -178,7 +178,7 @@ $JOB_RESULTS to check the contents of the variable
 
 ### III. Download the files
 
-Download the files into your current directory. You can request compressed data files and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command. You can run the `dir` command to check if the download is successful:
+Download the files into your current directory. You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command. You can run the `dir` command to check if the download is successful:
 
 {% capture curlSnippet %}{% raw %}
 .\download-results.ps1
@@ -320,7 +320,7 @@ type %DIRECTORY%\response.json
 
 <ol>
     <li>
-        Download the files in the same shell used to prepare the environment variables. You can request compressed data files and speed up your download times by including the optional <code>Accept-Encoding: gzip</code> header in your command:
+        Download the files in the same shell used to prepare the environment variables. You can request compressed data files in gzip format and speed up your download times by including the optional <code>Accept-Encoding: gzip</code> header in your command:
         <ul>
             <li>Linux/Mac
 {% capture curlSnippet %}{% raw %}
