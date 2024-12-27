@@ -5,9 +5,9 @@
       <div class="usa-navbar">
         <div class="usa-logo">
           <em class="usa-logo__text">
-            <a href="{{ '/' | relative_url }}" title="AB2D"
-              ><img src="{{ '/assets/img/logo-horiz-dark.svg' | relative_url }}" alt="AB2D logo" /></a
-            >
+            <a href="{{ '/' | relative_url }}" title="AB2D">
+              <img src="{{ '/assets/img/logo-horiz-dark.svg' | relative_url }}" alt="AB2D logo" />
+            </a>
           </em>
         </div>
         <button type="button" class="usa-menu-btn">Menu</button>
@@ -18,13 +18,44 @@
         </button>
         <!--Accordions in the header need unique aria controls to determine child pages and therefore can't be defined in yml-->
         <ul class="usa-nav__primary usa-accordion">
+          <li class="usa-nav__primary-item margin-top-1">
+            <button
+              class="usa-accordion__button usa-nav__link {% if page.permalink == '/about' %}{{ 'usa-current' }}{% endif %}"
+              aria-expanded="false"
+              aria-controls="basic-nav-section-two"
+            >
+              <span>About</span>
+            </button>
+            <ul id="basic-nav-section-two" class="usa-nav__submenu">
+              <li class="usa-nav__submenu-item">
+                <a href="{{ '/about' | relative_url }}">
+                  <span>About AB2D</span>
+                </a>
+              </li>
+              <li class="usa-nav__submenu-item">
+                <a href="{{ '/use-cases' | relative_url }}">
+                  <span>Use cases</span>
+                </a>
+              </li>
+              <li class="usa-nav__submenu-item">
+                <a href="{{ '/annoucements' | relative_url }}">
+                  <span>Announcements</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!--API dcoumentation with mobile sub nav-->
+        <ul class="usa-nav__primary usa-accordion">
           <li class="usa-nav__primary-item">
             <a
               href="{{ '/api-documentation' | relative_url }}"
+              type="button"
               class="usa-nav-link {% if page.permalink == '/api-documentation' %}{{ 'usa-current' }}{% endif %}"
               aria-controls="basic-nav-section-one"
-              ><span>API Documentation</span></a
             >
+              <span>API Documentation</span>
+            </a>
               <ul id="basic-nav-section-one" class="usa-nav__submenu desktop:display-none">
                 {% for item in site.data.api-docs-nav %}
                   {% for child in item.children %}
@@ -64,7 +95,7 @@
                 </li>
               </ul>
           </li>
-          <!--Other main nav items with no child pages can be determined by .yml files-->
+          <!--Other main nav items with no child pages can be defined in .yml files-->
           {% for item in site.data.nav-primary %}
           <li class="usa-nav__primary-item">
             <a
@@ -75,7 +106,7 @@
           </li>
           {% endfor %}
         </ul>
-        <section class="width-100">
+        <section class="width-100 padding-left-1">
           <a href="{{ '/api-documentation' | relative_url }}" class="usa-button"
             ><span>Get Started</span></a
           >
