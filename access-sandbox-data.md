@@ -7,7 +7,7 @@ in-page-nav: true
 
 # {{ page.title }}
 
-The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need to [get a bearer token]({{ '/get-a-bearer-token' | relative_url }}) to access the sandbox. Bearer tokens call the API and authorize use of the AB2D endpoints. 
+The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need a [bearer token]({{ '/get-a-bearer-token' | relative_url }}) to access the sandbox and authorize use of the AB2D endpoints. 
 
 {% capture versionAlertHeading %}
     AB2D recommends using V2 of the API
@@ -56,12 +56,14 @@ https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/{filename}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
-Download the file using the job ID and file name. Some downloads may take longer depending on the file size. Files and job IDs are only available for 72 hours, after which they’ll expire and be removed. 
+Download the file using the job ID and file name. You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command.
 
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/Job/{jobUuid}/file/{filename}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
+
+Some downloads may take longer depending on the file size. Files and job IDs are only available for 72 hours, after which they’ll expire and be removed. 
 
 ### Cancellation
 
@@ -187,11 +189,14 @@ Piping the response to jq pretty prints it for readability.
 
 ### 3. Download your files
 
-Download the exported data using the job ID and file name retrieved from the previous steps. This command downloads the exported data into the RESP4 variable.
+Download the exported data using the job ID and file name from the previous steps. This command downloads the data into the RESP4 variable. 
+
+You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command:  
 
 {% capture curlSnippet %}{% raw %}
 > RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB_ID}/file/${FILE}" \
   -H "Accept: application/fhir+ndjson" \
+  -H "Accept-Encoding: gzip" \
   -H "Authorization: Bearer ${TOKEN}")
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
@@ -238,7 +243,7 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 
 1. Select the *Download* command `/api/v2/fhir/Job/{jobUuid}/file/{filename}`
 2. With the *Download* section expanded, select *Try it out*.  
-3. Enter the job ID (jobUuid) and file name from step III. 
+3. Enter the job ID (jobUuid) and file name from step III. You can request compressed data files in gzip format and speed up your download times with the optional `Accept-Encoding: gzip` header.
 4. Select *Execute*. If the download is successful, you’ll receive a 200 response code and a link to download the files. 
 5. Select *Download file* (under *Response body*). The file will be in [NDJSON](https://github.com/ndjson/ndjson-spec), where each line is a [JSON](https://www.json.org/json-en.html) object. You may need a text editor like [JSON viewer](https://jsonlint.com/) to read the file. 
 6. If you are obtaining [production access]({{ '/production-access' | relative_url }}), send the AB2D team the job ID as instructed. Note that job IDs expire after 72 hours.
