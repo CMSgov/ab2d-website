@@ -73,8 +73,9 @@ hero-button-2-text: "Code Repo"
   </div>
 </div>
 
+## What are permitted uses of the data? 
 
-<div class="grid-row grid-gap margin-top-4">
+<div class="grid-row grid-gap margin-top-2">
   <div class="tablet:grid-col">
     <p class="margin-bottom-2 text-bold">
       The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a> specifies that data may be used for:
