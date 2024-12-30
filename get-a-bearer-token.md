@@ -1,6 +1,7 @@
 ---
 layout: api-docs
 title:  "How to Get a Bearer Token"
+description:  "How to get a Bearer Token for use with the AB2D API."
 permalink: /get-a-bearer-token
 in-page-nav: true
 ---

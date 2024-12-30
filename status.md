@@ -2,7 +2,7 @@
 layout: default
 title:  "System Status"
 permalink: /status
-description: This page gives an overview of the status of our systems.
+description: This page gives an overview of the status of the AB2D systems.
 ---
 
 <script>

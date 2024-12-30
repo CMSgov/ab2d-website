@@ -1,6 +1,7 @@
 ---
 layout: api-docs
 title:  "HTTP Query Parameters - V2"
+description: "The AB2D API offers a variety of parameters."
 permalink: /query-parameters-v2
 in-page-nav: true
 ---

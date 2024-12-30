@@ -1,6 +1,7 @@
 ---
 layout: api-docs
 title:  "Troubleshooting Guide"
+description:  "Technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API."
 permalink: /troubleshooting-guide
 in-page-nav: true
 ---

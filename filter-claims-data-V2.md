@@ -1,6 +1,7 @@
 ---
 layout: api-docs
 title:  "How to Filter Claims Data – V2"
+description:  "Guidance for using AB2D version 2, which implements the Bulk Data Access Implementation Guide V2.0.0."
 permalink: /filter-claims-data-v2
 in-page-nav: true
 ---

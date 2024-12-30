@@ -1,6 +1,7 @@
 ---
 layout: api-docs
 title:  "How to Access Sandbox Data"
+description:  "Instructions for how to access claims claims data in a sandbox environment."
 permalink: /access-sandbox-data
 in-page-nav: true
 ---

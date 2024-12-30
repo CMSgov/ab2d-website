@@ -1,6 +1,7 @@
 ---
 layout: api-docs
 title:  "How to Access Production Claims Data"
+description: "Instructions for how to access production claims data."
 permalink: /access-production-claims-data
 in-page-nav: true
 ---
