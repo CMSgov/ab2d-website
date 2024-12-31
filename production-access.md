@@ -94,11 +94,11 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access produc
   <li class="usa-process-list__item">
     <h2 class="usa-process-list__heading margin-bottom-2">Retrieve sandbox data</h2>
     <span class="usa-tag">Completed by AB2D Data Ops Specialist</span>
-    <h3>Verify sandbox data retrieval</h3>
+    <h3 class="font-sans-sm">Verify sandbox data retrieval</h3>
       <p>
         The ADOS will receive an email with instructions on next steps. They must send the AB2D team the job ID from a successful data export in the sandbox. The sandbox is a test environment that allows anyone to try the API and retrieve synthetic claims data. Learn <a href="{{ '/get-a-bearer-token' | relative_url }}">how to get a bearer token</a> and <a href="{{ '/access-sandbox-data' | relative_url }}">access sandbox data</a>.
       </p>
-    <h3>Provide your IP addresses</h3>
+    <h3 class="font-sans-sm">Provide your IP addresses</h3>
       <p>
         Your organization must provide the AB2D team with the public, static IP address(es) of every system that will use the API. These will be reviewed, approved, and allowlisted as an additional layer of security.  
       </p>
