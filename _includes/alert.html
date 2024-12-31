@@ -4,18 +4,17 @@
     usa-alert--{{ include.variant }}
     {% if include.slim %}usa-alert--slim{% endif %}
     {% if include.icon == false %}usa-alert--no-icon{% endif %}
-    {% if include.classNames %}{{ include.classNames }}{% endif %}
-  "
+    {% if include.classNames %}{{ include.classNames }}{% endif %}"
   {% if include.role %}role="{{ include.role }}"{% endif %}
 >
   <div class="usa-alert__body">
     {% if include.heading %}
-      <h4 class="usa-alert__heading">{{ include.heading }}</h4>
+      {{ include.heading }}
     {% endif %}
     {% if include.text %}
-      <p class="usa-alert__text">
+      <div class="usa-alert__text">
         {{ include.text }}
-      </p>
+      </div>
     {% endif %}
   </div>
 </div>

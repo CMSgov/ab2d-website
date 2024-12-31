@@ -77,10 +77,12 @@ Only active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are elig
 {% endcapture %}
 
 {% capture a5HeadingContent %}
-How can we get additional data elements beyond what’s listed in the <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a>?
+How can we get additional data elements beyond what’s listed in the final rule?
 {% endcapture %}
 
 {% capture a5AccordionContent %}
+<p>What is the <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank">final rule?</a></p>
+
 <p>
     AB2D evaluates the data elements provided to PDP sponsors based on how well they support the permitted uses. Any proposed changes would be established through rulemaking. If you have any feedback, please email <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
 </p>

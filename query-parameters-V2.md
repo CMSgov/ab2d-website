@@ -11,7 +11,9 @@ in-page-nav: true
 HTTP query parameters filter or specify the claims data returned during requests. The AB2D API offers a variety of parameters, which can differ depending on what version you’re using. Once you have a good understanding of parameters you can [use them to filter claims data]({{ '/filter-claims-data-v2' | relative_url }}).
 
 {% capture versionAlertHeading %}
+  <p class="usa-alert__heading text-bold">
     AB2D recommends using V2 of the API
+  </p>
 {% endcapture %}
 {% capture versionAlert %}
     <p>
