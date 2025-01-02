@@ -337,7 +337,7 @@ type %DIRECTORY%\response.json
 
 <ol>
     <li>
-        <p>Download the files in the same shell used to prepare the environment variables. You can request compressed data files in gzip format and speed up your download times by including the optional <code>Accept-Encoding: gzip</code> header in your command:</p>
+        <p>Download the files in the same shell used to prepare the environment variables. You can request compressed data files in gzip format and speed up your download times by including the optional <code class="inline-code">Accept-Encoding: gzip</code> header in your command:</p>
         <ul>
             <li>
                 <p>Linux/Mac</p>
