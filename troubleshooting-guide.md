@@ -87,8 +87,8 @@ Unable to download bulk data file
   Using the system that will access the API, open your browser and visit <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com/</a>. If you don’t have a browser query from your system’s command line:    
 </p>
 <ul>
-    <li>Linux/Mac: Open a terminal and run the command <code>curl -X GET checkip.amazonaws.com</code></li>
-    <li>Windows: Open a Powershell terminal and run the command <code>Invoke-RestMethod -Method GET checkip.amazonaws.com</code></li>
+    <li>Linux/Mac: Open a terminal and run the command <code class="inline-code">curl -X GET checkip.amazonaws.com</code></li>
+    <li>Windows: Open a Powershell terminal and run the command <code class="inline-code">Invoke-RestMethod -Method GET checkip.amazonaws.com</code></li>
 </ul>
 {% endcapture %}
 
@@ -109,14 +109,15 @@ If the system is correct, check with your IT team to make sure you have a static
     <li>On the command line of the system you want to use, run 1 of the following commands:</li>
         <ul>
         <li>
-          Linux/Mac: In a terminal, run <code>curl -X GET https://api.ab2d.cms.gov/health --verbose</code>
+          Linux/Mac: In a terminal, run <code class="inline-code">curl -X GET https://api.ab2d.cms.gov/health --verbose</code>
         </li>
         <li>
-          Windows: In a powershell terminal, run <code>Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
+          Windows: In a powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
         </li>
         </ul>
-        <li>In Postman, create a new GET request against the URL https://api.ab2d.cms.gov/health. If the response has an HTTP status of 200 then your IP address can connect.</li>
-        <li>Open a browser and visit https://api.ab2d.cms.gov/swagger-ui/index.html.</li>    <li>Open a browser and visit <code>https://api.ab2d.cms.gov/swagger-ui/index.html</code></li>
+        <li>In Postman, create a new GET request against the URL <code class="inline-code"><a href="https://api.ab2d.cms.gov/health">https://api.ab2d.cms.gov/health</a></code>. If the response has an HTTP status of 200 then your IP address can connect.</li>
+        <li>Open a browser and visit <code class="inline-code"><a href="https://api.ab2d.cms.gov/swagger-ui/index.html">https://api.ab2d.cms.gov/swagger-ui/index.html</a></code>.</li>    
+        <li>Open a browser and visit <code class="inline-code">https://api.ab2d.cms.gov/swagger-ui/index.html</code></li>
 </ol>
 {% endcapture %}
 
@@ -145,17 +146,17 @@ If the system is correct, check with your IT team to make sure you have a static
   </li>
     <ul>
       <li>
-        <strong>Linux/Mac:</strong> In a terminal, run <code>curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status --verbose</code>. Make sure to fill in {jobUuid} with the ID of the running job.
+        <strong>Linux/Mac:</strong> In a terminal, run <code class="inline-code">curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status --verbose</code>. Make sure to fill in {jobUuid} with the ID of the running job.
       </li>
       <li>
-        <strong>Windows:</strong> In a Powershell terminal, run <code>Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</code>. Make sure to fill in {jobUuid} with the ID of the running job.
+        <strong>Windows:</strong> In a Powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</code>. Make sure to fill in {jobUuid} with the ID of the running job.
       </li>
     </ul>
   <li>
-    In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status. Note the request parameter {jobUuid} must be set in Postman.
+    In Postman, create a new DELETE request against the URL <code class="inline-code"><a href="https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status">https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</a></code>. Note the request parameter {jobUuid} must be set in Postman.
   </li>
   <li>
-    In a browser, visit https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE and enter your job ID.
+    In a browser, visit <code class="inline-code"><a href="https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE">https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</a></code> and enter your job ID.
   </li>
 </ul>
 {% endcapture %}

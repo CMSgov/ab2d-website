@@ -301,3 +301,12 @@ main {
   .vm { color: #7f4707 } /* Name.Variable.Magic */
   .il { color: #7f4707 } /* Literal.Number.Integer.Long */
 }
+
+
+code.language-plaintext.highlighter-rouge, code.inline-code {
+  background-color: color('base-lightest');
+   padding-top: .125rem;
+   padding-bottom: .125rem;
+   padding-right: .5rem;
+   padding-left: .5rem;
+ }
