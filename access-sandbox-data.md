@@ -107,7 +107,7 @@ Start an export job of FHIR ExplanationOfBenefit (EOB) resources using the follo
   -H "Accept: application/fhir+json" \
   -H "Authorization: Bearer ${bearer_token}")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 RESP2 is set to the headers of the HTTP response (by using the -i option of curl).
 
@@ -134,7 +134,7 @@ x-frame-options: DENY
 {% capture curlSnippet %}{% raw %}
 > JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### 2. Check the job status
 
@@ -151,7 +151,7 @@ Request the job status and save the response into RESP3. If you receive a 200 HT
     echo "Status: " $STATUS
     }
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 When the job is complete, the response will contain URLs for the export files to be downloaded. This is an example response returned after executing `echo $RESP3 | jq`:
 
@@ -179,7 +179,7 @@ When the job is complete, the response will contain URLs for the export files to
   "error": []
 }
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="json" %}
 
 Piping the response to jq pretty prints it for readability.
 
@@ -188,7 +188,7 @@ Piping the response to jq pretty prints it for readability.
 {% capture curlSnippet %}{% raw %}
 > FILE=$(echo $RESP3 | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### 3. Download your files
 
@@ -202,7 +202,7 @@ You can request compressed data files in gzip format and speed up your download 
   -H "Accept-Encoding: gzip" \
   -H "Authorization: Bearer ${TOKEN}")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 After retrieving sandbox data, follow the remaining steps to obtain [production access]({{ '/production-access' | relative_url }}).
 

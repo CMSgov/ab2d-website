@@ -150,12 +150,15 @@ main {
 // Syntax highlighting (Pygments)
 .highlight {
   @include u-margin(0);
-  @include u-padding(1);
-  overflow-x: auto;
+  // @include u-padding(2);
 
   pre {
     @include u-margin(0);
-    @include u-padding(1);
+    @include u-padding-top(3);
+    @include u-padding-bottom(3);
+    @include u-padding-left(2);
+    @include u-padding-right(2);
+    overflow: auto;
   }
 
   // From PyData Sphinx
@@ -235,6 +238,10 @@ main {
   .vi { color: #a12236 } /* Name.Variable.Instance */
   .vm { color: #7f4707 } /* Name.Variable.Magic */
   .il { color: #7f4707 } /* Literal.Number.Integer.Long */
+}
+
+[data-canCopy="true"] .highlight pre{
+  @include u-padding-right(15);
 }
 
 
