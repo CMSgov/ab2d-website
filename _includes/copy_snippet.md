@@ -9,7 +9,10 @@
         <input type="text" id="code{{ nanosecond }}" value="{{ code | xml_escape }}" readonly />
       </label>
       <div class="position-absolute top-1 right-1 z-100">
-        <a class="usa-button usa-button--outline margin-0 bg-base-lightest hover:bg-base-lightest active:bg-base-lightest" href="javascript:void(0)" onclick="copyText{{ nanosecond }}()" id="copybutton{{ nanosecond }}">Copy</a>
+        <button 
+          class="usa-button usa-button--outline margin-0 bg-base-lightest hover:bg-base-lightest active:bg-base-lightest"
+          id="copybutton{{ nanosecond }}"
+        >Copy</button>
       </div>
     {% endif %}
     <div 
@@ -43,15 +46,18 @@
 
 {% if can_copy == true %}
 <script>
-function copyText{{ nanosecond }}(){
-  /* Get the text field */
-  var copyText = document.getElementById("code{{ nanosecond }}");
+(function (){
+  var copyButton = document.getElementById("copybutton{{ nanosecond }}");
+  copyButton.addEventListener('click', function(){
+    var copyText = document.getElementById("code{{ nanosecond }}");
 
-  /* Select the text field */
-  copyText.select();
+    if ('clipboard' in navigator) {
+      navigator.clipboard.writeText(copyText.value);
+    } else {
+      document.execCommand('copy', true, copyText.value);
+    }
 
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-}
+  })
+})()
 </script>
 {% endif %}
