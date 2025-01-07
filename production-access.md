@@ -23,7 +23,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access produc
       </p>
       <div class="padding-top-4 usa-accordion usa-accordion--multiselectable" data-allow-multiple>
         <h3 class="usa-accordion__heading">
-          <button type="button" class="usa-accordion__button" aria-expanded="true" aria-controls="m-a1">
+          <button type="button" class="usa-accordion__button" aria-expanded="false" aria-controls="m-a1">
             How do I complete attestation?
           </button>
         </h3>
