@@ -61,7 +61,7 @@ jobs:
       # Step 9: Deploy to S3
       - name: Deploy the site
         run: |
-          aws s3 sync --delete _site/ s3://website-ab2d-east-impl/uswds-redesign/
+          aws s3 sync _site/ s3://website-ab2d-east-impl/${{github.ref_name}}/
 
       # Step 10: Invalidate existing cache
       # - name: Invalidate Cloudfront cache
