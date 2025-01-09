@@ -54,7 +54,7 @@ jobs:
 
       # Step 8: Build Site
       - name: Build the site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --baseurl /${{github.ref_name}}
         env:
           JEKYLL_ENV: production
 
