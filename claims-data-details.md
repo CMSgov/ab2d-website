@@ -12,6 +12,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
 
 ## Important AB2D claims fields
 
+<div style="overflow-x: auto;">
   <table class="usa-table usa-table--stacked usa-table--borderless">
     <thead>
       <tr>
@@ -103,6 +104,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
       </tr>
     </tbody>
   </table>
+</div>
 
 ## The difference between a claim and a claim object
 
@@ -173,42 +175,44 @@ Notice 2 things:
   text="Note: Claim Version is not a field in the data and will not be reported to Prescription Drug Plan sponsors."
 %}
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim group ID</th>
-            <th scope="col">Last updated</th>
-            <th scope="col">Claim ID</th>
-            <th scope="col">Claim line ID</th>
-            <th scope="col">Version</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Group ID">99995</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Claim ID">321</td>
-            <td data-label="Claim Line ID">
-                <p>ABCD</p>
-                <p>DEFG</p>
-                <p>HIJK</p>
-            </td>
-            <td data-label="Version">Version 1</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group ID"></td>
-            <td data-label="Last Updated">02/01/2020</td>
-            <td data-label="Claim ID">798</td>
-            <td data-label="Claim Line ID">
-                <p>ABCD</p>
-                <p>DEFG</p>
-                <p>HIJK</p>
-                <p>LMNO</p>
-            </td>
-            <td data-label="Version">Version 2</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim group ID</th>
+              <th scope="col">Last updated</th>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Claim line ID</th>
+              <th scope="col">Version</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Group ID">99995</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Claim ID">321</td>
+              <td data-label="Claim Line ID">
+                  <p>ABCD</p>
+                  <p>DEFG</p>
+                  <p>HIJK</p>
+              </td>
+              <td data-label="Version">Version 1</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group ID"></td>
+              <td data-label="Last Updated">02/01/2020</td>
+              <td data-label="Claim ID">798</td>
+              <td data-label="Claim Line ID">
+                  <p>ABCD</p>
+                  <p>DEFG</p>
+                  <p>HIJK</p>
+                  <p>LMNO</p>
+              </td>
+              <td data-label="Version">Version 2</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 ## URI vs URL
 
@@ -303,24 +307,26 @@ For more information:
 
 Each claim contains patient identifiers necessary to map a claim to a specific patient. The primary identifier used to associate a claim with a patient is the Medicare Beneficiary Identifier (MBI). As part of each claim, AB2D reports all MBIs, known to the system, for a patient including the current MBI for a patient and historic MBIs used in the past for a patient.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Identifier name</th>
-            <th scope="col">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Identifier Name">Current MBI</td>
-            <td data-label="Description">The current Medicare Beneficiary Identifier (MBI) for a patient. Uniquely identifies a patient across CMS.</td>
-        </tr>
-        <tr>
-            <td data-label="Identifier Name">Historic MBI</td>
-            <td data-label="Description">An inactive Medicare Beneficiary Identifier (MBI) for a patient. Uniquely identifies a patient across CMS.</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Identifier name</th>
+              <th scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Identifier Name">Current MBI</td>
+              <td data-label="Description">The current Medicare Beneficiary Identifier (MBI) for a patient. Uniquely identifies a patient across CMS.</td>
+          </tr>
+          <tr>
+              <td data-label="Identifier Name">Historic MBI</td>
+              <td data-label="Description">An inactive Medicare Beneficiary Identifier (MBI) for a patient. Uniquely identifies a patient across CMS.</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 ### MBI extension structure
 
@@ -441,67 +447,71 @@ To detect updated claims the following fields on each claim must be tracked:
 
 In the example, a single claim will be tracked through several evolutions:
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim Update</th>
-            <th scope="col">Details</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Update">Update 1</td>
-            <td data-label="Details">Claim 99995 is received by AB2D on January 1, 2020.</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Update">Update 2</td>
-            <td data-label="Details">An update to Claim 99995 (adding another line) is received by AB2D on February 10, 2020.</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Update">Update 3</td>
-            <td data-label="Details">An update to Claim 99995 (removing the line) is received by AB2D on March 20, 2020.</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim Update</th>
+              <th scope="col">Details</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Update">Update 1</td>
+              <td data-label="Details">Claim 99995 is received by AB2D on January 1, 2020.</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Update">Update 2</td>
+              <td data-label="Details">An update to Claim 99995 (adding another line) is received by AB2D on February 10, 2020.</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Update">Update 3</td>
+              <td data-label="Details">An update to Claim 99995 (removing the line) is received by AB2D on March 20, 2020.</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 In the example, 4 exports are run using the [_since parameter]({{ '/query-parameters-v2' | relative_url }}) to limit duplicate data. The 4 exports are described below.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Export</th>
-            <th scope="col">Run on</th>
-            <th scope="col">Since</th>
-            <th scope="col">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Export">Export 1</td>
-            <td data-label="Run On">January 31, 2020</td>
-            <td data-label="Since">December 31, 2019</td>
-            <td data-label="Description">Provide all claims information and updates received in January</td>
-        </tr>
-        <tr>
-            <td data-label="Export">Export 2</td>
-            <td data-label="Run On">February 28, 2020</td>
-            <td data-label="Since">January 31, 2020</td>
-            <td data-label="Description">Provide all claims information and updates received in February</td>
-        </tr>
-        <tr>
-            <td data-label="Export">Export 3a</td>
-            <td data-label="Run On">March 15, 2020</td>
-            <td data-label="Since">February 14, 2020</td>
-            <td data-label="Description">Provide all claims information and updates received after the first half of February</td>
-        </tr>
-        <tr>
-            <td data-label="Export">Export 3b</td>
-            <td data-label="Run On">March 31, 2020</td>
-            <td data-label="Since">February 28, 2020</td>
-            <td data-label="Description">Provide all claims information and updates received in March</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Export</th>
+              <th scope="col">Run on</th>
+              <th scope="col">Since</th>
+              <th scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Export">Export 1</td>
+              <td data-label="Run On">January 31, 2020</td>
+              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Description">Provide all claims information and updates received in January</td>
+          </tr>
+          <tr>
+              <td data-label="Export">Export 2</td>
+              <td data-label="Run On">February 28, 2020</td>
+              <td data-label="Since">January 31, 2020</td>
+              <td data-label="Description">Provide all claims information and updates received in February</td>
+          </tr>
+          <tr>
+              <td data-label="Export">Export 3a</td>
+              <td data-label="Run On">March 15, 2020</td>
+              <td data-label="Since">February 14, 2020</td>
+              <td data-label="Description">Provide all claims information and updates received after the first half of February</td>
+          </tr>
+          <tr>
+              <td data-label="Export">Export 3b</td>
+              <td data-label="Run On">March 31, 2020</td>
+              <td data-label="Since">February 28, 2020</td>
+              <td data-label="Description">Provide all claims information and updates received in March</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 The dates used in this example are just random dates. Organizations cannot pull data before the date they legally attested for the data and cannot pull data before January 1, 2020.
 
@@ -513,48 +523,50 @@ On January 31, 2020 XYZ runs its first export. The export uses a _since paramete
 
 The export pulls a claim version with Claim Group ID 99995. At this time, the only version of the claim available to AB2D is 12987987. This version (corresponding to claim Update #1) is the latest claim version available and is marked active.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim Group</th>
-            <th scope="col">Claim ID</th>
-            <th scope="col">Claim Line ID</th>
-            <th scope="col">Claim Query Code</th>
-            <th scope="col">Received</th>
-            <th scope="col">Last Updated</th>
-            <th scope="col">Status as of 01/31/2020</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 01/31/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 01/31/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 01/31/2020">active</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim Group</th>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Claim Line ID</th>
+              <th scope="col">Claim Query Code</th>
+              <th scope="col">Received</th>
+              <th scope="col">Last Updated</th>
+              <th scope="col">Status as of 01/31/2020</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 01/31/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 01/31/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 01/31/2020">active</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 #### Export 2 01/31/2020 - 02/28/2020
 
@@ -574,84 +586,86 @@ Claim version 54689123 is pulled for the first time. Here is why:
 2. Receiving the claim sets the Last Updated date to February 10, 2020.
 3. The _since date (January 31, 2020) is before the Last Updated date so the claim version is pulled.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim Group</th>
-            <th scope="col">Claim ID</th>
-            <th scope="col">Claim Line ID</th>
-            <th scope="col">Claim Query Code</th>
-            <th scope="col">Received</th>
-            <th scope="col">Last Updated</th>
-            <th scope="col">Status as of 02/28/2020</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">LMNO</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">active</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim Group</th>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Claim Line ID</th>
+              <th scope="col">Claim Query Code</th>
+              <th scope="col">Received</th>
+              <th scope="col">Last Updated</th>
+              <th scope="col">Status as of 02/28/2020</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">LMNO</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">active</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 #### Export 3a 02/28/2020 - 03/15/2020
 
@@ -677,84 +691,86 @@ Claim version 54689123 is pulled for the first time. Here is why:
 2. Receiving the claim sets the lastUpdated date to March 20, 2020
 3. The _since date (February 28, 2020) is before the lastUpdated date so the claim version is pulled.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim Group</th>
-            <th scope="col">Claim ID</th>
-            <th scope="col">Claim Line ID</th>
-            <th scope="col">Claim Query Code</th>
-            <th scope="col">Received</th>
-            <th scope="col">Last Updated</th>
-            <th scope="col">Status as of 03/31/2020</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">03/31/2020</td>
-            <td data-label="Status as of 03/31/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">03/31/2020</td>
-            <td data-label="Status as of 03/31/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">03/31/2020</td>
-            <td data-label="Status as of 03/31/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">LMNO</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">03/31/2020</td>
-            <td data-label="Status as of 03/31/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">34543</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">03/31/2020</td>
-            <td data-label="Last Updated">03/31/2020</td>
-            <td data-label="Status as of 03/31/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">34543</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">03/31/2020</td>
-            <td data-label="Last Updated">03/31/2020</td>
-            <td data-label="Status as of 03/31/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">34543</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">03/31/2020</td>
-            <td data-label="Last Updated">03/31/2020</td>
-            <td data-label="Status as of 03/31/2020">active</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim Group</th>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Claim Line ID</th>
+              <th scope="col">Claim Query Code</th>
+              <th scope="col">Received</th>
+              <th scope="col">Last Updated</th>
+              <th scope="col">Status as of 03/31/2020</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">03/31/2020</td>
+              <td data-label="Status as of 03/31/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">03/31/2020</td>
+              <td data-label="Status as of 03/31/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">03/31/2020</td>
+              <td data-label="Status as of 03/31/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">LMNO</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">03/31/2020</td>
+              <td data-label="Status as of 03/31/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">34543</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">03/31/2020</td>
+              <td data-label="Last Updated">03/31/2020</td>
+              <td data-label="Status as of 03/31/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">34543</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">03/31/2020</td>
+              <td data-label="Last Updated">03/31/2020</td>
+              <td data-label="Status as of 03/31/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">34543</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">03/31/2020</td>
+              <td data-label="Last Updated">03/31/2020</td>
+              <td data-label="Status as of 03/31/2020">active</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 ## Resolving canceled claims
 
@@ -773,51 +789,53 @@ To detect updated claims the following fields on each claim must be tracked:
 
 In the example, a single claim will be tracked through several evolutions:
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim Update</th>
-            <th scope="col">Details</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Update">Update 1</td>
-            <td data-label="Details">Claim 99995 is received by AB2D on January 1, 2020</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Update">Update 2</td>
-            <td data-label="Details">An update to Claim 99995 is received by AB2D on February 28, 2020</td>
-        </tr>
-    </tbody>
-</table>
-
-In the example, 2 exports are run using the _since parameter to limit duplicate data. The 2 exports are described below.
-
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Export</th>
-            <th scope="col">Run on</th>
-            <th scope="col">Since</th>
-            <th scope="col">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Export">Export 1</td>
-            <td data-label="Run On">January 31, 2020</td>
-            <td data-label="Since">December 31, 2019</td>
-            <td data-label="Description">Provide all claims information and updates received in January</td>
-        </tr>
-        <tr>
-            <td data-label="Export">Export 2</td>
-            <td data-label="Run On">February 28, 2020</td>
-            <td data-label="Since">January 31, 2020</td>
-            <td data-label="Description">Provide all claims information and updates received in February</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim Update</th>
+              <th scope="col">Details</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Update">Update 1</td>
+              <td data-label="Details">Claim 99995 is received by AB2D on January 1, 2020</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Update">Update 2</td>
+              <td data-label="Details">An update to Claim 99995 is received by AB2D on February 28, 2020</td>
+          </tr>
+      </tbody>
+  </table>
+  
+  In the example, 2 exports are run using the _since parameter to limit duplicate data. The 2 exports are described below.
+  
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Export</th>
+              <th scope="col">Run on</th>
+              <th scope="col">Since</th>
+              <th scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Export">Export 1</td>
+              <td data-label="Run On">January 31, 2020</td>
+              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Description">Provide all claims information and updates received in January</td>
+          </tr>
+          <tr>
+              <td data-label="Export">Export 2</td>
+              <td data-label="Run On">February 28, 2020</td>
+              <td data-label="Since">January 31, 2020</td>
+              <td data-label="Description">Provide all claims information and updates received in February</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 The dates used in this example are just random dates. Organizations cannot pull data before the date they legally attested for the data and cannot pull data before January 1, 2020.
 
@@ -829,48 +847,50 @@ On January 31, 2020 XYZ runs its first export. The export uses a _since paramete
 
 The export pulls a claim version with Claim Group ID 99995. At this time the only version of the claim available to AB2D is 12987987. This version (corresponding to claim Update #1) is the latest claim version available and is marked active.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim Group</th>
-            <th scope="col">Claim ID</th>
-            <th scope="col">Claim Line ID</th>
-            <th scope="col">Claim Query Code</th>
-            <th scope="col">Received</th>
-            <th scope="col">Last Updated</th>
-            <th scope="col">Status as of 01/31/2020</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 01/31/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 01/31/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 01/31/2020">active</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim Group</th>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Claim Line ID</th>
+              <th scope="col">Claim Query Code</th>
+              <th scope="col">Received</th>
+              <th scope="col">Last Updated</th>
+              <th scope="col">Status as of 01/31/2020</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 01/31/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 01/31/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 01/31/2020">active</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 #### Export 2 01/31/2020 - 02/28/2020
 
@@ -890,84 +910,86 @@ Claim version 54689123 is pulled for the first time. Here is why:
 2. Receiving the claim sets the lastUpdated date to February 10, 2020
 3. The _since date (January 31, 2020) is before the lastUpdated date so the claim version is pulled.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim Group</th>
-            <th scope="col">Claim ID</th>
-            <th scope="col">Claim Line ID</th>
-            <th scope="col">Claim Query Code</th>
-            <th scope="col">Received</th>
-            <th scope="col">Last Updated</th>
-            <th scope="col">Status as of 02/28/2020</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">54689123</td>
-            <td data-label="Claim Line ID">LMNO</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">02/10/2020</td>
-            <td data-label="Last Updated">02/10/2020</td>
-            <td data-label="Status as of 02/28/2020">canceled</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim Group</th>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Claim Line ID</th>
+              <th scope="col">Claim Query Code</th>
+              <th scope="col">Received</th>
+              <th scope="col">Last Updated</th>
+              <th scope="col">Status as of 02/28/2020</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">54689123</td>
+              <td data-label="Claim Line ID">LMNO</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">02/10/2020</td>
+              <td data-label="Last Updated">02/10/2020</td>
+              <td data-label="Status as of 02/28/2020">canceled</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 ## Detecting duplicate claims
 
@@ -986,30 +1008,32 @@ In the example, a single claim will be tracked:
 
 In the example, 2 exports are run using the _since parameter. These exports are for overlapping time periods so duplicate information will be received. The 2 exports are described below.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Export</th>
-            <th scope="col">Run on</th>
-            <th scope="col">Since</th>
-            <th scope="col">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Export">Export 1</td>
-            <td data-label="Run On">January 31, 2020</td>
-            <td data-label="Since">December 31, 2019</td>
-            <td data-label="Description">Provide all claims information and updates received in January</td>
-        </tr>
-        <tr>
-            <td data-label="Export">Export 2</td>
-            <td data-label="Run On">February 28, 2020</td>
-            <td data-label="Since">December 31, 2019</td>
-            <td data-label="Description">Provide all claims information and updates received in January and February</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Export</th>
+              <th scope="col">Run on</th>
+              <th scope="col">Since</th>
+              <th scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Export">Export 1</td>
+              <td data-label="Run On">January 31, 2020</td>
+              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Description">Provide all claims information and updates received in January</td>
+          </tr>
+          <tr>
+              <td data-label="Export">Export 2</td>
+              <td data-label="Run On">February 28, 2020</td>
+              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Description">Provide all claims information and updates received in January and February</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 The dates used in this example are just random dates. Organizations cannot pull data before the date they legally attested for the data and cannot pull data before January 1, 2020.
 
@@ -1021,48 +1045,50 @@ On January 31, 2020 XYZ runs its first export. The export uses a _since paramete
 
 The export pulls a claim version with Claim Group ID 99995. At this time the only version of the claim available to AB2D is 12987987. This version is the latest claim version available and is marked active.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim Group</th>
-            <th scope="col">Claim ID</th>
-            <th scope="col">Claim Line ID</th>
-            <th scope="col">Claim Query Code</th>
-            <th scope="col">Received</th>
-            <th scope="col">Last Updated</th>
-            <th scope="col">Status as of 01/31/2020</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 01/31/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 01/31/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 01/31/2020">active</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim Group</th>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Claim Line ID</th>
+              <th scope="col">Claim Query Code</th>
+              <th scope="col">Received</th>
+              <th scope="col">Last Updated</th>
+              <th scope="col">Status as of 01/31/2020</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 01/31/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 01/31/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 01/31/2020">active</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
 
 #### Export 2 01/31/2020 - 02/28/2020
 
@@ -1072,45 +1098,47 @@ The export pulls a claim version with Claim Group ID 99995. At this time the onl
 
 Claim version 12987987 is pulled for a second time because the _since date remains the same.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-        <tr>
-            <th scope="col">Claim Group</th>
-            <th scope="col">Claim ID</th>
-            <th scope="col">Claim Line ID</th>
-            <th scope="col">Claim Query Code</th>
-            <th scope="col">Received</th>
-            <th scope="col">Last Updated</th>
-            <th scope="col">Status as of 02/28/2020</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">ABCD</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 02/28/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">DEFG</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 02/28/2020">active</td>
-        </tr>
-        <tr>
-            <td data-label="Claim Group">99995</td>
-            <td data-label="Claim ID">12987987</td>
-            <td data-label="Claim Line ID">HIJK</td>
-            <td data-label="Claim Query Code">final</td>
-            <td data-label="Received">01/01/2020</td>
-            <td data-label="Last Updated">01/01/2020</td>
-            <td data-label="Status as of 02/28/2020">active</td>
-        </tr>
-    </tbody>
-</table>
+<div style="overflow-x: auto;">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
+      <thead>
+          <tr>
+              <th scope="col">Claim Group</th>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Claim Line ID</th>
+              <th scope="col">Claim Query Code</th>
+              <th scope="col">Received</th>
+              <th scope="col">Last Updated</th>
+              <th scope="col">Status as of 02/28/2020</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">ABCD</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 02/28/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">DEFG</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 02/28/2020">active</td>
+          </tr>
+          <tr>
+              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim ID">12987987</td>
+              <td data-label="Claim Line ID">HIJK</td>
+              <td data-label="Claim Query Code">final</td>
+              <td data-label="Received">01/01/2020</td>
+              <td data-label="Last Updated">01/01/2020</td>
+              <td data-label="Status as of 02/28/2020">active</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
