@@ -12,7 +12,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
 
 ## Important AB2D claims fields
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
     <thead>
       <tr>
@@ -175,7 +175,7 @@ Notice 2 things:
   text="Note: Claim Version is not a field in the data and will not be reported to Prescription Drug Plan sponsors."
 %}
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -307,7 +307,7 @@ For more information:
 
 Each claim contains patient identifiers necessary to map a claim to a specific patient. The primary identifier used to associate a claim with a patient is the Medicare Beneficiary Identifier (MBI). As part of each claim, AB2D reports all MBIs, known to the system, for a patient including the current MBI for a patient and historic MBIs used in the past for a patient.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -447,7 +447,7 @@ To detect updated claims the following fields on each claim must be tracked:
 
 In the example, a single claim will be tracked through several evolutions:
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -474,7 +474,7 @@ In the example, a single claim will be tracked through several evolutions:
 
 In the example, 4 exports are run using the [_since parameter]({{ '/query-parameters-v2' | relative_url }}) to limit duplicate data. The 4 exports are described below.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -523,7 +523,7 @@ On January 31, 2020 XYZ runs its first export. The export uses a _since paramete
 
 The export pulls a claim version with Claim Group ID 99995. At this time, the only version of the claim available to AB2D is 12987987. This version (corresponding to claim Update #1) is the latest claim version available and is marked active.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -586,7 +586,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
 2. Receiving the claim sets the Last Updated date to February 10, 2020.
 3. The _since date (January 31, 2020) is before the Last Updated date so the claim version is pulled.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -691,7 +691,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
 2. Receiving the claim sets the lastUpdated date to March 20, 2020
 3. The _since date (February 28, 2020) is before the lastUpdated date so the claim version is pulled.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -789,7 +789,7 @@ To detect updated claims the following fields on each claim must be tracked:
 
 In the example, a single claim will be tracked through several evolutions:
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -847,7 +847,7 @@ On January 31, 2020 XYZ runs its first export. The export uses a _since paramete
 
 The export pulls a claim version with Claim Group ID 99995. At this time the only version of the claim available to AB2D is 12987987. This version (corresponding to claim Update #1) is the latest claim version available and is marked active.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -910,7 +910,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
 2. Receiving the claim sets the lastUpdated date to February 10, 2020
 3. The _since date (January 31, 2020) is before the lastUpdated date so the claim version is pulled.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -1008,7 +1008,7 @@ In the example, a single claim will be tracked:
 
 In the example, 2 exports are run using the _since parameter. These exports are for overlapping time periods so duplicate information will be received. The 2 exports are described below.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -1045,7 +1045,7 @@ On January 31, 2020 XYZ runs its first export. The export uses a _since paramete
 
 The export pulls a claim version with Claim Group ID 99995. At this time the only version of the claim available to AB2D is 12987987. This version is the latest claim version available and is marked active.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -1098,7 +1098,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time the onl
 
 Claim version 12987987 is pulled for a second time because the _since date remains the same.
 
-<div style="overflow-x: auto;">
+<div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
