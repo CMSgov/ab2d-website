@@ -97,7 +97,7 @@ echo ${variable name}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
-### 1. Start a job
+### I. Start a job
 
 Start an export job of FHIR ExplanationOfBenefit (EOB) resources using the following command: 
 
@@ -129,14 +129,14 @@ x-frame-options: DENY
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
-#### 1a. Use the job ID from the content-location URL to set the JOB_ID variable with the following command: 
+- **Use the job ID from the content-location URL to set the JOB_ID variable with the following command:**
 
 {% capture curlSnippet %}{% raw %}
 > JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
-### 2. Check the job status
+### II. Check the job status
 
 Request the job status and save the response into RESP3. If you receive a 200 HTTP response code, the job is complete. If you receive a 202 response code, the job is still in progress. In this case, continue checking the status until the job is complete.
 
@@ -183,14 +183,14 @@ When the job is complete, the response will contain URLs for the export files to
 
 Piping the response to jq pretty prints it for readability.
 
-#### 2a. Extract the file name from RESP3 into the FILE variable with the following command:
+- **Extract the file name from RESP3 into the FILE variable with the following command:**
 
 {% capture curlSnippet %}{% raw %}
 > FILE=$(echo $RESP3 | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
-### 3. Download your files
+### III. Download your files
 
 Download the exported data using the job ID and file name from the previous steps. This command downloads the data into the RESP4 variable. 
 

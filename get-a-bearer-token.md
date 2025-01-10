@@ -216,7 +216,7 @@ echo ${variable name}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
-### 1.  Encode client credentials into Base64
+### I.  Encode client credentials into Base64
 
 Encode the client ID and password into Base64, then set the AUTH shell variable. This example uses the PDP-100 contract. The credentials are used in the next step to retrieve your token.
 
@@ -225,7 +225,7 @@ Encode the client ID and password into Base64, then set the AUTH shell variable.
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
-### 2. Get your bearer token
+### II. Get your bearer token
 
 Enter this command to make an HTTP request and set the RESP1 variable:
 
