@@ -27,7 +27,7 @@ brew install jq
 {% capture setupSnippet %}{% raw %}
 Warning: jq {version} is already installed and up-to-date        
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.md code=setupSnippet language="shell" %}
             </li>
         </ul>
     </li>
