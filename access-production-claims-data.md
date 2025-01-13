@@ -92,7 +92,7 @@ echo $SINCE
 echo $FHIR_VERSION
 R4
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.md code=curlSnippet language="shell" %}
     </li>
 </ol>
 
