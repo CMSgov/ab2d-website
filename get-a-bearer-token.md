@@ -214,14 +214,14 @@ HTTP responses are saved into shell variables named `RESP<n>`. Most steps also d
 {% capture curlSnippet %}{% raw %}
 echo ${variable name}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### 1.  Encode client credentials into Base64
 
 Encode the client ID and password into Base64, then set the AUTH shell variable. This example uses the PDP-100 contract. The credentials are used in the next step to retrieve your token.
 
 {% capture curlSnippet %}{% raw %}
-> AUTH=$(echo "0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw" | base64)
+AUTH=$(echo "0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw" | base64)
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
@@ -230,7 +230,7 @@ Encode the client ID and password into Base64, then set the AUTH shell variable.
 Enter this command to make an HTTP request and set the RESP1 variable:
 
 {% capture curlSnippet %}{% raw %}
-> RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v21/token?grant_type=client_credentials&scope=clientCreds" \
+RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v21/token?grant_type=client_credentials&scope=clientCreds" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Accept: application/json" \
   -H "Authorization: Basic ${AUTH}")
@@ -240,7 +240,7 @@ Enter this command to make an HTTP request and set the RESP1 variable:
 This extracts the token from the previous response and sets the TOKEN variable needed by all subsequent API requests. 
 
 {% capture curlSnippet %}{% raw %}
-> TOKEN=$(echo $RESP1 | jq -r ".access_token")
+TOKEN=$(echo $RESP1 | jq -r ".access_token")
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
