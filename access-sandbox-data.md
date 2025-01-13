@@ -95,14 +95,14 @@ HTTP responses are saved into shell variables named `RESP<n>`. Most steps also d
 {% capture curlSnippet %}{% raw %}
 echo ${variable name}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### 1. Start a job
 
 Start an export job of FHIR ExplanationOfBenefit (EOB) resources using the following command: 
 
 {% capture curlSnippet %}{% raw %}
-> RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_type=ExplanationOfBenefit" \
+RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_type=ExplanationOfBenefit" \
   -H "Accept: application/json" \
   -H "Accept: application/fhir+json" \
   -H "Authorization: Bearer ${bearer_token}")
@@ -132,7 +132,7 @@ x-frame-options: DENY
 #### 1a. Use the job ID from the content-location URL to set the JOB_ID variable with the following command: 
 
 {% capture curlSnippet %}{% raw %}
-> JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
+JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
@@ -186,7 +186,7 @@ Piping the response to jq pretty prints it for readability.
 #### 2a. Extract the file name from RESP3 into the FILE variable with the following command:
 
 {% capture curlSnippet %}{% raw %}
-> FILE=$(echo $RESP3 | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
+FILE=$(echo $RESP3 | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
@@ -197,7 +197,7 @@ Download the exported data using the job ID and file name from the previous step
 You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command:  
 
 {% capture curlSnippet %}{% raw %}
-> RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB_ID}/file/${FILE}" \
+RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB_ID}/file/${FILE}" \
   -H "Accept: application/fhir+ndjson" \
   -H "Accept-Encoding: gzip" \
   -H "Authorization: Bearer ${TOKEN}")
