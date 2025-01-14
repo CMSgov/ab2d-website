@@ -209,40 +209,35 @@ The sandbox environment is open for anyone to access. The AB2D team provides 4 s
 
 Learn how to get a bearer token for the sandbox using the [curl](https://curl.se/) command line tool specifically. You can copy and paste these commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/setup-instructions' | relative_url }}).
 
-HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering:
-
-{% capture curlSnippet %}{% raw %}
-echo ${variable name}
-{% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${variable}`.
 
 ### I.  Encode client credentials into Base64
 
 Encode the client ID and password into Base64, then set the AUTH shell variable. This example uses the PDP-100 contract. The credentials are used in the next step to retrieve your token.
 
 {% capture curlSnippet %}{% raw %}
-> AUTH=$(echo "0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw" | base64)
+AUTH=$(echo "0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw" | base64)
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### II. Get your bearer token
 
 Enter this command to make an HTTP request and set the RESP1 variable:
 
 {% capture curlSnippet %}{% raw %}
-> RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v21/token?grant_type=client_credentials&scope=clientCreds" \
+RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v21/token?grant_type=client_credentials&scope=clientCreds" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Accept: application/json" \
   -H "Authorization: Basic ${AUTH}")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 This extracts the token from the previous response and sets the TOKEN variable needed by all subsequent API requests. 
 
 {% capture curlSnippet %}{% raw %}
-> TOKEN=$(echo $RESP1 | jq -r ".access_token")
+TOKEN=$(echo $RESP1 | jq -r ".access_token")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 The token is valid for 1 hour. If it expires, repeat the process for a new token. 
 
@@ -265,14 +260,14 @@ AUTH_FILE=/home/abcduser/credentials_Z123456_base64.txt
 OKTA_CLIENT_ID=abcd
 OKTA_CLIENT_SECRET=badpassword
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Encode the credentials as Base64.
 {% capture curlSnippet %}{% raw %}
 echo -n "${OKTA_CLIENT_ID}:${OKTA_CLIENT_PASSWORD}" | base64 > $AUTH_FILE
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
     </li>
 </ol>
 
@@ -286,19 +281,19 @@ echo -n "${OKTA_CLIENT_ID}:${OKTA_CLIENT_PASSWORD}" | base64 > $AUTH_FILE
 $AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
 New-Item -Path $AUTH_FILE -ItemType File
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Create the Base64 credentials.
 {% capture curlSnippet %}{% raw %}$BASE64_ENCODED_ID_PASSWORD='{Base64-encoded abcd:badpassword}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Save the Base64 credentials as a single line in the authorization file.
 {% capture curlSnippet %}{% raw %}Set-Content -Path $AUTH_FILE $BASE64_ENCODED_ID_PASSWORD
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
     </li>
 </ol>
 

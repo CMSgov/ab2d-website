@@ -1,12 +1,27 @@
 {% assign code = include.code %}
+{% assign can_copy = include.can_copy %}
 {% assign nanosecond = "now" | date: "%N" %}
 
-<div class="bg-base-lightest border-1px border-base-lighter margin-y-2">
+<div class="bg-base-lightest border-1px border-base-lighter margin-y-2 position-relative">
   <div class="grid-row">
-    <label class="usa-sr-only">Code snippet:
-      <input type="text" id="code{{ nanosecond }}" value="{{ code | xml_escape }}" readonly />
-    </label>
-    <div class="tablet:grid-col-fill margin-2" aria-hidden="true">
+    {% if can_copy == true %}
+      <label class="usa-sr-only">Code snippet:
+        <input type="text" id="code{{ nanosecond }}" value="{{ code | xml_escape }}" readonly />
+      </label>
+      <div class="position-absolute top-1 right-1 z-100">
+        <button 
+          class="usa-button usa-button--outline margin-0 bg-base-lightest hover:bg-base-lightest active:bg-base-lightest"
+          id="copybutton{{ nanosecond }}"
+        >Copy</button>
+      </div>
+    {% endif %}
+    <div 
+      class="tablet:grid-col-fill" 
+      aria-hidden="true"
+      {% if can_copy == true %}
+        data-canCopy="true"
+      {% endif %}
+    >
       <!-- TODO: Can we pass the language var to avoid these conditionals -->
       {%- if include.language == "json" -%}
         {%- highlight json %}{{ code }}{% endhighlight -%}
@@ -24,21 +39,25 @@
         {%- highlight plaintext %}{{ code }}{% endhighlight -%}
       {%- endif -%}
     </div>
-    <div class="tablet:grid-col-auto padding-1">
-      <a class="usa-button usa-button--outline margin-1" href="javascript:void(0)" onclick="copyText{{ nanosecond }}()" id="copybutton{{ nanosecond }}">Copy</a>
-    </div>
+    {% if can_copy == true %}
+    {% endif %}
   </div>
 </div>
 
+{% if can_copy == true %}
 <script>
-function copyText{{ nanosecond }}(){
-  /* Get the text field */
-  var copyText = document.getElementById("code{{ nanosecond }}");
+(function (){
+  var copyButton = document.getElementById("copybutton{{ nanosecond }}");
+  copyButton.addEventListener('click', function(){
+    var copyText = document.getElementById("code{{ nanosecond }}");
 
-  /* Select the text field */
-  copyText.select();
+    if ('clipboard' in navigator) {
+      navigator.clipboard.writeText(copyText.value);
+    } else {
+      document.execCommand('copy', true, copyText.value);
+    }
 
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-}
+  })
+})()
 </script>
+{% endif %}

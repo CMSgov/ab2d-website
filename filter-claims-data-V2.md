@@ -52,7 +52,7 @@ curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-02-13T
 -H "Prefer: respond-async" \
 -H "Authorization: Bearer ${BEARER_TOKEN}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### When only the _until parameter is specified
 
@@ -72,7 +72,7 @@ curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until%3D2024-06-15T
 -H "Prefer: respond-async" \
 -H "Authorization: Bearer ${BEARER_TOKEN}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### When both the _since and _until parameters are specified
 
@@ -92,7 +92,7 @@ curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-06-15T
 -H "Prefer: respond-async" \
 -H "Authorization: Bearer ${BEARER_TOKEN}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ## Incremental export model
 One recommended way to use AB2D is to periodically export any data that has been updated since your last job. The AB2D team encourages bi-weekly exports to stay updated on new claims.

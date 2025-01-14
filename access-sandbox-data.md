@@ -90,24 +90,19 @@ GET /api/v2/fhir/metadata
 
 You can copy and paste [curl](https://curl.se/) commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/setup-instructions' | relative_url }}).
 
-HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering:
-
-{% capture curlSnippet %}{% raw %}
-echo ${variable name}
-{% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${variable}`.
 
 ### I. Start a job
 
 Start an export job of FHIR ExplanationOfBenefit (EOB) resources using the following command: 
 
 {% capture curlSnippet %}{% raw %}
-> RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_type=ExplanationOfBenefit" \
+RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_type=ExplanationOfBenefit" \
   -H "Accept: application/json" \
   -H "Accept: application/fhir+json" \
   -H "Authorization: Bearer ${bearer_token}")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 RESP2 is set to the headers of the HTTP response (by using the -i option of curl).
 
@@ -132,9 +127,9 @@ x-frame-options: DENY
 - **Use the job ID from the content-location URL to set the JOB_ID variable with the following command:**
 
 {% capture curlSnippet %}{% raw %}
-> JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
+JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### II. Check the job status
 
@@ -151,7 +146,7 @@ Request the job status and save the response into RESP3. If you receive a 200 HT
     echo "Status: " $STATUS
     }
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 When the job is complete, the response will contain URLs for the export files to be downloaded. This is an example response returned after executing `echo $RESP3 | jq`:
 
@@ -179,16 +174,16 @@ When the job is complete, the response will contain URLs for the export files to
   "error": []
 }
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="json" %}
 
 Piping the response to jq pretty prints it for readability.
 
 - **Extract the file name from RESP3 into the FILE variable with the following command:**
 
 {% capture curlSnippet %}{% raw %}
-> FILE=$(echo $RESP3 | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
+FILE=$(echo $RESP3 | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### III. Download your files
 
@@ -197,12 +192,12 @@ Download the exported data using the job ID and file name from the previous step
 You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command:  
 
 {% capture curlSnippet %}{% raw %}
-> RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB_ID}/file/${FILE}" \
+RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB_ID}/file/${FILE}" \
   -H "Accept: application/fhir+ndjson" \
   -H "Accept-Encoding: gzip" \
   -H "Authorization: Bearer ${TOKEN}")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 After retrieving sandbox data, follow the remaining steps to obtain [production access]({{ '/production-access' | relative_url }}).
 
