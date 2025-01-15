@@ -35,7 +35,7 @@ You’ll still need to [get a bearer token]({{ '/get-a-bearer-token' | relative_
 - Retrieve metadata: `GET /api/v2/fhir/metadata`
 - Cancel job: `DELETE /api/v2/fhir/Job/{jobUuid}/$status`
 - Check the job status: `GET /api/v2/fhir/Job/{jobUuid}/$status`
-- Download files: `GET/api/v2/fhir/Job/{jobUuid}/file/{filename}`
+- Download files: `GET/api/v2/fhir/Job/{jobUuid}/file/{file_name}`
 
 ### File expiration
 
