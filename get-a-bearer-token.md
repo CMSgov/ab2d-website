@@ -228,7 +228,7 @@ Enter this command to make an HTTP request and set the RESP1 variable:
 RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v21/token?grant_type=client_credentials&scope=clientCreds" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Accept: application/json" \
-  -H "Authorization: Basic ${AUTH}")
+  -H "Authorization: Basic ${bearer_token}")
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
@@ -265,7 +265,7 @@ OKTA_CLIENT_SECRET=badpassword
     <li>
         Encode the credentials as Base64.
 {% capture curlSnippet %}{% raw %}
-echo -n "${OKTA_CLIENT_ID}:${OKTA_CLIENT_PASSWORD}" | base64 > $AUTH_FILE
+echo -n "${okta_client_id}:${okta_client_password}" | base64 > $AUTH_FILE
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
     </li>
