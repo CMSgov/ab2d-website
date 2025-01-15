@@ -90,7 +90,7 @@ GET /api/v2/fhir/metadata
 
 You can copy and paste [curl](https://curl.se/) commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/setup-instructions' | relative_url }}).
 
-HTTP responses are saved into shell variables named RESP<n>. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${variable}`.
+HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${variable}`.
 
 ### I. Start a job
 
@@ -146,7 +146,9 @@ curl -sw '%{http_code}' -o status.json "https://www.google.com"  \
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
-When the job is complete, the response will contain URLs for the export files to be downloaded. This is an example response returned after executing cat status.json | jq:
+
+When the job is complete, the response will contain URLs for the export files to be downloaded. This is an example response returned after executing `cat status.json | jq`:
+
 
 {% capture curlSnippet %}{% raw %}
 {
