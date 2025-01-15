@@ -30,14 +30,14 @@ Bearer tokens, also known as JSON web tokens, authorize use of the AB2D endpoint
 
 <ol>
     <li>
-        You can use a variety of tools to get a bearer token, including <a href="{{ '/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password. Your organization's credentials will be formatted as a Base64-encoded value (clientID:password). 
+        You can use a variety of tools to get a bearer token, including <a href="{{ '/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password. 
         <ul>
             <li><b>If you’re trying to access sandbox data</b>: Use 1 of the 4 client ID and password sets provided in the <a href="{{ '/get-a-bearer-token' | relative_url }}#sandbox-credentials">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idm.idp.cms.gov).</li>
-            <li><b>If you’re trying to access production data</b>: Once you complete the steps for [production access]({{ '/production-access' | relative_url }}), the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idp.cms.gov). You can also <a href="{{ '/get-a-bearer-token' | relative_url }}#how-to-create-a-credential-file">create your own credential file</a> manually.</li>
+            <li><b>If you’re trying to access production data</b>: Once you complete the steps for a href="{{ '/production-access' | relative_url }}">production access</a>, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idp.cms.gov). You can also <a href="{{ '/get-a-bearer-token' | relative_url }}#how-to-create-a-credential-file">create your own credential file</a> manually.</li>
         </ul>
     </li>    
-    <li>Once you have your client ID and password (sandbox or production environment), create a new text file using your editor of choice. </li>
-    <li>Paste the Base64-encoded string into the new text file. The file should only have a single line.</li>
+    <li>Once you have your sandbox or production credentials, create a new text file using your editor of choice. </li>
+    <li>The credentials (clientID:password) must be encoded in Base64 format. Paste the Base64-encoded string into the new text file. It should only be a single line.</li>
     <li>
         Start a request for the bearer token, using your Base64-encoded string as the authorization. The request will look similar to our example:
 {% capture curlSnippet %}{% raw %}
@@ -48,7 +48,7 @@ Headers:
 Parameters:
         grant_type: client_credentials
         scope: clientCreds
-Authorization: Basic {Base64-encoded string}
+Authorization: Basic {base64_encoded_credentials}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
     </li>
@@ -99,7 +99,7 @@ The sandbox environment is open for anyone to access. The AB2D team provides 4 s
                 <td>HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw</td>
             </tr>
             <tr>
-                <td>Base64-encoded ID:password</td>
+                <td>Base64-encoded credentials</td>
                 <td>MG9hMnQwbHNyZFp3NXVXUngyOTc6SEhkdVdHNkxvZ0l2RElRdVdncDNabG85T1lNVmFsVHRINU9CY3VIdw</td>
             </tr>
         </tbody>
@@ -132,7 +132,7 @@ The sandbox environment is open for anyone to access. The AB2D team provides 4 s
                 <td>ybR60JmtcpRt6SAeLmvbq6l-3YDRCZP-WN1At6t_</td>
             </tr>
             <tr>
-                <td>Base64-encoded ID:password</td>
+                <td>Base64-encoded credentials</td>
                 <td>MG9hMnQwbG05cW9BdEpIcUMyOTc6eWJSNjBKbXRjcFJ0NlNBZUxtdmJxNmwtM1lEUkNaUC1XTjFBdDZ0Xw==</td>
             </tr>
         </tbody>
@@ -165,7 +165,7 @@ The sandbox environment is open for anyone to access. The AB2D team provides 4 s
                 <td>hskbPu-YoWfGDY1gcQq34BfIEyMVuayu87zWDliG</td>
             </tr>
             <tr>
-                <td>Base64-encoded ID:password</td>
+                <td>Base64-encoded credentials</td>
                 <td>MG9hOWp5eDJ3OVowQW50TEUyOTc6aHNrYlB1LVlvV2ZHRFkxZ2NRcTM0QmZJRXlNVnVheXU4N3pXRGxpRw==</td>
             </tr>
         </tbody>
@@ -198,7 +198,7 @@ The sandbox environment is open for anyone to access. The AB2D team provides 4 s
                 <td>shnG6NGkHcu29ptDsKKRW6q5uFJSSpIpdl_K5fVW</td>
             </tr>
             <tr>
-                <td>Base64-encoded ID:password</td>
+                <td>Base64-encoded credentials</td>
                 <td>MG9hOWp6MGUxZHlOZlJNbTYyOTc6c2huRzZOR2tIY3UyOXB0RHNLS1JXNnE1dUZKU1NwSXBkbF9LNWZWVw==</td>
             </tr>
         </tbody>
@@ -285,7 +285,7 @@ New-Item -Path $AUTH_FILE -ItemType File
     </li>
     <li>
         Create the Base64 credentials.
-{% capture curlSnippet %}{% raw %}$BASE64_ENCODED_ID_PASSWORD='{Base64-encoded abcd:badpassword}
+{% capture curlSnippet %}{% raw %}$BASE64_ENCODED_ID_PASSWORD='{base64_encoded_credentials}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
     </li>
