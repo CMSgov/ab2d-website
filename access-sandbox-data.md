@@ -139,7 +139,7 @@ Request the job status and save the HTTP response code into STATUS. If you recei
 curl -sw '%{http_code}' -o status.json "https://www.google.com"  \
   -H "Accept: application/json" \
   -H "Accept: application/fhir+ndjson" \
-  -H "Authorization: Bearer ${TOKEN}" | {
+  -H "Authorization: Bearer ${bearer_token}" | {
        read STATUS
        echo "Status: " $STATUS
   } 
@@ -188,7 +188,7 @@ Download the exported data using the job ID and file name from the previous step
 You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command:  
 
 {% capture curlSnippet %}{% raw %}
-RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${JOB_ID}/file/${FILE}" \
+RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${jobUuid}/file/${file_name}" \
   -H "Accept: application/fhir+ndjson" \
   -H "Accept-Encoding: gzip" \
   -H "Authorization: Bearer ${bearer_token}")
