@@ -146,14 +146,14 @@ If the system is correct, check with your IT team to make sure you have a static
   </li>
     <ul>
       <li>
-        <strong>Linux/Mac:</strong> In a terminal, run <code class="inline-code">curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status --verbose</code>. Make sure to fill in {jobUuid} with the ID of the running job.
+        <strong>Linux/Mac:</strong> In a terminal, run <code class="inline-code">curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status --verbose</code>. Make sure to fill in {job_uuid} with the ID of the running job.
       </li>
       <li>
-        <strong>Windows:</strong> In a Powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</code>. Make sure to fill in {jobUuid} with the ID of the running job.
+        <strong>Windows:</strong> In a Powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status</code>. Make sure to fill in {job_uuid} with the ID of the running job.
       </li>
     </ul>
   <li>
-    In Postman, create a new DELETE request against the URL <code class="inline-code"><a href="https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status">https://api.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/$status</a></code>. Note the request parameter {jobUuid} must be set in Postman.
+    In Postman, create a new DELETE request against the URL <code class="inline-code">https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status</code>. Note the request parameter {job_uuid} must be set in Postman.
   </li>
   <li>
     In a browser, visit <code class="inline-code"><a href="https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE">https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</a></code> and enter your job ID.

@@ -125,7 +125,7 @@ curl "https://api.ab2d.cms.gov/api/v1/fhir/Patient/\$export?_since%3D2023-02-13T
 -H "Accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
--H "Authorization: Bearer ${BEARER_TOKEN}
+-H "Authorization: Bearer ${bearer_token}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 

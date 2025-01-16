@@ -33,9 +33,9 @@ You’ll still need to [get a bearer token]({{ '/get-a-bearer-token' | relative_
 
 - Start a job: `GET /api/v2/fhir/Patient/$export`
 - Retrieve metadata: `GET /api/v2/fhir/metadata`
-- Cancel job: `DELETE /api/v2/fhir/Job/{jobUuid}/$status`
-- Check the job status: `GET /api/v2/fhir/Job/{jobUuid}/$status`
-- Download files: `GET/api/v2/fhir/Job/{jobUuid}/file/{filename}`
+- Cancel job: `DELETE /api/v2/fhir/Job/{job_uuid}/$status`
+- Check the job status: `GET /api/v2/fhir/Job/{job_uuid}/$status`
+- Download files: `GET/api/v2/fhir/Job/{job_uuid}/file/{file_name}`
 
 ### File expiration
 

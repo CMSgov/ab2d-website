@@ -50,7 +50,7 @@ curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-02-13T
 -H "Accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
--H "Authorization: Bearer ${BEARER_TOKEN}
+-H "Authorization: Bearer ${bearer_token}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
@@ -70,7 +70,7 @@ curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-02-13T
 curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
--H "Authorization: Bearer ${BEARER_TOKEN}
+-H "Authorization: Bearer ${bearer_token}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
@@ -90,7 +90,7 @@ curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until%3D2024-06-15T
 curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
--H "Authorization: Bearer ${BEARER_TOKEN}
+-H "Authorization: Bearer ${bearer_token}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
