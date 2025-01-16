@@ -213,22 +213,23 @@ HTTP responses are saved into shell variables named `RESP<n>`. Most steps also d
 
 ### I.  Encode client credentials into Base64
 
-Encode the client ID and password into Base64, then set the AUTH shell variable. This example uses the PDP-100 contract. The credentials are used in the next step to retrieve your token.
+Encode the client ID and password into Base64, then set the AUTH shell variable. Using the PDP-100 contract as an example, the client ID and password should be formatted as “0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw”.
 
 {% capture curlSnippet %}{% raw %}
-AUTH=$(echo "0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw" | base64)
+AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
 ### II. Get your bearer token
 
-Enter this command to make an HTTP request and set the RESP1 variable:
+Make an HTTP request and set the RESP1 variable. The Base64-encoded credentials for PDP-100 are 
+“MG9hMnQwbHNyZFp3NXVXUngyOTc6SEhkdVdHNkxvZ0l2RElRdVdncDNabG85T1lNVmFsVHRINU9CY3VIdw==”.
 
 {% capture curlSnippet %}{% raw %}
 RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v21/token?grant_type=client_credentials&scope=clientCreds" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Accept: application/json" \
-  -H "Authorization: Basic ${bearer_token}")
+  -H "Authorization: Basic ${base64_encoded_credentials}")
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
