@@ -213,7 +213,8 @@ HTTP responses are saved into shell variables named `RESP<n>`. Most steps also d
 
 ### I.  Encode client credentials into Base64
 
-Encode the client ID and password into Base64, then set the AUTH shell variable. Using the PDP-100 contract as an example, the client ID and password should be formatted as “0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw”.
+Encode the credentials (clientid:password) into Base64, and set the AUTH shell variable. Using contract PDP-100 as an example, the credentials are formatted as 
+“0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw”.
 
 {% capture curlSnippet %}{% raw %}
 AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
@@ -222,8 +223,8 @@ AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
 
 ### II. Get your bearer token
 
-Make an HTTP request and set the RESP1 variable. The Base64-encoded credentials for PDP-100 are 
-“MG9hMnQwbHNyZFp3NXVXUngyOTc6SEhkdVdHNkxvZ0l2RElRdVdncDNabG85T1lNVmFsVHRINU9CY3VIdw==”.
+Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for PDP-100 are [listed above]({{ '/get-a-bearer-token' | relative_url }}#sandbox-credentials), but will look something like 
+“MG9hMnQwbHNyZ…VHRINU9CY3VIdw==”.
 
 {% capture curlSnippet %}{% raw %}
 RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v21/token?grant_type=client_credentials&scope=clientCreds" \
