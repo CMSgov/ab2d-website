@@ -50,7 +50,7 @@ Parameters:
         scope: clientCreds
 Authorization: Basic {base64_encoded_credentials}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.md code=curlSnippet language="yaml" %}
     </li>
     <li>
         The response will contain your bearer token. The token will be sent using the “Authorization” header field with “Bearer {XXX}” where {XXX} is the value of the token:
