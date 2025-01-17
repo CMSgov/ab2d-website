@@ -257,3 +257,9 @@ code.language-plaintext.highlighter-rouge, code.inline-code {
 a {
   word-wrap: break-word;
 }
+
+@include at-media-max("mobile-lg") {
+  table {
+    width: 100%
+  }
+}
