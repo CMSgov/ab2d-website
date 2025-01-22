@@ -6,7 +6,7 @@ permalink: /support
 show-side-nav: false
 ---
 
-# Support
+# {{ page.title }}
 
 <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4 flex-align-center">
   <div class="tablet:grid-col tablet:order-2">
@@ -14,8 +14,12 @@ show-side-nav: false
   </div>
   <div class="tablet:grid-col tablet:order-1">
     <h2>Contact Us</h2>
-    <p>Email <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to troubleshoot or ask questions. </p>
-    <p>Join our <a href="https://groups.google.com/u/0/g/cms-ab2d-api">Google Group</a> to give feedback and get notified about planned outages or API updates.</p>
+    <p>
+      Email<a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to ask questions or get help. The AB2D team will get back to you promptly. You can also visit our Troubleshooting Guide for technical assistance.
+    </p>
+    <p>
+      Join our <a href="https://groups.google.com/u/0/g/cms-ab2d-api">Google Group</a> to give feedback and get notified about planned outages or API updates.
+    </p>
   </div>
 </div>
 

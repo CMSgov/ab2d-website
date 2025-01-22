@@ -19,46 +19,58 @@ hero-button-2-text: "Code Repo"
 
 ## Use cases for the AB2D API
 
-<ul class="usa-card-group flex-justify-center padding-y-4">
-  {% include card.html
-    heading-level="h3"
-    title="Target MTM program enrollees"
-    body="Identify Medication Therapy Management enrollees by using data for a more thorough search capability."
-  %}
+<div class="usa-graphic-list__row grid-row grid-gap-6 padding-y-2">
+  <div class="tablet:grid-col padding-y-3">
+    {% include sprite.html icon="people" size=8 %}
+    <h3 class="margin-y-1">
+      Target MTM program enrollees
+    </h3>
+    <p>
+      Identify Medication Therapy Management (MTM) enrollees by using data for a more thorough search capability.
+    </p>
+  </div>
+  <div class=" tablet:grid-col padding-y-3">
+    {% include sprite.html icon="local_pharmacy" size=8 %}
+    <h3 class="margin-y-1">
+      Enhance MTM consultations
+    </h3>
+    <p>
+      Leverage insights from enrollee medical histories for more effective services.
+    </p>
+  </div>
+  <div class="tablet:grid-col padding-y-3">
+    {% include sprite.html icon="insights" size=8 %}
+    <h3 class="margin-y-1">
+      Boost health outcomes
+    </h3>
+    <p>
+      Enhance MTM enrollee health and program results by improving medication use and adherence.
+    </p>
+  </div>
+</div>
+<div class="usa-graphic-list__row grid-row grid-gap-6">
+  <div class="tablet:grid-col padding-y-3">
+      {% include sprite.html icon="security" size=7 %}
+      <h3 class="margin-y-1">Prevent fraud, waste, and abuse</h3>
+      <p>
+        Identify suspicious activity from providers or suppliers through access to mass data.
+      </p>
+  </div>
+  <div class="tablet:grid-col padding-y-3">
+    {% include sprite.html icon="arrow_forward" size=7 %}
+    <h3 class="margin-y-1 usa-graphic-list__heading">
+      <a href="{{ '/use-cases' | relative_url }}">Learn more about use cases</a>
+    </h3>
+  </div>
+  <div class="tablet:grid-col padding-y-3">
+    {% include sprite.html icon="arrow_forward" size=7 %}
+    <h3 class="margin-y-1 usa-graphic-list__heading">
+      <a href="{{ '/mtm-white-paper' | relative_url }}">Read the white paper on AB2D for MTM programs</a>
+    </h3>
+  </div>
+</div>
 
-   {% include card.html
-    heading-level="h3"
-    title="Enhance MTM consultations"
-    body="Leverage insights from enrollee medical histories for more effective services."
-  %}
-
-  {% include card.html
-    heading-level="h3"
-    title="Boost health outcomes"
-    body="Enhance MTM enrollee health and program results by improving medication use and adherence."
-  %}
-
-  {% include card.html
-    heading-level="h3"
-    title="Prevent fraud, waste, and abuse"
-    body="Identify suspicious activity from providers or suppliers through access to mass data."
-  %}
-
-  {% include card.html
-    bg-color="base-lightest"
-    footer-link="/use-cases"
-    footer-link-text="Learn more about use cases"
-  %}
-
-    {% include card.html
-    bg-color="base-lighter"
-    footer-link="/mtm-white-paper"
-    footer-link-text="Read the MTM white paper"
-  %}
-
-</ul>
-
-<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4 flex-align-center">
+<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-10 flex-align-center">
   <div class="tablet:grid-col">
     <img src="{{ '/assets/img/data-analysis.svg' | relative_url }}" alt="data analysis illustration" />
   </div>
@@ -70,13 +82,13 @@ hero-button-2-text: "Code Repo"
       <li>diagnosis codes</li>
       <li>dates and times of service</li>
     </ul>
-    <p><a href="{{ '/ab2d-data' | relative_url }}">Learn about the data</a></p>
+    <p><a href="{{ '/ab2d-data' | relative_url }}" class="usa-button usa-button--unstyled">Learn about the data {% include sprite.html icon="arrow_forward" %}</a></p>
   </div>
 </div>
 
 ## What are permitted uses of the data? 
 
-<div class="grid-row grid-gap margin-top-2">
+<div class="grid-row grid-gap padding-y-2">
   <div class="tablet:grid-col">
     <p class="margin-bottom-2 text-bold">
       The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a> specifies that data may be used for:

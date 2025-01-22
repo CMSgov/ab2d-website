@@ -33,6 +33,24 @@ show-side-nav: false
             {% endfor %}
         </ul>
     </li>
+    <li><a href="{{ '/ab2d-data' | relative_url }}">AB2D Data</a>
+        <ul>
+            {% for item in site.data.ab2d-data-nav %}
+                {% for child in item.children %}
+                <li>
+                    <a href="{{ child.url | relative_url }}">{{ child.name }}</a>
+                    <ul>
+                        {% for grandchild in child.children %}    
+                        <li>
+                            <a href="{{ grandchild.url | relative_url }}">{{ grandchild.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </li>
 {% for item in site.data.nav-primary %}
     <li>
         <a href="{{ item.url | relative_url }}">{{ item.text }}</a>

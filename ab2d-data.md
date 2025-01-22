@@ -10,8 +10,29 @@ in-page-nav: true
 
 Learn about claims data and how to apply it in context. The AB2D API shares large volumes of enrollee data, including:
 
-- **Medicare Part A claims data** — inpatient hospital stays, care in skilled nursing facilities, and hospice care
-- **Medicare Part B claims data** — various doctors' services, outpatient care, medical supplies, and preventive services
+<table class="usa-table usa-table--borderless usa-table--stacked margin-bottom-4">
+  <caption class="usa-sr-only">Definitions of Part A and Part B claims data</caption>
+  <thead>
+    <tr>
+      <th scope="col">Data type</th>
+      <th scope="col">Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><strong>Medicare Part A claims data</strong></th>
+      <td>
+        Inpatient hospital stays, care in skilled nursing facilities, and hospice care
+      </td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>Medicare Part B claims data</strong></th>
+      <td>
+        Various doctors' services, outpatient care, medical supplies, and preventive services
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 There are specific [permitted uses]({{ '/about' | relative_url }}) for the data. Visit [API Documentation]({{ '/api-documentation' | relative_url }}) for details on accessing production data and the claims data format.
 

@@ -25,6 +25,28 @@ The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants 
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
+## What’s the difference between the sandbox and production environments?
+
+<table class="usa-table usa-table--borderless">
+  <caption class="usa-sr-only">Sandbox and Production environments comparison</caption>
+  <thead>
+    <tr>
+      <th scope="col">Sandbox</th>
+      <th scope="col">Production</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Available to everyone</td>
+      <td>Must have completed the steps for <a href="{{ '/production-access' | relative_url }}">production access</a></td>
+    </tr>
+    <tr>
+      <td>Contains synthetic claims data</td>
+      <td>Contains real Medicare enrollee data</td>
+    </tr>
+  </tbody>
+</table>
+
 ## API endpoints 
 
 AB2D endpoints are used to request sandbox data and API information. These endpoints are the same whether you’re in the sandbox or production environment. 
@@ -142,37 +164,14 @@ curl -sw '%{http_code}' -o status.json "https://www.google.com"  \
   -H "Authorization: Bearer ${bearer_token}" | {
        read STATUS
        echo "Status: " $STATUS
-  } 
+  }
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
-
 When the job is complete, the response will contain URLs for the export files to be downloaded. This is an example response returned after executing `cat status.json | jq`:
 
-
 {% capture curlSnippet %}{% raw %}
-{
-  "transactionTime": "Nov 9, 2023, 3:52:51 PM",
-  "request": "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_type=ExplanationOfBenefit",
-  "requiresAccessToken": true,
-  "output": [
-    {
-      "type": "ExplanationOfBenefit",
-      "url": "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/2356b9af-9257-41f4-9d82-4e27542ff1be/file/Z0000_0001.ndjson",
-      "extension": [
-        {
-          "url": "https://ab2d.cms.gov/checksum",
-          "valueString": "sha256:4b7b3db7bcb219a1205233a0615bc6851ede5ceb645f90cf52ad4ace76ad2143"
-        },
-        {
-          "url": "https://ab2d.cms.gov/file_length",
-          "valueDecimal": 26696409
-        }
-      ]
-    }
-  ],
-  "error": []
-}
+FILE=$(cat status.json | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="json" %}
 
@@ -185,9 +184,7 @@ FILE=$(cat status.json | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 
 ### III. Download your files
 
-Download the exported data using the job ID and file name from the previous steps. This command downloads the data into the RESP4 variable. 
-
-You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command:  
+Download the exported data using the job ID and file name from the previous steps. This command downloads the data into the RESP4 variable. You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command:
 
 {% capture curlSnippet %}{% raw %}
 RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${job_uuid}/file/${file_name}" \
