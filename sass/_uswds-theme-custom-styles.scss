@@ -251,4 +251,15 @@ code.language-plaintext.highlighter-rouge, code.inline-code {
    padding-bottom: .125rem;
    padding-right: .5rem;
    padding-left: .5rem;
- }
+   word-wrap: break-word;
+}
+
+a {
+  word-wrap: break-word;
+}
+
+@include at-media-max("mobile-lg") {
+  table {
+    width: 100%
+  }
+}

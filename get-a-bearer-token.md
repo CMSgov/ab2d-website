@@ -65,7 +65,7 @@ Bearer tokens expire 1 hour from the time they are obtained. Use the token quick
 {% include alert.html variant="info" text=tokenAlert classNames="measure-6" %}
     </li>
     <li class="padding-y-2">
-        Save this as the credential file (e.g., C:\users\abcduser\credentials_Z123456_base64.txt). Note the file’s location and name for later. It will be a parameter in other scripts.
+        Save this as the credential file (e.g., C:\<wbr>users\abcduser\<wbr>credentials_Z123456_base64.txt). Note the file’s location and name for later. It will be a parameter in other scripts.
     </li>
 </ol>
 
@@ -214,7 +214,7 @@ HTTP responses are saved into shell variables named `RESP<n>`. Most steps also d
 ### I.  Encode client credentials into Base64
 
 Encode the credentials (clientid:password) into Base64, and set the AUTH shell variable. Using contract PDP-100 as an example, the credentials are formatted as 
-“0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw”.
+`0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw`.
 
 {% capture curlSnippet %}{% raw %}
 AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
@@ -224,7 +224,7 @@ AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
 ### II. Get your bearer token
 
 Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for PDP-100 are [listed above]({{ '/get-a-bearer-token' | relative_url }}#sandbox-credentials), but will look something like 
-“MG9hMnQwbHNyZ…VHRINU9CY3VIdw==”.
+`MG9hMnQwbHNyZ…VHRINU9CY3VIdw==`.
 
 {% capture curlSnippet %}{% raw %}
 RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v21/token?grant_type=client_credentials&scope=clientCreds" \
@@ -247,7 +247,7 @@ The token is valid for 1 hour. If it expires, repeat the process for a new token
 
 Once you obtain [production access]({{ '/production-access' | relative_url }}), you can either create a Base64-encoded clientID:password manually from your production credentials or use the file the AB2D team sent for convenience. 
 
-In this example, we use “Z123456” as the contract number, “abcd” as the client ID, and “badpassword” as the password. When encoded, the example client ID and password would look like “YWJjZDpiYWRwYXNzd29yZA==.” Your credentials will likely be a little longer, but this gives you an idea of what the value looks like.
+In this example, we use “Z123456” as the contract number, “abcd” as the client ID, and “badpassword” as the password. When encoded, the example client ID and password would look like `YWJjZDpiYWRwYXNzd29yZA==`. Your credentials will likely be a little longer, but this gives you an idea of what the value looks like.
 
 ### Linux or Mac
 
