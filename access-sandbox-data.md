@@ -52,7 +52,7 @@ The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants 
 AB2D endpoints are used to request sandbox data and API information. These endpoints are the same whether you’re in the sandbox or production environment. 
 
 ### Export
-Create a job to request sandbox data. You should receive a response with the job ID (jobUuid). 
+Create a job to request sandbox data. You should receive a response with the job ID (job_uuid). 
 
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/Patient/$export
@@ -66,7 +66,7 @@ If it takes more than 30 hours to retrieve and download the data, the request wi
 Once a job has been created, get a status update using the job ID from the previous step. If the job is complete, the status request will return a 200 response code. If it is in progress, it will return a 202 code. 
 
 {% capture curlSnippet %}{% raw %}
-GET /api/v2/fhir/Job/{jobUuid}/$status
+GET /api/v2/fhir/Job/{job_uuid}/$status
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
@@ -74,17 +74,17 @@ Too many status requests can result in a “Retry-After” response in the heade
 
 ### Download
 
-Once the job is complete, the response will return a list of file URLs. In each file URL, you can identify the job ID (jobUuid) and file name:
+Once the job is complete, the response will return a list of file URLs. In each file URL, you can identify the job ID (job_uuid) and file name:
 
 {% capture curlSnippet %}{% raw %}
-https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/{filename}
+https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/{file_name}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
 Download the file using the job ID and file name. You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command.
 
 {% capture curlSnippet %}{% raw %}
-GET /api/v2/fhir/Job/{jobUuid}/file/{filename}
+GET /api/v2/fhir/Job/{job_uuid}/file/{file_name}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
@@ -95,7 +95,7 @@ Some downloads may take longer depending on the file size. Files and job IDs are
 You can cancel a job, but only if it hasn’t been completed. 
 
 {% capture curlSnippet %}{% raw %}
-DELETE /api/v2/fhir/Job/{jobUuid}/$status
+DELETE /api/v2/fhir/Job/{job_uuid}/$status
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" %}
 
@@ -155,7 +155,7 @@ JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
 
 ### II. Check the job status
 
-Request the job status and save the HTTP response code into STATUS. If you receive a 200 HTTP response code, the job is complete. If you receive a 202 response code, the job is still in progress. In this case, continue checking the status until the job is complete. 
+Request the job status and save the HTTP response code into STATUS. If you receive a 200 HTTP response code, the job is complete. If you receive a 202 response code, the job is still in progress. In this case, continue checking the status until the job is complete.
 
 {% capture curlSnippet %}{% raw %}
 curl -sw '%{http_code}' -o status.json "https://www.google.com"  \
@@ -175,12 +175,10 @@ FILE=$(cat status.json | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="json" %}
 
-Piping the response to jq pretty prints it for readability.
-
 - **Extract the file name from RESP3 into the FILE variable with the following command:**
 
 {% capture curlSnippet %}{% raw %}
-FILE=$(echo $RESP3 | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
+FILE=$(cat status.json | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 {% endraw %}{% endcapture %}
 {% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
 
@@ -223,22 +221,22 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 2. With the Export section expanded, select *Try it out*. 
     - Keep the default values and add dates in [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) for the _since and _until parameter values. The _since and _until parameters filter for claims last updated since and until a specified date. You can use a random date value such as “2021-01-01T00:00:00.000-05:00” for this job.
 3. Select *Execute*. If the job was created successfully, you’ll receive a 202 HTTP response code under *Server response*. 
-4. Copy the job ID from the *Response header*. The job ID is located in the content-location URL (http://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job id}/$status).
+4. Copy the job ID from the *Response header*. The job ID is located in the content-location URL (http://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status).
 
 ### III. Check the job status
 
-1. Select the Status command `/api/v2/fhir/Job/{jobUuid}/$status` 
+1. Select the Status command `/api/v2/fhir/Job/{job_uuid}/$status` 
 2. With the *Status* section expanded, select *Try it out*.  
-3. Paste the job ID from step II as the jobUuid value.
+3. Paste the job ID (job_uuid) from step II.
 4. Select *Execute*. 
 - If the job is still in progress, you’ll receive a 202 response code with a progress percentage by *x-progress*. Re-click the *Execute* button periodically until the job is complete.  
-- If the job is complete, you’ll receive a 200 response code. The *Response body* will return a list of file URLs (https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{jobUuid}/{filename}). 
+- If the job is complete, you’ll receive a 200 response code. The *Response body* will return a list of file URLs (https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/{file_name}). 
 
 ### IV. Download your files
 
-1. Select the *Download* command `/api/v2/fhir/Job/{jobUuid}/file/{filename}`
+1. Select the *Download* command `/api/v2/fhir/Job/{job_uuid}/file/{file_name}`
 2. With the *Download* section expanded, select *Try it out*.  
-3. Enter the job ID (jobUuid) and file name from step III. You can request compressed data files in gzip format and speed up your download times with the optional `Accept-Encoding: gzip` header.
+3. Enter the job ID (job_uuid) and file name from step III. You can request compressed data files in gzip format and speed up your download times with the optional `Accept-Encoding: gzip` header.
 4. Select *Execute*. If the download is successful, you’ll receive a 200 response code and a link to download the files. 
 5. Select *Download file* (under *Response body*). The file will be in [NDJSON](https://github.com/ndjson/ndjson-spec), where each line is a [JSON](https://www.json.org/json-en.html) object. You may need a text editor like [JSON viewer](https://jsonlint.com/) to read the file. 
 6. If you are obtaining [production access]({{ '/production-access' | relative_url }}), send the AB2D team the job ID as instructed. Note that job IDs expire after 72 hours.

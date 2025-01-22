@@ -1,9 +1,10 @@
 ---
-layout: default
+layout: api-docs
 title:  "AB2D Use Cases"
 description:  "The AB2D supports several important use cases."
 permalink: /use-cases
 in-page-nav: true
+show-side-nav: false
 ---
 
 # {{ page.title }}

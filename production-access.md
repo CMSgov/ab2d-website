@@ -1,10 +1,11 @@
 ---
-layout: default
+layout: api-docs
 title:  "Production Access"
 description:  "Instructions for how to request access to production claims data for your organization."
 permalink: /production-access
 in-page-nav: true
 in-page-nav-levels: "h2"
+show-side-nav: false
 ---
 
 # {{ page.title }}

@@ -3,6 +3,7 @@ layout: default
 title:  "Sitemap"
 permalink: /sitemap
 description: "Explore the AB2D site map to find documentation, resources, and more."
+show-side-nav: false
 ---
 
 # {{ page.title }}

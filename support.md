@@ -3,6 +3,7 @@ layout: default
 title:  "Support"
 description:  "How to get help and support with using the AB2D API."
 permalink: /support
+show-side-nav: false
 ---
 
 # {{ page.title }}

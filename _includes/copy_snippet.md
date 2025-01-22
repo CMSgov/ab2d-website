@@ -35,6 +35,8 @@
         {%- highlight markdown %}{{ code }}{% endhighlight -%}
       {%- elsif include.language == "shell" -%}
         {%- highlight shell %}{{ code }}{% endhighlight -%}
+      {%- elsif include.language == "yaml" -%}
+        {%- highlight yaml %}{{ code }}{% endhighlight -%}
       {%- else -%}
         {%- highlight plaintext %}{{ code }}{% endhighlight -%}
       {%- endif -%}
