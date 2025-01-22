@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 title:  "How to Get a Bearer Token"
-description:  "How to get a Bearer Token for use with the AB2D API."
+description:  "Obtain a bearer token for authenticating requests to the AB2D API, ensuring secure access to enrollees’ Medicare claims data."
 permalink: /get-a-bearer-token
 in-page-nav: true
 ---
