@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 title:  "How to Access Sandbox Data"
-description:  "Instructions for how to access claims claims data in a sandbox environment."
+description:  "Connect to the AB2D API and access test Medicare Parts A & B claims data in the sandbox environment."
 permalink: /access-sandbox-data
 in-page-nav: true
 ---
