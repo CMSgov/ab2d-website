@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 title:  "AB2D Data"
-description:  "Learn about claims data and how to apply it in context. The AB2D API shares large volumes of enrollee data."
+description:  "Explore the AB2D API’s Medicare Parts A & B data, its sample files, and claims data details."
 permalink: /ab2d-data
 in-page-nav: true
 ---
