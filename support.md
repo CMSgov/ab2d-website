@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Support"
-description:  "How to get help and support with using the AB2D API."
+description:  "Browse frequently asked questions (FAQs) and contact the AB2D team for troubleshooting help."
 permalink: /support
 show-side-nav: false
 ---
