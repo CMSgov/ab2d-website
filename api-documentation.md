@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 title:  "API Documentation"
-description:  "The AB2D API uses Fast Healthcare Interoperability (FHIR) resources to share enrollees’ Medicare Parts A and B claims data."
+description:  "Access comprehensive API documentation for AB2D, including instructions on how to access sandbox and production claims data."
 permalink: /api-documentation
 in-page-nav: true
 ---
