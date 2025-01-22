@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 title:  "Setup Instructions"
-description:  "How to set up an environment to access the AB2D."
+description:  "Set up curl and jq on your system to begin using the AB2D Medicare API and access your enrollees’ claims data."
 permalink: /setup-instructions
 in-page-nav: true
 ---
