@@ -1,14 +1,15 @@
 ---
 layout: api-docs
-title:  "Production Access"
-description:  "Prescription Drug Plan sponsors can access enrollees' Parts A & B Medicare claims data with production access to the AB2D API."
+page_title: "Production Access"
+seo_title: ""
+description: "Prescription Drug Plan sponsors can access enrollees' Parts A & B Medicare claims data with production access to the AB2D API."
 permalink: /production-access
 in-page-nav: true
 in-page-nav-levels: "h2"
 show-side-nav: false
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data in the production environment. Before accessing production claims data, make sure you've followed the steps listed in [API Documentation]({{ '/api-documentation' | relative_url }}).
 

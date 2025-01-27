@@ -1,6 +1,6 @@
 ---
 layout: hero
-title:  "AB2D API"
+page_title: "AB2D API"
 description: "Perform more effective Medication Therapy Management with access to enrollees’ Medicare Parts A & B claims data through the AB2D API."
 active-nav: home
 hero: true

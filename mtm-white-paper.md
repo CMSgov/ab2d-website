@@ -1,13 +1,14 @@
 ---
 layout: api-docs
-title:  "Using AB2D Medical Claims Data for Medicare Part D MTM Programs"
-description:  "Created by Centers for Medicare & Medicaid (CMS), the AB2D API supports improved care coordination with Medicare data insights."
+page_title: "Using AB2D Medical Claims Data for Medicare Part D MTM Programs"
+seo_title: ""
+description: "Created by Centers for Medicare & Medicaid (CMS), the AB2D API supports improved care coordination with Medicare data insights."
 permalink: /mtm-white-paper
 in-page-nav: true
 show-side-nav: false
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 <a href="{{ '/assets/downloads/Using AB2D Medical Claims Data for Medicare Part D MTM Programs.pdf' | relative_url }}" class="usa-button margin-bottom-3">Download PDF {% include sprite.html icon="file_download" size="3" %}</a>
 

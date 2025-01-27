@@ -1,7 +1,8 @@
 ---
 layout: default
-title:  "About AB2D"
-description:  "AB2D helps Prescription Drug Plan sponsors optimize outcomes for medication therapies. Learn about its permitted uses and history."
+page_title: "About AB2D"
+seo_title: ""
+description: "AB2D helps Prescription Drug Plan sponsors optimize outcomes for medication therapies. Learn about its permitted uses and history."
 permalink: /about
 show-side-nav: false
 ---
@@ -11,7 +12,7 @@ show-side-nav: false
     <img src="{{ '/assets/img/data-specialist.svg' | relative_url }}" alt="data analysis illustration" class="padding-x-6 padding-y-2"/>
   </div>
   <div class="tablet:grid-col tablet:order-1" >
-    <h1>{{ page.title }}</h1>
+    <h1>{{ page.page_title }}</h1>
     <p>
       The AB2D API is only available to active, stand-alone Prescription Drug Plan (PDP) sponsors. Also known as Part D sponsors, these are private insurers that deliver prescription drug benefits to Medicare enrollees. 
     </p>

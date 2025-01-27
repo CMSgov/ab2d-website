@@ -1,12 +1,13 @@
 ---
 layout: default
-title:  "Support"
-description:  "Browse frequently asked questions (FAQs) and contact the AB2D team for troubleshooting help."
+page_title: "Support"
+seo_title: ""
+description: "Browse frequently asked questions (FAQs) and contact the AB2D team for troubleshooting help."
 permalink: /support
 show-side-nav: false
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4 flex-align-center">
   <div class="tablet:grid-col tablet:order-2">

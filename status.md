@@ -1,6 +1,7 @@
 ---
 layout: default
-title:  "System Status"
+page_title: "System Status"
+seo_title: ""
 permalink: /status
 description: This page gives an overview of the status of the AB2D systems.
 show-side-nav: false

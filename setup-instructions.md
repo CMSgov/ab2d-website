@@ -1,12 +1,13 @@
 ---
 layout: api-docs
-title:  "Setup Instructions"
-description:  "Set up curl and jq on your system to begin using the AB2D Medicare API and access your enrollees’ claims data."
+page_title: "Setup Instructions"
+seo_title: ""
+description: "Set up curl and jq on your system to begin using the AB2D Medicare API and access your enrollees’ claims data."
 permalink: /setup-instructions
 in-page-nav: true
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 curl and jq are tools you can use to access the AB2D [sandbox]({{ '/access-test-claims-data' | realtive_url }}) and [production]({{ '/access-production-claims-data' | realtive_url }}) environments. curl comes preinstalled on some operating systems. In a terminal, type `curl –version` to check if it’s installed.
 
