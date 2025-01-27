@@ -1,12 +1,13 @@
 ---
 layout: api-docs
-title: "How to Access Production Claims Data"
+page_title: "How to Access Production Claims Data"
+seo_title: ""
 description: "Prescription Drug Plan sponsors can learn how to access Medicare patients’ Parts A & B claims data in the AB2D production environment."
 permalink: /access-production-claims-data
 in-page-nav: true
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 The production environment offers access to enrollee claims data, which contains Protected Health Information (PHI). In order to get enrollee claims data, Prescription Drug Plan (PDP) sponsors must have completed the steps for [production access]({{ '/production-access' | relative_url }}) beforehand.
 

@@ -1,12 +1,13 @@
 ---
 layout: api-docs
-title:  "How to Get a Bearer Token"
-description:  "Obtain a bearer token for authenticating requests to the AB2D API, ensuring secure access to enrollees’ Medicare claims data."
+page_title: "How to Get a Bearer Token"
+seo_title: ""
+description: "Obtain a bearer token for authenticating requests to the AB2D API, ensuring secure access to enrollees’ Medicare claims data."
 permalink: /get-a-bearer-token
 in-page-nav: true
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 Bearer tokens, also known as JSON web tokens, authorize use of the AB2D endpoints. You will need a bearer token to access the sandbox and production environments. Once you have a bearer token, follow the instructions to access either [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
 

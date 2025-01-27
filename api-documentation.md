@@ -1,12 +1,13 @@
 ---
 layout: api-docs
-title:  "API Documentation"
-description:  "Access comprehensive API documentation for AB2D, including instructions on how to access sandbox and production claims data."
+page_title: "API Documentation"
+seo_title: ""
+description: "Access comprehensive API documentation for AB2D, including instructions on how to access sandbox and production claims data."
 permalink: /api-documentation
 in-page-nav: true
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 The AB2D API uses [Fast Healthcare Interoperability (FHIR)](https://www.hl7.org/fhir/overview.html) resources to share enrollees’ Medicare Parts A and B claims data. Only active, stand-alone Prescription Drug Plan (PDP) sponsors are eligible to use AB2D. You can use a variety of tools or client softwares, like [curl](http://ab2d.cms.gov/setup-instructions), to access the sandbox and production environments.
 

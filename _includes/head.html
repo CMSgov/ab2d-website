@@ -1,10 +1,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ page.description | escape }}">
+    <meta name="description" content="{{ page.description }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <title>
+        {% if page.seo_title and page.seo_title != '' %}
+            {{ page.seo_title }}
+        {% elsif page.page_title and page.page_title != '' %}
+            {{ page.page_title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
     <!-- USWDS & theme -->

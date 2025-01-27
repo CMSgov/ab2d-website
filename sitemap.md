@@ -1,12 +1,13 @@
 ---
 layout: default
-title:  "Sitemap"
+page_title: "Sitemap"
+seo_title: ""
 permalink: /sitemap
 description: "Review a directory for all the pages on the AB2D website."
 show-side-nav: false
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 <ul>
     <li><a href="{{ '/index' | relative_url }}">Home</a>

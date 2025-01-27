@@ -1,12 +1,13 @@
 ---
 layout: api-docs
-title:  "Claims Data Details"
-description:  "Explore detailed information on the claims data available with the AB2D API, including diagnoses, procedures, providers, and service utilization."
+page_title: "Claims Data Details"
+seo_title: ""
+description: "Explore detailed information on the claims data available with the AB2D API, including diagnoses, procedures, providers, and service utilization."
 permalink: /claims-data-details
 in-page-nav: true
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 AB2D and its upstream data source generate and add fields to claims data in an effort to help make managing and providing those claims easier. 
 

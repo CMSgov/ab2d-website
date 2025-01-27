@@ -1,12 +1,13 @@
 ---
 layout: api-docs
-title:  "How to Access Sandbox Data"
-description:  "Connect to the AB2D API and access test Medicare Parts A & B claims data in the sandbox environment."
+page_title: "How to Access Sandbox Data"
+seo_title: ""
+description: "Connect to the AB2D API and access test Medicare Parts A & B claims data in the sandbox environment."
 permalink: /access-sandbox-data
 in-page-nav: true
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need a [bearer token]({{ '/get-a-bearer-token' | relative_url }}) to access the sandbox and authorize use of the AB2D endpoints. 
 

@@ -1,12 +1,13 @@
 ---
 layout: api-docs
-title:  "HTTP Query Parameters - V2"
+page_title: "HTTP Query Parameters - V2"
+seo_title: ""
 description: "Learn more about HTTP query parameters, and how they can filter Medicare claims data with the AB2D API."
 permalink: /query-parameters-v2
 in-page-nav: true
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 HTTP query parameters filter or specify the claims data returned during requests. The AB2D API offers a variety of parameters, which can differ depending on what version you’re using. Once you have a good understanding of parameters you can [use them to filter claims data]({{ '/filter-claims-data-v2' | relative_url }}).
 

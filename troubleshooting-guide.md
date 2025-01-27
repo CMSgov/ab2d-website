@@ -1,13 +1,14 @@
 ---
 layout: api-docs
-title:  "Troubleshooting Guide"
-description:  "Resolve common issues, errors, and technical challenges you may encounter while accessing claims data."
+page_title: "Troubleshooting Guide"
+seo_title: ""
+description: "Resolve common issues, errors, and technical challenges you may encounter while accessing claims data."
 permalink: /troubleshooting-guide
 in-page-nav: true
 in-page-nav-levels: "h2"
 ---
 
-# {{ page.title }}
+# {{ page.page_title }}
 
 The troubleshooting guide provides technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API. For further assistance, visit [Support]({{ '/support' | realtive_url }}). 
 
