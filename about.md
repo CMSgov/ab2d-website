@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "About AB2D"
-description:  "The AB2D API is only available to active, stand-alone Prescription Drug Plan (PDP) sponsors. Also known as Part D sponsors, these are private insurers that deliver prescription drug benefits to Medicare enrollees."
+description:  "AB2D helps Prescription Drug Plan sponsors optimize outcomes for medication therapies. Learn about its permitted uses and history."
 permalink: /about
 show-side-nav: false
 ---

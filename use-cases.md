@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 title:  "AB2D Use Cases"
-description:  "The AB2D supports several important use cases."
+description:  "Review use cases explaining how the AB2D API helps Prescription Drug Plan sponsors leverage Medicare claims data for enhanced care."
 permalink: /use-cases
 in-page-nav: true
 show-side-nav: false

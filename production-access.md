@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 title:  "Production Access"
-description:  "Instructions for how to request access to production claims data for your organization."
+description:  "Prescription Drug Plan sponsors can access enrollees' Parts A & B Medicare claims data with production access to the AB2D API."
 permalink: /production-access
 in-page-nav: true
 in-page-nav-levels: "h2"

@@ -1,7 +1,7 @@
 ---
 layout: hero
 title:  "AB2D API"
-description: "AB2D is an API for Prescription Drug Plan (PDP) sponsors offered by the Centers for Medicare & Medicaid Services (CMS)."
+description: "Perform more effective Medication Therapy Management with access to enrollees’ Medicare Parts A & B claims data through the AB2D API."
 active-nav: home
 hero: true
 hero-title: "Improve Medication Therapy with Medicare Claims Data"

@@ -2,7 +2,7 @@
 layout: default
 title:  "Sitemap"
 permalink: /sitemap
-description: "Explore the AB2D site map to find documentation, resources, and more."
+description: "Review a directory for all the pages on the AB2D website."
 show-side-nav: false
 ---
 

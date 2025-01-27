@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 title: "How to Filter Claims Data – V1"
-description: "Guidance for using AB2D version 1, which implements the Bulk Data Access Implementation Guide V1.0.1."
+description: "Filter and refine the Medicare claims data you receive from the AB2D API for faster job times and more efficient requests."
 permalink: /filter-claims-data-v1
 in-page-nav: true
 ---
