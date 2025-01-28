@@ -70,7 +70,7 @@ Download a ZIP file of the [Bash API repository](https://github.com/CMSgov/ab2d-
 {% capture curlSnippet %}{% raw %}
 source bootstrap.sh -prod --directory /home/abcduser/ab2d --auth /home/abcduser/credentials_Z123456_base64.txt --since 2020-05-01T00:00:00.000-05:00 --fhir R4
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Verify that the command worked and defined the correct environment variables:
@@ -93,23 +93,23 @@ echo $SINCE
 echo $FHIR_VERSION
 R4
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
     </li>
 </ol>
 
-### II. Start a job
+1. ### II. Start a job
 
-<ol>
-    <li>Request the Export endpoint in the same window used to create the environment variables and in the same directory where the scripts are located.
+    <ol>
+        <li>Request the Export endpoint in the same window used to create the environment variables and in the same directory where the scripts are located.
 
-{% capture curlSnippet %}{% raw %}
-./start-job.sh
-{% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
-    </li>
+    {% capture curlSnippet %}{% raw %}
+    ./start-job.sh
+    {% endraw %}{% endcapture %}
+    {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
+        </li>
 
-    <li>Verify that a file named “jobId.txt” was created.</li>
-</ol>
+        <li>Verify that a file named “jobId.txt” was created.</li>
+    </ol>
 
 ### III. Check the job status
 
@@ -118,7 +118,7 @@ Use the same shell to check the job status until it is complete. You do not have
 {% capture curlSnippet %}{% raw %}
 ./monitor-job.sh
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 This script will create a file named response.json in the directory. This will contain all the requested files. Files have a max size, so if the data exceeds that size, a new file will be created.
 
@@ -129,7 +129,7 @@ Once the job is complete, download the files from the same shell. You can reques
 {% capture curlSnippet %}{% raw %}
 ./download-results.sh
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 ## Windows Powershell client
 
@@ -146,21 +146,21 @@ Download a ZIP file of the [Powershell API repository](https://github.com/CMSgov
 {% capture curlSnippet %}{% raw %}
 $AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Set the authentication URL as AB2D’s production  identity provider:
 {% capture curlSnippet %}{% raw %}
 $AUTHENTICATION_URL='https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v2/token'
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Set the API URL as the production environment URL:
 {% capture curlSnippet %}{% raw %}
 $AB2D_API_URL='https://api.ab2d.cms.gov/api/v2'
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
 </ol>
 
@@ -172,14 +172,14 @@ $AB2D_API_URL='https://api.ab2d.cms.gov/api/v2'
 {% capture curlSnippet %}{% raw %}
 $JOB_RESULTS = &.\create-and-monitor-export-job.ps1 | select -Last 1
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Check the contents of the variable JOB_RESULTS. It will contain the list of files to download. Leave the shell open for the next step. 
 {% capture curlSnippet %}{% raw %}
 $JOB_RESULTS to check the contents of the variable
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
     </li>
 </ol>
 
@@ -190,7 +190,7 @@ Download the files into your current directory. You can request compressed data 
 {% capture curlSnippet %}{% raw %}
 .\download-results.ps1
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 ## Python client
 
@@ -210,13 +210,13 @@ Download a ZIP file of the [Python API repository](https://github.com/CMSgov/ab2
 {% capture curlSnippet %}{% raw %}
 AUTH_FILE=/home/abcduser/credentials_Z123456_base64.txt
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
                         </li>
                         <li>Windows
 {% capture curlSnippet %}{% raw %}
 $AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
         </ul>
     </li>
@@ -228,14 +228,14 @@ $AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
 {% capture curlSnippet %}{% raw %}
 DIRECTORY=/home/abcduser/ab2d
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 $DIRECTORY=C:\users\abcduser\ab2d
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
         </ul>
     </li>
@@ -249,7 +249,7 @@ $DIRECTORY=C:\users\abcduser\ab2d
 {% capture curlSnippet %}{% raw %}
 python --version
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
     </li>
     <li>
         <p>Start the export job. You can optionally use <a href="{{ '/query-parameters-V2' | relative_url }}">parameters</a> to filter the data returned.</p>
@@ -259,14 +259,14 @@ python --version
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth $AUTH_FILE --directory $DIRECTORY --since ‘2020-05-01T00:00:00.000-05:00’ --fhir R4 --only_start
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth %AUTH_FILE% --directory %DIRECTORY% --since ‘2020-05-01T00:00:00.000-05:00’ --fhir R4 --only_start
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
         </ul>
     </li>
@@ -278,14 +278,14 @@ python job-cli.py -prod --auth %AUTH_FILE% --directory %DIRECTORY% --since ‘20
 {% capture curlSnippet %}{% raw %}
 cat $DIRECTORY/job_id.txt
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 type %DIRECTORY%\job_id.txt
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
         </ul>
     </li>
@@ -302,14 +302,14 @@ type %DIRECTORY%\job_id.txt
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth $AUTH --directory $DIRECTORY --only_monitor
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
             <li>
             <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_monitor
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
         </ul>
     </li>
@@ -321,14 +321,14 @@ python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_monitor
 {% capture curlSnippet %}{% raw %}
 cat $DIRECTORY/response.json
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 type %DIRECTORY%\response.json
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
         </ul>
     </li>
@@ -345,14 +345,14 @@ type %DIRECTORY%\response.json
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth $AUTH --directory $DIRECTORY --only_download
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_download
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
         </ul>
     </li>
@@ -364,14 +364,14 @@ python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_download
 {% capture curlSnippet %}{% raw %}
 ls $DIRECTORY/*.ndjson
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 dir %TARGET_DIR%\*.ndjson
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
             </li>
         </ul>
     </li>
