@@ -1,7 +1,7 @@
 ---
 layout: default
 page_title: "Support"
-seo_title: ""
+seo_title: "Support | AB2D Enrollee Medicare Parts A & B Claims Data API"
 description: "Browse frequently asked questions (FAQs) and contact the AB2D team for troubleshooting help."
 permalink: /support
 show-side-nav: false

@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 page_title: "API Documentation"
-seo_title: ""
+seo_title: "API Documentation | AB2D Medicare Enrollee Claims Data"
 description: "Access comprehensive API documentation for AB2D, including instructions on how to access sandbox and production claims data."
 permalink: /api-documentation
 in-page-nav: true

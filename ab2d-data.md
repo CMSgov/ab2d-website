@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 page_title: "AB2D Data"
-seo_title: ""
+seo_title: "AB2D Data | Medicare Claims API for Part D Sponsors"
 description: "Explore the AB2D API’s Medicare Parts A & B data, its sample files, and claims data details."
 permalink: /ab2d-data
 in-page-nav: true

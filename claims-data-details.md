@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 page_title: "Claims Data Details"
-seo_title: ""
+seo_title: "Claims Data Details | AB2D Medicare Patient Claims API"
 description: "Explore detailed information on the claims data available with the AB2D API, including diagnoses, procedures, providers, and service utilization."
 permalink: /claims-data-details
 in-page-nav: true

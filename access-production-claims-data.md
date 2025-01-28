@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 page_title: "How to Access Production Claims Data"
-seo_title: ""
+seo_title: "Access Production Claims Data | AB2D Medicare API"
 description: "Prescription Drug Plan sponsors can learn how to access Medicare patients’ Parts A & B claims data in the AB2D production environment."
 permalink: /access-production-claims-data
 in-page-nav: true

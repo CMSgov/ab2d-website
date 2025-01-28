@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 page_title: "AB2D Use Cases"
-seo_title: ""
+seo_title: "Claims Data Use Cases for Part D Sponsors | AB2D API"
 description: "Review use cases explaining how the AB2D API helps Prescription Drug Plan sponsors leverage Medicare claims data for enhanced care."
 permalink: /use-cases
 in-page-nav: true
