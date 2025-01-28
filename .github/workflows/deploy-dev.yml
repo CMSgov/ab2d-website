@@ -59,9 +59,9 @@ jobs:
           JEKYLL_ENV: production
 
       # Step 9: Deploy to S3
-      - name: Deploy the site
-        run: |
-          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ github.event.number }}/
+      # - name: Deploy the site
+      #   run: |
+      #     aws s3 sync _site/ s3://website-ab2d-east-impl/${{ github.event.number }}/
 
       # Step 10: Invalidate existing cache
       # - name: Invalidate Cloudfront cache
