@@ -14,66 +14,74 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
 ## HTTP response codes
 
-<!--Using {: .font-sans-md .text-bold } instad of h4 for semantic cleanliness and a11y-->
-
-{: .font-sans-md .text-bold }
-200 HTTP response: request completed successfully
-
-{: .font-sans-md .text-bold }
-202 HTTP response: request accepted but still processing
-
-{: .font-sans-md .text-bold }
-400 HTTP response: bad request
-
-General response when something is wrong (e.g., missing a request parameter or body).
-
-{: .font-sans-md .text-bold }
-401 HTTP response: forbidden
-
-Your token is incorrect or has expired. Authentication has not been completed successfully. 
-
-{: .font-sans-md .text-bold }
-403 HTTP response: unauthorized
-
-You don’t have permission to access the requested data. This can happen for a variety of reasons:
-- Your token has expired.
-- You have specified a contract that is not yours.
-- You’re not authorized to use the API.
-- Authentication has failed.
-
-{: .font-sans-md .text-bold }
-403 HTTP response: forbidden
-
-Authentication succeeded, but you don’t have permission to access the requested data. This can happen due to a variety of reasons:  
-- The credentials provided may have a typo or syntax error (e.g., spaces, hidden characters).
-- The credentials provided may have been encoded to Base64 incorrectly. 
-- You’re connected to the sandbox idP (test.idp.idm.cms.gov) instead of the production idP (idp.cms.gov).
-- Authentication may have failed because of an incorrect header. "Authorization : Basic Auth" is the correct header.
-
-{: .font-sans-md .text-bold }
-404 HTTP response: page not found
-
-Resource or page not found. You could authenticate but the API endpoint does not exist. Troubleshooting:
-- Check the URL to make sure it exists. Enter it in a browser to check which error occurred. You won’t have passed credentials or necessary parameters, so it’ll give you another error. However, it shouldn’t give you a 404.
-- If you’re using curl at the command line, you may have to escape characters. For example, $ is used in $Export and $Status, but $ is a variable value in the Bash command line.
-
-{: .font-sans-md .text-bold }
-405 HTTP response: method not allowed
-
-You’re trying to execute a method which the endpoint does not support. For example, calling "/secure/get" as a POST method, even though the endpoint only supports GET methods.
-
-{: .font-sans-md .text-bold }
-429 HTTP response: too many requests
-
-You’re creating too many job requests within a short period of time. Try waiting a bit before making another request.
-
-{: .font-sans-md .text-bold }
-Unable to download bulk data file
-
-- Your file name and/or job ID are incorrect. Check the job status again to verify these details.
-- You requested to download the file more than 6 times.
-- You waited too long to download your completed job files. Files expire and automatically delete after 72 hours.
-- There’s a server error. If this continues to happen, contact the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
+<dl>
+  <dt class="font-sans-md text-bold margin-bottom-4">200 HTTP response: request completed successfully</dt>
+  <dd></dd>
+  
+  <dt class="font-sans-md text-bold margin-bottom-4">202 HTTP response: request accepted but still processing</dt>
+  <dd></dd>
+  
+  <dt class="font-sans-md text-bold">400 HTTP response: bad request</dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <p>General response when something is wrong (e.g., missing a request parameter or body).</p>
+  </dd>
+  
+  <dt class="font-sans-md text-bold">401 HTTP response: forbidden</dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <p>Your token is incorrect or has expired. Authentication has not been completed successfully.</p>
+  </dd>
+  
+  <dt class="font-sans-md text-bold">403 HTTP response: unauthorized</dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <p>You don’t have permission to access the requested data. This can happen for a variety of reasons:</p>
+    <ul>
+      <li>Your token has expired.</li>
+      <li>You have specified a contract that is not yours.</li>
+      <li>You’re not authorized to use the API.</li>
+      <li>Authentication has failed.</li>
+    </ul>
+  </dd>
+  
+  <dt class="font-sans-md text-bold">403 HTTP response: forbidden</dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <p>Authentication succeeded, but you don’t have permission to access the requested data. This can happen due to a variety of reasons:</p>
+    <ul>
+      <li>The credentials provided may have a typo or syntax error (e.g., spaces, hidden characters).</li>
+      <li>The credentials provided may have been encoded to Base64 incorrectly.</li>
+      <li>You’re connected to the sandbox idP (test.idp.idm.cms.gov) instead of the production idP (idp.cms.gov).</li>
+      <li>Authentication may have failed because of an incorrect header. "Authorization : Basic Auth" is the correct header.</li>
+    </ul>
+  </dd>
+  
+  <dt class="font-sans-md text-bold">404 HTTP response: page not found</dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <p>Resource or page not found. You could authenticate but the API endpoint does not exist. Troubleshooting:</p>
+    <ul>
+      <li>Check the URL to make sure it exists. Enter it in a browser to check which error occurred. You won’t have passed credentials or necessary parameters, so it’ll give you another error. However, it shouldn’t give you a 404.</li>
+      <li>If you’re using curl at the command line, you may have to escape characters. For example, $ is used in $Export and $Status, but $ is a variable value in the Bash command line.</li>
+    </ul>
+  </dd>
+  
+  <dt class="font-sans-md text-bold">405 HTTP response: method not allowed</dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <p>You’re trying to execute a method which the endpoint does not support. For example, calling "/secure/get" as a POST method, even though the endpoint only supports GET methods.</p>
+  </dd>
+  
+  <dt class="font-sans-md text-bold">429 HTTP response: too many requests</dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <p>You’re creating too many job requests within a short period of time. Try waiting a bit before making another request.</p>
+  </dd>
+  
+  <dt class="font-sans-md text-bold">Unable to download bulk data file</dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <ul>
+      <li>Your file name and/or job ID are incorrect. Check the job status again to verify these details.</li>
+      <li>You requested to download the file more than 6 times.</li>
+      <li>You waited too long to download your completed job files. Files expire and automatically delete after 72 hours.</li>
+      <li>There’s a server error. If this continues to happen, contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.</li>
+    </ul>
+  </dd>
+</dl>
 
 [Learn more about standard HTTP Codes.](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
