@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 page_title: "Using AB2D Medical Claims Data for Medicare Part D MTM Programs"
-seo_title: ""
+seo_title: "Medication Therapy Management White Paper | AB2D API"
 description: "Created by Centers for Medicare & Medicaid (CMS), the AB2D API supports improved care coordination with Medicare data insights."
 permalink: /mtm-white-paper
 in-page-nav: true
