@@ -15,9 +15,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install project Dependencies
+      - name: Install project dependencies
         run: |
-          sudo dnf -y install ruby3.3 ruby3.3-devel openssl-devel amazon-rpm-config gcc-c++
+          sudo dnf -y install ruby3.2 ruby3.2-devel openssl-devel amazon-rpm-config gcc-c++
       
       # Step 3: Set up Node.js
       - name: Set up Node.js
