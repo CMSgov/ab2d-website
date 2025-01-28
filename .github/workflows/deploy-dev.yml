@@ -8,7 +8,7 @@ on:
 
 jobs: 
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       # Step 1: Checkout the repo
@@ -26,7 +26,6 @@ jobs:
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with: 
-          self-hosted: true
           bundler-cache: true ## Runs 'bundle install' and caches installed gems automatically
           # ruby-version: '3.3.5' ## Using a .ruby-version file to stay in sync with the repo
         
@@ -48,9 +47,10 @@ jobs:
 
       # Step 7: Build Site
       - name: Build the site
-        run: bundle exec jekyll build --baseurl /${{ github.event.number }}
         env:
           JEKYLL_ENV: production
+        run: |
+          bundle exec jekyll build --baseurl /${{ github.event.number }}
 
       # Step 8: Initialize AWS Connection
       - name: Configure AWS Credentials
