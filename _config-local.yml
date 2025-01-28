@@ -38,6 +38,6 @@ include:
 defaults:
   -
     scope:
-      path: "_pages" # an empty string here means all files in the project
+      path: "_pages" 
     values:
       permalink: "/:title:output_ext"
