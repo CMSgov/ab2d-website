@@ -97,19 +97,19 @@ R4
     </li>
 </ol>
 
-1. ### II. Start a job
+### II. Start a job
 
-    <ol>
-        <li>Request the Export endpoint in the same window used to create the environment variables and in the same directory where the scripts are located.
+<ol>
+    <li>Request the Export endpoint in the same window used to create the environment variables and in the same directory where the scripts are located.
 
-    {% capture curlSnippet %}{% raw %}
-    ./start-job.sh
-    {% endraw %}{% endcapture %}
-    {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
-        </li>
+{% capture curlSnippet %}{% raw %}
+./start-job.sh
+{% endraw %}{% endcapture %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
+    </li>
 
-        <li>Verify that a file named “jobId.txt” was created.</li>
-    </ol>
+    <li>Verify that a file named “jobId.txt” was created.</li>
+</ol>
 
 ### III. Check the job status
 
