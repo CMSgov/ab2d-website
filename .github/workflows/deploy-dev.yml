@@ -14,49 +14,49 @@ jobs:
       # Step 1: Checkout the repo
       - name: Checkout
         uses: actions/checkout@v4
-        
-      # Step 2: Initialize AWS Connection
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with: 
-          aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.TEST_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-test-github-action
       
-      # Step 3: Set up Ruby
+      # Step 2: Set up Ruby
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with: 
           bundler-cache: true ## Runs 'bundle install' and caches installed gems automatically
           # ruby-version: '3.3.5' ## Using a .ruby-version file to stay in sync with the repo
 
-      # Step 4: Set up Node.js
-      - name: Set up ruby
+      # Step 3: Set up Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with: 
           node-version-file: '.nvmrc' 
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
         
-      # Step 5: Install Ruby Gems
+      # Step 4: Install Ruby Gems
       - name: Install jekyll and bundler
         run: |
           gem install bundler
           bundle install
 
-      # Step 6: Install Node.js Dependencies
+      # Step 5: Install Node.js Dependencies
       - name: Install npm dependencies
         run: |
           npm ci
 
-      # Step 7: Compile Assets
+      # Step 6: Compile Assets
       - name: Compile assets with Gulp
         run: |
           npm run gulp compile
 
-      # Step 8: Build Site
+      # Step 7: Build Site
       - name: Build the site
         run: bundle exec jekyll build --baseurl /${{ github.event.number }}
         env:
           JEKYLL_ENV: production
+
+      # Step 8: Initialize AWS Connection
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with: 
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.TEST_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-test-github-action
 
       # Step 9: Deploy to S3
       # - name: Deploy the site
