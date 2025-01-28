@@ -36,4 +36,14 @@ webrick:
     Pragma: no-cache
 
 exclude:
-- kitchen-sink.html # Don't build this page in production
+  - kitchen-sink.html # Don't build this page in production
+
+include:
+  - _pages
+
+defaults:
+  -
+    scope:
+      path: "_pages" # an empty string here means all files in the project
+    values:
+      permalink: "/:title:output_ext"
