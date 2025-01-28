@@ -26,6 +26,7 @@ jobs:
       - name: Set up ruby
         uses: ruby/setup-ruby@v1
         with: 
+          self-hosted: true
           bundler-cache: true ## Runs 'bundle install' and caches installed gems automatically
           # ruby-version: '3.3.5' ## Using a .ruby-version file to stay in sync with the repo
         
