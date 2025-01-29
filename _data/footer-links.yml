@@ -40,3 +40,6 @@
   
     - text: Sitemap
       url: /sitemap
+
+    - text: Privacy Settings
+      url: /privacy-settings
