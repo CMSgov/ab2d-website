@@ -46,4 +46,4 @@ defaults:
     scope:
       path: "_pages" 
     values:
-      permalink: "/:title:output_ext"
+      permalink: "/:title"
