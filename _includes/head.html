@@ -40,33 +40,5 @@
             { a='https://tags.tiqcdn.com/utag/cmsgov/cms-ab2d/prod/utag.js'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
         )();
     </script>
-
-    <!-- TODO: Do we need JQuery? Code comments imply it's part of CMS Tealium/Google Analytics -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-
     <!-- CMS Tealium/Google Analytics END -->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <script async src="{{ '/assets/js/autotrack.js' | relative_url }}"></script>
-    <script> /**
-     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-     ga('create', 'UA-133491498-1', 'auto');
-
-     // Implementing the following trackers via auto track
-     // https://github.com/googleanalytics/autotrack
-     ga('require', 'eventTracker');
-     ga('require', 'impressionTracker');
-     ga('require', 'mediaQueryTracker');
-     ga('require', 'maxScrollTracker');
-     ga('require', 'outboundLinkTracker');
-     ga('require', 'urlChangeTracker');
-     ga('require', 'pageVisibilityTracker');
-
-     // send the pageview
-     ga('send', 'pageview');
-     **/
-    </script>
 </head>

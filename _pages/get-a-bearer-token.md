@@ -51,14 +51,14 @@ Parameters:
         scope: clientCreds
 Authorization: Basic {base64_encoded_credentials}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="yaml" %}
+{% include copy_snippet.html code=curlSnippet language="yaml" %}
     </li>
     <li>
         The response will contain your bearer token. The token will be sent using the “Authorization” header field with “Bearer {XXX}” where {XXX} is the value of the token:
 {% capture curlSnippet %}{% raw %}
 Bearer {bearer_token}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
 
 {% capture tokenAlert %}
 Bearer tokens expire 1 hour from the time they are obtained. Use the token quickly to request your claims data. If your token expires, you’ll need to restart the process.
@@ -220,7 +220,7 @@ Encode the credentials (clientid:password) into Base64, and set the AUTH shell v
 {% capture curlSnippet %}{% raw %}
 AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 ### II. Get your bearer token
 
@@ -233,14 +233,14 @@ RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v
   -H "Accept: application/json" \
   -H "Authorization: Basic ${base64_encoded_credentials}")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 This extracts the token from the previous response and sets the TOKEN variable needed by all subsequent API requests. 
 
 {% capture curlSnippet %}{% raw %}
 TOKEN=$(echo $RESP1 | jq -r ".access_token")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 The token is valid for 1 hour. If it expires, repeat the process for a new token. 
 
@@ -263,14 +263,14 @@ AUTH_FILE=/home/abcduser/credentials_Z123456_base64.txt
 OKTA_CLIENT_ID=abcd
 OKTA_CLIENT_SECRET=badpassword
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Encode the credentials as Base64.
 {% capture curlSnippet %}{% raw %}
 echo -n "${okta_client_id}:${okta_client_password}" | base64 > $AUTH_FILE
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
 </ol>
 
@@ -284,19 +284,19 @@ echo -n "${okta_client_id}:${okta_client_password}" | base64 > $AUTH_FILE
 $AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
 New-Item -Path $AUTH_FILE -ItemType File
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Create the Base64 credentials.
 {% capture curlSnippet %}{% raw %}$BASE64_ENCODED_ID_PASSWORD='{base64_encoded_credentials}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Save the Base64 credentials as a single line in the authorization file.
 {% capture curlSnippet %}{% raw %}Set-Content -Path $AUTH_FILE $BASE64_ENCODED_ID_PASSWORD
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
 </ol>
 

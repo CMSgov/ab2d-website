@@ -246,7 +246,7 @@ For more information see: [FHIR Identifier Explanation](http://hl7.org/fhir/R4/e
     ],
 ...
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=jsonSnippet language="json" %} 
+{% include copy_snippet.html code=jsonSnippet language="json" %} 
 
 *Note: Claim group will be in the list of identifiers and identified by the claim group system.*
 
@@ -278,7 +278,7 @@ For more information:
     ],
 ...
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=jsonSnippet language="json" %} 
+{% include copy_snippet.html code=jsonSnippet language="json" %} 
 
 *Note: Claim id will be in the list of identifiers and identified by the claim ID system.*
 
@@ -359,7 +359,7 @@ Extensions referring to identifiers will have the following structure:
     }
 }
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=jsonSnippet language="json" %} 
+{% include copy_snippet.html code=jsonSnippet language="json" %} 
 
 ### Current MBI
 
@@ -402,7 +402,7 @@ If an MBI is current then the following example is representative.
     }
 ]
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=jsonSnippet language="json" %}
+{% include copy_snippet.html code=jsonSnippet language="json" %}
 
 *Note: The code value for identifier-currency will be current.*
 
@@ -427,7 +427,7 @@ Whereas if the MBI was historic then the value would be switched to historic.
     }
 ]
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=jsonSnippet language="json" %}
+{% include copy_snippet.html code=jsonSnippet language="json" %}
 
 *Note: The code value for identifier-currency will be historic.*
 

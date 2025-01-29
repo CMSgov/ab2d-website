@@ -21,14 +21,14 @@ If you don’t have it installed, use the following system-specific instructions
 {% capture setupSnippet %}{% raw %}
 brew install jq        
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
         <ul>
             <li>
         If you’re on the latest version of jq, you will have a warning that looks like this:
 {% capture setupSnippet %}{% raw %}
 Warning: jq {version} is already installed and up-to-date        
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" %}
+{% include copy_snippet.html code=setupSnippet language="shell" %}
             </li>
         </ul>
     </li>
@@ -37,7 +37,7 @@ Warning: jq {version} is already installed and up-to-date
 {% capture setupSnippet %}{% raw %}
 jq --version       
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
 </ol>
 
@@ -49,14 +49,14 @@ jq --version
 {% capture setupSnippet %}{% raw %}
 sudo yum install -y jq
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Verify jq is installed by checking the version number:
 {% capture setupSnippet %}{% raw %}
 jq --version       
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
 </ol>
 
@@ -70,7 +70,7 @@ In this example, we will be using the Linux Subsystem for Windows 10.
 {% capture setupSnippet %}{% raw %}
 windows features
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>Select <em>Turn Windows features on or off</em> from the leftmost panel.</li>
     <li>Scroll down to and check <em>Windows Subsystem for Linux</em>.</li>
@@ -82,7 +82,7 @@ windows features
 {% capture setupSnippet %}{% raw %}
 microsoft store
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>Select <em>Microsoft Store</em> from the leftmost panel.</li>
     <li>Select <em>Search</em> on the <em>Microsoft Store</em> page.</li>
@@ -90,7 +90,7 @@ microsoft store
 {% capture setupSnippet %}{% raw %}
 linux
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>Select <em>Run Linux on Windows</em>.</li>
     <li>Select <em>Ubuntu</em>.</li>
@@ -102,19 +102,19 @@ linux
 {% capture setupSnippet %}{% raw %}
 username@machinename:~$
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" %}
+{% include copy_snippet.html code=setupSnippet language="shell" %}
     </li>
     <li>You’ll be entering commands at the dollar sign prompt ($). The easiest way to do this is to copy and paste. Update the Ubuntu system by entering the command:
 {% capture setupSnippet %}{% raw %}
 sudo apt-get update -y
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>Install jq by entering this command at the dollar sign prompt:
 {% capture setupSnippet %}{% raw %}
 sudo apt-get install -y jq
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>When prompted, enter your password.</li>
     <li>Wait for the installation to complete.</li>
@@ -122,7 +122,7 @@ sudo apt-get install -y jq
 {% capture setupSnippet %}{% raw %}
 jq --version
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>Close the <em>Ubuntu</em> window.</li>
     <li>Close the <em>Microsoft Store</em> window.</li>
@@ -138,7 +138,7 @@ You can apply these instructions to other Unix-like applications as well.
 {% capture setupSnippet %}{% raw %}
 ubuntu
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=setupSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Select Ubuntu from the leftmost panel and a window will appear. You will be entering commands at the dollar sign prompt ($). The easiest way to do this is to use copy and paste.

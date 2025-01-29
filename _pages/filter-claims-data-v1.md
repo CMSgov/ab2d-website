@@ -128,7 +128,7 @@ curl "https://api.ab2d.cms.gov/api/v1/fhir/Patient/\$export?_since%3D2023-02-13T
 -H "Prefer: respond-async" \
 -H "Authorization: Bearer ${bearer_token}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 ## The \_type parameter
 

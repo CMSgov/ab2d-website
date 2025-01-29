@@ -58,7 +58,7 @@ Create a job to request sandbox data. You should receive a response with the job
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/Patient/$export
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
 
 If it takes more than 30 hours to retrieve and download the data, the request will time out and fail. Try using [parameters]({{ '/query-parameters-v2' | relative_url }}) when running a job to filter the claims data returned and reduce file size. 
 
@@ -69,7 +69,7 @@ Once a job has been created, get a status update using the job ID from the previ
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/Job/{job_uuid}/$status
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
 
 Too many status requests can result in a “Retry-After” response in the header. Wait until the period of time specified in the header has passed before making any more requests. 
 
@@ -80,14 +80,14 @@ Once the job is complete, the response will return a list of file URLs. In each 
 {% capture curlSnippet %}{% raw %}
 https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/{file_name}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
 
 Download the file using the job ID and file name. You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command.
 
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/Job/{job_uuid}/file/{file_name}
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
 
 Some downloads may take longer depending on the file size. Files and job IDs are only available for 72 hours, after which they’ll expire and be removed. 
 
@@ -98,7 +98,7 @@ You can cancel a job, but only if it hasn’t been completed.
 {% capture curlSnippet %}{% raw %}
 DELETE /api/v2/fhir/Job/{job_uuid}/$status
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
 
 ### Other
 
@@ -107,7 +107,7 @@ Retrieve the server’s [FHIR CapabilityStatement](https://www.hl7.org/fhir/capa
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/metadata
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
 
 ## curl instructions
 
@@ -125,7 +125,7 @@ RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_type
   -H "Accept: application/fhir+json" \
   -H "Authorization: Bearer ${bearer_token}")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 RESP2 is set to the headers of the HTTP response (by using the -i option of curl).
 
@@ -145,14 +145,14 @@ expires: 0
 strict-transport-security: max-age=31536000 ; includeSubDomains
 x-frame-options: DENY
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" %}
+{% include copy_snippet.html code=curlSnippet language="shell" %}
 
 - **Use the job ID from the content-location URL to set the JOB_ID variable with the following command:**
 
 {% capture curlSnippet %}{% raw %}
 JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 ### II. Check the job status
 
@@ -167,21 +167,21 @@ curl -sw '%{http_code}' -o status.json "https://www.google.com"  \
        echo "Status: " $STATUS
   }
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 When the job is complete, the response will contain URLs for the export files to be downloaded. This is an example response returned after executing `cat status.json | jq`:
 
 {% capture curlSnippet %}{% raw %}
 FILE=$(cat status.json | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="json" %}
+{% include copy_snippet.html code=curlSnippet language="json" %}
 
 - **Extract the file name from RESP3 into the FILE variable with the following command:**
 
 {% capture curlSnippet %}{% raw %}
 FILE=$(cat status.json | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 ### III. Download your files
 
@@ -193,7 +193,7 @@ RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${job_uuid}/file/${fi
   -H "Accept-Encoding: gzip" \
   -H "Authorization: Bearer ${bearer_token}")
 {% endraw %}{% endcapture %}
-{% include copy_snippet.md code=curlSnippet language="shell" can_copy=true %}
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 After retrieving sandbox data, follow the remaining steps to obtain [production access]({{ '/production-access' | relative_url }}).
 

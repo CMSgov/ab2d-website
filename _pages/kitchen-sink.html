@@ -878,14 +878,14 @@ in-page-nav-levels: "h2"
     }
   ],
 }{% endraw %}{% endcapture %}
-{% include copy_snippet.md code=jsonSnippet language="json" %}
+{% include copy_snippet.html code=jsonSnippet language="json" %}
 
 <h3>HTML</h3>
-{% include copy_snippet.md code='<!-- Comment -->
+{% include copy_snippet.html code='<!-- Comment -->
 <div class="foo"></div>' language="html" %}
 
 <h3>CSS</h3>
-{% include copy_snippet.md code='/* Comment */
+{% include copy_snippet.html code='/* Comment */
 .foo {
   color: red;
 }' language="css" %}
@@ -895,13 +895,13 @@ in-page-nav-levels: "h2"
 function foo(){
   var bar = document.getElementById("baz");
 }{% endraw %}{% endcapture %}
-{% include copy_snippet.md code=javascriptSnippet language="javascript" %}
+{% include copy_snippet.html code=javascriptSnippet language="javascript" %}
 
 <h3>Markdown</h3>
-{% include copy_snippet.md code='_italic text_ **bold text**' language="markdown" %}
+{% include copy_snippet.html code='_italic text_ **bold text**' language="markdown" %}
 
 <h3>Shell</h3>
-{% include copy_snippet.md code='brew install pre-commit' language="shell" %}
+{% include copy_snippet.html code='brew install pre-commit' language="shell" %}
 
 
 <hr class="margin-y-7" />
