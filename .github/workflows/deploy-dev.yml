@@ -65,9 +65,9 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.TEST_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-test-github-actions
 
       # Step 9: Deploy to S3
-      # - name: Deploy the site
-      #   run: |
-      #     aws s3 sync _site/ s3://website-ab2d-east-impl/${{ github.event.number }}/
+      - name: Deploy the site
+        run: |
+          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ github.event.number }}/
 
       # Step 10: Invalidate existing cache
       # - name: Invalidate Cloudfront cache
