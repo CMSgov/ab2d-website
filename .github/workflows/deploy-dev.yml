@@ -93,7 +93,7 @@ jobs:
             const sha = context.event_name === 'pull_request'
               ? context.payload.pull_request.head.sha
               : context.payload.after;
-            const commentIdentifier = '## Deployment Success Message';
+            const commentIdentifier = '## Deploy Preview';
             const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.sha}`;
             const previewUrl = `https://dyx9tyg1h7v8p.cloudfront.net/${context.issue.number}`
 
@@ -111,7 +111,7 @@ jobs:
                 issue_number: issueNumber,
               });
               return comments.data.find((comment) =>
-                comment.body.includes(commentIdentifier)
+                comment.body.startsWith(commentIdentifier)
               );
             }
 
