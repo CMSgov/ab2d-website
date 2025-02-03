@@ -95,7 +95,7 @@ jobs:
               : context.payload.after;
             const commentIdentifier = '## Deploy Preview';
             const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.sha}`;
-            const previewUrl = `https://dyx9tyg1h7v8p.cloudfront.net/${context.issue.number}`
+            const previewUrl = `https://dyx9tyg1h7v8p.cloudfront.net/${context.issue.number}/`
 
             const body = `${commentIdentifier}
 
