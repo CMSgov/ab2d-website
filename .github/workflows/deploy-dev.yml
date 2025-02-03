@@ -79,4 +79,16 @@ jobs:
       #     aws cloudfront create-invalidation \
       #     --distribution-id ${{ secrets.DISTRIBUTION_ID }} \
       #     --paths "/*"
-          
+  update-pr:  
+    needs: deploy
+    runs-on: self-hosted
+
+    steps: 
+      - name: Comment PR with execution number
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message: |
+          ## Deployment Success Message 
+          URL: [dyx9tyg1h7v8p.cloudfront.net/${{github.event.number}}/](dyx9tyg1h7v8p.cloudfront.net/${{github.event.number}}/)
+          Latest commit: [${{ github.sha }}](https://github.com/${{github.repository}}/commit/${{github.sha}})
+        comment-tag: preview-link
