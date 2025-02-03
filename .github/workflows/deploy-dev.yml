@@ -31,7 +31,7 @@ jobs:
             echo "DEPLOY_PATH=${{ github.event.number }}" >> $GITHUB_OUTPUT
           else
             echo "DEPLOY_PATH=${{ github.ref_name }}" >> $GITHUB_OUTPUT
-          if
+          fi
       
       # Step 3: Set up Node.js
       - name: Set up Node.js
@@ -93,7 +93,7 @@ jobs:
       #     aws cloudfront create-invalidation \
       #     --distribution-id ${{ secrets.DISTRIBUTION_ID }} \
       #     --paths "/*"
-      
+
   comment-pr:  
     needs: deploy-dev
     runs-on: self-hosted
