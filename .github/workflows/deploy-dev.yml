@@ -95,10 +95,11 @@ jobs:
               : context.payload.after;
             const commentIdentifier = '## Deployment Success Message';
             const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.sha}`;
+            const previewUrl = `https://dyx9tyg1h7v8p.cloudfront.net/${context.issue.number}`
 
             const body = `${commentIdentifier}
 
-            **Preview URL:** dyx9tyg1h7v8p.cloudfront.net/${context.issue.number}/
+            **Preview URL:** [${previewUrl}](${previewUrl})
 
             **Latest commit:** [${sha.substring(0, 7)}](\`${commitUrl}\`)`;
 
