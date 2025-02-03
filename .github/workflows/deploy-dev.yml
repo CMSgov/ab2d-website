@@ -124,6 +124,8 @@ jobs:
               const existingComment = await findComment(issueNumber);
               if (existingComment) {
                 await github.rest.issues.deleteComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
                   comment_id: existingComment.id,
                 });
               } 
