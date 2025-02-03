@@ -11,9 +11,6 @@ jobs:
     runs-on: self-hosted
     if: ${{ !startsWith(github.actor, 'bot-') }}
 
-    outputs:
-      set_deploy_path: ${{ steps.set_deploy_path.outputs.DEPLOY_PATH }}
-
     steps:
       # Step 1: Checkout the repo
       - name: Checkout
@@ -28,9 +25,9 @@ jobs:
         id: set_deploy_path
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "DEPLOY_PATH=${{ github.event.number }}" >> $GITHUB_OUTPUT
+            echo "DEPLOY_PATH=${{ github.event.number }}" >> $GITHUB_ENV
           else
-            echo "DEPLOY_PATH=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+            echo "DEPLOY_PATH=${{ github.ref_name }}" >> $GITHUB_ENV
           fi
       
       # Step 3: Set up Node.js
@@ -69,7 +66,7 @@ jobs:
         env:
           JEKYLL_ENV: production
         run: |
-          bundle exec jekyll build --baseurl /${{ steps.set_deploy_path.outcome.DEPLOY_PATH }}
+          bundle exec jekyll build --baseurl /${{ env.DEPLOY_PATH }}
 
       # Step 9: Initialize AWS Connection
       - name: Configure AWS Credentials
@@ -81,7 +78,7 @@ jobs:
       # Step 10: Deploy to S3
       - name: Deploy the site
         run: |
-          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ steps.set_deploy_path.outcome.DEPLOY_PATH }}/
+          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ env.DEPLOY_PATH }}/
 
       # Step 11: Invalidate existing cache
       # - name: Invalidate Cloudfront cache
