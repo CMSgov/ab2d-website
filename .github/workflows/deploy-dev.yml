@@ -84,11 +84,78 @@ jobs:
     runs-on: self-hosted
 
     steps: 
-      - name: Comment PR with execution number
-        uses: thollander/actions-comment-pull-request@v3
-        with:
-          message: |
-            ## Deployment Success Message 
-            URL: [dyx9tyg1h7v8p.cloudfront.net/${{github.event.number}}/](dyx9tyg1h7v8p.cloudfront.net/${{github.event.number}}/)
-            Latest commit: [${{ github.sha }}](https://github.com/${{github.repository}}/commit/${{github.sha}})
-          comment-tag: preview-link
+      - name: Post or update comment
+        uses: actions/github-script@v6
+        with: 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const sha = context.event_name === 'pull_request'
+              ? context.payload.pull_request.head.sha
+              : context.payload.after;
+            const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${sha}`;
+            const commentIdentifier = '## Deployment Success Message';
+            const body = `${commentIdentifier}
+
+                  ### URL: dyx9tyg1h7v8p.cloudfront.net/${github.event.number}/
+
+                  Latest commit: [${sha.substring(0,7)}](${commitUrl})`;
+
+            async function findComment(issueNumber) {
+              if (!issueNumber) return null;
+              const comments = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+              });
+              return comments.data.find((comment) =>
+                comment.body.includes(commentIdentifier)
+              );
+            }
+
+            async function createOrUpdateComment(issueNumber) {
+              if (!issueNumber) {
+                console.log('No issue number provided. Cannot post or update comment.');
+                return;
+              }
+
+              const existingComment = await findComment(issueNumber);
+              if (existingComment) {
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: existingComment.id,
+                  body: body,
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  issue_number: issueNumber,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: body,
+                });
+              }
+            }
+
+            if (context.eventName === 'pull_request') {
+              if (context.issue.number) {
+                await createOrUpdateComment(context.issue.number);
+              }
+            } else if (context.eventName === 'push') {
+              const pullRequests = await github.rest.pulls.list({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                head: `${context.repo.owner}:${context.ref.replace(
+                  'refs/heads/',
+                  ''
+                )}`,
+              });
+
+              if (pullRequests.data.length > 0) {
+                await createOrUpdateComment(pullRequests.data[0].number);
+              } else {
+                console.log(
+                  'No open pull request found for this push. Logging publish information to console:'
+                );
+              }
+            }
