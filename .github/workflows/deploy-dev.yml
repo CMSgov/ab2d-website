@@ -123,20 +123,17 @@ jobs:
 
               const existingComment = await findComment(issueNumber);
               if (existingComment) {
-                await github.rest.issues.updateComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
+                await github.rest.issues.deleteComment({
                   comment_id: existingComment.id,
-                  body: body,
                 });
-              } else {
-                await github.rest.issues.createComment({
-                  issue_number: issueNumber,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  body: body,
-                });
-              }
+              } 
+
+              await github.rest.issues.createComment({
+                issue_number: issueNumber,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body,
+              });
             }
 
             if (context.eventName === 'pull_request') {
