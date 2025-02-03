@@ -98,9 +98,9 @@ jobs:
 
             const body = `${commentIdentifier}
 
-                  ### URL: dyx9tyg1h7v8p.cloudfront.net/${context.issue.number}/
+            **Preview URL:** dyx9tyg1h7v8p.cloudfront.net/${context.issue.number}/
 
-                  Latest commit: [${sha.substring(0, 7)}](${commitUrl})`;
+            **Latest commit:** [${sha.substring(0, 7)}](\`${commitUrl}\`)`;
 
             async function findComment(issueNumber) {
               if (!issueNumber) return null;
