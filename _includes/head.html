@@ -32,17 +32,13 @@
 
     <!-- Within <head> of document below DataLayer snippet .
     The utag.sync.js script should run as early as possible -->
-    {% if JEKYLL_ENV== 'production' %}
-    {% assign tealium_env="prod" %}
-    {% else %} 
-    {% assign tealium_env="dev" %}
-    {% endif %}
-   
-    <script src="https://tealium-tags.cms.gov/cms-ab2d/{{tealium_env}}/utag.sync.js"></script>
-        <!-- Loading utag.js script asynchronously -->
+
+    <script src="https://tealium-tags.cms.gov/cms-ab2d/dev/utag.sync.js"></script>
+        
+    <!-- Loading utag.js script asynchronously -->
         <script type="text/javascript">
             (function(a,b,c,d)
-                { a='https://tealium-tags.cms.gov/cms-ab2d/{{tealium_env}}/utag.js'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
+                { a='https://tealium-tags.cms.gov/cms-ab2d/dev/utag.js'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
             )();
         </script> 
        
