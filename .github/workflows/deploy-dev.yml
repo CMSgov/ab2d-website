@@ -59,7 +59,7 @@ jobs:
       # Step 7: Compile Assets
       - name: Compile assets with Gulp
         run: |
-          npm run gulp compile
+          npm run build
 
       # Step 8: Build Site
       - name: Build the site

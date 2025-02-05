@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "dev": "gulp updateUswds && gulp watch",
+    "build": "gulp updateUswds && gulp compile"
   },
   "dependencies": {
     "gulp": "^5.0.0",
