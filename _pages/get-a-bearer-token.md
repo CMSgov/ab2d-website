@@ -42,7 +42,7 @@ Bearer tokens, also known as JSON web tokens, authorize use of the AB2D endpoint
     <li>
         Start a request for the bearer token, using your Base64-encoded string as the authorization. The request will look similar to our example:
 {% capture curlSnippet %}{% raw %}
-POST https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v2/token
+POST https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v1/token
 Headers:
         Content-Type: application/x-www-form-urlencoded
         Accept: application/json
@@ -228,7 +228,7 @@ Enter this command to make an HTTP request and set the RESP1 variable. The full 
 `MG9hMnQwbHNyZ…VHRINU9CY3VIdw==`.
 
 {% capture curlSnippet %}{% raw %}
-RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v2/token?grant_type=client_credentials&scope=clientCreds" \
+RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v1/token?grant_type=client_credentials&scope=clientCreds" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Accept: application/json" \
   -H "Authorization: Basic ${base64_encoded_credentials}")
