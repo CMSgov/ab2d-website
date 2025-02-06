@@ -176,6 +176,7 @@ jobs:
             }
   
   a11y-check:
+    needs: deploy-dev
     uses: ./.github/workflows/a11y-check.yml
     
   # broken-link-check:

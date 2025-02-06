@@ -4,7 +4,7 @@ on:
   workflow_call
 
 jobs: 
-  a11y-test:
+  a11y-check:
     runs-on: self-hosted
 
     steps: 
