@@ -16,7 +16,7 @@ show-side-nav: false
   <div class="tablet:grid-col tablet:order-1">
     <h2>Contact Us</h2>
     <p>
-      Email<a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to ask questions or get help. The AB2D team will get back to you promptly. You can also visit our Troubleshooting Guide for technical assistance.
+      Email <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to ask questions or get help. The AB2D team will get back to you promptly. You can also visit our <a href="{{ '/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a> for technical assistance.
     </p>
     <p>
       Join our <a href="https://groups.google.com/u/0/g/cms-ab2d-api">Google Group</a> to give feedback and get notified about planned outages or API updates.
@@ -61,7 +61,7 @@ Only active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are elig
 
 {% capture a4AccordionContent %}
 <p>
-    The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a> specifies that data may used for:
+    The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a> specifies that data may be used for:
 </p>
 <ul>
   <li>Optimizing therapeutic outcomes through improved medication use</li>
@@ -75,7 +75,7 @@ Only active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are elig
     <li>Inform coverage determinations under Part D;</li>
     <li>Conduct retroactive reviews of medically accepted indication(s) determinations;</li>
     <li>Facilitate enrollment changes to a different prescription drug plan or an MA-PD plan offered by the same parent organization; or</li>
-    <li>Inform marketing of benefits.</li>
+    <li>Inform marketing of benefits</li>
 </ol>
 <p>
 <a href="{{ '/about' | relative_url }}">Learn more about permitted uses of the data.</a>
@@ -103,6 +103,21 @@ How can we get additional data elements beyond what’s listed in the final rule
 </p>
 {% endcapture %}
 
+{% capture a7AccordionContent %}
+<p>
+  PDP sponsors have access to AB2D as long as they have an active Attestor. 
+</p>
+{% endcapture %}
+
+{% capture a8AccordionContent %}
+<p>
+ The “final” <a href="https://bluebutton.cms.gov/assets/ig/ValueSet-claim-query-cd.html">query code</a> indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, it’s possible for a claim object with a “final” query code to be cancelled and resubmitted under a new claim ID. 
+ </p>
+ <p>
+Every time you pull the data, you will get the latest version of a claim. Claim objects have a lastUpdated field, which represents when the data was last refreshed by the API. This shows when AB2D received the update, not when the update was submitted to Medicare. <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions-2">Learn how to use lastUpdated and claim ID to identify a unique instance of a claim.</a>
+</p>
+{% endcapture %}
+
 {% include accordion.html id="a1" heading="Who's eligible to request Medicare enrollee claims data?" expanded=true bordered=false accordionContent=a1AccordionContent %}
 
 {% include accordion.html id="a2" heading="What data elements can organizations access through the API?" expanded=false bordered=false accordionContent=a2AccordionContent %}
@@ -113,4 +128,8 @@ How can we get additional data elements beyond what’s listed in the final rule
 
 {% include accordion.html id="a5" heading=a5HeadingContent expanded=false bordered=false accordionContent=a5AccordionContent %}
 
-{% include accordion.html id="a6" heading="What happens if an Attestor leaves my organization" expanded=false bordered=false accordionContent=a6AccordionContent %}
+{% include accordion.html id="a6" heading="What happens if an Attestor leaves my organization?" expanded=false bordered=false accordionContent=a6AccordionContent %}
+
+{% include accordion.html id="a7" heading="How long do PDP sponsors have access to the AB2D API?" expanded=false bordered=false accordionContent=a7AccordionContent %}
+
+{% include accordion.html id="a8" heading="What does the “final” claim query code indicate?" expanded=false bordered=false accordionContent=a8AccordionContent %}

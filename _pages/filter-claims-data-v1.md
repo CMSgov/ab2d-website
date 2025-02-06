@@ -30,7 +30,7 @@ Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) 
 
 ## The \_since parameter
 
-<p> The _since parameter allows users to filter claims data returned by date, which reduces duplication and speeds up job times. It follows the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO datetime format</a> (yyyy-MM-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm.</p>
+<p> The _since parameter allows users to filter claims data returned by date, which reduces duplication and speeds up job times. It follows the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO datetime format</a> (yyyy-mm-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm.</p>
 
 The \_since parameter allows users to pull data that has been last updated since a specified date. The earliest possible date is February 13, 2020 (2020-02-13T00:00:00-05:00) or your organization's attestation date, whichever is later. If no \_since date is specified, it will default to your earliest possible date. It is highly recommended and considered best practice to use the \_since parameter on V1 API calls.
 
@@ -79,7 +79,7 @@ In this scenario, your organization attests on March 1, 2020. Your organization 
 1. The first job takes 4 hours to export all data available to you added between March 1, 2020 and November 1, 2020.
 2. The second job takes 4 and ½ hours to export all data available to you added between March 1, 2020 and December 1, 2020.
 
-Without the \_since parameter, the second job will pull all data from March 1st–December 1, 2020. Most of the data pulled is duplicate data. The only new data pulled is from the past month. Using the \_since parameter prevents this.
+Without the \_since parameter, the second job will pull all data from March 1st–December 1, 2020. Most of the data pulled is duplicate data. The only new data pulled is from the past month. Using the \_since parameter can prevent this.
 
 ### With the \_since parameter
 
@@ -105,8 +105,7 @@ In this usage model, an organization only pulls the last 2 weeks of claims data 
 
 ### Example export workflow for parameters
 
-The \_since parameter can be used while starting an export job. Visit the [Troubleshooting Guide]({{ '/troubleshooting-guide' | relative_url }}) to learn more about the export workflow for the AB2D API.
-Review both unencoded and percent-encoded examples of the \_since parameter. Note that ISO8601 dates include characters that can’t appear in URLs.
+The \_since parameter can be used while starting an export job. Visit <a href="{{ '/api-documentation' | relative_url }}#expected-workflow">API Documentation</a> to learn more about the expected workflow for the AB2D API. Review both unencoded and percent-encoded examples of the \_since parameter. Note that ISO8601 dates include characters that can’t appear in URLs.
 [Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Only the encoded versions will work, but the unencoded examples will show how the URL is formed before encoding.
 
 ### Only \_since parameter is specified
@@ -115,7 +114,7 @@ Review both unencoded and percent-encoded examples of the \_since parameter. Not
 
 `https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since=2023-02-13T00:00:00.000-05:00`
 
-#### Percemnt-encoded
+#### Percent-encoded
 
 `https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00`
 
@@ -126,14 +125,10 @@ curl "https://api.ab2d.cms.gov/api/v1/fhir/Patient/\$export?_since%3D2023-02-13T
 -H "Accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
--H "Authorization: Bearer ${bearer_token}
+-H "Authorization: Bearer ${bearer_token}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-## The \_type parameter
-
-Running a job request returns all resource types by default. The \_type parameter allows you to narrow this down and specify one resource you’d like returned. The only value AB2D currently supports for this parameter is ExplanationofBenefit (EOB).
-
 ## The \_outputFormat parameter
 
-The \_outputFormat parameter allows you to request different formats for your data exports. The default and only format AB2D currently supports is application/fhir+NDJSON. The server must support Newline Delimited JSON (NDJSON), but may choose to support additional output formats. The server must also accept the full content type of application/fhir+NDJSON, as well as the abbreviated representations application/NDJSON and NDJSON.
+The \_outputFormat parameter allows you to request different formats for your data exports. The default and only format AB2D currently supports is application/fhir+NDJSON. The server must support [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec), but may choose to support additional output formats. The server must also accept the full content type of application/fhir+NDJSON, as well as the abbreviated representations application/NDJSON and NDJSON.

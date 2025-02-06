@@ -13,7 +13,7 @@ show-side-nav: false
     <li><a href="{{ '/index' | relative_url }}">Home</a>
         <ul>
             <li><a href="{{ '/about' | relative_url }}">About</a></li>
-            <li><a href="{{ '/use-cases' | relative_url }}">Use cases</a></li>
+            <li><a href="{{ '/use-cases' | relative_url }}">Use Cases</a></li>
         </ul>
     </li>
     <li><a href="{{ '/api-documentation' | relative_url }}">API Documentation</a>

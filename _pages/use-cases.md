@@ -50,7 +50,7 @@ show-side-nav: false
     <p>Part D <a href="https://www.cms.gov/medicare/health-drug-plans/part-c-d-performance-data">Star Ratings</a> evaluate the quality of services received by enrollees in your plan. The Centers for Medicare & Medicaid Services (CMS) offers incentives to PDP sponsors with high Star Ratings:</p>
     <ul>
       <li>CMS highlights contracts with an overall rating of 5 stars.</li>
-      <li>Enrollees may enroll in a 5-Star PDP sponsor, MA-PD, or MA-only plan through a Special Election Period.</li>
+      <li>Enrollees may enroll in a 5-star PDP sponsor, MA-PD, or MA-only plan through a Special Election Period.</li>
       <li>PDP sponsors with 5-star plans may market year-round.</li>
     </ul>
     <p>Medication adherence is a quality measure used to rate PDP sponsors. AB2D data can improve medication adherence by proactively identifying MTM enrollees who may benefit from targeted intervention, such as statin use in persons with diabetes. AB2D can help improve enrollee health outcomes, the effectiveness of your programs, and your Star Ratings.</p>

@@ -17,7 +17,7 @@ If you don’t have it installed, use the following system-specific instructions
 
 <ol>
     <li>
-        Install or update jq using <a href="(https://brew.sh/)">Homebrew</a>:
+        Install or update jq using <a href="https://brew.sh/">Homebrew</a>:
 {% capture setupSnippet %}{% raw %}
 brew install jq        
 {% endraw %}{% endcapture %}
@@ -141,6 +141,6 @@ ubuntu
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>
-        Select Ubuntu from the leftmost panel and a window will appear. You will be entering commands at the dollar sign prompt ($). The easiest way to do this is to use copy and paste.
+        Select <em>Ubuntu</em> from the leftmost panel and a window will appear. You will be entering commands at the dollar sign prompt ($). The easiest way to do this is to use copy and paste.
     </li>
 </ol>

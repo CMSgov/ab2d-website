@@ -103,7 +103,7 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
 {% capture a6AccordionContent %}
 <p>
-Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during [production access]({{ '/production-access' | realtive_url }}) . 
+Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during <a href="{{ '/production-access' | realtive_url }}">production access</a>. 
 </p>
 <p>
 If the system is correct, check with your IT team to make sure you have a static IP address. If your IP address isn’t static, it may have changed. You must have a static IP address to use the API. 
@@ -124,9 +124,8 @@ If the system is correct, check with your IT team to make sure you have a static
           Windows: In a powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
         </li>
         </ul>
-        <li>In Postman, create a new GET request against the URL <code class="inline-code"><a href="https://api.ab2d.cms.gov/health">https://api.ab2d.cms.gov/health</a></code>. If the response has an HTTP status of 200 then your IP address can connect.</li>
-        <li>Open a browser and visit <code class="inline-code"><a href="https://api.ab2d.cms.gov/swagger-ui/index.html">https://api.ab2d.cms.gov/swagger-ui/index.html</a></code>.</li>    
-        <li>Open a browser and visit <code class="inline-code">https://api.ab2d.cms.gov/swagger-ui/index.html</code></li>
+        <li>In Postman, create a new GET request against the URL <a href="https://api.ab2d.cms.gov/health">https://api.ab2d.cms.gov/health</a>. If the response has an HTTP status of 200 then your IP address can connect.</li>
+        <li>Open a browser and visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html">https://api.ab2d.cms.gov/swagger-ui/index.html</a>.</li>    
 </ol>
 {% endcapture %}
 
@@ -162,10 +161,10 @@ If the system is correct, check with your IT team to make sure you have a static
       </li>
     </ul>
   <li>
-    In Postman, create a new DELETE request against the URL <code class="inline-code">https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status</code>. Note the request parameter {job_uuid} must be set in Postman.
+    In Postman, create a new DELETE request against the URL <a href="https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status">https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status</a>. Note the request parameter {job_uuid} must be set in Postman.
   </li>
   <li>
-    In a browser, visit <code class="inline-code"><a href="https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE">https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</a></code> and enter your job ID.
+    In a browser, visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE">https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</a> and enter your job ID.
   </li>
 </ul>
 {% endcapture %}
@@ -199,7 +198,7 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% capture a16AccordionContent %}
 <p>
-  STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, ExplanationOfBenefit.
+  STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, ExplanationofBenefit.
 </p>
 {% endcapture %}
 
