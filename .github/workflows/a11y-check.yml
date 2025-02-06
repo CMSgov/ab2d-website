@@ -18,6 +18,10 @@ jobs:
           node-version-file: '.nvmrc' 
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 
+      - name: Install npm dependencies
+        run: |
+          npm ci
+
       - name: Run pa11y
         run: npm run pa11y "--sitemap https://dyx9tyg1h7v8p.cloudfront.net/${{github.event.number}}/sitemap.xml --sitemap-exclude /*.pdf  --sitemap-find https://ab2d.cms.gov/ --sitemap-replace https://dyx9tyg1h7v8p.cloudfront.net/ --json > pa11y-results.json"
   
