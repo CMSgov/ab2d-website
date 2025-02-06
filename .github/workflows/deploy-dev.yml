@@ -34,6 +34,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with: 
+          cache: 'npm'
           node-version-file: '.nvmrc' 
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 

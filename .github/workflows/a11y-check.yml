@@ -11,6 +11,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with: 
+          cache: 'npm'
+          node-version-file: '.nvmrc' 
+          # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
+
       - name: Run pa11y
         run: npm run pa11y \
           --sitemap https://dyx9tyg1h7v8p.cloudfront.net/${{github.event.number}}/sitemap.xml \
