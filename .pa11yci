@@ -8,7 +8,10 @@
       "htmlcs",
       "axe"
     ],
-    "standard": "WCAG2AA"
+    "standard": "WCAG2AA",
+    "chromeLaunchConfig": {
+      "executablePath": "/usr/bin/google-chrome"
+    }
   },
   "timeout": 240000
 }
