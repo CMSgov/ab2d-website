@@ -41,7 +41,7 @@ jobs:
                 ],
                 ...Object.entries(data.results).map(([url, issues]) => ([
                   issues.length ? '❌' : '✅',
-                  `[${url}](${url})`,
+                  url,
                   String(issues.length)
                 ]))
               ])
