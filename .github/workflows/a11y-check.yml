@@ -36,7 +36,7 @@ jobs:
             body += "| ------ | --- | ------ |\n";
 
             Object.entries(data.results).forEach(([url, issues]) => {
-              body += `${issues.length ? '❌' : '✅' } | ${url} | ${issues.length} errors |\n`;
+              body += `${issues.length > 0 ? '❌' : '✅' } | ${url} | ${issues.length} errors |\n`;
             });
 
             core.summary.addRaw(body).write();
