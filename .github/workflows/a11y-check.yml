@@ -31,12 +31,18 @@ jobs:
             const results = "pa11y-results.json"
             const data = JSON.parse(fs.readFileSync(results, "utf-8"))
 
-            let body = "## Accessibility Report \n\n";
-            body += "| URL | Errors |\n";
-            body += "| --- | ------ |\n";
-
-            Object.entries(data.results).forEach(([url, issues]) => {
-              body += `| ${url} | ${issues.length} errors |\n`;
-            });
-
-            core.summary.addRaw(body).write();
+            core.summary
+              .addHeading("Accessibility Report")
+              .addTable([
+                [
+                  { data: "Status", header: true },
+                  { data: "URL", header: true },
+                  { data: "Errors", header: true }
+                ],
+                ...Object.entries(data.results).map(([url, issues]) => ([
+                  issues.length ? '❌' : '✅',
+                  `[${url}](${url})`,
+                  String(issues.length)
+                ]))
+              ])
+              .write();
