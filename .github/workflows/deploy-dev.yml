@@ -34,6 +34,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with: 
+          cache: 'npm'
           node-version-file: '.nvmrc' 
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 
@@ -59,7 +60,7 @@ jobs:
       # Step 7: Compile Assets
       - name: Compile assets with Gulp
         run: |
-          npm run build
+          npm run assets:build
 
       # Step 8: Build Site
       - name: Build the site
@@ -160,17 +161,22 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 state: 'open',
-                head: `${context.repo.owner}:${context.ref.replace(
-                  'refs/heads/',
-                  ''
-                )}`,
+                head: `${context.repo.owner}:${context.ref.replace('refs/heads/','')}`,
               });
 
               if (pullRequests.data.length > 0) {
                 await createOrUpdateComment(pullRequests.data[0].number);
               } else {
                 console.log(
-                  'No open pull request found for this push. Logging publish information to console:'
+                  'No open pull request found for this push.'
                 );
               }
             }
+  
+  a11y-check:
+    needs: deploy-dev
+    uses: ./.github/workflows/a11y-check.yml
+    
+  # broken-link-check:
+  #   uses: ./.github/workflows/broken-link-check.yml
+      
