@@ -14,7 +14,7 @@ show-side-nav: false
   <div class="tablet:grid-col tablet:order-1" >
     <h1>{{ page.page_title }}</h1>
     <p>
-      The AB2D API shares access to Medicare Parts A and B data. AB2D is only available to active, stand-alone Prescription Drug Plan (PDP) sponsors. Also known as Part D sponsors, these are  insurers that deliver Part D benefits to Medicare enrollees. 
+      The AB2D API shares access to Medicare Parts A and B data. AB2D is only available to active, stand-alone Prescription Drug Plan (PDP) sponsors. Also known as Part D sponsors, these are insurers that deliver Part D benefits to Medicare enrollees. 
     </p>
     <table class="usa-table usa-table--borderless usa-table--stacked">
       <caption class="usa-sr-only">Definitions of Part A and Part B claims data</caption>

@@ -124,7 +124,7 @@ If the system is correct, check with your IT team to make sure you have a static
           Windows: In a powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
         </li>
         </ul>
-        <li>In Postman, create a new GET request against the URL <a href="https://api.ab2d.cms.gov/health">https://api.ab2d.cms.gov/health</a>. If the response has an HTTP status of 200 then your IP address can connect.</li>
+        <li>In Postman, create a new GET request against the URL https://api.ab2d.cms.gov/health. If the response has an HTTP status of 200 then your IP address can connect.</li>
         <li>Open a browser and visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html">https://api.ab2d.cms.gov/swagger-ui/index.html</a>.</li>    
 </ol>
 {% endcapture %}
@@ -161,7 +161,7 @@ If the system is correct, check with your IT team to make sure you have a static
       </li>
     </ul>
   <li>
-    In Postman, create a new DELETE request against the URL <a href="https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status">https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status</a>. Note the request parameter {job_uuid} must be set in Postman.
+    In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status. Note the request parameter {job_uuid} must be set in Postman.
   </li>
   <li>
     In a browser, visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE">https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</a> and enter your job ID.
