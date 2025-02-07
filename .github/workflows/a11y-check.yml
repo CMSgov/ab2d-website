@@ -39,4 +39,4 @@ jobs:
               body += `${issues.length ? '❌' : '✅' } | ${url} | ${issues.length} errors |\n`;
             });
 
-            core.summary.write();
+            core.summary.addRaw(body).write();
