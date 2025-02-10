@@ -117,7 +117,7 @@ HTTP responses are saved into shell variables named `RESP<n>`. Most steps also d
 
 ### I. Start a job
 
-Start an export job of FHIR ExplanationofBenefit (EOB) resources using the following command: 
+Start an export job of FHIR ExplanationOfBenefit (EOB) resources using the following command: 
 
 {% capture curlSnippet %}{% raw %}
 RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_type=ExplanationOfBenefit" \
