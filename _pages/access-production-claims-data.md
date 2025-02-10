@@ -131,7 +131,7 @@ Once the job is complete, download the files from the same shell.
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip header` in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
+You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
 
 ## Windows Powershell client
 
@@ -194,7 +194,7 @@ Download the files into your current directory.
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip header` in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
+You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
 
 ## Python client
 
