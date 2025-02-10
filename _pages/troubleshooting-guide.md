@@ -103,7 +103,7 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
 {% capture a6AccordionContent %}
 <p>
-Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during <a href="{{ '/production-access' | realtive_url }}">production access</a>. 
+Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during <a href="{{ '/production-access' | relative_url }}">production access</a>. 
 </p>
 <p>
 If the system is correct, check with your IT team to make sure you have a static IP address. If your IP address isn’t static, it may have changed. You must have a static IP address to use the API. 
