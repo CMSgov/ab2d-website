@@ -303,8 +303,7 @@ Once the search job has been completed, the contents of the created file(s) can 
 GET /api/v2/fhir/Job/{jobUuid}/file/{filename}
 ```
 
-The file(s) are specified as the output of the status request. You can request compressed data files and speed up your download times by including the optional “Accept-Encoding: gzip” header in your command. Each file will only be available for 72 hours after the 
-job has completed.
+The file(s) are specified as the output of the status request. You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
 
 ### Cancellation
 A job may be canceled at any point during its processing:
