@@ -175,7 +175,7 @@ Get an overview of the endpoints you can request at the [sandbox]({{ '/access-sa
 
 ## JSON resources
 
-Both versions of AB2D use the JSON (NDJSON) data format for the FHIR ExplanationofBenefit resource type.
+Both versions of AB2D use the JSON (NDJSON) data format for the FHIR ExplanationOfBenefit resource type.
 
 - [Intro to JSON Format](http://json.org/)
 - [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec)
