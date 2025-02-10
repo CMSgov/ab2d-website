@@ -250,7 +250,7 @@ For more information see: [FHIR Identifier Explanation](http://hl7.org/fhir/R4/e
 
 ## Claim ID
 
-The Claim ID is found in every ExplanationofBenefit resource as 1 of a list of IDs found in the identifier field.
+The Claim ID is found in every ExplanationOfBenefit resource as 1 of a list of IDs found in the identifier field.
 
 - Format: a positive number
 - Location: found in the list of identifiers (eob.identifier[])
