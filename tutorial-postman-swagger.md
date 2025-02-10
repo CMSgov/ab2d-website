@@ -629,8 +629,7 @@ landing-page: live
 
                 <p>Click on the <strong>Download</strong> menu in swagger. Select the <strong>GET
                         /api/v2/fhir/Job/{jobUuid}/file/{filename}</strong>
-                    endpoint to download a file. You can request compressed data files and speed up your download 
-                    times by including the optional “Accept-Encoding: gzip” header in your command.</p>
+                    endpoint to download a file. You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.</p>
                     
                 <p> Click <strong>Try it out</strong>. Enter the Job ID of the job you
                     created and the file name returned in the status, then press the <strong>Execute</strong> big blue bar.</p>
