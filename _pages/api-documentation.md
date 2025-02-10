@@ -9,7 +9,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-The AB2D API uses [Fast Healthcare Interoperability (FHIR)](https://www.hl7.org/fhir/overview.html) resources to share enrollees’ Medicare Parts A and B claims data. Only active, stand-alone Prescription Drug Plan (PDP) sponsors are eligible to use AB2D. You can use a variety of tools or client softwares, like [curl](http://ab2d.cms.gov/setup-instructions), to access the sandbox and production environments.
+The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://www.hl7.org/fhir/overview.html) to share enrollees’ Medicare Parts A and B claims data. Only active, stand-alone Prescription Drug Plan (PDP) sponsors are eligible to use AB2D. You can use a variety of tools or client software programs, like [curl]({{ '/setup-instructions' | relative_url }}), to access the sandbox and production environments.
 
 ## Getting started
 
@@ -23,7 +23,7 @@ The AB2D API uses [Fast Healthcare Interoperability (FHIR)](https://www.hl7.org/
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Use the sandbox</p>
     <p>
-      The sandbox environment allows anyone to try the API and download test claims data. Learn how to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-test-claims-data' | relative_url }}">access the sandbox</a>.  
+      The sandbox environment allows anyone to try the API and download test claims data. Learn how to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-sandbox-data' | relative_url }}">access the sandbox</a>.  
     </p>
   </li>
   <li class="usa-process-list__item">
@@ -154,7 +154,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
           Optional - Check the health of the AB2D API
         </th>
         <td data-label="Goal">
-          Check the current status of the API – likewhether it’s up, down, or busy.
+          Check the current status of the API, like whether it’s up, down, or busy.
         </td>
         <td data-label="Endpoint">
           Health endpoint
@@ -171,11 +171,11 @@ Jobs are units of work that export and compile Medicare claims data. They are br
 
 ## Endpoints, schemas, and parameters
 
-Get an overview of the endpoints you can request at the [sandbox]({{ '/access-test-claims-data' | relative_url }}) or [production URL]({{ '/access-production-claims-data' | relative_url }}). You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/query-parameters-V2' | relative_url }}) to filter or specify the claims data returned. 
+Get an overview of the endpoints you can request at the [sandbox]({{ '/access-sandbox-data' | relative_url }}) or [production]({{ '/access-production-claims-data' | relative_url }}) URL. You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/query-parameters-V2' | relative_url }}) to filter or specify the claims data returned. 
 
 ## JSON resources
 
-Both versions of AB2D use the JSON (NDJSON) data format for the FHIR ExplanationOfBenefit resource.
+Both versions of AB2D use the JSON (NDJSON) data format for the FHIR ExplanationOfBenefit resource type.
 
 - [Intro to JSON Format](http://json.org/)
 - [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec)
@@ -241,10 +241,10 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
   </h3>
   <div id="m-a4" class="usa-accordion__content usa-prose">
     <p>
-      Bearer tokens, also referred to as <a href="https://jwt.io/introduction/">JSON web tokens </a>, are used during the <a href="https://oauth.net/2/">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.
+      Bearer tokens, also referred to as access tokens or <a href="https://jwt.io/introduction/">JSON web tokens</a>, are used during the <a href="https://oauth.net/2/">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.
     </p>
     <p>
-      You can get a bearer token by providing Okta with sandbox credentials or the production credentials received during onboarding. Bearer tokens expire after an hour, after which you must complete the process again.
+      You can get a bearer token by providing Okta with sandbox credentials or the production credentials received during <a href="{{ '/production-access' | relative_url }}">production access</a>. Bearer tokens expire after an hour, after which you must complete the process again.
     </p>
   </div>
 </div>

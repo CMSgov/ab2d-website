@@ -28,9 +28,9 @@ HTTP query parameters filter or specify the claims data returned during requests
 
 ## The _since and _until parameters
 
-<p>The _since and _until parameters let you filter claims data by date to reduce duplication and speed up job times. These parameters follow the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO datetime format</a> (yyyy-MM-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm. These optional parameters can be used separately or together.</p>
+<p>The _since and _until parameters let you filter claims data by date to reduce duplication and speed up job times. These parameters follow the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO datetime format</a> (yyyy-mm-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm. These optional parameters can be used separately or together.</p>
 
-Separately, these parameters allow you to pull data that was last updated since or until a specified date. You can use the meta/lastUpdated property of each ExplanationofBenefit (EOB) resource to see when each record was last updated. This will help you compare claims data when using the  _since and _until parameters. 
+Separately, these parameters allow you to pull data that was last updated since or until a specified date. You can use the meta/lastUpdated property of each ExplanationOfBenefit (EOB) resource to see when each record was last updated. This will help you compare claims data when using the  _since and _until parameters. 
 
 <a href="{{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }}">Download the Data Dictionary {% include sprite.html icon="file_download" class="text-middle" %}</a>
 
@@ -97,7 +97,7 @@ Together, the _since and _until parameters allow you to pull data that was last 
             <td data-label="_since datetime">2020-02-01T00:00:00+00:00</td>
             <td data-label="_until datetime">2020-02-28T00:00:00+00:00</td>
             <td data-label="Is it valid?">No</td>
-            <td data-label="Why?">The _since datetime is before February 13, 2020. The job will still run, but the datetime will be replaced with a different value.</td>
+            <td data-label="Why?">The _since datetime is before February 13, 2020. The job will still run, but the datetime will be replaced with the default.</td>
         </tr>
         <tr>
             <td data-label="_since datetime">2020-10-10T16:00:00+00:00</td>
@@ -125,15 +125,13 @@ Together, the _since and _until parameters allow you to pull data that was last 
 There may be use cases where a specific date range of claims data is required. For example:
 1. Your organization decides to incrementally export data and runs a job on December 1, 2023 for a month’s worth of data. 
 2. The job takes 4 hours to export all the data updated between November 1, 2023 and December 1, 2023. 
-3. Your organization realizes 1 week’s worth of data was corrupted in your database. Instead of rerunning the job, which would take 4 hours and result in duplicate data, you can use the _since and _until parameters to target the corrupted data:
+3. Your organization realizes 1 week’s worth of data was corrupted in your database. Instead of rerunning the job, which would take 4 hours and result in duplicate data, you can use the _since and _until parameters to target the corrupted data.
 4. Your organization identifies the corrupted data as claims last updated between November 12, 2023 and November 18, 2023. 
 5. Your organization runs a 2nd job with November 12, 2023 as the _since parameter value and November 18, 2023 as the _until parameter value. 
 6. The job takes less than 1 hour to export the week’s worth of missing data from your database. 
 
-## The _type parameter 
-
-Running a job request returns all resource types by default. The _type parameter allows you to narrow this down and specify one resource you’d like returned. The only value AB2D currently supports for this parameter is EOB. 
+[Review more example scenarios for the _since parameter.]({{ '/claims-data-details' | relative_url }}#example-scenario-3)
 
 ## The _outputFormat parameter 
 
-The _outputFormat parameter allows you to request different formats for your data exports. The default and only format AB2D currently supports is application/fhir+NDJSON. The server must support [Newline Delimited JSON (NDJSON)](http://ndjson.org/), but may choose to support additional output formats. The server must also accept the full content type of application/fhir+NDJSON, as well as the abbreviated representations application/NDJSON and NDJSON.
+The _outputFormat parameter allows you to request different formats for your data exports. The default and only format AB2D currently supports is application/fhir+NDJSON. The server must support [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec), but may choose to support additional output formats. The server must also accept the full content type of application/fhir+NDJSON, as well as the abbreviated representations application/NDJSON and NDJSON.

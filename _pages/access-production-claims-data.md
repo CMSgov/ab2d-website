@@ -9,7 +9,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-The production environment offers access to enrollee claims data, which contains Protected Health Information (PHI). In order to get enrollee claims data, Prescription Drug Plan (PDP) sponsors must have completed the steps for [production access]({{ '/production-access' | relative_url }}) beforehand.
+The production environment offers access to enrollee claims data, which contains [Protected Health Information (PHI)](https://www.hhs.gov/answers/hipaa/what-is-phi/index.html). In order to get enrollee claims data, Prescription Drug Plan (PDP) sponsors must have completed the steps for [production access]({{ '/production-access' | relative_url }}) beforehand.
 
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
@@ -28,9 +28,9 @@ The production environment offers access to enrollee claims data, which contains
 
 ## Instructions
 
-AB2D’s production and sandbox environments use the same workflow, endpoints, parameters, and resource type. You can [follow the same steps as you did in the sandbox]({{ '/access-sandbox-data' | relative_url }}) to retrieve production data.
+The production and sandbox environments use the same endpoints and workflow. You can [follow the same steps as you did in the sandbox]({{ '/access-sandbox-data' | relative_url }}) for production data.
 
-You’ll still need to [get a bearer token]({{ '/get-a-bearer-token' | relative_url }}) to call the API, but you’ll use the production identity provider (idp.cms.gov) and credentials issued by the AB2D team instead. When requesting endpoints, use the production URL (api.ab2d.cms.gov).
+You’ll still need [a bearer token]({{ '/get-a-bearer-token' | relative_url }}) to call the API, but use the production identity provider (idp.cms.gov), production URL (api.ab2d.cms.gov), and credentials issued by the AB2D team instead.
 
 - Start a job: `GET /api/v2/fhir/Patient/$export`
 - Retrieve metadata: `GET /api/v2/fhir/metadata`
@@ -44,11 +44,11 @@ If it takes more than 30 hours to retrieve and download the data, the request wi
 
 ### Format
 
-The files will be in NDJSON format, where each line is a Medicare claim written in JSON. The file naming standard is to use a contract identifier and then a number indicating where it falls in the series of files (e.g., Z123456_0001.ndjson). Data files are often large, so make sure you have adequate storage and a database to process the claims received.
+Files are in NDJSON format, where each line is a Medicare claim written in JSON. The file naming standard uses a contract identifier and number to indicate sequence (e.g., Z123456_0001.ndjson). Large data files require adequate storage and a database to process the claims received.
 
 ## Sample client scripts
 
-AB2D provides sample client scripts, but we encourage organizations to automate their individual processes. Sample scripts are not suitable for long-term use as they do not provide sufficient error checking, security, or auditing capabilities. You must run these scripts in a secure environment to protect [Protected Health Information (PHI)](https://www.hhs.gov/answers/hipaa/what-is-phi/index.html).
+AB2D provides sample client scripts, but we encourage organizations to automate their individual processes. Sample scripts are not suitable for long-term use as they do not provide sufficient error checking, security, or auditing capabilities. You must run these scripts in a secure environment to protect PHI.
 
 If you have multiple contracts, you can run scripts for them at the same time. However, you must use different directories, credentials, and terminals so each will have defined environment variables.
 
@@ -63,10 +63,10 @@ Download a ZIP file of the [Bash API repository](https://github.com/CMSgov/ab2d-
         <p>Open a Bash shell to run your commands. Environment variables will only be valid inside this shell. Do not close this terminal before the download is complete.</p>
     </li>
     <li>
-        <p>Go to the directory where the script files are located. Perform a `ls` to make sure the 4 scripts are there.</p>
+        <p>Go to the directory where the script files are located. Perform a <code class="inline-code">ls</code> to make sure the 4 scripts are there.</p>
     </li>
     <li>
-        <p>Run the following command using the Base64 credential file you created for your bearer token (e.g.,/home/abcduser/credentials_Z123456_base64.txt):</p>
+        <p>Run the following command using the Base64 credential file you created for your bearer token (e.g., /home/abcduser/credentials_Z123456_base64.txt):</p>
 {% capture curlSnippet %}{% raw %}
 source bootstrap.sh -prod --directory /home/abcduser/ab2d --auth /home/abcduser/credentials_Z123456_base64.txt --since 2020-05-01T00:00:00.000-05:00 --fhir R4
 {% endraw %}{% endcapture %}
@@ -124,12 +124,14 @@ This script will create a file named response.json in the directory. This will c
 
 ### IV. Download the files
 
-Once the job is complete, download the files from the same shell. You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command.
+Once the job is complete, download the files from the same shell. 
 
 {% capture curlSnippet %}{% raw %}
 ./download-results.sh
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
+
+You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
 
 ## Windows Powershell client
 
@@ -142,7 +144,7 @@ Download a ZIP file of the [Powershell API repository](https://github.com/CMSgov
         Open a PowerShell terminal and go to the directory that contains the scripts.
     </li>
     <li>
-        Set the authentication location as the Base64 credential file you created for your bearer token (e.g.,/home/abcduser/credentials_Z123456_base64.txt):
+        Set the authentication location as the Base64 credential file you created for your bearer token (e.g., /home/abcduser/credentials_Z123456_base64.txt):
 {% capture curlSnippet %}{% raw %}
 $AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
 {% endraw %}{% endcapture %}
@@ -185,12 +187,14 @@ $JOB_RESULTS to check the contents of the variable
 
 ### III. Download the files
 
-Download the files into your current directory. You can request compressed data files in gzip format and speed up your download times by including the optional `Accept-Encoding: gzip` header in your command. You can run the `dir` command to check if the download is successful:
+Download the files into your current directory. 
 
 {% capture curlSnippet %}{% raw %}
 .\download-results.ps1
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
+
+You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
 
 ## Python client
 
@@ -203,7 +207,7 @@ Download a ZIP file of the [Python API repository](https://github.com/CMSgov/ab2
         <p>In a Bash Shell or PowerShell terminal, go to the directory with the script file.</p>
     </li>
     <li>
-        <p>Set the authorization file as the Base64 credential file you created for your bearer token (e.g.,/home/abcduser/credentials_Z123456_base64.txt):</p>
+        <p>Set the authorization file as the Base64 credential file you created for your bearer token (e.g., /home/abcduser/credentials_Z123456_base64.txt):</p>
         <ul>
             <li>
                 <p>Linux/Mac</p>
@@ -271,7 +275,7 @@ python job-cli.py -prod --auth %AUTH_FILE% --directory %DIRECTORY% --since ‘20
         </ul>
     </li>
     <li>
-        <p>Verify that a job_id.txt file was created. The file should contain a job ID (e.g.,133039b8-c74c-422f-8836-8335c13f5a8d).</p>
+        <p>Verify that a job_id.txt file was created. The file should contain a job ID (e.g., 133039b8-c74c-422f-8836-8335c13f5a8d).</p>
         <ul>
             <li>
                 <p>Linux/Mac</p>
@@ -338,7 +342,7 @@ type %DIRECTORY%\response.json
 
 <ol>
     <li>
-        <p>Download the files in the same shell used to prepare the environment variables. You can request compressed data files in gzip format and speed up your download times by including the optional <code class="inline-code">Accept-Encoding: gzip</code> header in your command:</p>
+        <p>Download the files in the same shell used to prepare the environment variables. You can speed up download times by requesting compressed files in gzip format with the optional <code class="inline-code">Accept-Encoding: gzip</code> header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.</p>
         <ul>
             <li>
                 <p>Linux/Mac</p>
@@ -383,11 +387,11 @@ After you download your files, clean up your directory as needed. You can move t
 
 ## Incremental export model
 
-Incremental exports of data, ideally at a bi-weekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/filter-claims-data-v2' | relative_url }})
+Incremental exports of data, ideally at a bi-weekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/filter-claims-data-v2' | relative_url }}#incremental-export-model)
 
 ## Troubleshooting
 
-Review our [troubleshooting guide]({{ '/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2). If you need additional assistance, email the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
+Review our [Troubleshooting Guide]({{ '/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2). If you need additional assistance, email the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
 
 When contacting our team, please include the following information:
 

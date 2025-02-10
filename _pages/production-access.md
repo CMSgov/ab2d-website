@@ -11,7 +11,7 @@ show-side-nav: false
 
 # {{ page.page_title }}
 
-Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access production enrollee claims data in the production environment. Before accessing production claims data, make sure you've followed the steps listed in [API Documentation]({{ '/api-documentation' | relative_url }}).
+Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enrollee claims data in the production environment. Before accessing production claims data, make sure you've followed the steps listed in [API Documentation]({{ '/api-documentation' | relative_url }}).
 
 <ol class="usa-process-list">
   <li class="usa-process-list__item">
@@ -34,12 +34,12 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access produc
             Once you log in to the <a href="https://hpms.cms.gov/app/ng/cda/attestations">HPMS</a> and select <em>Claims Data Attestation</em> (under <em>Contract Management</em>):
           </p>
           <ol>
-            <li>Choose a single, multiple, or all contracts in the <em>Contracts Without Attestation</em> window.</li>
+            <li>Choose single, multiple, or all contracts in the <em>Contracts Without Attestation</em> window.</li>
             <li>Select <em>Attest</em>.</li>
             <li>Agree to the <em>Claims Data Usage Protocols</em>.</li>
           </ol>
           <p>
-            To add multiple Attestors, follow the same steps and select the <em>Re-attest</em> button in step 4.
+            To add multiple Attestors, follow the same steps and select <em>Re-attest</em> during step 2.
           </p>
         </div>
         <h3 class="usa-accordion__heading">

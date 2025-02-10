@@ -10,7 +10,7 @@
 - heading: AB2D Data
   links:
     - text: GitHub repo
-      url: https://github.com/CMSgov/ab2d-website
+      url: https://github.com/CMSgov/ab2d
       icon: github
       external: true
 
