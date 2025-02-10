@@ -198,7 +198,7 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% capture a16AccordionContent %}
 <p>
-  STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, ExplanationofBenefit.
+  STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, ExplanationOfBenefit.
 </p>
 {% endcapture %}
 
