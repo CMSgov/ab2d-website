@@ -6,7 +6,7 @@
   <div class="grid-row">
     {% if can_copy == true %}
       <label class="usa-sr-only">Code snippet:
-        <input type="text" id="code{{ nanosecond }}" value="{{ code | xml_escape }}" readonly />
+        <textarea id="code{{ nanosecond }}" readonly>{{ code | xml_escape }}</textarea>
       </label>
       <div class="position-absolute top-1 right-1 z-100">
         <button 
@@ -56,7 +56,8 @@
     if ('clipboard' in navigator) {
       navigator.clipboard.writeText(copyText.value);
     } else {
-      document.execCommand('copy', true, copyText.value);
+      copyText.select();
+      document.execCommand('copy');
     }
 
   })
