@@ -75,9 +75,6 @@ show-side-nav: false
         </div>
       </li>
     </ul>
-    <p>
-      <a href="{{ '/use-cases' | relative_url }}" class="usa-button usa-button--unstyled">Explore use cases {% include sprite.html icon="arrow_forward" %}</a>
-    </p>
   </div>
 
   <div class="tablet:grid-col">
@@ -117,6 +114,12 @@ show-side-nav: false
       </li>
     </ul>
   </div>
+</div>
+
+<div>
+  <p>
+    <a href="{{ '/use-cases' | relative_url }}" class="usa-button usa-button--unstyled">Explore use cases {% include sprite.html icon="arrow_forward" %}</a>
+  </p>
 </div>
 
 

@@ -120,9 +120,6 @@ hero-button-2-text: "Code Repo"
         </div>
       </li>
     </ul>
-    <p>
-      <a href="{{ '/about' | relative_url }}" class="usa-button usa-button--unstyled"> Learn more about AB2D {% include sprite.html icon="arrow_forward" %}</a>
-    </p>
   </div>
 
   <div class="tablet:grid-col">
@@ -162,6 +159,12 @@ hero-button-2-text: "Code Repo"
       </li>
     </ul>
   </div>
+</div>
+
+<div>
+  <p>
+    <a href="{{ '/about' | relative_url }}" class="usa-button usa-button--unstyled">Learn more about AB2D {% include sprite.html icon="arrow_forward" %}</a>
+  </p>
 </div>
 
 
