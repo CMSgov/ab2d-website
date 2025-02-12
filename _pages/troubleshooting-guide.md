@@ -10,7 +10,7 @@ in-page-nav-levels: "h2"
 
 # {{ page.page_title }}
 
-The troubleshooting guide provides technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API. For further assistance, visit [Support]({{ '/support' | realtive_url }}). 
+The troubleshooting guide provides technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API. For further assistance, visit [Support]({{ '/support' | relative_url }}). 
 
 ## HTTP response codes
 
