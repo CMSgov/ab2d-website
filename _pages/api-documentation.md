@@ -9,7 +9,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://www.hl7.org/fhir/overview.html) to share enrollees’ Medicare Parts A and B claims data. Only active, stand-alone Prescription Drug Plan (PDP) sponsors are eligible to use AB2D. You can use a variety of tools or client software programs, like [curl]({{ '/setup-instructions' | relative_url }}), to access the sandbox and production environments.
+The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://hl7.org/fhir/R4/overview.html) to share enrollees’ Medicare Parts A and B claims data. Only active, stand-alone Prescription Drug Plan (PDP) sponsors are eligible to use AB2D. You can use a variety of tools or client software programs, like [curl]({{ '/setup-instructions' | relative_url }}), to access the sandbox and production environments.
 
 ## Getting started
 
@@ -68,7 +68,7 @@ Both environments use the same endpoints with the main differences being the cre
 
 
 ## Expected workflow
-Jobs are units of work that export and compile Medicare claims data. They are broken into 4 phases. These phases are standard regardless of your programming language or platform. The AB2D workflow is based on the [Bulk Data Implementation Guide](https://hl7.org/fhir/uv/bulkdata/).
+Jobs are units of work that export and compile Medicare claims data. They are broken into 4 steps. These phases are standard regardless of your programming language or platform. The AB2D workflow is based on the [Bulk Data Implementation Guide](https://hl7.org/fhir/uv/bulkdata/).
 
   <table class="usa-table usa-table--stacked usa-table--borderless">
     <thead>

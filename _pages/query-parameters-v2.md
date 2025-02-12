@@ -46,7 +46,7 @@ The latest possible date is the current date. If no _until date is specified, it
 
 Together, the _since and _until parameters allow you to pull data that was last updated within a certain date range. However, the _since parameter value must be an earlier date than the _until parameter value. In other words, the _since datetime must have occurred before the _until datetime. 
 
-### Examples of parameter values
+### Examples of default parameter behavior
 
 <table class="usa-table usa-table--stacked usa-table--borderless">
     <thead>
@@ -57,15 +57,15 @@ Together, the _since and _until parameters allow you to pull data that was last 
     </thead>
     <tbody>
         <tr>
-            <td data-label="Parameters"><b>_since</b> = n/a <br> <b>_until</b> = n/a</td>
+            <td data-label="Parameters"><b>_since</b> = not set <br> <b>_until</b> = not set</td>
             <td data-label="Date range of export requests"><b>From</b> last successful and fully downloaded job date <b>to</b> current date</td>
         </tr>
         <tr>
-            <td data-label="Parameters"><b>_since</b> = 1/1/2023 <br> <b>_until</b> = n/a</td>
+            <td data-label="Parameters"><b>_since</b> = 1/1/2023 <br> <b>_until</b> = not set</td>
             <td data-label="Date range of export requests"><b>From</b> 1/1/2023 <b>to</b> current date</td>
         </tr>
         <tr>
-            <td data-label="Parameters"><b>_since</b> = n/a <br> <b>_until</b> = 1/1/2024</td>
+            <td data-label="Parameters"><b>_since</b> = not set <br> <b>_until</b> = 1/1/2024</td>
             <td data-label="Date range of export requests"><b>From</b> last successfully and fully downloaded job date <b>to</b> 1/1/2024</td>
         </tr>
         <tr>

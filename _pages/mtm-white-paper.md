@@ -15,7 +15,7 @@ show-side-nav: false
 
 ## Executive overview 
 
-The AB2D API is developed by the Centers for Medicare & Medicaid Services (CMS). It offers active, stand-alone Prescription Drug Plan (PDP) sponsors access to Medicare Parts A and B claims (“medical claims”) data for permitted uses at no cost. AB2D data use the [Fast Healthcare Interoperability Resources](https://www.hl7.org/fhir/overview.html) (FHIR) format and includes:  
+The AB2D API is developed by the Centers for Medicare & Medicaid Services (CMS). It offers active, stand-alone Prescription Drug Plan (PDP) sponsors access to Medicare Parts A and B claims (“medical claims”) data for permitted uses at no cost. AB2D data use the [Fast Healthcare Interoperability Resources](https://hl7.org/fhir/R4/index.html) (FHIR) format and includes:  
 
 - diagnosis (ICD-10) codes 
 - procedural codes 
