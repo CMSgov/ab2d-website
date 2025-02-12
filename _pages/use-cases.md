@@ -73,7 +73,7 @@ show-side-nav: false
     </ul>
 
     {% capture finalRuleAlert %}
-    According to the <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare">final rule</a>, AB2D data can not be used to influence coverage determination. Permitted uses include fraud, waste, and abuse detection from providers and suppliers only.
+    According to the <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a>, AB2D data can not be used to influence coverage determination. Permitted uses include fraud, waste, and abuse detection from providers and suppliers only.
     {% endcapture %}
     {% include alert.html variant="info" text=finalRuleAlert classNames="measure-6" %}
   </div>

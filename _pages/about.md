@@ -75,9 +75,6 @@ show-side-nav: false
         </div>
       </li>
     </ul>
-    <p>
-      <a href="{{ '/use-cases' | relative_url }}" class="usa-button usa-button--unstyled">Explore use cases {% include sprite.html icon="arrow_forward" %}</a>
-    </p>
   </div>
 
   <div class="tablet:grid-col">
@@ -119,6 +116,12 @@ show-side-nav: false
   </div>
 </div>
 
+<div>
+  <p>
+    <a href="{{ '/use-cases' | relative_url }}" class="usa-button usa-button--unstyled">Explore use cases {% include sprite.html icon="arrow_forward" %}</a>
+  </p>
+</div>
+
 
 <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-8 flex-align-center">
   <div class="tablet:grid-col-5 tablet:order-1">
@@ -130,7 +133,7 @@ show-side-nav: false
       The Centers for Medicare &amp; Medicaid Services (CMS) developed AB2D to follow the <a href="https://www.congress.gov/bill/115th-congress/house-bill/1892/text">Bipartisan Budget Act of 2018 (BBA)</a> and <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a>. This is in accordance with requirements to share claims data with PDP sponsors that have active contracts.
     </p>
     <p>
-      AB2D provides PDP sponsors with Medicare data to promote the best use of medications and improve health outcomes. AB2D electronically exchanges healthcare information using the <a href="https://www.hl7.org/fhir/overview.html">Fast Healthcare Interoperability Resources (FHIR)</a> standard for efficient and secure data sharing.
+      AB2D provides PDP sponsors with Medicare data to promote the best use of medications and improve health outcomes. AB2D electronically exchanges healthcare information using the <a href="https://hl7.org/fhir/R4/index.html">Fast Healthcare Interoperability Resources (FHIR)</a> standard for efficient and secure data sharing.
     </p>
   </div>
 </div>

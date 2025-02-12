@@ -16,7 +16,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
 <ol class="usa-process-list">
   <li class="usa-process-list__item">
     <h2 class="usa-process-list__heading margin-bottom-2">Attest to AB2D data protocols</h2>
-      <span class="usa-tag bg-accent-cool-dark">Completed by Attestor</span>
+      <span class="usa-tag bg-accent-cool-darker">Completed by Attestor</span>
       <p>
           A current CEO, CFO, or COO  (“Attestor”) from your organization first needs to agree (“attest") to our Claims Data Usage Protocols. These protocols include <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">legal limitations on data use and disclosure.</a>
       </p>
@@ -83,7 +83,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
   </li>
   <li class="usa-process-list__item">
     <h2 class="usa-process-list__heading margin-bottom-2">Choose an AB2D Data Operations Specialist</h2>
-    <span class="usa-tag bg-accent-cool-dark">Completed by Attestor</span>
+    <span class="usa-tag bg-accent-cool-darker">Completed by Attestor</span>
     <p>
       Once attestation is complete, the Attestor will receive an email with instructions on how to assign an AB2D Data Operations Specialist (ADOS). This is a primary technical point of contact for your organization.
     </p>
@@ -108,7 +108,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
   </li>
   <li class="usa-process-list__item">
     <h2 class="usa-process-list__heading margin-bottom-2">Get production credentials</h2>
-    <span class="usa-tag bg-accent-cool-dark">Completed by Attestor</span>
+    <span class="usa-tag bg-accent-cool-darker">Completed by Attestor</span>
     <span>and</span>
     <span class="usa-tag">Completed by AB2D Data Ops Specialist</span>
     <p>

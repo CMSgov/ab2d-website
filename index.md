@@ -77,7 +77,7 @@ hero-button-2-text: "Code Repo"
   </div>
   <div class="tablet:grid-col" >
     <h2>Using the data</h2>
-    <p>AB2D is an Application Programming Interface using <a href="https://www.hl7.org/fhir/overview.html">Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
+    <p>AB2D is an Application Programming Interface using <a href="https://hl7.org/fhir/R4/index.html">Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
     <ul>
       <li>enrollee identifiers</li>
       <li>diagnosis codes</li>
@@ -120,9 +120,6 @@ hero-button-2-text: "Code Repo"
         </div>
       </li>
     </ul>
-    <p>
-      <a href="{{ '/about' | relative_url }}" class="usa-button usa-button--unstyled"> Learn more about AB2D {% include sprite.html icon="arrow_forward" %}</a>
-    </p>
   </div>
 
   <div class="tablet:grid-col">
@@ -162,6 +159,12 @@ hero-button-2-text: "Code Repo"
       </li>
     </ul>
   </div>
+</div>
+
+<div>
+  <p>
+    <a href="{{ '/about' | relative_url }}" class="usa-button usa-button--unstyled">Learn more about AB2D {% include sprite.html icon="arrow_forward" %}</a>
+  </p>
 </div>
 
 

@@ -102,7 +102,7 @@ DELETE /api/v2/fhir/Job/{job_uuid}/$status
 
 ### Other
 
-Retrieve the server’s [FHIR CapabilityStatement](https://www.hl7.org/fhir/capabilitystatement.html) resource (required by the standard).
+Retrieve the server’s [FHIR CapabilityStatement](https://hl7.org/fhir/R4/capabilitystatement.html) resource (required by the standard).
 
 {% capture curlSnippet %}{% raw %}
 GET /api/v2/fhir/metadata

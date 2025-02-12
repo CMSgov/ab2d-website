@@ -22,7 +22,7 @@
       url: /claims-data-details
 
     - text: FHIR specification
-      url: https://hl7.org/fhir/
+      url: https://hl7.org/fhir/R4/index.html
       external: true
 
 - heading: About
