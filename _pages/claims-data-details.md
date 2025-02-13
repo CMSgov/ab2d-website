@@ -57,13 +57,10 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           Claim Status
         </th>
         <td data-label="Description">
-          If you are, however, viewing 1 version of a claim within the context of a claim family and the last version is canceled, then the claim family is canceled.
+          Current status of the claim, which is either active or cancelled. If the latest version (Claim ID) in a family of claims is cancelled, then the entire claim is cancelled. 
         </td>
         <td data-label="EOB Location">
           <p>eob.status</p>
-          <ul>
-            <li>“Active” or “canceled”</li>
-          </ul>
         </td>
         <td data-label="For More Details">
           <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
@@ -85,10 +82,10 @@ AB2D and its upstream data source generate and add fields to claims data in an e
       </tr>
       <tr>
         <th data-label="Field" scope="row">
-          MBI
+         Medicare Beneficiary Identifier (MBI)
         </th>
         <td data-label="Description">
-          Medicare Beneficiary Identifier (Medicare standard identifier).
+          Unique identifier for an enrollee or patient across CMS. An MBI can be current or historic.
         </td>
         <td data-label="EOB Location">
           eob.extension
@@ -138,7 +135,7 @@ There are 2 primary claim identifiers used to logically identify and map relatio
           Claim ID
         </th>
         <td data-label="Description">
-          The unique identification number of a single claim object “version.” Each change to a claim will result in a new claim object and result in the assignment of a new unique Claim ID. Each of the related Claim IDs will share a common Claim Group ID. A Claim ID may have multiple claim lines.
+          The unique identification number of a single claim object “version.” Each change to a claim will result in a new claim object with a unique Claim ID. Each of the related Claim IDs will share a common Claim Group ID. A Claim ID may have multiple Claim Line IDs.
         </td>
       </tr>
     </tbody>
