@@ -66,9 +66,16 @@ Download a ZIP file of the [Bash API repository](https://github.com/CMSgov/ab2d-
         <p>Go to the directory where the script files are located. Perform a <code class="inline-code">ls</code> to make sure the 4 scripts are there.</p>
     </li>
     <li>
-        <p>Run the following command using the Base64 credential file you created for your bearer token (e.g., /home/abcduser/credentials_Z123456_base64.txt):</p>
+        <p>Run the following command using the Base64 credential file you created for your bearer token (e.g., /home/abcduser/credentials_Z123456_base64.txt).</p>
+
+        <p>Speed up download times by requesting compressed files in gzip format with <code class="inline-code">--gzip</code>. Afterward, decompress (unzip) the files into NDJSON format.</p>
 {% capture curlSnippet %}{% raw %}
-source bootstrap.sh -prod --directory /home/abcduser/ab2d --auth /home/abcduser/credentials_Z123456_base64.txt --since 2020-05-01T00:00:00.000-05:00 --fhir R4
+source bootstrap.sh -prod 
+--directory /home/abcduser/ab2d 
+--auth /home/abcduser/credentials_Z123456_base64.txt 
+--since 2020-05-01T00:00:00.000-05:00 
+--fhir R4
+--gzip
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
@@ -131,7 +138,6 @@ Once the job is complete, download the files from the same shell.
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
 
 ## Windows Powershell client
 
@@ -194,7 +200,6 @@ Download the files into your current directory.
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
 
 ## Python client
 
@@ -342,7 +347,7 @@ type %DIRECTORY%\response.json
 
 <ol>
     <li>
-        <p>Download the files in the same shell used to prepare the environment variables. You can speed up download times by requesting compressed files in gzip format with the optional <code class="inline-code">Accept-Encoding: gzip</code> header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.</p>
+        <p>Download the files in the same shell used to prepare the environment variables.</p>
         <ul>
             <li>
                 <p>Linux/Mac</p>
