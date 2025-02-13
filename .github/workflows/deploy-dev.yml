@@ -81,17 +81,6 @@ jobs:
         run: |
           aws s3 sync _site/ s3://website-ab2d-east-impl/${{ env.DEPLOY_PATH }}/
 
-      # Step 11: Invalidate existing cache
-      # - name: Invalidate Cloudfront cache
-      #   env: 
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     AWS_REGION: us-east-1
-      #   run: |
-      #     aws cloudfront create-invalidation \
-      #     --distribution-id ${{ secrets.DISTRIBUTION_ID }} \
-      #     --paths "/*"
-
   comment-pr:  
     needs: deploy-dev
     runs-on: self-hosted
@@ -104,10 +93,6 @@ jobs:
         uses: actions/github-script@v7
         with: 
           script: |
-            console.log({
-              event_name: context.event_name
-            });
-
             const commentIdentifier = '## Deploy Preview';
             const commitSha = context.payload.pull_request.head.sha;
             const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${commitSha}`;
