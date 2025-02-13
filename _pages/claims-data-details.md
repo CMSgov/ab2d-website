@@ -32,10 +32,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           Unique identifier of a claim which is the same across claim updates. This field can be used to group together a family of claims.
         </td>
         <td data-label="EOB Location">
-          <p>eob.identifier[] </p>
-          <ul>
-            <li>Found in list of identifiers </li>
-          </ul>
+          <p>eob.identifier list</p>
         </td>
         <td data-label="For More Details">
           <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying claims and claim versions</a>
@@ -49,10 +46,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           Unique identifier of a single version of a claim. Not the same across updates.
         </td>
         <td data-label="EOB Location">
-          <p>eob.identifier[] </p>
-          <ul>
-            <li>Found in list of identifiers </li>
-          </ul>
+          <p>eob.identifier list</p>
         </td>
         <td data-label="For More Details">
           <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying claims and claim versions</a>
@@ -223,7 +217,7 @@ All URLs below are highlighted in blue. Otherwise, they are a URI (uniform resou
 The Claim Group is always 1 of a list of IDs found in the identifier field. The Claim Group ID remains the same between all versions of a claim. It can be used to group together a “family” of claims.
 
 - Format: a positive number
-- Location: found in the list of identifiers (eob.identifier[])
+- Location: found in the eob.identifier list
 - Claim Extension System: [https://bluebutton.cms.gov/resources/identifier/claim-group](https://bluebutton.cms.gov/resources/identifier/claim-group)
 
 For more information see: [FHIR Identifier Explanation](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
@@ -253,7 +247,7 @@ For more information see: [FHIR Identifier Explanation](http://hl7.org/fhir/R4/e
 The Claim ID is found in every ExplanationOfBenefit resource as 1 of a list of IDs found in the identifier field.
 
 - Format: a positive number
-- Location: found in the list of identifiers (eob.identifier[])
+- Location: found in eob.identifier list
 - Claim Extension System: [https://bluebutton.cms.gov/resources/variables/clm_id](https://bluebutton.cms.gov/resources/variables/clm_id)
 
 For more information: 
@@ -294,7 +288,7 @@ For more information: [FHIR Specification for Claim Status](http://hl7.org/fhir/
 The Last Updated field is a metadata field reflecting the last time the claim object was refreshed. For example, the Last Updated field will change after a claim object’s status changes (e.g., from active to canceled). It shows when AB2D received a change, not when the change was actually made and submitted to Medicare.  
 
 - Format: ISO datetime with a timezone
-- Location: Found in claims metadata (eob.meta.lastUpdated)
+- Location: found in claims metadata (eob.meta.lastUpdated)
 - URL: [http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated)
 
 For more information:
