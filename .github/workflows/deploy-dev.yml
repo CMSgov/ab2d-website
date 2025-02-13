@@ -104,15 +104,20 @@ jobs:
         uses: actions/github-script@v7
         with: 
           script: |
+            console.log({
+              event_name: context.event_name
+            });
+
             const commentIdentifier = '## Deploy Preview';
-            const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.sha}`;
+            const commitSha = context.payload.pull_request.head.sha;
+            const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${commitSha}`;
             const previewUrl = `https://dyx9tyg1h7v8p.cloudfront.net/${context.issue.number}/`
 
             const body = `${commentIdentifier}
 
             **Preview URL:** [${previewUrl}](${previewUrl})
 
-            **Latest commit:** [${context.sha.substring(0, 7)}](\`${commitUrl}\`)`;
+            **Latest commit:** [${commitSha.substring(0, 7)}](\`${commitUrl}\`)`;
 
             async function findComment(issueNumber) {
               if (!issueNumber) return null;
