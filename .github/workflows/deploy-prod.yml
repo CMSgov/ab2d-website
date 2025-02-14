@@ -1,12 +1,11 @@
 name: "Deploy to Production (Test)"
 
 on:
-  push: 
-    branches:
-      - AB2D-6557-create-production-deploy-action
+  release:
+    types: ['published']
 
 jobs: 
-  deploy-dev:
+  deploy-prod:
     runs-on: self-hosted
 
     steps:
