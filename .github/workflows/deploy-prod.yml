@@ -2,7 +2,7 @@ name: "Deploy to Production (Test)"
 
 on:
   release:
-    types: ['published']
+    types: ['released']
 
 jobs: 
   deploy-prod:
