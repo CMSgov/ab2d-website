@@ -14,19 +14,18 @@ AB2D and its upstream data source generate and add fields to claims data in an e
 ## Important AB2D claim fields
 
 <div class="overflow-x-auto">
-  <table class="usa-table usa-table--stacked usa-table--borderless">
+  <table class="usa-table tablet:usa-table--stacked usa-table--borderless custom-table">
     <thead>
       <tr>
         <th scope="col">Field</th>
         <th scope="col">Description</th>
         <th scope="col">EOB location</th>
-        <th scope="col">For more details</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th data-label="Field" scope="row">
-          Claim Group
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim Group</a>
         </th>
         <td data-label="Description">
           Unique identifier of a claim which is the same across claim updates. This field can be used to group together a family of claims.
@@ -34,13 +33,10 @@ AB2D and its upstream data source generate and add fields to claims data in an e
         <td data-label="EOB Location">
           <p>eob.identifier list</p>
         </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying claims and claim versions</a>
-        </td>
       </tr>
       <tr>
         <th data-label="Field" scope="row">
-          Claim ID
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim ID</a>
         </th>
         <td data-label="Description">
           Unique identifier of a single version of a claim. Not the same across updates.
@@ -48,13 +44,10 @@ AB2D and its upstream data source generate and add fields to claims data in an e
         <td data-label="EOB Location">
           <p>eob.identifier list</p>
         </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying claims and claim versions</a>
-        </td>
       </tr>
       <tr>
         <th data-label="Field" scope="row">
-          Claim Status
+          <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
         </th>
         <td data-label="Description">
           Current status of the claim, which is either active or cancelled. If the latest version (Claim ID) in a family of claims is cancelled, then the entire claim is cancelled. 
@@ -62,36 +55,27 @@ AB2D and its upstream data source generate and add fields to claims data in an e
         <td data-label="EOB Location">
           <p>eob.status</p>
         </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
-        </td>
       </tr>
       <tr>
         <th data-label="Field" scope="row">
-          Last Updated
+          <a href="{{ '/claims-data-details' | relative_url }}#last-updated">Last Updated</a>
         </th>
         <td data-label="Description">
           The last time any modification (new version) of a claim was received by AB2D.
         </td>
-        <td data-label="EOB Location">
+        <td data-label="EOB Location" style="word-break:break-all">
           eob.meta.lastUpdated
-        </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#last-updated">Last Updated</a>
         </td>
       </tr>
       <tr>
         <th data-label="Field" scope="row">
-         Medicare Beneficiary Identifier (MBI)
+         <a href="{{ '/claims-data-details' | relative_url }}#identifying-patients">Medicare Beneficiary Identifier (MBI)</a>
         </th>
         <td data-label="Description">
           Unique identifier for an enrollee or patient across CMS. An MBI can be current or historic.
         </td>
         <td data-label="EOB Location">
           eob.extension
-        </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#identifying-patients">Identifying patients</a>
         </td>
       </tr>
     </tbody>
