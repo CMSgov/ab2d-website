@@ -77,7 +77,7 @@ hero-button-2-text: "Code Repo"
   </div>
   <div class="tablet:grid-col" >
     <h2>Using the data</h2>
-    <p>AB2D is an Application Programming Interface using <a href="https://hl7.org/fhir/R4/index.html">Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
+    <p>AB2D is an Application Programming Interface using <a href="https://hl7.org/fhir/R4/index.html" target="_blank" rel="noopener">Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
     <ul>
       <li>enrollee identifiers</li>
       <li>diagnosis codes</li>
@@ -92,7 +92,7 @@ hero-button-2-text: "Code Repo"
 <div class="grid-row grid-gap padding-y-2">
   <div class="tablet:grid-col">
     <p class="margin-bottom-2 text-bold">
-      The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a> specifies that data may be used for:
+      The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank" rel="noopener">final rule</a> specifies that data may be used for:
     </p>
     <ul class="usa-icon-list">
       <li class="usa-icon-list__item">

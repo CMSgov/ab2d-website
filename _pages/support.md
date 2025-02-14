@@ -19,7 +19,7 @@ show-side-nav: false
       Email <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to ask questions or get help. The AB2D team will get back to you promptly. You can also visit our <a href="{{ '/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a> for technical assistance.
     </p>
     <p>
-      Join our <a href="https://groups.google.com/u/0/g/cms-ab2d-api">Google Group</a> to give feedback and get notified about planned outages or API updates.
+      Join our <a href="https://groups.google.com/u/0/g/cms-ab2d-api" target="_blank" rel="noopener">Google Group</a> to give feedback and get notified about planned outages or API updates.
     </p>
   </div>
 </div>
@@ -55,13 +55,13 @@ Only active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are elig
 
 {% capture a3AccordionContent %}
   <p>
-    AB2D receives data upstream from the  <a href="https://www2.ccwdata.org/web/guest/home/">Chronic Conditions Warehouse (CCW)</a>.
+    AB2D receives data upstream from the <a href="https://www2.ccwdata.org/web/guest/home/" target="_blank" rel="noopener">Chronic Conditions Warehouse (CCW)</a>.
   </p>
 {% endcapture %}
 
 {% capture a4AccordionContent %}
 <p>
-    The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a> specifies that data may be used for:
+    The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank" rel="noopener">final rule</a> specifies that data may be used for:
 </p>
 <ul>
   <li>Optimizing therapeutic outcomes through improved medication use</li>
@@ -87,7 +87,7 @@ How can we get additional data elements beyond what’s listed in the final rule
 {% endcapture %}
 
 {% capture a5AccordionContent %}
-<p>What is the <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank">final rule?</a></p>
+<p>What is the <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank" rel="noopener">final rule?</a></p>
 
 <p>
     AB2D evaluates the data elements provided to PDP sponsors based on how well they support the permitted uses. Any proposed changes would be established through rulemaking. If you have any feedback, please email <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
@@ -111,7 +111,7 @@ How can we get additional data elements beyond what’s listed in the final rule
 
 {% capture a8AccordionContent %}
 <p>
- The “final” <a href="https://bluebutton.cms.gov/assets/ig/ValueSet-claim-query-cd.html">query code</a> indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, it’s possible for a claim object with a “final” query code to be cancelled and resubmitted under a new claim ID. 
+ The “final” <a href="https://bluebutton.cms.gov/assets/ig/ValueSet-claim-query-cd.html" target="_blank" rel="noopener">query code</a> indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, it’s possible for a claim object with a “final” query code to be cancelled and resubmitted under a new claim ID. 
  </p>
  <p>
 Every time you pull the data, you will get the latest version of a claim. Claim objects have a lastUpdated field, which represents when the data was last refreshed by the API. This shows when AB2D received the update, not when the update was submitted to Medicare. <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions-2">Learn how to use lastUpdated and claim ID to identify a unique instance of a claim.</a>

@@ -226,7 +226,7 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
   </h3>
   <div id="m-a3" class="usa-accordion__content usa-prose">
     <p>
-    An <a href="https://www.okta.com/identity-101/why-your-company-needs-an-identity-provider/">IdP</a> is a service that stores, verifies, and manages user identities. AB2D uses a third-party IdP tool called <a href="https://support.okta.com/help/s/article/What-is-Okta?language=en_US">Okta</a>. PDP sponsors use their set of Okta credentials to get a bearer token and access the API.
+    An <a href="https://www.okta.com/identity-101/why-your-company-needs-an-identity-provider/" target="_blank" rel="noopener">IdP</a> is a service that stores, verifies, and manages user identities. AB2D uses a third-party IdP tool called <a href="https://support.okta.com/help/s/article/What-is-Okta?language=en_US" target="_blank" rel="noopener">Okta</a>. PDP sponsors use their set of Okta credentials to get a bearer token and access the API.
     </p>
   </div>
     <h3 class="usa-accordion__heading">
@@ -241,7 +241,7 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
   </h3>
   <div id="m-a4" class="usa-accordion__content usa-prose">
     <p>
-      Bearer tokens, also referred to as access tokens or <a href="https://jwt.io/introduction/">JSON web tokens</a>, are used during the <a href="https://oauth.net/2/">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.
+      Bearer tokens, also referred to as access tokens or <a href="https://jwt.io/introduction/" target="_blank" rel="noopener">JSON web tokens</a>, are used during the <a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.
     </p>
     <p>
       You can get a bearer token by providing Okta with sandbox credentials or the production credentials received during <a href="{{ '/production-access' | relative_url }}">production access</a>. Bearer tokens expire after an hour, after which you must complete the process again.

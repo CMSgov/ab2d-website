@@ -20,17 +20,17 @@ Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) 
 {% endcapture %}
 {% capture versionAlert %}
     <p>
-        This documentation is for AB2D version 1, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/STU1.0.1/">Bulk Data Access Implementation Guide V1.0.1</a>. The _until parameter is only available with V2. 
+        This documentation is for AB2D version 1, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/STU1.0.1/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide V1.0.1</a>. The _until parameter is only available with V2. 
     </p>
     <p>    
-        For organizations using V1, visit our <a href="{{ '/filter-claims-data-v2' | relative_url }}">V2 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn more about migrating from V1 to V2</a>.
+        For organizations using V1, visit our <a href="{{ '/filter-claims-data-v2' | relative_url }}">V2 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
     </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
 ## The \_since parameter
 
-<p> The _since parameter allows users to filter claims data returned by date, which reduces duplication and speeds up job times. It follows the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO datetime format</a> (yyyy-mm-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm.</p>
+<p> The _since parameter allows users to filter claims data returned by date, which reduces duplication and speeds up job times. It follows the <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO datetime format</a> (yyyy-mm-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm.</p>
 
 The \_since parameter allows users to pull data that has been last updated since a specified date. The earliest possible date is February 13, 2020 (2020-02-13T00:00:00-05:00) or your organization's attestation date, whichever is later. If no \_since date is specified, it will default to your earliest possible date. It is highly recommended and considered best practice to use the \_since parameter on V1 API calls.
 

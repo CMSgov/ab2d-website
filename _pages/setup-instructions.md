@@ -17,7 +17,7 @@ If you don’t have it installed, use the following system-specific instructions
 
 <ol>
     <li>
-        Install or update jq using <a href="https://brew.sh/">Homebrew</a>:
+        Install or update jq using <a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a>:
 {% capture setupSnippet %}{% raw %}
 brew install jq        
 {% endraw %}{% endcapture %}
