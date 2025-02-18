@@ -190,10 +190,6 @@ Notice 2 things:
   </table>
 </div>
 
-## URI vs URL
-
-All URLs below are highlighted in blue. Otherwise, they are a URI (uniform resource identifier). See [URI vs URL](https://danielmiessler.com/study/difference-between-uri-url/) for more information.
-
 ## Claim Group
 The Claim Group is always 1 of a list of IDs found in the identifier field. The Claim Group ID remains the same between all versions of a claim. It can be used to group together a “family” of claims.
 
