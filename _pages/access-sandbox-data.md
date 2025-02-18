@@ -159,7 +159,7 @@ JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
 Request the job status and save the HTTP response code into STATUS. If you receive a 200 response code, the job is complete. If you receive a 202 code, the job is in progress. In this case, continue checking the status until the job is complete.
 
 {% capture curlSnippet %}{% raw %}
-curl -sw '%{http_code}' -o status.json "https://www.google.com"  \
+curl -sw '%{http_code}' -o status.json "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${job_id}/\$status"  \
   -H "Accept: application/json" \
   -H "Accept: application/fhir+ndjson" \
   -H "Authorization: Bearer ${bearer_token}" | {
