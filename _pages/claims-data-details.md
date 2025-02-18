@@ -25,7 +25,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
     <tbody>
       <tr>
         <th data-label="Field" scope="row">
-          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim Group</a>
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim Group ID</a>
         </th>
         <td data-label="Description">
           Unique identifier of a claim which is the same across claim updates. This field can be used to group together a family of claims.
@@ -190,8 +190,8 @@ Notice 2 things:
   </table>
 </div>
 
-## Claim Group
-The Claim Group is always 1 of a list of IDs found in the identifier field. The Claim Group ID remains the same between all versions of a claim. It can be used to group together a “family” of claims.
+## Claim Group ID
+The Claim Group ID is always 1 of a list of IDs found in the identifier field. The Claim Group ID remains the same between all versions of a claim. It can be used to group together a “family” of claims.
 
 - Format: a positive number
 - Location: found in the eob.identifier list
@@ -217,7 +217,7 @@ For more information see: [FHIR Identifier Explanation](http://hl7.org/fhir/R4/e
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=jsonSnippet language="json" %} 
 
-*Note: Claim Group will be in the list of identifiers and identified by the claim group system.*
+*Note: Claim Group ID will be in the list of identifiers and identified by the claim group system.*
 
 ## Claim ID
 
@@ -497,7 +497,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
-              <th scope="col">Claim Group</th>
+              <th scope="col">Claim Group ID</th>
               <th scope="col">Claim ID</th>
               <th scope="col">Claim Line ID</th>
               <th scope="col">Claim Query Code</th>
@@ -508,7 +508,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
       </thead>
       <tbody>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -517,7 +517,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
               <td data-label="Claim Status (as of 01/31/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -526,7 +526,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
               <td data-label="Claim Status (as of 01/31/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
@@ -559,7 +559,7 @@ Claim ID 54689123 is pulled for the first time. Here is why:
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
-              <th scope="col">Claim Group</th>
+              <th scope="col">Claim Group ID</th>
               <th scope="col">Claim ID</th>
               <th scope="col">Claim Line ID</th>
               <th scope="col">Claim Query Code</th>
@@ -570,7 +570,7 @@ Claim ID 54689123 is pulled for the first time. Here is why:
       </thead>
       <tbody>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -579,7 +579,7 @@ Claim ID 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -588,7 +588,7 @@ Claim ID 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
@@ -597,7 +597,7 @@ Claim ID 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -606,7 +606,7 @@ Claim ID 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -615,7 +615,7 @@ Claim ID 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
@@ -624,7 +624,7 @@ Claim ID 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">LMNO</td>
               <td data-label="Claim Query Code">final</td>
@@ -663,7 +663,7 @@ Claim version 34543 is pulled for the first time. Here is why:
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
-              <th scope="col">Claim Group</th>
+              <th scope="col">Claim Group ID</th>
               <th scope="col">Claim ID</th>
               <th scope="col">Claim Line ID</th>
               <th scope="col">Claim Query Code</th>
@@ -674,7 +674,7 @@ Claim version 34543 is pulled for the first time. Here is why:
       </thead>
       <tbody>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -683,7 +683,7 @@ Claim version 34543 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 03/31/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -692,7 +692,7 @@ Claim version 34543 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 03/31/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
@@ -701,7 +701,7 @@ Claim version 34543 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 03/31/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">LMNO</td>
               <td data-label="Claim Query Code">final</td>
@@ -710,7 +710,7 @@ Claim version 34543 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 03/31/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">34543</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -719,7 +719,7 @@ Claim version 34543 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 03/31/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">34543</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -728,7 +728,7 @@ Claim version 34543 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 03/31/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">34543</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
@@ -744,7 +744,7 @@ Claim version 34543 is pulled for the first time. Here is why:
 
 AB2D provides claims based on the current information available. A claim may later be canceled at any time.
 
-A claim is canceled when all versions (Claim IDs) in the Claim Group are marked as canceled.
+A claim is canceled when all versions (Claim IDs) in the claim group are marked as canceled.
 
 To detect updated claims the following fields on each claim must be tracked:
 
@@ -819,7 +819,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
-              <th scope="col">Claim Group</th>
+              <th scope="col">Claim Group ID</th>
               <th scope="col">Claim ID</th>
               <th scope="col">Claim Line ID</th>
               <th scope="col">Claim Query Code</th>
@@ -830,7 +830,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
       </thead>
       <tbody>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -839,7 +839,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
               <td data-label="Claim Status (as of 01/31/20">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -848,7 +848,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
               <td data-label="Claim Status (as of 01/31/20">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
@@ -881,7 +881,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
-              <th scope="col">Claim Group</th>
+              <th scope="col">Claim Group ID</th>
               <th scope="col">Claim ID</th>
               <th scope="col">Claim Line ID</th>
               <th scope="col">Claim Query Code</th>
@@ -892,7 +892,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
       </thead>
       <tbody>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -901,7 +901,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -910,7 +910,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
@@ -919,7 +919,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -928,7 +928,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -937,7 +937,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
@@ -946,7 +946,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
               <td data-label="Claim Status (as of 02/28/20)">canceled</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">54689123</td>
               <td data-label="Claim Line ID">LMNO</td>
               <td data-label="Claim Query Code">final</td>
@@ -1016,7 +1016,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time the onl
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
-              <th scope="col">Claim Group</th>
+              <th scope="col">Claim Group ID</th>
               <th scope="col">Claim ID</th>
               <th scope="col">Claim Line ID</th>
               <th scope="col">Claim Query Code</th>
@@ -1027,7 +1027,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time the onl
       </thead>
       <tbody>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -1036,7 +1036,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time the onl
               <td data-label="Claim Status (as of 01/31/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -1045,7 +1045,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time the onl
               <td data-label="Claim Status (as of 01/31/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
@@ -1069,7 +1069,7 @@ The claim was pulled twice because the _since date has not changed in both expor
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
-              <th scope="col">Claim Group</th>
+              <th scope="col">Claim Group ID</th>
               <th scope="col">Claim ID</th>
               <th scope="col">Claim Line ID</th>
               <th scope="col">Claim Query Code</th>
@@ -1080,7 +1080,7 @@ The claim was pulled twice because the _since date has not changed in both expor
       </thead>
       <tbody>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">ABCD</td>
               <td data-label="Claim Query Code">final</td>
@@ -1089,7 +1089,7 @@ The claim was pulled twice because the _since date has not changed in both expor
               <td data-label="Claim Status (as of 02/28/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">DEFG</td>
               <td data-label="Claim Query Code">final</td>
@@ -1098,7 +1098,7 @@ The claim was pulled twice because the _since date has not changed in both expor
               <td data-label="Claim Status (as of 02/28/20)">active</td>
           </tr>
           <tr>
-              <td data-label="Claim Group">99995</td>
+              <td data-label="Claim Group ID">99995</td>
               <td data-label="Claim ID">12987987</td>
               <td data-label="Claim Line ID">HIJK</td>
               <td data-label="Claim Query Code">final</td>
