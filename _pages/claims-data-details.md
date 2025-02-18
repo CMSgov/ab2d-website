@@ -257,6 +257,7 @@ Claims reported by AB2D API have only 2 potential values for Claim Status. Claim
 
 - Format: string with 1 of 2 values active or canceled
 - Location: found directly on the claim
+- URI: http://hl7.org/fhir/explanationofbenefit-status
 
 For more information: [FHIR Specification for Claim Status](http://hl7.org/fhir/R4/valueset-explanationofbenefit-status.html)
 
@@ -266,7 +267,7 @@ The Last Updated field is a metadata field reflecting the last time the claim ob
 
 - Format: ISO datetime with a timezone
 - Location: found in claims metadata (eob.meta.lastUpdated)
-- URL: [http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated)
+- URI: [http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated)
 
 For more information:
 - [ExplanationOfBenefit.created](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created)
@@ -301,8 +302,8 @@ Each claim contains patient identifiers necessary to map a claim to a specific p
 
 Extensions referring to identifiers will have the following structure:
 
-- The FHIR Identifier Extension URL is always the same: [http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier](http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier)
-- Identifier Currency Code Extension URL: [https://bluebutton.cms.gov/resources/codesystem/identifier-currency](https://bluebutton.cms.gov/resources/codesystem/identifier-currency)
+- The FHIR Identifier Extension URI is always the same: http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier
+- Identifier Currency Code Extension URI: https://bluebutton.cms.gov/resources/codesystem/identifier-currency
 - The URL code identifies whether the MBI is currently in use or a historical value.
 - The MBI Identifier System is always the same: http://hl7.org/fhir/sid/us-mbi.
 - The identifier will be located at: extension.valueIdentifier.value.
