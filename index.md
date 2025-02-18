@@ -20,8 +20,8 @@ hero-button-2-text: "Code Repo"
 
 ## Use cases for the AB2D API
 
-<div class="usa-graphic-list__row grid-row grid-gap-6 padding-y-2">
-  <div class="tablet:grid-col padding-y-3">
+<div class="usa-graphic-list__row grid-row tablet:grid-gap-6 padding-y-2">
+  <div class="tablet:grid-col-4 padding-y-3">
     {% include sprite.html icon="people" size=8 %}
     <h3 class="margin-y-1">
       Target MTM program enrollees
@@ -30,7 +30,7 @@ hero-button-2-text: "Code Repo"
       Identify Medication Therapy Management (MTM) enrollees by using data for a more thorough search capability.
     </p>
   </div>
-  <div class=" tablet:grid-col padding-y-3">
+  <div class="tablet:grid-col-4 padding-y-3">
     {% include sprite.html icon="local_pharmacy" size=8 %}
     <h3 class="margin-y-1">
       Enhance MTM consultations
@@ -39,7 +39,7 @@ hero-button-2-text: "Code Repo"
       Leverage insights from enrollee medical histories for more effective services.
     </p>
   </div>
-  <div class="tablet:grid-col padding-y-3">
+  <div class="tablet:grid-col-4 padding-y-3">
     {% include sprite.html icon="insights" size=8 %}
     <h3 class="margin-y-1">
       Boost health outcomes
@@ -48,22 +48,20 @@ hero-button-2-text: "Code Repo"
       Enhance MTM enrollee health and program results by improving medication use and adherence.
     </p>
   </div>
-</div>
-<div class="usa-graphic-list__row grid-row grid-gap-6">
-  <div class="tablet:grid-col padding-y-3">
+   <div class="tablet:grid-col-4 padding-y-3">
       {% include sprite.html icon="security" size=7 %}
       <h3 class="margin-y-1">Prevent fraud, waste, and abuse</h3>
       <p>
         Identify suspicious activity from providers or suppliers through access to mass data.
       </p>
   </div>
-  <div class="tablet:grid-col padding-y-3">
+  <div class="tablet:grid-col-4 padding-y-3">
     {% include sprite.html icon="arrow_forward" size=7 %}
     <h3 class="margin-y-1 usa-graphic-list__heading">
       <a href="{{ '/use-cases' | relative_url }}">Learn more about use cases</a>
     </h3>
   </div>
-  <div class="tablet:grid-col padding-y-3">
+  <div class="tablet:grid-col-4 padding-y-3">
     {% include sprite.html icon="arrow_forward" size=7 %}
     <h3 class="margin-y-1 usa-graphic-list__heading">
       <a href="{{ '/mtm-white-paper' | relative_url }}">Read the white paper on AB2D for MTM programs</a>
@@ -77,7 +75,7 @@ hero-button-2-text: "Code Repo"
   </div>
   <div class="tablet:grid-col" >
     <h2>Using the data</h2>
-    <p>AB2D is an Application Programming Interface using <a href="https://hl7.org/fhir/R4/index.html" target="_blank" rel="noopener">Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
+    <p>AB2D is an Application Programming Interface using <a href="https://hl7.org/fhir/R4/index.html" >Fast Healthcare Interoperability Resources (FHIR)</a> in NDJSON format. It provides access to data including:</p>
     <ul>
       <li>enrollee identifiers</li>
       <li>diagnosis codes</li>
@@ -92,7 +90,7 @@ hero-button-2-text: "Code Repo"
 <div class="grid-row grid-gap padding-y-2">
   <div class="tablet:grid-col">
     <p class="margin-bottom-2 text-bold">
-      The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank" rel="noopener">final rule</a> specifies that data may be used for:
+      The <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745">final rule</a> specifies that data may be used for:
     </p>
     <ul class="usa-icon-list">
       <li class="usa-icon-list__item">

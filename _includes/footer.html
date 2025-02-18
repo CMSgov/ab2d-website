@@ -10,7 +10,7 @@
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-fill">
           <nav class="usa-footer__nav" aria-label="Footer navigation,,">
-            <div class="grid-row grid-gap-4">
+            <div class="grid-row tablet:grid-gap-4">
               {% for column in site.data.footer-links %}
               <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
                 <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
@@ -43,44 +43,46 @@
   </div>
 
   <div class="usa-footer__secondary-section">
-    <div class="grid-container">
-      <div class="grid-row grid-gap tablet:grid-gap-6">
-        <div class="usa-footer__logo grid-row desktop:grid-col-fill">
-          <div class="mobile-lg:grid-col-auto">
-            <p class="usa-footer__logo-heading line-height-sans-6">CMS Claims-Based FHIR APIs</p>
+    <div> {%  comment  %} this empty div is intentional to avoid the specificity of ".usa-footer__secondary-section>.grid-container", which prevents certain utilities from working like the class in the dive below  {% endcomment %}
+      <div class="grid-container tablet:padding-x-3">
+        <div class="grid-row grid-gap tablet:grid-gap-6">
+          <div class="usa-footer__logo grid-row desktop:grid-col-fill">
+            <div class="mobile-lg:grid-col-auto">
+              <p class="usa-footer__logo-heading line-height-sans-6">CMS Claims-Based FHIR APIs</p>
+            </div>
           </div>
-        </div>
-        <div class="desktop:grid-col-auto">
-          <div class="grid-row grid-gap-6">
-            <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
-              <a href="https://dpc.cms.gov/" class="grid-row grid-gap-05 flex-align-center text-no-underline">
-                <span class="grid-col-auto"><img
-                  class="usa-icon usa-icon--size-5 display-block"
-                  src="{{ '/assets/img/logo-dpc.svg' | relative_url }}"
-                  alt="DPC logo"
-                /></span>
-                <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Data at the Point of Care</span>
-              </a>
-            </div>
-            <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
-              <a href="https://bluebutton.cms.gov/" class="grid-row grid-gap-05 flex-align-center text-no-underline">
-                <span class="grid-col-auto"><img
-                  class="usa-icon usa-icon--size-5 display-block"
-                  src="{{ '/assets/img/logo-bluebutton.svg' | relative_url }}"
-                  alt="Blue Button 2.0 logo"
-                /></span>
-                <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Blue Button 2.0</span>
-              </a>
-            </div>
-            <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
-              <a href="https://bcda.cms.gov/" class="grid-row grid-gap-05 flex-align-center text-no-underline">
-                <span class="grid-col-auto"><img
-                  class="usa-icon usa-icon--size-5 display-block"
-                  src="{{ '/assets/img/logo-bcda.svg' | relative_url }}"
-                  alt="BCDA logo"
-                /></span>
-                <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Beneficiary Claims Data API</span>
-              </a>
+          <div class="desktop:grid-col-auto">
+            <div class="grid-row grid-gap-6">
+              <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
+                <a href="https://dpc.cms.gov/" class="grid-row grid-gap-05 flex-align-center text-no-underline">
+                  <span class="grid-col-auto"><img
+                    class="usa-icon usa-icon--size-5 display-block"
+                    src="{{ '/assets/img/logo-dpc.svg' | relative_url }}"
+                    alt="DPC logo"
+                  /></span>
+                  <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Data at the Point of Care</span>
+                </a>
+              </div>
+              <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
+                <a href="https://bluebutton.cms.gov/" class="grid-row grid-gap-05 flex-align-center text-no-underline">
+                  <span class="grid-col-auto"><img
+                    class="usa-icon usa-icon--size-5 display-block"
+                    src="{{ '/assets/img/logo-bluebutton.svg' | relative_url }}"
+                    alt="Blue Button 2.0 logo"
+                  /></span>
+                  <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Blue Button 2.0</span>
+                </a>
+              </div>
+              <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
+                <a href="https://bcda.cms.gov/" class="grid-row grid-gap-05 flex-align-center text-no-underline">
+                  <span class="grid-col-auto"><img
+                    class="usa-icon usa-icon--size-5 display-block"
+                    src="{{ '/assets/img/logo-bcda.svg' | relative_url }}"
+                    alt="BCDA logo"
+                  /></span>
+                  <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Beneficiary Claims Data API</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
