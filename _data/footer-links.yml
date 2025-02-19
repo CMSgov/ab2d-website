@@ -1,10 +1,10 @@
 - heading: Getting Started
   links:
 
-    - text: Access sandbox data
+    - text: Access Sandbox Data
       url: /access-sandbox-data
 
-    - text: Access production claims data
+    - text: Access Production Claims Data
       url: /access-production-claims-data
 
 - heading: AB2D Data
@@ -18,7 +18,7 @@
       url: /assets/downloads/ab2d-data-dictionary.xlsx
       icon: file_download
 
-    - text: Claims data details
+    - text: Claims Data Details
       url: /claims-data-details
 
     - text: FHIR specification
@@ -30,7 +30,7 @@
     - text: Permitted uses
       url: /about
 
-    - text: Use cases
+    - text: Use Cases
       url: /use-cases
 
 - heading: Support
