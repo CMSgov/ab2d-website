@@ -11,6 +11,7 @@ jobs:
       environment: development
       deploy_path: "uswds-redesign"
     uses: ./.github/workflows/deploy.yml
+    secrets: inherit
 
   a11y-check:
     needs: deploy

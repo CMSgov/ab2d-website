@@ -6,10 +6,11 @@ on:
 jobs: 
   deploy: 
     if: ${{ !startsWith(github.actor, 'bot-') }}
-    uses: ./.github/workflows/deploy.yml
     with:
       environment: development
       deploy_path: ${{ github.event.number }}
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
 
   comment-pr:  
     needs: deploy

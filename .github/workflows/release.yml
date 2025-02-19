@@ -9,6 +9,7 @@ jobs:
     with:
       environment: development
     uses: ./.github/workflows/deploy.yml
+    secrets: inherit
 
   # a11y-check:
   #   needs: deploy
