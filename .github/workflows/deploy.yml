@@ -61,16 +61,18 @@ jobs:
         env:
           JEKYLL_ENV: ${{ inputs.environment }}
         run: |
-          bundle exec jekyll build --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}}
+          bundle exec jekyll build --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || '' }}
 
       # Step 9: Initialize AWS Connection
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         env: 
-          ROLE: ${{ inputs.environment == 'production' && 'ab2d-prod-github-actions' ||'ab2d-test-github-actions' }}
+          ROLE: ${{ inputs.environment == 'production' && 'ab2d-prod-github-actions' || 'ab2d-test-github-actions' }}
         with: 
           aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ inputs.environment == 'production' && secrets.PROD_ACCOUNT_ID || secrets.TEST_ACCOUNT_ID }}:role/delegatedadmin/developer/${{ env.ROLE }}
+          role-to-assume: arn:aws:iam::${{ secrets.TEST_ACCOUNT_ID }}:role/delegatedadmin/developer/${{ env.ROLE }}
+
+
 
       # Step 10: Deploy to S3
       - name: Deploy the site
