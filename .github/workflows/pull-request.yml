@@ -1,0 +1,23 @@
+name: "pull request"
+
+on:
+  pull_request:
+
+jobs: 
+  deploy: 
+    if: ${{ !startsWith(github.actor, 'bot-') }}
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment: development
+      deploy_path: ${{ github.event.number }}
+
+  comment-pr:  
+    needs: deploy
+    uses: ./.github/workflows/comment-pr.yml
+
+  a11y-check:
+    needs: deploy
+    uses: ./.github/workflows/a11y-check.yml
+    
+  # broken-link-check:
+  #   uses: ./.github/workflows/broken-link-check.yml

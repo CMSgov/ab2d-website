@@ -1,90 +1,11 @@
-name: "Deploy to Dev"
+name: comment pr
 
 on:
-  pull_request:
-  push: 
-    branches:
-      - uswds-redesign
+  workflow_call:
 
-jobs: 
-  deploy-dev:
+jobs:
+  comment-pr:
     runs-on: self-hosted
-    if: ${{ !startsWith(github.actor, 'bot-') }}
-
-    steps:
-      # Step 1: Checkout the repo
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install project dependencies
-        run: |
-          sudo dnf -y install ruby3.2 ruby3.2-devel openssl-devel amazon-rpm-config gcc-c++
-
-      # Step 2: Set base url/deployment path
-      - name: Set Deployment Path
-        id: set_deploy_path
-        run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "DEPLOY_PATH=${{ github.event.number }}" >> $GITHUB_ENV
-          else
-            echo "DEPLOY_PATH=${{ github.ref_name }}" >> $GITHUB_ENV
-          fi
-      
-      # Step 3: Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with: 
-          cache: 'npm'
-          node-version-file: '.nvmrc' 
-          # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
-
-      # Step 4: Set up Ruby
-      - name: Set up ruby
-        run: |
-          ruby -v
-          echo 'export GEM_HOME="$HOME/gems"' >> $GITHUB_ENV
-          echo 'export PATH="$HOME/ec2-user/bin:$HOME/gems/bin:$PATH"' >> $GITHUB_ENV
-        
-      # Step 5: Install Ruby Gems
-      - name: Install jekyll and bundler
-        run: |
-          sudo chmod -R 777 /usr/share
-          sudo gem install jekyll bundler
-          sudo bundle install
-
-      # Step 6: Install Node.js Dependencies
-      - name: Install npm dependencies
-        run: |
-          npm ci
-
-      # Step 7: Compile Assets
-      - name: Compile assets with Gulp
-        run: |
-          npm run assets:build
-
-      # Step 8: Build Site
-      - name: Build the site
-        env:
-          JEKYLL_ENV: production
-        run: |
-          bundle exec jekyll build --baseurl /${{ env.DEPLOY_PATH }}
-
-      # Step 9: Initialize AWS Connection
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with: 
-          aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.TEST_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-test-github-actions
-
-      # Step 10: Deploy to S3
-      - name: Deploy the site
-        run: |
-          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ env.DEPLOY_PATH }}/
-
-  comment-pr:  
-    needs: deploy-dev
-    runs-on: self-hosted
-    if: github.event_name == 'pull_request'
     permissions:
       pull-requests: 'write'
 
@@ -159,11 +80,3 @@ jobs:
                 );
               }
             }
-  
-  a11y-check:
-    needs: deploy-dev
-    uses: ./.github/workflows/a11y-check.yml
-    
-  # broken-link-check:
-  #   uses: ./.github/workflows/broken-link-check.yml
-      

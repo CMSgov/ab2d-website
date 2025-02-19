@@ -1,0 +1,18 @@
+name: push to main
+
+on:
+  release:
+    types: ['released']
+
+jobs: 
+  deploy: 
+    with:
+      environment: development
+    uses: ./.github/workflows/deploy.yml
+
+  # a11y-check:
+  #   needs: deploy
+  #   uses: ./.github/workflows/a11y-check.yml
+    
+  # broken-link-check:
+  #   uses: ./.github/workflows/broken-link-check.yml
