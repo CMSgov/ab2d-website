@@ -6,8 +6,6 @@ on:
 jobs:
   comment-pr:
     runs-on: self-hosted
-    permissions:
-      pull-requests: 'write'
 
     steps: 
       - name: Post or update comment

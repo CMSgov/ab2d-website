@@ -13,6 +13,8 @@ jobs:
 
   comment-pr:  
     needs: deploy
+    permissions:
+      pull-requests: 'write'
     uses: ./.github/workflows/comment-pr.yml
 
   a11y-check:
