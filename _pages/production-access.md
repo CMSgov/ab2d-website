@@ -112,7 +112,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
     <span>and</span>
     <span class="usa-tag">Completed by AB2D Data Ops Specialist</span>
     <p>
-      The Attestor will receive an email with production credentials to share with their ADOS.  Production credentials are Personally Identifiable Information (PII) that allow the ADOS to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-production-claims-data' | relative_url }}">access production claims data</a>.
+      The Attestor will receive an email with details on production credentials to share with their ADOS.  Production credentials are Personally Identifiable Information (PII) that allow the ADOS to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-production-claims-data' | relative_url }}">access production claims data</a>.
     </p>
     <p>
       If you have questions or need help, visit <a href="{{ '/support' | relative_url }}">Support</a> or contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.

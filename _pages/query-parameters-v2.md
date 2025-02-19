@@ -36,7 +36,7 @@ Separately, these parameters allow you to pull data that was last updated since 
 
 ### For _since
 
-The earliest possible date is February 13, 2020 (2020-02-13T00:00:00-05:00) or your organization's attestation date, whichever is later. If no _since date is specified, it will default to the datetime of your organization’s last successful export. If this is your first job, it will default to your earliest possible date. 
+The earliest possible date is January 1, 2020 (2020-01-01T00:00:00-05:00) or your organization's attestation date, whichever is later. If no _since date is specified, it will default to the datetime of your organization’s last successful export. If this is your first job, it will default to your earliest possible date. 
 
 ### For _until
 
@@ -94,10 +94,10 @@ Together, the _since and _until parameters allow you to pull data that was last 
             <td data-label="Why?">A time zone must be provided with the datetime.</td>
         </tr>
         <tr>
-            <td data-label="_since datetime">2020-02-01T00:00:00+00:00</td>
-            <td data-label="_until datetime">2020-02-28T00:00:00+00:00</td>
+            <td data-label="_since datetime">2019-12-30T00:00:00+00:00</td>
+            <td data-label="_until datetime">2020-01-14T00:00:00+00:00</td>
             <td data-label="Is it valid?">No</td>
-            <td data-label="Why?">The _since datetime is before February 13, 2020. The job will still run, but the datetime will be replaced with the default.</td>
+            <td data-label="Why?">The _since datetime is before January 1, 2020. The job will still run, but the datetime will be replaced with the default.</td>
         </tr>
         <tr>
             <td data-label="_since datetime">2020-10-10T16:00:00+00:00</td>

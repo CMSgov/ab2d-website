@@ -436,7 +436,7 @@ In the example, a single claim will be tracked through several evolutions:
           </tr>
           <tr>
               <td data-label="Claim update">Update 3</td>
-              <td data-label="Details">An update to Claim 99995 (removal of claim line item) is received by AB2D on March 20, 2020.</td>
+              <td data-label="Details">An update to Claim 99995 (removal of claim line item) is received by AB2D on March 31, 2020.</td>
           </tr>
       </tbody>
   </table>
@@ -458,7 +458,7 @@ In the example, 4 exports are run using the <a href="{{ '/query-parameters-v2' |
           <tr>
               <td data-label="Export">Export 1</td>
               <td data-label="Run On">January 31, 2020</td>
-              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Since">January 1, 2020</td>
               <td data-label="Description">Provide all claims information and updates received in January</td>
           </tr>
           <tr>
@@ -483,13 +483,13 @@ In the example, 4 exports are run using the <a href="{{ '/query-parameters-v2' |
   </table>
 </div>
 
-The dates used in this example are just random dates. Organizations cannot pull data before February 13, 2020 or their date of attestation (whichever is later).
+The dates used in this example are just random dates. Organizations cannot pull data before January 1, 2020 or their date of attestation (whichever is later).
 
 ### Updated claims scenario - export details
 
-#### Export 1 12/31/2019 - 01/31/2020
+#### Export 1 01/01/2020 - 01/31/2020
 
-On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of December 31, 2019. The _since date tells AB2D to report all claims information received between December 31, 2019 and January 31, 2020.
+On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of January 1, 2020. The _since date tells AB2D to report all claims information received between January 1, 2020 and January 31, 2020.
 
 The export pulls a claim version with Claim Group ID 99995. At this time, the only version of the claim available to AB2D is 12987987. This version (claim update 1) is the latest claim version available as it is marked active.
 
@@ -772,7 +772,7 @@ In the example, a single claim will be tracked through several evolutions:
           </tr>
           <tr>
               <td data-label="Claim update">Update 2</td>
-              <td data-label="Details">An update to Claim 99995 is received by AB2D on February 28, 2020.</td>
+              <td data-label="Details">An update to Claim 99995 is received by AB2D on February 10, 2020.</td>
           </tr>
       </tbody>
   </table>
@@ -792,7 +792,7 @@ In the example, a single claim will be tracked through several evolutions:
           <tr>
               <td data-label="Export">Export 1</td>
               <td data-label="Run On">January 31, 2020</td>
-              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Since">January 1, 2020</td>
               <td data-label="Description">Provide all claims information and updates received in January</td>
           </tr>
           <tr>
@@ -805,13 +805,13 @@ In the example, a single claim will be tracked through several evolutions:
   </table>
 </div>
 
-The dates used in this example are just random dates. Organizations cannot pull data before February 13, 2020 or their date of attestation (whichever is later).
+The dates used in this example are just random dates. Organizations cannot pull data before January 1, 2020 or their date of attestation (whichever is later).
 
 ### Canceled claims scenario - export details
 
-#### Export 1 12/31/2019 - 01/31/2020
+#### Export 1 01/01/2020 - 01/31/2020
 
-On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of December 31, 2019. The _since date tells AB2D to report all claims information received between December 31, 2019 and January 31, 2020.
+On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of January 1, 2020. The _since date tells AB2D to report all claims information received between January 1, 2020 and January 31, 2020.
 
 The export pulls a claim version with Claim Group ID 99995. At this time, the only version of the claim available to AB2D is 12987987. This version (claim update 1) is the latest claim version available as it is marked active.
 
@@ -989,26 +989,26 @@ In the example, 2 exports are run using the _since parameter. These exports are 
           <tr>
               <td data-label="Export">Export 1</td>
               <td data-label="Run On">January 31, 2020</td>
-              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Since">January 1, 2020</td>
               <td data-label="Description">Provide all claims information and updates received in January</td>
           </tr>
           <tr>
               <td data-label="Export">Export 2</td>
               <td data-label="Run On">February 28, 2020</td>
-              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Since">January 1, 2020</td>
               <td data-label="Description">Provide all claims information and updates received in January and February</td>
           </tr>
       </tbody>
   </table>
 </div>
 
-The dates used in this example are just random dates. Organizations cannot pull data before February 13, 2020 or their date of attestation (whichever is later).
+The dates used in this example are just random dates. Organizations cannot pull data before January 1, 2020 or their date of attestation (whichever is later).
 
 ### Duplicate claims scenario - export details
 
-#### Export 1 12/31/2019 - 01/31/2020
+#### Export 1 01/01/2020 - 01/31/2020
 
-On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of December 31, 2019. The _since date tells AB2D to report all claims information received between December 31, 2019 and January 31, 2020.
+On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of January 1, 2020. The _since date tells AB2D to report all claims information received between January 1, 2020 and January 31, 2020.
 
 The export pulls a claim version with Claim Group ID 99995. At this time the only version of the claim available to AB2D is 12987987. This version is the latest claim version available as it is marked active.
 
@@ -1057,9 +1057,9 @@ The export pulls a claim version with Claim Group ID 99995. At this time the onl
   </table>
 </div>
 
-#### Export 2 12/31/2019 - 02/28/2020
+#### Export 2 01/01/2020 - 02/28/2020
 
-On February 28, 2020, organization XYZ runs an export with a _since parameter date of December 31, 2019. The _since date tells AB2D to report all claims information received between December 31, 2019 and February 28, 2020.
+On February 28, 2020, organization XYZ runs an export with a _since parameter date of January 1, 2020. The _since date tells AB2D to report all claims information received between January 1, 2020 and February 28, 2020.
 
 The export pulls a duplicate of the claim from export 1 as it has the same Claim Group ID (99995), Claim ID (12987987), and Last Updated date (01/01/2020). 
 
