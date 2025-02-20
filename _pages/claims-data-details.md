@@ -267,7 +267,7 @@ The Last Updated field is a metadata field reflecting the last time the claim ob
 
 - Format: ISO datetime with a timezone
 - Location: found in claims metadata (eob.meta.lastUpdated)
-- URI: [http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated)
+- URI: http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated
 
 For more information:
 - [ExplanationOfBenefit.created](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created)
