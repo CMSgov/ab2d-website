@@ -17,14 +17,14 @@ If you don’t have it installed, use the following system-specific instructions
 
 <ol>
     <li>
-        Install or update jq using <a href="https://brew.sh/">Homebrew</a>:
+        Install or update jq using <a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a>:
 {% capture setupSnippet %}{% raw %}
 brew install jq        
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
         <ul>
             <li>
-        If you’re on the latest version of jq, you will have a warning that looks like this:
+        If you have already installed jq, you may receive and ignore the following warning:
 {% capture setupSnippet %}{% raw %}
 Warning: jq {version} is already installed and up-to-date        
 {% endraw %}{% endcapture %}
@@ -33,7 +33,7 @@ Warning: jq {version} is already installed and up-to-date
         </ul>
     </li>
     <li>
-        Verify jq is installed by checking the version number:
+        You can verify if jq is installed if you enter the following and receive a version number in response. Any version of jq will work for this set up.
 {% capture setupSnippet %}{% raw %}
 jq --version       
 {% endraw %}{% endcapture %}
@@ -42,6 +42,8 @@ jq --version
 </ol>
 
 ## Linux (CentOS/RedHat)
+
+The following instructions are intended for systems using yum as the package installer. In the case of other Linux distributions with alternative package managers, please use the equivalent package manager command(s) to install jq.
 
 <ol>
     <li>
@@ -52,7 +54,7 @@ sudo yum install -y jq
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>
-        Verify jq is installed by checking the version number:
+        You can verify if jq is installed if you enter the following and receive a version number in response. Any version of jq will work for this set up.
 {% capture setupSnippet %}{% raw %}
 jq --version       
 {% endraw %}{% endcapture %}
@@ -60,7 +62,7 @@ jq --version
     </li>
 </ol>
 
-## Windows 10 
+## Windows 10 and 11
 
 In this example, we will be using the Linux Subsystem for Windows 10.
 
@@ -73,10 +75,18 @@ windows features
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>Select <em>Turn Windows features on or off</em> from the leftmost panel.</li>
-    <li>Scroll down to and check <em>Windows Subsystem for Linux</em>.</li>
+    <li>Scroll down to and check <em>Windows Subsystem for Linux</em>. If it is already installed, skip to step 10 to install Ubuntu.
+</li>
     <li>Select <em>OK</em> on the <em>Windows Features</em> window.</li>
-    <li>Wait for the changes to complete.</li>
-    <li>When prompted, select <em>Restart now</em>.</li>
+    <li>Wait for the changes to complete. If installation is successful, skip to step 9.</li>
+    <li>If the installation is unsuccessful, open the PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting <em>Run as administrator</em>.</li>
+    <li>Enter the following in your terminal:
+{% capture setupSnippet %}{% raw %}
+wsl -- install
+{% endraw %}{% endcapture %}
+{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
+    </li>
+    <li>When prompted, restart your system.</li>
     <li>Select <em>Type here to search</em> again.</li>
     <li>Enter the following in the text box:
 {% capture setupSnippet %}{% raw %}
@@ -118,29 +128,11 @@ sudo apt-get install -y jq
     </li>
     <li>When prompted, enter your password.</li>
     <li>Wait for the installation to complete.</li>
-    <li>Verify that jq is installed by checking its version number:
+    <li>You can verify if jq is installed if you enter the following and receive a version number in response. Any version of jq will work for this set up. 
 {% capture setupSnippet %}{% raw %}
 jq --version
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
-    <li>Close the <em>Ubuntu</em> window.</li>
-    <li>Close the <em>Microsoft Store</em> window.</li>
 </ol>
 
-### Open an Ubuntu terminal
-
-You can apply these instructions to other Unix-like applications as well.
-
-<ol>
-    <li>Select <em>Type here to search</em> near the bottom left of your Windows desktop.</li>
-    <li>Enter the following in the text box:
-{% capture setupSnippet %}{% raw %}
-ubuntu
-{% endraw %}{% endcapture %}
-{% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
-    </li>
-    <li>
-        Select <em>Ubuntu</em> from the leftmost panel and a window will appear. You will be entering commands at the dollar sign prompt ($). The easiest way to do this is to use copy and paste.
-    </li>
-</ol>

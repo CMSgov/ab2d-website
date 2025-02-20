@@ -125,7 +125,7 @@ If the system is correct, check with your IT team to make sure you have a static
         </li>
         </ul>
         <li>In Postman, create a new GET request against the URL https://api.ab2d.cms.gov/health. If the response has an HTTP status of 200 then your IP address can connect.</li>
-        <li>Open a browser and visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html">https://api.ab2d.cms.gov/swagger-ui/index.html</a>.</li>    
+        <li>Open a browser and visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html" target="_blank" rel="noopener">https://api.ab2d.cms.gov/swagger-ui/index.html</a>.</li>    
 </ol>
 {% endcapture %}
 
@@ -164,7 +164,7 @@ If the system is correct, check with your IT team to make sure you have a static
     In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status. Note the request parameter {job_uuid} must be set in Postman.
   </li>
   <li>
-    In a browser, visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE">https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</a> and enter your job ID.
+    In a browser, visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE" target="_blank" rel="noopener">https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</a> and enter your job ID.
   </li>
 </ul>
 {% endcapture %}
@@ -207,7 +207,7 @@ If the system is correct, check with your IT team to make sure you have a static
  Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir). 
 </p>
 <p>
- Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn how to migrate from V1 to V2</a>. 
+ Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn how to migrate from V1 to V2</a>. 
 </p>
 {% endcapture %}
 
@@ -216,7 +216,7 @@ If the system is correct, check with your IT team to make sure you have a static
   The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
 </p>
 <p>
-  In V1, a date must be specified to use _since. If no _since value is specified, it will default to February 13, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters-V2' | relative_url }}">Learn how to use parameters</a>.
+  In V1, a date must be specified to use _since. If no _since value is specified, it will default to January 1, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters-V2' | relative_url }}">Learn how to use parameters</a>.
 </p>
 {% endcapture %}
 

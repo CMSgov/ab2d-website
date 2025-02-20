@@ -14,19 +14,18 @@ AB2D and its upstream data source generate and add fields to claims data in an e
 ## Important AB2D claim fields
 
 <div class="overflow-x-auto">
-  <table class="usa-table usa-table--stacked usa-table--borderless">
+  <table class="usa-table tablet:usa-table--stacked usa-table--borderless custom-table">
     <thead>
       <tr>
         <th scope="col">Field</th>
         <th scope="col">Description</th>
         <th scope="col">EOB location</th>
-        <th scope="col">For more details</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th data-label="Field" scope="row">
-          Claim Group ID
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim Group ID</a>
         </th>
         <td data-label="Description">
           Unique identifier of a claim which is the same across claim updates. This field can be used to group together a family of claims.
@@ -34,13 +33,10 @@ AB2D and its upstream data source generate and add fields to claims data in an e
         <td data-label="EOB Location">
           <p>eob.identifier list</p>
         </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying claims and claim versions</a>
-        </td>
       </tr>
       <tr>
         <th data-label="Field" scope="row">
-          Claim ID
+          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim ID</a>
         </th>
         <td data-label="Description">
           Unique identifier of a single version of a claim. Not the same across updates.
@@ -48,13 +44,10 @@ AB2D and its upstream data source generate and add fields to claims data in an e
         <td data-label="EOB Location">
           <p>eob.identifier list</p>
         </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Identifying claims and claim versions</a>
-        </td>
       </tr>
       <tr>
         <th data-label="Field" scope="row">
-          Claim Status
+          <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
         </th>
         <td data-label="Description">
           Current status of the claim, which is either active or cancelled. If the latest version (Claim ID) in a family of claims is cancelled, then the entire claim is cancelled. 
@@ -62,36 +55,27 @@ AB2D and its upstream data source generate and add fields to claims data in an e
         <td data-label="EOB Location">
           <p>eob.status</p>
         </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
-        </td>
       </tr>
       <tr>
         <th data-label="Field" scope="row">
-          Last Updated
+          <a href="{{ '/claims-data-details' | relative_url }}#last-updated">Last Updated</a>
         </th>
         <td data-label="Description">
           The last time any modification (new version) of a claim was received by AB2D.
         </td>
-        <td data-label="EOB Location">
+        <td data-label="EOB Location" style="word-break:break-all">
           eob.meta.lastUpdated
-        </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#last-updated">Last Updated</a>
         </td>
       </tr>
       <tr>
         <th data-label="Field" scope="row">
-         Medicare Beneficiary Identifier (MBI)
+         <a href="{{ '/claims-data-details' | relative_url }}#identifying-patients">Medicare Beneficiary Identifier (MBI)</a>
         </th>
         <td data-label="Description">
           Unique identifier for an enrollee or patient across CMS. An MBI can be current or historic.
         </td>
         <td data-label="EOB Location">
           eob.extension
-        </td>
-        <td data-label="For More Details">
-          <a href="{{ '/claims-data-details' | relative_url }}#identifying-patients">Identifying patients</a>
         </td>
       </tr>
     </tbody>
@@ -207,7 +191,7 @@ Notice 2 things:
 </div>
 
 ## Claim Group ID
-The Claim Group ID is always 1 in a list found in the identifier field. The Claim Group ID remains the same between all versions of a claim. It can be used to group together a “family” of claims.
+The Claim Group ID is always 1 of a list of IDs found in the identifier field. The Claim Group ID remains the same between all versions of a claim. It can be used to group together a “family” of claims.
 
 - Format: a positive number
 - Location: found in the eob.identifier list
@@ -273,6 +257,7 @@ Claims reported by AB2D API have only 2 potential values for Claim Status. Claim
 
 - Format: string with 1 of 2 values active or canceled
 - Location: found directly on the claim
+- URI: http://hl7.org/fhir/explanationofbenefit-status
 
 For more information: [FHIR Specification for Claim Status](http://hl7.org/fhir/R4/valueset-explanationofbenefit-status.html)
 
@@ -282,7 +267,7 @@ The Last Updated field is a metadata field reflecting the last time the claim ob
 
 - Format: ISO datetime with a timezone
 - Location: found in claims metadata (eob.meta.lastUpdated)
-- URL: [http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated)
+- URI: [http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated)
 
 For more information:
 - [ExplanationOfBenefit.created](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created)
@@ -317,8 +302,8 @@ Each claim contains patient identifiers necessary to map a claim to a specific p
 
 Extensions referring to identifiers will have the following structure:
 
-- The FHIR Identifier Extension URL is always the same: [http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier](http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier)
-- Identifier Currency Code Extension URL: [https://bluebutton.cms.gov/resources/codesystem/identifier-currency](https://bluebutton.cms.gov/resources/codesystem/identifier-currency)
+- The FHIR Identifier Extension URI is always the same: http://hl7.org/fhir/StructureDefinition/elementdefinition-identifier
+- Identifier Currency Code Extension URI: https://bluebutton.cms.gov/resources/codesystem/identifier-currency
 - The URL code identifies whether the MBI is currently in use or a historical value.
 - The MBI Identifier System is always the same: http://hl7.org/fhir/sid/us-mbi.
 - The identifier will be located at: extension.valueIdentifier.value.
@@ -451,7 +436,7 @@ In the example, a single claim will be tracked through several evolutions:
           </tr>
           <tr>
               <td data-label="Claim update">Update 3</td>
-              <td data-label="Details">An update to Claim 99995 (removal of claim line item) is received by AB2D on March 20, 2020.</td>
+              <td data-label="Details">An update to Claim 99995 (removal of claim line item) is received by AB2D on March 31, 2020.</td>
           </tr>
       </tbody>
   </table>
@@ -473,7 +458,7 @@ In the example, 4 exports are run using the <a href="{{ '/query-parameters-v2' |
           <tr>
               <td data-label="Export">Export 1</td>
               <td data-label="Run On">January 31, 2020</td>
-              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Since">January 1, 2020</td>
               <td data-label="Description">Provide all claims information and updates received in January</td>
           </tr>
           <tr>
@@ -498,13 +483,13 @@ In the example, 4 exports are run using the <a href="{{ '/query-parameters-v2' |
   </table>
 </div>
 
-The dates used in this example are just random dates. Organizations cannot pull data before February 13, 2020 or their date of attestation (whichever is later).
+The dates used in this example are just random dates. Organizations cannot pull data before January 1, 2020 or their date of attestation (whichever is later).
 
 ### Updated claims scenario - export details
 
-#### Export 1 12/31/2019 - 01/31/2020
+#### Export 1 01/01/2020 - 01/31/2020
 
-On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of December 31, 2019. The _since date tells AB2D to report all claims information received between December 31, 2019 and January 31, 2020.
+On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of January 1, 2020. The _since date tells AB2D to report all claims information received between January 1, 2020 and January 31, 2020.
 
 The export pulls a claim version with Claim Group ID 99995. At this time, the only version of the claim available to AB2D is 12987987. This version (claim update 1) is the latest claim version available as it is marked active.
 
@@ -787,7 +772,7 @@ In the example, a single claim will be tracked through several evolutions:
           </tr>
           <tr>
               <td data-label="Claim update">Update 2</td>
-              <td data-label="Details">An update to Claim 99995 is received by AB2D on February 28, 2020.</td>
+              <td data-label="Details">An update to Claim 99995 is received by AB2D on February 10, 2020.</td>
           </tr>
       </tbody>
   </table>
@@ -807,7 +792,7 @@ In the example, a single claim will be tracked through several evolutions:
           <tr>
               <td data-label="Export">Export 1</td>
               <td data-label="Run On">January 31, 2020</td>
-              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Since">January 1, 2020</td>
               <td data-label="Description">Provide all claims information and updates received in January</td>
           </tr>
           <tr>
@@ -820,13 +805,13 @@ In the example, a single claim will be tracked through several evolutions:
   </table>
 </div>
 
-The dates used in this example are just random dates. Organizations cannot pull data before February 13, 2020 or their date of attestation (whichever is later).
+The dates used in this example are just random dates. Organizations cannot pull data before January 1, 2020 or their date of attestation (whichever is later).
 
 ### Canceled claims scenario - export details
 
-#### Export 1 12/31/2019 - 01/31/2020
+#### Export 1 01/01/2020 - 01/31/2020
 
-On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of December 31, 2019. The _since date tells AB2D to report all claims information received between December 31, 2019 and January 31, 2020.
+On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of January 1, 2020. The _since date tells AB2D to report all claims information received between January 1, 2020 and January 31, 2020.
 
 The export pulls a claim version with Claim Group ID 99995. At this time, the only version of the claim available to AB2D is 12987987. This version (claim update 1) is the latest claim version available as it is marked active.
 
@@ -1004,26 +989,26 @@ In the example, 2 exports are run using the _since parameter. These exports are 
           <tr>
               <td data-label="Export">Export 1</td>
               <td data-label="Run On">January 31, 2020</td>
-              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Since">January 1, 2020</td>
               <td data-label="Description">Provide all claims information and updates received in January</td>
           </tr>
           <tr>
               <td data-label="Export">Export 2</td>
               <td data-label="Run On">February 28, 2020</td>
-              <td data-label="Since">December 31, 2019</td>
+              <td data-label="Since">January 1, 2020</td>
               <td data-label="Description">Provide all claims information and updates received in January and February</td>
           </tr>
       </tbody>
   </table>
 </div>
 
-The dates used in this example are just random dates. Organizations cannot pull data before February 13, 2020 or their date of attestation (whichever is later).
+The dates used in this example are just random dates. Organizations cannot pull data before January 1, 2020 or their date of attestation (whichever is later).
 
 ### Duplicate claims scenario - export details
 
-#### Export 1 12/31/2019 - 01/31/2020
+#### Export 1 01/01/2020 - 01/31/2020
 
-On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of December 31, 2019. The _since date tells AB2D to report all claims information received between December 31, 2019 and January 31, 2020.
+On January 31, 2020, organization XYZ runs its first export. The export uses a _since parameter date of January 1, 2020. The _since date tells AB2D to report all claims information received between January 1, 2020 and January 31, 2020.
 
 The export pulls a claim version with Claim Group ID 99995. At this time the only version of the claim available to AB2D is 12987987. This version is the latest claim version available as it is marked active.
 
@@ -1072,9 +1057,9 @@ The export pulls a claim version with Claim Group ID 99995. At this time the onl
   </table>
 </div>
 
-#### Export 2 12/31/2019 - 02/28/2020
+#### Export 2 01/01/2020 - 02/28/2020
 
-On February 28, 2020, organization XYZ runs an export with a _since parameter date of December 31, 2019. The _since date tells AB2D to report all claims information received between December 31, 2019 and February 28, 2020.
+On February 28, 2020, organization XYZ runs an export with a _since parameter date of January 1, 2020. The _since date tells AB2D to report all claims information received between January 1, 2020 and February 28, 2020.
 
 The export pulls a duplicate of the claim from export 1 as it has the same Claim Group ID (99995), Claim ID (12987987), and Last Updated date (01/01/2020). 
 

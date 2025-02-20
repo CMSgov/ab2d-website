@@ -18,10 +18,10 @@ The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants 
 {% endcapture %}
 {% capture versionAlert %}
     <p>
-        Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/">FHIR R4 standard</a>. The _until parameter is only available with V2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html">FHIR STU3</a> standard.
+        Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 standard</a>. The _until parameter is only available with V2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html" target="_blank" rel="noopener">FHIR STU3</a> standard.
     </p>
     <p>    
-        <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn more about migrating from V1 to V2</a>.
+        <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
     </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
@@ -159,7 +159,7 @@ JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
 Request the job status and save the HTTP response code into STATUS. If you receive a 200 response code, the job is complete. If you receive a 202 code, the job is in progress. In this case, continue checking the status until the job is complete.
 
 {% capture curlSnippet %}{% raw %}
-curl -sw '%{http_code}' -o status.json "https://www.google.com"  \
+curl -sw '%{http_code}' -o status.json "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${job_id}/\$status"  \
   -H "Accept: application/json" \
   -H "Accept: application/fhir+ndjson" \
   -H "Authorization: Bearer ${bearer_token}" | {

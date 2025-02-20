@@ -18,10 +18,10 @@ The production environment offers access to enrollee claims data, which contains
 {% endcapture %}
 {% capture versionAlert %}
   <p>
-      Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/">FHIR R4 standard</a>. The _until parameter is only available with V2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html">FHIR STU3</a> standard.
+      Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 standard</a>. The _until parameter is only available with V2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html" target="_blank" rel="noopener">FHIR STU3</a> standard.
   </p>
   <p>    
-      <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx">Learn more about migrating from V1 to V2</a>.
+      <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
   </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
@@ -38,13 +38,15 @@ You’ll still need [a bearer token]({{ '/get-a-bearer-token' | relative_url }})
 - Check the job status: `GET /api/v2/fhir/Job/{job_uuid}/$status`
 - Download files: `GET/api/v2/fhir/Job/{job_uuid}/file/{file_name}`
 
-### File expiration
+### Job expiration
 
-If it takes more than 30 hours to retrieve and download the data, the request will time out and fail. Try using [parameters]({{ '/query-parameters-V2' | relative_url }}) when running a job to filter the claims data returned and reduce file size.
+Job IDs and file URLs expire after 72 hours or 6 downloads. If it takes more than 30 hours for a job to complete, the request will time out and fail. Reduce file sizes and download times by using [parameters]({{ '/query-parameters-V2' | relative_url }}) to filter the claims data returned or download compressed data files in gzip format. 
 
 ### Format
 
-Files are in NDJSON format, where each line is a Medicare claim written in JSON. The file naming standard uses a contract identifier and number to indicate sequence (e.g., Z123456_0001.ndjson). Large data files require adequate storage and a database to process the claims received.
+Files are in NDJSON format, where each line is a Medicare claim written in JSON. The file naming standard uses a contract identifier and number to indicate sequence (e.g., Z123456_0001.ndjson). 
+
+You can optionally download files in gzip format and decompress (unzip) them afterward into NDJSON. Large data files require adequate storage and a database to process the claims received. 
 
 ## Sample client scripts
 
