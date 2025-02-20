@@ -78,7 +78,7 @@ Too many status requests can result in a “Retry-After” response in the heade
 Once the job is complete, the response will return a list of file URLs. In each file URL, you can identify the job ID (job_uuid) and file name:
 
 {% capture curlSnippet %}{% raw %}
-https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/{file_name}
+https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/file/{file_name}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" %}
 
@@ -231,7 +231,7 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 3. Paste the job ID (job_uuid) from step II.
 4. Select *Execute*. 
 - If the job is in progress, you’ll receive a 202 response code with a progress percentage by *x-progress*. Re-click *Execute* periodically until completion.  
-- If the job is complete, you’ll receive a 200 code. The *Response body* will return a list of file URLs (https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/{file_name}). 
+- If the job is complete, you’ll receive a 200 code. The *Response body* will return a list of file URLs (https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/file/{file_name}). 
 
 ### IV. Download your files
 
