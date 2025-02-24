@@ -8,7 +8,7 @@ in-page-nav: true
 in-page-nav-levels: "h2"
 ---
 
-# {{ page.page_title }}
+<h1>Trouble&shy;shooting Guide</h1>
 
 The troubleshooting guide provides technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API. For further assistance, visit [Support]({{ '/support' | relative_url }}). 
 

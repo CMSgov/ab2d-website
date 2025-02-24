@@ -254,8 +254,8 @@ code.language-plaintext.highlighter-rouge, code.inline-code {
    word-wrap: break-word;
 }
 
-a {
-  word-wrap: break-word;
+body {
+  overflow-wrap: break-word;
 }
 
 @include at-media-max("mobile-lg") {
