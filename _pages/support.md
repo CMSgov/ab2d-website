@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: api-docs
 page_title: "Support"
 seo_title: "Support | AB2D Enrollee Medicare Parts A & B Claims Data API"
 description: "Browse frequently asked questions (FAQs) and contact the AB2D team for troubleshooting help."
@@ -13,7 +13,7 @@ show-side-nav: false
   <div class="tablet:grid-col tablet:order-2">
     <img src="{{ '/assets/img/experts.svg' | relative_url }}" alt="customer support illustration" />
   </div>
-  <div class="tablet:grid-col tablet:order-1">
+  <div class="tablet:grid-col tablet:order-1 padding-top-2">
     <h2>Contact Us</h2>
     <p>
       Email <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to ask questions or get help. The AB2D team will get back to you promptly. You can also visit our <a href="{{ '/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a> for technical assistance.
