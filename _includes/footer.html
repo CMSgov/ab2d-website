@@ -19,7 +19,7 @@
                     {% for item in column.links %}
                       <li class="usa-footer__secondary-link">
                         {% if item.text == "Privacy Settings" %}
-                          <button style="border: 0;padding: 0;text-decoration: underline; color: #005ea2; text-underline-offset: 4px" onclick="utag.gdpr.showConsentPreferences()">
+                          <button class="usa-button usa-button--accent-warm usa-button--unstyled" style="text-underline-offset: 4px;" onclick="utag.gdpr.showConsentPreferences()">
                             {{- item.text -}}
                           </button>
                         {% else %}

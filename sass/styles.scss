@@ -18,8 +18,20 @@ main h6 {
   margin-top: 0;
 }
 
+.ds-c-dialog.ds-c-dialog--full::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 .ds-c-dialog.ds-c-dialog--full {
-  padding: 0;
+  padding: 0 1.5rem;
+  background: transparent;
+  border: 0;
+}
+
+.ds-c-dialog.ds-c-dialog--full>div {
+  max-width: 55rem;
+  background: white;
+  border-radius: 0.5rem;
 }
 
 .ds-c-dialog__window {
