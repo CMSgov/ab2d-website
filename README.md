@@ -165,9 +165,9 @@ npm run assets:serve
 You can also run Jekyll seperately with the following commands.
 
 > [!WARNING]
-> Be careful running these scripts seperately. These scripts will only build the Jekyll site with the compiled assets. If you've made changes to your source SCSS and JS files, those changes will not be captured in these scripts.
+> Be careful running these scripts seperately. These scripts will only build the Jekyll site with the compiled assets. If you've made changes to your source `*.scss` and `*.js` files, those changes will not be captured in these scripts.
 
-To run the Jekyll server and automatically react to changes in your source files, run:
+To run the Jekyll server and automatically react to changes in your source `*.md` and `*.html` files, run:
 
 ```sh
 npm run jekyll:serve
