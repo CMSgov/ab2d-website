@@ -17,14 +17,20 @@
                   <h3 class="usa-footer__primary-link">{{ column.heading }}</h3>
                   <ul class="usa-list usa-list--unstyled">
                     {% for item in column.links %}
-                    <li class="usa-footer__secondary-link">
-                      <a href="{{ item.url | relative_url }}" {% if item.external %}class="usa-link--external"{% endif %}>
-                        {%- if item.icon -%}
-                          {%- include sprite.html icon=item.icon size="3" class="margin-right-05 text-middle" -%}
-                        {%- endif -%}
-                        {{- item.text -}}
-                      </a>
-                    </li>
+                      <li class="usa-footer__secondary-link">
+                        {% if item.text == "Privacy Settings" %}
+                          <button class="usa-button usa-button--accent-warm usa-button--unstyled" style="text-underline-offset: 4px;" onclick="utag.gdpr.showConsentPreferences()">
+                            {{- item.text -}}
+                          </button>
+                        {% else %}
+                          <a href="{{ item.url | relative_url }}">
+                            {%- if item.icon -%}
+                              {%- include sprite.html icon=item.icon size="3" class="margin-right-05 text-middle" -%}
+                            {%- endif -%}
+                            {{- item.text -}}
+                          </a>
+                        {% endif %}
+                      </li>
                     {% endfor %}
                   </ul>
                 </section>
