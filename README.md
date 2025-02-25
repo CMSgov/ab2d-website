@@ -3,43 +3,46 @@
 This Ruby program builds the [ab2d.cms.gov](https://ab2d.cms.gov/) website via [Jekyll](https://jekyllrb.com/) and [U.S. Web Design System (USWDS)](https://designsystem.digital.gov/).
 
 ## Requirements
+> [!NOTE]
+> This repository assumes development on MacOS. If you're using Windows, some installation steps may be different.
 
-- [Ruby](https://www.ruby-lang.org/en/)
-- [Node.js (v20 or higher)](https://nodejs.org/en/download/)
+- [Homebrew](https://brew.sh/)
+- [Ruby](https://www.ruby-lang.org/en/) 
+- [Node.js](https://nodejs.org/en/download/) (v20 or higher required)
 - [npm](https://www.npmjs.com/get-npm)
 
+## Installation
+
+### Step 1: Install Homebrew
 > [!NOTE]
-> Since there isn't a robust way to manange USWDS as a Ruby dependency, this repository uses two package dependency management tools: `npm` for JavaScript, and `gem` for Ruby.
+> If you already have Homebrew on your machine, you can skip this step.
 
-## Architecture
+Follow the installation process [found here](https://brew.sh/).
 
-This Jekyll site doesn't use a gem-based theme. All assets, layouts, includes, and stylesheets are contained within the repo.
+You can confirm Homebrew is installed on your machine by running the following in your terminal:
 
-It also doesn't use the [bundled Sass converter](https://jekyllrb.com/docs/configuration/sass/). Any unintentional Sass munging is avoided since all styles are precompiled via [`uswds-compile`](https://github.com/uswds/uswds-compile), USWDS's recommended set of [Gulp](https://gulpjs.com/) functions for copying the static assets and transforming Sass into CSS.
+```sh
+brew -v
+```
 
-USWDS assets are compiled during local development, isolating the Node.js environment so that it's not part of the build or deploy process. Only Ruby/Jekyll is required in the build process.
+(You may need to close and reopen your terminal window)
 
-This architecture gives us the simplicity of Jekyll's plain-text content management (Markdown), build, and deploy; and the ability to compile a customized design system using [USWDS `$theme-` settings](https://designsystem.digital.gov/documentation/settings/).
+### Step 2: Install `pre-commit`
 
-## Local development
+> [!IMPORTANT]
+> Anyone committing to this repository must install [pre-commit](https://pre-commit.com/) and use the pre-commit hook to reduce the risk of exposing secrets.
 
-### Install and use pre-commit
+#### Install pre-commit
 
-Anyone committing to this repository must install [pre-commit](https://pre-commit.com/) and use the pre-commit hook to lower the likelihood that secrets will be exposed.
-
-#### Step 1: Install pre-commit
-
-You can install pre-commit using the MacOS package manager Homebrew:
+To install pre-commit, run the following in your terminal:
 
 ```sh
 brew install pre-commit
 ```
 
-Other installation options can be found in the [pre-commit documentation](https://pre-commit.com/#install).
+#### Implement the pre-commit hook
 
-#### Step 2: Install the hooks
-
-Run the following command to install the gitleaks hook:
+Run the following command to install the "gitleaks" hook:
 
 ```sh
 pre-commit install
@@ -47,46 +50,142 @@ pre-commit install
 
 This will download and install the pre-commit hooks specified in `.pre-commit-config.yaml`.
 
-### Running the Jekyll server
+### Step 3: Install Ruby
 
-The following command will run the Jekyll server and watch for changes:
+Using Jekyll requires Ruby to be installed on your system. We use `chruby` to make it easier to switch between Ruby versions. Due to limitations with our deployment process, the maximum version of Ruby we use is `v3.2.6`.
+
+Install `chruby` and `ruby-install` by running the following:
 
 ```sh
-bundle exec jekyll serve --livereload
+brew install chruby ruby-install
 ```
 
-You can view the site at `http://localhost:4000/` and LiveReload will automatically reload your browser when files are modified.
+Then, install Ruby v3.2.6 by running:
 
-### Compiling USWDS styles and scripts
+```sh
+ruby-install ruby 3.2.6
+```
 
-> [!NOTE]
-> You only need to run the Gulp tasks when making changes to the design system. You can just run the Jekyll server when editing pages, components, or content.
+You can verify your installation by running: 
+```sh
+ruby -v
+```
 
-Install the `uswds-compile` and `uswds` dependencies:
+(You may need to close and reopen your terminal window)
+
+You should see something like: 
+```
+ruby 3.2.6 (2024-10-30 revision 63aeb018eb) ... 
+```
+
+### Step 4: Install Node.js and npm
+
+USWDS and other JavaScript packages require `npm` which comes with Node.js
+
+You can install this manually from the [Node.js website](https://nodejs.org/en/download/) or with Homebrew by running:
+
+```sh
+brew install node
+```
+
+You can verify the installation by running:
+
+```sh
+node -v
+npm -v
+```
+
+Your node version should be at least `v20`.
+
+### Step 5: Install Jekyll and Bundler
+
+Once Ruby is installed, install Jekyll and Bundler
+
+```sh
+gem install jekyll bundler
+```
+
+Verify your installation by running:
+
+```sh
+jekyll -v
+```
+
+You should see:
+
+```
+jekyll 4.4.1
+```
+
+### Step 6: Install Jekyll dependencies
+
+Install Jekyll dependencies via `Bundler` by running: 
+```sh
+bundle install
+```
+
+### Step 7: Install USWDS & other JavaScript dependencies
+
+Run the following:
 
 ```sh
 npm install
 ```
 
-Compile and update USWDS to copy files to the `./assets/uswds` directory:
+## Local Development
+
+Once you've gone through the installation process you should be able to run the site locally.
+
+### Running the Site
+
+Run the following command to start the Jekyll server and watch for changes to your SCSS and JS assets:
 
 ```sh
-npx gulp updateUswds
+npm run dev
 ```
 
-Or you can run the following command (in parallel with the Jekyll server) and Gulp will watch for changes to files in the `./_uswds_sass` directory and recompile the USWDS assets:
+You can view the site at `http://localhost:4000/`.
+
+### Compiling USWDS styles and scripts seperately
+
+You can run the following command to compile your assets without running the Jekyll server:
 
 ```sh
-npx gulp watch
+npm run assets:build
 ```
 
-#### USWDS Icons
+Alternatively, you can run the following to watch for changes as you modify your source files:
+
+```sh
+npm run assets:serve
+```
+
+### Running Jekyll seperately
+
+> [!WARNING]
+> Be careful running these scripts seperately. These scripts will only build the Jekyll site with the compiled assets. If you've made changes to your source CSS and JS files, those changes will not be captured in these scripts.
+
+You can also run Jekyll seperately with the following commands.
+
+To run the Jekyll server and automatically react to changes in your source files, run:
+
+```sh
+npm run jekyll:serve
+```
+
+Or, to build the Jekyll site without watching for changes, run:
+
+```sh
+npm run jekyll:build
+```
+
+## USWDS Icons
 
 Over 2K icons get compiled when you run the Gulp tasks. Woah! But every individual icon file is not tracked and committed.
 
 All of the `usa-icons` are packaged into a sprite, which should be preferred when possible:
 
-```
+```html
 <svg class="usa-icon" role="img">
   <use xlink:href="{{ '/assets/uswds/img/sprite.svg#arrow_forward' | relative_url }}"></use>
 </svg>
@@ -122,32 +221,23 @@ For specific customizations that cannot be achieved at the theme level, USWDS in
 
 If custom styles must be written, they should added to `_uswds-theme-custom-styles.scss`, where you can leverage [USWDS design tokens](https://designsystem.digital.gov/design-tokens/), variables, mixins, and functions.
 
-### Accessibility tests ([Pa11y](https://pa11y.org/))
+## Local accessibility testing
 
 The `.pa11yci` config file defines [Axe](https://github.com/dequelabs/axe-core) and [HTML_CodeSniffer](https://squizlabs.github.io/HTML_CodeSniffer/) accessibilty tests for WCAG 2 Level AA conformance that should be run during local development:
 
-Install Pa11y CI:
+### Run tests for every page in the sitemap
+
+In order to run accessibility tests, make sure the site is running locally. Then, you can run: 
 
 ```sh
-npm install -g pa11y-ci
-```
-
-Run tests for every page in the sitemap:
-```sh
-pa11y-ci --sitemap http://localhost:4000/sitemap.xml
+npm run pa11y
 ```
 
 Pa11y is configured to `includeWarnings` (not just errors) for more thorough compliance. However, some warning result codes are ignored for the following reasons:
 
 - `color-contrast` — [Pa11y reports false positives](https://github.com/pa11y/pa11y/issues/633) when axe can't determine the contrast ratio for certain elements.
-- `WCAG2AA.Principle1.Guideline1_3.1_3_1.H48` — `<p>` or `<div>` with more than one link is assumed as navigation to be marked up as a list
-- `WCAG2AA.Principle1.Guideline1_4.1_4_3.[G…].BgImage` — text and all covered parts of background image (hero gradient) need high contrast
-- `WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.Empty` — In-page Navigation JS inserts empty anchors (with IDs but without a href or link text)
 
 And some elements are hidden from testing:
 
 - `.usa-overlay` — area behind mobile nav has a fixed position which triggers a "scrolling in two dimensions" error
 - `.usa-in-page-nav__heading` — although heading structure is not logically nested, there's an [exception for fixed page sections](https://www.w3.org/WAI/tutorials/page-structure/headings/)
-
-> [!NOTE]
-> [Pa11y](https://pa11y.org/) can be further configured to run on each build, deploy, pull request, etc. This should be added to any the CI/CD setup.
