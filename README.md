@@ -179,48 +179,6 @@ Or, to build the Jekyll site without watching for changes, run:
 npm run jekyll:build
 ```
 
-## USWDS Icons
-
-Over 2K icons get compiled when you run the Gulp tasks. Woah! But every individual icon file is not tracked and committed.
-
-All of the `usa-icons` are packaged into a sprite, which should be preferred when possible:
-
-```html
-<svg class="usa-icon" role="img">
-  <use xlink:href="{{ '/assets/uswds/img/sprite.svg#arrow_forward' | relative_url }}"></use>
-</svg>
-```
-
-However, `img` tags need to point to individual icon files. These must be explicitly be tracked and checked in. Add required icons to the list of files to track (not be ignored) in `.gitignore`:
-
-```sh
-!assets/uswds/img/usa-icons/close.svg
-```
-
-> [!TIP]
-> Although most aren't tracked, 2K+ compiled icons can slow down `jekyll build`, as it copies them all to `_site`. To speed up local development, edit the icons listed in `_config-local.yml` (matching what's in `.gitignore`) and add this flag to when running the jekyll server:
-> ```sh
-> --config _config.yml,_config-local.yml
-> ```
-
-### Theming USWDS
-
-See USWDS [settings documentation](https://designsystem.digital.gov/documentation/settings/)
-
-There are three key files in the `./_uswds_sass` dierctory:
-
-- `_uswds-theme-custom-styles.scss`
-- `_uswds-theme.scss`
-- `styles.scss`
-
-`styles.scss` is the Sass entry point that pulls everything together. Leave it be.
-
-Per [USWDS guidance](https://designsystem.digital.gov/documentation/settings/), Sass `$theme-` variables can be defined in `_uswds-theme.scss` to create a custom configuration of USWDS.
-
-For specific customizations that cannot be achieved at the theme level, USWDS includes a versatile set of [utility classes](https://designsystem.digital.gov/utilities/) that can be used to style elements (e.g. `border-style`, `background-color`, etc). Most designs are achievable with utility classes, and they are preferred over custom CSS rules whenever possible.
-
-If custom styles must be written, they should added to `_uswds-theme-custom-styles.scss`, where you can leverage [USWDS design tokens](https://designsystem.digital.gov/design-tokens/), variables, mixins, and functions.
-
 ## Local accessibility testing
 
 The `.pa11yci` config file defines [Axe](https://github.com/dequelabs/axe-core) and [HTML_CodeSniffer](https://squizlabs.github.io/HTML_CodeSniffer/) accessibilty tests for WCAG 2 Level AA conformance that should be run during local development:
@@ -241,3 +199,48 @@ And some elements are hidden from testing:
 
 - `.usa-overlay` — area behind mobile nav has a fixed position which triggers a "scrolling in two dimensions" error
 - `.usa-in-page-nav__heading` — although heading structure is not logically nested, there's an [exception for fixed page sections](https://www.w3.org/WAI/tutorials/page-structure/headings/)
+
+## USWDS Icons
+
+Over 2K icons get compiled when you run the Gulp tasks. Woah! But every individual icon file is not tracked and committed.
+
+All of the `usa-icons` are packaged into a sprite, which should be preferred when possible:
+
+```html
+<svg class="usa-icon" role="img">
+  <use xlink:href="{{ '/assets/uswds/img/sprite.svg#arrow_forward' | relative_url }}"></use>
+</svg>
+```
+
+However, `img` tags need to point to individual icon files. These must be explicitly be tracked and checked in. Add required icons to the list of files to track (not be ignored) in `.gitignore`:
+
+```sh
+!assets/uswds/img/usa-icons/close.svg
+```
+
+And add them to the `include` inside the Jekyll `_config.yml`:
+
+```yml
+include: 
+  ...
+  - assets/uswds/img/usa-icons/close.svg
+```
+
+### Theming USWDS
+
+See USWDS [settings documentation](https://designsystem.digital.gov/documentation/settings/)
+
+There are three key files in the `./_uswds_sass` dierctory:
+
+- `_uswds-theme-custom-styles.scss`
+- `_uswds-theme.scss`
+- `styles.scss`
+
+`styles.scss` is the Sass entry point that pulls everything together. Leave it be.
+
+Per [USWDS guidance](https://designsystem.digital.gov/documentation/settings/), Sass `$theme-` variables can be defined in `_uswds-theme.scss` to create a custom configuration of USWDS.
+
+For specific customizations that cannot be achieved at the theme level, USWDS includes a versatile set of [utility classes](https://designsystem.digital.gov/utilities/) that can be used to style elements (e.g. `border-style`, `background-color`, etc). Most designs are achievable with utility classes, and they are preferred over custom CSS rules whenever possible.
+
+If custom styles must be written, they should added to `_uswds-theme-custom-styles.scss`, where you can leverage [USWDS design tokens](https://designsystem.digital.gov/design-tokens/), variables, mixins, and functions.
+
