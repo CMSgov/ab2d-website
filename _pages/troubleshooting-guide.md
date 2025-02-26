@@ -216,7 +216,7 @@ If the system is correct, check with your IT team to make sure you have a static
   The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
 </p>
 <p>
-  In V1, a date must be specified to use _since. If no _since value is specified, it will default to January 1, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters-V2' | relative_url }}">Learn how to use parameters</a>.
+  In V1, a date must be specified to use _since. If no _since value is specified, it will default to January 1, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters-v2' | relative_url }}">Learn how to use parameters</a>.
 </p>
 {% endcapture %}
 

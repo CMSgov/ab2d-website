@@ -40,7 +40,7 @@ You’ll still need [a bearer token]({{ '/get-a-bearer-token' | relative_url }})
 
 ### Job expiration
 
-Job IDs and file URLs expire after 72 hours or 6 downloads. If it takes more than 30 hours for a job to complete, the request will time out and fail. Reduce file sizes and download times by using [parameters]({{ '/query-parameters-V2' | relative_url }}) to filter the claims data returned or download compressed data files in gzip format. 
+Job IDs and file URLs expire after 72 hours or 6 downloads. If it takes more than 30 hours for a job to complete, the request will time out and fail. Reduce file sizes and download times by using [parameters]({{ '/query-parameters-v2' | relative_url }}) to filter the claims data returned or download compressed data files in gzip format. 
 
 ### Format
 
@@ -263,7 +263,7 @@ python --version
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
     </li>
     <li>
-        <p>Start the export job. You can optionally use <a href="{{ '/query-parameters-V2' | relative_url }}">parameters</a> to filter the data returned.</p>
+        <p>Start the export job. You can optionally use <a href="{{ '/query-parameters-v2' | relative_url }}">parameters</a> to filter the data returned.</p>
         <ul>
             <li>
                 <p>Linux/Mac</p>
