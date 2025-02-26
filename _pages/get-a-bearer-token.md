@@ -30,10 +30,10 @@ POST https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v1/token
 Headers:
         Content-Type: application/x-www-form-urlencoded
         Accept: application/json
+        Authorization: Basic {base64_encoded_credentials}
 Parameters:
         grant_type: client_credentials
         scope: clientCreds
-Authorization: Basic {base64_encoded_credentials}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="yaml" %}
     </li>
@@ -245,14 +245,14 @@ In this example, we use “Z123456” as the contract number, “abcd” as the 
 {% capture curlSnippet %}{% raw %}
 AUTH_FILE=/home/abcduser/credentials_Z123456_base64.txt
 OKTA_CLIENT_ID=abcd
-OKTA_CLIENT_SECRET=badpassword
+OKTA_CLIENT_PASSWORD=badpassword
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Encode the credentials as Base64.
 {% capture curlSnippet %}{% raw %}
-echo -n "${okta_client_id}:${okta_client_password}" | base64 > $AUTH_FILE
+echo -n "$OKTA_CLIENT_ID:$OKTA_CLIENT_PASSWORD" | base64 > $AUTH_FILE
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
