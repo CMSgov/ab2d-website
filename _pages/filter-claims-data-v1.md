@@ -121,7 +121,7 @@ The \_since parameter can be used while starting an export job. Visit <a href="{
 #### curl command
 
 {% capture curlSnippet %}{% raw %}
-curl "https://api.ab2d.cms.gov/api/v1/fhir/Patient/\$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00" \
+curl -i "https://api.ab2d.cms.gov/api/v1/fhir/Patient/\$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00" \
 -H "Accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \

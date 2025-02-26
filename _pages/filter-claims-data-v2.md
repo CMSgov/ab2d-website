@@ -47,7 +47,7 @@ The following examples use the _since and _until parameters separately and toget
 #### curl command
 
 {% capture curlSnippet %}{% raw %}
-curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00" \
+curl -i "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00" \
 -H "Accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
@@ -68,7 +68,7 @@ curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-02-13T
 #### curl command
 
 {% capture curlSnippet %}{% raw %}
-curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
+curl -i "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
 -H "Authorization: Bearer ${bearer_token}"
@@ -88,7 +88,7 @@ curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until%3D2024-06-15T
 #### curl command
 
 {% capture curlSnippet %}{% raw %}
-curl "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
+curl -i "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
 -H "Accept: application/fhir+json" \
 -H "Prefer: respond-async" \
 -H "Authorization: Bearer ${bearer_token}"
