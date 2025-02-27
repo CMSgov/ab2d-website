@@ -14,7 +14,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
 ## Important AB2D claim fields
 
 <div class="overflow-x-auto">
-  <table class="usa-table tablet:usa-table--stacked usa-table--borderless custom-table">
+  <table class="usa-table usa-table--stacked usa-table--borderless">
     <thead>
       <tr>
         <th scope="col">Field</th>
