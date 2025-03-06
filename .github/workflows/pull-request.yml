@@ -7,7 +7,6 @@ jobs:
   deploy: 
     if: ${{ !startsWith(github.actor, 'bot-') }}
     with:
-      environment: development
       deploy_path: ${{ github.event.number }}
     uses: ./.github/workflows/deploy.yml
     secrets: inherit
