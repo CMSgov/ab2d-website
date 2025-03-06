@@ -3,6 +3,10 @@ name: "pull request"
 on:
   pull_request:
 
+concurrency: 
+  group: ${{ github.workflow }}-${{  github.event.number }}
+  cancel-in-progress: true
+
 jobs: 
   deploy: 
     if: ${{ !startsWith(github.actor, 'bot-') }}
