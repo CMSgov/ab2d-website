@@ -183,68 +183,34 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
 
 ## Glossary 
 
-<div class="padding-top-4 usa-accordion usa-accordion--multiselectable" data-allow-multiple>
-  <h3 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="true"
-      aria-controls="m-a1"
-    >
-    Application Programming Interface (API)
-    </button>
-  </h3>
-  <div id="m-a1" class="usa-accordion__content usa-prose">
-    <p>
-      APIs allow software systems and applications to communicate with each other. APIs follow unique definitions and protocols. The AB2D API is publicly available.
-    </p>
-  </div>
-    <h3 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a2"
-    >
-    Base64
-    </button>
-  </h3>
-  <div id="m-a2" class="usa-accordion__content usa-prose">
-    <p>
-    A basic encoding that changes your token from a text format to a standard ASCII format that is easier for computers to interpret.
-    </p>
-  </div>
-    <h3 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a3"
-    >
-    Identity Provider (IdP) and Okta
-    </button>
-  </h3>
-  <div id="m-a3" class="usa-accordion__content usa-prose">
-    <p>
+{% capture a1AccordionContent %}
+  APIs allow software systems and applications to communicate with each other. APIs follow unique definitions and protocols. The AB2D API is publicly available.
+{% endcapture %}
+
+{% capture a2AccordionContent %}
+  A basic encoding that changes your token from a text format to a standard ASCII format that is easier for computers to interpret.
+{% endcapture %}
+
+{% capture a3AccordionContent %}
+  <p>
     An <a href="https://www.okta.com/identity-101/why-your-company-needs-an-identity-provider/" target="_blank" rel="noopener">IdP</a> is a service that stores, verifies, and manages user identities. AB2D uses a third-party IdP tool called <a href="https://support.okta.com/help/s/article/What-is-Okta?language=en_US" target="_blank" rel="noopener">Okta</a>. PDP sponsors use their set of Okta credentials to get a bearer token and access the API.
-    </p>
-  </div>
-    <h3 class="usa-accordion__heading">
-    <button
-      type="button"
-      class="usa-accordion__button"
-      aria-expanded="false"
-      aria-controls="m-a4"
-    >
-    Bearer token
-    </button>
-  </h3>
-  <div id="m-a4" class="usa-accordion__content usa-prose">
-    <p>
-      Bearer tokens, also referred to as access tokens or <a href="https://jwt.io/introduction/" target="_blank" rel="noopener">JSON web tokens</a>, are used during the <a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.
-    </p>
-    <p>
-      You can get a bearer token by providing Okta with sandbox credentials or the production credentials received during <a href="{{ '/production-access' | relative_url }}">production access</a>. Bearer tokens expire after an hour, after which you must complete the process again.
-    </p>
-  </div>
-</div>
+  </p>
+{% endcapture %}
+
+{% capture a4AccordionContent %}
+<p>
+  Bearer tokens, also referred to as access tokens or <a href="https://jwt.io/introduction/" target="_blank" rel="noopener">JSON web tokens</a>, are used during the <a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.
+</p>
+<p>
+  You can get a bearer token by providing Okta with sandbox credentials or the production credentials received during <a href="{{ '/production-access' | relative_url }}">production access</a>. Bearer tokens expire after an hour, after which you must complete the process again.
+</p>
+{% endcapture %}
+
+{% include accordion.html id="a1" heading="Application Programming Interface (API)" expanded=true bordered=false accordionContent=a1AccordionContent %}
+
+{% include accordion.html id="a2" heading="Base64" expanded=false bordered=false accordionContent=a2AccordionContent %}
+
+{% include accordion.html id="a3" heading="Identity Provider (IdP) and Okta" expanded=false bordered=false accordionContent=a3AccordionContent %}
+
+{% include accordion.html id="a4" heading="Bearer token" expanded=false bordered=false accordionContent=a4AccordionContent %}
+    
