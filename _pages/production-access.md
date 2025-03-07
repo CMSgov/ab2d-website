@@ -25,7 +25,12 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
       </p>
       <div class="padding-top-4 usa-accordion usa-accordion--multiselectable" data-allow-multiple>
         <h3 class="usa-accordion__heading">
-          <button type="button" class="usa-accordion__button" aria-expanded="false" aria-controls="m-a1">
+          <button 
+            type="button" 
+            class="usa-accordion__button" 
+            aria-expanded="false" 
+            aria-controls="m-a1"
+            data-tealium="accordion">
             How do I complete attestation?
           </button>
         </h3>
@@ -43,7 +48,12 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
           </p>
         </div>
         <h3 class="usa-accordion__heading">
-          <button type="button" class="usa-accordion__button" aria-expanded="false" aria-controls="m-a2">
+          <button 
+            type="button" 
+            class="usa-accordion__button" 
+            aria-expanded="false" 
+            aria-controls="m-a2"
+            data-tealium="accordion">
             What are the requirements to be an Attestor?
           </button>
         </h3>
@@ -55,7 +65,12 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
           </ul>
         </div>
         <h3 class="usa-accordion__heading">
-          <button type="button" class="usa-accordion__button" aria-expanded="false" aria-controls="m-a3">
+          <button 
+            type="button" 
+            class="usa-accordion__button" 
+            aria-expanded="false" 
+            aria-controls="m-a3"
+            data-tealium="accordion">
             How does attestation affect your claims data?
           </button>
         </h3>
@@ -70,7 +85,12 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
           </ul>
         </div>
         <h3 class="usa-accordion__heading">
-          <button type="button" class="usa-accordion__button" aria-expanded="false" aria-controls="m-a4">
+          <button 
+            type="button" 
+            class="usa-accordion__button" 
+            aria-expanded="false" 
+            aria-controls="m-a4"
+            data-tealium="accordion">
             When does attestation take effect?
           </button>
         </h3>

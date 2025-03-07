@@ -45,7 +45,7 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
     <h2>Data Dictionary</h2>
     <p>Get a detailed breakdown of data elements provided by AB2D. The Data Dictionary covers both V2 (<a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">R4</a>) and V1 (<a href="https://hl7.org/fhir/STU3/" target="_blank" rel="noopener">STU3</a>) of the API.</p>
     <ul>
-      <li><a href="{{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }}">Data Dictionary {% include sprite.html icon="file_download" class="text-middle" %}</a></li>
+      <li><a href="{{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }}" data-tealium="download">Data Dictionary {% include sprite.html icon="file_download" class="text-middle" %}</a></li>
     </ul>
   </div>
 </div>
