@@ -90,14 +90,14 @@
             var buttons = document.querySelectorAll('[data-tealium="button"]'); 
             buttons.forEach((buttonEl)=>{
                 buttonEl.addEventListener('click', function(event) {
-                    var target = event.target;
+                    var target = event.currentTarget;
                     utag.link({
                         "event_name": "button_engagement",
                         "button_style": "", 
                         "button_type": "copy", // Since they are all copy buttons 
                         "link_type": "link_other",
                         "link_url": target.href,
-                        "parent_component_heading": target.offsetParent, 
+                        "parent_component_heading": target.formAction, 
                         "parent_component_type": "",
                         "text": target.innerText,
                     });
@@ -112,12 +112,12 @@
             var accordions = document.querySelectorAll('[data-tealium="accordion"]'); 
             accordions.forEach((accordionEl)=>{
                 accordionEl.addEventListener('click', function(event) {
-                    var target = event.target;
+                    var target = event.currentTarget;
                     utag.link({
                         "event_name": "accordion_opened",
                         "heading": target.innerText,
                         "parent_component_heading": "",
-                        "parent_component_type": target.localName, //returns BUTTON
+                        "parent_component_type": target.parentElement, // returns h3.usa-accordion__heading
                     });
                 });
             });
@@ -134,7 +134,7 @@
             var downloads = document.querySelectorAll('[data-tealium="download"]'); 
             downloads.forEach((downloadEl)=>{
                 downloadEl.addEventListener('click', function(event) {
-                    var target = event.target;
+                    var target = event.currentTarget;
                     utag.link({
                         "event_name": "file_download",
                         "file_name": target.pathname,
@@ -155,18 +155,19 @@
             var navigation = document.querySelectorAll('[data-tealium="navigation"]'); 
             navigation.forEach((navigationEl)=>{
                 navigationEl.addEventListener('click', function(event) {
-                    var target = event.target;
+                    var target = event.currentTarget;
                     utag.link({
                         "event_name": "navigation_clicked",
                         "heading": target.innerText,
                         "link_type": "link_other",
-                        "link_url": target.href, // github and swagger on mobile nav ONLY don't have this value in console because of span
-                        "navigation_type": target.offsetParent, 
-                        // in header, returns nav.usa-nav or button.usa-accordion__button.usa-nav__link for dropdown; 
-                        // in header dropdown, returns null; 
-                        // in api docs side nav returns a lot of divs;
-                        // in page nave returns li.usa-in-page-nav__item;
-                        "text": target.hash, // for in-page nave, this returns the header text (ex: #sample-files)
+                        "link_url": target.href,
+                        "navigation_type": target.parentElement,
+                        // primary header nav returns li.usa-nav__primary-item
+                        // header child items return li.usa-nav__submenu-item
+                        // header dropdown child item returns
+                        // side nav returns li.usa-sidenav__item
+                        // in page nav DOES NOT WORK: NO HREF OR UNIQUE INNERTEXT
+                        "text": target.text, 
                     });
                 });
             });

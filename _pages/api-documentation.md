@@ -183,6 +183,8 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
 
 ## Glossary 
 
+<div class="padding-top-4"></div>
+
 {% capture a1AccordionContent %}
   APIs allow software systems and applications to communicate with each other. APIs follow unique definitions and protocols. The AB2D API is publicly available.
 {% endcapture %}
