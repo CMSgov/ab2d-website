@@ -248,3 +248,5 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
     </p>
   </div>
 </div>
+
+{% include yes-no-form.html %}
