@@ -5,7 +5,7 @@
       <div class="usa-navbar">
         <div class="usa-logo">
           <em class="usa-logo__text">
-            <a href="{{ '/' | relative_url }}" title="AB2D" data-tealium="navigation">
+            <a href="{{ '/' | relative_url }}" title="AB2D" data-tealium="main_nav">
               <img src="{{ '/assets/img/logo-horiz-dark.svg' | relative_url }}" alt="AB2D logo" />
             </a>
           </em>
@@ -20,6 +20,7 @@
         <ul class="usa-nav__primary usa-accordion">
           <li class="usa-nav__primary-item margin-top-1">
             <button
+              type="button"
               class="usa-accordion__button usa-nav__link {% if page.permalink == '/about' %}{{ 'usa-current' }}{% endif %}"
               aria-expanded="false"
               aria-controls="basic-nav-section-one"
@@ -28,12 +29,12 @@
             </button>
             <ul id="basic-nav-section-one" class="usa-nav__submenu">
               <li class="usa-nav__submenu-item">
-                <a href="{{ '/about' | relative_url }}" data-tealium="navigation">
+                <a href="{{ '/about' | relative_url }}" data-tealium="main_nav">
                   <span>About AB2D</span>
                 </a>
               </li>
               <li class="usa-nav__submenu-item">
-                <a href="{{ '/use-cases' | relative_url }}" data-tealium="navigation">
+                <a href="{{ '/use-cases' | relative_url }}" data-tealium="main_nav">
                   <span>Use cases</span>
                 </a>
               </li>
@@ -45,21 +46,20 @@
           <li class="usa-nav__primary-item">
             <a
               href="{{ '/api-documentation' | relative_url }}"
-              type="button"
               class="usa-nav-link {% if page.permalink == '/api-documentation' %}{{ 'usa-current' }}{% endif %}"
               aria-controls="basic-nav-section-two"
-              data-tealium="navigation"
+              data-tealium="main_nav"
             >
               <span>API Documentation</span>
             </a>
-              <ul id="basic-nav-section-two" class="usa-nav__submenu desktop:display-none" >
+              <ul class="usa-nav__submenu desktop:display-none" >
                 {% for item in site.data.api-docs-nav %}
                   {% for child in item.children %}
                   <li class="usa-nav__submenu-item">
                     <a
                       href="{{ child.url | relative_url }}"
                       class="usa-nav-link {% if page.permalink == child.url %}{{ 'usa-current' }}{% endif %}"
-                      data-tealium="navigation"
+                      data-tealium="main_nav"
                       ><span>{{ child.name }}</span>
                     </a>
                     <ul class="usa-nav__submenu">
@@ -67,7 +67,7 @@
                       <li class="usa-nav__submenu-item">
                         <a href="{{ grandchild.url | relative_url }}"
                           class="{% if page.permalink == grandchild.url %}{{ 'usa-current' }}{% endif %}"
-                          data-tealium="navigation"
+                          data-tealium="main_nav"
                         >{{ grandchild.name }}</a>
                       </li>
                       {% endfor %}
@@ -83,21 +83,19 @@
           <li class="usa-nav__primary-item">
             <a
               href="{{ '/ab2d-data' | relative_url }}"
-              type="button"
               class="usa-nav-link {% if page.permalink == '/ab2d-data' %}{{ 'usa-current' }}{% endif %}"
-              aria-controls="basic-nav-section-three"
-              data-tealium="navigation"
+              data-tealium="main_nav"
             >
               <span>AB2D Data</span>
             </a>
-              <ul id="basic-nav-section-three" class="usa-nav__submenu desktop:display-none">
+              <ul class="usa-nav__submenu desktop:display-none">
                 {% for item in site.data.ab2d-data-nav %}
                   {% for child in item.children %}
                   <li class="usa-nav__submenu-item">
                     <a
                       href="{{ child.url | relative_url }}"
                       class="usa-nav-link {% if page.permalink == child.url %}{{ 'usa-current' }}{% endif %}"
-                      data-tealium="navigation"
+                      data-tealium="main_nav"
                       ><span>{{ child.name }}</span>
                     </a>
                     <ul class="usa-nav__submenu">
@@ -105,7 +103,7 @@
                       <li class="usa-nav__submenu-item">
                         <a href="{{ grandchild.url | relative_url }}"
                           class="{% if page.permalink == grandchild.url %}{{ 'usa-current' }}{% endif %}"
-                          data-tealium="navigation"
+                          data-tealium="main_nav"
                           >{{ grandchild.name }}</a>
                       </li>
                       {% endfor %}
@@ -121,14 +119,14 @@
             <a
               href="{{ item.url | relative_url }}"
               class="usa-nav-link {% if page.permalink == item.url %}{{ 'usa-current' }}{% endif %}"
-              data-tealium="navigation"
+              data-tealium="main_nav"
               ><span>{{ item.text }}</span></a
             >
           </li>
           {% endfor %}
           <!--Github, Swagger -->
           <li class="usa-nav__primary-item desktop:display-none">
-            <a href="https://github.com/CMSgov/ab2d" class="usa-nav-link" data-tealium="navigation">
+            <a href="https://github.com/CMSgov/ab2d" class="usa-nav-link" data-tealium="main_nav">
               <span>    
                 {% include sprite.html icon="github" size="3" class="margin-right-05 text-middle" %}
                 Github repo
@@ -136,7 +134,7 @@
             </a>
           </li>
           <li class="usa-nav__primary-item desktop:display-none">
-            <a href="https://sandbox.ab2d.cms.gov/swagger-ui/index.html" class="usa-nav-link" data-tealium="navigation">
+            <a href="https://sandbox.ab2d.cms.gov/swagger-ui/index.html" class="usa-nav-link" data-tealium="main_nav">
               <span>    
                 {% include sprite.html icon="code" size="3" class="margin-right-05 text-middle" %}
                 Swagger
@@ -146,7 +144,7 @@
         </ul>
         <!--Get Started-->
         <section class="width-100 padding-left-1">
-          <a href="{{ '/api-documentation' | relative_url }}" class="usa-button" data-tealium="navigation"
+          <a href="{{ '/api-documentation' | relative_url }}" class="usa-button" data-tealium="main_nav"
             >Get Started</a
           >
         </section>
