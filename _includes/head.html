@@ -51,12 +51,12 @@
     <!-- link clicks -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var links = document.getElementsByTagName('a');
-            Array.from(links).forEach((linkEl)=>{
+            const links = document.querySelectorAll('a');
+            links.forEach((linkEl)=>{
                 linkEl.addEventListener('click', function(event) {
-                    var target = event.target;
-                    var targetUrl = target.href; 
-                    var baseUrl = "{{site.baseurl}}"; 
+                    const target = event.target;
+                    const targetUrl = target.href; 
+                    const baseUrl = "{{site.url}}";  // Jekyll site.url gets added here at build time
                     if (!target.hasAttribute('data-tealium')) {
                         //internal link clicked
                         if (targetUrl.startsWith(baseUrl)) {
@@ -83,10 +83,10 @@
                 });
             });
             // button clicks
-            var buttons = document.querySelectorAll('[data-tealium="button"]'); 
+            const buttons = document.querySelectorAll('[data-tealium="button"]'); 
             buttons.forEach((buttonEl)=>{
                 buttonEl.addEventListener('click', function(event) {
-                    var target = event.currentTarget;
+                    const target = event.currentTarget;
                     utag.link({
                         "event_name": "button_engagement",
                         "button_style": "", 
@@ -100,10 +100,10 @@
                 });
             });
             // accordion clicks
-            var accordions = document.querySelectorAll('[data-tealium="accordion"]'); 
+            const accordions = document.querySelectorAll('[data-tealium="accordion"]'); 
             accordions.forEach((accordionEl)=>{
                 accordionEl.addEventListener('click', function(event) {
-                    var target = event.currentTarget;
+                    const target = event.currentTarget;
                     if (event.currentTarget.getAttribute('aria-expanded') == 'false')
                     utag.link({
                         "event_name": "accordion_opened",
@@ -114,10 +114,10 @@
                 });
             });
             // file downloads
-            var downloads = document.querySelectorAll('[data-tealium="download"]'); 
+            const downloads = document.querySelectorAll('[data-tealium="download"]'); 
             downloads.forEach((downloadEl)=>{
                 downloadEl.addEventListener('click', function(event) {
-                    var target = event.currentTarget;
+                    const target = event.currentTarget;
                     utag.link({
                         "event_name": "file_download",
                         "file_name": target.pathname,
@@ -130,10 +130,10 @@
                 });
             });
             // navigation clicks
-            var navigation = document.querySelectorAll('[data-tealium="navigation"]'); 
-            Array.from(navigation).forEach((navigationEl)=>{
+            const navigation = document.querySelectorAll('[data-tealium="navigation"]'); 
+            navigation.forEach((navigationEl)=>{
                 navigationEl.addEventListener('click', function(event) {
-                    var target = event.currentTarget;
+                    const target = event.currentTarget;
                     utag.link({
                         "event_name": "navigation_clicked",
                         "heading": target.innerText,
