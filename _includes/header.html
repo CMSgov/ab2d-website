@@ -5,25 +5,24 @@
       <div class="usa-navbar">
         <div class="usa-logo">
           <em class="usa-logo__text">
-            <a href="{{ '/' | relative_url }}" title="AB2D">
+            <a href="{{ '/' | relative_url }}" title="AB2D" data-tealium="navigation">
               <img src="{{ '/assets/img/logo-horiz-dark.svg' | relative_url }}" alt="AB2D logo" />
             </a>
           </em>
         </div>
-        <button type="button" class="usa-menu-btn" data-tealium="navigation">Menu</button>
+        <button type="button" class="usa-menu-btn">Menu</button>
       </div>
       <nav aria-label="Primary navigation" class="usa-nav">
         <button type="button" class="usa-nav__close">
           <img src="{{ '/assets/uswds/img/usa-icons/close.svg' | relative_url }}" role="img" alt="Close" />
         </button>
-        <!--About-->
+        <!--About dropdown-->
         <ul class="usa-nav__primary usa-accordion">
           <li class="usa-nav__primary-item margin-top-1">
             <button
               class="usa-accordion__button usa-nav__link {% if page.permalink == '/about' %}{{ 'usa-current' }}{% endif %}"
               aria-expanded="false"
               aria-controls="basic-nav-section-one"
-              data-tealium="navigation"
             >
               <span>About</span>
             </button>

@@ -24,6 +24,11 @@
     <link href="{{ '/assets/uswds/css/styles.css' | relative_url }}?{{site.time | pubDate: '%s'}}" rel="stylesheet">
 
 <!-- CMS Tealium/Google Analytics BEGIN -->
+    <!-- 
+    * PII ALERT: Please be careful not to pass any dynamic values that could
+    * contain any personal information such as first name, last name, email
+    * or address. In these cases, you may use a link descriptor instead.
+    -->
     
     <!--DataLayer (utag_data) Snippet
     Within <head> of document at the highest possible point.-->
@@ -42,12 +47,6 @@
                 { a='https://tealium-tags.cms.gov/cms-ab2d/dev/utag.js'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
             )();
         </script> 
-       
-<!-- 
-* PII ALERT: Please be careful not to pass any dynamic values that could
-* contain any personal information such as first name, last name, email
-* or address. In these cases, you may use a link descriptor instead.
--->
 
     <!-- link clicks -->
     <script>
@@ -56,37 +55,34 @@
             Array.from(links).forEach((linkEl)=>{
                 linkEl.addEventListener('click', function(event) {
                     var target = event.target;
-                    var targetUrl = target.href; //define the target url as a var
-                    var baseUrl = "{{site.baseurl}}"; //baseurl is only recognized by jekyll, so define as var
-                    //internal link clicked
-                    if (targetUrl.startsWith(baseUrl)) {
-                        utag.link({
-                            "event_name": "internal_link_clicked",
-                            "link_type": "link_other",
-                            "link_url": target.href,
-                            "parent_component_heading": target.offsetParent, 
-                            "parent_component_type": "",
-                            "text": target.innerText,
-                        });
-                    // external link clicked
-                    } else {
-                        utag.link({
-                            "event_name": "external_link_click",
-                            "text": target.innerText,
-                            "link_type": "link_external",
-                            "link_url": target.href,
-                            "parent_component_heading":target.offsetParent, 
-                            "parent_component_type": "",  
-                        });                    
+                    var targetUrl = target.href; 
+                    var baseUrl = "{{site.baseurl}}"; 
+                    if (!target.hasAttribute('data-tealium')) {
+                        //internal link clicked
+                        if (targetUrl.startsWith(baseUrl)) {
+                            utag.link({
+                                "event_name": "internal_link_clicked",
+                                "link_type": "link_other",
+                                "link_url": target.href,
+                                "parent_component_heading": target.offsetParent, 
+                                "parent_component_type": "",
+                                "text": target.innerText,
+                            });
+                        // external link clicked
+                        } else {
+                            utag.link({
+                                "event_name": "external_link_click",
+                                "text": target.innerText,
+                                "link_type": "link_external",
+                                "link_url": target.href,
+                                "parent_component_heading":target.offsetParent, 
+                                "parent_component_type": "",  
+                            });                    
+                        }
                     }
                 });
             });
-        });
-    </script>
-
-    <!-- button engagements (copy button on code snippets only-- other site buttons treated as links)-->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+            // button clicks
             var buttons = document.querySelectorAll('[data-tealium="button"]'); 
             buttons.forEach((buttonEl)=>{
                 buttonEl.addEventListener('click', function(event) {
@@ -103,19 +99,12 @@
                     });
                 });
             });
-        });
-    </script>
-
-    <!-- accordion opened -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+            // accordion clicks
             var accordions = document.querySelectorAll('[data-tealium="accordion"]'); 
             accordions.forEach((accordionEl)=>{
                 accordionEl.addEventListener('click', function(event) {
                     var target = event.currentTarget;
                     if (event.currentTarget.getAttribute('aria-expanded') == 'false')
-                    console.log({event});
-                    console.log({target});
                     utag.link({
                         "event_name": "accordion_opened",
                         "heading": target.innerText,
@@ -124,16 +113,7 @@
                     });
                 });
             });
-        });
-    </script>
-
-    <!-- file downloads-->
-    <!-- * File extensions included:
-    * .pdf, .xls, .xlsx, .doc, .docx, .txt, .rtf, .csv, .exe, .key, .pps, .ppt,
-    * .pptx, .7z, .pkg, .rar, .gz, .zip, .avi, .mov, .mp4, .mpe, .mpeg, .wmv,
-    * .mid, .midi, .mp3, .wav, .wma -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+            // file downloads
             var downloads = document.querySelectorAll('[data-tealium="download"]'); 
             downloads.forEach((downloadEl)=>{
                 downloadEl.addEventListener('click', function(event) {
@@ -149,14 +129,9 @@
                     });
                 });
             });
-        });
-    </script>
-
-     <!-- navigation clicked (header, side-nav, in-page nav) -->
-     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+            // navigation clicks
             var navigation = document.querySelectorAll('[data-tealium="navigation"]'); 
-            navigation.forEach((navigationEl)=>{
+            Array.from(navigation).forEach((navigationEl)=>{
                 navigationEl.addEventListener('click', function(event) {
                     var target = event.currentTarget;
                     utag.link({
