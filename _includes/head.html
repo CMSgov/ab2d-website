@@ -53,7 +53,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var links = document.getElementsByTagName('a');
-            links.forEach((linkEl)=>{
+            Array.from(links).forEach((linkEl)=>{
                 linkEl.addEventListener('click', function(event) {
                     var target = event.target;
                     var targetUrl = target.href; //define the target url as a var
@@ -113,6 +113,9 @@
             accordions.forEach((accordionEl)=>{
                 accordionEl.addEventListener('click', function(event) {
                     var target = event.currentTarget;
+                    if (event.currentTarget.getAttribute('aria-expanded') == 'false')
+                    console.log({event});
+                    console.log({target});
                     utag.link({
                         "event_name": "accordion_opened",
                         "heading": target.innerText,
