@@ -16,14 +16,19 @@
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="sitemap" href="/sitemap.xml">
 
-    <!-- USWDS & theme -->
+<!-- USWDS & theme -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <script src="{{ '/assets/uswds/js/uswds-init.min.js' | relative_url }}"></script>
     <link href="{{ '/assets/uswds/css/styles.css' | relative_url }}?{{site.time | pubDate: '%s'}}" rel="stylesheet">
 
-    <!-- CMS Tealium/Google Analytics BEGIN -->
+<!-- CMS Tealium/Google Analytics BEGIN -->
+    <!-- 
+    * PII ALERT: Please be careful not to pass any dynamic values that could
+    * contain any personal information such as first name, last name, email
+    * or address. In these cases, you may use a link descriptor instead.
+    -->
     
     <!--DataLayer (utag_data) Snippet
     Within <head> of document at the highest possible point.-->
@@ -42,7 +47,11 @@
                 { a='https://tealium-tags.cms.gov/cms-ab2d/dev/utag.js'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
             )();
         </script> 
-       
-         
-    <!-- CMS Tealium/Google Analytics END -->
+
+    <script>
+        window.ENV = {
+            siteUrl: "{{site.url}}"
+        }
+    </script>
+
 </head>
