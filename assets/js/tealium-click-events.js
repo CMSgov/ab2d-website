@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     accordionEl.addEventListener('click', (event) => {
 
       const target = event.currentTarget;
-      if (event.currentTarget.getAttribute('aria-expanded') === "false") {
+      if (target.getAttribute('aria-expanded') === "false") {
         utag.link({
           "event_name": "accordion_opened",
           "heading": target.innerText,
