@@ -37,6 +37,9 @@ webrick:
 
 exclude:
   - kitchen-sink.html # Don't build this page in production
+  - sass
+  - ops
+  - functions
   - assets/uswds/img/favicons
   - assets/uswds/img/material-icons
   - assets/uswds/img/material-icons-deprecated
