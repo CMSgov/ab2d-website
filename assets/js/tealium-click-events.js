@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   links.forEach((linkEl) => {
 
     const tocContainer = document.getElementById('toc')
-    if (!linkEl.hasAttribute('data-tealium') && !tocContainer.contains(linkEl)) {
+    if (!linkEl.hasAttribute('data-tealium') && !tocContainer?.contains(linkEl)) {
       linkEl.addEventListener('click', (event) => {
 
         const target = event.currentTarget;
