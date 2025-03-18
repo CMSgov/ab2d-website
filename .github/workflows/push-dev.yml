@@ -1,16 +1,16 @@
 name: push to dev
 
-on: 
+on:
   push:
     branches:
       - uswds-redesign
 
-concurrency: 
+concurrency:
   group: ${{ github.workflow }}-${{  github.ref }}
   cancel-in-progress: true
 
-jobs: 
-  deploy: 
+jobs:
+  deploy:
     with:
       deploy_path: "uswds-redesign"
     uses: ./.github/workflows/deploy.yml
@@ -19,6 +19,6 @@ jobs:
   a11y-check:
     needs: deploy
     uses: ./.github/workflows/a11y-check.yml
-    
+
   # broken-link-check:
   #   uses: ./.github/workflows/broken-link-check.yml

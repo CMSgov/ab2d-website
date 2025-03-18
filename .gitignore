@@ -57,9 +57,6 @@ target/
 /.nb-gradle/
 build/
 
-### VS Code ###
-.vscode/
-
 ### Packer ###
 # Packer output manifest from builds
 **/packer/**/output.txt
