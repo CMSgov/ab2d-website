@@ -1,6 +1,7 @@
 name: "promote"
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       deploy_path:
