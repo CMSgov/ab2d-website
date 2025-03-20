@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       deploy_path:
+        description: "S3 directory deployment location (e.g. s3://s3_bucket/deploy_path/)"
         default: "uswds-redesign"
   workflow_call:
     inputs:
