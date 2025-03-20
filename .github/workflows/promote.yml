@@ -2,6 +2,9 @@ name: "promote"
 
 on:
   workflow_dispatch:
+    inputs:
+      deploy_path:
+        default: "uswds-redesign"
   workflow_call:
     inputs:
       deploy_path:
