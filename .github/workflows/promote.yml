@@ -32,12 +32,18 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-prod-github-actions
 
-      # Step 4: Copy site to Prod
-      - name: Copy to Prod Bucket
+      # Step 4: Get Distribution ID
+      - name: Get CloudFront Distribution ID
+        run: |
+          DISTRIBUTION_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Origins.Items[0].DomainName=='website-ab2d-east-prod.s3.us-east-1.amazonaws.com'].Id" --output text)
+          echo "DISTRIBUTION_ID=$DISTRIBUTION_ID" >> $GITHUB_ENV
+
+      # Step 5: Copy site to Prod
+      - name: Copy site to Prod Bucket
         run: |
           aws s3 sync ./temp-site/ s3://website-ab2d-east-prod/
 
-      # Step 11: Invalidate existing cache
-      - name: Invalidate Prod cache
+      # Step 6: Invalidate existing cache
+      - name: Invalidate Prod Distribution
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.PROD_DISTRIBUTION_ID }} --paths "/*"
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
