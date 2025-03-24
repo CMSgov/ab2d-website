@@ -1,55 +1,14 @@
 <footer class="usa-footer usa-footer--big">
 
-  <div class="grid-container usa-footer__return-to-top">
+  <div class="grid-container usa-footer__return-to-top margin-top-6">
     <a href="#">Return to top</a>
   </div>
 
   <div class="usa-footer__primary-section">
     <h2 class="usa-sr-only">Site footer</h2>
-    <div class="grid-container">
-      <div class="grid-row grid-gap">
-        <div class="tablet:grid-col-fill">
-          <nav class="usa-footer__nav" aria-label="Footer navigation,,">
-            <div class="grid-row tablet:grid-gap-4">
-              {% for column in site.data.footer-links %}
-              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                  <h3 class="usa-footer__primary-link">{{ column.heading }}</h3>
-                  <ul class="usa-list usa-list--unstyled">
-                    {% for item in column.links %}
-                      <li class="usa-footer__secondary-link">
-                        {% if item.text == "Privacy Settings" %}
-                          <button class="usa-button usa-button--accent-warm usa-button--unstyled" style="text-underline-offset: 4px;" onclick="utag.gdpr.showConsentPreferences()">
-                            {{- item.text -}}
-                          </button>
-                        {% else %}
-                          <a href="{{ item.url | relative_url }}" data-tealium="footer">
-                            {%- if item.icon -%}
-                              {%- include sprite.html icon=item.icon size="3" class="margin-right-05 text-middle" -%}
-                            {%- endif -%}
-                            {{- item.text -}}
-                          </a>
-                        {% endif %}
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </section>
-              </div>
-              {% endfor %}
-            </div>
-          </nav>
-        </div>
-        <div class="tablet:grid-col-auto">
-          <div class="usa-sign-up">
-            <a class="usa-button" rel="noopener noreferrer" href="{{ 'https://groups.google.com/u/0/g/cms-ab2d-api' }}" target="_blank">Join the Google Group</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="usa-footer__secondary-section">
-    <div> {%  comment  %} this extra div is intentional to avoid the specificity of ".usa-footer__secondary-section>.grid-container", which prevents certain utilities from working like the class in the dive below  {% endcomment %}
+    <div> {% comment %} this extra div is intentional to avoid the specificity of
+      ".usa-footer__secondary-section>.grid-container", which prevents certain utilities from working like the class in
+      the dive below {% endcomment %}
       <div class="grid-container tablet:padding-x-3">
         <div class="grid-row grid-gap tablet:grid-gap-6">
           <div class="usa-footer__logo grid-row desktop:grid-col-fill">
@@ -60,33 +19,30 @@
           <div class="desktop:grid-col-auto tablet:padding-x-3">
             <div class="grid-row tablet:grid-gap-6">
               <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
-                <a href="https://dpc.cms.gov/" class="grid-row grid-gap-05 flex-align-center text-no-underline" data-tealium="footer">
-                  <span class="grid-col-auto"><img
-                    class="usa-icon usa-icon--size-5 display-block"
-                    src="{{ '/assets/img/logo-dpc.svg' | relative_url }}"
-                    alt="DPC logo"
-                  /></span>
-                  <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Data at the Point of Care</span>
+                <a href="https://dpc.cms.gov/"
+                  class="grid-row grid-gap-1 flex-align-center text-no-underline text-black">
+                  <span class="grid-col-auto"><img class="usa-icon usa-icon--size-5 display-block"
+                      src="{{ '/assets/img/logo-dpc.svg' | relative_url }}" alt="DPC logo" /></span>
+                  <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Data at the Point
+                    of Care</span>
                 </a>
               </div>
               <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
-                <a href="https://bluebutton.cms.gov/" class="grid-row grid-gap-05 flex-align-center text-no-underline" data-tealium="footer">
-                  <span class="grid-col-auto"><img
-                    class="usa-icon usa-icon--size-5 display-block"
-                    src="{{ '/assets/img/logo-bluebutton.svg' | relative_url }}"
-                    alt="Blue Button 2.0 logo"
-                  /></span>
-                  <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Blue Button 2.0</span>
+                <a href="https://bluebutton.cms.gov/"
+                  class="grid-row grid-gap-1 flex-align-center text-no-underline text-black">
+                  <span class="grid-col-auto"><img class="usa-icon usa-icon--size-5 display-block"
+                      src="{{ '/assets/img/logo-bluebutton.svg' | relative_url }}" alt="Blue Button 2.0 logo" /></span>
+                  <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Blue Button
+                    2.0</span>
                 </a>
               </div>
               <div class="tablet:grid-col-fill desktop:grid-col-auto margin-y-2">
-                <a href="https://bcda.cms.gov/" class="grid-row grid-gap-05 flex-align-center text-no-underline" data-tealium="footer">
-                  <span class="grid-col-auto"><img
-                    class="usa-icon usa-icon--size-5 display-block"
-                    src="{{ '/assets/img/logo-bcda.svg' | relative_url }}"
-                    alt="BCDA logo"
-                  /></span>
-                  <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Beneficiary Claims Data API</span>
+                <a href="https://bcda.cms.gov/"
+                  class="grid-row grid-gap-1 flex-align-center text-no-underline text-black">
+                  <span class="grid-col-auto"><img class="usa-icon usa-icon--size-5 display-block"
+                      src="{{ '/assets/img/logo-bcda.svg' | relative_url }}" alt="BCDA logo" /></span>
+                  <span class="grid-col-fill font-sans-2xs text-bold text-balance line-height-sans-2">Beneficiary Claims
+                    Data API</span>
                 </a>
               </div>
             </div>
@@ -97,4 +53,3 @@
   </div>
 
 </footer>
-
