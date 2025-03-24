@@ -13,22 +13,22 @@ show-side-nav: false
 
 Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enrollee claims data in the production environment. Before accessing production claims data, make sure you've followed the steps listed in [API Documentation]({{ '/api-documentation' | relative_url }}).
 
-<ol class="usa-process-list">
+<ol class="usa-process-list margin-top-4">
   <li class="usa-process-list__item">
     <h2 class="usa-process-list__heading margin-bottom-2">Attest to AB2D data protocols</h2>
       <span class="usa-tag bg-accent-cool-darker">Completed by Attestor</span>
       <p>
           A current CEO, CFO, or COO  (“Attestor”) from your organization first needs to agree (“attest") to our Claims Data Usage Protocols. These protocols include <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank" rel="noopener">legal limitations on data use and disclosure.</a>
       </p>
-      <p> 
+      <p>
           Log in to the <a href="https://hpms.cms.gov/app/ng/cda/attestations" target="_blank" rel="noopener">Health Plan Management System (HPMS)</a> and select <em>Claims Data Attestation</em> (under <em>Contract Management</em>). We encourage you to have multiple Attestors. This prevents gaps in access if Attestors leave the organization.
       </p>
       <div class="padding-top-4 usa-accordion usa-accordion--multiselectable" data-allow-multiple>
         <h3 class="usa-accordion__heading">
-          <button 
-            type="button" 
-            class="usa-accordion__button" 
-            aria-expanded="false" 
+          <button
+            type="button"
+            class="usa-accordion__button"
+            aria-expanded="false"
             aria-controls="m-a1"
             data-tealium="accordion">
             How do I complete attestation?
@@ -48,10 +48,10 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
           </p>
         </div>
         <h3 class="usa-accordion__heading">
-          <button 
-            type="button" 
-            class="usa-accordion__button" 
-            aria-expanded="false" 
+          <button
+            type="button"
+            class="usa-accordion__button"
+            aria-expanded="false"
             aria-controls="m-a2"
             data-tealium="accordion">
             What are the requirements to be an Attestor?
@@ -65,10 +65,10 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
           </ul>
         </div>
         <h3 class="usa-accordion__heading">
-          <button 
-            type="button" 
-            class="usa-accordion__button" 
-            aria-expanded="false" 
+          <button
+            type="button"
+            class="usa-accordion__button"
+            aria-expanded="false"
             aria-controls="m-a3"
             data-tealium="accordion">
             How does attestation affect your claims data?
@@ -80,15 +80,15 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
               PDP sponsors can retrieve claims data for their active plan enrollees from the date of attestation onwards. Claims data prior to their attestation date will not be provided.
             </li>
             <li>
-              PDP sponsors must have an active Attestor at all times. Your organization will not be able to receive data during periods without an active Attestor. Access to data will only be restored once another active CEO, CFO, or COO attests. 
+              PDP sponsors must have an active Attestor at all times. Your organization will not be able to receive data during periods without an active Attestor. Access to data will only be restored once another active CEO, CFO, or COO attests.
             </li>
           </ul>
         </div>
         <h3 class="usa-accordion__heading">
-          <button 
-            type="button" 
-            class="usa-accordion__button" 
-            aria-expanded="false" 
+          <button
+            type="button"
+            class="usa-accordion__button"
+            aria-expanded="false"
             aria-controls="m-a4"
             data-tealium="accordion">
             When does attestation take effect?
@@ -96,7 +96,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
         </h3>
         <div id="m-a4" class="usa-accordion__content usa-prose">
           <p>
-            Once an organization attests, it must complete all the remaining steps for production access. This includes choosing a technical point of contact, testing synthetic data in the sandbox, and receiving production credentials. Once these steps are complete, the organization will have access to claims data starting from the attestation date. Claims data previous to that date will not be available. 
+            Once an organization attests, it must complete all the remaining steps for production access. This includes choosing a technical point of contact, testing synthetic data in the sandbox, and receiving production credentials. Once these steps are complete, the organization will have access to claims data starting from the attestation date. Claims data previous to that date will not be available.
           </p>
         </div>
       </div>
@@ -123,7 +123,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
       </p>
     <h3 class="font-sans-sm">Provide your IP addresses</h3>
       <p>
-        Your organization must provide the AB2D team with the public, static IP address(es) of every system that will use the API. These will be reviewed, approved, and allowlisted as an additional layer of security.  
+        Your organization must provide the AB2D team with the public, static IP address(es) of every system that will use the API. These will be reviewed, approved, and allowlisted as an additional layer of security.
       </p>
   </li>
   <li class="usa-process-list__item">
