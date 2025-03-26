@@ -94,14 +94,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Navigation clicks
   const mainNavEls = document.querySelectorAll('[data-tealium="main_nav"]');
-  const footerEls = document.querySelectorAll('[data-tealium="footer"]');
   const identifierEls = document.querySelectorAll('[data-tealium="identifier"]');
   const leftRailEls = document.querySelectorAll('[data-tealium="left_rail"]');
   const tocEls = document.querySelectorAll('[data-tealium="toc"] a');
 
   [
     ...mainNavEls,
-    ...footerEls,
     ...identifierEls,
     ...leftRailEls,
     ...tocEls
