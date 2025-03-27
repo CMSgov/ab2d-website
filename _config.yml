@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   CMS is developing a standards based API to allow standalone Medicare Part D
   plan (PDP) sponsors to retrieve Medicare claims data for their enrollees.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ab2d.cms.gov" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://dyx9tyg1h7v8p.cloudfront.net" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
@@ -65,6 +65,6 @@ include:
 defaults:
   -
     scope:
-      path: "_pages" 
+      path: "_pages"
     values:
       permalink: "/:title"
