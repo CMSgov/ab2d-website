@@ -24,7 +24,7 @@ jobs:
 
       - name: Install project dependencies
         run: |
-          sudo dnf -y install ruby3.2 ruby3.2-devel openssl-devel amazon-rpm-config gcc-c++
+          sudo dnf -y install ruby3.2.6 ruby3.2.6-devel openssl-devel amazon-rpm-config gcc-c++
 
       # Step 3: Set up Node.js
       - name: Set up Node.js
