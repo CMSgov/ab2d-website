@@ -26,6 +26,14 @@ jobs:
         run: |
           sudo dnf -y install ruby3.2 ruby3.2-devel openssl-devel amazon-rpm-config gcc-c++ openssl
 
+      - name: Test Ruby
+        run: |
+          ruby -v
+
+      - name: Test OpenSSL
+        run: |
+          ruby -ropenssl -e 'puts OpenSSL::OPENSSL_VERSION'
+
       # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
