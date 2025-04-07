@@ -47,7 +47,6 @@
             <a
               href="{{ '/api-documentation' | relative_url }}"
               class="usa-nav-link {% if page.permalink == '/api-documentation' %}{{ 'usa-current' }}{% endif %}"
-              aria-controls="basic-nav-section-two"
               data-tealium="main_nav"
             >
               <span>API Documentation</span>
@@ -127,7 +126,7 @@
           <!--Github, Swagger -->
           <li class="usa-nav__primary-item desktop:display-none">
             <a href="https://github.com/CMSgov/ab2d" class="usa-nav-link" data-tealium="main_nav">
-              <span>    
+              <span>
                 {% include sprite.html icon="github" size="3" class="margin-right-05 text-middle" %}
                 Github repo
               </span>
@@ -135,7 +134,7 @@
           </li>
           <li class="usa-nav__primary-item desktop:display-none">
             <a href="https://sandbox.ab2d.cms.gov/swagger-ui/index.html" class="usa-nav-link" data-tealium="main_nav">
-              <span>    
+              <span>
                 {% include sprite.html icon="code" size="3" class="margin-right-05 text-middle" %}
                 Swagger
               </span>
