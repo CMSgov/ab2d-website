@@ -30,18 +30,6 @@ jobs:
           node-version-file: '.nvmrc'
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 
-      # Step 3: Set up Ruby
-      - name: Set up ruby
-        uses: ruby/setup-ruby@v1
-        # with:
-          # ruby-version: '3.3.5' ## Using a .ruby-version file to stay in sync with the repo
-
-      # Step 4: Install Ruby Gems
-      - name: Install jekyll and bundler
-        run: |
-          gem install bundler
-          bundle install
-
       # Step 5: Install Node.js Dependencies
       - name: Install npm dependencies
         run: |
@@ -52,13 +40,14 @@ jobs:
         run: |
           npm run assets:build
 
-      # Step 7: Build Site
+      # Step 7: Build Site with Docker
       - name: Build the site
         env:
           # This is redundant but keeping for posterity
           JEKYLL_ENV: "production"
         run: |
-          bundle exec jekyll build --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}}
+          docker build -t jekyll-site .
+          docker run --rm -v "$PWD:/srv/jekyll" jekyll-site --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}}
 
       # Step 8: Initialize AWS Connection
       - name: Configure AWS Credentials
