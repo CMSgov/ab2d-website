@@ -14,7 +14,7 @@ hero-paragraph: >
 hero-button-url: "/api-documentation"
 hero-button-text: "Get started"
 hero-button-2-url: "https://github.com/CMSgov/ab2d"
-hero-button-2-text: "Code Repo"
+hero-button-2-text: "Code repo"
 
 ---
 
@@ -164,5 +164,3 @@ hero-button-2-text: "Code Repo"
     <a href="{{ '/about' | relative_url }}" class="usa-button usa-button--unstyled">Learn more about AB2D {% include sprite.html icon="arrow_forward" %}</a>
   </p>
 </div>
-
-
