@@ -23,13 +23,13 @@ Learn about claims data and how to apply it in context. The AB2D API shares larg
     <tr>
       <th scope="row">Medicare Part A claims data</th>
       <td>
-        inpatient hospital stays, care in skilled nursing facilities, and hospice care
+        Inpatient hospital stays, care in skilled nursing facilities, and hospice care
       </td>
     </tr>
     <tr>
       <th scope="row">Medicare Part B claims data</th>
       <td>
-        various doctors' services, outpatient care, medical supplies, and preventive services
+        Various doctors' services, outpatient care, medical supplies, and preventive services
       </td>
     </tr>
   </tbody>
@@ -78,4 +78,3 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
     </ul>
   </div>
 </div>
-

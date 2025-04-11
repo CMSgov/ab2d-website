@@ -56,190 +56,46 @@ Bearer tokens expire 1 hour from the time they are obtained. Use the token quick
 
 ## Sandbox credentials
 
-The sandbox environment is open for anyone to access. The AB2D team provides 4 sets of test credentials for use. Sandbox credentials will not work in the production environment.
+Anyone can try the API and download test data using sample contracts in the sandbox. Sandbox credentials will not work in the production environment.
 
-### Test credentials 1
+### Sample contract Z1001 (10,000 enrollees)
 
-<table class="usa-table usa-table--borderless usa-table--stacked">
-    <tbody>
-        <tr>
-            <td>Sponsor</td>
-            <td>PDP-100</td>
-        </tr>
-        <tr>
-            <td>Contract</td>
-            <td>Z0000</td>
-        </tr>
-        <tr>
-            <td>Dataset type</td>
-            <td><strong>Simple</strong></td>
-        </tr>
-        <tr>
-            <td>Client ID</td>
-            <td class="maxw-mobile">
-{% capture curlSnippet %}{% raw %}
-HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw
-{% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-        <tr>
-            <td>Client password</td>
-            <td class="maxw-mobile">
-{% capture curlSnippet %}{% raw %}
-0oa2t0lsrdZw5uWRx297
-{% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-        <tr>
-            <td>Base64-encoded credentials</td>
-            <td class="maxw-mobile">
-{% capture curlSnippet %}{% raw %}
-MG9hMnQwbHNyZFp3NXVXUngyOTc6SEhkdVdHNkxvZ0l2RElRdVdncDNabG85T1lNVmFsVHRINU9CY3VIdw==
-{% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-### Test credentials 2
-
-<table class="usa-table usa-table--borderless usa-table--stacked">
-    <tbody>
-        <tr>
-            <td>Sponsor</td>
-            <td>PDP-10000</td>
-        </tr>
-        <tr>
-            <td>Contract</td>
-            <td>Z0010</td>
-        </tr>
-        <tr>
-            <td>Dataset type</td>
-            <td><strong>Simple</strong></td>
-        </tr>
-        <tr>
-            <td>Client ID</td>
-            <td class="maxw-mobile">
-{% capture curlSnippet %}{% raw %}
-0oa2t0lm9qoAtJHqC297
-{% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-        <tr>
-            <td>Client password</td>
-            <td class="maxw-mobile">
-{% capture curlSnippet %}{% raw %}
-ybR60JmtcpRt6SAeLmvbq6l-3YDRCZP-WN1At6t_
-{% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-        <tr>
-            <td>Base64-encoded credentials</td>
-            <td class="maxw-mobile">
-{% capture curlSnippet %}{% raw %}
-MG9hMnQwbG05cW9BdEpIcUMyOTc6eWJSNjBKbXRjcFJ0NlNBZUxtdmJxNmwtM1lEUkNaUC1XTjFBdDZ0Xw==
-{% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-### Test credentials 3
-
-<table class="usa-table usa-table--borderless usa-table--stacked">
-    <tbody>
-        <tr>
-            <td>Sponsor</td>
-            <td>PDP-1001</td>
-        </tr>
-        <tr>
-            <td>Contract</td>
-            <td>Z1001</td>
-        </tr>
-        <tr>
-            <td>Dataset type</td>
-            <td><strong>Advanced</strong></td>
-        </tr>
-        <tr>
-            <td>Client ID</td>
-            <td class="maxw-mobile">
+Client ID:
 {% capture curlSnippet %}{% raw %}
 0oa9jyx2w9Z0AntLE297
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-        <tr>
-            <td>Client password</td>
-            <td class="maxw-mobile">
+
+Client password:
 {% capture curlSnippet %}{% raw %}
 hskbPu-YoWfGDY1gcQq34BfIEyMVuayu87zWDliG
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-        <tr>
-            <td>Base64-encoded credentials</td>
-            <td class="maxw-mobile">
+
+Base64-encoded credentials:
 {% capture curlSnippet %}{% raw %}
 MG9hOWp5eDJ3OVowQW50TEUyOTc6aHNrYlB1LVlvV2ZHRFkxZ2NRcTM0QmZJRXlNVnVheXU4N3pXRGxpRw=={% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-    </tbody>
-</table>
 
-### Test credentials 4
+### Sample contract Z1002 (10,000 enrollees)
 
-<table class="usa-table usa-table--borderless usa-table--stacked">
-    <tbody>
-        <tr>
-            <td>Sponsor</td>
-            <td>PDP-1002</td>
-        </tr>
-        <tr>
-            <td>Contract</td>
-            <td>Z1002</td>
-        </tr>
-        <tr>
-            <td>Dataset type</td>
-            <td><strong>Advanced</strong></td>
-        </tr>
-        <tr>
-            <td>Client ID</td>
-            <td class="maxw-mobile">
+Client ID:
 {% capture curlSnippet %}{% raw %}
 0oa9jz0e1dyNfRMm6297
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-        <tr>
-            <td>Client password</td>
-            <td class="maxw-mobile">
+
+Client password:
 {% capture curlSnippet %}{% raw %}
 shnG6NGkHcu29ptDsKKRW6q5uFJSSpIpdl_K5fVW
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-        <tr>
-            <td>Base64-encoded credentials</td>
-            <td class="maxw-mobile">
+
+Base64-encoded credentials:
 {% capture curlSnippet %}{% raw %}
 MG9hOWp6MGUxZHlOZlJNbTYyOTc6c2huRzZOR2tIY3UyOXB0RHNLS1JXNnE1dUZKU1NwSXBkbF9LNWZWVw==
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
-            </td>
-        </tr>
-    </tbody>
-</table>
 
 ## How to get a bearer token using curl
 
