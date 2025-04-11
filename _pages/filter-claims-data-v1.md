@@ -20,9 +20,9 @@ Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) 
 {% endcapture %}
 {% capture versionAlert %}
     <p>
-        This documentation is for AB2D version 1, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/STU1.0.1/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide V1.0.1</a>. The _until parameter is only available with V2. 
+        This documentation is for AB2D version 1, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/STU1.0.1/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide V1.0.1</a>. The _until parameter is only available with V2.
     </p>
-    <p>    
+    <p>
         For organizations using V1, visit our <a href="{{ '/filter-claims-data-v2' | relative_url }}">V2 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
     </p>
 {% endcapture %}
@@ -39,6 +39,7 @@ The \_until parameter filters for claims data last updated after a specified dat
 ### Valid and invalid \_since parameter values
 
 <table class="usa-table usa-table--stacked usa-table--borderless">
+  <caption class="usa-sr-only">Valid and invalid \_since parameter values</caption>
     <thead>
         <tr>
             <th scope="col">_since</th>

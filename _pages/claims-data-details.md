@@ -9,7 +9,7 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-AB2D and its upstream data source generate and add fields to claims data in an effort to help make managing and providing those claims easier. 
+AB2D and its upstream data source generate and add fields to claims data in an effort to help make managing and providing those claims easier.
 
 ## Important AB2D claim fields
 
@@ -50,7 +50,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
         </th>
         <td data-label="Description">
-          Current status of the claim, which is either active or cancelled. If the latest version (Claim ID) in a family of claims is cancelled, then the entire claim is cancelled. 
+          Current status of the claim, which is either active or cancelled. If the latest version (Claim ID) in a family of claims is cancelled, then the entire claim is cancelled.
         </td>
         <td data-label="EOB Location">
           <p>eob.status</p>
@@ -215,7 +215,7 @@ For more information see: [FHIR Identifier Explanation](http://hl7.org/fhir/R4/e
     ],
 ...
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=jsonSnippet language="json" %} 
+{% include copy_snippet.html code=jsonSnippet language="json" %}
 
 *Note: Claim Group ID will be in the list of identifiers and identified by the claim group system.*
 
@@ -227,7 +227,7 @@ The Claim ID is found in every ExplanationOfBenefit resource as 1 of a list of I
 - Location: found in eob.identifier list
 - Claim Extension System: [https://bluebutton.cms.gov/resources/variables/clm_id](https://bluebutton.cms.gov/resources/variables/clm_id)
 
-For more information: 
+For more information:
 - [FHIR Identifier Explanation](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
 - [Claim ID Explanation](https://bluebutton.cms.gov/resources/variables/clm_id)
 
@@ -247,7 +247,7 @@ For more information:
     ],
 ...
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=jsonSnippet language="json" %} 
+{% include copy_snippet.html code=jsonSnippet language="json" %}
 
 *Note: Claim ID will be in the list of identifiers and identified by the claim identification system.*
 
@@ -263,7 +263,7 @@ For more information: [FHIR Specification for Claim Status](http://hl7.org/fhir/
 
 ## Last Updated
 
-The Last Updated field is a metadata field reflecting the last time the claim object was refreshed. For example, the Last Updated field will change after a claim object’s status changes (e.g., from active to canceled). It shows when AB2D received a change, not when the change was actually made and submitted to Medicare.  
+The Last Updated field is a metadata field reflecting the last time the claim object was refreshed. For example, the Last Updated field will change after a claim object’s status changes (e.g., from active to canceled). It shows when AB2D received a change, not when the change was actually made and submitted to Medicare.
 
 - Format: ISO datetime with a timezone
 - Location: found in claims metadata (eob.meta.lastUpdated)
@@ -307,7 +307,7 @@ Extensions referring to identifiers will have the following structure:
 - The URL code identifies whether the MBI is currently in use or a historical value.
 - The MBI Identifier System is always the same: http://hl7.org/fhir/sid/us-mbi.
 - The identifier will be located at: extension.valueIdentifier.value.
-- “Value” displays the actual MBI. 
+- “Value” displays the actual MBI.
 
 #### Example JSON
 
@@ -328,7 +328,7 @@ Extensions referring to identifiers will have the following structure:
     }
 }
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=jsonSnippet language="json" %} 
+{% include copy_snippet.html code=jsonSnippet language="json" %}
 
 ### Current MBI
 
@@ -413,7 +413,7 @@ To detect updated claims the following fields on each claim must be tracked:
 - Last Updated: when the most recent change to the claim was received by AB2D
 - Claim Status: the current status of the claim (active or canceled)
 
-### Example scenario 
+### Example scenario
 
 In the example, a single claim will be tracked through several evolutions:
 
@@ -548,11 +548,11 @@ Claim ID 12987987 is pulled for a second time. Here is why:
 
 1. The Claim Status was changed to canceled on February 10, 2020.
 2. Although the claim object was originally received January 1, 2020, the update in Claim Status results in a Last Updated field of February 10, 2020
-3. The claim object is included in the export because the Last Updated field (February 10, 2020) is after the _since parameter value (January 31, 2020). 
+3. The claim object is included in the export because the Last Updated field (February 10, 2020) is after the _since parameter value (January 31, 2020).
 
 Claim ID 54689123 is pulled for the first time. Here is why:
 
-1. The claim object was received on February 10, 2020. Since there hasn't been any changes since, the Last Updated field is February 10, 2020 as well. 
+1. The claim object was received on February 10, 2020. Since there hasn't been any changes since, the Last Updated field is February 10, 2020 as well.
 2. The claim object is included in the export because the Last Updated date (February 10, 2020) is after the _since parameter date (January 31, 2020).
 
 <div class="overflow-x-auto">
@@ -651,7 +651,7 @@ The export pulls 2 claim versions with Claim Group ID 99995: the older, canceled
 Claim version 54689123 is pulled for a second time. Here is why:
 
 1. The Claim Status was changed to canceled on March 31, 2020. Although the claim was originally received February 10, 2020, the update in Claim Status results in a Last Updated field of March 31, 2020.
-2. The claim is included in the export because the Last Updated field (March 31, 2020) is after the _since parameter value (February 28, 2020). 
+2. The claim is included in the export because the Last Updated field (March 31, 2020) is after the _since parameter value (February 28, 2020).
 
 
 Claim version 34543 is pulled for the first time. Here is why:
@@ -776,9 +776,9 @@ In the example, a single claim will be tracked through several evolutions:
           </tr>
       </tbody>
   </table>
-  
+
   In the example, 2 exports are run using the <a href="{{ '/query-parameters-v2' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
-  
+
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -864,7 +864,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
 
 On February 28, 2020, organization XYZ runs an export with a _since parameter date of January 31, 2020. The _since date tells AB2D to report all claims information received between January 31, 2020 and February 28, 2020.
 
-The export pulls 2 claim versions with Claim Group ID 99995: an older, canceled claim version (12987987) and a newer, also canceled version (54689123) from claim update 2. Thus, all versions of the claim are canceled. 
+The export pulls 2 claim versions with Claim Group ID 99995: an older, canceled claim version (12987987) and a newer, also canceled version (54689123) from claim update 2. Thus, all versions of the claim are canceled.
 
 Claim version 12987987 is pulled for a second time. Here is why:
 
@@ -1061,9 +1061,9 @@ The export pulls a claim version with Claim Group ID 99995. At this time the onl
 
 On February 28, 2020, organization XYZ runs an export with a _since parameter date of January 1, 2020. The _since date tells AB2D to report all claims information received between January 1, 2020 and February 28, 2020.
 
-The export pulls a duplicate of the claim from export 1 as it has the same Claim Group ID (99995), Claim ID (12987987), and Last Updated date (01/01/2020). 
+The export pulls a duplicate of the claim from export 1 as it has the same Claim Group ID (99995), Claim ID (12987987), and Last Updated date (01/01/2020).
 
-The claim was pulled twice because the _since date has not changed in both exports, resulting in an overlap. AB2D recommends following the [incremental export model]({{ '/filter-claims-data-v2' | relative_url }}#incremental-export-model) and using V2 of the API to avoid duplicate claims data. 
+The claim was pulled twice because the _since date has not changed in both exports, resulting in an overlap. AB2D recommends following the [incremental export model]({{ '/filter-claims-data-v2' | relative_url }}#incremental-export-model) and using V2 of the API to avoid duplicate claims data.
 
 <div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">

@@ -7,7 +7,7 @@ This Ruby program builds the [ab2d.cms.gov](https://ab2d.cms.gov/) website via [
 > This repository assumes development on MacOS. If you're using Windows, some installation steps may be different.
 
 - [Homebrew](https://brew.sh/)
-- [Ruby](https://www.ruby-lang.org/en/) 
+- [Ruby](https://www.ruby-lang.org/en/)
 - [Node.js](https://nodejs.org/en/download/) (v20 or higher required)
 - [npm](https://www.npmjs.com/get-npm)
 
@@ -66,16 +66,16 @@ Then, install Ruby v3.2.6 by running:
 ruby-install ruby 3.2.6
 ```
 
-You can verify your installation by running: 
+You can verify your installation by running:
 ```sh
 ruby -v
 ```
 
 (You may need to close and reopen your terminal window)
 
-You should see something like: 
+You should see something like:
 ```
-ruby 3.2.6 (2024-10-30 revision 63aeb018eb) ... 
+ruby 3.2.6 (2024-10-30 revision 63aeb018eb) ...
 ```
 
 ### Step 4: Install Node.js and npm
@@ -119,7 +119,7 @@ jekyll 4.4.1
 
 ### Step 6: Install Jekyll dependencies
 
-Install Jekyll dependencies via `Bundler` by running: 
+Install Jekyll dependencies via `Bundler` by running:
 ```sh
 bundle install
 ```
@@ -185,7 +185,7 @@ The `.pa11yci` config file defines [Axe](https://github.com/dequelabs/axe-core) 
 
 ### Run tests for every page in the sitemap
 
-In order to run accessibility tests, make sure the site is running locally. Then, you can run: 
+In order to run accessibility tests, make sure the site is running locally. Then, you can run:
 
 ```sh
 npm run pa11y
@@ -221,7 +221,7 @@ However, `img` tags need to point to individual icon files. These must be explic
 And add them to the `include` inside the Jekyll `_config.yml`:
 
 ```yml
-include: 
+include:
   ...
   - assets/uswds/img/usa-icons/close.svg
 ```
@@ -243,4 +243,3 @@ Per [USWDS guidance](https://designsystem.digital.gov/documentation/settings/), 
 For specific customizations that cannot be achieved at the theme level, USWDS includes a versatile set of [utility classes](https://designsystem.digital.gov/utilities/) that can be used to style elements (e.g. `border-style`, `background-color`, etc). Most designs are achievable with utility classes, and they are preferred over custom CSS rules whenever possible.
 
 If custom styles must be written, they should added to `_uswds-theme-custom-styles.scss`, where you can leverage [USWDS design tokens](https://designsystem.digital.gov/design-tokens/), variables, mixins, and functions.
-

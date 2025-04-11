@@ -23,13 +23,13 @@ The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://hl
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Use the sandbox</p>
     <p>
-      The sandbox environment allows anyone to try the API and download test claims data. Learn how to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-sandbox-data' | relative_url }}">access the sandbox</a>.  
+      The sandbox environment allows anyone to try the API and download test claims data. Learn how to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-sandbox-data' | relative_url }}">access the sandbox</a>.
     </p>
   </li>
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Get production access</p>
     <p>
-      PDP sponsors must have <a href="{{ '/production-access' | relative_url }}">production access</a> to access their enrollees’ claims data. 
+      PDP sponsors must have <a href="{{ '/production-access' | relative_url }}">production access</a> to access their enrollees’ claims data.
     </p>
   </li>
 </ol>
@@ -60,17 +60,18 @@ The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://hl
 
 The sandbox (sandbox.ab2d.cms.gov) is a public environment available to anyone who wants to learn how the API works. AB2D provides you with test credentials for access to sandbox data. You’ll use the sandbox identity provider (test.idm.idp.cms.gov) for this.
 
-### The production environment 
+### The production environment
 
-Production (api.ab2d.cms.gov) is a private environment available only to PDP sponsors who have completed the steps to gain production access. You’ll need to provide the static IP address(es) for each system using the API. AB2D then provides you with production credentials for access to your enrollees’ data. You’ll use the production identity provider (idp.cms.gov) for this. 
+Production (api.ab2d.cms.gov) is a private environment available only to PDP sponsors who have completed the steps to gain production access. You’ll need to provide the static IP address(es) for each system using the API. AB2D then provides you with production credentials for access to your enrollees’ data. You’ll use the production identity provider (idp.cms.gov) for this.
 
-Both environments use the same endpoints with the main differences being the credentials used for your bearer token and the environment URL. 
+Both environments use the same endpoints with the main differences being the credentials used for your bearer token and the environment URL.
 
 
 ## Expected workflow
 Jobs are units of work that export and compile Medicare claims data. They are broken into 4 steps. These phases are standard regardless of your programming language or platform. The AB2D workflow is based on the [Bulk Data Implementation Guide](https://hl7.org/fhir/uv/bulkdata/).
 
   <table class="usa-table usa-table--stacked usa-table--borderless">
+    <caption class="usa-sr-only">Expected workflow table</caption>
     <thead>
       <tr>
         <th scope="col">Step</th>
@@ -86,7 +87,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
           Get a bearer token
         </th>
         <td data-label="Goal">
-          Get a token for authentication with the AB2D API.	
+          Get a token for authentication with the AB2D API.
         </td>
         <td data-label="Endpoint">
           <a href="{{ '/get-a-bearer-token' | relative_url }}">Learn how to get a bearer token.</a>
@@ -100,13 +101,13 @@ Jobs are units of work that export and compile Medicare claims data. They are br
       </tr>
       <tr>
         <th data-label="Step" scope="row">
-          Start a job	
+          Start a job
         </th>
         <td data-label="Goal">
-          Start a job and save the unique job ID.	
+          Start a job and save the unique job ID.
         </td>
         <td data-label="Endpoint">
-          Export endpoint	
+          Export endpoint
         </td>
         <td data-label="Time">
           Seconds
@@ -120,7 +121,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
           Check job status
         </th>
         <td data-label="Goal">
-          Check on the job status as you wait for it to finish.		
+          Check on the job status as you wait for it to finish.
         </td>
         <td data-label="Endpoint">
           Status endpoint
@@ -134,7 +135,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
       </tr>
       <tr>
         <th data-label="Step" scope="row">
-          Download the files	
+          Download the files
         </th>
         <td data-label="Goal">
           Download the files returned from a completed job.
@@ -171,7 +172,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
 
 ## Endpoints, schemas, and parameters
 
-Get an overview of the endpoints you can request at the [sandbox]({{ '/access-sandbox-data' | relative_url }}) or [production]({{ '/access-production-claims-data' | relative_url }}) URL. You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/query-parameters-v2' | relative_url }}) to filter or specify the claims data returned. 
+Get an overview of the endpoints you can request at the [sandbox]({{ '/access-sandbox-data' | relative_url }}) or [production]({{ '/access-production-claims-data' | relative_url }}) URL. You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/query-parameters-v2' | relative_url }}) to filter or specify the claims data returned.
 
 ## JSON resources
 
@@ -181,7 +182,7 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
 - [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec)
 - [JSON format viewer/validator](https://jsonlint.com/)
 
-## Glossary 
+## Glossary
 
 <div class="padding-top-4"></div>
 
@@ -215,4 +216,3 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
 {% include accordion.html id="a3" heading="Identity Provider (IdP) and Okta" expanded=false bordered=false accordionContent=a3AccordionContent %}
 
 {% include accordion.html id="a4" heading="Bearer token" expanded=false bordered=false accordionContent=a4AccordionContent %}
-    
