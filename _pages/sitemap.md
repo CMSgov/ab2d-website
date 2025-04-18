@@ -7,54 +7,60 @@ description: "Review a directory for all the pages on the AB2D website."
 show-side-nav: false
 ---
 
-# {{ page.page_title }}
+<h1 class="padding-y-4">{{ page.page_title }}</h1>
 
-<ul>
-    <li><a href="{{ '/index' | relative_url }}">Home</a>
-        <ul>
-            <li><a href="{{ '/about' | relative_url }}">About</a></li>
-            <li><a href="{{ '/use-cases' | relative_url }}">Use Cases</a></li>
-        </ul>
-    </li>
-    <li><a href="{{ '/api-documentation' | relative_url }}">API Documentation</a>
-        <ul>
-            {% for item in site.data.api-docs-nav %}
-                {% for child in item.children %}
+<div class="padding-bottom-4">
+    <ul>
+        <li>
+            <a href="{{ '/index' | relative_url }}">Home</a>
+        </li>
+        <li>
+            <a href="{{ '/about' | relative_url }}">About</a>
+        </li>
+        <li>
+            <a href="{{ '/api-documentation' | relative_url }}">API Documentation</a>
+            <ul>
                 <li>
-                    <a href="{{ child.url | relative_url }}">{{ child.name }}</a>
-                    <ul>
-                        {% for grandchild in child.children %}    
-                        <li>
-                            <a href="{{ grandchild.url | relative_url }}">{{ grandchild.name }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                    <a href="{{ '/get-a-bearer-token' | relative_url }}">Get a Bearer Token</a>
                 </li>
-                {% endfor %}
-            {% endfor %}
-        </ul>
-    </li>
-    <li><a href="{{ '/ab2d-data' | relative_url }}">AB2D Data</a>
-        <ul>
-            {% for item in site.data.ab2d-data-nav %}
-                {% for child in item.children %}
+                <ul>
+                    <li>
+                        <a href="{{ '/setup-instructions' | relative_url }}">Setup Instructions</a>
+                    </li>
+                </ul>
                 <li>
-                    <a href="{{ child.url | relative_url }}">{{ child.name }}</a>
-                    <ul>
-                        {% for grandchild in child.children %}    
-                        <li>
-                            <a href="{{ grandchild.url | relative_url }}">{{ grandchild.name }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                    <a href="{{ '/access-sandbox-data' | relative_url }}">How to Access Sandbox Data</a>
                 </li>
-                {% endfor %}
-            {% endfor %}
-        </ul>
-    </li>
-{% for item in site.data.nav-primary %}
-    <li>
-        <a href="{{ item.url | relative_url }}">{{ item.text }}</a>
-    </li>
-{% endfor %}
-</ul>
+                <li>
+                    <a href="{{ '/access-production-claims-data' | relative_url }}">How to Access Production Claims Data</a>
+                </li>
+                <li>
+                    <a href="{{ '/query-parameters-v2' | relative_url }}">HTTP Query Parameters - V2</a>
+                </li>
+                <li>
+                    <a href="{{ '/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data</a>
+            <ul>
+                <li>
+                    <a href="{{ '/claims-data-details' | relative_url }}">Claims Data Details</a>
+                </li>
+                <li>
+                    <a href="{{ '/filter-claims-data-v1' | relative_url }}">How to Filter Claims Data - V1</a>
+                </li>
+                <li>
+                    <a href="{{ '/filter-claims-data-v2' | relative_url }}">How to Filter Claims Data - V2</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{ '/production-access' | relative_url }}">Production access</a>
+        </li>
+        <li>
+            <a href="{{ '/support' | relative_url }}">Support</a>
+        </li>
+    </ul>
+</div>
