@@ -7,7 +7,7 @@ permalink: /about
 show-side-nav: false
 ---
 
-<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4 margin-bottom-10 flex-align-center">
+<div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-8 margin-bottom-10 flex-align-center">
   <div class="tablet:grid-col-5 tablet:order-2">
     <img src="{{ '/assets/img/data-specialist.svg' | relative_url }}" alt="data analysis illustration" class="padding-x-6 padding-y-2"/>
   </div>
