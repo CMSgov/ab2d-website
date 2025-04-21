@@ -16,18 +16,23 @@ show-side-nav: false
         </li>
         <li>
             <a href="{{ '/about' | relative_url }}">About</a>
+            <ul>
+                <li>
+                    <a href="{{ '/use-cases' | relative_url }}">Use Cases</a>
+                </li>
+            </ul>
         </li>
         <li>
             <a href="{{ '/api-documentation' | relative_url }}">API Documentation</a>
             <ul>
                 <li>
                     <a href="{{ '/get-a-bearer-token' | relative_url }}">Get a Bearer Token</a>
+                    <ul>
+                        <li>
+                            <a href="{{ '/setup-instructions' | relative_url }}">Setup Instructions</a>
+                        </li>
+                    </ul>
                 </li>
-                <ul>
-                    <li>
-                        <a href="{{ '/setup-instructions' | relative_url }}">Setup Instructions</a>
-                    </li>
-                </ul>
                 <li>
                     <a href="{{ '/access-sandbox-data' | relative_url }}">How to Access Sandbox Data</a>
                 </li>
@@ -57,7 +62,7 @@ show-side-nav: false
             </ul>
         </li>
         <li>
-            <a href="{{ '/production-access' | relative_url }}">Production access</a>
+            <a href="{{ '/production-access' | relative_url }}">Production Access</a>
         </li>
         <li>
             <a href="{{ '/support' | relative_url }}">Support</a>
