@@ -121,7 +121,6 @@ Start an export job of FHIR ExplanationOfBenefit (EOB) resources using the follo
 
 {% capture curlSnippet %}{% raw %}
 RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_type=ExplanationOfBenefit" \
-  -H "Accept: application/json" \
   -H "Accept: application/fhir+json" \
   -H "Authorization: Bearer ${bearer_token}")
 {% endraw %}{% endcapture %}
@@ -161,7 +160,6 @@ Request the job status and save the HTTP response code into STATUS. If you recei
 {% capture curlSnippet %}{% raw %}
 curl -sw '%{http_code}' -o status.json "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${job_id}/\$status"  \
   -H "Accept: application/json" \
-  -H "Accept: application/fhir+ndjson" \
   -H "Authorization: Bearer ${bearer_token}" | {
        read STATUS
        echo "Status: " $STATUS
