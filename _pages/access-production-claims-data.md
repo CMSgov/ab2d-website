@@ -20,7 +20,7 @@ The production environment offers access to enrollee claims data, which contains
   <p>
       Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 standard</a>. The _until parameter is only available with V2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html" target="_blank" rel="noopener">FHIR STU3</a> standard.
   </p>
-  <p>    
+  <p>
       <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
   </p>
 {% endcapture %}
@@ -40,13 +40,13 @@ You’ll still need [a bearer token]({{ '/get-a-bearer-token' | relative_url }})
 
 ### Job expiration
 
-Job IDs and file URLs expire after 72 hours or 6 downloads. If it takes more than 30 hours for a job to complete, the request will time out and fail. Reduce file sizes and download times by using [parameters]({{ '/query-parameters-v2' | relative_url }}) to filter the claims data returned or download compressed data files in gzip format. 
+Job IDs and file URLs expire after 72 hours or 6 downloads. If it takes more than 30 hours for a job to complete, the request will time out and fail. Reduce file sizes and download times by using [parameters]({{ '/query-parameters-v2' | relative_url }}) to filter the claims data returned<!--  or download compressed data files in gzip format -->.
 
 ### Format
 
-Files are in NDJSON format, where each line is a Medicare claim written in JSON. The file naming standard uses a contract identifier and number to indicate sequence (e.g., Z123456_0001.ndjson). 
+Files are in NDJSON format, where each line is a Medicare claim written in JSON. The file naming standard uses a contract identifier and number to indicate sequence (e.g., Z123456_0001.ndjson).
 
-You can optionally download files in gzip format and decompress (unzip) them afterward into NDJSON. Large data files require adequate storage and a database to process the claims received. 
+<!-- You can optionally download files in gzip format and decompress (unzip) them afterward into NDJSON. Large data files require adequate storage and a database to process the claims received. -->
 
 ## Sample client scripts
 
@@ -70,12 +70,13 @@ Download a ZIP file of the [Bash API repository](https://github.com/CMSgov/ab2d-
     <li>
         <p>Run the following command using the Base64 credential file you created for your bearer token (e.g., /home/abcduser/credentials_Z123456_base64.txt).</p>
 
-        <p>Speed up download times by requesting compressed files in gzip format with <code class="inline-code">--gzip</code>. Afterward, decompress (unzip) the files into NDJSON format.</p>
-{% capture curlSnippet %}{% raw %}
-source bootstrap.sh -prod 
---directory /home/abcduser/ab2d 
---auth /home/abcduser/credentials_Z123456_base64.txt 
---since 2020-05-01T00:00:00.000-05:00 
+<!-- <p>Speed up download times by requesting compressed files in gzip format with <code class="inline-code">--gzip</code>. Afterward, decompress (unzip) the files into NDJSON format.</p> -->
+
+ {% capture curlSnippet %}{% raw %}
+source bootstrap.sh -prod
+--directory /home/abcduser/ab2d
+--auth /home/abcduser/credentials_Z123456_base64.txt
+--since 2020-05-01T00:00:00.000-05:00
 --fhir R4
 --gzip
 {% endraw %}{% endcapture %}
@@ -133,7 +134,7 @@ This script will create a file named response.json in the directory. This will c
 
 ### IV. Download the files
 
-Once the job is complete, download the files from the same shell. 
+Once the job is complete, download the files from the same shell.
 
 {% capture curlSnippet %}{% raw %}
 ./download-results.sh
@@ -185,7 +186,7 @@ $JOB_RESULTS = &.\create-and-monitor-export-job.ps1 | select -Last 1
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
-        Check the contents of the variable JOB_RESULTS. It will contain the list of files to download. Leave the shell open for the next step. 
+        Check the contents of the variable JOB_RESULTS. It will contain the list of files to download. Leave the shell open for the next step.
 {% capture curlSnippet %}{% raw %}
 $JOB_RESULTS to check the contents of the variable
 {% endraw %}{% endcapture %}
@@ -195,7 +196,7 @@ $JOB_RESULTS to check the contents of the variable
 
 ### III. Download the files
 
-Download the files into your current directory. 
+Download the files into your current directory.
 
 {% capture curlSnippet %}{% raw %}
 .\download-results.ps1
@@ -260,7 +261,7 @@ $DIRECTORY=C:\users\abcduser\ab2d
 {% capture curlSnippet %}{% raw %}
 python --version
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         <p>Start the export job. You can optionally use <a href="{{ '/query-parameters-v2' | relative_url }}">parameters</a> to filter the data returned.</p>
@@ -270,14 +271,14 @@ python --version
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth $AUTH_FILE --directory $DIRECTORY --since ‘2020-05-01T00:00:00.000-05:00’ --fhir R4 --only_start
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth %AUTH_FILE% --directory %DIRECTORY% --since ‘2020-05-01T00:00:00.000-05:00’ --fhir R4 --only_start
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
         </ul>
     </li>
@@ -289,14 +290,14 @@ python job-cli.py -prod --auth %AUTH_FILE% --directory %DIRECTORY% --since ‘20
 {% capture curlSnippet %}{% raw %}
 cat $DIRECTORY/job_id.txt
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 type %DIRECTORY%\job_id.txt
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
         </ul>
     </li>
@@ -313,14 +314,14 @@ type %DIRECTORY%\job_id.txt
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth $AUTH --directory $DIRECTORY --only_monitor
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
             <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_monitor
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
         </ul>
     </li>
@@ -332,14 +333,14 @@ python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_monitor
 {% capture curlSnippet %}{% raw %}
 cat $DIRECTORY/response.json
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 type %DIRECTORY%\response.json
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
         </ul>
     </li>
@@ -356,14 +357,14 @@ type %DIRECTORY%\response.json
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth $AUTH --directory $DIRECTORY --only_download
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_download
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
         </ul>
     </li>
@@ -375,14 +376,14 @@ python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_download
 {% capture curlSnippet %}{% raw %}
 ls $DIRECTORY/*.ndjson
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
 dir %TARGET_DIR%\*.ndjson
 {% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %} 
+{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
         </ul>
     </li>
