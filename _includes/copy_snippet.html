@@ -9,15 +9,15 @@
         <textarea id="code{{ nanosecond }}" readonly>{{ code | xml_escape }}</textarea>
       </label>
       <div class="position-absolute top-1 right-1 z-100">
-        <button 
-          data-tealium="button"
+        <button
+          data-tealium="copy_button"
           class="usa-button usa-button--outline margin-0 bg-base-lightest hover:bg-base-lightest active:bg-base-lightest"
           id="copybutton{{ nanosecond }}"
         >Copy</button>
       </div>
     {% endif %}
-    <div 
-      class="tablet:grid-col-fill" 
+    <div
+      class="tablet:grid-col-fill"
       aria-hidden="true"
       {% if can_copy == true %}
         data-canCopy="true"
