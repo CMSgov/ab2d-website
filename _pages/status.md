@@ -65,6 +65,6 @@ show-side-nav: false
 
     document.addEventListener('DOMContentLoaded', function () {
         pollServer();
-        setInterval(pollServer, 3000);
+        setInterval(pollServer, 10000);
     })
 </script>
