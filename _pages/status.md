@@ -54,12 +54,21 @@ show-side-nav: false
 
             if (data.maintenanceMode === "false") {
                 successEl?.classList.remove("display-none");
+
+                maintenanceEl?.classList.add("display-none");
+                unreachableEl?.classList.add("display-none");
             } else {
                 maintenanceEl?.classList.remove("display-none");
+
+                successEl?.classList.add("display-none");
+                unreachableEl?.classList.add("display-none");
             }
         } catch (error) {
             console.error(error.message);
             unreachableEl?.classList.remove("display-none");
+
+            maintenanceEl?.classList.add("display-none");
+            successEl?.classList.add("display-none");
         }
     }
 
