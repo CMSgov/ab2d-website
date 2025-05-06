@@ -41,6 +41,7 @@ show-side-nav: false
         const unreachableEl = document.getElementById("unreachable");
 
         const baseUrl = "https://sandbox.ab2d.cms.gov/status";
+
         try {
             const response = await fetch(baseUrl);
             if (!response.ok) {
@@ -60,13 +61,10 @@ show-side-nav: false
             console.error(error.message);
             unreachableEl?.classList.remove("display-none");
         }
-
-        setInterval(function () {
-            pollServer();
-        }, 10000);
     }
 
     document.addEventListener('DOMContentLoaded', function () {
         pollServer();
+        setInterval(pollServer, 3000);
     })
 </script>
