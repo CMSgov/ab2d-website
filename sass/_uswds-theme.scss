@@ -7,8 +7,7 @@ in the form $setting: value,
 ----------------------------------------
 */
 
-@use "uswds-core" with (
-  $theme-show-notifications: false,
+@use "uswds-core" with ($theme-show-notifications: false,
   $theme-banner-max-width: "desktop-lg",
   $theme-color-primary-darker: "blue-90",
   $theme-focus-color: "cyan-30v",
@@ -25,11 +24,10 @@ in the form $setting: value,
   $theme-lead-line-height: 3,
   $theme-site-alert-max-width: "desktop-lg",
   $theme-text-measure: 5,
-  $top-palettes: (
-    'palette-top-default',
+  $top-palettes: ('palette-top-default',
     'palette-units-system-positive-medium',
   ),
-  $background-color-settings: (
-    active: true
-  )
+  $background-color-settings: (active: true),
+  $theme-tooltip-background-color: "primary"
+
 );

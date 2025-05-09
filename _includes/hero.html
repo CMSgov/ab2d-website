@@ -2,13 +2,19 @@
 <div class="usa-section--dark bg-primary bg-primary-gradient">
   <div class="grid-container padding-y-8">
     <h1 class="hero-title font-body-3xl measure-1 margin-bottom-0 line-height-sans-2 text-semibold text-balance">
-        {{ include.title }}
+      {{ include.title }}
     </h1>
     <p class="hero-paragraph line-height-sans-4 measure-5">{{ include.paragraph }}</p>
+    <div id="unreachable" class="display-flex flex-row flex-align-center usa-tooltip" data-position="right"
+      title="Please check back later.">
+      <p class="usa-text text-bold">API Status:</p>
+      <span class="usa-tag margin-x-05 bg-red">Unreachable</span>
+    </div>
     <div class="grid-row grid-gap margin-top-2">
       {% if include.button-url %}
       <div class="tablet:grid-col-auto margin-top-2">
-        <a href="{{ include.button-url |relative_url }}" class="hero-button usa-button usa-button--inverse usa-button--outline width-full">
+        <a href="{{ include.button-url |relative_url }}"
+          class="hero-button usa-button usa-button--inverse usa-button--outline width-full">
           {{ include.button-text }}
           {% include sprite.html icon="arrow_forward" size="3" %}
         </a>
@@ -16,7 +22,8 @@
       {% endif %}
       {% if include.button-2-url %}
       <div class="tablet:grid-col-auto margin-top-2">
-        <a href="{{ include.button-2-url |relative_url }}" class="hero-button usa-button usa-button--inverse usa-button--outline width-full">
+        <a href="{{ include.button-2-url |relative_url }}"
+          class="hero-button usa-button usa-button--inverse usa-button--outline width-full">
           {{ include.button-2-text }}
           {% include sprite.html icon="github" size="3" %}
         </a>

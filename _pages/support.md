@@ -21,6 +21,10 @@ show-side-nav: false
     <p>
       Join our <a href="https://groups.google.com/u/0/g/cms-ab2d-api" target="_blank" rel="noopener">Google Group</a> to give feedback and get notified about planned outages or API updates.
     </p>
+    <div id="unreachable" class="display-flex flex-row flex-align-center usa-tooltip" data-position="right" title="Please check back later.">
+  <p class="usa-text text-bold">API Status:</p>
+  <span class="usa-tag margin-x-05 bg-red">Unreachable</span>
+</div>
   </div>
 </div>
 
