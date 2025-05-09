@@ -182,10 +182,10 @@ show-side-nav: false
             class="usa-identifier__required-link usa-link">Sitemap</a>
         </li>
         <li class="usa-identifier__required-links-item">
-            <div id="maintenance" class="display-flex flex-row flex-align-center usa-tooltip" data-position="top" data-classes="width-full"
+            <div id="maintenance" class="display-flex flex-row flex-align-center usa-tooltip" data-position="top"
             title="Please check back later.">
                 <p class="usa-text">API Status:</p>
-                <span class="usa-tag margin-x-05 bg-warning text-black">Maintenance</span>
+                <span class="usa-tag margin-left-1 bg-warning text-black">Maintenance</span>
             </div>
         </li>
       </ul>
@@ -203,7 +203,6 @@ show-side-nav: false
 </div>
 
 ### Footer Tag - Unreachable
-
 
 <div class="usa-identifier margin-y-3">
   <section class="usa-identifier__section usa-identifier__section--masthead" aria-label="Agency identifier,">
@@ -247,10 +246,10 @@ show-side-nav: false
             class="usa-identifier__required-link usa-link">Sitemap</a>
         </li>
         <li class="usa-identifier__required-links-item">
-            <div id="unreachable" class="display-flex flex-row flex-align-center usa-tooltip" data-position="top" data-classes="width-full"
+            <div id="unreachable" class="display-flex flex-row flex-align-center usa-tooltip" data-position="top"
             title="Please check back later.">
                 <p class="usa-text">API Status:</p>
-                <span class="usa-tag margin-x-05 bg-red">Unreachable</span>
+                <span class="usa-tag margin-left-1 bg-red">Unavailable</span>
             </div>
         </li>
       </ul>
