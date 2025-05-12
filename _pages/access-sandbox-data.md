@@ -236,7 +236,7 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 1. Select the *Download* command `/api/v2/fhir/Job/{job_uuid}/file/{file_name}`
 2. With the *Download* section expanded, select *Try it out*.
 3. Enter the job ID (job_uuid) and file name from step III.
-- You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
+  - You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
 4. Select *Execute*. If the download is successful, you’ll receive a 200 response code and a link to download the files.
 5. Select *Download file* (under *Response body*). The file will be in [NDJSON](https://github.com/ndjson/ndjson-spec), where each line is a [JSON](https://www.json.org/json-en.html) object. You may need a text editor like [JSON viewer](https://jsonlint.com/) to read the file.
 6. If you are obtaining [production access]({{ '/production-access' | relative_url }}), send the AB2D team the job ID as instructed. Note that job IDs expire after 72 hours.
