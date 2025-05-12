@@ -40,13 +40,13 @@ You’ll still need [a bearer token]({{ '/get-a-bearer-token' | relative_url }})
 
 ### Job expiration
 
-Job IDs and file URLs expire after 72 hours or 6 downloads. If it takes more than 30 hours for a job to complete, the request will time out and fail. Reduce file sizes and download times by using [parameters]({{ '/query-parameters-v2' | relative_url }}) to filter the claims data returned<!--  or download compressed data files in gzip format -->.
+Job IDs and file URLs expire after 72 hours or 6 downloads. If it takes more than 30 hours for a job to complete, the request will time out and fail. Reduce file sizes and download times by using [parameters]({{ '/query-parameters-v2' | relative_url }}) to filter the claims data returned or download compressed data files in gzip format.
 
 ### Format
 
 Files are in NDJSON format, where each line is a Medicare claim written in JSON. The file naming standard uses a contract identifier and number to indicate sequence (e.g., Z123456_0001.ndjson).
 
-<!-- You can optionally download files in gzip format and decompress (unzip) them afterward into NDJSON. Large data files require adequate storage and a database to process the claims received. -->
+You can optionally download files in gzip format and decompress (unzip) them afterward into NDJSON. Large data files require adequate storage and a database to process the claims received.
 
 ## Sample client scripts
 
@@ -70,9 +70,8 @@ Download a ZIP file of the [Bash API repository](https://github.com/CMSgov/ab2d-
     <li>
         <p>Run the following command using the Base64 credential file you created for your bearer token (e.g., /home/abcduser/credentials_Z123456_base64.txt).</p>
 
-<!-- <p>Speed up download times by requesting compressed files in gzip format with <code class="inline-code">--gzip</code>. Afterward, decompress (unzip) the files into NDJSON format.</p> -->
-
- {% capture curlSnippet %}{% raw %}
+        <p>Speed up download times by requesting compressed files in gzip format with <code class="inline-code">--gzip</code>. Afterward, decompress (unzip) the files into NDJSON format.</p>
+{% capture curlSnippet %}{% raw %}
 source bootstrap.sh -prod
 --directory /home/abcduser/ab2d
 --auth /home/abcduser/credentials_Z123456_base64.txt
