@@ -59,4 +59,4 @@ jobs:
       # Step 9: Deploy to Dev
       - name: Deploy the site
         run: |
-          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ inputs.deploy_path }}/ --delete
+          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ inputs.deploy_path }}/
