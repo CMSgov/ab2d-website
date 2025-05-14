@@ -47,7 +47,7 @@ jobs:
           JEKYLL_ENV: "production"
         run: |
           docker build -t jekyll-site .
-          docker run --rm -v "$PWD:/srv/jekyll" jekyll-site
+          docker run --rm -v "$PWD:/srv/jekyll" jekyll-site --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}} --delete --dry-run
 
       # Step 8: Initialize AWS Connection
       - name: Configure AWS Credentials
