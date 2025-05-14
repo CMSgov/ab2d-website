@@ -47,7 +47,7 @@ jobs:
           JEKYLL_ENV: "production"
         run: |
           docker build -t jekyll-site .
-          docker run --rm -v "$PWD:/srv/jekyll" jekyll-site --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}} --delete --dry-run
+          docker run --rm -v "$PWD:/srv/jekyll" jekyll-site --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}}
 
       # Step 8: Initialize AWS Connection
       - name: Configure AWS Credentials
@@ -59,4 +59,4 @@ jobs:
       # Step 9: Deploy to Dev
       - name: Deploy the site
         run: |
-          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ inputs.deploy_path }}/
+          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ inputs.deploy_path }}/ --delete --dry-run
