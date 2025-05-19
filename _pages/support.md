@@ -30,7 +30,7 @@ show-side-nav: false
 
 {% capture a1AccordionContent %}
 <p>
-Only active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are eligible to use the AB2D API. This excludes PACE and MAPD. PDP sponsors, also known as Part D sponsors, are private insurers that provide prescription drug benefits to Medicare enrollees. 
+Only active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are eligible to use the AB2D API. This excludes PACE and MAPD. PDP sponsors, also known as Part D sponsors, are private insurers that provide prescription drug benefits to Medicare enrollees.
 </p>
 {% endcapture %}
 
@@ -105,13 +105,13 @@ How can we get additional data elements beyond what’s listed in the final rule
 
 {% capture a7AccordionContent %}
 <p>
-  PDP sponsors have access to AB2D as long as they have an active Attestor. 
+  PDP sponsors have access to AB2D as long as they have an active Attestor.
 </p>
 {% endcapture %}
 
 {% capture a8AccordionContent %}
 <p>
- The “final” <a href="https://bluebutton.cms.gov/assets/ig/ValueSet-claim-query-cd.html" target="_blank" rel="noopener">query code</a> indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, it’s possible for a claim object with a “final” query code to be cancelled and resubmitted under a new claim ID. 
+ The “final” <a href="https://bluebutton.cms.gov/assets/ig/ValueSet-claim-query-cd.html" target="_blank" rel="noopener">query code</a> indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, it’s possible for a claim object with a “final” query code to be cancelled and resubmitted under a new claim ID.
  </p>
  <p>
 Every time you pull the data, you will get the latest version of a claim. Claim objects have a lastUpdated field, which represents when the data was last refreshed by the API. This shows when AB2D received the update, not when the update was submitted to Medicare. <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions-2">Learn how to use lastUpdated and claim ID to identify a unique instance of a claim.</a>
@@ -133,3 +133,5 @@ Every time you pull the data, you will get the latest version of a claim. Claim 
 {% include accordion.html id="a7" heading="How long do PDP sponsors have access to the AB2D API?" expanded=false bordered=false accordionContent=a7AccordionContent %}
 
 {% include accordion.html id="a8" heading="What does the “final” claim query code indicate?" expanded=false bordered=false accordionContent=a8AccordionContent %}
+
+{% include feedback-form.html url="fa0edc3e" %}
