@@ -35,7 +35,6 @@ jobs:
           node-version-file: '.nvmrc'
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 
-
       # Step 4: Install Ruby Gems
       - name: Install jekyll and bundler
         run: |
