@@ -13,20 +13,20 @@ curl and jq are tools you can use to access the AB2D [sandbox]({{ '/access-sandb
 
 If you don’t have it installed, use the following system-specific instructions to install jq and curl. If your operating system isn’t listed, follow the installation instructions on the [curl](https://curl.se/) and [jq](https://jqlang.github.io/jq/) websites.
 
-## Mac 
+## Mac
 
 <ol>
     <li>
         Install or update jq using <a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a>:
 {% capture setupSnippet %}{% raw %}
-brew install jq        
+brew install jq
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
         <ul>
             <li>
         If you have already installed jq, you may receive and ignore the following warning:
 {% capture setupSnippet %}{% raw %}
-Warning: jq {version} is already installed and up-to-date        
+Warning: jq {version} is already installed and up-to-date
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" %}
             </li>
@@ -35,7 +35,7 @@ Warning: jq {version} is already installed and up-to-date
     <li>
         You can verify if jq is installed if you enter the following and receive a version number in response. Any version of jq will work for this set up.
 {% capture setupSnippet %}{% raw %}
-jq --version       
+jq --version
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
@@ -56,7 +56,7 @@ sudo yum install -y jq
     <li>
         You can verify if jq is installed if you enter the following and receive a version number in response. Any version of jq will work for this set up.
 {% capture setupSnippet %}{% raw %}
-jq --version       
+jq --version
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
@@ -128,7 +128,7 @@ sudo apt-get install -y jq
     </li>
     <li>When prompted, enter your password.</li>
     <li>Wait for the installation to complete.</li>
-    <li>You can verify if jq is installed if you enter the following and receive a version number in response. Any version of jq will work for this set up. 
+    <li>You can verify if jq is installed if you enter the following and receive a version number in response. Any version of jq will work for this set up.
 {% capture setupSnippet %}{% raw %}
 jq --version
 {% endraw %}{% endcapture %}
@@ -136,3 +136,4 @@ jq --version
     </li>
 </ol>
 
+{% include feedback-form.html url="c7268c09" %}

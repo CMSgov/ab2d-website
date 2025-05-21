@@ -10,27 +10,27 @@ in-page-nav-levels: "h2"
 
 <h1>Trouble&shy;shooting Guide</h1>
 
-The troubleshooting guide provides technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API. For further assistance, visit [Support]({{ '/support' | relative_url }}). 
+The troubleshooting guide provides technical assistance to Prescription Drug Plan (PDP) sponsors trying to use the AB2D API. For further assistance, visit [Support]({{ '/support' | relative_url }}).
 
 ## HTTP response codes
 
 <dl>
   <dt class="font-sans-md text-bold margin-bottom-4">200 HTTP response: request completed successfully</dt>
   <dd></dd>
-  
+
   <dt class="font-sans-md text-bold margin-bottom-4">202 HTTP response: request accepted but still processing</dt>
   <dd></dd>
-  
+
   <dt class="font-sans-md text-bold">400 HTTP response: bad request</dt>
   <dd class="margin-left-0 margin-bottom-4">
     <p>General response when something is wrong (e.g., missing a request parameter or body).</p>
   </dd>
-  
+
   <dt class="font-sans-md text-bold">401 HTTP response: forbidden</dt>
   <dd class="margin-left-0 margin-bottom-4">
     <p>Your token is incorrect or has expired. Authentication has not been completed successfully.</p>
   </dd>
-  
+
   <dt class="font-sans-md text-bold">403 HTTP response: unauthorized</dt>
   <dd class="margin-left-0 margin-bottom-4">
     <p>You don’t have permission to access the requested data. This can happen for a variety of reasons:</p>
@@ -41,7 +41,7 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
       <li>Authentication has failed.</li>
     </ul>
   </dd>
-  
+
   <dt class="font-sans-md text-bold">403 HTTP response: forbidden</dt>
   <dd class="margin-left-0 margin-bottom-4">
     <p>Authentication succeeded, but you don’t have permission to access the requested data. This can happen due to a variety of reasons:</p>
@@ -52,7 +52,7 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
       <li>Authentication may have failed because of an incorrect header. "Authorization : Basic Auth" is the correct header.</li>
     </ul>
   </dd>
-  
+
   <dt class="font-sans-md text-bold">404 HTTP response: page not found</dt>
   <dd class="margin-left-0 margin-bottom-4">
     <p>Resource or page not found. You could authenticate but the API endpoint does not exist. Troubleshooting:</p>
@@ -61,17 +61,17 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
       <li>If you’re using curl at the command line, you may have to escape characters. For example, $ is used in $Export and $Status, but $ is a variable value in the Bash command line.</li>
     </ul>
   </dd>
-  
+
   <dt class="font-sans-md text-bold">405 HTTP response: method not allowed</dt>
   <dd class="margin-left-0 margin-bottom-4">
     <p>You’re trying to execute a method which the endpoint does not support. For example, calling "/secure/get" as a POST method, even though the endpoint only supports GET methods.</p>
   </dd>
-  
+
   <dt class="font-sans-md text-bold">429 HTTP response: too many requests</dt>
   <dd class="margin-left-0 margin-bottom-4">
     <p>You’re creating too many job requests within a short period of time. Try waiting a bit before making another request.</p>
   </dd>
-  
+
   <dt class="font-sans-md text-bold">Unable to download bulk data file</dt>
   <dd class="margin-left-0 margin-bottom-4">
     <ul>
@@ -93,7 +93,7 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
 {% capture a5AccordionContent %}
 <p>
-  Using the system that will access the API, open your browser and visit <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com/</a>. If you don’t have a browser query from your system’s command line:    
+  Using the system that will access the API, open your browser and visit <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com/</a>. If you don’t have a browser query from your system’s command line:
 </p>
 <ul>
     <li>Linux/Mac: Open a terminal and run the command <code class="inline-code">curl -X GET checkip.amazonaws.com</code></li>
@@ -103,10 +103,10 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
 {% capture a6AccordionContent %}
 <p>
-Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during <a href="{{ '/production-access' | relative_url }}">production access</a>. 
+Check that you’re using the correct system. The IP address should match what you gave to the AB2D team during <a href="{{ '/production-access' | relative_url }}">production access</a>.
 </p>
 <p>
-If the system is correct, check with your IT team to make sure you have a static IP address. If your IP address isn’t static, it may have changed. You must have a static IP address to use the API. 
+If the system is correct, check with your IT team to make sure you have a static IP address. If your IP address isn’t static, it may have changed. You must have a static IP address to use the API.
 </p>
 {% endcapture %}
 
@@ -125,7 +125,7 @@ If the system is correct, check with your IT team to make sure you have a static
         </li>
         </ul>
         <li>In Postman, create a new GET request against the URL https://api.ab2d.cms.gov/health. If the response has an HTTP status of 200 then your IP address can connect.</li>
-        <li>Open a browser and visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html" target="_blank" rel="noopener">https://api.ab2d.cms.gov/swagger-ui/index.html</a>.</li>    
+        <li>Open a browser and visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html" target="_blank" rel="noopener">https://api.ab2d.cms.gov/swagger-ui/index.html</a>.</li>
 </ol>
 {% endcapture %}
 
@@ -192,7 +192,7 @@ If the system is correct, check with your IT team to make sure you have a static
   If you received a 403 error your bearer token may be expired or incorrect. Get another bearer token and restart the job.
 </p>
 <p>
-  4xx errors mean your files have been downloaded more than 6 times or are expired. Files expire and automatically delete after 72 hours. 
+  4xx errors mean your files have been downloaded more than 6 times or are expired. Files expire and automatically delete after 72 hours.
 </p>
 {% endcapture %}
 
@@ -204,10 +204,10 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% capture a17AccordionContent %}
 <p>
- Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir). 
+ Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir).
 </p>
 <p>
- Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn how to migrate from V1 to V2</a>. 
+ Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn how to migrate from V1 to V2</a>.
 </p>
 {% endcapture %}
 
@@ -247,3 +247,5 @@ If the system is correct, check with your IT team to make sure you have a static
 {% include accordion.html id="a17" heading="How does AB2D provide FHIR versions?" expanded=false bordered=false accordionContent=a17AccordionContent %}
 
 {% include accordion.html id="a18" heading="How are parameters different between V1 and V2?" expanded=false bordered=false accordionContent=a18AccordionContent %}
+
+{% include feedback-form.html url="47414305" %}

@@ -133,3 +133,5 @@ curl -i "https://api.ab2d.cms.gov/api/v1/fhir/Patient/\$export?_since%3D2023-02-
 ## The \_outputFormat parameter
 
 The \_outputFormat parameter allows you to request different formats for your data exports. The default and only format AB2D currently supports is application/fhir+NDJSON. The server must support [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec), but may choose to support additional output formats. The server must also accept the full content type of application/fhir+NDJSON, as well as the abbreviated representations application/NDJSON and NDJSON.
+
+{% include feedback-form.html url="40b9cc72" %}
