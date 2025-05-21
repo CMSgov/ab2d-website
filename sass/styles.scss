@@ -178,12 +178,15 @@ main h6 {
 }
 
 #touchpoints-form {
+  form {
+    max-width: none;
+  }
+
   .touchpoints-form-body {
     padding: 1rem 2rem;
     border: 2px solid #d9e8f6;
     border-radius: 0.25rem;
     margin: 2rem 0;
-    max-width: none;
   }
 
   label {
