@@ -193,5 +193,10 @@ main h6 {
 
   button {
     text-transform: capitalize;
+    margin-top: 1rem;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
   }
 }
