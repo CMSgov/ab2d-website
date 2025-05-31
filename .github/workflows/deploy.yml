@@ -76,4 +76,4 @@ jobs:
       - name: Deploy the site
         #FIXME
         run: |
-          aws s3 sync _site/ s3://ab2d-dev-website20250531000346968400000001/uswds-redesign/
+          aws s3 sync --delete _site/ s3://ab2d-dev-website20250531000346968400000001/
