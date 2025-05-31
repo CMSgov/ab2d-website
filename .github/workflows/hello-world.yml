@@ -4,6 +4,5 @@ jobs:
   Hello-World-Job:
     runs-on:
       - codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
-
     steps:
       - run: echo "Hello World"
