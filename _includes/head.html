@@ -1,30 +1,36 @@
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,  minimum-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <title>
+        {% if page.seo_title and page.seo_title != '' %}
+            {{ page.seo_title }}
+        {% elsif page.page_title and page.page_title != '' %}
+            {{ page.page_title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="sitemap" href="{{ '/sitemap.xml' | relative_url }}">
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- USWDS & theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="{{ '/assets/uswds/js/uswds-init.min.js' | relative_url }}"></script>
+    <link href="{{ '/assets/uswds/css/styles.css' | relative_url }}?{{site.time | pubDate: '%s'}}" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="assets/vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Muli:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/usa-gov-site.css" rel="stylesheet">
-    <link href="assets/css/custom-main.css" rel="stylesheet">
-    <link href="assets/css/static-main.css" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-
-    <!-- CMS Tealium/Google Analytics BEGIN -->
-
+<!-- CMS Tealium/Google Analytics BEGIN -->
+    <!-- 
+    * PII ALERT: Please be careful not to pass any dynamic values that could
+    * contain any personal information such as first name, last name, email
+    * or address. In these cases, you may use a link descriptor instead.
+    -->
+    
     <!--DataLayer (utag_data) Snippet
     Within <head> of document at the highest possible point.-->
     <script type="text/javascript">
@@ -33,59 +39,20 @@
 
     <!-- Within <head> of document below DataLayer snippet .
     The utag.sync.js script should run as early as possible -->
+
     <script src="https://tealium-tags.cms.gov/cms-ab2d/prod/utag.sync.js"></script>
-
+        
     <!-- Loading utag.js script asynchronously -->
-    <script type="text/javascript">
-        (function(a,b,c,d)
-            { a='https://tealium-tags.cms.gov/cms-ab2d/prod/utag.js'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
-        )();
-    </script>
+        <script type="text/javascript">
+            (function(a,b,c,d)
+                { a='https://tealium-tags.cms.gov/cms-ab2d/prod/utag.js'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
+            )();
+        </script> 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-
-    <!-- CMS Tealium/Google Analytics END -->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <script async src="/assets/js/autotrack.js"></script>
-    <script> /**
-     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-     ga('create', 'UA-133491498-1', 'auto');
-
-     // Implementing the following trackers via auto track
-     // https://github.com/googleanalytics/autotrack
-     ga('require', 'eventTracker');
-     ga('require', 'impressionTracker');
-     ga('require', 'mediaQueryTracker');
-     ga('require', 'maxScrollTracker');
-     ga('require', 'outboundLinkTracker');
-     ga('require', 'urlChangeTracker');
-     ga('require', 'pageVisibilityTracker');
-
-     // send the pageview
-     ga('send', 'pageview');
-     **/
-    </script>
-
-    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-
-    <!-- Polyfill for sticky position -->
-    <script type="text/javascript" src="assets/js/stickyfill.min.js"></script>
-
-    <script type="text/javascript" src="assets/js/usa-banner.js"></script>
-
-    <script type="text/javascript">
-        function isIE() {
-            return (/MSIE (\d+\.\d+);/.test(navigator.userAgent) || navigator.userAgent.indexOf("Trident/") > -1 );
+    <script>
+        window.ENV = {
+            siteUrl: "{{ site.url }}"
         }
     </script>
+
 </head>

@@ -1,41 +1,153 @@
-<!-- Header -->
-<header id="site-top">
-  <!-- Desktop Navigation -->
-  <div class="ds-c-desktop-nav">
-    <!-- Logo Link Container -->
-    <a class="logo-link-container" href="/">
-      <!-- Logo Text -->
-      <div class="site-title">
-        Claims Data to Part D Sponsors API
+<div class=" position-sticky top-0 bg-white shadow-1 z-500">
+  <div class="usa-overlay"></div>
+  <header class="usa-header usa-header--basic">
+    <div class="usa-nav-container">
+      <div class="usa-navbar">
+        <div class="usa-logo">
+          <em class="usa-logo__text">
+            <a href="{{ '/' | relative_url }}" title="AB2D" data-tealium="main_nav">
+              <img src="{{ '/assets/img/logo-horiz-dark.svg' | relative_url }}" alt="AB2D logo" />
+            </a>
+          </em>
+        </div>
+        <button type="button" class="usa-menu-btn">Menu</button>
       </div>
-    </a>
-    <!-- Desktop navigation -->
-    <nav class="desktop-nav-items">
-      <!-- removing for now
-      <a href="{{ '/api/v1/swagger' }}">Documentation</a>
-      -->
-      <a rel="noopener noreferrer" href="{{ 'https://groups.google.com/forum/#!forum/ab2d-api' }}" target="_blank">Join the Google Group</a>
-    </nav>
-  </div>
-
-  <!-- Mobile Navigation -->
-  <div class="ds-c-mobile-nav">
-    <!-- Logo Link Container -->
-    <a class="logo-link-container" href="/">
-      <!-- Arrow Icon -->
-      <!-- Logo Text -->
-      <div class="site-title">
-        Claims Data to Part D Sponsors API
-      </div>
-    </a>
-    <!-- Mobile Nav Trigger Button -->
-    <a class="mobile-nav-trigger-button" href="#">
-      <span class="mobile-nav-trigger-text">Menu</span>
-      <i class="mobile-nav-icon" data-feather="menu"></i>
-    </a>
-  </div>
-  <!-- Mobile Nav Items -->
-  <nav class="mobile-nav-items">
-    <!-- Items Appended Here by JS -->
-  </nav>
-</header>
+      <nav aria-label="Primary navigation" class="usa-nav">
+        <button type="button" class="usa-nav__close">
+          <img src="{{ '/assets/uswds/img/usa-icons/close.svg' | relative_url }}" role="img" alt="Close" />
+        </button>
+        <!--About dropdown-->
+        <ul class="usa-nav__primary usa-accordion">
+          <li class="usa-nav__primary-item margin-top-1">
+            <button
+              type="button"
+              class="usa-accordion__button usa-nav__link {% if page.permalink == '/about' %}{{ 'usa-current' }}{% endif %}"
+              aria-expanded="false"
+              aria-controls="basic-nav-section-one"
+            >
+              <span>About</span>
+            </button>
+            <ul id="basic-nav-section-one" class="usa-nav__submenu">
+              <li class="usa-nav__submenu-item">
+                <a href="{{ '/about' | relative_url }}" data-tealium="main_nav">
+                  <span>About AB2D</span>
+                </a>
+              </li>
+              <li class="usa-nav__submenu-item">
+                <a href="{{ '/use-cases' | relative_url }}" data-tealium="main_nav">
+                  <span>Use cases</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!--API Docs-->
+        <ul class="usa-nav__primary usa-accordion">
+          <li class="usa-nav__primary-item">
+            <a
+              href="{{ '/api-documentation' | relative_url }}"
+              class="usa-nav-link {% if page.permalink == '/api-documentation' %}{{ 'usa-current' }}{% endif %}"
+              data-tealium="main_nav"
+            >
+              <span>API Documentation</span>
+            </a>
+              <ul class="usa-nav__submenu desktop:display-none" >
+                {% for item in site.data.api-docs-nav %}
+                  {% for child in item.children %}
+                  <li class="usa-nav__submenu-item">
+                    <a
+                      href="{{ child.url | relative_url }}"
+                      class="usa-nav-link {% if page.permalink == child.url %}{{ 'usa-current' }}{% endif %}"
+                      data-tealium="main_nav"
+                      ><span>{{ child.name }}</span>
+                    </a>
+                    <ul class="usa-nav__submenu">
+                      {% for grandchild in child.children %}
+                      <li class="usa-nav__submenu-item">
+                        <a href="{{ grandchild.url | relative_url }}"
+                          class="{% if page.permalink == grandchild.url %}{{ 'usa-current' }}{% endif %}"
+                          data-tealium="main_nav"
+                        >{{ grandchild.name }}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+          </li>
+        </ul>
+        <!--AB2D Data-->
+        <ul class="usa-nav__primary usa-accordion">
+          <li class="usa-nav__primary-item">
+            <a
+              href="{{ '/ab2d-data' | relative_url }}"
+              class="usa-nav-link {% if page.permalink == '/ab2d-data' %}{{ 'usa-current' }}{% endif %}"
+              data-tealium="main_nav"
+            >
+              <span>AB2D Data</span>
+            </a>
+              <ul class="usa-nav__submenu desktop:display-none">
+                {% for item in site.data.ab2d-data-nav %}
+                  {% for child in item.children %}
+                  <li class="usa-nav__submenu-item">
+                    <a
+                      href="{{ child.url | relative_url }}"
+                      class="usa-nav-link {% if page.permalink == child.url %}{{ 'usa-current' }}{% endif %}"
+                      data-tealium="main_nav"
+                      ><span>{{ child.name }}</span>
+                    </a>
+                    <ul class="usa-nav__submenu">
+                      {% for grandchild in child.children %}
+                      <li class="usa-nav__submenu-item">
+                        <a href="{{ grandchild.url | relative_url }}"
+                          class="{% if page.permalink == grandchild.url %}{{ 'usa-current' }}{% endif %}"
+                          data-tealium="main_nav"
+                          >{{ grandchild.name }}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+          </li>
+          <!--Header nav items without subpages-->
+          {% for item in site.data.nav-primary %}
+          <li class="usa-nav__primary-item">
+            <a
+              href="{{ item.url | relative_url }}"
+              class="usa-nav-link {% if page.permalink == item.url %}{{ 'usa-current' }}{% endif %}"
+              data-tealium="main_nav"
+              ><span>{{ item.text }}</span></a
+            >
+          </li>
+          {% endfor %}
+          <!--Github, Swagger -->
+          <li class="usa-nav__primary-item desktop:display-none">
+            <a href="https://github.com/CMSgov/ab2d" class="usa-nav-link" data-tealium="main_nav">
+              <span>
+                {% include sprite.html icon="github" size="3" class="margin-right-05 text-middle" %}
+                Github repo
+              </span>
+            </a>
+          </li>
+          <li class="usa-nav__primary-item desktop:display-none">
+            <a href="https://sandbox.ab2d.cms.gov/swagger-ui/index.html" class="usa-nav-link" data-tealium="main_nav">
+              <span>
+                {% include sprite.html icon="code" size="3" class="margin-right-05 text-middle" %}
+                Swagger
+              </span>
+            </a>
+          </li>
+        </ul>
+        <!--Get Started-->
+        <section class="width-100 padding-left-1">
+          <a href="{{ '/api-documentation' | relative_url }}" class="usa-button" data-tealium="main_nav"
+            >Get Started</a
+          >
+        </section>
+      </nav>
+    </div>
+  </header>
+</div>

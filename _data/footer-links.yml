@@ -1,0 +1,44 @@
+- heading: Getting Started
+  links:
+
+    - text: Access Sandbox Data
+      url: /access-sandbox-data
+
+    - text: Access Production Claims Data
+      url: /access-production-claims-data
+
+- heading: AB2D Data
+  links:
+    - text: GitHub repo
+      url: https://github.com/CMSgov/ab2d
+      icon: github
+      external: true
+
+    - text: Data Dictionary
+      url: /assets/downloads/ab2d-data-dictionary.xlsx
+      icon: file_download
+
+    - text: Claims Data Details
+      url: /claims-data-details
+
+    - text: FHIR specification
+      url: https://hl7.org/fhir/R4/index.html
+      external: true
+
+- heading: About
+  links:
+    - text: Permitted uses
+      url: /about
+
+    - text: Use Cases
+      url: /use-cases
+
+- heading: Support
+  links:
+    - text: Frequently asked questions
+      url: /support
+  
+    - text: Sitemap
+      url: /sitemap
+
+    - text: Privacy Settings
