@@ -37,18 +37,12 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Install npm dependencies
-        run: |
-          npm ci
-
-      - name: Compile assets with Gulp
-        run: |
-          npm run assets:build
-
       - name: Build the site
         env:
           JEKYLL_ENV: "production"
         run: |
+          npm ci
+          npm run assets:build
           bundle exec jekyll build
 
       - name: Configure AWS Credentials
