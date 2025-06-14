@@ -24,6 +24,12 @@ jobs:
     # if: ${{ !startsWith(github.actor, 'bot-') }}
 
     steps:
+      - name: Diag
+        run: |
+         ruby -v
+         bundler --version
+         node --version
+
       # Step 1: Checkout the repo
       - name: Checkout
         uses: actions/checkout@v4
