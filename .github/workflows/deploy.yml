@@ -1,17 +1,9 @@
 name: "deploy"
 
 on:
-  push:
+  push: #FIXME
   workflow_dispatch:
-    inputs:
-      deploy_path:
-        description: "S3 directory deployment location"
-        default: "main"
   workflow_call:
-    inputs:
-      deploy_path:
-        required: false
-        type: string
 
 jobs:
   deploy-dev:
