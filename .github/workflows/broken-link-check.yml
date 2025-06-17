@@ -13,7 +13,8 @@ on:
 
 jobs:
   broken-link-check:
-    runs-on: ubuntu-latest
+    runs-on:
+      - codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
 
     steps:
       - name: "Checkout code"
