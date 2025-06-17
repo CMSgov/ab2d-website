@@ -19,7 +19,6 @@ env:
 jobs:
   deploy-dev:
     if: github.actor != 'dependabot[bot]'
-    # environment: 'stage'
     permissions:
       contents: read
       id-token: write
@@ -50,9 +49,6 @@ jobs:
           npm run assets:build
 
       - name: Build the site
-        env:
-          # This is redundant but keeping for posterity
-          JEKYLL_ENV: "production"
         run: |
           bundle exec jekyll build --baseurl ${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}}
 
