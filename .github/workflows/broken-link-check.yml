@@ -3,11 +3,6 @@ name: "Broken Link Check"
 on:
   schedule:
     - cron: 0 0 * * 0
-  push:
-    paths:
-      - .github/workflows/broken-link-check.yml
-      - '**.md'
-      - '**.html'
   workflow_call:
   workflow_dispatch:
 
