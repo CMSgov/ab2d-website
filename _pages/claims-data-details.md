@@ -323,7 +323,7 @@ Extensions referring to identifiers will have the following structure:
                 }
             }
         ],
-        "system": “http://hl7.org/fhir/sid/us-mbi”,
+        "system": "http://hl7.org/fhir/sid/us-mbi",
         "value": "7S94E00AA00"
     }
 }
