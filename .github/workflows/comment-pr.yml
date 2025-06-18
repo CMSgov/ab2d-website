@@ -5,9 +5,24 @@ on:
 
 jobs:
   comment-pr:
-    runs-on: self-hosted
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    runs-on:
+      - codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
 
     steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-test-github-actions
+      - name: Fetch Non-Production Parameters
+        uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
+        with:
+          params: |
+            DOMAIN_NAME=/ab2d/test/web/nonsensitive/domain-name
       - name: Post or update comment
         uses: actions/github-script@v7
         with:
@@ -15,7 +30,7 @@ jobs:
             const commentIdentifier = '## Deploy Preview';
             const commitSha = context.payload.pull_request.head.sha;
             const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${commitSha}`;
-            const previewUrl = `https://dyx9tyg1h7v8p.cloudfront.net/${context.issue.number}/`
+            const previewUrl = `https://${process.env.DOMAIN_NAME}/${context.issue.number}/`
 
             const body = `${commentIdentifier}
 
