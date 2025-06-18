@@ -111,7 +111,7 @@ How can we get additional data elements beyond what’s listed in the final rule
 
 {% capture a8AccordionContent %}
 <p>
- The “final” <a href="https://bluebutton.cms.gov/assets/ig/ValueSet-claim-query-cd.html" target="_blank" rel="noopener">query code</a> indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, it’s possible for a claim object with a “final” query code to be cancelled and resubmitted under a new claim ID.
+ The “final” <a href="https://bluebutton.cms.gov/resources/variables/claim_query_cd/" target="_blank" rel="noopener">query code</a> indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, it’s possible for a claim object with a “final” query code to be cancelled and resubmitted under a new claim ID.
  </p>
  <p>
 Every time you pull the data, you will get the latest version of a claim. Claim objects have a lastUpdated field, which represents when the data was last refreshed by the API. This shows when AB2D received the update, not when the update was submitted to Medicare. <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions-2">Learn how to use lastUpdated and claim ID to identify a unique instance of a claim.</a>
