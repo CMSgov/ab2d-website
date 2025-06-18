@@ -56,4 +56,4 @@ jobs:
 
       - name: Deploy the site
         run: |
-          aws s3 sync --delete _site/ "s3://${CLOUDFRONT_BUCKET}/${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || '' }}/"
+          aws s3 sync --delete _site/ "s3://${CLOUDFRONT_BUCKET}/${{ inputs.deploy_path || '' }}/"
