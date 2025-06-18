@@ -23,8 +23,9 @@ jobs:
     permissions:
       contents: read
       id-token: write
-      pull-requests: 'write'
+      pull-requests: write
     uses: ./.github/workflows/comment-pr.yml
+    secrets: inherit
 
   a11y-check:
     needs: deploy
