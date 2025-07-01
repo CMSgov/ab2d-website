@@ -10,6 +10,7 @@ ab2d-website is supported by a dedicated team of individuals fulfilling various 
 | Developers/Contributors | bennavapbc | CMS/DASG/Contractor  |
 | Developers/Contributors | smirnovaae | CMS/DASG/Contractor  |
 | Developers/Contributors | jhutchison-nava | CMS/DASG/Contractor  |
+| Developers/Contributors | Nat-watkins | CMS/DASG/Contractor  |
 
 See [Community Guidelines](#ab2d-website-open-source-community-guidelines) on principles and guidelines for participating in this open source project.
 
@@ -23,6 +24,7 @@ The members of ab2d-website community are responsible for guiding its developmen
 - @bennavapbc
 - @Sadibhatla
 - @jhutchison-nava
+- @Nat-watkins
 
 <!-- TODO: List the individuals who are the maintainers. What groups/domains are maintainers a part of? Does your project have domains/areas that are maintained by specific people? List @USERNAMES directly, or any @ALIASES for groups/teams. -->
 
@@ -32,6 +34,7 @@ The members of ab2d-website community are responsible for guiding its developmen
 - @bennavapbc
 - @Sadibhatla
 - @jhutchison-nava
+- @Nat-watkins
 
 <!-- TODO: Who are the project approvers? List out @USERNAMES where possible so they can be tagged in issues/PRs directly. -->
 
@@ -41,6 +44,7 @@ The members of ab2d-website community are responsible for guiding its developmen
 - @bennavapbc
 - @Sadibhatla
 - @jhutchison-nava
+- @Nat-watkins
 
 <!-- TODO: Who are the project reviewers? List out @USERNAMES where possible so they can be tagged in issues/PRs directly. -->
 
