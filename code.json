@@ -13,7 +13,7 @@
     "usageType": "openSource"
   },
   "organization": "Centers for Medicare & Medicaid Services",
-  "repositoryURL": "https://github.com/CMSGov/ab2d-website",
+  "repositoryURL": "https://github.com/CMSgov/ab2d-website",
   "repositoryHost": "github.com/CMSgov",
   "repositoryVisibility": "public",
   "vcs": "git",
@@ -49,7 +49,7 @@
     "name": "CMS Open Source Program Office"
   },
   "feedbackMechanisms": [
-    "https://github.com/CMSGov/ab2d-website/issues"
+    "https://github.com/CMSgov/ab2d-website/issues"
   ],
   "localisation": "false",
   "repositoryType": "Website",
