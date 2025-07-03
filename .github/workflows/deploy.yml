@@ -59,7 +59,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.TEST_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-test-github-actions
+          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
 
       - name: Set env vars from AWS params
         uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
@@ -67,7 +67,7 @@ jobs:
           AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
-            TARGET_BUCKET=/ab2d/test/web/nonsensitive/s3-bucket
+            TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
 
       - name: Deploy the site
         run: |
