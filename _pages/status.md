@@ -40,7 +40,7 @@ show-side-nav: false
         const maintenanceEl = document.getElementById("maintenance");
         const unreachableEl = document.getElementById("unreachable");
 
-        const baseUrl = "https://sandbox.ab2d.cms.gov/status";
+        const baseUrl = "https://api.ab2d.cms.gov/status";
 
         try {
             const response = await fetch(baseUrl);
