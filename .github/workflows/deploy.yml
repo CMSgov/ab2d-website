@@ -22,7 +22,7 @@ jobs:
     # environment: 'stage'
     permissions:
       contents: read
-    runs-on: codebuild-bcda-static-site-${{github.run_id}}-${{github.run_attempt}}
+    runs-on: ab2d-website-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
       - name: Checkout
