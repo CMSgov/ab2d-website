@@ -18,6 +18,12 @@ jobs:
           node-version-file: '.nvmrc'
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
+
       - name: Fetch AWS Parameters
         uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
         with:
