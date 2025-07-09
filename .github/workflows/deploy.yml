@@ -71,10 +71,11 @@ jobs:
             TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
 
       - name: Deploy the site
+        # This $TARGET_BUCKET comes from the step above, cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
         run: |
           aws s3 sync _site/ s3://$TARGET_BUCKET/${{ inputs.deploy_path }}/ --delete
 
-      # - name: Invalidate Cloudfront cache
-      #   run: |
-      #     DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET'].Id" --output text`
-      #     aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
+      - name: Invalidate Cloudfront cache
+        run: |
+          DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='ab2d-dev-origin'].Id" --output text`
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
