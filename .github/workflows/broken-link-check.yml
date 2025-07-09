@@ -1,10 +1,9 @@
 name: "Broken Link Check"
 
 on:
-  schedule:
-    - cron: 0 0 * * 0
-  workflow_call:
   workflow_dispatch:
+  schedule:
+    - cron: 0 0 * * 0 # Every Sunday at midnight
 
 jobs:
   broken-link-check:
@@ -14,17 +13,33 @@ jobs:
       - name: "Checkout code"
         uses: actions/checkout@v4
 
-      - name: Set Deployment Path
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+          node-version-file: '.nvmrc'
+          # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
+
+      - name: Install jekyll and bundler
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "DEPLOY_PATH=${{ github.event.number }}" >> $GITHUB_ENV
-          else
-            echo "DEPLOY_PATH=${{ github.ref_name }}" >> $GITHUB_ENV
-          fi
+          gem install bundler
+          bundle install
+
+      - name: Install npm dependencies
+        run: |
+          npm ci
+
+      - name: Compile assets with Gulp
+        run: |
+          npm run assets:build
+
+      - name: Build the site
+        run: |
+          bundle exec jekyll build
 
       - name: "Check for broken links"
         uses: lycheeverse/lychee-action@v2
         id: lychee
         with:
           jobSummary: true
-          args: --base https://dveopzwo661ye.cloudfront.net/${{ env.DEPLOY_PATH }} --no-progress --accept '200..=299, 401, 403, 405' ./_site/**/*.html
+          args: --base https://ab2d.cms.gov --no-progress --accept '200..=299, 401, 403, 405' ./_site/**/*.html
