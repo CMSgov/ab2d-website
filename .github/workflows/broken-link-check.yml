@@ -8,8 +8,7 @@ on:
 
 jobs:
   broken-link-check:
-    runs-on:
-      - codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
 
     steps:
       - name: "Checkout code"
@@ -21,4 +20,4 @@ jobs:
         with:
           jobSummary: true
           fail: true
-          args: --no-progress --accept '200..=299, 401, 403, 405' .
+          args: --no-progress --accept '200..=299, 401, 403, 405' ~/_[pages,layouts,includes,data]/**.[md,html,yml]

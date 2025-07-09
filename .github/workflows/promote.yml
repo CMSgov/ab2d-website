@@ -17,17 +17,16 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    runs-on:
-      - codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
-    steps:
+    runs-on: codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
 
-      - name: Configure AWS Credentials
+    steps:
+      - name: Configure Non-Production AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-test-github-actions
 
-      - name: Fetch Non-Production Parameters
+      - name: Fetch Non-Production AWS Parameters
         uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
         with:
           params: |
@@ -37,13 +36,13 @@ jobs:
         run: |
           aws s3 sync s3://${TEST_BUCKET}/ ./temp-site/
 
-      - name: Configure AWS Credentials
+      - name: Configure Production AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-prod-github-actions
 
-      - name: Fetch Production Parameters
+      - name: Fetch Production AWS Parameters
         uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
         with:
           params: |
