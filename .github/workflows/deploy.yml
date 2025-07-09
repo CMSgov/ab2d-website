@@ -69,6 +69,7 @@ jobs:
         with:
           params: |
             TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
+            DISTRIBUTION_ID=/ab2d/dev/web/nonsensitive/distribution-id
 
       - name: Deploy the site
         # This $TARGET_BUCKET comes from the step above, cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
@@ -77,5 +78,4 @@ jobs:
 
       - name: Invalidate Cloudfront cache
         run: |
-          DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='ab2d-dev-origin'].Id" --output text`
           aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
