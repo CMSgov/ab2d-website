@@ -60,8 +60,6 @@ jobs:
 
       - name: Fetch AWS Parameters
         uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
-        env:
-          AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
             TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
