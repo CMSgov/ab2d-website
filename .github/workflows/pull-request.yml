@@ -29,6 +29,9 @@ jobs:
 
   a11y-check:
     needs: deploy
+    permissions:
+      contents: read
+      id-token: write
     uses: ./.github/workflows/a11y-check.yml
 
   broken-link-check:
