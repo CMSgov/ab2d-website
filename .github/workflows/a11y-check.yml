@@ -18,17 +18,17 @@ jobs:
           node-version-file: '.nvmrc'
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
+      # - name: Configure AWS Credentials
+      #   uses: aws-actions/configure-aws-credentials@v4
+      #   with:
+      #     aws-region: ${{ vars.AWS_REGION }}
+      #     role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
 
-      - name: Fetch AWS Parameters
-        uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
-        with:
-          params: |
-            DOMAIN_NAME=/ab2d/dev/web/nonsensitive/domain-name
+      # - name: Fetch AWS Parameters
+      #   uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
+      #   with:
+      #     params: |
+      #       DOMAIN_NAME=/ab2d/dev/web/nonsensitive/domain-name
 
       - name: Set Deployment Path
         run: |
@@ -39,7 +39,7 @@ jobs:
           fi
 
       - name: Run pa11y
-        run: npx pa11y-ci --config pa11yci.ci.json --sitemap https://$DOMAIN_NAME/${{ env.DEPLOY_PATH }}/sitemap.xml --sitemap-exclude "/*.pdf"  --sitemap-find https://ab2d.cms.gov/ --sitemap-replace https://$DOMAIN_NAME/ --json > pa11y-results.json || echo "EXIT_CODE=$?" >> $GITHUB_ENV
+        run: npx pa11y-ci --config pa11yci.ci.json --sitemap https://dveopzwo661ye.cloudfront.net/${{ env.DEPLOY_PATH }}/sitemap.xml --sitemap-exclude "/*.pdf"  --sitemap-find https://ab2d.cms.gov/ --sitemap-replace https://dveopzwo661ye.cloudfront.net/ --json > pa11y-results.json || echo "EXIT_CODE=$?" >> $GITHUB_ENV
 
       - name: Save Report to Action Summary
         uses: actions/github-script@v7
