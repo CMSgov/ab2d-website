@@ -27,4 +27,4 @@ jobs:
         id: lychee
         with:
           jobSummary: true
-          args: --base-url https://dveopzwo661ye.cloudfront.net/${{ env.DEPLOY_PATH }} --no-progress --accept '200..=299, 401, 403, 405' ./_{pages,layouts,includes,data}/*.{md,html,yml}
+          args: --base https://dveopzwo661ye.cloudfront.net/${{ env.DEPLOY_PATH }} --no-progress --accept '200..=299, 401, 403, 405' ./_{pages,layouts,includes,data}/*.{md,html,yml}
