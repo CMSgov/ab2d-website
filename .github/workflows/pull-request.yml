@@ -9,6 +9,9 @@ concurrency:
 
 jobs:
   deploy:
+    permissions:
+      contents: read
+      id-token: write
     if: ${{ !startsWith(github.actor, 'bot-') }}
     with:
       deploy_path: ${{ github.event.number }}
@@ -18,8 +21,11 @@ jobs:
   comment-pr:
     needs: deploy
     permissions:
-      pull-requests: 'write'
+      contents: read
+      id-token: write
+      pull-requests: write
     uses: ./.github/workflows/comment-pr.yml
+    secrets: inherit
 
   a11y-check:
     needs: deploy
