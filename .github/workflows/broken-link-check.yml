@@ -8,6 +8,11 @@ on:
 jobs:
   broken-link-check:
     runs-on: codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
+    env:
+      ISSUE_TITLE: 'Broken Links Detected'
+      ISSUE_LABEL: 'broken-links'
+    permissions:
+      issues: write
 
     steps:
       - name: "Checkout code"
@@ -37,9 +42,69 @@ jobs:
         run: |
           bundle exec jekyll build
 
-      - name: "Check for broken links"
-        uses: lycheeverse/lychee-action@v2
+      - name: Check for broken links
         id: lychee
+        uses: lycheeverse/lychee-action@v2
         with:
           jobSummary: true
           args: --base https://ab2d.cms.gov --no-progress --accept '200..=299, 401, 403, 405' ./_site/**/*.html
+
+      - name: Find Broken Link Issue
+        id: search
+        if: steps.lychee.outputs.exit_code != 0
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = process.env.ISSUE_TITLE
+            const label = process.env.ISSUE_LABEL
+            const { data: issues } = await github.paginate(
+              github.rest.issues.listForRepo,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'all',
+                labels: label,
+                per_page: 100
+              }
+            );
+
+            const match = issues.find(issue => issue.title === title);
+
+            if (match) {
+              core.setOutput('issue_number', match.number);
+            } else {
+              core.setOutput('issue_number', null);
+            }
+
+      - name: Create or update open issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs')
+            const max_chars = 65536
+            const truncate_warning = '...*[Issue body truncated]*'
+            const issue_number = `${{ steps.search.outputs.issue_number }}`;
+            const label = process.env.ISSUE_LABEL
+
+            let body = fs.readFileSync("./lychee/out.md", "utf-8")
+
+            if(body.length > max_chars){
+              body.substring(0, max_chars - truncate_warning.length) + truncate_warning
+            }
+
+            if(issue_number){
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: [label]
+              });
+            }
