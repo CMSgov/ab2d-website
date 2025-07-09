@@ -35,4 +35,5 @@ jobs:
     uses: ./.github/workflows/a11y-check.yml
 
   broken-link-check:
+    needs: deploy
     uses: ./.github/workflows/broken-link-check.yml
