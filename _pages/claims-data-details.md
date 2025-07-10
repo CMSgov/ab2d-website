@@ -146,10 +146,11 @@ Notice 2 things:
 1. The Claim Group ID stays the same between versions of the claim.
 2. The Claim ID changes between versions of the claim.
 
-{% include alert.html
-  variant="info"
-  text="Note: Claim version is not a field in the data and will not be reported to Prescription Drug Plan sponsors."
-%}
+<div class="usa-alert usa-alert--info usa-alert--slim">
+    <div class="usa-alert__body">
+        <p class="usa-alert__text">Note: Claim version is not a field in the data and will not be reported to Prescription Drug Plan sponsors.</p>
+    </div>
+</div>
 
 <div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
@@ -276,6 +277,12 @@ For more information:
 ## Identifying patients
 
 Each claim contains patient identifiers necessary to map a claim to a specific patient. The primary identifier used to associate a claim with a patient is the Medicare Beneficiary Identifier (MBI). As part of each claim, AB2D reports all MBIs including the current MBI and historic MBIs used in the past.
+
+<div class="usa-alert usa-alert--info usa-alert--slim">
+    <div class="usa-alert__body">
+        <p class="usa-alert__text">Test data from the sandbox contains only negative Patient IDs.</p>
+    </div>
+</div>
 
 <div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
