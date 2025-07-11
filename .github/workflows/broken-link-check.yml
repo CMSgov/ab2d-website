@@ -1,20 +1,110 @@
 name: "Broken Link Check"
 
 on:
-  workflow_call
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 * * 0 # Every Sunday at midnight
 
 jobs:
   broken-link-check:
-    runs-on: self-hosted
+    runs-on: codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
+    env:
+      ISSUE_TITLE: 'Broken Links Detected'
+      ISSUE_LABEL: 'broken-links'
+    permissions:
+      issues: write
 
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v4
 
-      - name: "Check for broken links"
-        uses: lycheeverse/lychee-action@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+          node-version-file: '.nvmrc'
+          # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
+
+      - name: Install jekyll and bundler
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Install npm dependencies
+        run: |
+          npm ci
+
+      - name: Compile assets with Gulp
+        run: |
+          npm run assets:build
+
+      - name: Build the site
+        run: |
+          bundle exec jekyll build
+
+      - name: Check for broken links
         id: lychee
+        uses: lycheeverse/lychee-action@v2
         with:
           jobSummary: true
-          fail: true
-          args: --no-progress --accept '200..=299, 401, 403, 405' ~/_[pages,layouts,includes]/**.[md,html]
+          args: --base https://ab2d.cms.gov --no-progress --accept '200..=299, 401, 403, 405' ./_site/**/*.html
+
+      - name: Find Broken Link Issue
+        id: search
+        if: steps.lychee.outputs.exit_code != 0
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = process.env.ISSUE_TITLE
+            const label = process.env.ISSUE_LABEL
+            const { data: issues } = await github.paginate(
+              github.rest.issues.listForRepo,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'all',
+                labels: label,
+                per_page: 100
+              }
+            )
+
+            const match = issues.find(issue => issue.title === title)
+
+            if (match) {
+              core.setOutput('issue_number', match.number)
+            } else {
+              core.setOutput('issue_number', null)
+            }
+
+      - name: Create or update open issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs')
+            const MAX_CHARS = 65536
+            const TRUNCATE_WARNING = '...*[Issue body truncated]*'
+            const issue_number = `${{ steps.search.outputs.issue_number }}`
+            const label = process.env.ISSUE_LABEL
+
+            let body = fs.readFileSync("./lychee/out.md", "utf-8")
+
+            if (body.length > MAX_CHARS) {
+              body.substring(0, MAX_CHARS - TRUNCATE_WARNING.length) + TRUNCATE_WARNING
+            }
+
+            if (issue_number) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number,
+                body
+              })
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: [label]
+              })
+            }
