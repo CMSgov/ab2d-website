@@ -66,14 +66,14 @@ jobs:
                 labels: label,
                 per_page: 100
               }
-            );
+            )
 
-            const match = issues.find(issue => issue.title === title);
+            const match = issues.find(issue => issue.title === title)
 
             if (match) {
-              core.setOutput('issue_number', match.number);
+              core.setOutput('issue_number', match.number)
             } else {
-              core.setOutput('issue_number', null);
+              core.setOutput('issue_number', null)
             }
 
       - name: Create or update open issue
@@ -81,24 +81,24 @@ jobs:
         with:
           script: |
             const fs = require('fs')
-            const max_chars = 65536
-            const truncate_warning = '...*[Issue body truncated]*'
-            const issue_number = `${{ steps.search.outputs.issue_number }}`;
+            const MAX_CHARS = 65536
+            const TRUNCATE_WARNING = '...*[Issue body truncated]*'
+            const issue_number = `${{ steps.search.outputs.issue_number }}`
             const label = process.env.ISSUE_LABEL
 
             let body = fs.readFileSync("./lychee/out.md", "utf-8")
 
-            if(body.length > max_chars){
-              body.substring(0, max_chars - truncate_warning.length) + truncate_warning
+            if (body.length > MAX_CHARS) {
+              body.substring(0, MAX_CHARS - TRUNCATE_WARNING.length) + TRUNCATE_WARNING
             }
 
-            if(issue_number){
+            if (issue_number) {
               await github.rest.issues.update({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number,
                 body
-              });
+              })
             } else {
               await github.rest.issues.create({
                 owner: context.repo.owner,
@@ -106,5 +106,5 @@ jobs:
                 title,
                 body,
                 labels: [label]
-              });
+              })
             }
