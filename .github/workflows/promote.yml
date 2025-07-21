@@ -35,7 +35,7 @@ jobs:
 
       - name: Download Dev Bucket
         run: |
-          aws s3 sync s3://${TARGET_BUCKET}/ ./temp-site/
+          aws s3 sync s3://${TARGET_BUCKET}/${{ inputs.deploy_path }}/ ./temp-site/
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -55,5 +55,5 @@ jobs:
 
       - name: Invalidate Prod Distribution
         run: |
-          DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET'].Id" --output text`
+          DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET.s3.us-east-1.amazonaws.com'].Id" --output text`
           aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
