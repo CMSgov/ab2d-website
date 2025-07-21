@@ -49,15 +49,11 @@ jobs:
           params: |
             TARGET_BUCKET=/ab2d/prod/web/nonsensitive/s3-bucket
 
-      - name: Get CloudFront Distribution ID
-        run: |
-          DISTRIBUTION_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Origins.Items[0].DomainName=='website-ab2d-east-prod.s3.us-east-1.amazonaws.com'].Id" --output text)
-          echo "DISTRIBUTION_ID=$DISTRIBUTION_ID" >> $GITHUB_ENV
-
       - name: Copy site to Prod Bucket
         run: |
           aws s3 sync ./temp-site/ s3://${TARGET_BUCKET}/
 
       - name: Invalidate Prod Distribution
         run: |
+          DISTRIBUTION_ID=`aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id, OriginId: Origins.Items[0].Id}[?OriginId=='$TARGET_BUCKET'].Id" --output text`
           aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
