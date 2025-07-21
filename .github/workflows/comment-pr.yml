@@ -5,9 +5,25 @@ on:
 
 jobs:
   comment-pr:
-    runs-on: codebuild-ab2d-website-${{github.run_id}}-${{github.run_attempt}}
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    runs-on: codebuild-ab2d-website-${{ github.run_id }}-${{ github.run_attempt }}
 
     steps:
+      # - name: Configure AWS Credentials
+      #   uses: aws-actions/configure-aws-credentials@v4
+      #   with:
+      #     aws-region: ${{ vars.AWS_REGION }}
+      #     role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
+
+      # - name: Fetch AWS Parameters
+      #   uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
+      #   with:
+      #     params: |
+      #       DOMAIN_NAME=/ab2d/dev/web/nonsensitive/domain-name
+
       - name: Post or update comment
         uses: actions/github-script@v7
         with:
