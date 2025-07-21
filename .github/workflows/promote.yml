@@ -14,7 +14,10 @@ on:
 
 jobs:
   promote:
-    runs-on: self-hosted
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: codebuild-ab2d-website-${{github.run_id}}-${{github.run_attempt}}
     steps:
 
       # Step 1: Configure Dev credentials
