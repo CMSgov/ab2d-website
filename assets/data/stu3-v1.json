@@ -1,5 +1,5 @@
 {
-  "description": "<h1>AB2D STU3 (v1) Data Dictionary</h1><p>The AB2D Data Dictionary provides a detailed break-down of the claims data provided by the AB2D API. AB2D shares data according to R4 and STU3 versions of the FHIR standard. FHIR R4 is available using v2 of AB2D while FHIR STU3 can be accessed via AB2D v1. Both are covered in the AB2D Data Dictionary.</p><p>A downloadable version of the AB2D <a href='/assets/downloads/AB2D-Data-Dictionary.xlsx' alt='AB2D Data Dictionary Spreadsheet'>Data Dictionary</a> is available.</p>",
+  "description": "<h1>AB2D STU3 (v1) Data Dictionary</h1><p>The AB2D Data Dictionary provides a detailed break-down of the claims data provided by the AB2D API. AB2D shares data according to R4 and STU3 versions of the FHIR standard. FHIR R4 is available using v2 of AB2D while FHIR STU3 can be accessed via AB2D v1. Both are covered in the AB2D Data Dictionary.</p><p>A downloadable version of the AB2D <a href='/assets/downloads/ab2d-data-dictionary.xlsx' alt='AB2D Data Dictionary Spreadsheet'>Data Dictionary</a> is available.</p>",
   "sections": [
     {
       "title": "Claim ID",
@@ -4088,7 +4088,6 @@
           "ccw_column_name": "DMERC_LINE_PRCNG_STATE_CD",
           "type_size": "CHAR(2)"
         },
-
         {
           "field_name": "<div class='number-marker'>7</div> Place Of Service Code",
           "field_description": "The code indicating the place of service, as defined in the Medicare Carrier Manual, for this line item on the non-institutional claim.",
