@@ -21,7 +21,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
           A current CEO, CFO, or COO  (“Attestor”) from your organization first needs to agree (“attest") to our Claims Data Usage Protocols. These protocols include <a href="https://www.federalregister.gov/documents/2019/04/16/2019-06822/medicare-and-medicaid-programs-policy-and-technical-changes-to-the-medicare-advantage-medicare#page-15745" target="_blank" rel="noopener">legal limitations on data use and disclosure.</a>
       </p>
       <p>
-          Log in to the <a href="https://hpms.cms.gov/app/ng/cda/attestations" target="_blank" rel="noopener">Health Plan Management System (HPMS)</a> and select <em>Claims Data Attestation</em> (under <em>Contract Management</em>). We encourage you to have multiple Attestors. This prevents gaps in access if Attestors leave the organization.
+          Log in to the <a href="https://hpms.cms.gov/app/ng/cda/attestations" target="_blank" rel="noopener">Health Plan Management System (HPMS)</a> and select <i>Claims Data Attestation</i> (under <i>Contract Management</i>). We encourage you to have multiple Attestors. This prevents gaps in access if Attestors leave the organization.
       </p>
       <div class="padding-top-4 usa-accordion usa-accordion--multiselectable" data-allow-multiple>
         <h3 class="usa-accordion__heading">
@@ -36,15 +36,15 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
         </h3>
         <div id="m-a1" class="usa-accordion__content usa-prose">
           <p>
-            Once you log in to the <a href="https://hpms.cms.gov/app/ng/cda/attestations" target="_blank" rel="noopener">HPMS</a> and select <em>Claims Data Attestation</em> (under <em>Contract Management</em>):
+            Once you log in to the <a href="https://hpms.cms.gov/app/ng/cda/attestations" target="_blank" rel="noopener">HPMS</a> and select <i>Claims Data Attestation</i> (under <i>Contract Management</i>):
           </p>
           <ol>
-            <li>Choose single, multiple, or all contracts in the <em>Contracts Without Attestation</em> window.</li>
-            <li>Select <em>Attest</em>.</li>
-            <li>Agree to the <em>Claims Data Usage Protocols</em>.</li>
+            <li>Choose single, multiple, or all contracts in the <i>Contracts Without Attestation</i> window.</li>
+            <li>Select <i>Attest</i>.</li>
+            <li>Agree to the <i>Claims Data Usage Protocols</i>.</li>
           </ol>
           <p>
-            To add multiple Attestors, follow the same steps and select <em>Re-attest</em> during step 2.
+            To add multiple Attestors, follow the same steps and select <i>Re-attest</i> during step 2.
           </p>
         </div>
         <h3 class="usa-accordion__heading">
