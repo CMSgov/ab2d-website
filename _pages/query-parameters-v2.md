@@ -23,6 +23,7 @@ HTTP query parameters filter or specify the claims data returned during requests
     <p>
         For organizations using V1, visit our <a href="{{ '/filter-claims-data-v1' | relative_url }}">V1 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
     </p>
+
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
@@ -52,75 +53,137 @@ Together, the _since and _until parameters allow you to pull data that was last 
   <caption class="usa-sr-only">Examples of default parameter behavior</caption>
     <thead>
         <tr>
-            <th scope="col">Parameters</th>
+            <th scope="col">Parameter settings</th>
             <th scope="col">Date range of export requests</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td data-label="Parameters"><b>_since</b> = not set <br> <b>_until</b> = not set</td>
-            <td data-label="Date range of export requests"><b>From</b> last successful and fully downloaded job date <b>to</b> current date</td>
+            <td data-label="Parameters">
+                <p><b>_since</b> = not set</p>
+                <p><b>_until</b> = not set</p>
+            </td>
+            <td data-label="Date range of export requests">
+                <p><b>From</b> last successful downloaded job date</p>
+                <p><b>to</b> current date</p>
+            </td>
         </tr>
         <tr>
-            <td data-label="Parameters"><b>_since</b> = 1/1/2023 <br> <b>_until</b> = not set</td>
-            <td data-label="Date range of export requests"><b>From</b> 1/1/2023 <b>to</b> current date</td>
+            <td data-label="Parameters">
+                <p><b>_since</b> = 1/1/2023</p>
+                <p><b>_until</b> = not set</p>
+            </td>
+            <td data-label="Date range of export requests">
+                <p><b>From</b> 1/1/2023</p>
+                <p><b>to</b> current date</p>
+            </td>
         </tr>
         <tr>
-            <td data-label="Parameters"><b>_since</b> = not set <br> <b>_until</b> = 1/1/2024</td>
-            <td data-label="Date range of export requests"><b>From</b> last successfully and fully downloaded job date <b>to</b> 1/1/2024</td>
+            <td data-label="Parameters">
+                <p><b>_since</b> = not set</p>
+                <p><b>_until</b> = 1/1/2024</p>
+            </td>
+            <td data-label="Date range of export requests">
+                <p><b>From</b> last successfully downloaded job date </p>
+                <p><b>to</b> 1/1/2024</p>
+            </td>
         </tr>
         <tr>
-            <td data-label="Parameters"><b>_since</b> = 1/1/2023 <br> <b>_until</b> = 1/1/2024</td>
-            <td data-label="Date range of export requests"><b>From</b> 1/1/2023 <b>to</b> 1/1/2024</td>
+            <td data-label="Parameters">
+                <p><b>_since</b> = 1/1/2023</p>
+                <p><b>_until</b> = 1/1/2024</p>
+            </td>
+            <td data-label="Date range of export requests">
+                <p><b>From</b> 1/1/2023 </p>
+                <p><b>to</b> 1/1/2024</p>
+            </td>
         </tr>
     </tbody>
 </table>
 
-### Valid and invalid parameter values
+### Example: valid parameter value
 
 <table class="usa-table usa-table--stacked usa-table--borderless">
-  <caption class="usa-sr-only">Valid and invalid parameter values</caption>
+  <caption class="usa-sr-only">Example: valid parameter value</caption>
     <thead>
         <tr>
             <th scope="col">_since datetime</th>
             <th scope="col">_until datetime</th>
-            <th scope="col">Is it valid?</th>
-            <th scope="col">Why?</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td data-label="_since datetime">2020-10-10T00:00:00</td>
-            <td data-label="_until datetime">2020-10-20T00:00:00</td>
-            <td data-label="Is it valid?">No</td>
-            <td data-label="Why?">A time zone must be provided with the datetime.</td>
-        </tr>
-        <tr>
-            <td data-label="_since datetime">2019-12-30T00:00:00+00:00</td>
-            <td data-label="_until datetime">2020-01-14T00:00:00+00:00</td>
-            <td data-label="Is it valid?">No</td>
-            <td data-label="Why?">The _since datetime is before January 1, 2020. The job will still run, but the datetime will be replaced with the default.</td>
-        </tr>
-        <tr>
-            <td data-label="_since datetime">2020-10-10T16:00:00+00:00</td>
-            <td data-label="_until datetime">3000-10-10T16:00:00+00:00</td>
-            <td data-label="Is it valid?">No</td>
-            <td data-label="Why?">The _until datetime is in the future. The job will still run, but the parameter value will be replaced with the current date.</td>
-        </tr>
-        <tr>
-            <td data-label="_since datetime">2020-10-10T09:00:00-08:00</td>
-            <td data-label="_until datetime">2019-10-10T07:00:00-08:00</td>
-            <td data-label="Is it valid?">No</td>
-            <td data-label="Why?">The _until datetime is before the _since datetime. No data will be exported.</td>
-        </tr>
-        <tr>
-            <td data-label="_since datetime">2020-10-10T03:00:00-06:00</td>
-            <td data-label="_until datetime">2021-10-10T06:00:00-06:00</td>
-            <td data-label="Is it valid?">Yes</td>
-            <td data-label="Why?">The _until datetime is after the _since datetime. The datetimes are valid and follow the ISO format with time zones.</td>
-        </tr>
+        <td data-label="_since datetime">2020-10-10T03:00:00-06:00</td>
+        <td data-label="_until datetime">2021-10-10T06:00:00-06:00</td>
     </tbody>
 </table>
+
+The _until datetime is after the _since datetime. The datetimes are valid and follow the ISO format with time zones.
+
+### Example: invalid parameter values
+
+<table class="usa-table usa-table--stacked usa-table--borderless">
+  <caption class="usa-sr-only">Example: invalid parameter value</caption>
+    <thead>
+        <tr>
+            <th scope="col">_since datetime</th>
+            <th scope="col">_until datetime</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td data-label="_since datetime">2020-10-10T00:00:00</td>
+        <td data-label="_until datetime">2020-10-20T00:00:00</td>
+    </tbody>
+</table>
+
+A time zone must be provided with the datetime.
+
+<table class="usa-table usa-table--stacked usa-table--borderless">
+  <caption class="usa-sr-only">Example: invalid parameter value</caption>
+    <thead>
+        <tr>
+            <th scope="col">_since datetime</th>
+            <th scope="col">_until datetime</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td data-label="_since datetime">2019-12-30T00:00:00+00:00</td>
+        <td data-label="_until datetime">2020-01-14T00:00:00+00:00</td>
+    </tbody>
+</table>
+
+The _since datetime is before January 1, 2020. The job will still run, but the datetime will be replaced with the default.
+
+<table class="usa-table usa-table--stacked usa-table--borderless">
+  <caption class="usa-sr-only">Example: invalid parameter value</caption>
+    <thead>
+        <tr>
+            <th scope="col">_since datetime</th>
+            <th scope="col">_until datetime</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td data-label="_since datetime">2020-10-10T16:00:00+00:00</td>
+        <td data-label="_until datetime">3000-10-10T16:00:00+00:00</td>
+    </tbody>
+</table>
+
+The _until datetime is in the future. The job will still run, but the parameter value will be replaced with the current date.
+
+<table class="usa-table usa-table--stacked usa-table--borderless">
+  <caption class="usa-sr-only">Example: invalid parameter value</caption>
+    <thead>
+        <tr>
+            <th scope="col">_since datetime</th>
+            <th scope="col">_until datetime</th>
+        </tr>
+    </thead>
+    <tbody>
+            <td data-label="_since datetime">2020-10-10T09:00:00-08:00</td>
+            <td data-label="_until datetime">2019-10-10T07:00:00-08:00</td>
+    </tbody>
+</table>
+
+The _until datetime is before the _since datetime. No data will be exported.
 
 ### Parameter scenario for _since and _until
 
