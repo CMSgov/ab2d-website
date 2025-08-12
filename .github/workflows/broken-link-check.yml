@@ -12,38 +12,45 @@ on:
 
 jobs:
   broken-link-check:
-    runs-on: codebuild-ab2d-static-site-${{github.run_id}}-${{github.run_attempt}}
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: codebuild-ab2d-website-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
       - name: Configure AWS Credentials
+        # Check Prod if no "deploy_path" (schedule, workflow_dispatch)
         if: ${{ inputs.deploy_path == '' }}
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.PROD_AWS_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-prod-github-actions
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-prod-github-actions
 
       - name: Fetch Production AWS Parameters
+        # Check Prod if no "deploy_path" (schedule, workflow_dispatch)
         if: ${{ inputs.deploy_path == '' }}
         uses: cmsgov/cdap/actions/aws-params-env-action@main
         with:
           params: |
-            TARGET_BUCKET=/ab2d/prod/static_site
+            TARGET_BUCKET=/ab2d/prod/web/nonsensitive/s3-bucket
 
       - name: Configure AWS Credentials
+        # Check Dev if "deploy_path" is set (workflow_call)
         if: ${{ inputs.deploy_path != '' }}
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.STAGE_AWS_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-dev-github-actions
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
 
       - name: Fetch Production AWS Parameters
+        # Check Dev if "deploy_path" is set (workflow_call)
         if: ${{ inputs.deploy_path != '' }}
         uses: cmsgov/cdap/actions/aws-params-env-action@main
         with:
           params: |
-            TARGET_BUCKET=/ab2d/stage/static_site
+            TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
 
-      - name: Download Dev Bucket
+      - name: Download Site Contents
         run: |
           aws s3 sync s3://${TARGET_BUCKET}/${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}} .
 
