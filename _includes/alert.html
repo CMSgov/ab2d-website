@@ -3,8 +3,9 @@
     usa-alert--{{ include.variant }}
     {% if include.slim %}usa-alert--slim{% endif %}
     {% if include.icon == false %}usa-alert--no-icon{% endif %}
-    {% if include.classNames %}{{ include.classNames }}{% endif %}" {% if include.role %}role="{{ include.role }}" {%
-  endif %}>
+    {% if include.classNames %}{{ include.classNames }}{% endif %}"
+  {% if include.role %}role="{{ include.role }}"{% endif %}
+>
   <div class="usa-alert__body">
     {% if include.heading %}
     {{ include.heading }}

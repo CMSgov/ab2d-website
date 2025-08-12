@@ -1,9 +1,21 @@
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ page.description }}">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="{{ page.description }}"
+    >
+    <meta
+        http-equiv="Content-Type"
+        content="text/html; charset=UTF-8"
+    >
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
 
     {% assign seo_title = site.title %}
     {% if page.url != '/' %}
@@ -15,15 +27,37 @@
     {% endif %}
 
     <title>{{ seo_title }}</title>
-    <link rel="canonical" href="{{ page.url | absolute_url }}" />
-    <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
-    <link rel="sitemap" href="{{ '/sitemap.xml' | relative_url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+    <link
+        rel="canonical"
+        href="{{ page.url | absolute_url }}"
+    />
+    <link
+        rel="icon"
+        type="image/png"
+        href="{{ '/assets/img/favicon.png' | relative_url }}"
+    >
+    <link
+        rel="sitemap"
+        href="{{ '/sitemap.xml' | relative_url }}"
+    >
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet"
+    >
     <script src="{{ '/assets/uswds/js/uswds-init.min.js' | relative_url }}"></script>
-    <link href="{{ '/assets/uswds/css/styles.css' | relative_url }}?{{site.time | pubDate: '%s'}}" rel="stylesheet">
+    <link
+        href="{{ '/assets/uswds/css/styles.css' | relative_url }}?{{site.time | pubDate: '%s'}}"
+        rel="stylesheet"
+    >
 
     <!-- CMS Tealium/Google Analytics BEGIN -->
     <!--

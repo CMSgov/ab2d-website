@@ -3,8 +3,11 @@
     {% for item in site.data.api-docs-nav %}
 
     <li class="usa-sidenav__item">
-      <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}{{ 'usa-current' }}{% endif %}"
-        data-tealium="left_rail">
+      <a
+        href="{{ item.url | relative_url }}"
+        class="{% if page.url == item.url %}{{ 'usa-current' }}{% endif %}"
+        data-tealium="left_rail"
+      >
         {%- if item.icon -%}
         {%- include sprite.html icon=item.icon size="3" class="margin-right-05 text-middle" -%}
         {%- endif -%}
@@ -13,13 +16,19 @@
       <ul class="usa-sidenav__sublist">
         {% for child in item.children %}
         <li class="usa-sidenav__item">
-          <a href="{{ child.url | relative_url }}" class="{% if page.url == child.url %}{{ 'usa-current' }}{% endif %}"
-            data-tealium="left_rail">{{ child.name }}</a>
+          <a
+            href="{{ child.url | relative_url }}"
+            class="{% if page.url == child.url %}{{ 'usa-current' }}{% endif %}"
+            data-tealium="left_rail"
+          >{{ child.name }}</a>
           <ul class="usa-sidenav__sublist">
             {% for grandchild in child.children %}
             <li class="usa-sidenav__item">
-              <a href="{{ grandchild.url | relative_url }}"
-                class="{% if page.url == grandchild.url %}{{ 'usa-current' }}{% endif %}" data-tealium="left_rail">{{
+              <a
+                href="{{ grandchild.url | relative_url }}"
+                class="{% if page.url == grandchild.url %}{{ 'usa-current' }}{% endif %}"
+                data-tealium="left_rail"
+              >{{
                 grandchild.name }}</a>
             </li>
             {% endfor %}
@@ -30,9 +39,14 @@
     </li>
     {% endfor %}
     <li class="usa-sidenav__item">
-      <a href="https://github.com/CMSgov/ab2d" target="_blank" rel="noopener noreferrer" class="usa-nav-link"
-        style="display: block !important;" {% comment %} display block is needed here because USWDS adds display: inline
-        to external links {% endcomment %}>
+      <a
+        href="https://github.com/CMSgov/ab2d"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="usa-nav-link"
+        style="display: block !important;"
+        {% comment %} display block is needed here because USWDS adds display: inline to external links {% endcomment %}
+      >
         <span>
           {% include sprite.html icon="github" size="3" class="margin-right-05 text-middle" %}
           GitHub repo

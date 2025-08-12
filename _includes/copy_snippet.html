@@ -5,8 +5,11 @@
 <div class="bg-base-lightest border-1px border-base-lighter margin-y-2 position-relative">
   <div class="grid-row">
     <div class="tablet:grid-col-fill">
-      <div class="padding-left-2 padding-y-3 {% if can_copy %}padding-right-15{% else %}padding-right-2{% endif %}"
-        tabindex="0" style="overflow-x: auto;">
+      <div
+        class="padding-left-2 padding-y-3 {% if can_copy %}padding-right-15{% else %}padding-right-2{% endif %}"
+        tabindex="0"
+        style="overflow-x: auto;"
+      >
         <!-- TODO: Can we pass the language var to avoid these conditionals -->
         {%- if include.language == "json" -%}
         {%- highlight json %}{{ code }}{% endhighlight -%}
@@ -28,13 +31,21 @@
       </div>
     </div>
     {% if can_copy == true %}
-    <textarea class="usa-sr-only" id="code{{ nanosecond }}" readonly aria-hidden="true" tabindex="-1">
+    <textarea
+      class="usa-sr-only"
+      id="code{{ nanosecond }}"
+      readonly
+      aria-hidden="true"
+      tabindex="-1"
+    >
         {{- code | xml_escape -}}
     </textarea>
     <div class="position-absolute top-1 right-1 z-100">
-      <button data-tealium="copy_button"
+      <button
+        data-tealium="copy_button"
         class="usa-button usa-button--outline margin-0 bg-base-lightest hover:bg-base-lightest active:bg-base-lightest"
-        id="copybutton{{ nanosecond }}">Copy <span class="usa-sr-only">to clipboard</span></button>
+        id="copybutton{{ nanosecond }}"
+      >Copy <span class="usa-sr-only">to clipboard</span></button>
     </div>
     {% endif %}
   </div>
