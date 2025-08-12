@@ -88,7 +88,7 @@ description: "Perform more effective Medication Therapy Management with access t
       </div>
       <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-10 flex-align-center">
         <div class="tablet:grid-col">
-          <img src="{{ '/assets/img/data-analysis.svg' | relative_url }}" alt="data analysis illustration" />
+          <img src="{{ '/assets/img/data-analysis.svg' | relative_url }}" alt="" />
         </div>
         <div class="tablet:grid-col padding-top-2">
           <h2>Using the data</h2>

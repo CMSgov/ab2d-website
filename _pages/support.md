@@ -11,7 +11,7 @@ show-side-nav: false
 
 <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-4 flex-align-center">
   <div class="tablet:grid-col tablet:order-2">
-    <img src="{{ '/assets/img/experts.svg' | relative_url }}" alt="customer support illustration" />
+    <img src="{{ '/assets/img/experts.svg' | relative_url }}" alt="" />
   </div>
   <div class="tablet:grid-col tablet:order-1 padding-top-2">
     <h2>Contact Us</h2>

@@ -9,7 +9,7 @@ show-side-nav: false
 
 <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-8 margin-bottom-10 flex-align-center">
   <div class="tablet:grid-col-5 tablet:order-2">
-    <img src="{{ '/assets/img/data-specialist.svg' | relative_url }}" alt="data analysis illustration" class="padding-x-6 padding-y-2"/>
+    <img src="{{ '/assets/img/data-specialist.svg' | relative_url }}" alt="" class="padding-x-6 padding-y-2"/>
   </div>
   <div class="tablet:grid-col tablet:order-1" >
     <h1>{{ page.page_title }}</h1>
@@ -125,7 +125,7 @@ show-side-nav: false
 
 <div class="grid-row grid-gap-4 desktop:grid-gap-6 padding-y-8 flex-align-center">
   <div class="tablet:grid-col-5 tablet:order-1">
-    <img src="{{ '/assets/img/production.svg' | relative_url }}" alt="data analysis illustration" class="padding-x-6 padding-y-2"/>
+    <img src="{{ '/assets/img/production.svg' | relative_url }}" alt="" class="padding-x-6 padding-y-2"/>
   </div>
   <div class="tablet:grid-col-fill tablet:order-2">
     <h2>History of the AB2D API</h2>
