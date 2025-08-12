@@ -53,24 +53,26 @@ jobs:
           params: |
             TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
 
-      - name: Download Dev Contents
+      - name: Download Site Contents
         run: |
           aws s3 sync s3://${TARGET_BUCKET}${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}} .
 
       - name: Check for Broken Prod Links
         # Check Prod if no "deploy_path" (schedule, workflow_dispatch)
         if: ${{ inputs.deploy_path == '' }}
+        id: lychee-prod
         uses: lycheeverse/lychee-action@v2
         with:
           jobSummary: true
           fail: true
-          args: --base ab2d.cms.gov --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'
+          args: --base https://ab2d.cms.gov --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'
 
       - name: Check for Broken Dev Links
         # Check Dev if "deploy_path" is set (workflow_call)
         if: ${{ inputs.deploy_path != '' }}
+        id: lychee-dev
         uses: lycheeverse/lychee-action@v2
         with:
           jobSummary: true
           fail: true
-          args: --base dveopzwo661ye.cloudfront.net --remap 'ab2d\.cms\.gov dveopzwo661ye.cloudfront.net' --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'
+          args: --base https://dveopzwo661ye.cloudfront.net --remap 'https://ab2d\.cms\.gov https://dveopzwo661ye.cloudfront.net' --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'
