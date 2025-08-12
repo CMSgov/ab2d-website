@@ -71,7 +71,7 @@ show-side-nav: false
           {% include sprite.html icon="check_circle" class="text-green" %}
         </div>
         <div class="usa-icon-list__content">
-          Other purposes [that qualify] as “fraud and abuse detection or compliance activities”
+          Other purposes that qualify as “fraud and abuse detection or compliance activities”
         </div>
       </li>
     </ul>
@@ -141,38 +141,78 @@ show-side-nav: false
 ## What are the other CMS claims-based FHIR APIs?
 
 <ul class="usa-card-group flex-justify-center padding-y-4">
-  {% include card.html
-    icon="/assets/img/logo-bcda.svg"
-    img-alt="BCDA logo"
-    heading-level="h3"
-    title="Beneficiary Claims Data API"
-    body="The Beneficiary Claims Data API (BCDA) helps Alternative Payment Model participants provide high-quality, coordinated care by making it easier to access bulk Medicare Parts A, B, and D claims data."
-    footer-link="https://bcda.cms.gov/"
-    footer-link-text="Visit BCDA"
-    button=true
-  %}
-
-  {% include card.html
-    icon="/assets/img/logo-bluebutton.svg"
-    img-alt="BB 2.0 logo"
-    heading-level="h3"
-    title="Blue Button 2.0"
-    body="The Blue Button 2.0 (BB2.0) API enables enrollees to connect their Medicare claims data to applications, services, and research programs they trust."
-    footer-link="https://bluebutton.cms.gov/"
-    footer-link-text="Visit BB2.0"
-    button=true
-  %}
-
-  {% include card.html
-    icon="/assets/img/logo-dpc.svg"
-    img-alt="DPC logo"
-    heading-level="h3"
-    title="Data at the Point of Care"
-    body="The Data at the Point of Care (DPC) API enables healthcare providers with claims data to fill in gaps in patient history at the point of care and deliver high-quality services to Medicare enrollees."
-    footer-link="https://dpc.cms.gov/"
-    footer-link-text="Visit DPC"
-    button=true
-  %}
+    <li class="usa-card tablet:grid-col-6 desktop:grid-col-4">
+      <div class="usa-card__container">
+        <div class="usa-card__header">
+          <h3 class="usa-card__heading">Beneficiary Claims Data API</h3>
+        </div>
+        <div class="usa-card__media usa-card__media--inset">
+          <div class="usa-card__img text-center">
+            <img
+              src="{{ '/assets/img/logo-bcda.svg' | relative_url }}"
+              alt="BCDA logo"
+              class="maxw-15 margin-x-auto"
+            />
+          </div>
+        </div>
+        <div class="usa-card__body">
+          <p>
+            The Beneficiary Claims Data API (BCDA) helps Alternative Payment Model participants provide high-quality, coordinated care by making it easier to access bulk Medicare Parts A, B, and D claims data.
+          </p>
+        </div>
+        <div class="usa-card__footer">
+          <a href="https://bcda.cms.gov/" target="_blank" rel="noopener noreferrer" class="usa-button">Visit BCDA</a>
+        </div>
+      </div>
+  </li>
+      <li class="usa-card tablet:grid-col-6 desktop:grid-col-4">
+      <div class="usa-card__container">
+        <div class="usa-card__header">
+          <h3 class="usa-card__heading">Blue Button 2.0</h3>
+        </div>
+        <div class="usa-card__media usa-card__media--inset">
+          <div class="usa-card__img text-center">
+            <img
+              src="{{ '/assets/img/logo-bluebutton.svg' | relative_url }}"
+              alt="Blue button 2.0 logo"
+              class="maxw-15 margin-x-auto"
+            />
+          </div>
+        </div>
+        <div class="usa-card__body">
+          <p>
+            The Blue Button 2.0 (BB2.0) API enables enrollees to connect their Medicare claims data to the applications, services, and research programs they trust.
+          </p>
+        </div>
+        <div class="usa-card__footer">
+          <a href="https://bluebutton.cms.gov/" target="_blank" rel="noopener noreferrer" class="usa-button">Visit BB2.0</a>
+        </div>
+      </div>
+  </li>
+      <li class="usa-card tablet:grid-col-6 desktop:grid-col-4">
+      <div class="usa-card__container">
+        <div class="usa-card__header">
+          <h3 class="usa-card__heading">Data at the Point of Care</h3>
+        </div>
+        <div class="usa-card__media usa-card__media--inset">
+          <div class="usa-card__img text-center">
+            <img
+              src="{{ '/assets/img/logo-dpc.svg' | relative_url }}"
+              alt="DPC logo"
+              class="maxw-15 margin-x-auto"
+            />
+          </div>
+        </div>
+        <div class="usa-card__body">
+          <p>
+            The Data at the Point of Care (DPC) API enables healthcare providers with claims data to fill in gaps in patient history at the point of care and deliver high-quality care to Medicare enrollees.
+          </p>
+        </div>
+        <div class="usa-card__footer">
+          <a href="https://dpc.cms.gov/" target="_blank" rel="noopener noreferrer" class="usa-button">Visit DPC</a>
+        </div>
+      </div>
+  </li>
 </ul>
 
 {% include feedback-form.html url="3fc3aaf7" %}
