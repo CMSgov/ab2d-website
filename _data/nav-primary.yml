@@ -35,13 +35,13 @@
       url: /ab2d-data
 
     - name: Claims Data Details
-      url: /ab2d-data/claims-data-details
+      url: /claims-data-details
 
     - name: How to Filter Claims Data - V1
-      url: /ab2d-data/filter-claims-data-v1
+      url: /filter-claims-data-v1
 
     - name: How to Filter Claims Data - V2
-      url: /ab2d-data/filter-claims-data-v2
+      url: /filter-claims-data-v2
 
 - name: Production Access
   url: /production-access
