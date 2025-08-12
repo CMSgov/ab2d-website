@@ -12,22 +12,22 @@
       url: /api-documentation
 
     - name: How to Get a Bearer Token
-      url: /api-documentation/get-a-bearer-token
+      url: /get-a-bearer-token
 
     - name: Setup Instructions
-    - url: /setup-instructions
+      url: /setup-instructions
 
     - name: How to Access Sandbox Data
-      url: /api-documentation/access-sandbox-data
+      url: /access-sandbox-data
 
     - name: How to Access Production Data
-      url: /api-documentation/access-production-data
+      url: /access-production-claims-data
 
     - name: HTTP Query Parameters - V2
-      url: /api-documentation/query-parameters-v2
+      url: /query-parameters-v2
 
     - name: Troubleshooting Guide
-      url: /api-documentation/troubleshooting-guide
+      url: /troubleshooting-guide
 
 - name: AB2D Data
   children:
