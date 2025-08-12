@@ -72,7 +72,7 @@ jobs:
             DISTRIBUTION_ID=/ab2d/dev/web/nonsensitive/distribution-id
 
       - name: Deploy the site
-        # This $TARGET_BUCKET comes from the step above, cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
+        # This $TARGET_BUCKET comes from the step above, cmsgov/cdap/actions/aws-params-env-action@main
         run: |
           aws s3 sync _site/ s3://$TARGET_BUCKET/${{ inputs.deploy_path }}/ --delete
 

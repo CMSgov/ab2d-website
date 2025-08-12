@@ -22,7 +22,3 @@ jobs:
   a11y-check:
     needs: deploy
     uses: ./.github/workflows/a11y-check.yml
-
-  # TODO: Investigate how this is working on other projects
-  # broken-link-check:
-  #   uses: ./.github/workflows/broken-link-check.yml
