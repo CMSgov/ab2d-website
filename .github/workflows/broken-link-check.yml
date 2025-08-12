@@ -62,7 +62,7 @@ jobs:
         id: lychee
         env:
           BASE_URL: --base-url ${{ inputs.deploy_path && 'dveopzwo661ye.cloudfront.net' || 'ab2d.cms.gov' }}
-          REMAP: ${{ inputs.deploy_path && '--remap "ab2d.cms.gov dveopzwo661ye.cloudfront.net"' }}
+          REMAP: ${{ inputs.deploy_path && '--remap ''ab2d.cms.gov dveopzwo661ye.cloudfront.net''' }}
         with:
           jobSummary: true
           fail: true
