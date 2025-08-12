@@ -55,7 +55,7 @@ jobs:
 
       - name: Download Site Contents
         run: |
-          aws s3 sync s3://${TARGET_BUCKET}/${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}} .
+          aws s3 sync s3://${TARGET_BUCKET}${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}} .
 
       - name: "Check for broken links"
         uses: lycheeverse/lychee-action@v2
