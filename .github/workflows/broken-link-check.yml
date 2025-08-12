@@ -15,7 +15,7 @@ jobs:
     runs-on: codebuild-ab2d-website-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
-      - name: Configure AWS Credentials
+      - name: Configure Prod AWS Credentials
         # Check Prod if no "deploy_path" (schedule, workflow_dispatch)
         if: ${{ inputs.deploy_path == '' }}
         uses: aws-actions/configure-aws-credentials@v4
@@ -23,15 +23,17 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-prod-github-actions
 
-      - name: Fetch Production AWS Parameters
+      - name: Fetch Prod AWS Parameters
         # Check Prod if no "deploy_path" (schedule, workflow_dispatch)
         if: ${{ inputs.deploy_path == '' }}
         uses: cmsgov/cdap/actions/aws-params-env-action@main
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
             TARGET_BUCKET=/ab2d/prod/web/nonsensitive/s3-bucket
 
-      - name: Configure AWS Credentials
+      - name: Configure Dev AWS Credentials
         # Check Dev if "deploy_path" is set (workflow_call)
         if: ${{ inputs.deploy_path != '' }}
         uses: aws-actions/configure-aws-credentials@v4
@@ -39,10 +41,12 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
 
-      - name: Fetch Production AWS Parameters
+      - name: Fetch Dev AWS Parameters
         # Check Dev if "deploy_path" is set (workflow_call)
         if: ${{ inputs.deploy_path != '' }}
         uses: cmsgov/cdap/actions/aws-params-env-action@main
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
         with:
           params: |
             TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
