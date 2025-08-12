@@ -6,7 +6,8 @@
 
   <div class="usa-footer__primary-section">
     <h2 class="usa-sr-only">Site footer</h2>
-    <div> {% comment %} this empty div is intentional to avoid the specificity of
+    <div>
+      {% comment %} this empty div is intentional to avoid the specificity of
       ".usa-footer__secondary-section>.grid-container", which prevents certain utilities from working like the class in
       the dive below {% endcomment %}
       <div class="grid-container tablet:padding-x-3">
@@ -14,17 +15,7 @@
           <div class="usa-footer__logo desktop:grid-col-auto">
             <div class="mobile-lg:grid-col-auto">
               <div class="padding-y-2">
-                <a
-                  href="https://groups.google.com/u/0/g/cms-ab2d-api"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="usa-button margin-right-0"
-                  data-tealium="footer"
-                  style="word-wrap:none;"
-                >
-                  Join the Google Group
-                  {% include sprite.html icon="launch" size="2" %}
-                </a>
+                <p class="usa-footer__logo-heading line-height-sans-6 margin-y-0">CMS Claims-Based FHIR APIs</p>
               </div>
             </div>
           </div>
