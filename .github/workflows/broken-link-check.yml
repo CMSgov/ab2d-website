@@ -66,4 +66,4 @@ jobs:
         with:
           jobSummary: true
           fail: true
-          args: --base-url dveopzwo661ye.cloudfront.net --remap 'ab2d.cms.gov dveopzwo661ye.cloudfront.net' --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'
+          args: --base-url dveopzwo661ye.cloudfront.net --remap 'ab2d\.cms\.gov dveopzwo661ye.cloudfront.net' --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'
