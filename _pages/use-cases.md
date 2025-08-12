@@ -16,7 +16,7 @@ show-side-nav: false
   </div>
   <div class="grid-col-fill">
     <h2>Target MTM program enrollees</h2>
-    <p class="usa-intro text-balance measure-4">Identify Medication Therapy Management enrollees by using data for a more thorough search capability.</p>
+    <p class="usa-intro measure-4">Identify Medication Therapy Management enrollees by using data for a more thorough search capability.</p>
     <p>AB2D data can help you identify enrollees who may be eligible for your Part D <a href="https://www.cms.gov/medicare/coverage/prescription-drug-coverage-contracting/medication-therapy-management" target="_blank" rel="noopener">Medication Therapy Management (MTM)</a> programs. You can use AB2D data to help identify enrollees who meet the MTM targeting criteria, like those with certain chronic diseases or diagnoses.</p>
   </div>
 </div>
@@ -27,7 +27,7 @@ show-side-nav: false
   </div>
   <div class="grid-col-fill">
     <h2>Enhance MTM consultations</h2>
-    <p class="usa-intro text-balance measure-4">Leverage insights from enrollee medical histories for more effective services.</p>
+    <p class="usa-intro measure-4">Leverage insights from enrollee medical histories for more effective services.</p>
     <p>Prescription Drug Plan (PDP) sponsors can use AB2D data to get a holistic overview of enrollees' health histories. This allows for more informed discussions between the MTM provider and enrollee during comprehensive or targeted medication reviews:</p>
     <ul>
       <li>Promote safe and effective medication use.</li>
@@ -46,7 +46,7 @@ show-side-nav: false
   </div>
   <div class="grid-col-fill">
     <h2>Boost health outcomes</h2>
-    <p class="usa-intro text-balance measure-4">Enhance MTM enrollee health and program results by improving medication use and adherence.</p>
+    <p class="usa-intro measure-4">Enhance MTM enrollee health and program results by improving medication use and adherence.</p>
     <p>Part D <a href="https://www.cms.gov/medicare/health-drug-plans/part-c-d-performance-data" target="_blank" rel="noopener">Star Ratings</a> evaluate the quality of services received by enrollees in your plan. The Centers for Medicare & Medicaid Services (CMS) offers incentives to PDP sponsors with high Star Ratings:</p>
     <ul>
       <li>CMS highlights contracts with an overall rating of 5 stars.</li>
@@ -63,7 +63,7 @@ show-side-nav: false
   </div>
   <div class="grid-col-fill">
     <h2>Prevent fraud, waste, and abuse</h2>
-    <p class="usa-intro text-balance measure-4">Identify suspicious activity from providers or suppliers through access to mass data.</p>
+    <p class="usa-intro measure-4">Identify suspicious activity from providers or suppliers through access to mass data.</p>
     <p>Find suspicious patterns from providers or suppliers to reduce fraud and financial losses. By adding AB2D’s data to your existing data streams, you can conduct trend analysis and search mass enrollee data to quickly identify:</p>
     <ul>
       <li>duplicate billing</li>

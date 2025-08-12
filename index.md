@@ -9,7 +9,7 @@ description: "Perform more effective Medication Therapy Management with access t
 <div class="usa-section--dark bg-primary bg-primary-gradient">
   <div class="grid-container padding-y-8">
     <h1 class="hero-title font-body-3xl measure-1 margin-bottom-0 line-height-sans-2 text-semibold text-balance">
-        Improve Medication Therapy with Medicare Claims Data
+      Improve Medication Therapy with Medicare Claims Data
     </h1>
     <p class="hero-paragraph line-height-sans-4 measure-5">
     AB2D is an Application Programming Interface (API) for Prescription Drug
