@@ -5,7 +5,7 @@ on:
 
 jobs:
   a11y-check:
-    runs-on: ubuntu-latest
+    runs-on: codebuild-ab2d-website-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
       # Step 1: Checkout the repo
