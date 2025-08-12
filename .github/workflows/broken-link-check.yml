@@ -61,8 +61,9 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         id: lychee
         env:
-          DOMAIN: ${{ inputs.deploy_path && 'dveopzwo661ye.cloudfront.net' || 'ab2d.cms.gov' }}
+          BASE_URL: --base-url ${{ inputs.deploy_path && 'dveopzwo661ye.cloudfront.net' || 'ab2d.cms.gov' }}
+          REMAP: ${{ inputs.deploy_path && '--remap ab2d.cms.gov dveopzwo661ye.cloudfront.net' }}
         with:
           jobSummary: true
           fail: true
-          args: --base $DOMAIN --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'
+          args: $DOMAIN $REMAP --no-progress --accept '200..=299, 401, 403, 405' './**/*.html'
