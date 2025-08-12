@@ -12,6 +12,8 @@ on:
 
 jobs:
   broken-link-check:
+    permissions:
+      id-token: write
     runs-on: codebuild-ab2d-website-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
