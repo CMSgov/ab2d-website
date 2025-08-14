@@ -28,7 +28,7 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
 
       - name: Fetch Non-Production AWS Parameters
-        uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
         with:
           params: |
             TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
@@ -44,7 +44,7 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-prod-github-actions
 
       - name: Fetch Production AWS Parameters
-        uses: cmsgov/ab2d-bcda-dpc-platform/actions/aws-params-env-action@main
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
         with:
           params: |
             TARGET_BUCKET=/ab2d/prod/web/nonsensitive/s3-bucket
