@@ -20,7 +20,7 @@ layout: default
     id="page-content"
     class="grid-col-fill"
   >
-    <div class="padding-y-6 padding-left-205">{{ content }}</div>
+    <div class="padding-y-6 desktop:padding-left-205">{{ content }}</div>
 
     {% if page.feedback_id %}
     {% include feedback-form.html id=page.feedback_id %}

@@ -49,8 +49,7 @@ Together, the _since and _until parameters allow you to pull data that was last 
 
 ### Examples of default parameter behavior
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-  <caption class="usa-sr-only">Examples of default parameter behavior</caption>
+<table class="usa-table usa-table--stacked usa-table--borderless width-full">
     <thead>
         <tr>
             <th scope="col">Parameter settings</th>
@@ -60,42 +59,50 @@ Together, the _since and _until parameters allow you to pull data that was last 
     <tbody>
         <tr>
             <td data-label="Parameters">
-                <p><b>_since</b> = not set</p>
-                <p><b>_until</b> = not set</p>
+                <b>_since</b> = not set
+                <br>
+                <b>_until</b> = not set
             </td>
             <td data-label="Date range of export requests">
-                <p><b>From</b> last successful downloaded job date</p>
-                <p><b>to</b> current date</p>
+                <b>From</b> last successful downloaded job date
+                <br>
+                <b>to</b> current date
             </td>
         </tr>
         <tr>
             <td data-label="Parameters">
-                <p><b>_since</b> = 1/1/2023</p>
-                <p><b>_until</b> = not set</p>
+                <b>_since</b> = 1/1/2023
+                <br>
+                <b>_until</b> = not set
             </td>
             <td data-label="Date range of export requests">
-                <p><b>From</b> 1/1/2023</p>
-                <p><b>to</b> current date</p>
+                <b>From</b> 1/1/2023
+                <br>
+                <b>to</b> current date
             </td>
         </tr>
         <tr>
             <td data-label="Parameters">
-                <p><b>_since</b> = not set</p>
-                <p><b>_until</b> = 1/1/2024</p>
+                <b>_since</b> = not set
+                <br>
+                <b>_until</b> = 1/1/2024
             </td>
             <td data-label="Date range of export requests">
-                <p><b>From</b> last successfully downloaded job date </p>
-                <p><b>to</b> 1/1/2024</p>
+                <b>From</b> last successfully downloaded job date
+                <br>
+                <b>to</b> 1/1/2024
             </td>
         </tr>
         <tr>
             <td data-label="Parameters">
-                <p><b>_since</b> = 1/1/2023</p>
-                <p><b>_until</b> = 1/1/2024</p>
+                <b>_since</b> = 1/1/2023
+                <br>
+                <b>_until</b> = 1/1/2024
             </td>
             <td data-label="Date range of export requests">
-                <p><b>From</b> 1/1/2023 </p>
-                <p><b>to</b> 1/1/2024</p>
+                <b>From</b> 1/1/2023
+                <br>
+                <b>to</b> 1/1/2024
             </td>
         </tr>
     </tbody>
@@ -103,8 +110,7 @@ Together, the _since and _until parameters allow you to pull data that was last 
 
 ### Example: valid parameter value
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-  <caption class="usa-sr-only">Example: valid parameter value</caption>
+<table class="usa-table usa-table--stacked usa-table--borderless width-full">
     <thead>
         <tr>
             <th scope="col">_since datetime</th>
@@ -116,13 +122,11 @@ Together, the _since and _until parameters allow you to pull data that was last 
         <td data-label="_until datetime">2021-10-10T06:00:00-06:00</td>
     </tbody>
 </table>
-
 The _until datetime is after the _since datetime. The datetimes are valid and follow the ISO format with time zones.
 
 ### Example: invalid parameter values
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-  <caption class="usa-sr-only">Example: invalid parameter value</caption>
+<table class="usa-table usa-table--stacked usa-table--borderless width-full">
     <thead>
         <tr>
             <th scope="col">_since datetime</th>
@@ -137,8 +141,7 @@ The _until datetime is after the _since datetime. The datetimes are valid and fo
 
 A time zone must be provided with the datetime.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-  <caption class="usa-sr-only">Example: invalid parameter value</caption>
+<table class="usa-table usa-table--stacked usa-table--borderless width-full">
     <thead>
         <tr>
             <th scope="col">_since datetime</th>
@@ -153,8 +156,7 @@ A time zone must be provided with the datetime.
 
 The _since datetime is before January 1, 2020. The job will still run, but the datetime will be replaced with the default.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-  <caption class="usa-sr-only">Example: invalid parameter value</caption>
+<table class="usa-table usa-table--stacked usa-table--borderless width-full">
     <thead>
         <tr>
             <th scope="col">_since datetime</th>
@@ -169,8 +171,7 @@ The _since datetime is before January 1, 2020. The job will still run, but the d
 
 The _until datetime is in the future. The job will still run, but the parameter value will be replaced with the current date.
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-  <caption class="usa-sr-only">Example: invalid parameter value</caption>
+<table class="usa-table usa-table--stacked usa-table--borderless width-full">
     <thead>
         <tr>
             <th scope="col">_since datetime</th>
