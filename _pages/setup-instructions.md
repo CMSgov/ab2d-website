@@ -67,19 +67,19 @@ jq --version
 In this example, we will be using the Linux Subsystem for Windows 10.
 
 <ol>
-    <li>Select <em>Type here to search</em> near the bottom left of your Windows desktop.</li>
+    <li>Select <i>Type here to search</i> near the bottom left of your Windows desktop.</li>
     <li>Enter the following in the text box:
 {% capture setupSnippet %}{% raw %}
 windows features
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
-    <li>Select <em>Turn Windows features on or off</em> from the leftmost panel.</li>
-    <li>Scroll down to and check <em>Windows Subsystem for Linux</em>. If it is already installed, skip to step 10 to install Ubuntu.
+    <li>Select <i>Turn Windows features on or off</i> from the leftmost panel.</li>
+    <li>Scroll down to and check <i>Windows Subsystem for Linux</i>. If it is already installed, skip to step 10 to install Ubuntu.
 </li>
-    <li>Select <em>OK</em> on the <em>Windows Features</em> window.</li>
+    <li>Select <i>OK</i> on the <i>Windows Features</i> window.</li>
     <li>Wait for the changes to complete. If installation is successful, skip to step 9.</li>
-    <li>If the installation is unsuccessful, open the PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting <em>Run as administrator</em>.</li>
+    <li>If the installation is unsuccessful, open the PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting <i>Run as administrator</i>.</li>
     <li>Enter the following in your terminal:
 {% capture setupSnippet %}{% raw %}
 wsl -- install
@@ -87,26 +87,26 @@ wsl -- install
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
     <li>When prompted, restart your system.</li>
-    <li>Select <em>Type here to search</em> again.</li>
+    <li>Select <i>Type here to search</i> again.</li>
     <li>Enter the following in the text box:
 {% capture setupSnippet %}{% raw %}
 microsoft store
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
-    <li>Select <em>Microsoft Store</em> from the leftmost panel.</li>
-    <li>Select <em>Search</em> on the <em>Microsoft Store</em> page.</li>
+    <li>Select <i>Microsoft Store</i> from the leftmost panel.</li>
+    <li>Select <i>Search</i> on the <i>Microsoft Store</i> page.</li>
     <li>Enter the following in the text box:
 {% capture setupSnippet %}{% raw %}
 linux
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>
-    <li>Select <em>Run Linux on Windows</em>.</li>
-    <li>Select <em>Ubuntu</em>.</li>
-    <li>Select <em>Get</em>.</li>
-    <li>Select <em>No, thanks</em> on the <em>Use across your devices</em> dialog. The installation will begin automatically.</li>
-    <li>Once the installation is complete, select <em>Launch</em>.</li>
+    <li>Select <i>Run Linux on Windows</i>.</li>
+    <li>Select <i>Ubuntu</i>.</li>
+    <li>Select <i>Get</i>.</li>
+    <li>Select <i>No, thanks</i> on the <i>Use across your devices</i> dialog. The installation will begin automatically.</li>
+    <li>Once the installation is complete, select <i>Launch</i>.</li>
     <li>When prompted, choose a username and password.</li>
     <li>If the installation is successful, you will have a prompt that looks like this:
 {% capture setupSnippet %}{% raw %}

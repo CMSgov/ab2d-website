@@ -39,7 +39,7 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
 
 <div class="grid-row grid-gap margin-y-6 tablet:grid-gap-0 tablet:margin-y-8 desktop:margin-y-10">
   <div class="grid-col-2 tablet:grid-col-3 text-center">
-    <img src="{{ '/assets/img/book.svg' | relative_url }}" alt="book illustration" />
+    <img src="{{ '/assets/img/book.svg' | relative_url }}" alt="" />
   </div>
   <div class="grid-col-fill tablet:grid-col-9">
     <h2>Data Dictionary</h2>
@@ -52,7 +52,7 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
 
 <div class="grid-row grid-gap margin-y-6 tablet:grid-gap-0 tablet:margin-y-8 desktop:margin-y-10">
   <div class="grid-col-2 tablet:grid-col-3 text-center">
-    <img src="{{ '/assets/img/paper.svg' | relative_url }}" alt="papers illustration" />
+    <img src="{{ '/assets/img/paper.svg' | relative_url }}" alt="" />
   </div>
   <div class="grid-col-fill tablet:grid-col-9">
     <h2>Sample files</h2>
@@ -66,7 +66,7 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
 
 <div class="grid-row grid-gap margin-y-6 tablet:grid-gap-0 tablet:margin-y-8 desktop:margin-y-10">
   <div class="grid-col-2 tablet:grid-col-3 text-center">
-    <img src="{{ '/assets/img/creativity.svg' | relative_url }}" alt="light bulb illustration" />
+    <img src="{{ '/assets/img/creativity.svg' | relative_url }}" alt="" />
   </div>
   <div class="grid-col-fill tablet:grid-col-9">
     <h2>Guides</h2>

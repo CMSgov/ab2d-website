@@ -37,7 +37,6 @@ main {
   h5,
   h6 {
     @include typeset-heading-base;
-    text-wrap: balance;
   }
 
   $elements: h1, h2, h3, h4, h5, h6, p, ul, ol;
@@ -95,8 +94,8 @@ main {
     @include typeset-link;
   }
 
-  ul:not([class]),
-  ol:not([class]) {
+  ul,
+  ol {
     @include usa-list;
 
     li {
@@ -106,10 +105,6 @@ main {
 
 }
 
-// Prevent orphaned words in short blocks of text
-.text-balance {
-  text-wrap: balance;
-}
 
 // Landing page hero background
 .bg-primary-gradient {
@@ -195,15 +190,10 @@ main {
 // Syntax highlighting (Pygments)
 .highlight {
   @include u-margin(0);
-  // @include u-padding(2);
+  width: fit-content;
 
   pre {
     @include u-margin(0);
-    @include u-padding-top(3);
-    @include u-padding-bottom(3);
-    @include u-padding-left(2);
-    @include u-padding-right(2);
-    overflow: auto;
   }
 
   // From PyData Sphinx
@@ -592,7 +582,6 @@ main {
   @include u-padding-right(15);
 }
 
-
 code.language-plaintext.highlighter-rouge,
 code.inline-code {
   background-color: color('base-lightest');
@@ -626,4 +615,19 @@ $external-href: '[href^="https"]:not([href*="ab2d.cms.gov"]):not([href*="github.
   &.usa-button {
     display: inline-block;
   }
+}
+
+// The following classes are added due to this issue: https: //github.com/uswds/uswds/issues/6486
+.usa-table--borderless thead th,
+.usa-table--borderless thead td {
+  border-bottom: 0px
+}
+
+.usa-table--borderless tbody tr:first-of-type th,
+.usa-table--borderless tbody tr:first-of-type td {
+  border-top: 2px solid #1b1b1b;
+}
+
+.usa-button {
+  line-height: 1.3;
 }

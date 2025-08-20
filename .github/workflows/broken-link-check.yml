@@ -1,20 +1,78 @@
 name: "Broken Link Check"
 
 on:
-  workflow_call
+  schedule:
+  - cron: 0 0 * * 0 # every Sunday at midnight
+  workflow_dispatch:
+  workflow_call:
+     inputs:
+      deploy_path:
+        required: false
+        type: string
 
 jobs:
   broken-link-check:
-    runs-on: self-hosted
+    permissions:
+      id-token: write
+    runs-on: codebuild-ab2d-website-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
-      - name: "Checkout code"
-        uses: actions/checkout@v4
+      - name: Configure Prod AWS Credentials
+        # Check Prod if no "deploy_path" (schedule, workflow_dispatch)
+        if: ${{ inputs.deploy_path == '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-prod-github-actions
 
-      - name: "Check for broken links"
+      - name: Fetch Prod AWS Parameters
+        # Check Prod if no "deploy_path" (schedule, workflow_dispatch)
+        if: ${{ inputs.deploy_path == '' }}
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
+        with:
+          params: |
+            TARGET_BUCKET=/ab2d/prod/web/nonsensitive/s3-bucket
+
+      - name: Configure Dev AWS Credentials
+        # Check Dev if "deploy_path" is set (workflow_call)
+        if: ${{ inputs.deploy_path != '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
+
+      - name: Fetch Dev AWS Parameters
+        # Check Dev if "deploy_path" is set (workflow_call)
+        if: ${{ inputs.deploy_path != '' }}
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
+        with:
+          params: |
+            TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
+
+      - name: Download Site Contents
+        run: |
+          aws s3 sync s3://${TARGET_BUCKET}${{ inputs.deploy_path && format('/{0}', inputs.deploy_path) || ''}} .
+
+      - name: Check for Broken Prod Links
+        # Check Prod if no "deploy_path" (schedule, workflow_dispatch)
+        if: ${{ inputs.deploy_path == '' }}
+        id: lychee-prod
         uses: lycheeverse/lychee-action@v2
-        id: lychee
         with:
           jobSummary: true
           fail: true
-          args: --no-progress --accept '200..=299, 401, 403, 405' ~/_[pages,layouts,includes]/**.[md,html]
+          args: --base https://ab2d.cms.gov --no-progress --accept '200..=299, 401, 403, 405, 429' './**/*.html'
+
+      - name: Check for Broken Dev Links
+        # Check Dev if "deploy_path" is set (workflow_call)
+        if: ${{ inputs.deploy_path != '' }}
+        id: lychee-dev
+        uses: lycheeverse/lychee-action@v2
+        with:
+          jobSummary: true
+          fail: true
+          args: --base https://dveopzwo661ye.cloudfront.net --remap 'https://ab2d\.cms\.gov https://dveopzwo661ye.cloudfront.net' --no-progress --accept '200..=299, 401, 403, 405, 429' './**/*.html'

@@ -11,7 +11,7 @@
   url: https://www.healthcare.gov/
 
 - text: Developer.cms.gov
-  url: http://Developer.cms.gov
+  url: https://Developer.cms.gov
 
 - text: CMS Design System
   url: https://design.cms.gov/
@@ -34,11 +34,11 @@
 - text: CMS Privacy Policy
   url: https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy
 
-- text: CMS/HHS Vulnerability Disclosure Policy 
+- text: CMS/HHS Vulnerability Disclosure Policy
   url: https://www.cms.gov/vulnerability-disclosure-policy
-  
+
 - text: Accessibility Statement
   url: https://www.cms.gov/about-cms/web-policies-important-links/accessibility-nondiscrimination-disabilities-notice
-  
+
 - text: Performance Reports
   url: https://www.cms.gov/about-cms/performance-budget/current

@@ -36,16 +36,30 @@ webrick:
     Pragma: no-cache
 
 exclude:
-  - kitchen-sink.html # Don't build this page in production
-  - sass
-  - ops
-  - functions
+exclude:
+  - sass/*
   - assets/uswds/img/favicons
   - assets/uswds/img/material-icons
   - assets/uswds/img/material-icons-deprecated
   - assets/uswds/img/usa-icons/*
   - assets/uswds/img/usa-icons-bg/*
   - assets/uswds/img/uswds-icons/*
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+  - pa11yci.ci.json
+  - pa11yci.local.json
+  - README.md
+  - Dockerfile
+  - feed.xml
+  - CODE_OF_CONDUCT.md
+  - code.json
+  - COMMUNITY.md
+  - CONTRIBUTING.md
+  - CONTRIBUTING.md
+  - GOVERNANCE.md
+  - LICENSE
+  - SECURITY.md
 
 include:
    - _pages
@@ -65,6 +79,6 @@ include:
 defaults:
   -
     scope:
-      path: "_pages" 
+      path: "_pages"
     values:
       permalink: "/:title"

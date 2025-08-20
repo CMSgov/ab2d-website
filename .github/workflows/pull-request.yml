@@ -31,5 +31,11 @@ jobs:
     needs: deploy
     uses: ./.github/workflows/a11y-check.yml
 
-  # broken-link-check:
-  #   uses: ./.github/workflows/broken-link-check.yml
+  broken-link-check:
+    needs: deploy
+    permissions:
+      id-token: write
+    with:
+      deploy_path: ${{ github.event.number }}
+    uses: ./.github/workflows/broken-link-check.yml
+    secrets: inherit

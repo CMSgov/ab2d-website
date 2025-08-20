@@ -1,5 +1,50 @@
-- text: Production Access
+- name: About
+  children:
+    - name: About AB2D
+      url: /about
+
+    - name: Use Cases
+      url: /use-cases
+
+- name: API Documentation
+  children:
+    - name: Get Started
+      url: /api-documentation
+
+    - name: How to Get a Bearer Token
+      url: /get-a-bearer-token
+
+    - name: Setup Instructions
+      url: /setup-instructions
+
+    - name: How to Access Sandbox Data
+      url: /access-sandbox-data
+
+    - name: How to Access Production Data
+      url: /access-production-claims-data
+
+    - name: HTTP Query Parameters - V2
+      url: /query-parameters-v2
+
+    - name: Troubleshooting Guide
+      url: /troubleshooting-guide
+
+- name: AB2D Data
+  children:
+    - name: AB2D Data
+      url: /ab2d-data
+
+    - name: Claims Data Details
+      url: /claims-data-details
+
+    - name: How to Filter Claims Data - V1
+      url: /filter-claims-data-v1
+
+    - name: How to Filter Claims Data - V2
+      url: /filter-claims-data-v2
+
+- name: Production Access
   url: /production-access
 
-- text: Support
+- name: Support
   url: /support
