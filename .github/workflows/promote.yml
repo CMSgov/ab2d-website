@@ -34,7 +34,7 @@ jobs:
 
       - name: Download Dev Bucket
         run: |
-          aws s3 sync s3://${TARGET_BUCKET}/ ./temp-site/
+          aws s3 sync s3://${TARGET_BUCKET}/${{ inputs.deploy_path }}/ ./temp-site/
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
