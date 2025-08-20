@@ -47,11 +47,7 @@ jobs:
         with:
           params: |
             TARGET_BUCKET=/ab2d/prod/web/nonsensitive/s3-bucket
-
-      - name: Get CloudFront Distribution ID
-        run: |
-          DISTRIBUTION_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Origins.Items[0].DomainName=='website-ab2d-east-prod.s3.us-east-1.amazonaws.com'].Id" --output text)
-          echo "DISTRIBUTION_ID=$DISTRIBUTION_ID" >> $GITHUB_ENV
+            DISTRIBUTION_ID=/ab2d/prod/web/nonsensitive/distribution-id
 
       - name: Copy site to Prod Bucket
         run: |
