@@ -24,7 +24,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
+          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
 
       - name: Fetch Non-Production AWS Parameters
         uses: cmsgov/cdap/actions/aws-params-env-action@main
@@ -34,7 +34,7 @@ jobs:
 
       - name: Download Dev Bucket
         run: |
-          aws s3 sync s3://${TARGET_BUCKET}/ ./temp-site/
+          aws s3 sync s3://${TARGET_BUCKET}/${{ inputs.deploy_path }}/ ./temp-site/
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -47,11 +47,7 @@ jobs:
         with:
           params: |
             TARGET_BUCKET=/ab2d/prod/web/nonsensitive/s3-bucket
-
-      - name: Get CloudFront Distribution ID
-        run: |
-          DISTRIBUTION_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?Origins.Items[0].DomainName=='website-ab2d-east-prod.s3.us-east-1.amazonaws.com'].Id" --output text)
-          echo "DISTRIBUTION_ID=$DISTRIBUTION_ID" >> $GITHUB_ENV
+            DISTRIBUTION_ID=/ab2d/prod/web/nonsensitive/distribution-id
 
       - name: Copy site to Prod Bucket
         run: |
