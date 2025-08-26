@@ -96,7 +96,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
           Seconds
         </td>
         <td data-label="Frequency">
-          At least every hour during the job.
+          At least every 30 minutes during the job.
         </td>
       </tr>
       <tr>
@@ -205,7 +205,7 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
   Bearer tokens, also referred to as access tokens or <a href="https://jwt.io/introduction/" target="_blank" rel="noopener">JSON web tokens</a>, are used during the <a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a> authentication and authorization process. You need a bearer token every time you access the sandbox or production environment.
 </p>
 <p>
-  You can get a bearer token by providing Okta with sandbox credentials or the production credentials received during <a href="{{ '/production-access' | relative_url }}">production access</a>. Bearer tokens expire after an hour, after which you must complete the process again.
+  You can get a bearer token by providing Okta with sandbox credentials or the production credentials received during <a href="{{ '/production-access' | relative_url }}">production access</a>. Bearer tokens expire after 30 minutes, after which you must complete the process again.
 </p>
 {% endcapture %}
 
