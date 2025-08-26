@@ -45,7 +45,7 @@ Bearer {bearer_token}
 {% include copy_snippet.html code=curlSnippet language="shell" %}
 
 {% capture tokenAlert %}
-Bearer tokens expire 1 hour from the time they are obtained. Use the token quickly to request your claims data. If your token expires, you’ll need to restart the process.
+Bearer tokens expire 30 minutes from the time they are obtained. Use the token quickly to request your claims data. If your token expires, you’ll need to restart the process.
 {% endcapture %}
 {% include alert.html variant="info" text=tokenAlert classNames="measure-6" %}
     </li>
@@ -133,7 +133,7 @@ TOKEN=$(echo $RESP1 | jq -r ".access_token")
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-The token is valid for 1 hour. If it expires, repeat the process for a new token.
+The token is valid for 30 minutes. If it expires, repeat the process for a new token.
 
 ## How to create a credential file
 
