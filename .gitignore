@@ -112,6 +112,7 @@ assets/uswds/img/material-icons-deprecated
 assets/uswds/img/usa-icons/*
 assets/uswds/img/usa-icons-bg/*
 assets/uswds/img/uswds-icons/*
+assets/uswds/components/*
 #
 # Track required icons:
 !assets/uswds/img/usa-icons/close.svg

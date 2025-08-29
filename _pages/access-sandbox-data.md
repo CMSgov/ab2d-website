@@ -210,7 +210,7 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 1. Open the *Select a definition* dropdown menu in the top right corner.
 2. Select *V2 - FHIR R4*. While you can use V1, we recommend using V2 for access to the _until parameter.
 3. Select the *Authorize* button above the commands.
-4. Enter your bearer token. It should be formatted as “Bearer {XXX}” where {XXX} is the value of your token. Each bearer token expires after 1 hour, so you will need a new token every time it expires.
+4. Enter your bearer token. It should be formatted as “Bearer {XXX}” where {XXX} is the value of your token. Each bearer token expires after 30 minutes, so you will need a new token every time it expires.
 5. Select *Authorize*.
 6. If your bearer token is valid, you’ll be notified of your authorization. Select *Close* on this window.
 
