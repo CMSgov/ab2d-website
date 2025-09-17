@@ -207,16 +207,16 @@ If the system is correct, check with your IT team to make sure you have a static
  Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir).
 </p>
 <p>
- Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn how to migrate from V1 to V2</a>.
+ Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn how to migrate from v1 to v2</a>.
 </p>
 {% endcapture %}
 
 {% capture a18AccordionContent %}
 <p>
-  The default value for the _since parameter changes between versions. The _until parameter is also only available with V2.
+  The default value for the _since parameter changes between versions. The _until parameter is also only available with v2.
 </p>
 <p>
-  In V1, a date must be specified to use _since. If no _since value is specified, it will default to January 1, 2020 or your organization's attestation date, whichever is later. In V2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as V1. <a href="{{ '/query-parameters-v2' | relative_url }}">Learn how to use parameters</a>.
+  In v1, a date must be specified to use _since. If no _since value is specified, it will default to January 1, 2020 or your organization's attestation date, whichever is later. In v2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as v1. <a href="{{ '/query-parameters-v2' | relative_url }}">Learn how to use parameters</a>.
 </p>
 {% endcapture %}
 
@@ -246,6 +246,6 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% include accordion.html id="a17" heading="How does AB2D provide FHIR versions?" expanded=false bordered=false accordionContent=a17AccordionContent %}
 
-{% include accordion.html id="a18" heading="How are parameters different between V1 and V2?" expanded=false bordered=false accordionContent=a18AccordionContent %}
+{% include accordion.html id="a18" heading="How are parameters different between v1 and v2?" expanded=false bordered=false accordionContent=a18AccordionContent %}
 
 {% include feedback-form.html url="47414305" %}

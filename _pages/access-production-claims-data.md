@@ -13,15 +13,15 @@ The production environment offers access to enrollee claims data, which contains
 
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
-    AB2D recommends using V2 of the API
+    AB2D recommends using v2 of the API
   </p>
 {% endcapture %}
 {% capture versionAlert %}
   <p>
-      Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 standard</a>. The _until parameter is only available with V2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html" target="_blank" rel="noopener">FHIR STU3</a> standard.
+      Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 standard</a>. The _until parameter is only available with v2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html" target="_blank" rel="noopener">FHIR STU3</a> standard.
   </p>
   <p>
-      <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
+      <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from v1 to v2</a>.
   </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}

@@ -1,7 +1,7 @@
 ---
 layout: api-docs
-page_title: "HTTP Query Parameters - V2"
-seo_title: "Query Parameters for Filtering Claims Data V2 | AB2D API"
+page_title: "HTTP Query Parameters - v2"
+seo_title: "Query Parameters for Filtering Claims Data v2 | AB2D API"
 description: "Learn more about HTTP query parameters, and how they can filter Medicare claims data with the AB2D API."
 permalink: /query-parameters-v2
 in-page-nav: true
@@ -13,15 +13,15 @@ HTTP query parameters filter or specify the claims data returned during requests
 
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
-    AB2D recommends using V2 of the API
+    AB2D recommends using v2 of the API
   </p>
 {% endcapture %}
 {% capture versionAlert %}
     <p>
-        This documentation is for AB2D version 2, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide V2.0.0</a>. The _until parameter is only available with V2.
+        This documentation is for AB2D version 2, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide v2.0.0</a>. The _until parameter is only available with v2.
     </p>
     <p>
-        For organizations using V1, visit our <a href="{{ '/filter-claims-data-v1' | relative_url }}">V1 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
+        For organizations using v1, visit our <a href="{{ '/filter-claims-data-v1' | relative_url }}">v1 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from v1 to v2</a>.
     </p>
 
 {% endcapture %}

@@ -1070,7 +1070,7 @@ On February 28, 2020, organization XYZ runs an export with a _since parameter da
 
 The export pulls a duplicate of the claim from export 1 as it has the same Claim Group ID (99995), Claim ID (12987987), and Last Updated date (01/01/2020).
 
-The claim was pulled twice because the _since date has not changed in both exports, resulting in an overlap. AB2D recommends following the [incremental export model]({{ '/filter-claims-data-v2' | relative_url }}#incremental-export-model) and using V2 of the API to avoid duplicate claims data.
+The claim was pulled twice because the _since date has not changed in both exports, resulting in an overlap. AB2D recommends following the [incremental export model]({{ '/filter-claims-data-v2' | relative_url }}#incremental-export-model) and using v2 of the API to avoid duplicate claims data.
 
 <div class="overflow-x-auto">
   <table class="usa-table usa-table--stacked usa-table--borderless">
