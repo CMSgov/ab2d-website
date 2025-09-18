@@ -1,7 +1,7 @@
 ---
 layout: api-docs
-page_title: "How to Filter Claims Data – V2"
-seo_title: "Filter Claims Data With Parameters V2 | AB2D Medicare API"
+page_title: "How to Filter Claims Data – v2"
+seo_title: "Filter Claims Data With Parameters v2 | AB2D Medicare API"
 description: "Filter and refine AB2D’s Medicare claims data using HTTP query parameters such as _until, available only with version 2."
 permalink: /filter-claims-data-v2
 in-page-nav: true
@@ -15,15 +15,15 @@ Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) 
 
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
-    AB2D recommends using V2 of the API
+    AB2D recommends using v2 of the API
   </p>
 {% endcapture %}
 {% capture versionAlert %}
     <p>
-        This documentation is for AB2D version 2, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide V2.0.0</a>. The _until parameter is only available with V2.
+        This documentation is for AB2D version 2, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide v2.0.0</a>. The _until parameter is only available with v2.
     </p>
     <p>
-        For organizations using V1, visit our <a href="{{ '/filter-claims-data-v1' | relative_url }}">V1 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
+        For organizations using v1, visit our <a href="{{ '/filter-claims-data-v1' | relative_url }}">v1 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from v1 to v2</a>.
     </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}

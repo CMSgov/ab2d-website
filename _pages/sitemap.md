@@ -40,7 +40,7 @@ show-side-nav: false
                     <a href="{{ '/access-production-claims-data' | relative_url }}">How to Access Production Claims Data</a>
                 </li>
                 <li>
-                    <a href="{{ '/query-parameters-v2' | relative_url }}">HTTP Query Parameters - V2</a>
+                    <a href="{{ '/query-parameters-v2' | relative_url }}">HTTP Query Parameters - v2</a>
                 </li>
                 <li>
                     <a href="{{ '/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a>
@@ -54,10 +54,10 @@ show-side-nav: false
                     <a href="{{ '/claims-data-details' | relative_url }}">Claims Data Details</a>
                 </li>
                 <li>
-                    <a href="{{ '/filter-claims-data-v1' | relative_url }}">How to Filter Claims Data - V1</a>
+                    <a href="{{ '/filter-claims-data-v1' | relative_url }}">How to Filter Claims Data - v1</a>
                 </li>
                 <li>
-                    <a href="{{ '/filter-claims-data-v2' | relative_url }}">How to Filter Claims Data - V2</a>
+                    <a href="{{ '/filter-claims-data-v2' | relative_url }}">How to Filter Claims Data - v2</a>
                 </li>
             </ul>
         </li>

@@ -13,15 +13,15 @@ The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants 
 
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
-    AB2D recommends using V2 of the API
+    AB2D recommends using v2 of the API
   </p>
 {% endcapture %}
 {% capture versionAlert %}
     <p>
-        Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 standard</a>. The _until parameter is only available with V2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html" target="_blank" rel="noopener">FHIR STU3</a> standard.
+        Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 standard</a>. The _until parameter is only available with v2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html" target="_blank" rel="noopener">FHIR STU3</a> standard.
     </p>
     <p>
-        <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from V1 to V2</a>.
+        <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from v1 to v2</a>.
     </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
@@ -208,7 +208,7 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 ### I. Authorize your bearer token
 
 1. Open the *Select a definition* dropdown menu in the top right corner.
-2. Select *V2 - FHIR R4*. While you can use V1, we recommend using V2 for access to the _until parameter.
+2. Select *v2 - FHIR R4*. While you can use v1, we recommend using v2 for access to the _until parameter.
 3. Select the *Authorize* button above the commands.
 4. Enter your bearer token. It should be formatted as “Bearer {XXX}” where {XXX} is the value of your token. Each bearer token expires after 30 minutes, so you will need a new token every time it expires.
 5. Select *Authorize*.
