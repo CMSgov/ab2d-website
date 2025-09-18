@@ -6,8 +6,6 @@ on:
 
 jobs:
   deploy:
-    with:
-      deploy_path: "main"
     uses: ./.github/workflows/promote.yml
     permissions:
       id-token: write
