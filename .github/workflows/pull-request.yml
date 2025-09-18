@@ -36,6 +36,7 @@ jobs:
     permissions:
       id-token: write
     with:
+      env: "staging"
       feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/broken-link-check.yml
     secrets: inherit
