@@ -106,26 +106,26 @@ node_modules
 # sprite, icons using `img src=""` must be explicitly included.
 #
 # Ignore unnecessary icon directories
-assets/uswds/img/favicons
-assets/uswds/img/material-icons
-assets/uswds/img/material-icons-deprecated
-assets/uswds/img/usa-icons/*
-assets/uswds/img/usa-icons-bg/*
-assets/uswds/img/uswds-icons/*
-assets/uswds/components/*
+**/uswds/img/favicons
+**/uswds/img/material-icons
+**/uswds/img/material-icons-deprecated
+**/uswds/img/usa-icons/*
+**/uswds/img/usa-icons-bg/*
+**/uswds/img/uswds-icons/*
+**/uswds/components/*
 #
 # Track required icons:
-!assets/uswds/img/usa-icons/close.svg
-!assets/uswds/img/usa-icons/expand_more.svg
-!assets/uswds/img/usa-icons/expand_less.svg
-!assets/uswds/img/usa-icons/add.svg
-!assets/uswds/img/usa-icons/check_circle.svg
-!assets/uswds/img/usa-icons/error.svg
-!assets/uswds/img/usa-icons/error--white.svg
-!assets/uswds/img/usa-icons/info.svg
-!assets/uswds/img/usa-icons/launch.svg
-!assets/uswds/img/usa-icons/launch--white.svg
-!assets/uswds/img/usa-icons/remove.svg
-!assets/uswds/img/usa-icons/warning.svg
+!**/uswds/img/usa-icons/close.svg
+!**/uswds/img/usa-icons/expand_more.svg
+!**/uswds/img/usa-icons/expand_less.svg
+!**/uswds/img/usa-icons/add.svg
+!**/uswds/img/usa-icons/check_circle.svg
+!**/uswds/img/usa-icons/error.svg
+!**/uswds/img/usa-icons/error--white.svg
+!**/uswds/img/usa-icons/info.svg
+!**/uswds/img/usa-icons/launch.svg
+!**/uswds/img/usa-icons/launch--white.svg
+!**/uswds/img/usa-icons/remove.svg
+!**/uswds/img/usa-icons/warning.svg
 
 .unlighthouse

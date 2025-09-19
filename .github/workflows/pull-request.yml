@@ -12,9 +12,9 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    if: ${{ !startsWith(github.actor, 'bot-') }}
+    if: github.actor != 'dependabot[bot]'
     with:
-      deploy_path: ${{ github.event.number }}
+      feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/deploy.yml
     secrets: inherit
 
@@ -36,6 +36,7 @@ jobs:
     permissions:
       id-token: write
     with:
-      deploy_path: ${{ github.event.number }}
+      env: "staging"
+      feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/broken-link-check.yml
     secrets: inherit

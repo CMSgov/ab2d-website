@@ -14,11 +14,5 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    with:
-      deploy_path: "main"
     uses: ./.github/workflows/deploy.yml
     secrets: inherit
-
-  a11y-check:
-    needs: deploy
-    uses: ./.github/workflows/a11y-check.yml
