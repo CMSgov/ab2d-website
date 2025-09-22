@@ -58,11 +58,11 @@ The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://hl
 
 ### The sandbox environment
 
-The sandbox (sandbox.ab2d.cms.gov) is a public environment available to anyone who wants to learn how the API works. AB2D provides you with test credentials for access to sandbox data. You’ll use the sandbox identity provider (test.idm.idp.cms.gov) for this.
+The sandbox (sandbox.ab2d.cms.gov) is a public environment available to anyone who wants to learn how the API works. AB2D provides you with test credentials for access to sandbox data. You’ll use the sandbox identity provider (test.idp.idm.cms.gov) for this.
 
 ### The production environment
 
-Production (api.ab2d.cms.gov) is a private environment available only to PDP sponsors who have completed the steps to gain production access. You’ll need to provide the static IP address(es) for each system using the API. AB2D then provides you with production credentials for access to your enrollees’ data. You’ll use the production identity provider (idp.cms.gov) for this.
+Production (api.ab2d.cms.gov) is a private environment available only to PDP sponsors who have completed the steps to gain production access. You’ll need to provide the static IP address(es) for each system using the API. AB2D then provides you with production credentials for access to your enrollees’ data. You’ll use the production identity provider (idm.cms.gov) for this.
 
 Both environments use the same endpoints with the main differences being the credentials used for your bearer token and the environment URL.
 

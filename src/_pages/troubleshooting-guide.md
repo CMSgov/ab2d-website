@@ -48,7 +48,7 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
     <ul>
       <li>The credentials provided may have a typo or syntax error (e.g., spaces, hidden characters).</li>
       <li>The credentials provided may have been encoded to Base64 incorrectly.</li>
-      <li>You’re connected to the sandbox idP (test.idp.idm.cms.gov) instead of the production idP (idp.cms.gov).</li>
+      <li>You’re connected to the sandbox idP (test.idp.idm.cms.gov) instead of the production idP (idm.cms.gov).</li>
       <li>Authentication may have failed because of an incorrect header. "Authorization : Basic Auth" is the correct header.</li>
     </ul>
   </dd>

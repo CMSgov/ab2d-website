@@ -30,7 +30,7 @@ The production environment offers access to enrollee claims data, which contains
 
 The production and sandbox environments use the same endpoints and workflow. You can [follow the same steps as you did in the sandbox]({{ '/access-sandbox-data' | relative_url }}) for production data.
 
-You’ll still need [a bearer token]({{ '/get-a-bearer-token' | relative_url }}) to call the API, but use the production identity provider (idp.cms.gov), production URL (api.ab2d.cms.gov), and credentials issued by the AB2D team instead.
+You’ll still need [a bearer token]({{ '/get-a-bearer-token' | relative_url }}) to call the API, but use the production identity provider (idm.cms.gov), production URL (api.ab2d.cms.gov), and credentials issued by the AB2D team instead.
 
 - Start a job: `GET /api/v2/fhir/Patient/$export`
 - Retrieve metadata: `GET /api/v2/fhir/metadata`
