@@ -8,5 +8,6 @@ jobs:
   deploy:
     uses: ./.github/workflows/promote.yml
     permissions:
+      contents: read
       id-token: write
     secrets: inherit
