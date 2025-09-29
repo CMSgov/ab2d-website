@@ -88,7 +88,7 @@ echo $DIRECTORY
 /home/abcduser/ab2d
 
 echo $IDP_URL
-https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v2/token
+https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v1/token
 
 echo $API_URL
 https://api.ab2d.cms.gov/api/v2/fhir
