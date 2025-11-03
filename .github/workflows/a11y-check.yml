@@ -1,7 +1,14 @@
 name: "Accessibility Check"
 
 on:
-  workflow_call
+  workflow_call:
+    inputs:
+      feature_path:
+        required: true
+        type: string
+
+env:
+  BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
 
 jobs:
   a11y-check:
@@ -31,7 +38,7 @@ jobs:
 
       # Step 4: Run pa11y
       - name: Run pa11y
-        run: npx pa11y-ci --config pa11yci.ci.json --sitemap https://dveopzwo661ye.cloudfront.net/${{ env.DEPLOY_PATH }}/sitemap.xml --sitemap-exclude "/*.pdf"  --sitemap-find https://ab2d.cms.gov/ --sitemap-replace https://dveopzwo661ye.cloudfront.net/ --json > pa11y-results.json || echo "EXIT_CODE=$?" >> $GITHUB_ENV
+        run: npx pa11y-ci --config pa11yci.ci.json --sitemap ${{ format('https://dveopzwo661ye.cloudfront.net/{0}sitemap.xml', env.BASE_PATH) }} --sitemap-exclude "/*.pdf"  --sitemap-find https://ab2d.cms.gov/ --sitemap-replace https://dveopzwo661ye.cloudfront.net/ --json > pa11y-results.json || echo "EXIT_CODE=$?" >> $GITHUB_ENV
 
       # Step 5: Save pa11y summary
       - name: Save Report to Action Summary
