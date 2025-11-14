@@ -13,7 +13,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
 
 ## Important AB2D claim fields
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
     <thead>
       <tr>
@@ -152,7 +152,7 @@ Notice 2 things:
     </div>
 </div>
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -284,7 +284,7 @@ Each claim contains patient identifiers necessary to map a claim to a specific p
     </div>
 </div>
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -424,7 +424,7 @@ To detect updated claims the following fields on each claim must be tracked:
 
 In the example, a single claim will be tracked through several evolutions:
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -451,7 +451,7 @@ In the example, a single claim will be tracked through several evolutions:
 
 In the example, 4 exports are run using the <a href="{{ '/query-parameters-v2' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -500,7 +500,7 @@ On January 31, 2020, organization XYZ runs its first export. The export uses a _
 
 The export pulls a claim version with Claim Group ID 99995. At this time, the only version of the claim available to AB2D is 12987987. This version (claim update 1) is the latest claim version available as it is marked active.
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -562,7 +562,7 @@ Claim ID 54689123 is pulled for the first time. Here is why:
 1. The claim object was received on February 10, 2020. Since there hasn't been any changes since, the Last Updated field is February 10, 2020 as well.
 2. The claim object is included in the export because the Last Updated date (February 10, 2020) is after the _since parameter date (January 31, 2020).
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -666,7 +666,7 @@ Claim version 34543 is pulled for the first time. Here is why:
 1. The claim object was received on March 31, 2020. Since there hasn’t been any changes since, the Last Updated field is March 31, 2020 as well.
 2. The claim object is included in the export because the Last Updated date (March 31, 2020) is after the _since parameter date (February 28, 2020).
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -764,7 +764,7 @@ To detect updated claims the following fields on each claim must be tracked:
 
 In the example, a single claim will be tracked through several evolutions:
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -822,7 +822,7 @@ On January 31, 2020, organization XYZ runs its first export. The export uses a _
 
 The export pulls a claim version with Claim Group ID 99995. At this time, the only version of the claim available to AB2D is 12987987. This version (claim update 1) is the latest claim version available as it is marked active.
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -884,7 +884,7 @@ Claim version 54689123 is pulled for the first time. Here is why:
 1. The claim object was received and marked as canceled on February 10, 2020. Since there hasn’t been any changes since, the Last Updated field is February 10, 2020 as well.
 2. The claim object is included in the export because the Last Updated date (February 10, 2020) is after the _since parameter date (January 31, 2020).
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -982,7 +982,7 @@ In the example, a single claim will be tracked:
 
 In the example, 2 exports are run using the _since parameter. These exports are for overlapping time periods so duplicate information will be received. The 2 exports are described below.
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -1019,7 +1019,7 @@ On January 31, 2020, organization XYZ runs its first export. The export uses a _
 
 The export pulls a claim version with Claim Group ID 99995. At this time the only version of the claim available to AB2D is 12987987. This version is the latest claim version available as it is marked active.
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
@@ -1072,7 +1072,7 @@ The export pulls a duplicate of the claim from export 1 as it has the same Claim
 
 The claim was pulled twice because the _since date has not changed in both exports, resulting in an overlap. AB2D recommends following the [incremental export model]({{ '/filter-claims-data-v2' | relative_url }}#incremental-export-model) and using v2 of the API to avoid duplicate claims data.
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
           <tr>
