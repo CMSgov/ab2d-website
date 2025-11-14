@@ -29,6 +29,8 @@ jobs:
 
   a11y-check:
     needs: deploy
+    with:
+      feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/a11y-check.yml
 
   broken-link-check:
