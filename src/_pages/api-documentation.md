@@ -217,4 +217,4 @@ Both versions of AB2D use the JSON (NDJSON) data format for the FHIR Explanation
 
 {% include accordion.html id="a4" heading="Bearer token" expanded=false bordered=false accordionContent=a4AccordionContent %}
 
-{% include feedback-form.html url="f42c76e3" %}
+{% include feedback-form.html id="f42c76e3" %}

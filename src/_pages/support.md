@@ -134,4 +134,4 @@ Every time you pull the data, you will get the latest version of a claim. Claim 
 
 {% include accordion.html id="a8" heading="What does the “final” claim query code indicate?" expanded=false bordered=false accordionContent=a8AccordionContent %}
 
-{% include feedback-form.html url="fa0edc3e" %}
+{% include feedback-form.html id="fa0edc3e" %}

@@ -115,4 +115,4 @@ This is a scenario demonstrating how the default capability works for _since and
 
 In this usage model, AB2D automatically populates the _since value with the datetime of your last successfully completed export. For Job GHI, this is the date job ABC was created. Job DEF isn’t considered a successfully completed export since its files weren’t downloaded.
 
-{% include feedback-form.html url="85f95067" %}
+{% include feedback-form.html id="85f95067" %}
