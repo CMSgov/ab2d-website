@@ -215,4 +215,4 @@ show-side-nav: false
   </li>
 </ul>
 
-{% include feedback-form.html url="3fc3aaf7" %}
+{% include feedback-form.html id="3fc3aaf7" %}

@@ -79,4 +79,4 @@ show-side-nav: false
   </div>
 </div>
 
-{% include feedback-form.html url="ce6a6aa1" %}
+{% include feedback-form.html id="ce6a6aa1" %}
