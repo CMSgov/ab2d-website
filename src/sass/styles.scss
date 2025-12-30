@@ -213,7 +213,6 @@ main h6 {
     padding: 1rem 2rem;
     border: 2px solid #d9e8f6;
     border-radius: 0.25rem;
-    margin: 2rem 0;
   }
 
   label {
@@ -223,7 +222,8 @@ main h6 {
 
   button {
     text-transform: capitalize;
-    margin-top: 1rem;
+    margin: 1rem 0.5rem 0 0;
+
 
     &:first-of-type {
       margin-left: 0;
