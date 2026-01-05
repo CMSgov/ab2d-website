@@ -58,7 +58,7 @@ If you have multiple contracts, you can run scripts for them at the same time. H
 
 Download a ZIP file of the [Bash API repository](https://github.com/CMSgov/ab2d-sample-client-bash) or [learn how to clone it](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Then, unzip or move the files into a specified directory (e.g., /home/abcduser/ab2d). Copy the script files to that directory.
 
-### I. Set up the environment
+#### I. Set up the environment
 
 <ol>
     <li>
@@ -106,7 +106,7 @@ R4
     </li>
 </ol>
 
-### II. Start a job
+#### II. Start a job
 
 <ol>
     <li>Request the Export endpoint in the same window used to create the environment variables and in the same directory where the scripts are located.
@@ -120,7 +120,7 @@ R4
     <li>Verify that a file named “jobId.txt” was created.</li>
 </ol>
 
-### III. Check the job status
+#### III. Check the job status
 
 Use the same shell to check the job status until it is complete. You do not have to run this script more than once (unless you exit it) as it will pause and recheck automatically:
 
@@ -131,7 +131,7 @@ Use the same shell to check the job status until it is complete. You do not have
 
 This script will create a file named response.json in the directory. This will contain all the requested files. Files have a max size, so if the data exceeds that size, a new file will be created.
 
-### IV. Download the files
+#### IV. Download the files
 
 Once the job is complete, download the files from the same shell.
 
@@ -141,11 +141,11 @@ Once the job is complete, download the files from the same shell.
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 
-## Windows Powershell client
+### Windows Powershell client
 
 Download a ZIP file of the [Powershell API repository](https://github.com/CMSgov/ab2d-sample-client-powershell) or [learn how to clone it](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Then, open a Powershell terminal and go to the home directory. You can run the `dir` command to check for the (.ps1) and README Powershell scripts. Note that the Windows client will always download files to your current working directory, so you may want to move its existing contents elsewhere during the job.
 
-### I. Prepare the environment variables
+#### I. Prepare the environment variables
 
 <ol>
     <li>
@@ -174,7 +174,7 @@ $AB2D_API_URL='https://api.ab2d.cms.gov/api/v2'
     </li>
 </ol>
 
-### II. Start and monitor a job
+#### II. Start and monitor a job
 
 <ol>
     <li>
@@ -193,7 +193,7 @@ $JOB_RESULTS to check the contents of the variable
     </li>
 </ol>
 
-### III. Download the files
+#### III. Download the files
 
 Download the files into your current directory.
 
@@ -203,11 +203,11 @@ Download the files into your current directory.
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 
-## Python client
+### Python client
 
 Download a ZIP file of the [Python API repository](https://github.com/CMSgov/ab2d-sample-client-python) or [learn how to clone it](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Then, open a terminal and verify the file’s location in your home directory with the `dir` or `ls` command. You should see the job-cli.py script and a README. Make sure you have at least Python 3.6 and PIP3 [installed on your system](https://realpython.com/installing-python/).
 
-### I. Prepare environment variables
+#### I. Prepare environment variables
 
 <ol>
     <li>
@@ -252,7 +252,7 @@ $DIRECTORY=C:\users\abcduser\ab2d
     </li>
 </ol>
 
-### II. Start a job
+#### II. Start a job
 
 <ol>
     <li>
@@ -302,7 +302,7 @@ type %DIRECTORY%\job_id.txt
     </li>
 </ol>
 
-### III. Check the job status
+#### III. Check the job status
 
 <ol>
     <li>
@@ -345,7 +345,7 @@ type %DIRECTORY%\response.json
     </li>
 </ol>
 
-### IV. Download the files
+#### IV. Download the files
 
 <ol>
     <li>
