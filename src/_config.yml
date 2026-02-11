@@ -1,0 +1,84 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Claims Data to Part D Sponsors API
+email: ab2d-api@googlegroups.com
+description: >- # this means to ignore newlines until "baseurl:"
+  CMS is developing a standards based API to allow standalone Medicare Part D
+  plan (PDP) sponsors to retrieve Medicare claims data for their enrollees.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://ab2d.cms.gov" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+gems:
+  - jekyll-redirect-from
+
+webrick:
+  headers:
+    Cache-Control: no-cache
+    Pragma: no-cache
+
+exclude:
+exclude:
+  - sass/*
+  - assets/uswds/img/favicons
+  - assets/uswds/img/material-icons
+  - assets/uswds/img/material-icons-deprecated
+  - assets/uswds/img/usa-icons/*
+  - assets/uswds/img/usa-icons-bg/*
+  - assets/uswds/img/uswds-icons/*
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+  - pa11yci.ci.json
+  - pa11yci.local.json
+  - README.md
+  - Dockerfile
+  - feed.xml
+  - CODE_OF_CONDUCT.md
+  - code.json
+  - COMMUNITY.md
+  - CONTRIBUTING.md
+  - CONTRIBUTING.md
+  - GOVERNANCE.md
+  - LICENSE
+  - SECURITY.md
+
+include:
+   - _pages
+   - assets/uswds/img/usa-icons/add.svg
+   - assets/uswds/img/usa-icons/check_circle.svg
+   - assets/uswds/img/usa-icons/close.svg
+   - assets/uswds/img/usa-icons/error.svg
+   - assets/uswds/img/usa-icons/error--white.svg
+   - assets/uswds/img/usa-icons/expand_more.svg
+   - assets/uswds/img/usa-icons/expand_less.svg
+   - assets/uswds/img/usa-icons/info.svg
+   - assets/uswds/img/usa-icons/launch.svg
+   - assets/uswds/img/usa-icons/launch--white.svg
+   - assets/uswds/img/usa-icons/remove.svg
+   - assets/uswds/img/usa-icons/warning.svg
+
+defaults:
+  -
+    scope:
+      path: "_pages"
+    values:
+      permalink: "/:title"

@@ -3,7 +3,7 @@ name: push to dev
 on:
   push:
     branches:
-      - uswds-redesign
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{  github.ref }}
@@ -11,15 +11,8 @@ concurrency:
 
 jobs:
   deploy:
-    with:
-      deploy_path: "uswds-redesign"
+    permissions:
+      contents: read
+      id-token: write
     uses: ./.github/workflows/deploy.yml
     secrets: inherit
-
-  a11y-check:
-    needs: deploy
-    uses: ./.github/workflows/a11y-check.yml
-
-  # TODO: Investigate how this is working on other projects
-  # broken-link-check:
-  #   uses: ./.github/workflows/broken-link-check.yml

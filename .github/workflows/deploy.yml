@@ -3,31 +3,33 @@ name: "deploy"
 on:
   workflow_dispatch:
     inputs:
-      deploy_path:
-        description: "S3 directory deployment location"
-        default: "uswds-redesign"
+      feature_path:
+        description: "Feature path to deploy (e.g. 123 -> feature/123/); if omitted, deploys to base url"
+        required: false
+        type: string
   workflow_call:
     inputs:
-      deploy_path:
+      feature_path:
+        description: "Feature path to deploy (e.g. 123 -> feature/123/); if omitted, deploys to base url"
         required: false
         type: string
 
+env:
+  BASE_PATH: ${{ inputs.feature_path && format('feature/{0}/', inputs.feature_path) || '' }}
+
 jobs:
   deploy-dev:
-    runs-on: self-hosted
-    if: ${{ !startsWith(github.actor, 'bot-') }}
+    if: github.actor != 'dependabot[bot]'
+    # environment: 'stage'
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: codebuild-ab2d-website-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
-      # Step 1: Checkout the repo
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Step 2 Install dependencies from AWS
-      - name: Install project dependencies
-        run: |
-          sudo dnf -y install ruby3.2 ruby3.2-devel openssl-devel amazon-rpm-config gcc-c++ openssl
-
-      # Step 3: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -35,38 +37,54 @@ jobs:
           node-version-file: '.nvmrc'
           # node-version: 20 ## Using a .nvmrc file to stay in sync with the repo
 
-      # Step 4: Install Ruby Gems
       - name: Install jekyll and bundler
         run: |
+          rbenv install
           gem install bundler
           bundle install
 
-      # Step 5: Install Node.js Dependencies
       - name: Install npm dependencies
         run: |
           npm ci
 
-      # Step 6: Compile Assets
       - name: Compile assets with Gulp
         run: |
           npm run assets:build
 
-      # Step 7: Build Site
       - name: Build the site
         env:
           # This is redundant but keeping for posterity
           JEKYLL_ENV: "production"
         run: |
-          bundle exec jekyll build
+          bundle exec jekyll build --source ./src ${{ env.BASE_PATH && format('--baseurl {0}', env.BASE_PATH) || '' }}
 
-      # Step 8: Initialize AWS Connection
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ vars.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ secrets.TEST_ACCOUNT_ID }}:role/delegatedadmin/developer/ab2d-test-github-actions
+          role-to-assume: arn:aws:iam::${{ secrets.NON_PROD_ACCOUNT }}:role/delegatedadmin/developer/ab2d-dev-github-actions
 
-      # Step 9: Deploy to Dev
-      - name: Deploy the site
+      - name: Set env vars from AWS params
+        uses: cmsgov/cdap/actions/aws-params-env-action@main
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
+        with:
+          params: |
+            TARGET_BUCKET=/ab2d/dev/web/nonsensitive/s3-bucket
+            DISTRIBUTION_ID=/ab2d/dev/web/nonsensitive/distribution-id
+
+      - name: Deploy the site to root url/directory
+        if: ${{ !env.BASE_PATH }}
+        # This $TARGET_BUCKET comes from a previous step, cmsgov/cdap/actions/aws-params-env-action@main
         run: |
-          aws s3 sync _site/ s3://website-ab2d-east-impl/${{ inputs.deploy_path }}/
+          aws s3 sync _site/ s3://$TARGET_BUCKET/ --delete --exclude 'feature/*'
+
+      - name: Deploy the site to feature url/directory
+        if: ${{ env.BASE_PATH }}
+        # This $TARGET_BUCKET comes from a previous step, cmsgov/cdap/actions/aws-params-env-action@main
+        run: |
+          aws s3 sync _site/ s3://$TARGET_BUCKET/${{ env.BASE_PATH }} --delete
+
+      - name: Invalidate Cloudfront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"

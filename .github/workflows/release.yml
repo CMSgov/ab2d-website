@@ -6,7 +6,8 @@ on:
 
 jobs:
   deploy:
-    with:
-      deploy_path: "uswds-redesign"
     uses: ./.github/workflows/promote.yml
+    permissions:
+      contents: read
+      id-token: write
     secrets: inherit
