@@ -8,7 +8,7 @@ This Ruby program builds the [ab2d.cms.gov](https://ab2d.cms.gov/) website via [
 
 - [Homebrew](https://brew.sh/)
 - [Ruby](https://www.ruby-lang.org/en/)
-- [Node.js](https://nodejs.org/en/download/) (v20 or higher required)
+- [Node.js](https://nodejs.org/en/download/) (v24 or higher required)
 - [npm](https://www.npmjs.com/get-npm)
 
 ## Installation
@@ -95,7 +95,7 @@ node -v
 npm -v
 ```
 
-Your node version should be at least `v20`.
+Your node version should be at least `v24`.
 
 ### Step 5: Install Jekyll and Bundler
 

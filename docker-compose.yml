@@ -1,0 +1,22 @@
+services:
+  site:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4000:80
+    develop:
+      watch:
+        - action: rebuild
+          path: src
+        - action: rebuild
+          path: Gemfile
+        - action: rebuild
+          path: Gemfile.lock
+        - action: rebuild
+          path: package.json
+        - action: rebuild
+          path: package-lock.json
+        - action: rebuild
+          path: gulpfile.js
+          
