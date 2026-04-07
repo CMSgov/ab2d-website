@@ -36,7 +36,6 @@ webrick:
     Pragma: no-cache
 
 exclude:
-exclude:
   - sass/*
   - assets/uswds/img/favicons
   - assets/uswds/img/material-icons
@@ -55,7 +54,6 @@ exclude:
   - CODE_OF_CONDUCT.md
   - code.json
   - COMMUNITY.md
-  - CONTRIBUTING.md
   - CONTRIBUTING.md
   - GOVERNANCE.md
   - LICENSE
