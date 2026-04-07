@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 page_title: "Setup Instructions"
-seo_title: "Setup Instructions for Enrollee Medicare Claims Data | AB2D API"
+seo_title: "Setup Instructions for Medicare Claims Data"
 description: "Set up curl and jq on your system to begin using the AB2D Medicare API and access your enrollees’ claims data."
 permalink: /setup-instructions
 in-page-nav: true

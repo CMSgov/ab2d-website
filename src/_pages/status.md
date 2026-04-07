@@ -1,9 +1,9 @@
 ---
 layout: api-docs
 page_title: "System Status"
-seo_title: ""
+seo_title: "AB2D System Status"
 permalink: /status
-description: This page gives an overview of the status of the AB2D systems.
+description: "Check the current operational status and uptime of the AB2D API and related systems."
 show-side-nav: false
 ---
 

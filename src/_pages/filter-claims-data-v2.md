@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 page_title: "How to Filter Claims Data – v2"
-seo_title: "Filter Claims Data With Parameters v2 | AB2D Medicare API"
+seo_title: "Filter Claims Data With Parameters v2"
 description: "Filter and refine AB2D’s Medicare claims data using HTTP query parameters such as _until, available only with version 2."
 permalink: /filter-claims-data-v2
 in-page-nav: true

@@ -1,7 +1,7 @@
 ---
 layout: api-docs
 page_title: "HTTP Query Parameters - v2"
-seo_title: "Query Parameters for Filtering Claims Data v2 | AB2D API"
+seo_title: "Query Parameters for Filtering Claims Data v2"
 description: "Learn more about HTTP query parameters, and how they can filter Medicare claims data with the AB2D API."
 permalink: /query-parameters-v2
 in-page-nav: true
