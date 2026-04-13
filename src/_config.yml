@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Claims Data to Part D Sponsors API
+title: Claims Data to Part D Sponsors (AB2D) API
 short_title: AB2D API
 email: ab2d-api@googlegroups.com
 description: >- # this means to ignore newlines until "baseurl:"

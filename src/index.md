@@ -1,7 +1,5 @@
 ---
 layout: base
-page_title: "Claims Data to Part D Sponsors API (AB2D)"
-seo_title: "Get Enrollees’ Medicare Parts A & B Claims Data"
 description: "Perform more effective Medication Therapy Management with access to enrollees’ Medicare Parts A & B claims data through the AB2D API."
 ---
 
