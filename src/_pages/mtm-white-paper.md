@@ -54,7 +54,7 @@ With AB2D’s detailed claims data, PDP sponsors can get a better understanding 
 - Enhance MTM services
 - Boost health outcomes
 
-To access the free AB2D API, PDP sponsors must request prodution access and complete the attestation process. [Learn how to complete onboarding]({{ '/production-access' | relative_url }}).
+To access the free AB2D API, PDP sponsors must request production access and complete the attestation process. [Learn how to complete onboarding]({{ '/production-access' | relative_url }}).
 
 ## II. Identify MTM program enrollees
 

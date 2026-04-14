@@ -10,7 +10,6 @@
         tabindex="0"
         style="overflow-x: auto;"
       >
-        <!-- TODO: Can we pass the language var to avoid these conditionals -->
         {%- if include.language == "json" -%}
         {%- highlight json %}{{ code }}{% endhighlight -%}
         {%- elsif include.language == "html" -%}

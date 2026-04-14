@@ -87,7 +87,6 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
 ## Common questions
 
-<!--TODO: add an "expand all" feature here. Can appear as a simple hyperlink -->
 
 <div class="padding-top-4"></div>
 

@@ -50,7 +50,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
           <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
         </th>
         <td data-label="Description">
-          Current status of the claim, which is either active or cancelled. If the latest version (Claim ID) in a family of claims is cancelled, then the entire claim is cancelled.
+          Current status of the claim, which is either active or canceled. If the latest version (Claim ID) in a family of claims is canceled, then the entire claim is canceled.
         </td>
         <td data-label="EOB Location">
           <p>eob.status</p>
@@ -843,7 +843,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
               <td data-label="Claim Query Code">final</td>
               <td data-label="Received">01/01/2020</td>
               <td data-label="Last Updated">01/01/2020</td>
-              <td data-label="Claim Status (as of 01/31/20">active</td>
+              <td data-label="Claim Status (as of 01/31/20)">active</td>
           </tr>
           <tr>
               <td data-label="Claim Group ID">99995</td>
@@ -852,7 +852,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
               <td data-label="Claim Query Code">final</td>
               <td data-label="Received">01/01/2020</td>
               <td data-label="Last Updated">01/01/2020</td>
-              <td data-label="Claim Status (as of 01/31/20">active</td>
+              <td data-label="Claim Status (as of 01/31/20)">active</td>
           </tr>
           <tr>
               <td data-label="Claim Group ID">99995</td>
@@ -861,7 +861,7 @@ The export pulls a claim version with Claim Group ID 99995. At this time, the on
               <td data-label="Claim Query Code">final</td>
               <td data-label="Received">01/01/2020</td>
               <td data-label="Last Updated">01/01/2020</td>
-              <td data-label="Claim Status (as of 01/31/20">active</td>
+              <td data-label="Claim Status (as of 01/31/20)">active</td>
           </tr>
       </tbody>
   </table>
