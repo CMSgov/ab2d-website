@@ -49,64 +49,39 @@ Together, the _since and _until parameters allow you to pull data that was last 
 
 ### Examples of default parameter behavior
 
-<table class="usa-table usa-table--stacked usa-table--borderless width-full">
+<div class="overflow-x-auto" tabindex="0">
+    <table class="usa-table usa-table--stacked usa-table--borderless width-full">
     <thead>
         <tr>
-            <th scope="col">Parameter settings</th>
-            <th scope="col">Date range of export requests</th>
+        <th style="white-space: nowrap;">_since datetime</th>
+        <th style="white-space: nowrap;">_until datetime</th>
+        <th style="white-space: nowrap;">Resulting date range or export requests</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td data-label="Parameters">
-                <b>_since</b> = not set
-                <br>
-                <b>_until</b> = not set
-            </td>
-            <td data-label="Date range of export requests">
-                <b>From</b> last successful downloaded job date
-                <br>
-                <b>to</b> current date
-            </td>
+        <td>not set</td>
+        <td>not set</td>
+        <td>From last successful export date to current date</td>
         </tr>
         <tr>
-            <td data-label="Parameters">
-                <b>_since</b> = 1/1/2023
-                <br>
-                <b>_until</b> = not set
-            </td>
-            <td data-label="Date range of export requests">
-                <b>From</b> 1/1/2023
-                <br>
-                <b>to</b> current date
-            </td>
+        <td>1/1/2023</td>
+        <td>not set</td>
+        <td>From Jan 1, 2023 to current date</td>
         </tr>
         <tr>
-            <td data-label="Parameters">
-                <b>_since</b> = not set
-                <br>
-                <b>_until</b> = 1/1/2024
-            </td>
-            <td data-label="Date range of export requests">
-                <b>From</b> last successfully downloaded job date
-                <br>
-                <b>to</b> 1/1/2024
-            </td>
+        <td>not set</td>
+        <td>1/1/2024</td>
+        <td>From last successful export to Jan 1, 2024</td>
         </tr>
         <tr>
-            <td data-label="Parameters">
-                <b>_since</b> = 1/1/2023
-                <br>
-                <b>_until</b> = 1/1/2024
-            </td>
-            <td data-label="Date range of export requests">
-                <b>From</b> 1/1/2023
-                <br>
-                <b>to</b> 1/1/2024
-            </td>
+        <td>1/1/2023</td>
+        <td>1/1/2024</td>
+        <td>From Jan 1, 2023 to Jan 1, 2024</td>
         </tr>
     </tbody>
-</table>
+    </table>
+</div>
 
 {:.margin-bottom-4}
 ### Examples of valid and invalid _since and _until parameter values
