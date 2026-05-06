@@ -18,9 +18,9 @@ layout: default
   {% endif %}
   <div
     id="page-content"
-    class="grid-col-fill"
+    class="grid-col-fill padding-y-4 usa-prose"
   >
-    <div class="padding-y-6 desktop:padding-left-205">{{ content }}</div>
+    <div>{{ content }}</div>
 
     {% if page.feedback_id %}
     {% include feedback-form.html id=page.feedback_id %}
