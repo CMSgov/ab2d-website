@@ -28,88 +28,89 @@ Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) 
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
-## The \_since parameter
+## The _since parameter
 
 <p> The _since parameter allows users to filter claims data returned by date, which reduces duplication and speeds up job times. It follows the <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO datetime format</a> (yyyy-mm-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm.</p>
 
-The \_since parameter allows users to pull data that has been last updated since a specified date. The earliest possible date is January 1, 2020 (2020-01-01T00:00:00-05:00) or your organization's attestation date, whichever is later. If no \_since date is specified, it will default to your earliest possible date. It is highly recommended and considered best practice to use the \_since parameter on v1 API calls.
+The _since parameter allows users to pull data that has been last updated since a specified date. The earliest possible date is January 1, 2020 (2020-01-01T00:00:00-05:00) or your organization's attestation date, whichever is later. If no _since date is specified, it will default to your earliest possible date. It is highly recommended and considered best practice to use the _since parameter on v1 API calls.
 
-The \_until parameter filters for claims data last updated after a specified date. This parameter is only available with v2 [(FHIR R4)](https://api.ab2d.cms.gov/api/v2/fhir), the current and recommended version of the API.
+The _until parameter filters for claims data last updated after a specified date. This parameter is only available with v2 [(FHIR R4)](https://api.ab2d.cms.gov/api/v2/fhir), the current and recommended version of the API.
 
-### Valid and invalid \_since parameter values
+{:.margin-bottom-4}
+### Examples of valid and invalid _since parameter values
 
-<table class="usa-table usa-table--stacked usa-table--borderless">
-  <caption class="usa-sr-only">Valid and invalid \_since parameter values</caption>
-    <thead>
-        <tr>
-            <th scope="col">_since</th>
-            <th scope="col">Is it valid?</th>
-            <th scope="col">Why?</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td data-label="_since">2019-12-30T00:00:00.000+00:00</td>
-            <td data-label="Is it valid?">No</td>
-            <td data-label="Why?">The datetime is before January 1, 2020. The job will still run, but the value will be replaced with your earliest possible date.</td>
-        </tr>
-        <tr>
-            <td data-label="_since">2020-10-10T00:00:00.000</td>
-            <td data-label="Is it valid?">No</td>
-            <td data-label="Why?">A timezone must be provided with the datetime.</td>
-        </tr>
-        <tr>
-            <td data-label="_since">2020-10-10T16:00:00.000+10:00</td>
-            <td data-label="Is it valid?">Yes</td>
-            <td data-label="Why?">The datetime is after January 1, 2020 and follows the ISO format.</td>
-        </tr>
-        <tr>
-            <td data-label="_since">2020-10-10T16:00:00.000-10:00</td>
-            <td data-label="Is it valid?">Yes</td>
-            <td data-label="Why?">The datetime is after January 1, 2020 and follows the ISO format.</td>
-        </tr>
-    </tbody>
-</table>
+{% capture alertHeading %}
+  <h4 class="font-sans-md text-bold line-height-sans-2">Valid _since parameter value</h4>
+{% endcapture %}
+{% include alert.html variant="success" heading=alertHeading classNames="measure-6 margin-bottom-3" %}
+<ul class="usa-list usa-list--unstyled" style="margin-bottom: 2rem;">
+  <li class="padding-left-2 border-left-1 border-gray-10 padding-top-05">
+    <code class="language-plaintext highlighter-rouge">?_since=2020-10-10T16:00:00.000+10:00</code>
+    <p>The datetime is after January 1, 2020 and follows the ISO format.</p>
+  </li>
+</ul>
 
-### Why the \_since parameter is important
+{% capture alertHeading %}
+  <h4 class="font-sans-md text-bold line-height-sans-2">Invalid _since parameter value, but will run</h4>
+{% endcapture %}
+{% include alert.html variant="warning" heading=alertHeading classNames="measure-6 margin-bottom-3" %}
+<ul class="usa-list usa-list--unstyled" style="margin-bottom: 2rem;">
+  <li class="padding-left-2 border-left-1 border-gray-10 padding-top-05">
+    <code class="language-plaintext highlighter-rouge">?_since=2020-10-10T16:00:00.000+10:00</code>
+    <p>The datetime is before January 1, 2020. The job will still run, but the value will be replaced with your earliest possible date.</p>
+  </li>
+</ul>
+
+{% capture alertHeading %}
+  <h4 class="font-sans-md text-bold line-height-sans-2">Invalid _since parameter value</h4>
+{% endcapture %}
+{% include alert.html variant="error" heading=alertHeading classNames="measure-6 margin-bottom-3" %}
+<ul class="usa-list usa-list--unstyled" style="margin-bottom: 2rem;">
+  <li class="padding-left-2 border-left-1 border-gray-10 padding-top-05">
+    <code class="language-plaintext highlighter-rouge">?_since=2020-10-10T16:00:00.000</code>
+    <p>A timezone must be provided with the datetime.</p>
+  </li>
+</ul>
+
+### Why the _since parameter is important
 
 In this scenario, your organization attests on March 1, 2020. Your organization runs its first job on November 1, 2020 and subsequently decides to pull data once a month. Your organization runs its second job on December 1, 2020.
 
-### Without the \_since parameter
+### Without the _since parameter
 
 1. The first job takes 4 hours to export all data available to you added between March 1, 2020 and November 1, 2020.
 2. The second job takes 4 and ½ hours to export all data available to you added between March 1, 2020 and December 1, 2020.
 
-Without the \_since parameter, the second job will pull all data from March 1st–December 1, 2020. Most of the data pulled is duplicate data. The only new data pulled is from the past month. Using the \_since parameter can prevent this.
+Without the _since parameter, the second job will pull all data from March 1st–December 1, 2020. Most of the data pulled is duplicate data. The only new data pulled is from the past month. Using the _since parameter can prevent this.
 
-### With the \_since parameter
+### With the _since parameter
 
-With the \_since parameter manually set to November 1, 2020 on the second job:
+With the _since parameter manually set to November 1, 2020 on the second job:
 
 1. The first job takes 4 hours to export all data available to you between March 1, 2020 and November 1, 2020.
 2. The second job takes ½ hour to only export claims data available to you between November 1, 2020 and December 1, 2020.
 
-With the \_since parameter, the second job will only pull data from November 1–December 1. Only pulling data for the past month will be quicker and easier. Though a smaller number of claims may be pulled, a few may still be duplicates of already pulled claims.
+With the _since parameter, the second job will only pull data from November 1–December 1. Only pulling data for the past month will be quicker and easier. Though a smaller number of claims may be pulled, a few may still be duplicates of already pulled claims.
 
 ## Incremental export model overview
 
-One recommended way to use AB2D is to periodically export any data that has been updated since your last job. We encourage bi-weekly exports to stay updated on new claims data. By using the \_since parameter, you can filter for claims data last updated since your last job export. This way, you can run manual incremental exports.
+One recommended way to use AB2D is to periodically export any data that has been updated since your last job. We encourage bi-weekly exports to stay updated on new claims data. By using the _since parameter, you can filter for claims data last updated since your last job export. This way, you can run manual incremental exports.
 
 ### Example scenario
 
-1. Start a job (JOB ID: ABC), successfully download the files, and save the datetime the job started. The datetime ABC starts will be the \_since parameter value for your next job.
+1. Start a job (JOB ID: ABC), successfully download the files, and save the datetime the job started. The datetime ABC starts will be the _since parameter value for your next job.
 2. Wait until the next bi-weekly update (the recommended frequency to run jobs).
-3. Start a job (JOB ID: DEF), manually entering the \_since parameter with the datetime ABC started. The datetime DEF starts will be the \_since parameter value for your next job.
+3. Start a job (JOB ID: DEF), manually entering the _since parameter with the datetime ABC started. The datetime DEF starts will be the _since parameter value for your next job.
 4. Repeat steps 2 and 3 indefinitely.
 
-In this usage model, an organization only pulls the last 2 weeks of claims data delivered to the AB2D API. Please note there may be duplicates returned even when using the \_since parameter. AB2D errs on the side of potentially providing a claim twice rather than potentially never providing a claim.
+In this usage model, an organization only pulls the last 2 weeks of claims data delivered to the AB2D API. Please note there may be duplicates returned even when using the _since parameter. AB2D errs on the side of potentially providing a claim twice rather than potentially never providing a claim.
 
 ### Example export workflow for parameters
 
-The \_since parameter can be used while starting an export job. Visit <a href="{{ '/api-documentation' | relative_url }}#expected-workflow">API Documentation</a> to learn more about the expected workflow for the AB2D API. Review both unencoded and percent-encoded examples of the \_since parameter. Note that ISO8601 dates include characters that can’t appear in URLs.
+The _since parameter can be used while starting an export job. Visit <a href="{{ '/api-documentation' | relative_url }}#expected-workflow">API Documentation</a> to learn more about the expected workflow for the AB2D API. Review both unencoded and percent-encoded examples of the _since parameter. Note that ISO8601 dates include characters that can’t appear in URLs.
 [Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Only the encoded versions will work, but the unencoded examples will show how the URL is formed before encoding.
 
-### Only \_since parameter is specified
+### Only _since parameter is specified
 
 #### Unencoded
 
@@ -130,8 +131,8 @@ curl -i "https://api.ab2d.cms.gov/api/v1/fhir/Patient/\$export?_since%3D2023-02-
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-## The \_outputFormat parameter
+## The _outputFormat parameter
 
-The \_outputFormat parameter allows you to request different formats for your data exports. The default and only format AB2D currently supports is application/fhir+NDJSON. The server must support [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec), but may choose to support additional output formats. The server must also accept the full content type of application/fhir+NDJSON, as well as the abbreviated representations application/NDJSON and NDJSON.
+The _outputFormat parameter allows you to request different formats for your data exports. The default and only format AB2D currently supports is application/fhir+NDJSON. The server must support [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec), but may choose to support additional output formats. The server must also accept the full content type of application/fhir+NDJSON, as well as the abbreviated representations application/NDJSON and NDJSON.
 
 {% include feedback-form.html id="40b9cc72" %}
