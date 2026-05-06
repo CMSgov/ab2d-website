@@ -108,83 +108,49 @@ Together, the _since and _until parameters allow you to pull data that was last 
     </tbody>
 </table>
 
-### Example: valid parameter value
+{:.margin-bottom-4}
+### Examples of valid and invalid _since and _until parameter values
 
-<table class="usa-table usa-table--stacked usa-table--borderless width-full">
-    <thead>
-        <tr>
-            <th scope="col">_since datetime</th>
-            <th scope="col">_until datetime</th>
-        </tr>
-    </thead>
-    <tbody>
-        <td data-label="_since datetime">2020-10-10T03:00:00-06:00</td>
-        <td data-label="_until datetime">2021-10-10T06:00:00-06:00</td>
-    </tbody>
-</table>
-The _until datetime is after the _since datetime. The datetimes are valid and follow the ISO format with time zones.
+{% capture alertHeading %}
+  <h4 class="font-sans-md text-bold line-height-sans-2">Valid _since and _until parameter values</h4>
+{% endcapture %}
+{% include alert.html variant="success" heading=alertHeading classNames="measure-6 margin-bottom-3" %}
+<ul class="usa-list usa-list--unstyled" style="margin-bottom: 2rem;">
+  <li class="padding-left-2 border-left-1 border-gray-10 padding-top-05">
+    <code class="language-plaintext highlighter-rouge">?_since=2020-10-10T03:00:00-06:00&amp;_until=2021-10-10T06:00:00-06:00</code>
+    <p><b>Why:</b> The _until datetime is after the _since datetime. The datetimes are valid and follow the ISO format with time zones.</p>
+  </li>
+</ul>
 
-### Example: invalid parameter values
+{% capture alertHeading %}
+  <h4 class="font-sans-md text-bold line-height-sans-2">Invalid values, but the job will still run</h4>
+{% endcapture %}
+{% include alert.html variant="warning" heading=alertHeading classNames="measure-6 margin-bottom-3" %}
+<ul class="usa-list usa-list--unstyled" style="margin-bottom: 2rem;">
+  <li class="padding-left-2 border-left-1 border-gray-10 padding-top-05">
+    <code class="language-plaintext highlighter-rouge">?_since=2019-12-30T00:00:00+00:00&amp;_until=2020-01-14T00:00:00+00:00</code>
+    <p><b>Why:</b> The _since datetime is before January 1, 2020. The job will still run, but the datetime will be replaced with the default.</p>
+  </li>
+  <li class="padding-left-2 border-left-1 border-gray-10 padding-top-05">
+    <code class="language-plaintext highlighter-rouge">?_since=2020-10-10T16:00:00+00:00&amp;_until=3000-10-10T16:00:00+00:00</code>
+    <p><b>Why:</b> The _until datetime is in the future. The job will still run, but the parameter value will be replaced with the current date.</p>
+  </li>
+</ul>
 
-<table class="usa-table usa-table--stacked usa-table--borderless width-full">
-    <thead>
-        <tr>
-            <th scope="col">_since datetime</th>
-            <th scope="col">_until datetime</th>
-        </tr>
-    </thead>
-    <tbody>
-        <td data-label="_since datetime">2020-10-10T00:00:00</td>
-        <td data-label="_until datetime">2020-10-20T00:00:00</td>
-    </tbody>
-</table>
-
-A time zone must be provided with the datetime.
-
-<table class="usa-table usa-table--stacked usa-table--borderless width-full">
-    <thead>
-        <tr>
-            <th scope="col">_since datetime</th>
-            <th scope="col">_until datetime</th>
-        </tr>
-    </thead>
-    <tbody>
-        <td data-label="_since datetime">2019-12-30T00:00:00+00:00</td>
-        <td data-label="_until datetime">2020-01-14T00:00:00+00:00</td>
-    </tbody>
-</table>
-
-The _since datetime is before January 1, 2020. The job will still run, but the datetime will be replaced with the default.
-
-<table class="usa-table usa-table--stacked usa-table--borderless width-full">
-    <thead>
-        <tr>
-            <th scope="col">_since datetime</th>
-            <th scope="col">_until datetime</th>
-        </tr>
-    </thead>
-    <tbody>
-        <td data-label="_since datetime">2020-10-10T16:00:00+00:00</td>
-        <td data-label="_until datetime">3000-10-10T16:00:00+00:00</td>
-    </tbody>
-</table>
-
-The _until datetime is in the future. The job will still run, but the parameter value will be replaced with the current date.
-
-<table class="usa-table usa-table--stacked usa-table--borderless width-full">
-    <thead>
-        <tr>
-            <th scope="col">_since datetime</th>
-            <th scope="col">_until datetime</th>
-        </tr>
-    </thead>
-    <tbody>
-            <td data-label="_since datetime">2020-10-10T09:00:00-08:00</td>
-            <td data-label="_until datetime">2019-10-10T07:00:00-08:00</td>
-    </tbody>
-</table>
-
-The _until datetime is before the _since datetime. No data will be exported.
+{% capture alertHeading %}
+  <h4 class="font-sans-md text-bold line-height-sans-2">Invalid values, the job will fail or return no data</h4>
+{% endcapture %}
+{% include alert.html variant="error" heading=alertHeading classNames="measure-6 margin-bottom-3" %}
+<ul class="usa-list usa-list--unstyled" style="margin-bottom: 2rem;">
+  <li class="padding-left-2 border-left-1 border-gray-10 padding-top-05">
+    <code class="language-plaintext highlighter-rouge">?_since=2020-10-10T00:00:00&amp;_until=2020-10-20T00:00:00</code>
+    <p><b>Why:</b> A time zone must be provided with the datetime.</p>
+  </li>
+  <li class="padding-left-2 border-left-1 border-gray-10 padding-top-05">
+    <code class="language-plaintext highlighter-rouge">?_since=2020-10-10T09:00:00-08:00&amp;_until=2019-10-10T07:00:00-08:00</code>
+    <p><b>Why:</b> The _until datetime is before the _since datetime.</p>
+  </li>
+</ul>
 
 ### Parameter scenario for _since and _until
 
