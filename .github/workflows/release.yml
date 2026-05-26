@@ -4,10 +4,14 @@ on:
   release:
     types: ['released']
 
+permissions: {}
+
 jobs:
   deploy:
     uses: ./.github/workflows/promote.yml
     permissions:
       contents: read
       id-token: write
-    secrets: inherit
+    secrets:
+      NON_PROD_ACCOUNT: ${{ secrets.NON_PROD_ACCOUNT }}
+      PROD_ACCOUNT: ${{ secrets.PROD_ACCOUNT }}

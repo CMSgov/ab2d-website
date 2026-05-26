@@ -3,6 +3,8 @@ name: "pull request"
 on:
   pull_request:
 
+permissions: {}
+
 concurrency:
   group: ${{ github.workflow }}-${{  github.event.number }}
   cancel-in-progress: true
@@ -16,19 +18,18 @@ jobs:
     with:
       feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/deploy.yml
-    secrets: inherit
+    secrets:
+      NON_PROD_ACCOUNT: ${{ secrets.NON_PROD_ACCOUNT }}
 
   comment-pr:
     needs: deploy
     permissions:
-      contents: read
-      id-token: write
       pull-requests: write
     uses: ./.github/workflows/comment-pr.yml
-    secrets: inherit
 
   a11y-check:
     needs: deploy
+    permissions: {}
     with:
       feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/a11y-check.yml
@@ -41,4 +42,5 @@ jobs:
       env: "staging"
       feature_path: ${{ github.event.number }}
     uses: ./.github/workflows/broken-link-check.yml
-    secrets: inherit
+    secrets:
+      NON_PROD_ACCOUNT: ${{ secrets.NON_PROD_ACCOUNT }}
