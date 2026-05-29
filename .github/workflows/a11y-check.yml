@@ -12,7 +12,7 @@ env:
 
 jobs:
   a11y-check:
-    runs-on: codebuild-ab2d-website-${{github.run_id}}-${{github.run_attempt}}
+    runs-on: codebuild-ab2d-website-non-prod-${{github.run_id}}-${{github.run_attempt}}
 
     steps:
       # Step 1: Checkout the repo
