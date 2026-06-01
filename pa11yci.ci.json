@@ -12,8 +12,7 @@
     "chromeLaunchConfig": {
       "args": [
         "--no-sandbox"
-      ],
-      "executablePath": "/usr/bin/google-chrome"
+      ]
     }
   },
   "timeout": 240000
