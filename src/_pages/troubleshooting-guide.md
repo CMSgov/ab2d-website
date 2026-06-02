@@ -23,17 +23,17 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
   <dt class="font-sans-md text-bold">400 HTTP response: bad request</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p>General response when something is wrong (e.g., missing a request parameter or body).</p>
+    <p class="margin-top-105">General response when something is wrong (e.g., missing a request parameter or body).</p>
   </dd>
 
   <dt class="font-sans-md text-bold">401 HTTP response: forbidden</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p>Your token is incorrect or has expired. Authentication has not been completed successfully.</p>
+    <p class="margin-top-105">Your token is incorrect or has expired. Authentication has not been completed successfully.</p>
   </dd>
 
   <dt class="font-sans-md text-bold">403 HTTP response: unauthorized</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p>You don’t have permission to access the requested data. This can happen for a variety of reasons:</p>
+    <p class="margin-top-105">You don’t have permission to access the requested data. This can happen for a variety of reasons:</p>
     <ul>
       <li>Your token has expired.</li>
       <li>You have specified a contract that is not yours.</li>
@@ -44,7 +44,7 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
   <dt class="font-sans-md text-bold">403 HTTP response: forbidden</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p>Authentication succeeded, but you don’t have permission to access the requested data. This can happen due to a variety of reasons:</p>
+    <p class="margin-top-105">Authentication succeeded, but you don’t have permission to access the requested data. This can happen due to a variety of reasons:</p>
     <ul>
       <li>The credentials provided may have a typo or syntax error (e.g., spaces, hidden characters).</li>
       <li>The credentials provided may have been encoded to Base64 incorrectly.</li>
@@ -55,7 +55,7 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
   <dt class="font-sans-md text-bold">404 HTTP response: page not found</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p>Resource or page not found. You could authenticate but the API endpoint does not exist. Troubleshooting:</p>
+    <p class="margin-top-105">Resource or page not found. You could authenticate but the API endpoint does not exist. Troubleshooting:</p>
     <ul>
       <li>Check the URL to make sure it exists. Enter it in a browser to check which error occurred. You won’t have passed credentials or necessary parameters, so it’ll give you another error. However, it shouldn’t give you a 404.</li>
       <li>If you’re using curl at the command line, you may have to escape characters. For example, $ is used in $Export and $Status, but $ is a variable value in the Bash command line.</li>
@@ -64,17 +64,17 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
   <dt class="font-sans-md text-bold">405 HTTP response: method not allowed</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p>You’re trying to execute a method which the endpoint does not support. For example, calling "/secure/get" as a POST method, even though the endpoint only supports GET methods.</p>
+    <p class="margin-top-105">You’re trying to execute a method which the endpoint does not support. For example, calling "/secure/get" as a POST method, even though the endpoint only supports GET methods.</p>
   </dd>
 
   <dt class="font-sans-md text-bold">429 HTTP response: too many requests</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p>You’re creating too many job requests within a short period of time. Try waiting a bit before making another request.</p>
+    <p class="margin-top-105">You’re creating too many job requests within a short period of time. Try waiting a bit before making another request.</p>
   </dd>
 
   <dt class="font-sans-md text-bold">Unable to download bulk data file</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <ul>
+    <ul class="margin-top-105">
       <li>Your file name and/or job ID are incorrect. Check the job status again to verify these details.</li>
       <li>You requested to download the file more than 6 times.</li>
       <li>You waited too long to download your completed job files. Files expire and automatically delete after 72 hours.</li>

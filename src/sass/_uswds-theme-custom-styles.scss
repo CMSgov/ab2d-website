@@ -631,3 +631,17 @@ $external-href: '[href^="https"]:not([href*="ab2d.cms.gov"]):not([href*="github.
 .usa-button {
   line-height: 1.3;
 }
+
+.usa-prose code:not(.highlight code) {
+  background-color: transparent;
+  padding: 0;
+  word-wrap: normal;
+}
+
+// Red applies only outside links so <code> in <a> inherits the link color.
+.usa-prose code:not(.highlight code):not(a code) {
+  background-color: #f0f0f0;
+  padding: .125rem .25rem;
+  word-wrap: break-word;
+  color: #B9323F;
+}

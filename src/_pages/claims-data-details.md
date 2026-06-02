@@ -13,74 +13,47 @@ AB2D and its upstream data source generate and add fields to claims data in an e
 
 ## Important AB2D claim fields
 
-<div class="overflow-x-auto" tabindex="0">
-  <table class="usa-table usa-table--stacked usa-table--borderless">
-    <thead>
-      <tr>
-        <th scope="col">Field</th>
-        <th scope="col">Description</th>
-        <th scope="col">EOB location</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th data-label="Field" scope="row">
-          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim Group ID</a>
-        </th>
-        <td data-label="Description">
-          Unique identifier of a claim which is the same across claim updates. This field can be used to group together a family of claims.
-        </td>
-        <td data-label="EOB Location">
-          <p>eob.identifier list</p>
-        </td>
-      </tr>
-      <tr>
-        <th data-label="Field" scope="row">
-          <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim ID</a>
-        </th>
-        <td data-label="Description">
-          Unique identifier of a single version of a claim. Not the same across updates.
-        </td>
-        <td data-label="EOB Location">
-          <p>eob.identifier list</p>
-        </td>
-      </tr>
-      <tr>
-        <th data-label="Field" scope="row">
-          <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
-        </th>
-        <td data-label="Description">
-          Current status of the claim, which is either active or canceled. If the latest version (Claim ID) in a family of claims is canceled, then the entire claim is canceled.
-        </td>
-        <td data-label="EOB Location">
-          <p>eob.status</p>
-        </td>
-      </tr>
-      <tr>
-        <th data-label="Field" scope="row">
-          <a href="{{ '/claims-data-details' | relative_url }}#last-updated">Last Updated</a>
-        </th>
-        <td data-label="Description">
-          The last time any modification (new version) of a claim was received by AB2D.
-        </td>
-        <td data-label="EOB Location" style="word-break:break-all">
-          eob.meta.lastUpdated
-        </td>
-      </tr>
-      <tr>
-        <th data-label="Field" scope="row">
-         <a href="{{ '/claims-data-details' | relative_url }}#identifying-patients">Medicare Beneficiary Identifier (MBI)</a>
-        </th>
-        <td data-label="Description">
-          Unique identifier for an enrollee or patient across CMS. An MBI can be current or historic.
-        </td>
-        <td data-label="EOB Location">
-          eob.extension
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<dl>
+  <dt class="font-sans-md text-bold margin-bottom-105">
+    <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim Group ID</a>
+  </dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <code class="language-plaintext highlighter-rouge">eob.identifier list</code>
+    <p class="margin-top-105">Unique identifier of a claim which is the same across claim updates. This field can be used to group together a family of claims.</p>
+  </dd>
+
+  <dt class="font-sans-md text-bold margin-bottom-105">
+    <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim ID</a>
+  </dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <code class="language-plaintext highlighter-rouge">eob.identifier list</code>
+    <p class="margin-top-105">Unique identifier of a single version of a claim. Not the same across updates.</p>
+  </dd>
+
+  <dt class="font-sans-md text-bold margin-bottom-105">
+    <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
+  </dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <code class="language-plaintext highlighter-rouge">eob.status</code>
+    <p class="margin-top-105">Current status of the claim, which is either active or canceled. If the latest version (Claim ID) in a family of claims is canceled, then the entire claim is canceled.</p>
+  </dd>
+
+  <dt class="font-sans-md text-bold margin-bottom-105">
+    <a href="{{ '/claims-data-details' | relative_url }}#last-updated">Last Updated</a>
+  </dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <code class="language-plaintext highlighter-rouge">eob.meta.lastUpdated</code>
+    <p class="margin-top-105">The last time any modification (new version) of a claim was received by AB2D.</p>
+  </dd>
+
+  <dt class="font-sans-md text-bold margin-bottom-105">
+    <a href="{{ '/claims-data-details' | relative_url }}#identifying-patients">Medicare Beneficiary Identifier (MBI)</a>
+  </dt>
+  <dd class="margin-left-0 margin-bottom-4">
+    <code class="language-plaintext highlighter-rouge">eob.extension</code>
+    <p class="margin-top-105">Unique identifier for an enrollee or patient across CMS. An MBI can be current or historic.</p>
+  </dd>
+</dl>
 
 ## The difference between a claim and a claim object
 
