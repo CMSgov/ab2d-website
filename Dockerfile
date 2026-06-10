@@ -9,7 +9,7 @@ COPY ./src/assets ./src/assets
 COPY ./src/sass ./src/sass
 RUN npm run assets:build
 
-FROM ruby:3.2.6 AS ruby-build
+FROM ruby:4.0.5 AS ruby-build
 ARG BASE_PATH
 
 RUN bundle config --global frozen 1
