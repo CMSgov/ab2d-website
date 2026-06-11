@@ -43,10 +43,9 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
   </div>
   <div class="grid-col-fill tablet:grid-col-9">
     <h2>Data Dictionary</h2>
-    <p>Get a detailed breakdown of data elements provided by AB2D. The Data Dictionary covers both v2 (<a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">R4</a>) and v1 (<a href="https://hl7.org/fhir/STU3/" target="_blank" rel="noopener">STU3</a>) of the API. The v3 migration mapping shows how data elements change across v1, v2, and v3, and flags breaking changes to help you prepare for the upgrade.</p>
+    <p>Get a detailed breakdown of data elements provided by AB2D. The Data Dictionary covers both v2 (<a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">R4</a>) and v1 (<a href="https://hl7.org/fhir/STU3/" target="_blank" rel="noopener">STU3</a>) of the API.</p>
     <ul>
       <li><a href="{{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }}" data-tealium="download">Data Dictionary {% include sprite.html icon="file_download" class="text-middle" %}</a></li>
-      <li><a href="{{ '/assets/downloads/ab2d-v3-data-dictionary-migration.xlsx' | relative_url }}" data-tealium="download">v3 Data Dictionary Migration Mapping {% include sprite.html icon="file_download" class="text-middle" %}</a></li>
     </ul>
   </div>
 </div>
