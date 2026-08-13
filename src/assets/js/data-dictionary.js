@@ -118,7 +118,7 @@
     tableEl.replaceChildren();
     descriptionEl.replaceChildren();
 
-    return fetch(baseUrl + 'assets/data/' + file)
+    return fetch('/' + baseUrl + 'assets/data/' + file)
       .then(function (res) {
         if (!res.ok) throw new Error('Request failed: ' + res.status);
         return res.json();
