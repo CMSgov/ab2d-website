@@ -81,22 +81,26 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
             </li>
             <li>
               If attestation lapses because a contract no longer has an active Attestor due to a departure, position change, or failure to renew their EUA or log in to HPMS within a year:
+              <ul>
+                <li>
+                The contract has 2 years to re-attest and receive data back to their original attestation date.
+                </li>
+                <li>
+                After 2 years, data will be provided starting from the new active Attestor's attestation date.
+                </li>
+              </ul>
             </li>
-              <li>
-              The contract has 2 years to re-attest and receive data back to their original attestation date.
-              </li>
-              <li>
-              After 2 years, data will be provided starting from the new active Attestor's attestation date.
-              </li>
             <li>
               If a contract manually removes its attestation status in the HPMS UI:
+              <ul>
+                <li>
+                The contract has 10 days to re-attest and receive data back to the original attestation date.
+                </li>
+                <li>
+                After 10 days, data will be provided starting from the new active Attestor's attestation date.
+                </li>
+              </ul>
             </li>
-              <li>
-              The contract has 10 days to re-attest and receive data back to the original attestation date.
-              </li>
-              <li>
-              After 10 days, data will be provided starting from the new active Attestor's attestation date.
-              </li>
           </ul>
         </div>
         <h3 class="usa-accordion__heading">
