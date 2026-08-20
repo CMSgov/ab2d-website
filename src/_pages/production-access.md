@@ -75,12 +75,34 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
           </button>
         </h3>
         <div id="m-a3" class="usa-accordion__content usa-prose">
+          <p>
+          PDP sponsors can retrieve claims data for their active plan enrollees from the date of attestation onwards. Claims data prior to their attestation date will not be provided.
+          </p>
+          <p>
+          PDP sponsors must have an active Attestor at all times. Your organization will not receive data during any period without an active Attestor, and access will only be restored once another active CEO, CFO, or COO attests.
+          </p>
           <ul>
             <li>
-              PDP sponsors can retrieve claims data for their active plan enrollees from the date of attestation onwards. Claims data prior to their attestation date will not be provided.
+            If attestation lapses because a contract no longer has an active Attestor due to a departure, position change, or failure to renew their EUA or log in to HPMS within a year:
+              <ul>
+                <li>
+                The contract has 2 years to re-attest and receive data back to their original attestation date.
+                </li>
+                <li>
+                After 2 years, data will be provided starting from the new active Attestor's attestation date.
+                </li>
+              </ul>
             </li>
             <li>
-              PDP sponsors must have an active Attestor at all times. Your organization will not be able to receive data during periods without an active Attestor. Access to data will only be restored once another active CEO, CFO, or COO attests.
+              If a contract manually removes its attestation status in the HPMS UI:
+              <ul>
+                <li>
+                The contract has 10 days to re-attest and receive data back to the original attestation date.
+                </li>
+                <li>
+                After 10 days, data will be provided starting from the new active Attestor's attestation date.
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
