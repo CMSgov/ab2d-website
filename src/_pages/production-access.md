@@ -77,6 +77,9 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
         <div id="m-a3" class="usa-accordion__content usa-prose">
           <ul>
             <li>
+            PDP sponsors can retrieve claims data for their active plan enrollees from the date of attestation onwards. Claims data prior to their attestation date will not be provided.
+            </li>
+            <li>
               PDP sponsors must have an active Attestor at all times. Your organization will not receive data during any period without an active Attestor, and access will only be restored once another active CEO, CFO, or COO attests.
             </li>
             <li>
