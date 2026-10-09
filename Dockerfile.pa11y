@@ -1,4 +1,4 @@
-FROM node:24-bookworm
+FROM node:26-bookworm
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends chromium \
@@ -6,7 +6,7 @@ RUN apt-get update \
 
 # pa11y-ci pulls in Puppeteer; skip its bundled Chromium download
 ENV PUPPETEER_SKIP_DOWNLOAD=true
-RUN npm install -g pa11y-ci@^4.1.1
+RUN npm install -g pa11y-ci@^5.0.0
 
 WORKDIR /app
 
