@@ -4,7 +4,7 @@ WORKDIR /usr/app
 COPY package.json package-lock.json ./
 
 RUN --mount=type=cache,target=/root/.npm \
-  npm i --omit=dev
+  npm ci --omit=dev
 
 COPY ./src/assets ./src/assets
 COPY ./src/sass ./src/sass
@@ -20,10 +20,8 @@ RUN bundle config --global frozen 1
 WORKDIR /usr/app
 COPY Gemfile Gemfile.lock ./
 
-RUN --mount=type=cache,target=/usr/local/bundle \
+RUN --mount=type=cache,target=/usr/local/bundle/cache \
   bundle install
-
-RUN bundle install
 
 COPY ./src ./src
 COPY --from=node-build /usr/app/src/assets /usr/app/src/assets
