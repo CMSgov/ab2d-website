@@ -5,9 +5,19 @@ seo_title: "Filter Claims Data With Parameters v1"
 description: "Filter and refine the Medicare claims data you receive from the AB2D API for faster job times and more efficient requests."
 permalink: /filter-claims-data-v1
 in-page-nav: true
+tabs:
+  - label: v3
+    url: /filter-claims-data-v3.html
+  - label: v2
+    url: /filter-claims-data-v2.html
+  - label: v1
+    url: /filter-claims-data-v1.html
+
 ---
 
 # {{ page.page_title }}
+
+{% include tabs.html items=page.tabs %}
 
 [HTTP query parameters]({{ '/query-parameters-v2' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
 
