@@ -33,7 +33,7 @@ FROM scratch AS export
 COPY --from=ruby-build /usr/app/_site /
 
 
-FROM nginx:1.31.6-alpine
+FROM nginx:1.31.7-alpine
 
 COPY --from=ruby-build /usr/app/_site /usr/share/nginx/html
 EXPOSE 80
