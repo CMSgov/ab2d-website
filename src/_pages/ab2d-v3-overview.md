@@ -1,28 +1,13 @@
 ---
 layout: api-docs
-page_title: "Introducing AB2D v3"
-seo_title: "Introducing AB2D v3"
-description: "An introduction of AB2D v3 and its benefits"
-permalink: /introducing-ab2d-v3
+page_title: "AB2D v3 Overview"
+seo_title: "AB2D v3 Overview"
+description: "An overview of AB2D v3 and its benefits"
+permalink: /ab2d-v3-overview
 in-page-nav: true
 ---
 
 # {{ page.page_title }}
-
-{% capture versionAlertHeading %}
-  <p class="usa-alert__heading text-bold">
-    AB2D v3 is now available
-  </p>
-{% endcapture %}
-{% capture versionAlert %}
-    <p>
-        Version 3 became available November 3, 2026. Access to v1 and v2 will be removed on July 30, 2027.
-    </p>
-    <p>
-        Read the <a href="">full announcement on AB2D v3</a>, or <a href="">learn how to migrate to v3</a>.
-    </p>
-{% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
 AB2D v3 delivers faster, more reliable access to Medicare Parts A and B claims data for Part D plan sponsors. Platform-level improvements include timelier data, better support for Part D programs, and improved standardization.
 

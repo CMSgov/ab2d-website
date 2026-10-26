@@ -1,9 +1,9 @@
 ---
 layout: api-docs
-page_title: "AB2D v3 Documentation"
-seo_title: "AB2D v3 Documentation"
-description: "An overview of AB2D v3"
-permalink: /ab2d-v3-documentation
+page_title: "Introducing AB2D v3"
+seo_title: "Introducing AB2D v3"
+description: "An introduction of AB2D v3"
+permalink: /introducing-ab2d-v3
 in-page-nav: true
 ---
 
