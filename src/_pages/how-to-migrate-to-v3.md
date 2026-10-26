@@ -9,22 +9,6 @@ in-page-nav: true
 
 # {{ page.page_title }}
 
-{% capture versionAlertHeading %}
-  <p class="usa-alert__heading text-bold">
-    AB2D v3 is now available
-  </p>
-{% endcapture %}
-{% capture versionAlert %}
-    <p>
-        Version 3 became available November 3, 2026. Access to v1 and v2 will be removed on July 30, 2027.
-    </p>
-    <p>
-        Read the <a href="">full announcement on AB2D v3</a>, or <a href="">learn how to migrate to v3</a>.
-    </p>
-{% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
-
-## Migration overview
 This guide helps you migrate from AB2D v1/v2 to v3. Key changes include:
 <ul>
   <li>
