@@ -56,6 +56,12 @@ The _since and _until parameters filter claims data by the date it was last upda
 * Dates must use the [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss\[+\|-\]hh:mm).
   * **Sample date:** July 1, 2026, 12:00 PM Eastern Daylight Time
   * **Formatted sample:** 2026-07-01T12:00:00.000-04:00
+* Note the ISO8601 dates include characters that can’t appear in URLs.
+  * Here is an example of invalid, unencoded URL utilizing both _since and _until paramters:
+  `https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
+  * Here is an example of valid, percent-encoded URL utilizing both _since and _until paramters:
+  `https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
+  * Read more about percent-encoding [here](https://en.wikipedia.org/wiki/Percent-encoding).
 
 ### Date limitations for the _since parameter
 
@@ -192,25 +198,90 @@ _since and _until filter by the lastUpdated timestamp. _typeFilter with service-
 
 To use _typeFilter to filter by service date, add a prefix directly before the date, with no space. Dates use the format YYYY-MM-DD.
 
-| Prefix | Meaning | Example filter | Resulting claims |
-| :---- | :---- | :---- | :---- |
-| eq | Equal to | service-date=eq2025-01-01 | Service date is January 1, 2025 |
-| gt | After | service-date=gt2025-01-01 | Service date is after January 1, 2025 |
-| ge | On or after | service-date=ge2025-01-01 | Service date is January 1, 2025 or later |
-| lt | Before | service-date=lt2025-01-01 | Service date is before January 1, 2025 |
-| le | On or before | service-date=le2025-01-01 | Service date is January 1, 2025 or earlier |
+<div class="overflow-x-auto" tabindex="0">
+    <table class="usa-table usa-table--stacked usa-table--borderless width-full">
+    <thead>
+        <tr>
+        <th style="white-space: nowrap;">Prefix</th>
+        <th style="white-space: nowrap;">Meaning</th>
+        <th style="white-space: nowrap;">Example filter</th>
+        <th style="white-space: nowrap;">Resulting claims</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>eq</td>
+        <td>Equal to</td>
+        <td>service-date=eq2025-01-01</td>
+        <td>Service date is January 1, 2025</td>
+        </tr>
+        <tr>
+        <td>gt</td>
+        <td>After</td>
+        <td>service-date=gt2025-01-01</td>
+        <td>Service date is after January 1, 2025</td>
+        </tr>
+        <tr>
+        <td>ge</td>
+        <td>On or after</td>
+        <td>service-date=ge2025-01-01</td>
+        <td>Service date is January 1, 2025 or later</td>
+        </tr>
+        <tr>
+        <td>lt</td>
+        <td>Before</td>
+        <td>service-date=lt2025-01-01</td>
+        <td>Service date is before January 1, 2025</td>
+        </tr>
+        <tr>
+        <td>le</td>
+        <td>On or before</td>
+        <td>service-date=le2025-01-01</td>
+        <td>Service date is January 1, 2025 or earlier</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+<b>Note:</b> If a prefix isn't added, it is assumed the service date is <b>equal to</b> the date specified.
 
 ### Combining prefixes
 
 To filter a date range, repeat `service-date` once for each prefix. A claim must match every filter to be returned.
 
-| Combination | Example filter | Resulting claims |
-| :---- | :---- | :---- |
-| ge \+ le | service-date=ge2025-01-01\&service-date=le2025-12-31 | Service date is from January 1 through December 31, 2025, including both dates |
-| gt \+ lt | service-date=gt2025-01-01\&service-date=lt2025-12-31 | Service date is after January 1 and before December 31, 2025, excluding both dates |
-| ge \+ lt | service-date=ge2025-01-01\&service-date=lt2026-01-01 | Service date is any day in 2025 |
-| gt \+ le | service-date=gt2025-01-01\&service-date=le2025-12-31 | Service date is after January 1 and through December 31, 2025 |
-| ge \+ ge | service-date=ge2025-01-01\&service-date=ge2025-06-01 | Both filters apply, so the later date controls. \[VERIFY: confirm behavior or remove this row\] |
+<div class="overflow-x-auto" tabindex="0">
+    <table class="usa-table usa-table--stacked usa-table--borderless width-full">
+    <thead>
+        <tr>
+        <th style="white-space: nowrap;">Prefix combinations</th>
+        <th style="white-space: nowrap;">Example filter</th>
+        <th style="white-space: nowrap;">Resulting claims</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>ge + le</td>
+        <td>service-date=ge2025-01-01\&service-date=le2025-12-31</td>
+        <td>Service date is from January 1 through December 31, 2025, including both dates</td>
+        </tr>
+        <tr>
+        <td>gt + lt</td>
+        <td>service-date=gt2025-01-01\&service-date=lt2025-12-31</td>
+        <td>Service date is after January 1 and before December 31, 2025, excluding both dates</td>
+        </tr>
+        <tr>
+        <td>ge + lt</td>
+        <td>service-date=ge2025-01-01\&service-date=lt2026-01-01</td>
+        <td>Service date is any day in 2025</td>
+        </tr>
+        <tr>
+        <td>gt + le</td>
+        <td>service-date=gt2025-01-01\&service-date=le2025-12-31</td>
+        <td>Service date is after January 1 and through December 31, 2025</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
 
 ### Example request
 
@@ -228,7 +299,15 @@ curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_type=Explana
 
 ## The _outputFormat parameter
 
-The _outputFormat parameter allows you to request different formats for your data exports. The default and only format AB2D currently supports is application/fhir+NDJSON. The server must support [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec), but may choose to support additional output formats. The server must also accept the full content type of application/fhir+NDJSON, as well as the abbreviated representations application/NDJSON and NDJSON.
+AB2D returns claims data as [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec), the only format it supports. You don't need to use the _outputFormat parameter, because NDJSON is the default.
+
+If you include it, use one of these values:
+
+* `application/fhir+ndjson`
+* `application/ndjson`
+* `ndjson`
+
+Any other value will return an error.
 
 ## Incremental export model
 

@@ -89,7 +89,7 @@ Sample v3 extension URL:
 ## Different resource IDs between versions
 In v3, the FHIR ID for ExplanationOfBenefit resources (ExplanationOfBenefit.id) and Patient resources (ExplanationOfBenefit.patient) will not match the v2 FHIR resource IDs. The range of v2 and v3 IDs does overlap, so it is possible for an ID to exist in both versions without representing the same claim.
 
-### Matching claims across AB2D versions
+## Matching claims across AB2D versions
 We do not recommend to match new v3 claims with existing v1/v2 claims. The identifier fields cannot be guaranteed to prevent duplicates when attempting to match across API versions.
 
 {% include feedback-form.html id="71834290" %}

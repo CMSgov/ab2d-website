@@ -19,24 +19,24 @@ tabs:
 
 {% include tabs.html items=page.tabs %}
 
-[HTTP query parameters]({{ '/query-parameters-v2' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
-
-Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
-
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
-    AB2D recommends using v2 of the API
+    AB2D v3 is now available
   </p>
 {% endcapture %}
 {% capture versionAlert %}
     <p>
-        This documentation is for AB2D version 1, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/STU1.0.1/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide v1.0.1</a>. The _until parameter is only available with v2.
+        Version 3 became available November 3, 2026. Access to v1 and v2 will be removed on July 30, 2027.
     </p>
     <p>
-        For organizations using v1, visit our <a href="{{ '/filter-claims-data-v2' | relative_url }}">v2 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from v1 to v2</a>.
+        Read the <a href="">full announcement on AB2D v3</a>, or <a href="">learn how to migrate to v3</a>.
     </p>
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+
+[HTTP query parameters]({{ '/query-parameters-v2' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
+
+Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
 
 ## The _since parameter
 
