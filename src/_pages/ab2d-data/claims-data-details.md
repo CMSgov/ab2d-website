@@ -421,7 +421,7 @@ In the example, a single claim will be tracked through several evolutions:
   </table>
 </div>
 
-In the example, 4 exports are run using the <a href="{{ '/v2/query-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
+In the example, 4 exports are run using the <a href="{{ '/api-documentation/query-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
 
 <div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
@@ -756,7 +756,7 @@ In the example, a single claim will be tracked through several evolutions:
       </tbody>
   </table>
 
-  In the example, 2 exports are run using the <a href="{{ '/v2/query-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
+  In the example, 2 exports are run using the <a href="{{ '/api-documentation/query-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
 
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
@@ -1042,7 +1042,7 @@ On February 28, 2020, organization XYZ runs an export with a _since parameter da
 
 The export pulls a duplicate of the claim from export 1 as it has the same Claim Group ID (99995), Claim ID (12987987), and Last Updated date (01/01/2020).
 
-The claim was pulled twice because the _since date has not changed in both exports, resulting in an overlap. AB2D recommends following the [incremental export model]({{ '/v2/filter-claims-data' | relative_url }}#incremental-export-model) and using v2 of the API to avoid duplicate claims data.
+The claim was pulled twice because the _since date has not changed in both exports, resulting in an overlap. AB2D recommends following the [incremental export model]({{ '/v2/ab2d-data/filter-claims-data' | relative_url }}#incremental-export-model) and using v2 of the API to avoid duplicate claims data.
 
 <div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">

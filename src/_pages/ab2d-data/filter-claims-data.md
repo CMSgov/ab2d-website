@@ -35,7 +35,7 @@ tabs:
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
-You can use HTTP query parameters to filter claims data returned during an API job request. To learn how to access data, see [How to Access Sandbox Data](https://ab2d.cms.gov/access-sandbox-data) and [How to Access Production Claims Data](https://ab2d.cms.gov/access-production-claims-data).
+You can use HTTP query parameters to filter claims data returned during an API job request. To learn how to access data, see [How to Access Sandbox Data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) and [How to Access Production Claims Data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
 
 AB2D offers 3 query parameters to filter or specify the data returned:
 

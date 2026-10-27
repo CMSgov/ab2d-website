@@ -33,13 +33,13 @@ tabs:
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
-[HTTP query parameters]({{ '/query-parameters-v2' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
+[HTTP query parameters]({{ '/api-documentation/query-parameters' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
 
-Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
+Learn how to access [sandbox data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
 
 ## The _since and _until parameters
 
-The [_since and _until parameters]({{ '/query-parameters-v2' | relative_url }}#the-since-and-until-parameters) filter for claims data last updated since or until a specified date. These can be used while starting a job to speed up download times and reduce duplication. Visit <a href="{{ '/api-documentation' | relative_url }}#expected-workflow">API Documentation</a> to learn more about the expected workflow for the AB2D API.
+The [_since and _until parameters]({{ '/api-documentation/query-parameters' | relative_url }}#the-since-and-until-parameters) filter for claims data last updated since or until a specified date. These can be used while starting a job to speed up download times and reduce duplication. Visit <a href="{{ '/api-documentation' | relative_url }}#expected-workflow">API Documentation</a> to learn more about the expected workflow for the AB2D API.
 
 The following examples use the _since and _until parameters separately and together. Note the ISO8601 dates include characters that can’t appear in URLs. [Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). There are unencoded and percent-encoded examples. Only the encoded versions will work, but the unencoded examples show how the URL is formed before encoding.
 

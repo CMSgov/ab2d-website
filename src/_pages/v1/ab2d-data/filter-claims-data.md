@@ -33,9 +33,9 @@ tabs:
 {% endcapture %}
 {% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
-[HTTP query parameters]({{ '/query-parameters-v2' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
+[HTTP query parameters]({{ '/api-documentation/query-parameters' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
 
-Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
+Learn how to access [sandbox data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
 
 ## The _since parameter
 

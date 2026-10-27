@@ -14,7 +14,7 @@
     - name: How to Access Production Claims Data
       url: /api-documentation/access-production-claims-data
 
-    - name: HTTP Query Parameters
+    - name: HTTP Query Parameters (v2)
       url: /api-documentation/query-parameters
 
     - name: Troubleshooting Guide
