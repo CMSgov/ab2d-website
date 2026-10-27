@@ -56,11 +56,11 @@ The _since and _until parameters filter claims data by the date it was last upda
 * Dates must use the [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss\[+\|-\]hh:mm).
   * **Sample date:** July 1, 2026, 12:00 PM Eastern Daylight Time
   * **Formatted sample:** 2026-07-01T12:00:00.000-04:00
-* Note the ISO8601 dates include characters that can’t appear in URLs.
-  * Here is an example of invalid, unencoded URL utilizing both _since and _until paramters:
-  `https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
-  * Here is an example of valid, percent-encoded URL utilizing both _since and _until paramters:
-  `https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
+* Note the ISO8601 dates include characters that can’t appear in URLs, such as the equals symbol ("=").
+  * Here is an example of invalid, unencoded URL utilizing both _since and _until parameters:
+  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
+  * Here is an example of valid, percent-encoded URL utilizing both _since and _until parameters:
+  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
   * Read more about percent-encoding [here](https://en.wikipedia.org/wiki/Percent-encoding).
 
 ### Date limitations for the _since parameter
@@ -115,33 +115,29 @@ Default behaviors with the _since and _until parameters together
 
 #### Valid values
 
-* `?_since=2026-04-10T03:00:00-04:00&_until=2026-08-10T06:00:00-04:00`
+* `?_since%3D2026-04-10T03%3A00%3A00-04%3A00%26_until%3D2026-08-10T06%3A00%3A00-04%3A00`
 <br>
 **Why this works:** The _until datetime is after the _since datetime. Both datetimes follow the ISO format and include time zones.
 
 #### Invalid values, but the job still runs
 
-* `?_since=2026-02-01T00:00:00-05:00&_until=2026-08-01T00:00:00-04:00`
+* `?_since%3D2026-02-01T00%3A00%3A00-05%3A00%26_until%3D2026-08-01T00%3A00%3A00-04%3A00`
 <br>
 **Why this works:** The _since datetime is before the earliest possible date. The job runs, and the value is replaced with the default.
 
-* `?_since=2026-04-10T16:00:00+00:00&_until=3000-10-10T16:00:00+00:00`
+* `?_since%3D2026-04-10T16%3A00%3A00%2B00%3A00%26_until%3D3000-10-10T16%3A00%3A00%2B00%3A00`
 <br>
 **Why this works:** The _until datetime is in the future. The job runs, and the value is replaced with the current date.
 
 #### Invalid values, the job fails or returns no data
 
-* `?_since=2026-04-10T00:00:00&_until=2026-04-20T00:00:00`
+* `?_since%3D2026-04-10T00%3A00%3A00%26_until%3D2026-04-20T00%3A00%3A00`
 <br>
-**Why this doesn’t work:** The datetimes have no time zone.
+**Why this doesn't work:** The datetimes have no time zone.
 
-* `?_since=2026-08-10T09:00:00-04:00&_until=2026-04-10T07:00:00-04:00`
+* `?_since%3D2026-08-10T09%3A00%3A00-04%3A00%26_until%3D2026-04-10T07%3A00%3A00-04%3A00`
 <br>
-**Why this doesn’t work:** The _until datetime is before the _since datetime.
-
-### Encoding dates in requests
-
-The following examples use the \since and \until parameters separately and together.  ISO8601 dates include characters that can’t appear in URLs. [Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). There are unencoded and percent-encoded examples. Only the encoded versions will work, but the unencoded examples show how the URL is formed before encoding.
+**Why this doesn't work:** The _until datetime is before the _since datetime.
 
 ### Example requests
 
