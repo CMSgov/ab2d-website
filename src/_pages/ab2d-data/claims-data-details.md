@@ -21,7 +21,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
 
 <dl>
   <dt class="font-sans-md text-bold margin-bottom-105">
-    <a href="#identifying-claims-and-claim-versions">Claim ID</a>
+    <a href="#claim-id">Claim ID</a>
   </dt>
   <dd class="margin-left-0 margin-bottom-4">
     <code class="language-plaintext highlighter-rouge">eob.identifier list</code>
@@ -29,7 +29,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
   </dd>
 
   <dt class="font-sans-md text-bold margin-bottom-105">
-    <a href="#identifying-claims-and-claim-versions">Claim Control Number</a>
+    <a href="#claim-control-number">Claim Control Number</a>
   </dt>
   <dd class="margin-left-0 margin-bottom-4">
     <code class="language-plaintext highlighter-rouge">eob.identifier list</code>
@@ -61,7 +61,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
   </dd>
 
   <dt class="font-sans-md text-bold margin-bottom-105">
-    <a href="#last-updated">Claim Effective Date</a>
+    <a href="#effective-date">Claim Effective Date</a>
   </dt>
   <dd class="margin-left-0 margin-bottom-4">
     <code class="language-plaintext highlighter-rouge">eob.created</code>
