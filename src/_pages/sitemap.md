@@ -2,7 +2,6 @@
 layout: default
 page_title: "Sitemap"
 seo_title: "AB2D Sitemap"
-permalink: /sitemap
 description: "Review a directory for all the pages on the AB2D website."
 show-side-nav: false
 ---
@@ -19,6 +18,11 @@ show-side-nav: false
             <ul>
                 <li>
                     <a href="{{ '/use-cases' | relative_url }}">Use Cases</a>
+                    <ul>
+                        <li>
+                            <a href="{{ '/mtm-white-paper' | relative_url }}">Using AB2D Medical Claims Data for Medicare Part D MTM Programs</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </li>
@@ -26,24 +30,30 @@ show-side-nav: false
             <a href="{{ '/api-documentation' | relative_url }}">API Documentation</a>
             <ul>
                 <li>
-                    <a href="{{ '/get-a-bearer-token' | relative_url }}">Get a Bearer Token</a>
+                    <a href="{{ '/api-documentation/get-a-bearer-token' | relative_url }}">Get a Bearer Token</a>
                     <ul>
                         <li>
-                            <a href="{{ '/setup-instructions' | relative_url }}">Setup Instructions</a>
+                            <a href="{{ '/api-documentation/setup-instructions' | relative_url }}">Setup Instructions</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ '/access-sandbox-data' | relative_url }}">How to Access Sandbox Data</a>
+                    <a href="{{ '/api-documentation/access-sandbox-data' | relative_url }}">How to Access Sandbox Data</a>
                 </li>
                 <li>
-                    <a href="{{ '/access-production-claims-data' | relative_url }}">How to Access Production Claims Data</a>
+                    <a href="{{ '/api-documentation/access-production-claims-data' | relative_url }}">How to Access Production Claims Data</a>
                 </li>
                 <li>
-                    <a href="{{ '/query-parameters-v2' | relative_url }}">HTTP Query Parameters - v2</a>
+                    <a href="{{ '/api-documentation/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a>
                 </li>
                 <li>
-                    <a href="{{ '/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a>
+                    <a href="{{ '/introducing-ab2d-v3' | relative_url }}">Introducing AB2D v3</a>
+                </li>
+                <li>
+                    <a href="{{ '/ab2d-v3-documentation' | relative_url }}">AB2D v3 Documentation</a>
+                </li>
+                <li>
+                    <a href="{{ '/how-to-migrate-to-v3' | relative_url }}">How to Migrate to v3</a>
                 </li>
             </ul>
         </li>
@@ -51,13 +61,10 @@ show-side-nav: false
             <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data</a>
             <ul>
                 <li>
-                    <a href="{{ '/claims-data-details' | relative_url }}">Claims Data Details</a>
+                    <a href="{{ '/ab2d-data/claims-data-details' | relative_url }}">Claims Data Details</a>
                 </li>
                 <li>
-                    <a href="{{ '/filter-claims-data-v1' | relative_url }}">How to Filter Claims Data - v1</a>
-                </li>
-                <li>
-                    <a href="{{ '/filter-claims-data-v2' | relative_url }}">How to Filter Claims Data - v2</a>
+                    <a href="{{ '/ab2d-data/filter-claims-data' | relative_url }}">How to Filter Claims Data</a>
                 </li>
             </ul>
         </li>
@@ -66,6 +73,9 @@ show-side-nav: false
         </li>
         <li>
             <a href="{{ '/support' | relative_url }}">Support</a>
+        </li>
+        <li>
+            <a href="{{ '/status' | relative_url }}">System Status</a>
         </li>
     </ul>
 </div>

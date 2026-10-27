@@ -13,6 +13,24 @@
 
   <div class="position-relative">
     {% include header.html %}
+    <div class="usa-alert usa-alert--info margin-top-0">
+      <div
+        class="usa-alert__body grid-container"
+        style="max-width: 73rem;"
+      >
+        <p class="usa-alert__heading text-bold">AB2D v3 is here!</p>
+        <p class="usa-alert__text">
+          Read the <a
+            class="usa-link"
+            href="{{ '/introducing-ab2d-v3' | relative_url }}"
+          >full announcement on AB2D v3</a> or learn <a
+            class="usa-link"
+            href="{{ '/how-to-migrate-to-v3' | relative_url }}"
+          >how to migrate</a>. Access to v1 and v2 will be removed on July 30, 2027.
+        </p>
+      </div>
+    </div>
+
     {{ content }}
   </div>
 

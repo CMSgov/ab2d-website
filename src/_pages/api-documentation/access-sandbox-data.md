@@ -3,28 +3,12 @@ layout: api-docs
 page_title: "How to Access Sandbox Data"
 seo_title: "Access Sandbox Test Claims Data"
 description: "Connect to the AB2D API and access test Medicare Parts A & B claims data in the sandbox environment."
-permalink: /access-sandbox-data
 in-page-nav: true
 ---
 
 # {{ page.page_title }}
 
-The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need a [bearer token]({{ '/get-a-bearer-token' | relative_url }}) to access the sandbox and authorize use of the AB2D endpoints.
-
-{% capture versionAlertHeading %}
-  <p class="usa-alert__heading text-bold">
-    AB2D v3 is now available
-  </p>
-{% endcapture %}
-{% capture versionAlert %}
-    <p>
-        Version 3 became available November 3, 2026. Access to v1 and v2 will be removed on July 30, 2027.
-    </p>
-    <p>
-        Read the <a href="">full announcement on AB2D v3</a>, or <a href="">learn how to migrate to v3</a>.
-    </p>
-{% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need a [bearer token]({{ '/api-documentation/get-a-bearer-token' | relative_url }}) to access the sandbox and authorize use of the AB2D endpoints.
 
 ## What’s the difference between the sandbox and production environments?
 
@@ -60,7 +44,7 @@ GET /api/v3/fhir/Patient/$export
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" %}
 
-If it takes more than 30 hours to retrieve and download the data, the request will time out and fail. Try using [parameters]({{ '/filter-claims-data-v3' | relative_url }}) when running a job to filter the claims data returned and reduce file size.
+If it takes more than 30 hours to retrieve and download the data, the request will time out and fail. Try using [parameters]({{ '/ab2d-data/filter-claims-data' | relative_url }}) when running a job to filter the claims data returned and reduce file size.
 
 ### Status
 
@@ -111,7 +95,7 @@ GET /api/v3/fhir/metadata
 
 ## curl instructions
 
-You can copy and paste [curl](https://curl.se/) commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/setup-instructions' | relative_url }}).
+You can copy and paste [curl](https://curl.se/) commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/api-documentation/setup-instructions' | relative_url }}).
 
 HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${variable}`.
 
@@ -203,7 +187,7 @@ The command `echo $RESP | sed 1q | jq` will extract the first JSON object and pr
 
 ## Swagger instructions
 
-These instructions walk you through how to authorize your [bearer token]({{ '/get-a-bearer-token' | relative_url }}), request sandbox data, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html).
+These instructions walk you through how to authorize your [bearer token]({{ '/api-documentation/get-a-bearer-token' | relative_url }}), request sandbox data, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html).
 
 ### I. Authorize your bearer token
 
@@ -218,7 +202,7 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 
 1. On the Swagger UI page, select the Export command `/api/v3/fhir/Patient/$export`
 2. With the Export section expanded, select *Try it out*.
-    - Keep the default values and add dates in [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss[+/-]hh:mm) for the parameter values. The [_since and _until parameters]({{ '/query-parameters-v3' | relative_url }}) filter for claims last updated since and until a specified date.
+    - Keep the default values and add dates in [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss[+/-]hh:mm) for the parameter values. The [_since and _until parameters]({{ '/ab2d-data/filter-claims-data' | relative_url }}) filter for claims last updated since and until a specified date.
 3. Select *Execute*. If the job was created successfully, you’ll receive a 202 HTTP response code under *Server response*.
 4. Copy the job ID from the *Response header*. The job ID is located in the content-location URL (http://sandbox.ab2d.cms.gov/api/v3/fhir/Job/{job_uuid}/$status).
 
@@ -243,7 +227,7 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 
 ## Troubleshooting
 
-Visit our [Troubleshooting Guide]({{ '/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2) for guidance on HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
+Visit our [Troubleshooting Guide]({{ '/api-documentation/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2) for guidance on HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
 
 When contacting our team, please include the following information:
 

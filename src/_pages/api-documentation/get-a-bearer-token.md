@@ -3,22 +3,21 @@ layout: api-docs
 page_title: "How to Get a Bearer Token"
 seo_title: "Get a Bearer Token for Claims Data"
 description: "Obtain a bearer token for authenticating requests to the AB2D API, ensuring secure access to enrollees’ Medicare claims data."
-permalink: /get-a-bearer-token
 in-page-nav: true
 ---
 
 # {{ page.page_title }}
 
-Bearer tokens, also known as access tokens or JSON web tokens, authorize use of the AB2D endpoints. You will need a bearer token to access the sandbox and production environments. Once you have a bearer token, follow the instructions to access either [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
+Bearer tokens, also known as access tokens or JSON web tokens, authorize use of the AB2D endpoints. You will need a bearer token to access the sandbox and production environments. Once you have a bearer token, follow the instructions to access either [sandbox data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
 
 ## Instructions
 
 <ol>
     <li>
-        You can use a variety of tools to get a bearer token, including <a href="{{ '/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password.
+        You can use a variety of tools to get a bearer token, including <a href="{{ '/api-documentation/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password.
         <ul>
-            <li><b>If you’re trying to access sandbox data</b>: Use 1 of the 4 client ID and password sets provided in the <a href="{{ '/get-a-bearer-token' | relative_url }}#sandbox-credentials">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idp.idm.cms.gov).</li>
-            <li><b>If you’re trying to access production data</b>: Once you complete the steps for <a href="{{ '/production-access' | relative_url }}">production access</a>, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idm.cms.gov). You can also <a href="{{ '/get-a-bearer-token' | relative_url }}#how-to-create-a-credential-file">create your own credential file</a> manually.</li>
+            <li><b>If you’re trying to access sandbox data</b>: Use 1 of the 4 client ID and password sets provided in the <a href="{{ '/api-documentation/get-a-bearer-token' | relative_url }}#sandbox-credentials">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idp.idm.cms.gov).</li>
+            <li><b>If you’re trying to access production data</b>: Once you complete the steps for <a href="{{ '/production-access' | relative_url }}">production access</a>, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idm.cms.gov). You can also <a href="{{ '/api-documentation/get-a-bearer-token' | relative_url }}#how-to-create-a-credential-file">create your own credential file</a> manually.</li>
         </ul>
     </li>
     <li>Once you have your sandbox or production credentials, create a new text file using your editor of choice. </li>
@@ -99,7 +98,7 @@ MG9hOWp6MGUxZHlOZlJNbTYyOTc6c2huRzZOR2tIY3UyOXB0RHNLS1JXNnE1dUZKU1NwSXBkbF9LNWZW
 
 ## How to get a bearer token using curl
 
-Learn how to get a bearer token for the sandbox using the [curl](https://curl.se/) command line tool specifically. You can copy and paste these commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/setup-instructions' | relative_url }}).
+Learn how to get a bearer token for the sandbox using the [curl](https://curl.se/) command line tool specifically. You can copy and paste these commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/api-documentation/setup-instructions' | relative_url }}).
 
 HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${variable}`.
 
@@ -115,7 +114,7 @@ AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
 
 ### II. Get your bearer token
 
-Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for PDP-100 are [listed above]({{ '/get-a-bearer-token' | relative_url }}#sandbox-credentials), but will look something like
+Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for PDP-100 are [listed above]({{ '/api-documentation/get-a-bearer-token' | relative_url }}#sandbox-credentials), but will look something like
 `MG9hMnQwbHNyZ…VHRINU9CY3VIdw==`.
 
 {% capture curlSnippet %}{% raw %}
@@ -194,12 +193,12 @@ New-Item -Path $AUTH_FILE -ItemType File
 ## Guides
 
 Once you get a bearer token, you can access either sandbox or production claims data:
-- [How to Access Sandbox Data]({{ '/access-sandbox-data' | relative_url }})
-- [How to Access Production Claims Data]({{ '/access-production-claims-data' | relative_url }})
+- [How to Access Sandbox Data]({{ '/api-documentation/access-sandbox-data' | relative_url }})
+- [How to Access Production Claims Data]({{ '/api-documentation/access-production-claims-data' | relative_url }})
 
 ## Troubleshooting
 
-Visit our [Troubleshooting Guide]({{ '/troubleshooting-guide' | relative_url }}) to explore HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
+Visit our [Troubleshooting Guide]({{ '/api-documentation/troubleshooting-guide' | relative_url }}) to explore HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
 
 When contacting our team, please include the following information:
 - Your operating system

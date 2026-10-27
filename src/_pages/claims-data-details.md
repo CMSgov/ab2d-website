@@ -3,7 +3,6 @@ layout: api-docs
 page_title: "Claims Data Details"
 seo_title: "Claims Data Details"
 description: "Explore detailed information on the claims data available with the AB2D API, including diagnoses, procedures, providers, and service utilization."
-permalink: /claims-data-details
 in-page-nav: true
 ---
 

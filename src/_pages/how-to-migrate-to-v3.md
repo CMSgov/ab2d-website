@@ -3,11 +3,13 @@ layout: api-docs
 page_title: "How to Migrate to v3"
 seo_title: "How to Migrate to v3"
 description: "How to Migrate to v3"
-permalink: /how-to-migrate-to-v3
 in-page-nav: true
+show-side-nav: false
 ---
 
 # {{ page.page_title }}
+
+## Migration overview
 
 This guide helps you migrate from AB2D v1/v2 to v3. Key changes include:
 <ul>

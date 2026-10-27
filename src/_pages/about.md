@@ -3,7 +3,6 @@ layout: default
 page_title: "About AB2D"
 seo_title: "About AB2D"
 description: "AB2D helps Prescription Drug Plan sponsors optimize outcomes for medication therapies. Learn about its permitted uses and history."
-permalink: /about
 show-side-nav: false
 ---
 

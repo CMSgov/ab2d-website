@@ -3,8 +3,8 @@ layout: api-docs
 page_title: "AB2D v3 Overview"
 seo_title: "AB2D v3 Overview"
 description: "An overview of AB2D v3 and its benefits"
-permalink: /ab2d-v3-overview
 in-page-nav: true
+show-side-nav: false
 ---
 
 # {{ page.page_title }}
@@ -43,7 +43,7 @@ v3 largely removes the delay in new enrollees appearing in AB2D. A patient merge
 v3 returns only the most recent version of each claim. A new Claim Control Number (CCN) field lets you track claims across versions of a claim.The CCN replaces Group Claim ID in earlier API versions.
 
 ### Targeted exports
-The new _typeFilter parameter lets you download only the data you need by filtering by service date.
+The new `_typeFilter` parameter lets you download only the data you need by filtering by service date.
 
 ### Improved FHIR extensions and code systems
 v3 uses standard FHIR StructureDefinition and CodeSystem resources for extensions and code systems.
@@ -87,7 +87,7 @@ AB2D v3 still returns ExplanationOfBenefit resources in NDJSON format, and 173 o
     Download the <a href="">AB2D v3 Data Dictionary</a>
   </li>
 </ul>
-Questions? Contact the AB2D team at AB2D@cms.hhs.gov.
+Questions? Contact the AB2D team at [AB2D@cms.hhs.gov](mailto:AB2D@cms.hhs.gov).
 
 
 {% include feedback-form.html id="0df4c778" %}

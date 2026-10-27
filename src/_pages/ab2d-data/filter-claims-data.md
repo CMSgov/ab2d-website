@@ -3,15 +3,14 @@ layout: api-docs
 page_title: "How to Filter Claims Data – v3"
 seo_title: "Filter Claims Data With Parameters v3"
 description: "Filter and refine AB2D’s Medicare claims data using HTTP query parameters"
-permalink: /filter-claims-data-v3
 in-page-nav: true
 tabs:
   - label: v3
-    url: /filter-claims-data-v3.html
+    url: /ab2d-data/filter-claims-data
   - label: v2
-    url: /filter-claims-data-v2.html
+    url: /v2/ab2d-data/filter-claims-data
   - label: v1
-    url: /filter-claims-data-v1.html
+    url: /v1/ab2d-data/filter-claims-data
 
 ---
 
