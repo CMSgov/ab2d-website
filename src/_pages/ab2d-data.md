@@ -41,7 +41,7 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
     <img src="{{ '/assets/img/book.svg' | relative_url }}" alt="" />
   </div>
   <div class="grid-col-fill tablet:grid-col-9">
-    <h2>Data Dictionary</h2>
+    <h2 id="data-dictionary">Data Dictionary</h2>
     <p>Get a detailed breakdown of data elements provided by AB2D. The Data Dictionary covers both v2 (<a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">R4</a>) and v1 (<a href="https://hl7.org/fhir/STU3/" target="_blank" rel="noopener">STU3</a>) of the API.</p>
     <ul>
       <li><a href="{{ '/assets/downloads/ab2d-data-dictionary.xlsx' | relative_url }}" data-tealium="download">Data Dictionary {% include sprite.html icon="file_download" class="text-middle" %}</a></li>
@@ -54,7 +54,7 @@ There are specific [permitted uses]({{ '/about' | relative_url }}) for the data.
     <img src="{{ '/assets/img/paper.svg' | relative_url }}" alt="" />
   </div>
   <div class="grid-col-fill tablet:grid-col-9">
-    <h2>Sample files</h2>
+    <h2 id="sample-files">Sample files</h2>
     <p>Download sample, unformatted <a href="https://github.com/ndjson/ndjson-spec" target="_blank" rel="noopener">NDJSON</a> files. Each line is a <a href="https://www.json.org/json-en.html" target="_blank" rel="noopener">JSON</a> object that can be read with a text editor like the <a href="https://jsonlint.com/" target="_blank" rel="noopener">format viewer</a>.</p>
     <ul>
       <li><a href="{{ '/assets/downloads/sample-data-r4.ndjson' | relative_url }}" data-tealium="download">AB2D v2 (recommended) Parts A and B Sample Export (FHIR R4) {% include sprite.html icon="file_download" class="text-middle" %}</a></li>

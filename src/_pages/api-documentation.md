@@ -16,7 +16,7 @@ The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://hl
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Learn about AB2D</p>
     <p>
-      Explore the <a href="{{ '/api-documentation#what-s-the-difference-between-the-sandbox-and-production-environments' | relative_url }}">documentation</a>, <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">Data Dictionary</a>, and <a href="{{ '/ab2d-data#sample-files' | relative_url }}">sample files</a>.
+      Explore the <a href="{{ '/api-documentation#whats-the-difference-between-the-sandbox-and-production-environments' | relative_url }}">documentation</a>, <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">Data Dictionary</a>, and <a href="{{ '/ab2d-data#sample-files' | relative_url }}">sample files</a>.
     </p>
   </li>
   <li class="usa-process-list__item">
@@ -171,7 +171,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
 
 ## Endpoints, schemas, and parameters
 
-Get an overview of the endpoints you can request at the [sandbox]({{ '/api-documentation/access-sandbox-data' | relative_url }}) or [production]({{ '/api-documentation/access-production-claims-data' | relative_url }}) URL. You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/api-documentation/query-parameters' | relative_url }}) to filter or specify the claims data returned.
+Get an overview of the endpoints you can request at the [sandbox]({{ '/api-documentation/access-sandbox-data' | relative_url }}) or [production]({{ '/api-documentation/access-production-claims-data' | relative_url }}) URL. You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/ab2d-data/filter-claims-data' | relative_url }}) to filter or specify the claims data returned.
 
 ## JSON resources
 

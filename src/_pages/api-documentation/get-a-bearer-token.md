@@ -16,8 +16,8 @@ Bearer tokens, also known as access tokens or JSON web tokens, authorize use of 
     <li>
         You can use a variety of tools to get a bearer token, including <a href="{{ '/api-documentation/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password.
         <ul>
-            <li><b>If you’re trying to access sandbox data</b>: Use 1 of the 4 client ID and password sets provided in the <a href="{{ '/api-documentation/get-a-bearer-token' | relative_url }}#sandbox-credentials">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idp.idm.cms.gov).</li>
-            <li><b>If you’re trying to access production data</b>: Once you complete the steps for <a href="{{ '/production-access' | relative_url }}">production access</a>, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idm.cms.gov). You can also <a href="{{ '/api-documentation/get-a-bearer-token' | relative_url }}#how-to-create-a-credential-file">create your own credential file</a> manually.</li>
+            <li><b>If you’re trying to access sandbox data</b>: Use 1 of the 4 client ID and password sets provided in the <a href="{{ '/api-documentation/get-a-bearer-token#sandbox-credentials' | relative_url }}">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idp.idm.cms.gov).</li>
+            <li><b>If you’re trying to access production data</b>: Once you complete the steps for <a href="{{ '/production-access' | relative_url }}">production access</a>, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idm.cms.gov). You can also <a href="{{ '/api-documentation/get-a-bearer-token#how-to-create-a-credential-file' | relative_url }}">create your own credential file</a> manually.</li>
         </ul>
     </li>
     <li>Once you have your sandbox or production credentials, create a new text file using your editor of choice. </li>
@@ -114,7 +114,7 @@ AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
 
 ### II. Get your bearer token
 
-Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for PDP-100 are [listed above]({{ '/api-documentation/get-a-bearer-token' | relative_url }}#sandbox-credentials), but will look something like
+Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for PDP-100 are [listed above]({{ '/api-documentation/get-a-bearer-token#sandbox-credentials' | relative_url }}), but will look something like
 `MG9hMnQwbHNyZ…VHRINU9CY3VIdw==`.
 
 {% capture curlSnippet %}{% raw %}

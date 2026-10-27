@@ -378,11 +378,11 @@ After you download your files, clean up your directory as needed. You can move t
 
 ## Incremental export model
 
-Incremental exports of data, ideally at a bi-weekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/ab2d-data/filter-claims-data' | relative_url }}#incremental-export-model)
+Incremental exports of data, ideally at a bi-weekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/ab2d-data/filter-claims-data#incremental-export-model' | relative_url }})
 
 ## Troubleshooting
 
-Review our [Troubleshooting Guide]({{ '/api-documentation/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2). If you need additional assistance, email the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
+Review our [Troubleshooting Guide]({{ '/api-documentation/troubleshooting-guide' | relative_url }}). If you need additional assistance, email the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
 
 When contacting our team, please include the following information:
 

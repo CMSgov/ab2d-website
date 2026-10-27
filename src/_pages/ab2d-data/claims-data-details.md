@@ -464,7 +464,7 @@ In the example, a single claim will be tracked through several evolutions:
   </table>
 </div>
 
-In the example, 4 exports are run using the <a href="{{ '/api-documentation/query-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
+In the example, 4 exports are run using the <a href="{{ '/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
 
 <div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">

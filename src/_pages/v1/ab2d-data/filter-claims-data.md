@@ -35,7 +35,7 @@ tabs:
 {% endcapture %}
 {% include alert.html variant="warning" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
-[HTTP query parameters]({{ '/api-documentation/query-parameters' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
+[HTTP query parameters]({{ '/ab2d-data/filter-claims-data' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
 
 Learn how to access [sandbox data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
 
@@ -118,7 +118,7 @@ In this usage model, an organization only pulls the last 2 weeks of claims data 
 
 ### Example export workflow for parameters
 
-The _since parameter can be used while starting an export job. Visit <a href="{{ '/api-documentation' | relative_url }}#expected-workflow">API Documentation</a> to learn more about the expected workflow for the AB2D API. Review both unencoded and percent-encoded examples of the _since parameter. Note that ISO8601 dates include characters that can’t appear in URLs.
+The _since parameter can be used while starting an export job. Visit <a href="{{ '/api-documentation#expected-workflow' | relative_url }}">API Documentation</a> to learn more about the expected workflow for the AB2D API. Review both unencoded and percent-encoded examples of the _since parameter. Note that ISO8601 dates include characters that can’t appear in URLs.
 [Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Only the encoded versions will work, but the unencoded examples will show how the URL is formed before encoding.
 
 ### Only _since parameter is specified

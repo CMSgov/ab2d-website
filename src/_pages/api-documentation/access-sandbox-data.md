@@ -227,7 +227,7 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ap
 
 ## Troubleshooting
 
-Visit our [Troubleshooting Guide]({{ '/api-documentation/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2) for guidance on HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
+Visit our [Troubleshooting Guide]({{ '/api-documentation/troubleshooting-guide' | relative_url }}) for guidance on HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
 
 When contacting our team, please include the following information:
 

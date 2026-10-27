@@ -202,7 +202,7 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% capture a17AccordionContent %}
 <p>
- Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir).
+ Version 1 of the API uses <a class="usa-link" href="https://api.ab2d.cms.gov/api/v1/fhir" target="_blank" rel="noopener">STU3</a> and version 2, which is recommended by the AB2D team, uses <a class="usa-link" href="https://api.ab2d.cms.gov/api/v2/fhir" target="_blank" rel="noopener">R4</a>.
 </p>
 <p>
  Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn how to migrate from v1 to v2</a>.
@@ -214,7 +214,7 @@ If the system is correct, check with your IT team to make sure you have a static
   The default value for the _since parameter changes between versions. The _until parameter is also only available with v2.
 </p>
 <p>
-  In v1, a date must be specified to use _since. If no _since value is specified, it will default to January 1, 2020 or your organization's attestation date, whichever is later. In v2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as v1. <a href="{{ '/api-documentation/query-parameters' | relative_url }}">Learn how to use parameters</a>.
+  In v1, a date must be specified to use _since. If no _since value is specified, it will default to January 1, 2020 or your organization's attestation date, whichever is later. In v2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as v1. <a href="{{ '/ab2d-data/filter-claims-data#date-limitations-for-the-_since-parameter' | relative_url }}">Learn how to use parameters</a>.
 </p>
 {% endcapture %}
 
