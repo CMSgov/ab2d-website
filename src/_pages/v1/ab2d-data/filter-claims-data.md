@@ -1,6 +1,6 @@
 ---
 layout: api-docs
-page_title: "How to Filter Claims Data – v1"
+page_title: "How to Filter Claims Data"
 seo_title: "Filter Claims Data With Parameters v1"
 description: "Filter and refine the Medicare claims data you receive from the AB2D API for faster job times and more efficient requests."
 in-page-nav: true
@@ -20,18 +20,20 @@ tabs:
 
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
-    AB2D v3 is now available
+    You're viewing v1 documentation
   </p>
 {% endcapture %}
 {% capture versionAlert %}
-    <p>
-        Version 3 became available November 3, 2026. Access to v1 and v2 will be removed on July 30, 2027.
-    </p>
-    <p>
-        Read the <a href="">full announcement on AB2D v3</a>, or <a href="">learn how to migrate to v3</a>.
-    </p>
+<p class="margin-bottom-0">Access to v1 and v2 will be removed on July 30, 2027. Read the <a
+    class="usa-link"
+    href="{{ '/introducing-ab2d-v3' | relative_url }}"
+  >full announcement on AB2D v3</a> and learn <a
+    class="usa-link"
+    href="{{ '/how-to-migrate-to-v3' | relative_url }}"
+  >how to migrate</a>.
+</p>
 {% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+{% include alert.html variant="warning" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
 [HTTP query parameters]({{ '/api-documentation/query-parameters' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
 

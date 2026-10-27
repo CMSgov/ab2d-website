@@ -1,6 +1,6 @@
 ---
 layout: api-docs
-page_title: "How to Filter Claims Data – v3"
+page_title: "How to Filter Claims Data"
 seo_title: "Filter Claims Data With Parameters v3"
 description: "Filter and refine AB2D’s Medicare claims data using HTTP query parameters"
 in-page-nav: true
@@ -33,7 +33,7 @@ tabs:
       </li>
     </ul>
 {% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+{% include alert.html variant="success" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
 You can use HTTP query parameters to filter claims data returned during an API job request. To learn how to access data, see [How to Access Sandbox Data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) and [How to Access Production Claims Data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
 
@@ -176,14 +176,7 @@ curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_since=2026-0
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-## The _typeFilter parameter New
-
-<div class="usa-alert usa-alert--success usa-alert--no-icon">
-    <div class="usa-alert__body">
-        <p class="usa-alert__text text-bold font-ui-lg">Only available in v3</p>
-        <p class="usa-alert__text">The _typeFilter parameter is only available in v3. If you are using v2, use the _since and _type parameters to filter claims data. <a href="">How to migrate to v3.</a></p>
-    </div>
-</div>
+## The _typeFilter parameter
 
 The _typeFilter parameter filters ExplanationOfBenefit resources by service date. The service date is the date care occurred within a billable period, stored in `ExplanationOfBenefit.billablePeriod`. The value of _typeFilter is a URL-encoded FHIR search query.
 

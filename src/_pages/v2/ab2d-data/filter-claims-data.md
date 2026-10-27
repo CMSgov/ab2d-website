@@ -1,6 +1,6 @@
 ---
 layout: api-docs
-page_title: "How to Filter Claims Data – v2"
+page_title: "How to Filter Claims Data"
 seo_title: "Filter Claims Data With Parameters v2"
 description: "Filter and refine AB2D’s Medicare claims data using HTTP query parameters such as _until, available only with version 2."
 in-page-nav: true
@@ -20,18 +20,20 @@ tabs:
 
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
-    AB2D v3 is now available
+    You're viewing v2 documentation
   </p>
 {% endcapture %}
 {% capture versionAlert %}
-    <p>
-        Version 3 became available November 3, 2026. Access to v1 and v2 will be removed on July 30, 2027.
-    </p>
-    <p>
-        Read the <a href="">full announcement on AB2D v3</a>, or <a href="">learn how to migrate to v3</a>.
-    </p>
+<p class="margin-bottom-0">Access to v1 and v2 will be removed on July 30, 2027. Read the <a
+    class="usa-link"
+    href="{{ '/introducing-ab2d-v3' | relative_url }}"
+  >full announcement on AB2D v3</a> and learn <a
+    class="usa-link"
+    href="{{ '/how-to-migrate-to-v3' | relative_url }}"
+  >how to migrate</a>.
+</p>
 {% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+{% include alert.html variant="warning" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
 [HTTP query parameters]({{ '/api-documentation/query-parameters' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
 
@@ -39,7 +41,7 @@ Learn how to access [sandbox data]({{ '/api-documentation/access-sandbox-data' |
 
 ## The _since and _until parameters
 
-The [_since and _until parameters]({{ '/api-documentation/query-parameters' | relative_url }}#the-since-and-until-parameters) filter for claims data last updated since or until a specified date. These can be used while starting a job to speed up download times and reduce duplication. Visit <a href="{{ '/api-documentation' | relative_url }}#expected-workflow">API Documentation</a> to learn more about the expected workflow for the AB2D API.
+The [_since and _until parameters]({{ '/api-documentation/query-parameters#the-_since-and-_until-parameters' | relative_url }}) filter for claims data last updated since or until a specified date. These can be used while starting a job to speed up download times and reduce duplication. Visit <a href="{{ '/api-documentation' | relative_url }}#expected-workflow">API Documentation</a> to learn more about the expected workflow for the AB2D API.
 
 The following examples use the _since and _until parameters separately and together. Note the ISO8601 dates include characters that can’t appear in URLs. [Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). There are unencoded and percent-encoded examples. Only the encoded versions will work, but the unencoded examples show how the URL is formed before encoding.
 

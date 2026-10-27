@@ -7,7 +7,7 @@ in-page-nav: true
 tabs:
   - label: v3
     url: /ab2d-data/claims-data-details
-  - label: v2
+  - label: v1/v2
     url: /v2/ab2d-data/claims-data-details
 ---
 
