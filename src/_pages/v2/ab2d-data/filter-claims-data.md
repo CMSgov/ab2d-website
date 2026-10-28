@@ -35,74 +35,143 @@ tabs:
 {% endcapture %}
 {% include alert.html variant="warning" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
 
-[HTTP query parameters]({{ '/ab2d-data/filter-claims-data' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
+You can use HTTP query parameters to filter claims data returned during an API job request. To learn how to access data, see [How to Access Sandbox Data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) and [How to Access Production Claims Data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
 
-Learn how to access [sandbox data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
+AB2D v2 offers 2 query parameters to filter or specify the data returned:
+
+* **_since:** returns claims last updated after a specified date
+* **_until:** returns claims last updated before a specified date
+
+AB2D also supports the _outputFormat parameter, which is covered at the end of this page.
+
+**Note:** Use parameters when you start a job in the sandbox or production environment to speed up download times and reduce file size.
 
 ## The _since and _until parameters
 
-The [_since and _until parameters]({{ '/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}) filter for claims data last updated since or until a specified date. These can be used while starting a job to speed up download times and reduce duplication. Visit <a href="{{ '/api-documentation#expected-workflow' | relative_url }}">API Documentation</a> to learn more about the expected workflow for the AB2D API.
+The _since and _until parameters filter claims data by the date it was last updated.
 
-The following examples use the _since and _until parameters separately and together. Note the ISO8601 dates include characters that can’t appear in URLs. [Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). There are unencoded and percent-encoded examples. Only the encoded versions will work, but the unencoded examples show how the URL is formed before encoding.
+* You can use the parameters separately or together.
+* Dates must use the [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss\[+\|-\]hh:mm).
+  * **Sample date:** July 1, 2026, 12:00 PM Eastern Daylight Time
+  * **Formatted sample:** 2026-07-01T12:00:00.000-04:00
+* Note the ISO8601 dates include characters that can’t appear in URLs.
+  * Here is an example of invalid, unencoded URL utilizing both _since and _until parameters:
+  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
+  * Here is an example of valid, percent-encoded URL utilizing both _since and _until parameters:
+  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
+  * Read more about percent-encoding [here](https://en.wikipedia.org/wiki/Percent-encoding).
 
-### When only the _since parameter is specified
+### Date limitations for the _since parameter
 
-#### Unencoded:
+The earliest possible date you can retrieve data for is either April 1, 2026 (2026-04-01T00:00:00-05:00) or your organization’s attestation date, whichever is later. If no _since date is specified, your export defaults to the datetime of your organization’s last successful export. If this is your first job, results will default to your earliest possible date.
 
-`https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since=2023-02-13T00:00:00.000-05:00`
+### Date limitations for the _until parameter
 
-#### Percent-encoded:
+The latest possible date you can retrieve data for is the current date. If no _until date is specified, it will default to the current date. You will receive an error if the _until date you entered is in the future.
 
-`https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00`
+### Date limitations when using the _since and _until parameters together
 
-#### curl command
+Use the _since and _until parameters together to specify a date range (i.e., to export data since \[a date\] until \[a date\]). If you accidentally enter a _since date that falls after the _until date the job will fail.
+
+Default behaviors with the _since and _until parameters together
+
+<div class="overflow-x-auto" tabindex="0">
+    <table class="usa-table usa-table--stacked usa-table--borderless width-full">
+    <thead>
+        <tr>
+        <th style="white-space: nowrap;">_since</th>
+        <th style="white-space: nowrap;">_until</th>
+        <th style="white-space: nowrap;">Resulting date range</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>Not set</td>
+        <td>Not set</td>
+        <td>From last successful export date to current date</td>
+        </tr>
+        <tr>
+        <td>2026-04-01</td>
+        <td>Not set</td>
+        <td>From April 1, 2026 to current date</td>
+        </tr>
+        <tr>
+        <td>Not set</td>
+        <td>2026-09-01</td>
+        <td>From last successful export to September 1, 2026</td>
+        </tr>
+        <tr>
+        <td>2026-04-01</td>
+        <td>2026-09-01</td>
+        <td>From April 1, 2026 to September 1, 2026</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+### Examples of valid and invalid values
+
+#### Valid values
+
+* `?_since%3D2026-04-10T03%3A00%3A00-04%3A00%26_until%3D2026-08-10T06%3A00%3A00-04%3A00`
+<br>
+**Why this works:** The _until datetime is after the _since datetime. Both datetimes follow the ISO format and include time zones.
+
+#### Invalid values, but the job still runs
+
+* `?_since%3D2026-02-01T00%3A00%3A00-05%3A00%26_until%3D2026-08-01T00%3A00%3A00-04%3A00`
+<br>
+**Why this works:** The _since datetime is before the earliest possible date. The job runs, and the value is replaced with the default.
+
+* `?_since%3D2026-04-10T16%3A00%3A00%2B00%3A00%26_until%3D3000-10-10T16%3A00%3A00%2B00%3A00`
+<br>
+**Why this works:** The _until datetime is in the future. The job runs, and the value is replaced with the current date.
+
+#### Invalid values, the job fails or returns no data
+
+* `?_since%3D2026-04-10T00%3A00%3A00%26_until%3D2026-04-20T00%3A00%3A00`
+<br>
+**Why this doesn't work:** The datetimes have no time zone.
+
+* `?_since%3D2026-08-10T09%3A00%3A00-04%3A00%26_until%3D2026-04-10T07%3A00%3A00-04%3A00`
+<br>
+**Why this doesn't work:** The _until datetime is before the _since datetime.
+
+### Example requests
+
+#### Using the _since parameter only
+
+`GET /api/v3/fhir/Patient/$export?_since=2026-07-01T00%3A00%3A00.000-04%3A00`
 
 {% capture curlSnippet %}{% raw %}
-curl -i "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00" \
--H "Accept: application/json" \
--H "Accept: application/fhir+json" \
--H "Prefer: respond-async" \
--H "Authorization: Bearer ${bearer_token}"
+curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_since=2026-07-01T00%3A00%3A00.000-04%3A00" \
+    -H "Accept: application/fhir+json" \
+    -H "Prefer: respond-async" \
+    -H "Authorization: Bearer ${bearer_token}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-### When only the _until parameter is specified
+#### Using the _until parameter only
 
-#### Unencoded
-
-`https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_until=2024-06-15T00:00:00.000-05:00`
-
-#### Percent-encoded
-
-`https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
-
-#### curl command
+`GET /api/v3/fhir/Patient/$export?_until=2026-09-01T00%3A00%3A00.000-04%3A00`
 
 {% capture curlSnippet %}{% raw %}
-curl -i "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
--H "Accept: application/fhir+json" \
--H "Prefer: respond-async" \
--H "Authorization: Bearer ${bearer_token}"
+curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_until=2026-09-01T00%3A00%3A00.000-04%3A00" \
+    -H "Accept: application/fhir+json" \
+    -H "Prefer: respond-async" \
+    -H "Authorization: Bearer ${bearer_token}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-### When both the _since and _until parameters are specified
+#### Using both the _since and _until parameters
 
-#### Unencoded
-
-`https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
-
-#### Percent-encoded
-
-`https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
-
-#### curl command
+`GET /api/v3/fhir/Patient/$export?_since=2026-04-01T00%3A00%3A00.000-04%3A00&_until=2026-09-01T00%3A00%3A00.000-04%3A00`
 
 {% capture curlSnippet %}{% raw %}
-curl -i "https://api.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00" \-H "accept: application/json" \
--H "Accept: application/fhir+json" \
--H "Prefer: respond-async" \
--H "Authorization: Bearer ${bearer_token}"
+curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_since=2026-04-01T00%3A00%3A00.000-04%3A00&_until=2026-09-01T00%3A00%3A00.000-04%3A00" \
+    -H "Accept: application/fhir+json" \
+    -H "Prefer: respond-async" \
+    -H "Authorization: Bearer ${bearer_token}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
