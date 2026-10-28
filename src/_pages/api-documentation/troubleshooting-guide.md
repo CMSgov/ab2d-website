@@ -205,7 +205,7 @@ If the system is correct, check with your IT team to make sure you have a static
  Version 1 of the API uses <a class="usa-link" href="https://api.ab2d.cms.gov/api/v1/fhir" target="_blank" rel="noopener">STU3</a> and version 2, which is recommended by the AB2D team, uses <a class="usa-link" href="https://api.ab2d.cms.gov/api/v2/fhir" target="_blank" rel="noopener">R4</a>.
 </p>
 <p>
- Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn how to migrate from v1 to v2</a>.
+ Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">AB2D Data Dictionary</a>.
 </p>
 {% endcapture %}
 

@@ -14,8 +14,8 @@
     - name: How to Access Production Claims Data
       url: /api-documentation/access-production-claims-data
 
-    - name: HTTP Query Parameters (v2)
-      url: /api-documentation/query-parameters
+    - name: How to Migrate to v3
+      url: /api-documentation/how-to-migrate-to-v3
 
     - name: Troubleshooting Guide
       url: /api-documentation/troubleshooting-guide

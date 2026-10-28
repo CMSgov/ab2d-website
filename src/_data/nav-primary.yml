@@ -9,9 +9,6 @@
     - name: Introducing AB2D v3
       url: /introducing-ab2d-v3
 
-    - name: How to Migrate to v3
-      url: /how-to-migrate-to-v3
-
 - name: API Documentation
   children:
     - name: Get Started
@@ -29,8 +26,8 @@
     - name: How to Access Production Data
       url: /api-documentation/access-production-claims-data
 
-    - name: HTTP Query Parameters (v2)
-      url: /api-documentation/query-parameters
+    - name: How to Migrate to v3
+      url: /api-documentation/how-to-migrate-to-v3
 
     - name: Troubleshooting Guide
       url: /api-documentation/troubleshooting-guide

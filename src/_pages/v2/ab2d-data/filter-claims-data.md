@@ -29,7 +29,7 @@ tabs:
     href="{{ '/introducing-ab2d-v3' | relative_url }}"
   >full announcement on AB2D v3</a> and learn <a
     class="usa-link"
-    href="{{ '/how-to-migrate-to-v3' | relative_url }}"
+    href="{{ '/api-documentation/how-to-migrate-to-v3' | relative_url }}"
   >how to migrate</a>.
 </p>
 {% endcapture %}
