@@ -47,7 +47,7 @@ AB2D also supports the _outputFormat parameter, which is covered at the end of t
 
 ## The _since parameter
 
-<p> The _since parameter allows users to filter claims data returned by date, which reduces duplication and speeds up job times.
+The _since parameter allows users to filter claims data returned by date, which reduces duplication and speeds up job times.
 
 * Dates must use the [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss\[+\|-\]hh:mm).
   * **Sample date:** July 1, 2026, 12:00 PM Eastern Daylight Time
