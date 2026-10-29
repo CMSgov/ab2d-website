@@ -428,7 +428,7 @@ In the example, a single claim will be tracked through several evolutions:
   </table>
 </div>
 
-In the example, 4 exports are run using the <a href="{{ '/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
+In the example, 4 exports are run using the <a href="{{ '/v2/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
 
 <div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
@@ -763,7 +763,7 @@ In the example, a single claim will be tracked through several evolutions:
       </tbody>
   </table>
 
-  In the example, 2 exports are run using the <a href="{{ '/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
+  In the example, 2 exports are run using the <a href="{{ '/v2/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
 
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
@@ -959,7 +959,7 @@ In the example, a single claim will be tracked:
 
 - Claim 99995 is received by AB2D on January 1, 2020
 
-In the example, 2 exports are run using the <a href="{{ '/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a>. These exports are for overlapping time periods so duplicate information will be received. The 2 exports are described below.
+In the example, 2 exports are run using the <a href="{{ '/v2/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a>. These exports are for overlapping time periods so duplicate information will be received. The 2 exports are described below.
 
 <div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
