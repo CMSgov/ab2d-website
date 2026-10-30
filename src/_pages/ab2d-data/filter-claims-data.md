@@ -287,9 +287,7 @@ curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_type=Explana
 
 ## The _outputFormat parameter
 
-AB2D returns claims data as [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec), the only format it supports. You don't need to use the _outputFormat parameter, because NDJSON is the default.
-
-If you include it, use one of these values:
+AB2D only returns claims data in [Newline Delimited JSON (NDJSON)](https://github.com/ndjson/ndjson-spec) format by default, so the _outputFormat parameter is not required. If you include the _outputFormat parameter, use one of these values:
 
 * `application/fhir+ndjson`
 * `application/ndjson`
