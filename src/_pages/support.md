@@ -118,7 +118,7 @@ Every time you pull the data, you get the latest version of a claim. Claim objec
 </p>
 
 <p>
-Use the Claim Control Number to match versions of the same claim across exports. The Claim ID identifies a single version and changes with each update. If a Claim Control Number changes, the Original Claim Control Number in eob.related links back to the prior one. [Learn how to identify claims and claim versions.](https://ab2d.cms.gov/ab2d-data/claims-data-details#identifying-claims-and-claim-versions)
+Use the Claim Control Number to match versions of the same claim across exports. The Claim ID identifies a single version and changes with each update. If a Claim Control Number changes, the Original Claim Control Number in eob.related links back to the prior one. <a href="https://ab2d.cms.gov/ab2d-data/claims-data-details#identifying-claims-and-claim-versions">Learn how to identify claims and claim versions.</a>
 </p>
 {% endcapture %}
 
