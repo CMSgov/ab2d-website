@@ -297,7 +297,7 @@ If you include it, use one of these values:
 
 Any other value will return an error.
 
-## Incremental export model
+## Running incremental exports
 
 You can limit exports to data that’s been updated since your last job. This keeps your data current without downloading the same claims repeatedly.
 
