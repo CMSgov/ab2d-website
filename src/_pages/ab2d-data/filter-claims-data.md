@@ -29,7 +29,7 @@ tabs:
         The _typeFilter parameter, which filters claims by service date
       </li>
       <li>
-        An April 1st, 2026 earliest date for the _since parameter
+        A March 26, 2026 earliest date recommendation for the _since parameter
       </li>
     </ul>
 {% endcapture %}
@@ -41,7 +41,7 @@ AB2D offers 3 query parameters to filter or specify the data returned:
 
 * **_since:** returns claims last updated after a specified date
 * **_until:** returns claims last updated before a specified date
-* **_typeFilter:** returns claims that match the criteria you provide
+* **_typeFilter:** returns claims where the service-date matches the date range specified.
 
 AB2D also supports the _outputFormat parameter, which is covered at the end of this page.
 
@@ -64,7 +64,10 @@ The _since and _until parameters filter claims data by the date it was last upda
 
 ### Date limitations for the _since parameter
 
-The earliest possible date you can retrieve data for is either April 1, 2026 (2026-04-01T00:00:00-05:00) or your organization’s attestation date, whichever is later. If no _since date is specified, your export defaults to the datetime of your organization’s last successful export. If this is your first job, results will default to your earliest possible date.
+AB2D v3 data became available in March 2026, therefore if you specify a date prior to March 26, 2026 (2026-03-26T00:00:00-05:00) with the _since parameter, your request will include a large amount of additional historical data for your enrollees that may result in your job to timeout.
+The earliest possible date for the _since parameter is your organization's attestation date.
+
+If you need to load historical data, AB2D recommends using _typeFilter alone to query claims in biweekly or monthly increments by service date. If you have questions or need an alternative approach, contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>
 
 ### Date limitations for the _until parameter
 
@@ -303,7 +306,7 @@ AB2D strongly recommends **limiting each export to data updated since your last 
 
 We recommend **running jobs on a regular biweekly or monthly cadence**. AB2D refreshes Parts A and B claims every Monday. Run your export after Monday's refresh to get the most recent data.
 
-If your job needs more nuanced or detailed results, **use _typeFilter to filter claims by service date**. This lets you narrow an export beyond what _since and _until alone provide, so you can target a more specific set of claims for jobs that require finer control.
+If your job needs more nuanced or detailed results, **use _typeFilter to filter claims by service date**. This lets you narrow an export beyond what _since and _until alone provide, so you can target a more specific set of claims for jobs that require finer control. If you need to load historical data, AB2D recommends using _typeFilter to query claims incrementally by service date
 
 ### How to run incremental exports
 
