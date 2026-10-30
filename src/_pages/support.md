@@ -54,7 +54,7 @@ Only active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are elig
 
 {% capture a3AccordionContent %}
   <p>
-    AB2D receives data upstream from the <a href="https://www2.ccwdata.org/web/guest/home/" target="_blank" rel="noopener">Chronic Conditions Warehouse (CCW)</a>.
+    AB2D receives data upstream from the <a href="https://www.cms.gov/about-cms/information-systems/idr" target="_blank" rel="noopener">Integrated Data Repository (IDR)</a>.
   </p>
 {% endcapture %}
 
@@ -110,10 +110,15 @@ How can we get additional data elements beyond what’s listed in the final rule
 
 {% capture a8AccordionContent %}
 <p>
- The “final” query code is a custom FHIR extension that indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, it’s possible for a claim object with a “final” query code to be canceled and resubmitted under a new claim ID.
- </p>
- <p>
-Every time you pull the data, you will get the latest version of a claim. Claim objects have a lastUpdated field, which represents when the data was last refreshed by the API. This shows when AB2D received the update, not when the update was submitted to Medicare. <a href="{{ '/ab2d-data/claims-data-details#identifying-claims-and-claim-versions' | relative_url }}">Learn how to use lastUpdated and claim ID to identify a unique instance of a claim.</a>
+The “final” query code is a custom FHIR extension that indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, a claim object with a “final” query code can be canceled and replaced by a new version with a new Claim ID.
+</p>
+
+<p>
+Every time you pull the data, you get the latest version of a claim. Claim objects have a lastUpdated field (eob.meta.lastUpdated), which shows when AB2D received the most recent change. It does not show when the change was submitted to Medicare.
+</p>
+
+<p>
+Use the Claim Control Number to match versions of the same claim across exports. The Claim ID identifies a single version and changes with each update. If a Claim Control Number changes, the Original Claim Control Number in eob.related links back to the prior one. [Learn how to identify claims and claim versions.](https://ab2d.cms.gov/ab2d-data/claims-data-details#identifying-claims-and-claim-versions)
 </p>
 {% endcapture %}
 

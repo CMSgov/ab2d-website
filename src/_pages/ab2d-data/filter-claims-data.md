@@ -301,28 +301,17 @@ Any other value will return an error.
 
 You can limit exports to data that’s been updated since your last job. This keeps your data current without downloading the same claims repeatedly.
 
-Incremental exports happen by default when you start a job without parameters:
+In v3, _since and _until do not update automatically. AB2D does not use the datetime of your last successful export to set them, so a request with no parameters does not return only new data.
 
-*  _since defaults to the datetime of your last successful export.
-* _until defaults to the current datetime.
+Include _since and _until, _typeFilter, or a combination of both on every query. Setting them each time makes every export predictable and prevents gaps or repeated downloads.
 
-AB2D refreshes Parts A and B claims weekly on Mondays, so a new export picks up the most recent refresh.
+AB2D refreshes Parts A and B claims weekly on Mondays, so an export run after a refresh picks up the most recent data.
 
-A job counts as a successful export only after you download the files. Files expire 72 hours after the job completes.
+### How to run incremental exports
 
-### Example scenario
-
-This example demonstrates how the default capability works for the _since parameter in the :
-
-1. You start your first job (JOB ID: ABC).
-2. Once the job is complete, you download the files.
-3. You wait until the next bi-weekly update (the recommended frequency to run jobs).
-4. You start a new job (JOB ID: DEF).
-5. You forget to download the files until after they’ve expired (72 hours).
-6. You start another job (JOB ID: GHI) without specifying a _since date. The _since value will default to when you started job ABC, not job DEF. This is because no files were downloaded with job DEF, so it wasn’t completed successfully.
-7. Once the job is complete, download the files.
-8. Repeat these steps.
-
-In this usage model, AB2D automatically populates the _since value with the datetime of your last successfully completed export. For Job GHI, this is the date job ABC was created. Job DEF isn’t considered a successfully completed export since its files weren’t downloaded.
+1. Record the _until value (or the completion datetime) of each export you download.
+2. Use that value as _since on your next request.
+3. Set _until explicitly so the window you requested is the window you receive.
+4. Add _typeFilter when you only need certain claims. Each filtered request returns only what you specify, so track the date range you've covered for each filter.
 
 {% include feedback-form.html id="85f95067" %}
