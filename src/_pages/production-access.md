@@ -3,7 +3,6 @@ layout: api-docs
 page_title: "Production Access"
 seo_title: "Production Access to Claims Data for PDP Sponsors"
 description: "Prescription Drug Plan sponsors can access enrollees' Parts A & B Medicare claims data with production access to the AB2D API."
-permalink: /production-access
 in-page-nav: true
 in-page-nav-levels: "h2"
 show-side-nav: false
@@ -141,7 +140,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
     <span class="usa-tag">Completed by AB2D Data Ops Specialist</span>
     <h3 class="font-sans-sm">Verify sandbox data retrieval</h3>
       <p>
-        The ADOS will receive an email with instructions on next steps. They must send the AB2D team the job ID from a successful data export in the sandbox. The sandbox is a test environment that allows anyone to try the API and retrieve synthetic claims data. Learn <a href="{{ '/get-a-bearer-token' | relative_url }}">how to get a bearer token</a> and <a href="{{ '/access-sandbox-data' | relative_url }}">access sandbox data</a>.
+        The ADOS will receive an email with instructions on next steps. They must send the AB2D team the job ID from a successful data export in the sandbox. The sandbox is a test environment that allows anyone to try the API and retrieve synthetic claims data. Learn <a href="{{ '/api-documentation/get-a-bearer-token' | relative_url }}">how to get a bearer token</a> and <a href="{{ '/api-documentation/access-sandbox-data' | relative_url }}">access sandbox data</a>.
       </p>
     <h3 class="font-sans-sm">Provide your IP addresses</h3>
       <p>
@@ -154,7 +153,7 @@ Only active, stand-alone Prescription Drug Plan (PDP) sponsors can access enroll
     <span>and</span>
     <span class="usa-tag">Completed by AB2D Data Ops Specialist</span>
     <p>
-      The Attestor will receive an email with details on their organization's production credentials. Credentials allow the organization and ADOS to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-production-claims-data' | relative_url }}">access production claims data</a>.
+      The Attestor will receive an email with details on their organization's production credentials. Credentials allow the organization and ADOS to <a href="{{ '/api-documentation/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/api-documentation/access-production-claims-data' | relative_url }}">access production claims data</a>.
     </p>
     <p>
       Production claims data contains Personally Identifiable Information (PII) that should not be shared under any circumstances. If you have questions or need help, visit <a href="{{ '/support' | relative_url }}">Support</a> or contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.

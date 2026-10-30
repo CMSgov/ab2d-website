@@ -1,31 +1,32 @@
 ---
 layout: api-docs
-page_title: "HTTP Query Parameters - v2"
-seo_title: "Query Parameters for Filtering Claims Data v2"
+page_title: "HTTP Query Parameters (v2)"
+seo_title: "HTTP Query Parameters (v2)"
 description: "Learn more about HTTP query parameters, and how they can filter Medicare claims data with the AB2D API."
-permalink: /query-parameters-v2
 in-page-nav: true
 ---
 
 # {{ page.page_title }}
 
-HTTP query parameters filter or specify the claims data returned during requests. The AB2D API offers a variety of parameters, which can differ depending on what version you’re using. Once you have a good understanding of parameters you can [use them to filter claims data]({{ '/filter-claims-data-v2' | relative_url }}).
-
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
-    AB2D recommends using v2 of the API
+    You're viewing v2 documentation
   </p>
 {% endcapture %}
 {% capture versionAlert %}
-    <p>
-        This documentation is for AB2D version 2, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide v2.0.0</a>. The _until parameter is only available with v2.
-    </p>
-    <p>
-        For organizations using v1, visit our <a href="{{ '/filter-claims-data-v1' | relative_url }}">v1 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from v1 to v2</a>.
-    </p>
-
+<p class="margin-bottom-0">Access to v1 and v2 will be removed on July 30, 2027. Read the <a
+    class="usa-link"
+    href="{{ '/introducing-ab2d-v3' | relative_url }}"
+  >full announcement on AB2D v3</a> and learn <a
+    class="usa-link"
+    href="{{ '/how-to-migrate-to-v3' | relative_url }}"
+  >how to migrate</a>.
+</p>
 {% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+{% include alert.html variant="warning" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+
+HTTP query parameters filter or specify the claims data returned during requests. The AB2D API offers a variety of parameters, which can differ depending on what version you’re using. Once you have a good understanding of parameters you can [use them to filter claims data]({{ '/v2/ab2d-data/filter-claims-data' | relative_url }}).
+
 
 ## The _since and _until parameters
 
@@ -137,7 +138,7 @@ There may be use cases where a specific date range of claims data is required. F
 5. Your organization runs a 2nd job with November 12, 2023 as the _since parameter value and November 18, 2023 as the _until parameter value.
 6. The job takes less than 1 hour to export the week’s worth of missing data from your database.
 
-[Review more example scenarios for the _since parameter.]({{ '/claims-data-details' | relative_url }}#example-scenario-3)
+[Review more example scenarios for the _since parameter.]({{ '/ab2d-data/claims-data-details' | relative_url }}#example-scenario-3)
 
 ## The _outputFormat parameter
 

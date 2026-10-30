@@ -3,7 +3,6 @@ layout: api-docs
 page_title: "Troubleshooting Guide"
 seo_title: "Troubleshooting Guide for Medicare Claims Data"
 description: "Resolve common issues, errors, and technical challenges you may encounter while accessing claims data."
-permalink: /troubleshooting-guide
 in-page-nav: true
 in-page-nav-levels: "h2"
 ---
@@ -197,25 +196,28 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% capture a16AccordionContent %}
 <p>
-  STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, ExplanationOfBenefit.
+  AB2D sends data using Fast Healthcare Interoperability Resources (FHIR), a standard format for exchanging health data. v1 uses FHIR STU3. v2 and v3 use FHIR R4. All versions return one resource type, ExplanationOfBenefit (EOB).
 </p>
 {% endcapture %}
 
 {% capture a17AccordionContent %}
 <p>
- Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir).
+The AB2D team recommends v3. v1 and v2 will be retired on July 30, 2027, so PDPs should plan to migrate to v3 before then.
+
+Read the v3 migration guide here.
 </p>
 <p>
- Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn how to migrate from v1 to v2</a>.
+ Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">AB2D Data Dictionary</a>.
 </p>
 {% endcapture %}
 
 {% capture a18AccordionContent %}
 <p>
-  The default value for the _since parameter changes between versions. The _until parameter is also only available with v2.
-</p>
-<p>
-  In v1, a date must be specified to use _since. If no _since value is specified, it will default to January 1, 2020 or your organization's attestation date, whichever is later. In v2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as v1. <a href="{{ '/query-parameters-v2' | relative_url }}">Learn how to use parameters</a>.
+v3 offers the most filtering capability of all AB2D versions. v3 supports filtering on the date a claim was last updated using _since and _until parameters, as well as filtering on a claim's service-date using the _typeFIlter parameter.
+
+Unlike prior versions of the API, v3 does not does not set these parameters for you and does not track the date of your last successful export. As a result, a request with no parameters will return all your data, which can cause long job run times or even timeouts and failed jobs
+
+v2 only supports the _since and _until parameters which are populated by default if a value is not provided. v1 only supports the _until parameter.
 </p>
 {% endcapture %}
 
@@ -241,10 +243,10 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% include accordion.html id="a15" heading="I tried to download the files and got an error message." expanded=false bordered=false accordionContent=a15AccordionContent %}
 
-{% include accordion.html id="a16" heading="What is FHIR STU3 and R4?" expanded=false bordered=false accordionContent=a16AccordionContent %}
+{% include accordion.html id="a16" heading="Which FHIR versions does AB2D use?" expanded=false bordered=false accordionContent=a16AccordionContent %}
 
-{% include accordion.html id="a17" heading="How does AB2D provide FHIR versions?" expanded=false bordered=false accordionContent=a17AccordionContent %}
+{% include accordion.html id="a17" heading="Which version should I use?" expanded=false bordered=false accordionContent=a17AccordionContent %}
 
-{% include accordion.html id="a18" heading="How are parameters different between v1 and v2?" expanded=false bordered=false accordionContent=a18AccordionContent %}
+{% include accordion.html id="a18" heading="How are parameters different across versions?" expanded=false bordered=false accordionContent=a18AccordionContent %}
 
 {% include feedback-form.html id="47414305" %}

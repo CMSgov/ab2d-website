@@ -3,11 +3,17 @@ layout: api-docs
 page_title: "Claims Data Details"
 seo_title: "Claims Data Details"
 description: "Explore detailed information on the claims data available with the AB2D API, including diagnoses, procedures, providers, and service utilization."
-permalink: /claims-data-details
 in-page-nav: true
+tabs:
+  - label: v3
+    url: /ab2d-data/claims-data-details
+  - label: v1/v2
+    url: /v2/ab2d-data/claims-data-details
 ---
 
 # {{ page.page_title }}
+
+{% include tabs.html items=page.tabs %}
 
 AB2D and its upstream data source generate and add fields to claims data in an effort to help make managing and providing those claims easier.
 
@@ -15,7 +21,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
 
 <dl>
   <dt class="font-sans-md text-bold margin-bottom-105">
-    <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim Group ID</a>
+    <a href="#claim-group-id">Claim Group ID</a>
   </dt>
   <dd class="margin-left-0 margin-bottom-4">
     <code class="language-plaintext highlighter-rouge">eob.identifier list</code>
@@ -23,7 +29,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
   </dd>
 
   <dt class="font-sans-md text-bold margin-bottom-105">
-    <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions">Claim ID</a>
+    <a href="#claim-id">Claim ID</a>
   </dt>
   <dd class="margin-left-0 margin-bottom-4">
     <code class="language-plaintext highlighter-rouge">eob.identifier list</code>
@@ -31,7 +37,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
   </dd>
 
   <dt class="font-sans-md text-bold margin-bottom-105">
-    <a href="{{ '/claims-data-details' | relative_url }}#claim-status">Claim Status</a>
+    <a href="#claim-status">Claim Status</a>
   </dt>
   <dd class="margin-left-0 margin-bottom-4">
     <code class="language-plaintext highlighter-rouge">eob.status</code>
@@ -39,7 +45,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
   </dd>
 
   <dt class="font-sans-md text-bold margin-bottom-105">
-    <a href="{{ '/claims-data-details' | relative_url }}#last-updated">Last Updated</a>
+    <a href="#last-updated">Last Updated</a>
   </dt>
   <dd class="margin-left-0 margin-bottom-4">
     <code class="language-plaintext highlighter-rouge">eob.meta.lastUpdated</code>
@@ -47,7 +53,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
   </dd>
 
   <dt class="font-sans-md text-bold margin-bottom-105">
-    <a href="{{ '/claims-data-details' | relative_url }}#identifying-patients">Medicare Beneficiary Identifier (MBI)</a>
+    <a href="#identifying-patients">Medicare Beneficiary Identifier (MBI)</a>
   </dt>
   <dd class="margin-left-0 margin-bottom-4">
     <code class="language-plaintext highlighter-rouge">eob.extension</code>
@@ -422,7 +428,7 @@ In the example, a single claim will be tracked through several evolutions:
   </table>
 </div>
 
-In the example, 4 exports are run using the <a href="{{ '/query-parameters-v2' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
+In the example, 4 exports are run using the <a href="{{ '/v2/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
 
 <div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
@@ -757,7 +763,7 @@ In the example, a single claim will be tracked through several evolutions:
       </tbody>
   </table>
 
-  In the example, 2 exports are run using the <a href="{{ '/query-parameters-v2' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
+  In the example, 2 exports are run using the <a href="{{ '/v2/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a> to limit duplicate data. Using the _since parameter alone returns claims data last updated after a specified date and up until the current date.
 
   <table class="usa-table usa-table--stacked usa-table--borderless">
       <thead>
@@ -953,7 +959,7 @@ In the example, a single claim will be tracked:
 
 - Claim 99995 is received by AB2D on January 1, 2020
 
-In the example, 2 exports are run using the _since parameter. These exports are for overlapping time periods so duplicate information will be received. The 2 exports are described below.
+In the example, 2 exports are run using the <a href="{{ '/v2/ab2d-data/filter-claims-data#the-_since-and-_until-parameters' | relative_url }}">_since parameter</a>. These exports are for overlapping time periods so duplicate information will be received. The 2 exports are described below.
 
 <div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">
@@ -1043,7 +1049,7 @@ On February 28, 2020, organization XYZ runs an export with a _since parameter da
 
 The export pulls a duplicate of the claim from export 1 as it has the same Claim Group ID (99995), Claim ID (12987987), and Last Updated date (01/01/2020).
 
-The claim was pulled twice because the _since date has not changed in both exports, resulting in an overlap. AB2D recommends following the [incremental export model]({{ '/filter-claims-data-v2' | relative_url }}#incremental-export-model) and using v2 of the API to avoid duplicate claims data.
+The claim was pulled twice because the _since date has not changed in both exports, resulting in an overlap. AB2D recommends following the [incremental export model]({{ '/v2/ab2d-data/filter-claims-data#incremental-export-model' | relative_url }}) and using v2 of the API to avoid duplicate claims data.
 
 <div class="overflow-x-auto" tabindex="0">
   <table class="usa-table usa-table--stacked usa-table--borderless">

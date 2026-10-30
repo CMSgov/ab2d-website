@@ -3,7 +3,6 @@ layout: api-docs
 page_title: "How to Access Production Claims Data"
 seo_title: "Access Production Claims Data"
 description: "Prescription Drug Plan sponsors can learn how to access Medicare patients’ Parts A & B claims data in the AB2D production environment."
-permalink: /access-production-claims-data
 in-page-nav: true
 ---
 
@@ -11,36 +10,21 @@ in-page-nav: true
 
 The production environment offers access to enrollee claims data, which contains [Protected Health Information (PHI)](https://www.hhs.gov/answers/hipaa/what-is-phi/index.html). In order to get enrollee claims data, Prescription Drug Plan (PDP) sponsors must have completed the steps for [production access]({{ '/production-access' | relative_url }}) beforehand.
 
-{% capture versionAlertHeading %}
-  <p class="usa-alert__heading text-bold">
-    AB2D recommends using v2 of the API
-  </p>
-{% endcapture %}
-{% capture versionAlert %}
-  <p>
-      Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 standard</a>. The _until parameter is only available with v2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html" target="_blank" rel="noopener">FHIR STU3</a> standard.
-  </p>
-  <p>
-      <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from v1 to v2</a>.
-  </p>
-{% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
-
 ## Instructions
 
-The production and sandbox environments use the same endpoints and workflow. You can [follow the same steps as you did in the sandbox]({{ '/access-sandbox-data' | relative_url }}) for production data.
+The production and sandbox environments use the same endpoints and workflow. You can [follow the same steps as you did in the sandbox]({{ '/api-documentation/access-sandbox-data' | relative_url }}) for production data.
 
-You’ll still need [a bearer token]({{ '/get-a-bearer-token' | relative_url }}) to call the API, but use the production identity provider (idm.cms.gov), production URL (api.ab2d.cms.gov), and credentials issued by the AB2D team instead.
+You’ll still need [a bearer token]({{ '/api-documentation/get-a-bearer-token' | relative_url }}) to call the API, but use the production identity provider (idm.cms.gov), production URL (api.ab2d.cms.gov), and credentials issued by the AB2D team instead.
 
-- Start a job: `GET /api/v2/fhir/Patient/$export`
-- Retrieve metadata: `GET /api/v2/fhir/metadata`
-- Cancel job: `DELETE /api/v2/fhir/Job/{job_uuid}/$status`
-- Check the job status: `GET /api/v2/fhir/Job/{job_uuid}/$status`
-- Download files: `GET/api/v2/fhir/Job/{job_uuid}/file/{file_name}`
+- Start a job: `GET /api/v3/fhir/Patient/$export`
+- Retrieve metadata: `GET /api/v3/fhir/metadata`
+- Cancel job: `DELETE /api/v3/fhir/Job/{job_uuid}/$status`
+- Check the job status: `GET /api/v3/fhir/Job/{job_uuid}/$status`
+- Download files: `GET/api/v3/fhir/Job/{job_uuid}/file/{file_name}`
 
 ### Job expiration
 
-Job IDs and file URLs expire after 72 hours or 6 downloads. If it takes more than 30 hours for a job to complete, the request will time out and fail. Reduce file sizes and download times by using [parameters]({{ '/query-parameters-v2' | relative_url }}) to filter the claims data returned or download compressed data files in gzip format.
+Job IDs and file URLs expire after 72 hours or 6 downloads. If it takes more than 30 hours for a job to complete, the request will time out and fail. Reduce file sizes and download times by using [parameters]({{ '/ab2d-data/filter-claims-data' | relative_url }}) to filter the claims data returned or download compressed data files in gzip format.
 
 ### Format
 
@@ -91,7 +75,7 @@ echo $IDP_URL
 https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v1/token
 
 echo $API_URL
-https://api.ab2d.cms.gov/api/v2/fhir
+https://api.ab2d.cms.gov/api/v3/fhir
 
 echo $AUTH_FILE
 /home/abcduser/credentials_Z123456_base64.txt
@@ -168,7 +152,7 @@ $AUTHENTICATION_URL='https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v1/token'
     <li>
         Set the API URL as the production environment URL:
 {% capture curlSnippet %}{% raw %}
-$AB2D_API_URL='https://api.ab2d.cms.gov/api/v2'
+$AB2D_API_URL='https://api.ab2d.cms.gov/api/v3'
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
@@ -263,7 +247,7 @@ python --version
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
-        <p>Start the export job. You can optionally use <a href="{{ '/query-parameters-v2' | relative_url }}">parameters</a> to filter the data returned.</p>
+        <p>Start the export job. You can optionally use <a href="{{ '/ab2d-data/filter-claims-data' | relative_url }}">parameters</a> to filter the data returned.</p>
         <ul>
             <li>
                 <p>Linux/Mac</p>
@@ -394,11 +378,11 @@ After you download your files, clean up your directory as needed. You can move t
 
 ## Incremental export model
 
-Incremental exports of data, ideally at a bi-weekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/filter-claims-data-v2' | relative_url }}#incremental-export-model)
+Incremental exports of data, ideally at a bi-weekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/ab2d-data/filter-claims-data#incremental-export-model' | relative_url }})
 
 ## Troubleshooting
 
-Review our [Troubleshooting Guide]({{ '/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2). If you need additional assistance, email the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
+Review our [Troubleshooting Guide]({{ '/api-documentation/troubleshooting-guide' | relative_url }}). If you need additional assistance, email the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
 
 When contacting our team, please include the following information:
 

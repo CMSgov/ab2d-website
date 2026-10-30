@@ -3,13 +3,12 @@ layout: api-docs
 page_title: "API Documentation"
 seo_title: "API Documentation"
 description: "Access comprehensive API documentation for AB2D, including instructions on how to access sandbox and production claims data."
-permalink: /api-documentation
 in-page-nav: true
 ---
 
 # {{ page.page_title }}
 
-The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://hl7.org/fhir/R4/overview.html) to share enrollees’ Medicare Parts A and B claims data. Only active, stand-alone Prescription Drug Plan (PDP) sponsors are eligible to use AB2D. You can use a variety of tools or client software programs, like [curl]({{ '/setup-instructions' | relative_url }}), to access the sandbox and production environments.
+The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://hl7.org/fhir/R4/overview.html) to share enrollees’ Medicare Parts A and B claims data. Only active, stand-alone Prescription Drug Plan (PDP) sponsors are eligible to use AB2D. You can use a variety of tools or client software programs, like [curl]({{ '/api-documentation/setup-instructions' | relative_url }}), to access the sandbox and production environments.
 
 ## Getting started
 
@@ -17,13 +16,13 @@ The AB2D API uses [Fast Healthcare Interoperability Resources (FHIR)](https://hl
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Learn about AB2D</p>
     <p>
-      Explore the <a href="{{ '/api-documentation#what-s-the-difference-between-the-sandbox-and-production-environments' | relative_url }}">documentation</a>, <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">Data Dictionary</a>, and <a href="{{ '/ab2d-data#sample-files' | relative_url }}">sample files</a>.
+      Explore the <a href="{{ '/api-documentation#whats-the-difference-between-the-sandbox-and-production-environments' | relative_url }}">documentation</a>, <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">Data Dictionary</a>, and <a href="{{ '/ab2d-data#sample-files' | relative_url }}">sample files</a>.
     </p>
   </li>
   <li class="usa-process-list__item">
     <p class="usa-process-list__heading">Use the sandbox</p>
     <p>
-      The sandbox environment allows anyone to try the API and download test claims data. Learn how to <a href="{{ '/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/access-sandbox-data' | relative_url }}">access the sandbox</a>.
+      The sandbox environment allows anyone to try the API and download test claims data. Learn how to <a href="{{ '/api-documentation/get-a-bearer-token' | relative_url }}">get a bearer token</a> and <a href="{{ '/api-documentation/access-sandbox-data' | relative_url }}">access the sandbox</a>.
     </p>
   </li>
   <li class="usa-process-list__item">
@@ -90,7 +89,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
           Get a token for authentication with the AB2D API.
         </td>
         <td data-label="Endpoint">
-          <a href="{{ '/get-a-bearer-token' | relative_url }}">Learn how to get a bearer token.</a>
+          <a href="{{ '/api-documentation/get-a-bearer-token' | relative_url }}">Learn how to get a bearer token.</a>
         </td>
         <td data-label="Time">
           Seconds
@@ -172,7 +171,7 @@ Jobs are units of work that export and compile Medicare claims data. They are br
 
 ## Endpoints, schemas, and parameters
 
-Get an overview of the endpoints you can request at the [sandbox]({{ '/access-sandbox-data' | relative_url }}) or [production]({{ '/access-production-claims-data' | relative_url }}) URL. You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/query-parameters-v2' | relative_url }}) to filter or specify the claims data returned.
+Get an overview of the endpoints you can request at the [sandbox]({{ '/api-documentation/access-sandbox-data' | relative_url }}) or [production]({{ '/api-documentation/access-production-claims-data' | relative_url }}) URL. You can also visit the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html?urls.primaryName=V2%20-%20FHIR%20R4), which is based on the OpenAPI specification. While starting a job, you can use [parameters]({{ '/ab2d-data/filter-claims-data' | relative_url }}) to filter or specify the claims data returned.
 
 ## JSON resources
 

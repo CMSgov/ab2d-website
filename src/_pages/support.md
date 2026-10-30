@@ -3,7 +3,6 @@ layout: api-docs
 page_title: "Support"
 seo_title: "Support"
 description: "Browse frequently asked questions (FAQs) and contact the AB2D team for troubleshooting help."
-permalink: /support
 show-side-nav: false
 ---
 
@@ -16,7 +15,7 @@ show-side-nav: false
   <div class="tablet:grid-col tablet:order-1 padding-top-2">
     <h2>Contact Us</h2>
     <p>
-      Email <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to ask questions or get help. The AB2D team will get back to you promptly. You can also visit our <a href="{{ '/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a> for technical assistance.
+      Email <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a> to ask questions or get help. The AB2D team will get back to you promptly. You can also visit our <a href="{{ '/api-documentation/troubleshooting-guide' | relative_url }}">Troubleshooting Guide</a> for technical assistance.
     </p>
     <p>
       Join our <a href="https://groups.google.com/u/0/g/cms-ab2d-api" target="_blank" rel="noopener">Google Group</a> to give feedback and get notified about planned outages or API updates.
@@ -55,7 +54,7 @@ Only active, stand-alone Medicare Prescription Drug Plan (PDP) sponsors are elig
 
 {% capture a3AccordionContent %}
   <p>
-    AB2D receives data upstream from the <a href="https://www2.ccwdata.org/web/guest/home/" target="_blank" rel="noopener">Chronic Conditions Warehouse (CCW)</a>.
+    AB2D receives data upstream from the <a href="https://www.cms.gov/about-cms/information-systems/idr" target="_blank" rel="noopener">Integrated Data Repository (IDR)</a>.
   </p>
 {% endcapture %}
 
@@ -111,10 +110,15 @@ How can we get additional data elements beyond what’s listed in the final rule
 
 {% capture a8AccordionContent %}
 <p>
- The “final” query code is a custom FHIR extension that indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, it’s possible for a claim object with a “final” query code to be canceled and resubmitted under a new claim ID.
- </p>
- <p>
-Every time you pull the data, you will get the latest version of a claim. Claim objects have a lastUpdated field, which represents when the data was last refreshed by the API. This shows when AB2D received the update, not when the update was submitted to Medicare. <a href="{{ '/claims-data-details' | relative_url }}#identifying-claims-and-claim-versions-2">Learn how to use lastUpdated and claim ID to identify a unique instance of a claim.</a>
+The “final” query code is a custom FHIR extension that indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, a claim object with a “final” query code can be canceled and replaced by a new version with a new Claim ID.
+</p>
+
+<p>
+Every time you pull the data, you get the latest version of a claim. Claim objects have a lastUpdated field (eob.meta.lastUpdated), which shows when AB2D received the most recent change. It does not show when the change was submitted to Medicare.
+</p>
+
+<p>
+Use the Claim Control Number to match versions of the same claim across exports. The Claim ID identifies a single version and changes with each update. If a Claim Control Number changes, the Original Claim Control Number in eob.related links back to the prior one. <a href="https://ab2d.cms.gov/ab2d-data/claims-data-details#identifying-claims-and-claim-versions">Learn how to identify claims and claim versions.</a>
 </p>
 {% endcapture %}
 

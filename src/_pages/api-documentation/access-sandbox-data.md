@@ -3,28 +3,12 @@ layout: api-docs
 page_title: "How to Access Sandbox Data"
 seo_title: "Access Sandbox Test Claims Data"
 description: "Connect to the AB2D API and access test Medicare Parts A & B claims data in the sandbox environment."
-permalink: /access-sandbox-data
 in-page-nav: true
 ---
 
 # {{ page.page_title }}
 
-The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need a [bearer token]({{ '/get-a-bearer-token' | relative_url }}) to access the sandbox and authorize use of the AB2D endpoints.
-
-{% capture versionAlertHeading %}
-  <p class="usa-alert__heading text-bold">
-    AB2D recommends using v2 of the API
-  </p>
-{% endcapture %}
-{% capture versionAlert %}
-    <p>
-        Version 2 is the current version and it follows the <a href="https://hl7.org/fhir/R4/" target="_blank" rel="noopener">FHIR R4 standard</a>. The _until parameter is only available with v2. Version 1 follows the <a href="https://hl7.org/fhir/STU3/explanationofbenefit.html" target="_blank" rel="noopener">FHIR STU3</a> standard.
-    </p>
-    <p>
-        <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from v1 to v2</a>.
-    </p>
-{% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+The sandbox environment (sandbox.ab2d.cms.gov) is available to anyone who wants to try the API. You will need a [bearer token]({{ '/api-documentation/get-a-bearer-token' | relative_url }}) to access the sandbox and authorize use of the AB2D endpoints.
 
 ## What’s the difference between the sandbox and production environments?
 
@@ -56,18 +40,18 @@ AB2D endpoints are used to request sandbox data and API information. These endpo
 Create a job to request sandbox data. You should receive a response with the job ID (job_uuid).
 
 {% capture curlSnippet %}{% raw %}
-GET /api/v2/fhir/Patient/$export
+GET /api/v3/fhir/Patient/$export
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" %}
 
-If it takes more than 30 hours to retrieve and download the data, the request will time out and fail. Try using [parameters]({{ '/query-parameters-v2' | relative_url }}) when running a job to filter the claims data returned and reduce file size.
+If it takes more than 30 hours to retrieve and download the data, the request will time out and fail. Try using [parameters]({{ '/ab2d-data/filter-claims-data' | relative_url }}) when running a job to filter the claims data returned and reduce file size.
 
 ### Status
 
 Once a job has been created, get a status update using the job ID from the first step. If the job is complete, the request will return a 200 response code. If it is in progress, it will return a 202 code.
 
 {% capture curlSnippet %}{% raw %}
-GET /api/v2/fhir/Job/{job_uuid}/$status
+GET /api/v3/fhir/Job/{job_uuid}/$status
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" %}
 
@@ -78,7 +62,7 @@ Too many status requests can result in a “Retry-After” response in the heade
 Once the job is complete, the response will return a list of file URLs. In each file URL, you can identify the job ID (job_uuid) and file name:
 
 {% capture curlSnippet %}{% raw %}
-https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/file/{file_name}
+https://sandbox.ab2d.cms.gov/api/v3/fhir/Job/{job_uuid}/file/{file_name}
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" %}
 
@@ -96,7 +80,7 @@ You can speed up download times by requesting compressed files in gzip format wi
 You can cancel a job, but only if it hasn’t been completed.
 
 {% capture curlSnippet %}{% raw %}
-DELETE /api/v2/fhir/Job/{job_uuid}/$status
+DELETE /api/v3/fhir/Job/{job_uuid}/$status
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" %}
 
@@ -105,13 +89,13 @@ DELETE /api/v2/fhir/Job/{job_uuid}/$status
 Retrieve the server’s [FHIR CapabilityStatement](https://hl7.org/fhir/R4/capabilitystatement.html) resource (required by the standard).
 
 {% capture curlSnippet %}{% raw %}
-GET /api/v2/fhir/metadata
+GET /api/v3/fhir/metadata
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" %}
 
 ## curl instructions
 
-You can copy and paste [curl](https://curl.se/) commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/setup-instructions' | relative_url }}).
+You can copy and paste [curl](https://curl.se/) commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/api-documentation/setup-instructions' | relative_url }}).
 
 HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${variable}`.
 
@@ -120,7 +104,7 @@ HTTP responses are saved into shell variables named `RESP<n>`. Most steps also d
 Start an export job of FHIR ExplanationOfBenefit (EOB) resources using the following command:
 
 {% capture curlSnippet %}{% raw %}
-RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_type=ExplanationOfBenefit" \
+RESP2=$(curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_type=ExplanationOfBenefit" \
   -H "Accept: application/fhir+json" \
   -H "Authorization: Bearer ${bearer_token}")
 {% endraw %}{% endcapture %}
@@ -134,7 +118,7 @@ You’ll receive a response header with a content-location URL. This URL contain
 HTTP/2 202
 date: Thu, 09 Nov 2023 15:52:51 GMT
 content-length: 0
-content-location: https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/2356b9af-9257-41f4-9d82-4e27542ff1be/$status
+content-location: https://sandbox.ab2d.cms.gov/api/v3/fhir/Job/2356b9af-9257-41f4-9d82-4e27542ff1be/$status
 
 x-content-type-options: nosniff
 x-xss-protection: 1; mode=block
@@ -158,7 +142,7 @@ JOB_ID=$(echo $RESP2 | grep content-location | sed 's%^.*Job/\([^/]*\).*$%\1%')
 Request the job status and save the HTTP response code into STATUS. If you receive a 200 response code, the job is complete. If you receive a 202 code, the job is in progress. In this case, continue checking the status until the job is complete.
 
 {% capture curlSnippet %}{% raw %}
-curl -sw '%{http_code}' -o status.json "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${job_id}/\$status"  \
+curl -sw '%{http_code}' -o status.json "https://sandbox.ab2d.cms.gov/api/v3/fhir/Job/${job_id}/\$status"  \
   -H "Accept: application/fhir+json" \
   -H "Authorization: Bearer ${bearer_token}" | {
        read STATUS
@@ -186,7 +170,7 @@ FILE=$(cat status.json | jq -r ".output[0].url" | sed 's%^.*file/\(.*$\)%\1%')
 Download the data using the job ID and file name. This command downloads the data into the RESP4 variable. After retrieving sandbox data, follow the remaining steps in [production access]({{ '/production-access' | relative_url }}).
 
 {% capture curlSnippet %}{% raw %}
-RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/${job_uuid}/file/${file_name}" \
+RESP4=$(curl "https://sandbox.ab2d.cms.gov/api/v3/fhir/Job/${job_uuid}/file/${file_name}" \
   -H "Accept: application/fhir+ndjson" \
   -H "Accept-Encoding: gzip" \
   -H "Authorization: Bearer ${bearer_token}")
@@ -203,12 +187,12 @@ The command `echo $RESP | sed 1q | jq` will extract the first JSON object and pr
 
 ## Swagger instructions
 
-These instructions walk you through how to authorize your [bearer token]({{ '/get-a-bearer-token' | relative_url }}), request sandbox data, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html).
+These instructions walk you through how to authorize your [bearer token]({{ '/api-documentation/get-a-bearer-token' | relative_url }}), request sandbox data, and download your files using the [AB2D Swagger UI](https://sandbox.ab2d.cms.gov/swagger-ui/index.html).
 
 ### I. Authorize your bearer token
 
 1. Open the *Select a definition* dropdown menu in the top right corner.
-2. Select *v2 - FHIR R4*. While you can use v1, we recommend using v2 for access to the _until parameter.
+2. Select *v3 - FHIR R4*. While you can use v1 or v2, we recommend using v3 for access to the typeFilter parameter.
 3. Select the *Authorize* button above the commands.
 4. Enter your bearer token. It should be formatted as “Bearer {XXX}” where {XXX} is the value of your token. Each bearer token expires after 30 minutes, so you will need a new token every time it expires.
 5. Select *Authorize*.
@@ -216,24 +200,24 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 
 ### II. Start a job
 
-1. On the Swagger UI page, select the Export command `/api/v2/fhir/Patient/$export`
+1. On the Swagger UI page, select the Export command `/api/v3/fhir/Patient/$export`
 2. With the Export section expanded, select *Try it out*.
-    - Keep the default values and add dates in [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss[+/-]hh:mm) for the parameter values. The [_since and _until parameters]({{ '/query-parameters-v2' | relative_url }}) filter for claims last updated since and until a specified date.
+    - Keep the default values and add dates in [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss[+/-]hh:mm) for the parameter values. The [_since and _until parameters]({{ '/ab2d-data/filter-claims-data' | relative_url }}) filter for claims last updated since and until a specified date.
 3. Select *Execute*. If the job was created successfully, you’ll receive a 202 HTTP response code under *Server response*.
-4. Copy the job ID from the *Response header*. The job ID is located in the content-location URL (http://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status).
+4. Copy the job ID from the *Response header*. The job ID is located in the content-location URL (http://sandbox.ab2d.cms.gov/api/v3/fhir/Job/{job_uuid}/$status).
 
 ### III. Check the job status
 
-1. Select the Status command `/api/v2/fhir/Job/{job_uuid}/$status`
+1. Select the Status command `/api/v3/fhir/Job/{job_uuid}/$status`
 2. With the *Status* section expanded, select *Try it out*.
 3. Paste the job ID (job_uuid) from step II.
 4. Select *Execute*.
 - If the job is in progress, you’ll receive a 202 response code with a progress percentage by *x-progress*. Re-click *Execute* periodically until completion.
-- If the job is complete, you’ll receive a 200 code. The *Response body* will return a list of file URLs (https://sandbox.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/file/{file_name}).
+- If the job is complete, you’ll receive a 200 code. The *Response body* will return a list of file URLs (https://sandbox.ab2d.cms.gov/api/3/fhir/Job/{job_uuid}/file/{file_name}).
 
 ### IV. Download your files
 
-1. Select the *Download* command `/api/v2/fhir/Job/{job_uuid}/file/{file_name}`
+1. Select the *Download* command `/api/v3/fhir/Job/{job_uuid}/file/{file_name}`
 2. With the *Download* section expanded, select *Try it out*.
 3. Enter the job ID (job_uuid) and file name from step III.
   - You can speed up download times by requesting compressed files in gzip format with the optional `Accept-Encoding: gzip` header in your command. Afterward, decompress (unzip) the gzip files into NDJSON format.
@@ -243,7 +227,7 @@ These instructions walk you through how to authorize your [bearer token]({{ '/ge
 
 ## Troubleshooting
 
-Visit our [Troubleshooting Guide]({{ '/troubleshooting-guide' | relative_url }}#troubleshooting-guide-2) for guidance on HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
+Visit our [Troubleshooting Guide]({{ '/api-documentation/troubleshooting-guide' | relative_url }}) for guidance on HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
 
 When contacting our team, please include the following information:
 

@@ -1,40 +1,65 @@
 ---
 layout: api-docs
-page_title: "How to Filter Claims Data – v1"
+page_title: "How to Filter Claims Data"
 seo_title: "Filter Claims Data With Parameters v1"
 description: "Filter and refine the Medicare claims data you receive from the AB2D API for faster job times and more efficient requests."
-permalink: /filter-claims-data-v1
 in-page-nav: true
+tabs:
+  - label: v3
+    url: /ab2d-data/filter-claims-data
+  - label: v2
+    url: /v2/ab2d-data/filter-claims-data
+  - label: v1
+    url: /v1/ab2d-data/filter-claims-data
+
 ---
 
 # {{ page.page_title }}
 
-[HTTP query parameters]({{ '/query-parameters-v2' | relative_url }}) can help you efficiently maximize the value of the AB2D API. The default behavior of parameters supports the incremental export model and varies depending on your API version. You can use parameters while starting a job request in the sandbox or production environment.
-
-Learn how to access [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
+{% include tabs.html items=page.tabs %}
 
 {% capture versionAlertHeading %}
   <p class="usa-alert__heading text-bold">
-    AB2D recommends using v2 of the API
+    You're viewing v1 documentation
   </p>
 {% endcapture %}
 {% capture versionAlert %}
-    <p>
-        This documentation is for AB2D version 1, which implements the <a href="https://hl7.org/fhir/uv/bulkdata/STU1.0.1/" target="_blank" rel="noopener">Bulk Data Access Implementation Guide v1.0.1</a>. The _until parameter is only available with v2.
-    </p>
-    <p>
-        For organizations using v1, visit our <a href="{{ '/filter-claims-data-v2' | relative_url }}">v2 documentation</a> to learn about parameters. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn more about migrating from v1 to v2</a>.
-    </p>
+<p class="margin-bottom-0">Access to v1 and v2 will be removed on July 30, 2027. Read the <a
+    class="usa-link"
+    href="{{ '/introducing-ab2d-v3' | relative_url }}"
+  >full announcement on AB2D v3</a> and learn <a
+    class="usa-link"
+    href="{{ '/api-documentation/how-to-migrate-to-v3' | relative_url }}"
+  >how to migrate</a>.
+</p>
 {% endcapture %}
-{% include alert.html variant="info" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+{% include alert.html variant="warning" text=versionAlert heading=versionAlertHeading classNames="measure-6" %}
+
+You can use HTTP query parameters to filter claims data returned during an API job request. To learn how to access data, see [How to Access Sandbox Data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) and [How to Access Production Claims Data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
+
+AB2D v1 offers 1 query parameter to filter or specify the data returned:
+
+* **_since:** returns claims last updated after a specified date
+
+AB2D also supports the _outputFormat parameter, which is covered at the end of this page.
+
+**Note:** Use parameters when you start a job in the sandbox or production environment to speed up download times and reduce file size.
 
 ## The _since parameter
 
-<p> The _since parameter allows users to filter claims data returned by date, which reduces duplication and speeds up job times. It follows the <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank" rel="noopener">ISO datetime format</a> (yyyy-mm-dd'T'hh:mm:ss[+|-]hh:mm). The time zone must be specified using + or - followed by hh:mm.</p>
+The _since parameter allows users to filter claims data returned by date, which reduces duplication and speeds up job times.
+
+* Dates must use the [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss\[+\|-\]hh:mm).
+  * **Sample date:** July 1, 2026, 12:00 PM Eastern Daylight Time
+  * **Formatted sample:** 2026-07-01T12:00:00.000-04:00
+* Note the ISO8601 dates include characters that can’t appear in URLs.
+  * Here is an example of invalid, unencoded URL utilizing both _since and _until parameters:
+  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
+  * Here is an example of valid, percent-encoded URL utilizing both _since and _until parameters:
+  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
+  * Read more about percent-encoding [here](https://en.wikipedia.org/wiki/Percent-encoding).
 
 The _since parameter allows users to pull data that has been last updated since a specified date. The earliest possible date is January 1, 2020 (2020-01-01T00:00:00-05:00) or your organization's attestation date, whichever is later. If no _since date is specified, it will default to your earliest possible date. It is highly recommended and considered best practice to use the _since parameter on v1 API calls.
-
-The _until parameter filters for claims data last updated after a specified date. This parameter is only available with v2 [(FHIR R4)](https://api.ab2d.cms.gov/api/v2/fhir), the current and recommended version of the API.
 
 {:.margin-bottom-4}
 ### Examples of valid and invalid _since parameter values
@@ -104,32 +129,6 @@ One recommended way to use AB2D is to periodically export any data that has been
 4. Repeat steps 2 and 3 indefinitely.
 
 In this usage model, an organization only pulls the last 2 weeks of claims data delivered to the AB2D API. Please note there may be duplicates returned even when using the _since parameter. AB2D errs on the side of potentially providing a claim twice rather than potentially never providing a claim.
-
-### Example export workflow for parameters
-
-The _since parameter can be used while starting an export job. Visit <a href="{{ '/api-documentation' | relative_url }}#expected-workflow">API Documentation</a> to learn more about the expected workflow for the AB2D API. Review both unencoded and percent-encoded examples of the _since parameter. Note that ISO8601 dates include characters that can’t appear in URLs.
-[Learn more about percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding). Only the encoded versions will work, but the unencoded examples will show how the URL is formed before encoding.
-
-### Only _since parameter is specified
-
-#### Unencoded
-
-`https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since=2023-02-13T00:00:00.000-05:00`
-
-#### Percent-encoded
-
-`https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00`
-
-#### curl command
-
-{% capture curlSnippet %}{% raw %}
-curl -i "https://api.ab2d.cms.gov/api/v1/fhir/Patient/\$export?_since%3D2023-02-13T00%3A00%3A00.000-05%3A00" \
--H "Accept: application/json" \
--H "Accept: application/fhir+json" \
--H "Prefer: respond-async" \
--H "Authorization: Bearer ${bearer_token}"
-{% endraw %}{% endcapture %}
-{% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 ## The _outputFormat parameter
 
