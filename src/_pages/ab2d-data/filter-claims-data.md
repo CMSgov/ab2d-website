@@ -55,12 +55,12 @@ The _since and _until parameters filter claims data by the date it was last upda
 * Dates must use the [ISO datetime format](https://en.wikipedia.org/wiki/ISO_8601) (yyyy-mm-dd'T'hh:mm:ss\[+\|-\]hh:mm).
   * **Sample date:** July 1, 2026, 12:00 PM Eastern Daylight Time
   * **Formatted sample:** 2026-07-01T12:00:00.000-04:00
-* Note the ISO8601 dates include characters that can’t appear in URLs.
-  * Here is an example of invalid, unencoded URL utilizing both _since and _until parameters:
+* ISO 8601 dates include colons (:) and for some time zones, plus signs (+). These characters must be percent-encoded in a URL. The percent-encoded example below also encodes the equal sign (=) and ampersand (&) in the query string.
+  * Invalid example of an unencoded URL with both _since and _until parameters
   `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
-  * Here is an example of valid, percent-encoded URL utilizing both _since and _until parameters:
+  * Valid example of a percent-encoded URL with both _since and _until parameters:
   `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
-  * Read more about percent-encoding [here](https://en.wikipedia.org/wiki/Percent-encoding).
+  * Read more about percent-encoding [here](https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding).
 
 ### Date limitations for the _since parameter
 
