@@ -297,13 +297,13 @@ Any other value will return an error.
 
 ## Running incremental exports
 
-You can limit exports to data that’s been updated since your last job. This keeps your data current without downloading the same claims repeatedly.
+AB2D strongly recommends **limiting each export to data updated since your last job**. This is a best practice that keeps your data current and stops you from downloading the same claims repeatedly. It also helps you avoid requesting too much data at once, which can cause long job run times or even timeouts and failed jobs.
 
-In v3, _since and _until do not update automatically. AB2D does not use the datetime of your last successful export to set them, so a request with no parameters does not return only new data.
+**Add _since and _until parameters to every request you make to AB2D**. Unlike prior versions of the API, AB2D v3 does not set these parameters for you and does not track the time of your last successful export. As a result, a request with no parameters returns all your data, not just what's new.
 
-Include _since and _until, _typeFilter, or a combination of both on every query. Setting them each time makes every export predictable and prevents gaps or repeated downloads.
+We recommend **running jobs on a regular biweekly or monthly cadence**. AB2D refreshes Parts A and B claims every Monday. Run your export after Monday's refresh to get the most recent data.
 
-AB2D refreshes Parts A and B claims weekly on Mondays, so an export run after a refresh picks up the most recent data.
+If your job needs more nuanced or detailed results, **use _typeFilter to filter claims by service date**. This lets you narrow an export beyond what _since and _until alone provide, so you can target a more specific set of claims for jobs that require finer control.
 
 ### How to run incremental exports
 
