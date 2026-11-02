@@ -27,7 +27,7 @@ If you are currently using AB2D v1 or v2, changes to the API and FHIR Resources 
 - Different resource IDs between v2 and v3
 - A new `_typeFilter` parameter for filtering claims by service date
 - Automatic claims deduplication within a data source
-- A new Claim Control Number (CCN) field for tracking claims across versions
+- A new Claim Control Number (CCN) field for tracking claims across claim updates
 
 
 ## Requesting data from new v3 endpoints
