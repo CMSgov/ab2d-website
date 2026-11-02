@@ -70,4 +70,11 @@ In v3, the FHIR ID for ExplanationOfBenefit resources (`ExplanationOfBenefit.id`
 ## Matching claims across AB2D versions
 We do not recommend to match new v3 claims with existing v1/v2 claims. The identifier fields cannot be guaranteed to prevent duplicates when attempting to match across API versions.
 
+## How to backfill your data in v3
+v3 does not apply any default behavior to _since and _until parameters, in contrast to v1 and v2. AB2D v3 data became available in March 2026, therefore if you specify a date prior to March 26, 2026 (2026-03-26T00:00:00-05:00) with the _since parameter, your request will include a large amount of additional historical data for your enrollees that may result in your job to timeout.
+
+We recommend using the new `_typeFilter` parameter to easily retrieve your data. Set a service-date range of two weeks to one month at a time, and repeat the process for the next desired time range until all of your data has been exported.
+
+Our team is ready to help with any questions or alternative appraoches at [AB2D@cms.hhs.gov](mailto:AB2D@cms.hhs.gov).
+
 {% include feedback-form.html id="71834290" %}

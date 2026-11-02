@@ -75,7 +75,7 @@ The latest possible date you can retrieve data for is the current date. If no _u
 
 ### Date limitations when using the _since and _until parameters together
 
-Use the _since and _until parameters together to specify a date range (i.e., to export data since \[a date\] until \[a date\]). If you accidentally enter a _since date that falls after the _until date the job will fail.
+Use the _since and _until parameters together to specify a date range (i.e., to export data since \[a date\] until \[a date\]). If you accidentally enter a _since date that falls after the _until date, the job will fail.
 
 Default behaviors with the _since and _until parameters together
 
@@ -92,22 +92,27 @@ Default behaviors with the _since and _until parameters together
         <tr>
         <td>Not set</td>
         <td>Not set</td>
-        <td>From last successful export date to current date</td>
+        <td>From your organization's attestation date to current date
+         (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
         </tr>
         <tr>
-        <td>2026-04-01</td>
+        <td>2026-03-26</td>
         <td>Not set</td>
-        <td>From April 1, 2026 to current date</td>
+        <td>From March 26, 2026 or your organization's attestation date, whichever is later, to current date.</td>
+        </tr>
+        <td>2026-01-26</td>
+        <td>Not set</td>
+        <td>From January 26, 2026 or your organization's attestation date, whichever is later, to current date (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
         </tr>
         <tr>
         <td>Not set</td>
         <td>2026-09-01</td>
-        <td>From last successful export to September 1, 2026</td>
+        <td>From your organization's attestation date to September 1, 2026 (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
         </tr>
         <tr>
-        <td>2026-04-01</td>
+        <td>2026-03-26</td>
         <td>2026-09-01</td>
-        <td>From April 1, 2026 to September 1, 2026</td>
+        <td>From March 26, 2026 to September 1, 2026 (<strong>Recommended approach:</strong> Using a _since date on March 26th or after and setting an explicit _until date will export a manageable amount of data.)</td>
         </tr>
     </tbody>
     </table>
@@ -122,10 +127,6 @@ Default behaviors with the _since and _until parameters together
 **Why this works:** The _until datetime is after the _since datetime. Both datetimes follow the ISO format and include time zones.
 
 #### Invalid values, but the job still runs
-
-* `?_since%3D2026-02-01T00%3A00%3A00-05%3A00%26_until%3D2026-08-01T00%3A00%3A00-04%3A00`
-<br>
-**Why this works:** The _since datetime is before the earliest possible date. The job runs, and the value is replaced with the default.
 
 * `?_since%3D2026-04-10T16%3A00%3A00%2B00%3A00%26_until%3D3000-10-10T16%3A00%3A00%2B00%3A00`
 <br>
@@ -302,11 +303,11 @@ Any other value will return an error.
 
 AB2D strongly recommends **limiting each export to data updated since your last job**. This is a best practice that keeps your data current and stops you from downloading the same claims repeatedly. It also helps you avoid requesting too much data at once, which can cause long job run times or even timeouts and failed jobs.
 
-**Add _since and _until parameters to every request you make to AB2D**. Unlike prior versions of the API, AB2D v3 does not set these parameters for you and does not track the time of your last successful export. As a result, a request with no parameters returns all your data, not just what's new.
+**Add _since and _until parameters to every request you make to AB2D**. Unlike prior versions of the API, AB2D v3 does not automatically set these parameters for you. As a result, a request with no parameters returns all your data, not just what's new.
 
 We recommend **running jobs on a regular biweekly or monthly cadence**. AB2D refreshes Parts A and B claims every Monday. Run your export after Monday's refresh to get the most recent data.
 
-If your job needs more nuanced or detailed results, **use _typeFilter to filter claims by service date**. This lets you narrow an export beyond what _since and _until alone provide, so you can target a more specific set of claims for jobs that require finer control. If you need to load historical data, AB2D recommends using _typeFilter to query claims incrementally by service date
+You can **use _typeFilter to filter claims by service date**. If you need to load historical data, AB2D recommends using _typeFilter to query claims incrementally by service date.
 
 ### How to run incremental exports
 

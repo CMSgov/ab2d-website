@@ -110,7 +110,7 @@ How can we get additional data elements beyond what’s listed in the final rule
 
 {% capture a8AccordionContent %}
 <p>
-The “final” query code is a custom FHIR extension that indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, a claim object with a “final” query code can be canceled and replaced by a new version with a new Claim ID.
+The “final” query code is a custom FHIR extension that indicates a final bill for payment. This doesn’t necessarily mean the claim is finalized and complete. For example, a claim object with a “final” query code can be canceled and replaced by a new version of the same claim with a new Claim ID.
 </p>
 
 <p>
