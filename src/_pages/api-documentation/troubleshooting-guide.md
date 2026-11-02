@@ -196,7 +196,7 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% capture a16AccordionContent %}
 <p>
-  AB2D sends data using Fast Healthcare Interoperability Resources (FHIR), a standard format for exchanging health data. v1 uses FHIR STU3. v2 and v3 use FHIR R4. All versions return one resource type, ExplanationOfBenefit (EOB).
+  AB2D sends data using Fast Healthcare Interoperability Resources (FHIR), a standard format for exchanging health data. v1 uses FHIR STU3. v2 and v3 use FHIR R4. All versions return one resource type: ExplanationOfBenefit (EOB).
 </p>
 {% endcapture %}
 
@@ -204,7 +204,7 @@ If the system is correct, check with your IT team to make sure you have a static
 <p>
 The AB2D team recommends v3. v1 and v2 will be retired on July 30, 2027, so PDPs should plan to migrate to v3 before then.
 
-Read the v3 migration guide here.
+Read the v3 migration guide <a href="{{ '/api-documentation/how-to-migrate-to-v3' | relative_url }}">here</a>.
 </p>
 <p>
  Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">AB2D Data Dictionary</a>.
@@ -214,9 +214,11 @@ Read the v3 migration guide here.
 {% capture a18AccordionContent %}
 <p>
 v3 offers the most filtering capability of all AB2D versions. v3 supports filtering on the date a claim was last updated using _since and _until parameters, as well as filtering on a claim's service-date using the _typeFIlter parameter.
-
+</p>
+<p>
 Unlike prior versions of the API, v3 does not does not set these parameters for you and does not track the date of your last successful export. As a result, a request with no parameters will return all your data, which can cause long job run times or even timeouts and failed jobs
-
+</p>
+<p>
 v2 only supports the _since and _until parameters which are populated by default if a value is not provided. v1 only supports the _until parameter.
 </p>
 {% endcapture %}

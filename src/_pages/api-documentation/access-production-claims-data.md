@@ -72,7 +72,7 @@ echo $DIRECTORY
 /home/abcduser/ab2d
 
 echo $IDP_URL
-https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v1/token
+https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v3/token
 
 echo $API_URL
 https://api.ab2d.cms.gov/api/v3/fhir
@@ -145,7 +145,7 @@ $AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
     <li>
         Set the authentication URL as AB2D’s production  identity provider:
 {% capture curlSnippet %}{% raw %}
-$AUTHENTICATION_URL='https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v1/token'
+$AUTHENTICATION_URL='https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v3/token'
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>

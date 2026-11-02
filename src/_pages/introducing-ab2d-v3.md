@@ -33,7 +33,7 @@ v3 largely removes the delay in new enrollees appearing in AB2D. A patient merge
 
 ### Easier claims tracking
 
-v3 returns only the most recent version of each claim. A new Claim Control Number (CCN) field lets you track claims across versions of a claim.The CCN replaces Group Claim ID in earlier API versions.
+v3 returns only the most recent version of each claim. A new Claim Control Number (CCN) field lets you track claims across claim updates. The CCN replaces Group Claim ID in earlier API versions.
 
 ### Targeted exports
 
@@ -61,7 +61,7 @@ AB2D v3 still returns ExplanationOfBenefit resources in NDJSON format, and 173 o
 
 ## Ready to get started?
 - Review the [v3 Migration Guide]({{ "/api-documentation/how-to-migrate-to-v3" | relative_url}}) for step-by-step instructions
-- Download the [AB2D v3 Data Dictionary]({{ "/ab2d-data/#data-dictionary" | relative_url}})
+- Download the [AB2D v3 Data Dictionary]({{ "/ab2d-data" | relative_url }})
 
 Questions? Contact the AB2D team at [AB2D@cms.hhs.gov](mailto:AB2D@cms.hhs.gov).
 
