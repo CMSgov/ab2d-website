@@ -57,42 +57,42 @@ Bearer tokens expire 30 minutes from the time they are obtained. Use the token q
 
 Anyone can try the API and download test data using sample contracts in the sandbox. Sandbox credentials will not work in the production environment.
 
-### Sample contract Z1001 (10,000 enrollees)
+### Sample contract Z0003 (10,000 enrollees)
 
 Client ID:
 {% capture curlSnippet %}{% raw %}
-0oa9jyx2w9Z0AntLE297
+0oa9jyy4ou5c1MJ3N297
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
 Client password:
 {% capture curlSnippet %}{% raw %}
-hskbPu-YoWfGDY1gcQq34BfIEyMVuayu87zWDliG
+PUvA2UrGiKSanrumb5p3hhacGzdZrPxfW4lheVY8
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
 Base64-encoded credentials:
 {% capture curlSnippet %}{% raw %}
-MG9hOWp5eDJ3OVowQW50TEUyOTc6aHNrYlB1LVlvV2ZHRFkxZ2NRcTM0QmZJRXlNVnVheXU4N3pXRGxpRw=={% endraw %}{% endcapture %}
+MG9hOWp5eTRvdTVjMU1KM04yOTc6UFV2QTJVckdpS1NhbnJ1bWI1cDNoaGFjR3pkWnJQeGZXNGxoZVZZOA=={% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
-### Sample contract Z1002 (10,000 enrollees)
+### Sample contract Z0004 (10,000 enrollees)
 
 Client ID:
 {% capture curlSnippet %}{% raw %}
-0oa9jz0e1dyNfRMm6297
+0oa9jyw49f9U19vvB297
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
 Client password:
 {% capture curlSnippet %}{% raw %}
-shnG6NGkHcu29ptDsKKRW6q5uFJSSpIpdl_K5fVW
+bSKGteVvesj9cCpkTHqEINX-aaiHy2NjuPAnX1Ao
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
 Base64-encoded credentials:
 {% capture curlSnippet %}{% raw %}
-MG9hOWp6MGUxZHlOZlJNbTYyOTc6c2huRzZOR2tIY3UyOXB0RHNLS1JXNnE1dUZKU1NwSXBkbF9LNWZWVw==
+MG9hOWp5dzQ5ZjlVMTl2dkIyOTc6YlNLR3RlVnZlc2o5Y0Nwa1RIcUVJTlgtYWFpSHkyTmp1UEFuWDFBbw==
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
