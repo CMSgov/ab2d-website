@@ -16,7 +16,7 @@ Bearer tokens, also known as access tokens or JSON web tokens, authorize use of 
     <li>
         You can use a variety of tools to get a bearer token, including <a href="{{ '/api-documentation/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password.
         <ul>
-            <li><b>If you’re trying to access sandbox data</b>: Use 1 of the 4 client ID and password sets provided in the <a href="{{ '/api-documentation/get-a-bearer-token#sandbox-credentials' | relative_url }}">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idp.idm.cms.gov).</li>
+            <li><b>If you’re trying to access sandbox data</b>: Use either of the client ID and password sets provided in the <a href="{{ '/api-documentation/get-a-bearer-token#sandbox-credentials' | relative_url }}">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idp.idm.cms.gov).</li>
             <li><b>If you’re trying to access production data</b>: Once you complete the steps for <a href="{{ '/production-access' | relative_url }}">production access</a>, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idm.cms.gov). You can also <a href="{{ '/api-documentation/get-a-bearer-token#how-to-create-a-credential-file' | relative_url }}">create your own credential file</a> manually.</li>
         </ul>
     </li>
@@ -104,8 +104,8 @@ HTTP responses are saved into shell variables named `RESP<n>`. Most steps also d
 
 ### I.  Encode client credentials into Base64
 
-Encode the credentials (clientid:password) into Base64, and set the AUTH shell variable. Using contract PDP-100 as an example, the credentials are formatted as
-`0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw`.
+Encode the credentials (clientid:password) into Base64, and set the AUTH shell variable. Using contract Z0003 as an example, the credentials are formatted as
+`0oa9jyy4ou5c1MJ3N297:PUvA2UrGiKSanrumb5p3hhacGzdZrPxfW4lheVY8`.
 
 {% capture curlSnippet %}{% raw %}
 AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
