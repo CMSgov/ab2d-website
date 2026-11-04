@@ -204,7 +204,7 @@ If the system is correct, check with your IT team to make sure you have a static
 <p>
 We strongly recommend using AB2D v3. AB2D v1 and v2 will be retired on July 30, 2027, so PDPs should plan to migrate to v3 before then.
 
-Read the  <a href="{{ '/api-documentation/how-to-migrate-to-v3' | relative_url }}">v3 migration guide here</a>.
+Read the <a href="{{ '/api-documentation/how-to-migrate-to-v3' | relative_url }}">v3 migration guide here</a>.
 </p>
 <p>
 The data returned by each version is detailed in the <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">AB2D Data Dictionary</a>.

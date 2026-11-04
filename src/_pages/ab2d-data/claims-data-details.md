@@ -33,7 +33,7 @@ AB2D and its upstream data source generate and add fields to claims data in an e
   </dt>
   <dd class="margin-left-0 margin-bottom-4">
     <code class="language-plaintext highlighter-rouge">eob.identifier list</code>
-    <p class="margin-top-105">Unique identifier of a claim which is usually the same across claim updates. Use this field  to identify a group of related claim objects.</p>
+    <p class="margin-top-105">Unique identifier of a claim which is usually the same across claim updates. Use this field to identify a group of related claim objects.</p>
   </dd>
 
   <dt class="font-sans-md text-bold margin-bottom-105">
@@ -254,7 +254,7 @@ For more information:
 
 *Note: Claim ID will be in the list of identifiers and identified by the claim identification system.*
 
-##  Claim Status
+## Claim Status
 
 Claims reported by AB2D API have only 2 potential values for Claim Status. Claims are either active or canceled. If a claim object is active then it is the latest version of the claim received. If a claim is canceled, then the claim object is not the latest version of the claim or the claim itself has been revoked.
 

@@ -102,7 +102,7 @@ Learn how to get a bearer token for the sandbox using the [curl](https://curl.se
 
 HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${VARIABLE}`.
 
-### I.  Encode client credentials into Base64
+### I. Encode client credentials into Base64
 
 Encode the credentials (clientID:password) into Base64, and set the AUTH shell variable. Using contract Z0003 as an example, the credentials are formatted as
 `0oa9jyy4ou5c1MJ3N297:PUvA2UrGiKSanrumb5p3hhacGzdZrPxfW4lheVY8`.
