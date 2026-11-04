@@ -697,7 +697,7 @@ Claim version 34543 is pulled for the first time. Here is why:
 
 AB2D provides claims based on the current information available. A claim may later be canceled at any time.
 
-A claim is canceled when the latest version of the claim (the only version returned by BCDA v3) is marked as canceled
+A claim is canceled when the latest version of the claim (the only version returned by AB2D v3) is marked as canceled.
 
 ## Detecting duplicate claims
 
