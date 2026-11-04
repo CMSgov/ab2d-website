@@ -93,27 +93,27 @@ Default behaviors with the _since and _until parameters together
         <td data-label="_since">Not set</td>
         <td data-label="_until">Not set</td>
         <td data-label="Resulting date range">From your organization's attestation date to current date
-         (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
+         (<strong class="text-secondary-dark">Not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
         </tr>
         <tr>
         <td data-label="_since">2026-03-26</td>
         <td data-label="_until">Not set</td>
-        <td data-label="Resulting date range">From March 26, 2026 or your organization's attestation date, whichever is later, to current date.</td>
+        <td data-label="Resulting date range">From March 26, 2026 or your organization's attestation date, whichever is later, to current date. (<strong class="text-secondary-dark">Not recommended:</strong> all data from 3/26 onward will be exported. Setting an explicit _until date with every query will export a manageable amount of data)</td>
         </tr>
         <tr>
         <td data-label="_since">2026-01-26</td>
         <td data-label="_until">Not set</td>
-        <td data-label="Resulting date range">From January 26, 2026 or your organization's attestation date, whichever is later, to current date (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
+        <td data-label="Resulting date range">From January 26, 2026 or your organization's attestation date, whichever is later, to current date (<strong class="text-secondary-dark">Not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
         </tr>
         <tr>
         <td data-label="_since">Not set</td>
         <td data-label="_until">2026-09-01</td>
-        <td data-label="Resulting date range">From your organization's attestation date to September 1, 2026 (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
+        <td data-label="Resulting date range">From your organization's attestation date to September 1, 2026 (<strong class="text-secondary-dark">Not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
         </tr>
         <tr>
         <td data-label="_since">2026-03-26</td>
         <td data-label="_until">2026-09-01</td>
-        <td data-label="Resulting date range">From March 26, 2026 to September 1, 2026 (<strong>Recommended approach:</strong> Using a _since date on March 26th or after and setting an explicit _until date will export a manageable amount of data.)</td>
+        <td data-label="Resulting date range">From March 26, 2026 to September 1, 2026 (<strong class="text-green">Recommended:</strong> Using a _since date on March 26th or after and setting an explicit _until date will export a manageable amount of data.)</td>
         </tr>
     </tbody>
     </table>
