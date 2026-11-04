@@ -14,7 +14,7 @@ Bearer tokens, also known as access tokens or JSON web tokens, authorize use of 
 
 <ol>
     <li>
-        You can use a variety of tools to get a bearer token, including <a href="{{ '/api-documentation/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password.
+        You can use a variety of tools to get a bearer token, including <a href="{{ '/api-documentation/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="https://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password.
         <ul>
             <li><b>If you’re trying to access sandbox data</b>: Use either of the client ID and password sets provided in the <a href="{{ '/api-documentation/get-a-bearer-token#sandbox-credentials' | relative_url }}">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idp.idm.cms.gov).</li>
             <li><b>If you’re trying to access production data</b>: Once you complete the steps for <a href="{{ '/production-access' | relative_url }}">production access</a>, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idm.cms.gov). You can also <a href="{{ '/api-documentation/get-a-bearer-token#how-to-create-a-credential-file' | relative_url }}">create your own credential file</a> manually.</li>
@@ -98,17 +98,17 @@ MG9hOWp5dzQ5ZjlVMTl2dkIyOTc6YlNLR3RlVnZlc2o5Y0Nwa1RIcUVJTlgtYWFpSHkyTmp1UEFuWDFB
 
 ## How to get a bearer token using curl
 
-Learn how to get a bearer token for the sandbox using the [curl](https://curl.se/) command line tool specifically. You can copy and paste these commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/api-documentation/setup-instructions' | relative_url }}).
+Learn how to get a bearer token for the sandbox using the [curl](https://curl.se/) command line tool specifically. You can copy and paste these commands into your terminal. [Learn how to install curl and jq]({{ '/api-documentation/setup-instructions' | relative_url }}).
 
-HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${variable}`.
+HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${VARIABLE}`.
 
 ### I.  Encode client credentials into Base64
 
-Encode the credentials (clientid:password) into Base64, and set the AUTH shell variable. Using contract Z0003 as an example, the credentials are formatted as
+Encode the credentials (clientID:password) into Base64, and set the AUTH shell variable. Using contract Z0003 as an example, the credentials are formatted as
 `0oa9jyy4ou5c1MJ3N297:PUvA2UrGiKSanrumb5p3hhacGzdZrPxfW4lheVY8`.
 
 {% capture curlSnippet %}{% raw %}
-AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
+AUTH=$(echo -n "${OKTA_CLIENT_ID}:${OKTA_CLIENT_PASSWORD}" | base64)
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
@@ -121,14 +121,14 @@ Enter this command to make an HTTP request and set the RESP1 variable. The full 
 RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v1/token?grant_type=client_credentials&scope=clientCreds" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Accept: application/json" \
-  -H "Authorization: Basic ${base64_encoded_credentials}")
+  -H "Authorization: Basic ${AUTH}")
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-This extracts the token from the previous response and sets the TOKEN variable needed by all subsequent API requests.
+This extracts the token from the previous response and sets the BEARER_TOKEN variable needed by all subsequent API requests.
 
 {% capture curlSnippet %}{% raw %}
-TOKEN=$(echo $RESP1 | jq -r ".access_token")
+BEARER_TOKEN=$(echo $RESP1 | jq -r ".access_token")
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
@@ -164,21 +164,21 @@ echo -n "$OKTA_CLIENT_ID:$OKTA_CLIENT_PASSWORD" | base64 > $AUTH_FILE
     </li>
 </ol>
 
-### Powershell
+### PowerShell
 
 <ol>
     <li>Open a PowerShell terminal.</li>
     <li>
         Create a new empty file.
 {% capture curlSnippet %}{% raw %}
-$AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
+$AUTH_FILE='C:\users\abcduser\credentials_Z123456_base64.txt'
 New-Item -Path $AUTH_FILE -ItemType File
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Create the Base64 credentials.
-{% capture curlSnippet %}{% raw %}$BASE64_ENCODED_ID_PASSWORD='{base64_encoded_credentials}
+{% capture curlSnippet %}{% raw %}$BASE64_ENCODED_ID_PASSWORD='{base64_encoded_credentials}'
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>

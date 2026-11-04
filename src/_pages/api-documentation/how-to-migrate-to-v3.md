@@ -68,13 +68,13 @@ Sample v3 extension URL:
 In v3, the FHIR ID for ExplanationOfBenefit resources (`ExplanationOfBenefit.id`) and Patient resources (`ExplanationOfBenefit.patient`) will not match the v2 FHIR resource IDs. The range of v2 and v3 IDs does overlap, so it is possible for an ID to exist in both versions without representing the same claim.
 
 ## Matching claims across AB2D versions
-We do not recommend to match new v3 claims with existing v1/v2 claims. The identifier fields cannot be guaranteed to prevent duplicates when attempting to match across API versions.
+We do not recommend matching new v3 claims with existing v1/v2 claims. The identifier fields cannot be guaranteed to prevent duplicates when attempting to match across API versions.
 
 ## How to backfill your data in v3
-v3 does not apply any default behavior to _since and _until parameters, in contrast to v1 and v2. AB2D v3 data became available in March 2026, therefore if you specify a date prior to March 26, 2026 (2026-03-26T00:00:00-05:00) with the _since parameter, your request will include a large amount of additional historical data for your enrollees that may result in your job to timeout.
+v3 does not apply any default behavior to _since and _until parameters, in contrast to v1 and v2. AB2D v3 data became available in March 2026, therefore if you specify a date prior to March 26, 2026 (2026-03-26T00:00:00-05:00) with the _since parameter, your request will include a large amount of additional historical data for your enrollees that may cause your job to time out.
 
 We recommend using the new `_typeFilter` parameter to easily retrieve your data. Set a service-date range of two weeks to one month at a time, and repeat the process for the next desired time range until all of your data has been exported.
 
-Our team is ready to help with any questions or alternative appraoches at [AB2D@cms.hhs.gov](mailto:AB2D@cms.hhs.gov).
+Our team is ready to help with any questions or alternative approaches at [AB2D@cms.hhs.gov](mailto:AB2D@cms.hhs.gov).
 
 {% include feedback-form.html id="71834290" %}

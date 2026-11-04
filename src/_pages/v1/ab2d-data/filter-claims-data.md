@@ -54,9 +54,9 @@ The _since parameter allows users to filter claims data returned by date, which 
   * **Formatted sample:** 2026-07-01T12:00:00.000-04:00
 * Note the ISO8601 dates include characters that can’t appear in URLs.
   * Here is an example of invalid, unencoded URL utilizing both _since and _until parameters:
-  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
+  `https://sandbox.ab2d.cms.gov/api/v1/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
   * Here is an example of valid, percent-encoded URL utilizing both _since and _until parameters:
-  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
+  `https://sandbox.ab2d.cms.gov/api/v1/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
   * Read more about percent-encoding [here](https://en.wikipedia.org/wiki/Percent-encoding).
 
 The _since parameter allows users to pull data that has been last updated since a specified date. The earliest possible date is January 1, 2020 (2020-01-01T00:00:00-05:00) or your organization's attestation date, whichever is later. If no _since date is specified, it will default to your earliest possible date. It is highly recommended and considered best practice to use the _since parameter on v1 API calls.

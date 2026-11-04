@@ -50,9 +50,6 @@ show-side-nav: false
                     <a href="{{ '/introducing-ab2d-v3' | relative_url }}">Introducing AB2D v3</a>
                 </li>
                 <li>
-                    <a href="{{ '/ab2d-v3-overview' | relative_url }}">AB2D v3 Overview</a>
-                </li>
-                <li>
                     <a href="{{ '/api-documentation/how-to-migrate-to-v3' | relative_url }}">How to Migrate to v3</a>
                 </li>
             </ul>

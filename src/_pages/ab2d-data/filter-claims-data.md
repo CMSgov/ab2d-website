@@ -56,7 +56,7 @@ The _since and _until parameters filter claims data by the date it was last upda
   * **Sample date:** July 1, 2026, 12:00 PM Eastern Daylight Time
   * **Formatted sample:** 2026-07-01T12:00:00.000-04:00
 * ISO 8601 dates include colons (:) and for some time zones, plus signs (+). These characters must be percent-encoded in a URL. The percent-encoded example below also encodes the equal sign (=) and ampersand (&) in the query string.
-  * Invalid example of an unencoded URL with both _since and _until parameters
+  * Invalid example of an unencoded URL with both _since and _until parameters:
   `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
   * Valid example of a percent-encoded URL with both _since and _until parameters:
   `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
@@ -64,10 +64,10 @@ The _since and _until parameters filter claims data by the date it was last upda
 
 ### Date limitations for the _since parameter
 
-AB2D v3 data became available in March 2026, therefore if you specify a date prior to March 26, 2026 (2026-03-26T00:00:00-05:00) with the _since parameter, your request will include a large amount of additional historical data for your enrollees that may result in your job to timeout.
+AB2D v3 data became available in March 2026, therefore if you specify a date prior to March 26, 2026 (2026-03-26T00:00:00-05:00) with the _since parameter, your request will include a large amount of additional historical data for your enrollees that may cause your job to time out.
 The earliest possible date for the _since parameter is your organization's attestation date.
 
-If you need to load historical data, AB2D recommends using _typeFilter alone to query claims in biweekly or monthly increments by service date. If you have questions or need an alternative approach, contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>
+If you need to load historical data, AB2D recommends using _typeFilter alone to query claims in biweekly or monthly increments by service date. If you have questions or need an alternative approach, contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.
 
 ### Date limitations for the _until parameter
 
@@ -90,57 +90,62 @@ Default behaviors with the _since and _until parameters together
     </thead>
     <tbody>
         <tr>
-        <td>Not set</td>
-        <td>Not set</td>
-        <td>From your organization's attestation date to current date
+        <td data-label="_since">Not set</td>
+        <td data-label="_until">Not set</td>
+        <td data-label="Resulting date range">From your organization's attestation date to current date
          (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
         </tr>
         <tr>
-        <td>2026-03-26</td>
-        <td>Not set</td>
-        <td>From March 26, 2026 or your organization's attestation date, whichever is later, to current date.</td>
-        </tr>
-        <td>2026-01-26</td>
-        <td>Not set</td>
-        <td>From January 26, 2026 or your organization's attestation date, whichever is later, to current date (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
+        <td data-label="_since">2026-03-26</td>
+        <td data-label="_until">Not set</td>
+        <td data-label="Resulting date range">From March 26, 2026 or your organization's attestation date, whichever is later, to current date.</td>
         </tr>
         <tr>
-        <td>Not set</td>
-        <td>2026-09-01</td>
-        <td>From your organization's attestation date to September 1, 2026 (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
+        <td data-label="_since">2026-01-26</td>
+        <td data-label="_until">Not set</td>
+        <td data-label="Resulting date range">From January 26, 2026 or your organization's attestation date, whichever is later, to current date (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
         </tr>
         <tr>
-        <td>2026-03-26</td>
-        <td>2026-09-01</td>
-        <td>From March 26, 2026 to September 1, 2026 (<strong>Recommended approach:</strong> Using a _since date on March 26th or after and setting an explicit _until date will export a manageable amount of data.)</td>
+        <td data-label="_since">Not set</td>
+        <td data-label="_until">2026-09-01</td>
+        <td data-label="Resulting date range">From your organization's attestation date to September 1, 2026 (<strong>not recommended:</strong> large amounts of data will be exported and could cause your job to timeout).</td>
+        </tr>
+        <tr>
+        <td data-label="_since">2026-03-26</td>
+        <td data-label="_until">2026-09-01</td>
+        <td data-label="Resulting date range">From March 26, 2026 to September 1, 2026 (<strong>Recommended approach:</strong> Using a _since date on March 26th or after and setting an explicit _until date will export a manageable amount of data.)</td>
         </tr>
     </tbody>
     </table>
 </div>
 
+{:.margin-bottom-4}
 ### Examples of valid and invalid values
 
-#### Valid values
+{% include alert.html variant="success" heading='<h4 class="font-sans-md text-bold line-height-sans-2">Valid values</h4>' classNames="measure-6 margin-bottom-3" %}
 
-* `?_since%3D2026-04-10T03%3A00%3A00-04%3A00%26_until%3D2026-08-10T06%3A00%3A00-04%3A00`
-<br>
-**Why this works:** The _until datetime is after the _since datetime. Both datetimes follow the ISO format and include time zones.
+* {:.padding-left-2 .border-left-1 .border-gray-10 .padding-top-05} `?_since%3D2026-04-10T03%3A00%3A00-04%3A00%26_until%3D2026-08-10T06%3A00%3A00-04%3A00`
 
-#### Invalid values, but the job still runs
+  The _until datetime is after the _since datetime. Both datetimes follow the ISO format and include time zones.
+{:.usa-list .usa-list--unstyled style="margin-bottom: 2rem;"}
 
-* `?_since%3D2026-04-10T16%3A00%3A00%2B00%3A00%26_until%3D3000-10-10T16%3A00%3A00%2B00%3A00`
-<br>
-**Why this works:** The _until datetime is in the future. The job runs, and the value is replaced with the current date.
+{% include alert.html variant="warning" heading='<h4 class="font-sans-md text-bold line-height-sans-2">Invalid values, but the job still runs</h4>' classNames="measure-6 margin-bottom-3" %}
 
-#### Invalid values, the job fails or returns no data
+* {:.padding-left-2 .border-left-1 .border-gray-10 .padding-top-05} `?_since%3D2026-04-10T16%3A00%3A00%2B00%3A00%26_until%3D3000-10-10T16%3A00%3A00%2B00%3A00`
 
-* `?_since%3D2026-04-10T00%3A00%3A00%26_until%3D2026-04-20T00%3A00%3A00`
-<br>
-**Why this doesn't work:** The datetimes have no time zone.
+  The _until datetime is in the future. The job runs, and the value is replaced with the current date.
+{:.usa-list .usa-list--unstyled style="margin-bottom: 2rem;"}
 
-* `?_since%3D2026-08-10T09%3A00%3A00-04%3A00%26_until%3D2026-04-10T07%3A00%3A00-04%3A00`
-<br>
-**Why this doesn't work:** The _until datetime is before the _since datetime.
+{% include alert.html variant="error" heading='<h4 class="font-sans-md text-bold line-height-sans-2">Invalid values, the job fails or returns no data</h4>' classNames="measure-6 margin-bottom-3" %}
+
+* {:.padding-left-2 .border-left-1 .border-gray-10 .padding-top-05} `?_since%3D2026-04-10T00%3A00%3A00%26_until%3D2026-04-20T00%3A00%3A00`
+
+  The datetimes have no time zone.
+
+* {:.padding-left-2 .border-left-1 .border-gray-10 .padding-top-05} `?_since%3D2026-08-10T09%3A00%3A00-04%3A00%26_until%3D2026-04-10T07%3A00%3A00-04%3A00`
+
+  The _until datetime is before the _since datetime.
+{:.usa-list .usa-list--unstyled style="margin-bottom: 2rem;"}
 
 ### Example requests
 
@@ -152,7 +157,7 @@ Default behaviors with the _since and _until parameters together
 curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_since=2026-07-01T00%3A00%3A00.000-04%3A00" \
     -H "Accept: application/fhir+json" \
     -H "Prefer: respond-async" \
-    -H "Authorization: Bearer ${bearer_token}"
+    -H "Authorization: Bearer ${BEARER_TOKEN}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
@@ -164,7 +169,7 @@ curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_since=2026-0
 curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_until=2026-09-01T00%3A00%3A00.000-04%3A00" \
     -H "Accept: application/fhir+json" \
     -H "Prefer: respond-async" \
-    -H "Authorization: Bearer ${bearer_token}"
+    -H "Authorization: Bearer ${BEARER_TOKEN}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
@@ -176,7 +181,7 @@ curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_until=2026-0
 curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_since=2026-04-01T00%3A00%3A00.000-04%3A00&_until=2026-09-01T00%3A00%3A00.000-04%3A00" \
     -H "Accept: application/fhir+json" \
     -H "Prefer: respond-async" \
-    -H "Authorization: Bearer ${bearer_token}"
+    -H "Authorization: Bearer ${BEARER_TOKEN}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
@@ -186,7 +191,7 @@ The _typeFilter parameter filters ExplanationOfBenefit resources by service date
 
 _since and _until filter by the lastUpdated timestamp. _typeFilter with service-date filters by the date that care took place. Use _since and _until to get claims that changed recently. Use _typeFilter to get claims for a specific period of care.
 
-### Examples of _typeFilter service date prefixes <!-- Two types of tables exist on tihs page, we should figure out which one we want.-->
+### Examples of _typeFilter service date prefixes
 
 To use _typeFilter to filter by service date, add a prefix directly before the date, with no space. Dates use the format YYYY-MM-DD.
 
@@ -202,34 +207,34 @@ To use _typeFilter to filter by service date, add a prefix directly before the d
     </thead>
     <tbody>
         <tr>
-        <td>eq</td>
-        <td>Equal to</td>
-        <td>service-date=eq2025-01-01</td>
-        <td>Service date is January 1, 2025</td>
+        <td data-label="Prefix">eq</td>
+        <td data-label="Meaning">Equal to</td>
+        <td data-label="Example filter">service-date=eq2025-01-01</td>
+        <td data-label="Resulting claims">Service date is January 1, 2025</td>
         </tr>
         <tr>
-        <td>gt</td>
-        <td>After</td>
-        <td>service-date=gt2025-01-01</td>
-        <td>Service date is after January 1, 2025</td>
+        <td data-label="Prefix">gt</td>
+        <td data-label="Meaning">After</td>
+        <td data-label="Example filter">service-date=gt2025-01-01</td>
+        <td data-label="Resulting claims">Service date is after January 1, 2025</td>
         </tr>
         <tr>
-        <td>ge</td>
-        <td>On or after</td>
-        <td>service-date=ge2025-01-01</td>
-        <td>Service date is January 1, 2025 or later</td>
+        <td data-label="Prefix">ge</td>
+        <td data-label="Meaning">On or after</td>
+        <td data-label="Example filter">service-date=ge2025-01-01</td>
+        <td data-label="Resulting claims">Service date is January 1, 2025 or later</td>
         </tr>
         <tr>
-        <td>lt</td>
-        <td>Before</td>
-        <td>service-date=lt2025-01-01</td>
-        <td>Service date is before January 1, 2025</td>
+        <td data-label="Prefix">lt</td>
+        <td data-label="Meaning">Before</td>
+        <td data-label="Example filter">service-date=lt2025-01-01</td>
+        <td data-label="Resulting claims">Service date is before January 1, 2025</td>
         </tr>
         <tr>
-        <td>le</td>
-        <td>On or before</td>
-        <td>service-date=le2025-01-01</td>
-        <td>Service date is January 1, 2025 or earlier</td>
+        <td data-label="Prefix">le</td>
+        <td data-label="Meaning">On or before</td>
+        <td data-label="Example filter">service-date=le2025-01-01</td>
+        <td data-label="Resulting claims">Service date is January 1, 2025 or earlier</td>
         </tr>
     </tbody>
     </table>
@@ -252,24 +257,24 @@ To filter a date range, repeat `service-date` once for each prefix. A claim must
     </thead>
     <tbody>
         <tr>
-        <td>ge + le</td>
-        <td>service-date=ge2025-01-01\&service-date=le2025-12-31</td>
-        <td>Service date is from January 1 through December 31, 2025, including both dates</td>
+        <td data-label="Prefix combinations">ge + le</td>
+        <td data-label="Example filter">service-date=ge2025-01-01&service-date=le2025-12-31</td>
+        <td data-label="Resulting claims">Service date is from January 1 through December 31, 2025, including both dates</td>
         </tr>
         <tr>
-        <td>gt + lt</td>
-        <td>service-date=gt2025-01-01\&service-date=lt2025-12-31</td>
-        <td>Service date is after January 1 and before December 31, 2025, excluding both dates</td>
+        <td data-label="Prefix combinations">gt + lt</td>
+        <td data-label="Example filter">service-date=gt2025-01-01&service-date=lt2025-12-31</td>
+        <td data-label="Resulting claims">Service date is after January 1 and before December 31, 2025, excluding both dates</td>
         </tr>
         <tr>
-        <td>ge + lt</td>
-        <td>service-date=ge2025-01-01\&service-date=lt2026-01-01</td>
-        <td>Service date is any day in 2025</td>
+        <td data-label="Prefix combinations">ge + lt</td>
+        <td data-label="Example filter">service-date=ge2025-01-01&service-date=lt2026-01-01</td>
+        <td data-label="Resulting claims">Service date is any day in 2025</td>
         </tr>
         <tr>
-        <td>gt + le</td>
-        <td>service-date=gt2025-01-01\&service-date=le2025-12-31</td>
-        <td>Service date is after January 1 and through December 31, 2025</td>
+        <td data-label="Prefix combinations">gt + le</td>
+        <td data-label="Example filter">service-date=gt2025-01-01&service-date=le2025-12-31</td>
+        <td data-label="Resulting claims">Service date is after January 1 and through December 31, 2025</td>
         </tr>
     </tbody>
     </table>
@@ -285,7 +290,7 @@ The request below returns only ExplanationOfBenefit resources with a service dat
 curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_type=ExplanationOfBenefit&_typeFilter=ExplanationOfBenefit%3Fservice-date%3Dge2025-01-01" \
     -H "Accept: application/fhir+json" \
     -H "Prefer: respond-async" \
-    -H "Authorization: Bearer ${bearer_token}"
+    -H "Authorization: Bearer ${BEARER_TOKEN}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 

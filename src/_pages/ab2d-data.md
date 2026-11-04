@@ -20,14 +20,14 @@ Learn about claims data and how to apply it in context. The AB2D API shares larg
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Medicare Part A claims data</th>
-      <td>
+      <th data-label="Data type" scope="row">Medicare Part A claims data</th>
+      <td data-label="Definition">
         Inpatient hospital stays, care in skilled nursing facilities, and hospice care
       </td>
     </tr>
     <tr>
-      <th scope="row">Medicare Part B claims data</th>
-      <td>
+      <th data-label="Data type" scope="row">Medicare Part B claims data</th>
+      <td data-label="Definition">
         Various doctors' services, outpatient care, medical supplies, and preventive services
       </td>
     </tr>

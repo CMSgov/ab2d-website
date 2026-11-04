@@ -56,9 +56,9 @@ The _since and _until parameters filter claims data by the date it was last upda
   * **Formatted sample:** 2026-07-01T12:00:00.000-04:00
 * Note the ISO8601 dates include characters that can’t appear in URLs.
   * Here is an example of invalid, unencoded URL utilizing both _since and _until parameters:
-  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
+  `https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since=2023-06-15T00:00:00.000-05:00&_until=2024-06-15T00:00:00.000-05:00`
   * Here is an example of valid, percent-encoded URL utilizing both _since and _until parameters:
-  `https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
+  `https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/$export?_since%3D2023-06-15T00%3A00%3A00.000-05%3A00%26_until%3D2024-06-15T00%3A00%3A00.000-05%3A00`
   * Read more about percent-encoding [here](https://en.wikipedia.org/wiki/Percent-encoding).
 
 ### Date limitations for the _since parameter
@@ -86,24 +86,24 @@ Default behaviors with the _since and _until parameters together
     </thead>
     <tbody>
         <tr>
-        <td>Not set</td>
-        <td>Not set</td>
-        <td>From last successful export date to current date</td>
+        <td data-label="_since">Not set</td>
+        <td data-label="_until">Not set</td>
+        <td data-label="Resulting date range">From last successful export date to current date</td>
         </tr>
         <tr>
-        <td>2026-04-01</td>
-        <td>Not set</td>
-        <td>From April 1, 2026 to current date</td>
+        <td data-label="_since">2026-04-01</td>
+        <td data-label="_until">Not set</td>
+        <td data-label="Resulting date range">From April 1, 2026 to current date</td>
         </tr>
         <tr>
-        <td>Not set</td>
-        <td>2026-09-01</td>
-        <td>From last successful export to September 1, 2026</td>
+        <td data-label="_since">Not set</td>
+        <td data-label="_until">2026-09-01</td>
+        <td data-label="Resulting date range">From last successful export to September 1, 2026</td>
         </tr>
         <tr>
-        <td>2026-04-01</td>
-        <td>2026-09-01</td>
-        <td>From April 1, 2026 to September 1, 2026</td>
+        <td data-label="_since">2026-04-01</td>
+        <td data-label="_until">2026-09-01</td>
+        <td data-label="Resulting date range">From April 1, 2026 to September 1, 2026</td>
         </tr>
     </tbody>
     </table>
@@ -141,37 +141,37 @@ Default behaviors with the _since and _until parameters together
 
 #### Using the _since parameter only
 
-`GET /api/v3/fhir/Patient/$export?_since=2026-07-01T00%3A00%3A00.000-04%3A00`
+`GET /api/v2/fhir/Patient/$export?_since=2026-07-01T00%3A00%3A00.000-04%3A00`
 
 {% capture curlSnippet %}{% raw %}
-curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_since=2026-07-01T00%3A00%3A00.000-04%3A00" \
+curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since=2026-07-01T00%3A00%3A00.000-04%3A00" \
     -H "Accept: application/fhir+json" \
     -H "Prefer: respond-async" \
-    -H "Authorization: Bearer ${bearer_token}"
+    -H "Authorization: Bearer ${BEARER_TOKEN}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 #### Using the _until parameter only
 
-`GET /api/v3/fhir/Patient/$export?_until=2026-09-01T00%3A00%3A00.000-04%3A00`
+`GET /api/v2/fhir/Patient/$export?_until=2026-09-01T00%3A00%3A00.000-04%3A00`
 
 {% capture curlSnippet %}{% raw %}
-curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_until=2026-09-01T00%3A00%3A00.000-04%3A00" \
+curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_until=2026-09-01T00%3A00%3A00.000-04%3A00" \
     -H "Accept: application/fhir+json" \
     -H "Prefer: respond-async" \
-    -H "Authorization: Bearer ${bearer_token}"
+    -H "Authorization: Bearer ${BEARER_TOKEN}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 #### Using both the _since and _until parameters
 
-`GET /api/v3/fhir/Patient/$export?_since=2026-04-01T00%3A00%3A00.000-04%3A00&_until=2026-09-01T00%3A00%3A00.000-04%3A00`
+`GET /api/v2/fhir/Patient/$export?_since=2026-04-01T00%3A00%3A00.000-04%3A00&_until=2026-09-01T00%3A00%3A00.000-04%3A00`
 
 {% capture curlSnippet %}{% raw %}
-curl -i "https://sandbox.ab2d.cms.gov/api/v3/fhir/Patient/\$export?_since=2026-04-01T00%3A00%3A00.000-04%3A00&_until=2026-09-01T00%3A00%3A00.000-04%3A00" \
+curl -i "https://sandbox.ab2d.cms.gov/api/v2/fhir/Patient/\$export?_since=2026-04-01T00%3A00%3A00.000-04%3A00&_until=2026-09-01T00%3A00%3A00.000-04%3A00" \
     -H "Accept: application/fhir+json" \
     -H "Prefer: respond-async" \
-    -H "Authorization: Bearer ${bearer_token}"
+    -H "Authorization: Bearer ${BEARER_TOKEN}"
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 

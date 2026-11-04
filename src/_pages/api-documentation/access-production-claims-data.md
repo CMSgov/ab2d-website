@@ -20,7 +20,7 @@ You’ll still need [a bearer token]({{ '/api-documentation/get-a-bearer-token' 
 - Retrieve metadata: `GET /api/v3/fhir/metadata`
 - Cancel job: `DELETE /api/v3/fhir/Job/{job_uuid}/$status`
 - Check the job status: `GET /api/v3/fhir/Job/{job_uuid}/$status`
-- Download files: `GET/api/v3/fhir/Job/{job_uuid}/file/{file_name}`
+- Download files: `GET /api/v3/fhir/Job/{job_uuid}/file/{file_name}`
 
 ### Job expiration
 
@@ -56,12 +56,12 @@ Download a ZIP file of the [Bash API repository](https://github.com/CMSgov/ab2d-
 
         <p>Speed up download times by requesting compressed files in gzip format with <code class="inline-code">--gzip</code>. Afterward, decompress (unzip) the files into NDJSON format.</p>
 {% capture curlSnippet %}{% raw %}
-source bootstrap.sh -prod
---directory /home/abcduser/ab2d
---auth /home/abcduser/credentials_Z123456_base64.txt
---since 2020-05-01T00:00:00.000-05:00
---fhir R4
---gzip
+source bootstrap.sh -prod \
+  --directory /home/abcduser/ab2d \
+  --auth /home/abcduser/credentials_Z123456_base64.txt \
+  --since 2026-03-26T00:00:00.000-05:00 \
+  --fhir R4 \
+  --gzip
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
@@ -72,7 +72,7 @@ echo $DIRECTORY
 /home/abcduser/ab2d
 
 echo $IDP_URL
-https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v3/token
+https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v1/token
 
 echo $API_URL
 https://api.ab2d.cms.gov/api/v3/fhir
@@ -125,9 +125,9 @@ Once the job is complete, download the files from the same shell.
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 
-### Windows Powershell client
+### Windows PowerShell client
 
-Download a ZIP file of the [Powershell API repository](https://github.com/CMSgov/ab2d-sample-client-powershell) or [learn how to clone it](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Then, open a Powershell terminal and go to the home directory. You can run the `dir` command to check for the (.ps1) and README Powershell scripts. Note that the Windows client will always download files to your current working directory, so you may want to move its existing contents elsewhere during the job.
+Download a ZIP file of the [PowerShell API repository](https://github.com/CMSgov/ab2d-sample-client-powershell) or [learn how to clone it](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Then, open a PowerShell terminal and go to the home directory. You can run the `dir` command to check for the (.ps1) and README PowerShell scripts. Note that the Windows client will always download files to your current working directory, so you may want to move its existing contents elsewhere during the job.
 
 #### I. Prepare the environment variables
 
@@ -138,14 +138,14 @@ Download a ZIP file of the [Powershell API repository](https://github.com/CMSgov
     <li>
         Set the authentication location as the Base64 credential file you created for your bearer token (e.g., /home/abcduser/credentials_Z123456_base64.txt):
 {% capture curlSnippet %}{% raw %}
-$AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
+$AUTH_FILE='C:\users\abcduser\credentials_Z123456_base64.txt'
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
-        Set the authentication URL as AB2D’s production  identity provider:
+        Set the authentication URL as AB2D’s production identity provider:
 {% capture curlSnippet %}{% raw %}
-$AUTHENTICATION_URL='https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v3/token'
+$AUTHENTICATION_URL='https://idm.cms.gov/oauth2/aus2ytanytjdaF9cr297/v1/token'
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
@@ -209,7 +209,7 @@ AUTH_FILE=/home/abcduser/credentials_Z123456_base64.txt
                         </li>
                         <li>Windows
 {% capture curlSnippet %}{% raw %}
-$AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
+$AUTH_FILE='C:\users\abcduser\credentials_Z123456_base64.txt'
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
@@ -228,7 +228,7 @@ DIRECTORY=/home/abcduser/ab2d
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
-$DIRECTORY=C:\users\abcduser\ab2d
+$DIRECTORY='C:\users\abcduser\ab2d'
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
@@ -252,14 +252,14 @@ python --version
             <li>
                 <p>Linux/Mac</p>
 {% capture curlSnippet %}{% raw %}
-python job-cli.py -prod --auth $AUTH_FILE --directory $DIRECTORY --since ‘2020-05-01T00:00:00.000-05:00’ --fhir R4 --only_start
+python job-cli.py -prod --auth $AUTH_FILE --directory $DIRECTORY --since '2026-03-26T00:00:00.000-05:00' --fhir R4 --ab2d-endpoint v3 --only_start
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
-python job-cli.py -prod --auth %AUTH_FILE% --directory %DIRECTORY% --since ‘2020-05-01T00:00:00.000-05:00’ --fhir R4 --only_start
+python job-cli.py -prod --auth $AUTH_FILE --directory $DIRECTORY --since '2026-03-26T00:00:00.000-05:00' --fhir R4 --ab2d-endpoint v3 --only_start
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
@@ -278,7 +278,7 @@ cat $DIRECTORY/job_id.txt
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
-type %DIRECTORY%\job_id.txt
+type $DIRECTORY\job_id.txt
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
@@ -295,14 +295,14 @@ type %DIRECTORY%\job_id.txt
             <li>
             <p>Linux/Mac</p>
 {% capture curlSnippet %}{% raw %}
-python job-cli.py -prod --auth $AUTH --directory $DIRECTORY --only_monitor
+python job-cli.py -prod --auth $AUTH_FILE --directory $DIRECTORY --fhir R4 --ab2d-endpoint v3 --only_monitor
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
             <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
-python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_monitor
+python job-cli.py -prod --auth $AUTH_FILE --directory $DIRECTORY --fhir R4 --ab2d-endpoint v3 --only_monitor
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
@@ -321,7 +321,7 @@ cat $DIRECTORY/response.json
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
-type %DIRECTORY%\response.json
+type $DIRECTORY\response.json
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
@@ -338,14 +338,14 @@ type %DIRECTORY%\response.json
             <li>
                 <p>Linux/Mac</p>
 {% capture curlSnippet %}{% raw %}
-python job-cli.py -prod --auth $AUTH --directory $DIRECTORY --only_download
+python job-cli.py -prod --auth $AUTH_FILE --directory $DIRECTORY --fhir R4 --ab2d-endpoint v3 --only_download
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
-python job-cli.py -prod --auth %AUTH% --directory %DIRECTORY% --only_download
+python job-cli.py -prod --auth $AUTH_FILE --directory $DIRECTORY --fhir R4 --ab2d-endpoint v3 --only_download
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
@@ -364,7 +364,7 @@ ls $DIRECTORY/*.ndjson
             <li>
                 <p>Windows</p>
 {% capture curlSnippet %}{% raw %}
-dir %TARGET_DIR%\*.ndjson
+dir $DIRECTORY\*.ndjson
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
             </li>
@@ -374,11 +374,11 @@ dir %TARGET_DIR%\*.ndjson
 
 ## Clean up your directory
 
-After you download your files, clean up your directory as needed. You can move the NDJSON files to another directory and remove script-generated files (e.g., “jobID.txt”). If the job is re-run, the new files may interfere and overwrite the old files.
+After you download your files, clean up your directory as needed. You can move the NDJSON files to another directory and remove script-generated files (e.g., “jobId.txt”). If the job is re-run, the new files may interfere and overwrite the old files.
 
 ## Incremental export model
 
-Incremental exports of data, ideally at a bi-weekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/ab2d-data/filter-claims-data#incremental-export-model' | relative_url }})
+Incremental exports of data, ideally at a biweekly frequency, reduce data duplication and speed up job times. This allows you to request newly updated data that you haven’t downloaded since your last export. [Learn more about the incremental export model.]({{ '/ab2d-data/filter-claims-data#running-incremental-exports' | relative_url }})
 
 ## Troubleshooting
 

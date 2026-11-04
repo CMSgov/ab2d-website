@@ -173,7 +173,7 @@ Notice 2 things:
           <tr>
               <td data-label="Claim Control Number">99995</td>
               <td data-label="Last Updated">02/01/2026</td>
-              <td data-label="Claim ID">798</td>
+              <td data-label="Claim ID">789</td>
               <td data-label="Claim Line ID">
                   <p>ABCD</p>
                   <p>DEFG</p>
@@ -193,7 +193,7 @@ The Claim Control Number is always 1 of a list of IDs found in the identifier fi
 - Location: found in the eob.identifier list
 - Claim Identifier System: [https://bluebutton.cms.gov/identifiers/CLM-CNTL-NUM](https://bluebutton.cms.gov/identifiers/CLM-CNTL-NUM)
 
-For more information see: [FHIR Identifier Explanation](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
+For more information see: [FHIR Identifier Explanation](https://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
 
 ### Example JSON
 
@@ -231,7 +231,7 @@ The Claim ID is found in every ExplanationOfBenefit resource as 1 of a list of I
 - Claim identifier type: [https://bluebutton.cms.gov/resources/variables/clm_id](https://bluebutton.cms.gov/resources/variables/clm_id)
 
 For more information:
-- [FHIR Identifier Explanation](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
+- [FHIR Identifier Explanation](https://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.identifier)
 - [Claim ID Explanation](https://bluebutton.cms.gov/resources/variables/clm_id)
 
 ### Example JSON
@@ -262,7 +262,7 @@ Claims reported by AB2D API have only 2 potential values for Claim Status. Claim
 - Location: found directly on the claim
 - URI: http://hl7.org/fhir/explanationofbenefit-status
 
-For more information: [FHIR Specification for Claim Status](http://hl7.org/fhir/R4/valueset-explanationofbenefit-status.html)
+For more information: [FHIR Specification for Claim Status](https://hl7.org/fhir/R4/valueset-explanationofbenefit-status.html)
 
 ## Last Updated
 
@@ -273,8 +273,8 @@ The Last Updated field is a metadata field reflecting the last time the claim ob
 - URI: http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated
 
 For more information:
-- [ExplanationOfBenefit.created](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created)
-- [Common FHIR Metadata](http://hl7.org/fhir/R4/resource-definitions.html#Resource.meta)
+- [ExplanationOfBenefit.created](https://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created)
+- [Common FHIR Metadata](https://hl7.org/fhir/R4/resource-definitions.html#Resource.meta)
 
 ## Effective Date
 
@@ -284,8 +284,8 @@ The Effective Date field corresponds to the National Claim History (NCH) weekly 
 - Location: found in the eob.created field
 
 For more information:
-- [ExplanationOfBenefit.created](http://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created)
-- [Common FHIR Metadata](http://hl7.org/fhir/R4/resource-definitions.html#Resource.meta)
+- [ExplanationOfBenefit.created](https://hl7.org/fhir/R4/explanationofbenefit-definitions.html#ExplanationOfBenefit.created)
+- [Common FHIR Metadata](https://hl7.org/fhir/R4/resource-definitions.html#Resource.meta)
 
 ## Identifying patients
 
@@ -343,7 +343,7 @@ Extensions referring to identifiers will have the following structure:
                 }
             }
         ],
-        "system": “http://hl7.org/fhir/sid/us-mbi”,
+        "system": "http://hl7.org/fhir/sid/us-mbi",
         "value": "7S94E00AA00"
     }
 }

@@ -81,7 +81,7 @@ windows features
     <li>If the installation is unsuccessful, open the PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting <i>Run as administrator</i>.</li>
     <li>Enter the following in your terminal:
 {% capture setupSnippet %}{% raw %}
-wsl -- install
+wsl --install
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=setupSnippet language="shell" can_copy=true %}
     </li>

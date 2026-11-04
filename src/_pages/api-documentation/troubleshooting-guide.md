@@ -91,11 +91,11 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
 {% capture a5AccordionContent %}
 <p>
-  Using the system that will access the API, open your browser and visit <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com/</a>. If you don’t have a browser query from your system’s command line:
+  Using the system that will access the API, open your browser and visit <a href="https://checkip.amazonaws.com">https://checkip.amazonaws.com</a>. If you don’t have a browser query from your system’s command line:
 </p>
 <ul>
     <li>Linux/Mac: Open a terminal and run the command <code class="inline-code">curl -X GET checkip.amazonaws.com</code></li>
-    <li>Windows: Open a Powershell terminal and run the command <code class="inline-code">Invoke-RestMethod -Method GET checkip.amazonaws.com</code></li>
+    <li>Windows: Open a PowerShell terminal and run the command <code class="inline-code">Invoke-RestMethod -Method GET checkip.amazonaws.com</code></li>
 </ul>
 {% endcapture %}
 
@@ -119,7 +119,7 @@ If the system is correct, check with your IT team to make sure you have a static
           Linux/Mac: In a terminal, run <code class="inline-code">curl -X GET https://api.ab2d.cms.gov/health --verbose</code>
         </li>
         <li>
-          Windows: In a powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
+          Windows: In a PowerShell terminal, run <code class="inline-code">Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
         </li>
         </ul>
         <li>In Postman, create a new GET request against the URL https://api.ab2d.cms.gov/health. If the response has an HTTP status of 200 then your IP address can connect.</li>
@@ -152,14 +152,14 @@ If the system is correct, check with your IT team to make sure you have a static
   </li>
     <ul>
       <li>
-        <strong>Linux/Mac:</strong> In a terminal, run <code class="inline-code">curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status --verbose</code>. Make sure to fill in {job_uuid} with the ID of the running job.
+        <strong>Linux/Mac:</strong> In a terminal, run <code class="inline-code">curl -X DELETE https://api.ab2d.cms.gov/api/v3/fhir/Job/{job_uuid}/$status --verbose</code>. Make sure to fill in {job_uuid} with the ID of the running job.
       </li>
       <li>
-        <strong>Windows:</strong> In a Powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status</code>. Make sure to fill in {job_uuid} with the ID of the running job.
+        <strong>Windows:</strong> In a PowerShell terminal, run <code class="inline-code">Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v3/fhir/Job/{job_uuid}/$status</code>. Make sure to fill in {job_uuid} with the ID of the running job.
       </li>
     </ul>
   <li>
-    In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status. Note the request parameter {job_uuid} must be set in Postman.
+    In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v3/fhir/Job/{job_uuid}/$status. Note the request parameter {job_uuid} must be set in Postman.
   </li>
   <li>
     In a browser, visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE" target="_blank" rel="noopener">https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</a> and enter your job ID.
@@ -213,10 +213,10 @@ The data returned by each version is detailed in the <a href="{{ '/ab2d-data#dat
 
 {% capture a18AccordionContent %}
 <p>
-v3 offers the most filtering capability of all AB2D versions. v3 supports filtering on the date a claim was last updated using _since and _until parameters, as well as filtering on a claim's service-date using the _typeFIlter parameter.
+v3 offers the most filtering capability of all AB2D versions. v3 supports filtering on the date a claim was last updated using _since and _until parameters, as well as filtering on a claim's service-date using the _typeFilter parameter.
 </p>
 <p>
-Unlike prior versions of the API, v3 does not does not automatically set these parameters for you. As a result, a request with no parameters will return all your data, which can cause long job run times or even timeouts and failed jobs
+Unlike prior versions of the API, v3 does not automatically set these parameters for you. As a result, a request with no parameters will return all your data, which can cause long job run times or even timeouts and failed jobs.
 </p>
 <p>
 v2 only supports the _since and _until parameters which are populated by default if a value is not provided. v1 only supports the _until parameter.
