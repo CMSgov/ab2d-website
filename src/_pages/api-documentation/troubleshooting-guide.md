@@ -219,7 +219,7 @@ v3 offers the most filtering capability of all AB2D versions. v3 supports filter
 Unlike prior versions of the API, v3 does not automatically set these parameters for you. As a result, a request with no parameters will return all your data, which can cause long job run times or even timeouts and failed jobs.
 </p>
 <p>
-v2 only supports the _since and _until parameters which are populated by default if a value is not provided. v1 only supports the _until parameter.
+v2 only supports the _since and _until parameters which are populated by default if a value is not provided. v1 only supports the _since parameter.
 </p>
 {% endcapture %}
 
