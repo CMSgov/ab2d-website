@@ -114,7 +114,7 @@ AUTH=$(echo -n "${OKTA_CLIENT_ID}:${OKTA_CLIENT_PASSWORD}" | base64)
 
 ### II. Get your bearer token
 
-Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for PDP-100 are [listed above]({{ '/api-documentation/get-a-bearer-token#sandbox-credentials' | relative_url }}), but will look something like
+Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for Z0003 and Z0004 are [listed above]({{ '/api-documentation/get-a-bearer-token#sandbox-credentials' | relative_url }}), but will look something like
 `MG9hMnQwbHNyZ…VHRINU9CY3VIdw==`.
 
 {% capture curlSnippet %}{% raw %}
