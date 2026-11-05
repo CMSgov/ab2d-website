@@ -3,7 +3,6 @@ layout: api-docs
 page_title: "Troubleshooting Guide"
 seo_title: "Troubleshooting Guide for Medicare Claims Data"
 description: "Resolve common issues, errors, and technical challenges you may encounter while accessing claims data."
-permalink: /troubleshooting-guide
 in-page-nav: true
 in-page-nav-levels: "h2"
 ---
@@ -26,31 +25,16 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
     <p class="margin-top-105">General response when something is wrong (e.g., missing a request parameter or body).</p>
   </dd>
 
-  <dt class="font-sans-md text-bold">401 HTTP response: forbidden</dt>
+  <dt class="font-sans-md text-bold">401 HTTP response: unauthorized</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p class="margin-top-105">Your token is incorrect or has expired. Authentication has not been completed successfully.</p>
-  </dd>
-
-  <dt class="font-sans-md text-bold">403 HTTP response: unauthorized</dt>
-  <dd class="margin-left-0 margin-bottom-4">
-    <p class="margin-top-105">You don’t have permission to access the requested data. This can happen for a variety of reasons:</p>
-    <ul>
-      <li>Your token has expired.</li>
-      <li>You have specified a contract that is not yours.</li>
-      <li>You’re not authorized to use the API.</li>
-      <li>Authentication has failed.</li>
-    </ul>
+    <p class="margin-top-105">Unauthorized, authentication has not been done or has not succeeded.</p>
+    <p>Returned for every authentication failure (missing token, invalid or expired token). Request a new bearer token and retry.</p>
   </dd>
 
   <dt class="font-sans-md text-bold">403 HTTP response: forbidden</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p class="margin-top-105">Authentication succeeded, but you don’t have permission to access the requested data. This can happen due to a variety of reasons:</p>
-    <ul>
-      <li>The credentials provided may have a typo or syntax error (e.g., spaces, hidden characters).</li>
-      <li>The credentials provided may have been encoded to Base64 incorrectly.</li>
-      <li>You’re connected to the sandbox idP (test.idp.idm.cms.gov) instead of the production idP (idm.cms.gov).</li>
-      <li>Authentication may have failed because of an incorrect header. "Authorization : Basic Auth" is the correct header.</li>
-    </ul>
+    <p class="margin-top-105">Forbidden, authentication succeeded but the user doesn't have permissions to access the requested data.</p>
+    <p>Returned only when your token is valid but you are not allowed to make the request (for example, your organization is disabled, your contract is not attested, v3 is not enabled for your contract, or the job belongs to another organization). If this continues to happen, contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.</p>
   </dd>
 
   <dt class="font-sans-md text-bold">404 HTTP response: page not found</dt>
@@ -92,11 +76,11 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
 
 {% capture a5AccordionContent %}
 <p>
-  Using the system that will access the API, open your browser and visit <a href="http://checkip.amazonaws.com">http://checkip.amazonaws.com/</a>. If you don’t have a browser query from your system’s command line:
+  Using the system that will access the API, open your browser and visit <a href="https://checkip.amazonaws.com">https://checkip.amazonaws.com</a>. If you don’t have a browser query from your system’s command line:
 </p>
 <ul>
     <li>Linux/Mac: Open a terminal and run the command <code class="inline-code">curl -X GET checkip.amazonaws.com</code></li>
-    <li>Windows: Open a Powershell terminal and run the command <code class="inline-code">Invoke-RestMethod -Method GET checkip.amazonaws.com</code></li>
+    <li>Windows: Open a PowerShell terminal and run the command <code class="inline-code">Invoke-RestMethod -Method GET checkip.amazonaws.com</code></li>
 </ul>
 {% endcapture %}
 
@@ -120,7 +104,7 @@ If the system is correct, check with your IT team to make sure you have a static
           Linux/Mac: In a terminal, run <code class="inline-code">curl -X GET https://api.ab2d.cms.gov/health --verbose</code>
         </li>
         <li>
-          Windows: In a powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
+          Windows: In a PowerShell terminal, run <code class="inline-code">Invoke-RestMethod -Method GET https://api.ab2d.cms.gov/health </code>
         </li>
         </ul>
         <li>In Postman, create a new GET request against the URL https://api.ab2d.cms.gov/health. If the response has an HTTP status of 200 then your IP address can connect.</li>
@@ -153,14 +137,14 @@ If the system is correct, check with your IT team to make sure you have a static
   </li>
     <ul>
       <li>
-        <strong>Linux/Mac:</strong> In a terminal, run <code class="inline-code">curl -X DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status --verbose</code>. Make sure to fill in {job_uuid} with the ID of the running job.
+        <strong>Linux/Mac:</strong> In a terminal, run <code class="inline-code">curl -X DELETE https://api.ab2d.cms.gov/api/v3/fhir/Job/{job_uuid}/$status --verbose</code>. Make sure to fill in {job_uuid} with the ID of the running job.
       </li>
       <li>
-        <strong>Windows:</strong> In a Powershell terminal, run <code class="inline-code">Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status</code>. Make sure to fill in {job_uuid} with the ID of the running job.
+        <strong>Windows:</strong> In a PowerShell terminal, run <code class="inline-code">Invoke-RestMethod -Method DELETE https://api.ab2d.cms.gov/api/v3/fhir/Job/{job_uuid}/$status</code>. Make sure to fill in {job_uuid} with the ID of the running job.
       </li>
     </ul>
   <li>
-    In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v2/fhir/Job/{job_uuid}/$status. Note the request parameter {job_uuid} must be set in Postman.
+    In Postman, create a new DELETE request against the URL https://api.ab2d.cms.gov/api/v3/fhir/Job/{job_uuid}/$status. Note the request parameter {job_uuid} must be set in Postman.
   </li>
   <li>
     In a browser, visit <a href="https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE" target="_blank" rel="noopener">https://api.ab2d.cms.gov/swagger-ui/index.html#/Status/deleteRequestUsingDELETE</a> and enter your job ID.
@@ -197,25 +181,30 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% capture a16AccordionContent %}
 <p>
-  STU3 and R4 are different Fast Healthcare Interoperability Resources (FHIR) versions for data transmission. AB2D provides <a href="http://hl7.org/fhir/STU3/explanationofbenefit.html">STU3</a> and <a href="http://hl7.org/fhir/R4/explanationofbenefit.html">R4</a> versions for 1 resource type, ExplanationOfBenefit.
+  AB2D sends data using Fast Healthcare Interoperability Resources (FHIR), a standard format for exchanging health data. AB2D v1 uses <a href="https://hl7.org/fhir/STU3/">FHIR STU3</a>. AB2D v2 and v3 use <a href="https://hl7.org/fhir/R4/">FHIR R4</a>. All versions return one resource type: <a href="https://hl7.org/fhir/R4/explanationofbenefit.html">ExplanationOfBenefit (EOB)</a>.
 </p>
 {% endcapture %}
 
 {% capture a17AccordionContent %}
 <p>
- Version 1 of the API uses STU3 (https://api.ab2d.cms.gov/api/v1/fhir) and version 2, which is recommended by the AB2D team, uses R4 (https://api.ab2d.cms.gov/api/v2/fhir).
+We strongly recommend using AB2D v3. AB2D v1 and v2 will be retired on July 30, 2027, so PDPs should plan to migrate to v3 before then.
+
+Read the <a href="{{ '/api-documentation/how-to-migrate-to-v3' | relative_url }}">v3 migration guide here</a>.
 </p>
 <p>
- Requests made to both versions of the API are largely the same except for the way they process parameters. The data returned by each version is detailed in the <a href="{{ '/ab2d-data' | relative_url }}">AB2D Data Dictionary</a>. <a href="https://github.com/CMSgov/ab2d-pdp-documentation/raw/main/AB2D%20STU3-R4%20Migration%20Guide%20Final.xlsx" target="_blank" rel="noopener">Learn how to migrate from v1 to v2</a>.
+The data returned by each version is detailed in the <a href="{{ '/ab2d-data#data-dictionary' | relative_url }}">AB2D Data Dictionary</a>.
 </p>
 {% endcapture %}
 
 {% capture a18AccordionContent %}
 <p>
-  The default value for the _since parameter changes between versions. The _until parameter is also only available with v2.
+v3 offers the most filtering capability of all AB2D versions. v3 supports filtering on the date a claim was last updated using _since and _until parameters, as well as filtering on a claim's service-date using the _typeFilter parameter.
 </p>
 <p>
-  In v1, a date must be specified to use _since. If no _since value is specified, it will default to January 1, 2020 or your organization's attestation date, whichever is later. In v2, if no _since value is specified, it will default to the date of your last successful export. If this is your first job, it will default to the same date as v1. <a href="{{ '/query-parameters-v2' | relative_url }}">Learn how to use parameters</a>.
+Unlike prior versions of the API, v3 does not automatically set these parameters for you. As a result, a request with no parameters will return all your data, which can cause long job run times or even timeouts and failed jobs.
+</p>
+<p>
+v2 only supports the _since and _until parameters which are populated by default if a value is not provided. v1 only supports the _since parameter.
 </p>
 {% endcapture %}
 
@@ -241,10 +230,10 @@ If the system is correct, check with your IT team to make sure you have a static
 
 {% include accordion.html id="a15" heading="I tried to download the files and got an error message." expanded=false bordered=false accordionContent=a15AccordionContent %}
 
-{% include accordion.html id="a16" heading="What is FHIR STU3 and R4?" expanded=false bordered=false accordionContent=a16AccordionContent %}
+{% include accordion.html id="a16" heading="Which data format does AB2D use?" expanded=false bordered=false accordionContent=a16AccordionContent %}
 
-{% include accordion.html id="a17" heading="How does AB2D provide FHIR versions?" expanded=false bordered=false accordionContent=a17AccordionContent %}
+{% include accordion.html id="a17" heading="Which AB2D API version should I use?" expanded=false bordered=false accordionContent=a17AccordionContent %}
 
-{% include accordion.html id="a18" heading="How are parameters different between v1 and v2?" expanded=false bordered=false accordionContent=a18AccordionContent %}
+{% include accordion.html id="a18" heading="How are parameters different across versions?" expanded=false bordered=false accordionContent=a18AccordionContent %}
 
 {% include feedback-form.html id="47414305" %}

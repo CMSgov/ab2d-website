@@ -3,7 +3,6 @@ layout: default
 page_title: "About AB2D"
 seo_title: "About AB2D"
 description: "AB2D helps Prescription Drug Plan sponsors optimize outcomes for medication therapies. Learn about its permitted uses and history."
-permalink: /about
 show-side-nav: false
 ---
 
@@ -26,14 +25,14 @@ show-side-nav: false
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Medicare Part A claims data</th>
-          <td>
+          <th data-label="Data type" scope="row">Medicare Part A claims data</th>
+          <td data-label="Definition">
             Inpatient hospital stays, care in skilled nursing facilities, and hospice care
           </td>
         </tr>
         <tr>
-          <th scope="row">Medicare Part B claims data</th>
-          <td>
+          <th data-label="Data type" scope="row">Medicare Part B claims data</th>
+          <td data-label="Definition">
             Various doctors' services, outpatient care, medical supplies, and preventive services
           </td>
         </tr>

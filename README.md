@@ -8,7 +8,7 @@ This Ruby program builds the [ab2d.cms.gov](https://ab2d.cms.gov/) website via [
 
 - [Homebrew](https://brew.sh/)
 - [Ruby](https://www.ruby-lang.org/en/)
-- [Node.js](https://nodejs.org/en/download/) (v24 or higher required)
+- [Node.js](https://nodejs.org/en/download/) (version listed in `.nvmrc`)
 - [npm](https://www.npmjs.com/get-npm)
 
 ## Installation
@@ -52,7 +52,7 @@ This will download and install the pre-commit hooks specified in `.pre-commit-co
 
 ### Step 3: Install Ruby
 
-Using Jekyll requires Ruby to be installed on your system. We use `chruby` to make it easier to switch between Ruby versions. Due to limitations with our deployment process, the maximum version of Ruby we use is `v3.2.6`.
+Using Jekyll requires Ruby to be installed on your system. We use `chruby` to make it easier to switch between Ruby versions.
 
 Install `chruby` and `ruby-install` by running the following:
 
@@ -60,23 +60,28 @@ Install `chruby` and `ruby-install` by running the following:
 brew install chruby ruby-install
 ```
 
-Then, install Ruby v3.2.6 by running:
+Then, install the Ruby version listed in `.ruby-version` by running the following from the project root:
 
 ```sh
-ruby-install ruby 3.2.6
+ruby-install ruby "$(cat .ruby-version)"
 ```
 
-You can verify your installation by running:
+To have `chruby` switch to that version automatically whenever you `cd` into the project, add the following to your `~/.zshrc`:
+
 ```sh
-ruby -v
+source "$(brew --prefix)/opt/chruby/share/chruby/chruby.sh"
+source "$(brew --prefix)/opt/chruby/share/chruby/auto.sh"
 ```
 
 (You may need to close and reopen your terminal window)
 
-You should see something like:
+You can verify your installation by running the following from the project root:
+
+```sh
+ruby -v
 ```
-ruby 3.2.6 (2024-10-30 revision 63aeb018eb) ...
-```
+
+The version should match `.ruby-version`.
 
 ### Step 4: Install Node.js and npm
 
@@ -95,36 +100,17 @@ node -v
 npm -v
 ```
 
-Your node version should be at least `v24`.
+Your Node.js major version should match `.nvmrc`. If you use [nvm](https://github.com/nvm-sh/nvm), you can run `nvm use` from the project root to switch to it.
 
-### Step 5: Install Jekyll and Bundler
+### Step 5: Install Jekyll and other Ruby dependencies
 
-Once Ruby is installed, install Jekyll and Bundler
+Bundler comes with Ruby. Install Jekyll and the other gems pinned in `Gemfile.lock` by running:
 
-```sh
-gem install jekyll bundler
-```
-
-Verify your installation by running:
-
-```sh
-jekyll -v
-```
-
-You should see:
-
-```
-jekyll 4.4.1
-```
-
-### Step 6: Install Jekyll dependencies
-
-Install Jekyll dependencies via `Bundler` by running:
 ```sh
 bundle install
 ```
 
-### Step 7: Install USWDS & other JavaScript dependencies
+### Step 6: Install USWDS & other JavaScript dependencies
 
 Run the following:
 

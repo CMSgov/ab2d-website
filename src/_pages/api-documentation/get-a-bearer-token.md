@@ -3,22 +3,21 @@ layout: api-docs
 page_title: "How to Get a Bearer Token"
 seo_title: "Get a Bearer Token for Claims Data"
 description: "Obtain a bearer token for authenticating requests to the AB2D API, ensuring secure access to enrollees’ Medicare claims data."
-permalink: /get-a-bearer-token
 in-page-nav: true
 ---
 
 # {{ page.page_title }}
 
-Bearer tokens, also known as access tokens or JSON web tokens, authorize use of the AB2D endpoints. You will need a bearer token to access the sandbox and production environments. Once you have a bearer token, follow the instructions to access either [sandbox data]({{ '/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/access-production-claims-data' | relative_url }}).
+Bearer tokens, also known as access tokens or JSON web tokens, authorize use of the AB2D endpoints. You will need a bearer token to access the sandbox and production environments. Once you have a bearer token, follow the instructions to access either [sandbox data]({{ '/api-documentation/access-sandbox-data' | relative_url }}) or [production claims data]({{ '/api-documentation/access-production-claims-data' | relative_url }}).
 
 ## Instructions
 
 <ol>
     <li>
-        You can use a variety of tools to get a bearer token, including <a href="{{ '/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="http://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password.
+        You can use a variety of tools to get a bearer token, including <a href="{{ '/api-documentation/setup-instructions' | relative_url }}">curl</a>. AB2D uses <a href="https://www.okta.com/">Okta</a> to authenticate your organization's credentials, which will be a client ID and password.
         <ul>
-            <li><b>If you’re trying to access sandbox data</b>: Use 1 of the 4 client ID and password sets provided in the <a href="{{ '/get-a-bearer-token' | relative_url }}#sandbox-credentials">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idp.idm.cms.gov).</li>
-            <li><b>If you’re trying to access production data</b>: Once you complete the steps for <a href="{{ '/production-access' | relative_url }}">production access</a>, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idm.cms.gov). You can also <a href="{{ '/get-a-bearer-token' | relative_url }}#how-to-create-a-credential-file">create your own credential file</a> manually.</li>
+            <li><b>If you’re trying to access sandbox data</b>: Use either of the client ID and password sets provided in the <a href="{{ '/api-documentation/get-a-bearer-token#sandbox-credentials' | relative_url }}">sandbox credentials</a> section. You’ll need to use the sandbox identity provider (test.idp.idm.cms.gov).</li>
+            <li><b>If you’re trying to access production data</b>: Once you complete the steps for <a href="{{ '/production-access' | relative_url }}">production access</a>, the AB2D team will send your Attestor a credentials file with your production client ID and password. You’ll need to use the production identity provider (idm.cms.gov). You can also <a href="{{ '/api-documentation/get-a-bearer-token#how-to-create-a-credential-file' | relative_url }}">create your own credential file</a> manually.</li>
         </ul>
     </li>
     <li>Once you have your sandbox or production credentials, create a new text file using your editor of choice. </li>
@@ -58,78 +57,78 @@ Bearer tokens expire 30 minutes from the time they are obtained. Use the token q
 
 Anyone can try the API and download test data using sample contracts in the sandbox. Sandbox credentials will not work in the production environment.
 
-### Sample contract Z1001 (10,000 enrollees)
+### Sample contract Z0003 (10,000 enrollees)
 
 Client ID:
 {% capture curlSnippet %}{% raw %}
-0oa9jyx2w9Z0AntLE297
+0oa9jyy4ou5c1MJ3N297
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
 Client password:
 {% capture curlSnippet %}{% raw %}
-hskbPu-YoWfGDY1gcQq34BfIEyMVuayu87zWDliG
+PUvA2UrGiKSanrumb5p3hhacGzdZrPxfW4lheVY8
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
 Base64-encoded credentials:
 {% capture curlSnippet %}{% raw %}
-MG9hOWp5eDJ3OVowQW50TEUyOTc6aHNrYlB1LVlvV2ZHRFkxZ2NRcTM0QmZJRXlNVnVheXU4N3pXRGxpRw=={% endraw %}{% endcapture %}
+MG9hOWp5eTRvdTVjMU1KM04yOTc6UFV2QTJVckdpS1NhbnJ1bWI1cDNoaGFjR3pkWnJQeGZXNGxoZVZZOA=={% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
-### Sample contract Z1002 (10,000 enrollees)
+### Sample contract Z0004 (10,000 enrollees)
 
 Client ID:
 {% capture curlSnippet %}{% raw %}
-0oa9jz0e1dyNfRMm6297
+0oa9jyw49f9U19vvB297
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
 Client password:
 {% capture curlSnippet %}{% raw %}
-shnG6NGkHcu29ptDsKKRW6q5uFJSSpIpdl_K5fVW
+bSKGteVvesj9cCpkTHqEINX-aaiHy2NjuPAnX1Ao
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
 Base64-encoded credentials:
 {% capture curlSnippet %}{% raw %}
-MG9hOWp6MGUxZHlOZlJNbTYyOTc6c2huRzZOR2tIY3UyOXB0RHNLS1JXNnE1dUZKU1NwSXBkbF9LNWZWVw==
+MG9hOWp5dzQ5ZjlVMTl2dkIyOTc6YlNLR3RlVnZlc2o5Y0Nwa1RIcUVJTlgtYWFpSHkyTmp1UEFuWDFBbw==
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="code" can_copy=true %}
 
 ## How to get a bearer token using curl
 
-Learn how to get a bearer token for the sandbox using the [curl](https://curl.se/) command line tool specifically. You can copy and paste these commands into your terminal. In Confluence, use the code block macro. [Learn how to install curl and jq]({{ '/setup-instructions' | relative_url }}).
+Learn how to get a bearer token for the sandbox using the [curl](https://curl.se/) command line tool specifically. You can copy and paste these commands into your terminal. [Learn how to install curl and jq]({{ '/api-documentation/setup-instructions' | relative_url }}).
 
-HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${variable}`.
+HTTP responses are saved into shell variables named `RESP<n>`. Most steps also define shell variables used later in the process. For educational purposes it can be useful to examine variable values by entering `echo ${VARIABLE}`.
 
-### I.  Encode client credentials into Base64
+### I. Encode client credentials into Base64
 
-Encode the credentials (clientid:password) into Base64, and set the AUTH shell variable. Using contract PDP-100 as an example, the credentials are formatted as
-`0oa2t0lsrdZw5uWRx297:HHduWG6LogIvDIQuWgp3Zlo9OYMValTtH5OBcuHw`.
+Encode the credentials (clientID:password) into Base64, and set the AUTH shell variable. Using contract Z0003 as an example, the credentials are formatted as
+`0oa9jyy4ou5c1MJ3N297:PUvA2UrGiKSanrumb5p3hhacGzdZrPxfW4lheVY8`.
 
 {% capture curlSnippet %}{% raw %}
-AUTH=$(echo "${okta_client_id}:${okta_client_password}" | base64)
+AUTH=$(echo -n "${OKTA_CLIENT_ID}:${OKTA_CLIENT_PASSWORD}" | base64)
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
 ### II. Get your bearer token
 
-Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for PDP-100 are [listed above]({{ '/get-a-bearer-token' | relative_url }}#sandbox-credentials), but will look something like
+Enter this command to make an HTTP request and set the RESP1 variable. The full Base64-encoded credentials for Z0003 and Z0004 are [listed above]({{ '/api-documentation/get-a-bearer-token#sandbox-credentials' | relative_url }}), but will look something like
 `MG9hMnQwbHNyZ…VHRINU9CY3VIdw==`.
 
 {% capture curlSnippet %}{% raw %}
 RESP1=$(curl -X POST "https://test.idp.idm.cms.gov/oauth2/aus2r7y3gdaFMKBol297/v1/token?grant_type=client_credentials&scope=clientCreds" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Accept: application/json" \
-  -H "Authorization: Basic ${base64_encoded_credentials}")
+  -H "Authorization: Basic ${AUTH}")
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
-This extracts the token from the previous response and sets the TOKEN variable needed by all subsequent API requests.
+This extracts the token from the previous response and sets the BEARER_TOKEN variable needed by all subsequent API requests.
 
 {% capture curlSnippet %}{% raw %}
-TOKEN=$(echo $RESP1 | jq -r ".access_token")
+BEARER_TOKEN=$(echo $RESP1 | jq -r ".access_token")
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
 
@@ -165,21 +164,21 @@ echo -n "$OKTA_CLIENT_ID:$OKTA_CLIENT_PASSWORD" | base64 > $AUTH_FILE
     </li>
 </ol>
 
-### Powershell
+### PowerShell
 
 <ol>
     <li>Open a PowerShell terminal.</li>
     <li>
         Create a new empty file.
 {% capture curlSnippet %}{% raw %}
-$AUTH_FILE=C:\users\abcduser\credentials_Z123456_base64.txt
+$AUTH_FILE='C:\users\abcduser\credentials_Z123456_base64.txt'
 New-Item -Path $AUTH_FILE -ItemType File
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
     <li>
         Create the Base64 credentials.
-{% capture curlSnippet %}{% raw %}$BASE64_ENCODED_ID_PASSWORD='{base64_encoded_credentials}
+{% capture curlSnippet %}{% raw %}$BASE64_ENCODED_ID_PASSWORD='{base64_encoded_credentials}'
 {% endraw %}{% endcapture %}
 {% include copy_snippet.html code=curlSnippet language="shell" can_copy=true %}
     </li>
@@ -194,12 +193,12 @@ New-Item -Path $AUTH_FILE -ItemType File
 ## Guides
 
 Once you get a bearer token, you can access either sandbox or production claims data:
-- [How to Access Sandbox Data]({{ '/access-sandbox-data' | relative_url }})
-- [How to Access Production Claims Data]({{ '/access-production-claims-data' | relative_url }})
+- [How to Access Sandbox Data]({{ '/api-documentation/access-sandbox-data' | relative_url }})
+- [How to Access Production Claims Data]({{ '/api-documentation/access-production-claims-data' | relative_url }})
 
 ## Troubleshooting
 
-Visit our [Troubleshooting Guide]({{ '/troubleshooting-guide' | relative_url }}) to explore HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
+Visit our [Troubleshooting Guide]({{ '/api-documentation/troubleshooting-guide' | relative_url }}) to explore HTTP response codes and common questions. If you need additional assistance, email the AB2D team at [ab2d@cms.hhs.gov](mailto:ab2d@cms.hhs.gov).
 
 When contacting our team, please include the following information:
 - Your operating system
