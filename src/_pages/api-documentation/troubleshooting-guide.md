@@ -25,31 +25,16 @@ The troubleshooting guide provides technical assistance to Prescription Drug Pla
     <p class="margin-top-105">General response when something is wrong (e.g., missing a request parameter or body).</p>
   </dd>
 
-  <dt class="font-sans-md text-bold">401 HTTP response: forbidden</dt>
+  <dt class="font-sans-md text-bold">401 HTTP response: unauthorized</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p class="margin-top-105">Your token is incorrect or has expired. Authentication has not been completed successfully.</p>
-  </dd>
-
-  <dt class="font-sans-md text-bold">403 HTTP response: unauthorized</dt>
-  <dd class="margin-left-0 margin-bottom-4">
-    <p class="margin-top-105">You don’t have permission to access the requested data. This can happen for a variety of reasons:</p>
-    <ul>
-      <li>Your token has expired.</li>
-      <li>You have specified a contract that is not yours.</li>
-      <li>You’re not authorized to use the API.</li>
-      <li>Authentication has failed.</li>
-    </ul>
+    <p class="margin-top-105">Unauthorized, authentication has not been done or has not succeeded.</p>
+    <p>Returned for every authentication failure (missing token, invalid or expired token). Request a new bearer token and retry.</p>
   </dd>
 
   <dt class="font-sans-md text-bold">403 HTTP response: forbidden</dt>
   <dd class="margin-left-0 margin-bottom-4">
-    <p class="margin-top-105">Authentication succeeded, but you don’t have permission to access the requested data. This can happen due to a variety of reasons:</p>
-    <ul>
-      <li>The credentials provided may have a typo or syntax error (e.g., spaces, hidden characters).</li>
-      <li>The credentials provided may have been encoded to Base64 incorrectly.</li>
-      <li>You’re connected to the sandbox idP (test.idp.idm.cms.gov) instead of the production idP (idm.cms.gov).</li>
-      <li>Authentication may have failed because of an incorrect header. "Authorization : Basic Auth" is the correct header.</li>
-    </ul>
+    <p class="margin-top-105">Forbidden, authentication succeeded but the user doesn't have permissions to access the requested data.</p>
+    <p>Returned only when your token is valid but you are not allowed to make the request (for example, your organization is disabled, your contract is not attested, v3 is not enabled for your contract, or the job belongs to another organization). If this continues to happen, contact the AB2D team at <a href="mailto:ab2d@cms.hhs.gov">ab2d@cms.hhs.gov</a>.</p>
   </dd>
 
   <dt class="font-sans-md text-bold">404 HTTP response: page not found</dt>
