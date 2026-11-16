@@ -18,7 +18,7 @@
     "gulp": "^5.0.1"
   },
   "devDependencies": {
-    "concurrently": "^10.0.6",
+    "concurrently": "^10.0.7",
     "pa11y-ci": "^5.0.0",
     "taze": "^21.3.0"
   },
